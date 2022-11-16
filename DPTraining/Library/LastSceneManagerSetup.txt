@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Oculus/SampleFramework/Usage/Passthrough/Scenes/AugmentedObjects.unity
+- path: Assets/Scenes/Calibration_v1.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
