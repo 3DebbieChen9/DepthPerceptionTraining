@@ -10,12 +10,15 @@ public class SDKFunctionTest : MonoBehaviour
     private GameObject _plane;
     [SerializeField]
     private GameObject _cube;
+    [SerializeField]
+    private TextMesh _conseolText;
 
     // Start is called before the first frame update
     void Start()
     {
         _plane.transform.position = _OVRCameraRig.GetComponent<OVRCameraRig>().trackerAnchor.position;
-        
+        _cube.transform.position = _OVRCameraRig.GetComponent<OVRCameraRig>().trackerAnchor.position;
+        _OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = true;
     }
 
     // Update is called once per frame
@@ -31,8 +34,17 @@ public class SDKFunctionTest : MonoBehaviour
         }
 
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
+            // _OVRCameraRig.GetComponent<OVRCameraRig>().UpdateAnchors(true, true);
+            // _conseolText.GetComponent<TextMesh>().text = "wtf";
+            _conseolText.text = "wtf";
             _cube.SetActive(true);
-            _cube.transform.position = _OVRCameraRig.GetComponent<OVRCameraRig>().trackerAnchor.position;
+            // _cube.transform.position = _OVRCameraRig.GetComponent<OVRCameraRig>().leftHandAnchor.position;
+            _cube.transform.position = _OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
+            // _cube.transform.position = _OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
+            _OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = !_OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled;
         }
 
     }
