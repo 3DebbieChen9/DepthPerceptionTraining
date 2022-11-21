@@ -1,0 +1,4 @@
+#Mon Nov 21 14:27:48 GMT+08:00 2022
+base.0=D\:\\CGVLab(D)\\DepthPerceptionTraining\\DPTraining\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
