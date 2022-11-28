@@ -14,7 +14,7 @@ public class SystemManager : MonoBehaviour
     [SerializeField]
     public SystemMode cur_systemMode = SystemMode.Calibration_Size;
     [SerializeField]
-    public float avgDistnace = 0.0f;
+    public float avgDistance = 0.0f;
     [SerializeField]
     public float avgArmLength = 0.0f;
 

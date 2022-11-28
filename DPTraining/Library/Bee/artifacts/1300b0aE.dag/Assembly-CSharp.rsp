@@ -509,6 +509,7 @@
 "Assets/Oculus/SampleFramework/Usage/SpatialAnchor/Scripts/SpatialAnchorLoader.cs"
 "Assets/Oculus/SampleFramework/Usage/SpatialAnchor/Scripts/SpatialAnchorSession.cs"
 "Assets/Oculus/SampleFramework/Usage/StartScene/Scripts/StartMenu.cs"
+"Assets/Scripts/CalibrationEvaluation.cs"
 "Assets/Scripts/CalibrationManager.cs"
 "Assets/Scripts/SDKFunctionTest.cs"
 "Assets/Scripts/SystemManager.cs"
