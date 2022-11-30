@@ -13,10 +13,15 @@ public class SystemManager : MonoBehaviour
     
     [SerializeField]
     public SystemMode cur_systemMode = SystemMode.Calibration_Size;
+
     [SerializeField]
-    public float avgDistance = 0.0f;
+    public float _scaleTransferFactor = 1.0f; // vr-distance / real-distance
     [SerializeField]
-    public float avgArmLength = 0.0f;
+    public float _referenceDistance = 0.30f; // in meters
+    [SerializeField]
+    public float avgDistance = 0.0f; // in meters
+    [SerializeField]
+    public float avgArmLength = 0.0f; // in meters
 
     // Start is called before the first frame update
     void Start()

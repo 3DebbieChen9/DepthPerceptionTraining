@@ -8,8 +8,6 @@ public class CalibrationManager : MonoBehaviour
     public GameObject _OVRCameraRig;
     [SerializeField]
     public SystemManager _systemManager;
-    [SerializeField]
-    public double _referenceDistance = 0.20; // in meters
 
     [SerializeField]
     private TextMesh _consoleText;
@@ -19,7 +17,7 @@ public class CalibrationManager : MonoBehaviour
     [SerializeField]
     private int _distanceMarkerCount = 0;
     [SerializeField]
-    private GameObject[] _distanceMarkers;
+    public GameObject[] _distanceMarkers;
     [SerializeField]
     public GameObject _sceneOrigin;
 
@@ -51,6 +49,7 @@ public class CalibrationManager : MonoBehaviour
                 else {
                     this.changeSystemMode(SystemManager.SystemMode.Calibration_ArmLength);
                     this.setSceneOrigin();
+                    _systemManager._scaleTransferFactor = _systemManager.avgDistance / _systemManager._referenceDistance;
                     _consoleTitle.text = "Calibration: Arm Length";
                     _consoleText.text = "-";
                 }
