@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/DPTrainingSystem.unity
-    guid: 5f17508328ec12d4394be255ea715552
+    path: Assets/Scenes/CalibrationEvaluation.unity
+    guid: b91fdfbd66c162c4ab2e4f0393275e56
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d28718cf987fffd4d9cbb96ae05ea633, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 544cc10a852abaf469d07f95ab19e37c, type: 2}

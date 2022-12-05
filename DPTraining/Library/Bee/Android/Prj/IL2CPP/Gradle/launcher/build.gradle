@@ -16,12 +16,12 @@ android {
     defaultConfig {
         minSdkVersion 29
         targetSdkVersion 30
-        applicationId 'com.Debbie.DPTraining'
+        applicationId 'com.Debbie.DPTraining_Evaluation'
         ndk {
             abiFilters 'arm64-v8a'
         }
         versionCode 1
-        versionName '1.1.0'
+        versionName '1.1.1'
     }
 
     aaptOptions {

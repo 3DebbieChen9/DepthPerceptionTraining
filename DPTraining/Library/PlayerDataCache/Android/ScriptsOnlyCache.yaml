@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - CalibrationEvaluation
     - CalibrationManager
     - SystemManager
     Oculus.Spatializer.dll:
@@ -67,7 +68,7 @@ ScriptsOnlyBuild:
     - UnityEngine.TextCore.GlyphRect
   methodsToPreserve: []
   sceneClasses:
-    Assets/Scenes/DPTrainingSystem.unity:
+    Assets/Scenes/CalibrationEvaluation.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -137,18 +138,22 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6952}
     - Class: 114
-      Script: {instanceID: 7768}
+      Script: {instanceID: 7230}
     - Class: 114
-      Script: {instanceID: 8558}
+      Script: {instanceID: 7770}
     - Class: 114
-      Script: {instanceID: 8728}
+      Script: {instanceID: 8560}
     - Class: 114
-      Script: {instanceID: 8912}
+      Script: {instanceID: 8730}
     - Class: 114
-      Script: {instanceID: 10218}
+      Script: {instanceID: 8914}
     - Class: 114
-      Script: {instanceID: 10804}
+      Script: {instanceID: 10220}
+    - Class: 114
+      Script: {instanceID: 10806}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 120
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
@@ -825,7 +830,7 @@ ScriptsOnlyBuild:
     className: LipSyncDemo_SetCurrentTarget
   - hash:
       serializedVersion: 2
-      Hash: f3ba3c02d74aeaeac3fd6f1a3604970f
+      Hash: dcdf35cda60671e7f459faad54b43961
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CalibrationManager
@@ -2439,6 +2444,12 @@ ScriptsOnlyBuild:
     className: SelectionCylinder
   - hash:
       serializedVersion: 2
+      Hash: d79ab74fef11fd2631bf692b0f910aa2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CalibrationEvaluation
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -3099,7 +3110,7 @@ ScriptsOnlyBuild:
     className: BoxProximityField
   - hash:
       serializedVersion: 2
-      Hash: a323cf5c5c48769ac48ebfdacfec06eb
+      Hash: 305bbd3fca35d36fe65eddf342e2b82a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SystemManager
@@ -4053,5 +4064,5 @@ ScriptsOnlyBuild:
     className: TrackSegment
   platform: 13
   scenePathNames:
-  - Assets/Scenes/DPTrainingSystem.unity
-  playerPath: D:/CGVLab(D)/DepthPerceptionTraining/BuildAPP/20221121_v1.1/DPTraining_v1.1.apk
+  - Assets/Scenes/CalibrationEvaluation.unity
+  playerPath: D:/CGVLab(D)/DepthPerceptionTraining/BuildAPP/20221201_v1.1.1(evaluation)/DPTraining_v1.1.apk

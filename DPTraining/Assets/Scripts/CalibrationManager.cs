@@ -4,119 +4,53 @@ using UnityEngine;
 
 public class CalibrationManager : MonoBehaviour
 {
-    [SerializeField] 
-    public GameObject _OVRCameraRig;
     [SerializeField]
-    public SystemManager _systemManager;
-
-    [SerializeField]
-    private TextMesh _consoleText;
-    [SerializeField]
-    private TextMesh _consoleTitle;
+    public SystemManager systemManager;
     
     [SerializeField]
-    private int _distanceMarkerCount = 0;
+    private int distanceMarkerCount = 0;
     [SerializeField]
-    public GameObject[] _distanceMarkers;
-    [SerializeField]
-    public GameObject _sceneOrigin;
+    public GameObject[] distanceMarkers;
 
     [SerializeField]
-    private int _armLengthMarkerStatue = 0; // 0: not started, 1: R-hand done, 2: L-hand done
+    private int armLengthMarkerStatue = 0; // 0: not started, 1: R-hand done, 2: L-hand done
     [SerializeField]
-    private GameObject[] _armLengthMarkers;
+    private GameObject[] armLengthMarkers;
     
     // Start is called before the first frame update
     void Start()
     {
-        this.initialize();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
-            // if (_systemManager.cur_systemMode == SystemManager.SystemMode.Calibration_Rotation) {
-            //     this._sceneOrigin.transform.rotation = _OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation;
-            //     _consoleTitle.text = "Calibration: Rotation";
-            //     this.changeSystemMode(SystemManager.SystemMode.Calibration_Size);
-            // }
-            if (_systemManager.cur_systemMode == SystemManager.SystemMode.Calibration_Size) {
-                _consoleTitle.text = "Calibration: Distance";
-                if (_distanceMarkerCount < _distanceMarkers.Length) {
-                    this.putDistanceMarker();
-                }
-                else {
-                    this.changeSystemMode(SystemManager.SystemMode.Calibration_ArmLength);
-                    this.setSceneOrigin();
-                    _systemManager._scaleTransferFactor = _systemManager.avgDistance / _systemManager._referenceDistance;
-                    _consoleTitle.text = "Calibration: Arm Length";
-                    _consoleText.text = "-";
-                }
-                
-            }
-            else if (_systemManager.cur_systemMode == SystemManager.SystemMode.Calibration_ArmLength) {
-                _consoleTitle.text = "Calibration: Arm Length";
-                if (_armLengthMarkerStatue == 2) {
-                    this.changeSystemMode(SystemManager.SystemMode.Testing);
-                    _consoleTitle.text = "Testing";
-                    _consoleText.text = "-";
-                    _OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
-                    this.clearCalibrationMarkers();
-                }
-                else {
-                    this.putArmLengthMarker();
-                }
-            }
-        }
-
-        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch)) {
-            this.passthroughSwitch();
-        }
-
-        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch)) {
-            this.initialize();
-        } 
-    }
-
-    private void initialize() {
-        _systemManager.cur_systemMode = SystemManager.SystemMode.Calibration_Size;
-        _distanceMarkerCount = 0;
-        foreach (GameObject marker in _distanceMarkers) {
-            marker.SetActive(false);
-        }
-        _armLengthMarkerStatue = 0;
-        foreach (GameObject marker in _armLengthMarkers) {
-            marker.SetActive(false);
-        }
-        _sceneOrigin.SetActive(false);
-        _consoleTitle.text = "Initialize";
-        _consoleText.text = "-";
+        
     }
 
     private void clearCalibrationMarkers() {
-        foreach (GameObject marker in _distanceMarkers) {
+        foreach (GameObject marker in this.distanceMarkers) {
             marker.SetActive(false);
         }
-        _armLengthMarkerStatue = 0;
-        foreach (GameObject marker in _armLengthMarkers) {
+        this.armLengthMarkerStatue = 0;
+        foreach (GameObject marker in this.armLengthMarkers) {
             marker.SetActive(false);
         }
-        // _sceneOrigin.SetActive(false);
     }
     
     private void putDistanceMarker() {
-        if (_distanceMarkerCount < _distanceMarkers.Length) {
-            _distanceMarkers[_distanceMarkerCount].SetActive(true);
-            _distanceMarkers[_distanceMarkerCount].transform.position = new Vector3(_OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position.x, 
-                                                                                    _OVRCameraRig.GetComponent<OVRCameraRig>().trackerAnchor.position.y, 
-                                                                                    _OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position.z);
-            if (_distanceMarkerCount == _distanceMarkers.Length-1) {
-                _systemManager.avgDistance = this.calculateAvgDistance();
-                this._consoleText.text = "Average Distance = " + _systemManager.avgDistance.ToString();
-                print("Average Distance = " + _systemManager.avgDistance.ToString());
+        if (this.distanceMarkerCount < this.distanceMarkers.Length) {
+            this.distanceMarkers[this.distanceMarkerCount].SetActive(true);
+            this.distanceMarkers[this.distanceMarkerCount].transform.position = new Vector3(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position.x, 
+                                                                                            this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().trackerAnchor.position.y, 
+                                                                                            this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position.z);
+            if (this.distanceMarkerCount == this.distanceMarkers.Length-1) {
+                this.systemManager.avgDistance = this.calculateAvgDistance();
+                this.systemManager.consoleText.text = "Average Distance = " + this.systemManager.avgDistance.ToString();
+                print("Average Distance = " + this.systemManager.avgDistance.ToString());
             }
-            _distanceMarkerCount++;
+            this.distanceMarkerCount++;
         }
         
     }
@@ -127,64 +61,97 @@ public class CalibrationManager : MonoBehaviour
 
     private float calculateAvgDistance() {
         float squareLengthTotal = 0;
-        squareLengthTotal += this.calculateHorizatonalDistance(_distanceMarkers[0].transform.position, _distanceMarkers[1].transform.position);
-        squareLengthTotal += this.calculateHorizatonalDistance(_distanceMarkers[1].transform.position, _distanceMarkers[2].transform.position);
-        squareLengthTotal += this.calculateHorizatonalDistance(_distanceMarkers[2].transform.position, _distanceMarkers[3].transform.position);
-        squareLengthTotal += this.calculateHorizatonalDistance(_distanceMarkers[3].transform.position, _distanceMarkers[0].transform.position);
+        squareLengthTotal += this.calculateHorizatonalDistance(this.distanceMarkers[0].transform.position, this.distanceMarkers[1].transform.position);
+        squareLengthTotal += this.calculateHorizatonalDistance(this.distanceMarkers[1].transform.position, this.distanceMarkers[2].transform.position);
+        squareLengthTotal += this.calculateHorizatonalDistance(this.distanceMarkers[2].transform.position, this.distanceMarkers[3].transform.position);
+        squareLengthTotal += this.calculateHorizatonalDistance(this.distanceMarkers[3].transform.position, this.distanceMarkers[0].transform.position);
         return squareLengthTotal / 4;
     }
 
-    private void passthroughSwitch() {
-        _OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = !_OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled;
-    }
-
     private void putArmLengthMarker() {
-        if (_armLengthMarkerStatue == 0) { // 0: not started, 1: R-hand done, 2: L-hand done
-            _armLengthMarkers[0].transform.position = _OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
-            _armLengthMarkers[1].transform.position = _OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
-            _systemManager.avgArmLength = this.calculateHorizatonalDistance(_armLengthMarkers[0].transform.position, _armLengthMarkers[1].transform.position);
-            _armLengthMarkers[0].SetActive(true);
-            _armLengthMarkers[1].SetActive(true);
-            _armLengthMarkerStatue = 1;
+        if (this.armLengthMarkerStatue == 0) { // 0: not started, 1: R-hand done, 2: L-hand done
+            this.armLengthMarkers[0].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
+            this.armLengthMarkers[1].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
+            this.systemManager.avgArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[0].transform.position, this.armLengthMarkers[1].transform.position);
+            this.armLengthMarkers[0].SetActive(true);
+            this.armLengthMarkers[1].SetActive(true);
+            this.armLengthMarkerStatue = 1;
 
-            this._consoleText.text = "Right Arm Length" + _systemManager.avgArmLength.ToString();
+            this.systemManager.consoleText.text = "Right Arm Length" + this.systemManager.avgArmLength.ToString();
         }
-        else if (_armLengthMarkerStatue == 1) { // 0: not started, 1: R-hand done, 2: L-hand done
-            _armLengthMarkers[1].SetActive(false);
+        else if (this.armLengthMarkerStatue == 1) { // 0: not started, 1: R-hand done, 2: L-hand done
+            this.armLengthMarkers[1].SetActive(false);
 
-            _armLengthMarkers[0].transform.position = _OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
-            _armLengthMarkers[2].transform.position = _OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
-            _systemManager.avgArmLength += this.calculateHorizatonalDistance(_armLengthMarkers[0].transform.position, _armLengthMarkers[2].transform.position);
-            _systemManager.avgArmLength /= 2;
+            this.armLengthMarkers[0].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
+            this.armLengthMarkers[2].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
+            this.systemManager.avgArmLength += this.calculateHorizatonalDistance(this.armLengthMarkers[0].transform.position, this.armLengthMarkers[2].transform.position);
+            this.systemManager.avgArmLength /= 2;
 
-            _armLengthMarkers[0].SetActive(true);
-            _armLengthMarkers[2].SetActive(true);
-            _armLengthMarkerStatue = 2;
+            this.armLengthMarkers[0].SetActive(true);
+            this.armLengthMarkers[2].SetActive(true);
+            this.armLengthMarkerStatue = 2;
 
-            this._consoleText.text = "Average Arm Length" + _systemManager.avgArmLength.ToString();
-            print("Average Arm Length = " + _systemManager.avgArmLength.ToString());
+            this.systemManager.consoleText.text = "Average Arm Length" + this.systemManager.avgArmLength.ToString();
+            print("Average Arm Length = " + this.systemManager.avgArmLength.ToString());
         }      
     }
 
-    private void changeSystemMode(SystemManager.SystemMode curMode) {
-        _systemManager.cur_systemMode = curMode;
+    public void CalibrationInitialize() {
+        this.systemManager.cur_systemMode = SystemManager.SystemMode.Calibration_Size;
+        this.distanceMarkerCount = 0;
+        foreach (GameObject marker in this.distanceMarkers) {
+            marker.SetActive(false);
+        }
+        armLengthMarkerStatue = 0;
+        foreach (GameObject marker in this.armLengthMarkers) {
+            marker.SetActive(false);
+        }
+        this.systemManager.sceneOrigin.SetActive(false);
+        this.systemManager.consoleTitle.text = "Initialize";
+        this.systemManager.consoleText.text = "-";
     }
     
-    private void setSceneOrigin() {
+    public void calibrateSize() {
+        if (this.distanceMarkerCount < this.distanceMarkers.Length) {
+            this.putDistanceMarker();
+        }
+        else {
+            this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_ArmLength);
+            this.setSceneOrigin();
+            this.systemManager.scaleTransferFactor = this.systemManager.avgDistance / systemManager.referenceDistance;
+            this.systemManager.consoleTitle.text = "Calibration: Arm Length";
+            this.systemManager.consoleText.text = "-";
+        }
+    }
+
+    public void calibrateArmLength() {
+        if (this.armLengthMarkerStatue == 2) {
+            this.systemManager.changeSystemMode(SystemManager.SystemMode.Testing);
+            this.systemManager.consoleTitle.text = "Testing";
+            this.systemManager.consoleText.text = "-";
+            this.systemManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
+            this.clearCalibrationMarkers();
+        }
+        else {
+            this.putArmLengthMarker();
+        }
+    }
+
+    public void setSceneOrigin() {
         Vector3 centroid = new Vector3(0, 0, 0);
-        foreach (GameObject marker in _distanceMarkers) {
+        foreach (GameObject marker in this.distanceMarkers) {
             centroid += marker.transform.position;
         }
-        centroid /= (_distanceMarkers.Length);
+        centroid /= (this.distanceMarkers.Length);
         
         Vector3 lookTarget = new Vector3(0, 0, 0);
-        lookTarget += _distanceMarkers[0].transform.position;
-        lookTarget += _distanceMarkers[1].transform.position;
+        lookTarget += this.distanceMarkers[0].transform.position;
+        lookTarget += this.distanceMarkers[1].transform.position;
         lookTarget /= 2;
 
-        _sceneOrigin.transform.position = centroid; //new Vector3(centroid.x, _OVRCameraRig.GetComponent<OVRCameraRig>().trackerAnchor.position.y, centroid.z);
-        _sceneOrigin.transform.LookAt(lookTarget);
-        _sceneOrigin.SetActive(true);
+        this.systemManager.sceneOrigin.transform.position = centroid;
+        this.systemManager.sceneOrigin.transform.LookAt(lookTarget);
+        this.systemManager.sceneOrigin.SetActive(true);
     }
     
 }

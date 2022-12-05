@@ -11,7 +11,7 @@ INJECTED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Androi
 INJECTED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 INJECTED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 	package
-		ADDED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:2:70-101
+		ADDED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:2:70-112
 		INJECTED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml
 		INJECTED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml
 	android:versionName
@@ -19,7 +19,7 @@ INJECTED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Androi
 		ADDED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 		INJECTED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:2:102-148
+		ADDED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:2:113-159
 	android:versionCode
 		INJECTED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml
 		ADDED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
@@ -27,7 +27,7 @@ INJECTED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Androi
 	xmlns:android
 		ADDED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:2:11-69
 	android:installLocation
-		ADDED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:2:149-179
+		ADDED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:2:160-190
 supports-screens
 ADDED from D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:3-163
 	android:largeScreens

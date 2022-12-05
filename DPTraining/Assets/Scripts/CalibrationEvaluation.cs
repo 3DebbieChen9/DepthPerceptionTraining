@@ -5,44 +5,46 @@ using UnityEngine;
 public class CalibrationEvaluation : MonoBehaviour
 {
     [SerializeField]
-    public SystemManager _systemManager;
+    public SystemManager systemManager;
     [SerializeField]
-    public CalibrationManager _calibrationManager;
+    public CalibrationManager calibrationManager;
     [SerializeField]
-    private GameObject _plane;
+    private GameObject plane;
     [SerializeField]
-    private LineRenderer[] _verticalLines;
+    private LineRenderer[] verticalLines;
     [SerializeField]
-    private LineRenderer[] _horizontalLines;
+    private LineRenderer[] horizontalLines;
 
     // Start is called before the first frame update
     void Start()
     {
-        _plane.SetActive(false);
+        this.plane.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         if(OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)){
-            if (_systemManager.cur_systemMode == SystemManager.SystemMode.Testing) {
+            if (this.systemManager.cur_systemMode == SystemManager.SystemMode.Testing) {
                 this.planeResize();
                 this.planeMove();
-                _plane.SetActive(true);
+                // _plane.SetActive(true);
                 this.drawEvaluateLines();
             }
         }
     }
 
     void planeResize() {
-        _plane.transform.localScale = new Vector3(_systemManager._referenceDistance * _systemManager._scaleTransferFactor, _plane.transform.localScale.y, _systemManager._referenceDistance * _systemManager._scaleTransferFactor);
+        this.plane.transform.localScale = new Vector3 ( this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor, 
+                                                        this.plane.transform.localScale.y, 
+                                                        this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
     }
 
     void planeMove() {
-        _plane.transform.position = new Vector3(_calibrationManager._sceneOrigin.transform.position.x,
-                                                _calibrationManager._sceneOrigin.transform.position.y - 0.01f,
-                                                _calibrationManager._sceneOrigin.transform.position.z);
-        _plane.transform.rotation = _calibrationManager._sceneOrigin.transform.rotation;
+        this.plane.transform.position = new Vector3 ( this.systemManager.sceneOrigin.transform.position.x,
+                                                      this.systemManager.sceneOrigin.transform.position.y - 0.01f,
+                                                      this.systemManager.sceneOrigin.transform.position.z);
+        this.plane.transform.rotation = this.systemManager.sceneOrigin.transform.rotation;
     }
 
     private void drawEvaluateLines() {
@@ -56,29 +58,31 @@ public class CalibrationEvaluation : MonoBehaviour
             VerticalDirection = O -> Hmp
             HorizontalDirection = Vmp -> O
         **/
-        Vector3 horizontalMidPoint = (_calibrationManager._distanceMarkers[0].transform.position + _calibrationManager._distanceMarkers[1].transform.position) / 2;
-        Vector3 verticalMidPoint = (_calibrationManager._distanceMarkers[0].transform.position + _calibrationManager._distanceMarkers[3].transform.position) / 2;
-        Vector3 horizontalDirection = (_calibrationManager._sceneOrigin.transform.position - verticalMidPoint).normalized;
-        Vector3 verticalDirection = (_calibrationManager._sceneOrigin.transform.position - horizontalMidPoint).normalized;
+        Vector3 horizontalMidPoint = (this.calibrationManager.distanceMarkers[0].transform.position + this.calibrationManager.distanceMarkers[1].transform.position) / 2;
+        Vector3 verticalMidPoint = (this.calibrationManager.distanceMarkers[0].transform.position + this.calibrationManager.distanceMarkers[3].transform.position) / 2;
+        Vector3 horizontalDirection = (this.systemManager.sceneOrigin.transform.position - verticalMidPoint).normalized;
+        Vector3 verticalDirection = (this.systemManager.sceneOrigin.transform.position - horizontalMidPoint).normalized;
 
-        Vector3 leftBottomCorner = _calibrationManager._sceneOrigin.transform.position 
-                                    - horizontalDirection * (_systemManager._referenceDistance / 2.0f) * _systemManager._scaleTransferFactor
-                                    + verticalDirection * (_systemManager._referenceDistance / 2.0f) * _systemManager._scaleTransferFactor;
-        Vector3 leftUpperCorner = _calibrationManager._sceneOrigin.transform.position
-                                    - horizontalDirection * (_systemManager._referenceDistance / 2.0f) * _systemManager._scaleTransferFactor
-                                    - verticalDirection * (_systemManager._referenceDistance / 2.0f) * _systemManager._scaleTransferFactor;
-        Vector3 rightUpperCorner = _calibrationManager._sceneOrigin.transform.position
-                                    + horizontalDirection * (_systemManager._referenceDistance / 2.0f) * _systemManager._scaleTransferFactor
-                                    - verticalDirection * (_systemManager._referenceDistance / 2.0f) * _systemManager._scaleTransferFactor;
+        Vector3 leftBottomCorner = this.systemManager.sceneOrigin.transform.position 
+                                    - horizontalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor
+                                    + verticalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor;
+        Vector3 leftUpperCorner = this.systemManager.sceneOrigin.transform.position
+                                    - horizontalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor
+                                    - verticalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor;
+        Vector3 rightUpperCorner = this.systemManager.sceneOrigin.transform.position
+                                    + horizontalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor
+                                    - verticalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor;
 
         for(int i = 0; i < 5; i++) {
-            _verticalLines[i].SetPosition(0, leftUpperCorner + horizontalDirection * i * (_systemManager._referenceDistance / 4.0f) * _systemManager._scaleTransferFactor);
-            _verticalLines[i].SetPosition(1, leftBottomCorner + horizontalDirection * i * (_systemManager._referenceDistance / 4.0f) * _systemManager._scaleTransferFactor);
+            this.verticalLines[i].SetPosition(0, leftUpperCorner + horizontalDirection * i * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor);
+            this.verticalLines[i].SetPosition(1, leftBottomCorner + horizontalDirection * i * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor);
+            this.verticalLines[i].gameObject.SetActive(true);
         }
 
         for(int i = 0; i < 5; i++) {
-            _horizontalLines[i].SetPosition(0, leftUpperCorner + verticalDirection * i * (_systemManager._referenceDistance / 4.0f) * _systemManager._scaleTransferFactor);
-            _horizontalLines[i].SetPosition(1, rightUpperCorner + verticalDirection * i * (_systemManager._referenceDistance / 4.0f) * _systemManager._scaleTransferFactor);
+            this.horizontalLines[i].SetPosition(0, leftUpperCorner + verticalDirection * i * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor);
+            this.horizontalLines[i].SetPosition(1, rightUpperCorner + verticalDirection * i * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor);
+            this.horizontalLines[i].gameObject.SetActive(true);
         }
     }
 }
