@@ -1,8 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - CalibrationEvaluation
     - CalibrationManager
+    - SceneBuilding
     - SystemManager
     Oculus.Spatializer.dll:
     - ONSPSettings
@@ -68,7 +68,7 @@ ScriptsOnlyBuild:
     - UnityEngine.TextCore.GlyphRect
   methodsToPreserve: []
   sceneClasses:
-    Assets/Scenes/CalibrationEvaluation.unity:
+    Assets/Scenes/DPTrainingSystem.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -88,6 +88,8 @@ ScriptsOnlyBuild:
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
+      Script: {instanceID: 0}
+    - Class: 64
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
@@ -112,45 +114,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1786}
     - Class: 114
-      Script: {instanceID: 2494}
+      Script: {instanceID: 2490}
     - Class: 114
-      Script: {instanceID: 2566}
+      Script: {instanceID: 2560}
     - Class: 114
-      Script: {instanceID: 2678}
+      Script: {instanceID: 2672}
     - Class: 114
-      Script: {instanceID: 3400}
+      Script: {instanceID: 3382}
     - Class: 114
-      Script: {instanceID: 4250}
+      Script: {instanceID: 4216}
     - Class: 114
-      Script: {instanceID: 5320}
+      Script: {instanceID: 5278}
     - Class: 114
-      Script: {instanceID: 5368}
+      Script: {instanceID: 5324}
     - Class: 114
-      Script: {instanceID: 5418}
+      Script: {instanceID: 5372}
     - Class: 114
-      Script: {instanceID: 5478}
+      Script: {instanceID: 5432}
     - Class: 114
-      Script: {instanceID: 5852}
+      Script: {instanceID: 5804}
     - Class: 114
-      Script: {instanceID: 6156}
+      Script: {instanceID: 6108}
     - Class: 114
-      Script: {instanceID: 6904}
+      Script: {instanceID: 6846}
     - Class: 114
-      Script: {instanceID: 6952}
+      Script: {instanceID: 6892}
     - Class: 114
-      Script: {instanceID: 7230}
+      Script: {instanceID: 7694}
     - Class: 114
-      Script: {instanceID: 7770}
+      Script: {instanceID: 7902}
     - Class: 114
-      Script: {instanceID: 8560}
+      Script: {instanceID: 8476}
     - Class: 114
-      Script: {instanceID: 8730}
+      Script: {instanceID: 8646}
     - Class: 114
-      Script: {instanceID: 8914}
+      Script: {instanceID: 8828}
     - Class: 114
-      Script: {instanceID: 10220}
+      Script: {instanceID: 10118}
     - Class: 114
-      Script: {instanceID: 10806}
+      Script: {instanceID: 10700}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -830,7 +832,7 @@ ScriptsOnlyBuild:
     className: LipSyncDemo_SetCurrentTarget
   - hash:
       serializedVersion: 2
-      Hash: dcdf35cda60671e7f459faad54b43961
+      Hash: 3fe45ebe31925711c510a8137b999d86
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CalibrationManager
@@ -870,12 +872,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: CoroutineRunner
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Oculus.Interaction.dll
-    namespaceName: Oculus.Interaction.Deprecated
-    className: DropZoneInteractor
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1356,12 +1352,6 @@ ScriptsOnlyBuild:
     assemblyName: Oculus.Interaction.dll
     namespaceName: Oculus.Interaction.GrabAPI
     className: HandGrabAPI
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Oculus.Interaction.dll
-    namespaceName: Oculus.Interaction
-    className: TagMonoBehaviourFilter
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -2006,12 +1996,6 @@ ScriptsOnlyBuild:
     className: P2PNetworkGoal
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Oculus.Interaction.dll
-    namespaceName: Oculus.Interaction.Deprecated
-    className: DropZoneInteractable
-  - hash:
-      serializedVersion: 2
       Hash: a4b88f3b08f1f148e04c6c3d7544c9ec
     assemblyName: Oculus.VR.dll
     namespaceName: 
@@ -2240,16 +2224,16 @@ ScriptsOnlyBuild:
     className: GlobalMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 21a9c6dbf300fc1f6dc15ca7e2c39a37
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Slider
-  - hash:
-      serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: HorizontalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 21a9c6dbf300fc1f6dc15ca7e2c39a37
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Slider
   - hash:
       serializedVersion: 2
       Hash: f5f55af7cff0abd82444ee3d3825fa7d
@@ -2444,7 +2428,7 @@ ScriptsOnlyBuild:
     className: SelectionCylinder
   - hash:
       serializedVersion: 2
-      Hash: d79ab74fef11fd2631bf692b0f910aa2
+      Hash: e9a367a3430878a8753143e121061e88
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CalibrationEvaluation
@@ -2600,12 +2584,6 @@ ScriptsOnlyBuild:
     className: OVRLipSyncMicInput
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Oculus.Interaction.dll
-    namespaceName: Oculus.Interaction.Deprecated
-    className: HandGrabPoint
-  - hash:
-      serializedVersion: 2
       Hash: 4f60ff347d4efee4ef8cc7f627735018
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -2706,6 +2684,12 @@ ScriptsOnlyBuild:
     assemblyName: Oculus.Interaction.dll
     namespaceName: Oculus.Interaction.Input
     className: HmdRef
+  - hash:
+      serializedVersion: 2
+      Hash: 77c024f20b40c4381708c2a97c8cca02
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneBuilding
   - hash:
       serializedVersion: 2
       Hash: 59532a3a06d33cd14b7d9f6f9e4eb290
@@ -2820,12 +2804,6 @@ ScriptsOnlyBuild:
     assemblyName: Oculus.Interaction.Samples.dll
     namespaceName: Oculus.Interaction.Samples
     className: ColorChanger
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Oculus.Interaction.dll
-    namespaceName: Oculus.Interaction.Deprecated
-    className: DropZoneSequentialSlotsProvider
   - hash:
       serializedVersion: 2
       Hash: c3766c3ad5b8316d2c9bee4452e222de
@@ -3110,7 +3088,7 @@ ScriptsOnlyBuild:
     className: BoxProximityField
   - hash:
       serializedVersion: 2
-      Hash: 305bbd3fca35d36fe65eddf342e2b82a
+      Hash: 829c0a29424095f36824411cf96370cb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SystemManager
@@ -4064,5 +4042,5 @@ ScriptsOnlyBuild:
     className: TrackSegment
   platform: 13
   scenePathNames:
-  - Assets/Scenes/CalibrationEvaluation.unity
-  playerPath: D:/CGVLab(D)/DepthPerceptionTraining/BuildAPP/20221201_v1.1.1(evaluation)/DPTraining_v1.1.apk
+  - Assets/Scenes/DPTrainingSystem.unity
+  playerPath: D:/CGVLab(D)/DepthPerceptionTraining/BuildAPP/20221206_v1.2.0/DPTraining_v1.2.0.apk

@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.Debbie.DPTraining_Evaluation",
+  "applicationId": "com.Debbie.DPTraining",
   "variantName": "release",
   "elements": [
     {
@@ -12,7 +12,7 @@
       "filters": [],
       "properties": [],
       "versionCode": 1,
-      "versionName": "1.1.1",
+      "versionName": "1.2.0",
       "enabled": true,
       "outputFile": "launcher-release.apk"
     }

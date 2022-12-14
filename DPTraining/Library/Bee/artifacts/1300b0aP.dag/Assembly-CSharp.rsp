@@ -447,6 +447,7 @@
 "Assets/Oculus/SampleFramework/Usage/StartScene/Scripts/StartMenu.cs"
 "Assets/Scripts/CalibrationEvaluation.cs"
 "Assets/Scripts/CalibrationManager.cs"
+"Assets/Scripts/SceneBuilding.cs"
 "Assets/Scripts/SDKFunctionTest.cs"
 "Assets/Scripts/SystemManager.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"

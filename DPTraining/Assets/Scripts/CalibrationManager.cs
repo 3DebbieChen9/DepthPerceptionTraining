@@ -20,7 +20,7 @@ public class CalibrationManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
     }
 
     // Update is called once per frame
@@ -126,11 +126,13 @@ public class CalibrationManager : MonoBehaviour
 
     public void calibrateArmLength() {
         if (this.armLengthMarkerStatue == 2) {
-            this.systemManager.changeSystemMode(SystemManager.SystemMode.Testing);
-            this.systemManager.consoleTitle.text = "Testing";
+            this.systemManager.changeSystemMode(SystemManager.SystemMode.Training);
+            this.systemManager.consoleTitle.text = "Training";
             this.systemManager.consoleText.text = "-";
             this.systemManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
+            // this.systemManager.sceneBuilding.BuildTheScene();
             this.clearCalibrationMarkers();
+            this.systemManager.changeScene("Training");
         }
         else {
             this.putArmLengthMarker();

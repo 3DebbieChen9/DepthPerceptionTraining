@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SystemManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class SystemManager : MonoBehaviour
         Training,
     }
     
+    [SerializeField]
+    public static SystemManager Instance;
+
     [SerializeField]
     public SystemMode cur_systemMode = SystemMode.Calibration_Size;
 
@@ -40,6 +44,17 @@ public class SystemManager : MonoBehaviour
     public TextMesh consoleText;
     
 
+    private void Awake() 
+    {
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else {
+            Destroy(this.gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +83,7 @@ public class SystemManager : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch)) {
             this.calibrationManager.CalibrationInitialize();
         } 
+
     }
 
     public void systemInitialize() {
@@ -81,5 +97,11 @@ public class SystemManager : MonoBehaviour
 
     public void changeSystemMode(SystemMode curMode) {
         this.cur_systemMode = curMode;
+    }
+
+    public void changeScene(string sceneName)
+    {
+        Debug.Log("Change Scene to " + sceneName);
+        SceneManager.LoadScene(sceneName);
     }
 }
