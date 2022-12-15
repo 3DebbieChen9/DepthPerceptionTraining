@@ -77,7 +77,7 @@ public class CalibrationManager : MonoBehaviour
             this.armLengthMarkers[1].SetActive(true);
             this.armLengthMarkerStatue = 1;
 
-            this.systemManager.consoleText.text = "Right Arm Length" + this.systemManager.avgArmLength.ToString();
+            this.systemManager.consoleText.text = "Right Arm Length = " + this.systemManager.avgArmLength.ToString();
         }
         else if (this.armLengthMarkerStatue == 1) { // 0: not started, 1: R-hand done, 2: L-hand done
             this.armLengthMarkers[1].SetActive(false);
@@ -91,7 +91,7 @@ public class CalibrationManager : MonoBehaviour
             this.armLengthMarkers[2].SetActive(true);
             this.armLengthMarkerStatue = 2;
 
-            this.systemManager.consoleText.text = "Average Arm Length" + this.systemManager.avgArmLength.ToString();
+            this.systemManager.consoleText.text = "Average Arm Length = " + this.systemManager.avgArmLength.ToString();
             print("Average Arm Length = " + this.systemManager.avgArmLength.ToString());
         }      
     }
@@ -132,6 +132,7 @@ public class CalibrationManager : MonoBehaviour
             this.systemManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
             // this.systemManager.sceneBuilding.BuildTheScene();
             this.clearCalibrationMarkers();
+            // this.systemManager.switchControllerToGloves();
             this.systemManager.changeScene("Training");
         }
         else {
@@ -154,6 +155,23 @@ public class CalibrationManager : MonoBehaviour
         this.systemManager.sceneOrigin.transform.position = centroid;
         this.systemManager.sceneOrigin.transform.LookAt(lookTarget);
         this.systemManager.sceneOrigin.SetActive(true);
+        this.calculateSceneVectors();
     }
     
+    public void calculateSceneVectors() {
+        Vector3 horizontalMidPoint = (this.distanceMarkers[0].transform.position + this.distanceMarkers[1].transform.position) / 2;
+        Vector3 verticalMidPoint = (this.distanceMarkers[0].transform.position + this.distanceMarkers[3].transform.position) / 2;
+        this.systemManager.sceneHorizontalDirection = (this.systemManager.sceneOrigin.transform.position - verticalMidPoint).normalized;
+        this.systemManager.sceneVerticalDirection = (this.systemManager.sceneOrigin.transform.position - horizontalMidPoint).normalized;
+
+        this.systemManager.sceneLeftBottomCorner = this.systemManager.sceneOrigin.transform.position 
+                                    - this.systemManager.sceneHorizontalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor
+                                    + this.systemManager.sceneVerticalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor;
+        this.systemManager.sceneLeftUpperCorner = this.systemManager.sceneOrigin.transform.position
+                                    - this.systemManager.sceneHorizontalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor
+                                    - this.systemManager.sceneVerticalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor;
+        this.systemManager.sceneRightUpperCorner = this.systemManager.sceneOrigin.transform.position
+                                    + this.systemManager.sceneHorizontalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor
+                                    - this.systemManager.sceneVerticalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor;
+    }
 }

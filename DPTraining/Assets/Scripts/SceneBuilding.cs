@@ -42,7 +42,7 @@ public class SceneBuilding : MonoBehaviour
         this.boxingSceneTransform();
         this.boxingSceneResize();
         this.boxingSceneTransform();
-        this.gym.SetActive(true);
+        // this.gym.SetActive(true);
         this.drawBoundsLines();
         
     }
@@ -73,29 +73,15 @@ public class SceneBuilding : MonoBehaviour
             VerticalDirection = O -> Hmp
             HorizontalDirection = Vmp -> O
         **/
-        Vector3 horizontalMidPoint = (this.systemManager.calibrationManager.distanceMarkers[0].transform.position + this.systemManager.calibrationManager.distanceMarkers[1].transform.position) / 2;
-        Vector3 verticalMidPoint = (this.systemManager.calibrationManager.distanceMarkers[0].transform.position + this.systemManager.calibrationManager.distanceMarkers[3].transform.position) / 2;
-        Vector3 horizontalDirection = (this.systemManager.sceneOrigin.transform.position - verticalMidPoint).normalized;
-        Vector3 verticalDirection = (this.systemManager.sceneOrigin.transform.position - horizontalMidPoint).normalized;
-
-        Vector3 leftBottomCorner = this.systemManager.sceneOrigin.transform.position 
-                                    - horizontalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor
-                                    + verticalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor;
-        Vector3 leftUpperCorner = this.systemManager.sceneOrigin.transform.position
-                                    - horizontalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor
-                                    - verticalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor;
-        Vector3 rightUpperCorner = this.systemManager.sceneOrigin.transform.position
-                                    + horizontalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor
-                                    - verticalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor;
         
         for(int i = 0; i < 2; i++) {
-            this.verticalLines[i].SetPosition(0, leftUpperCorner + horizontalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
-            this.verticalLines[i].SetPosition(1, leftBottomCorner + horizontalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
+            this.verticalLines[i].SetPosition(0, this.systemManager.sceneLeftUpperCorner + this.systemManager.sceneHorizontalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
+            this.verticalLines[i].SetPosition(1, this.systemManager.sceneLeftBottomCorner + this.systemManager.sceneHorizontalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
             this.verticalLines[i].gameObject.SetActive(true);
         }
         for(int i = 0; i < 2; i++) {
-            this.horizontalLines[i].SetPosition(0, leftUpperCorner + verticalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
-            this.horizontalLines[i].SetPosition(1, rightUpperCorner + verticalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
+            this.horizontalLines[i].SetPosition(0, this.systemManager.sceneLeftUpperCorner + this.systemManager.sceneVerticalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
+            this.horizontalLines[i].SetPosition(1, this.systemManager.sceneRightUpperCorner + this.systemManager.sceneVerticalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
             this.horizontalLines[i].gameObject.SetActive(true);
         }
     }

@@ -37,6 +37,17 @@ public class SystemManager : MonoBehaviour
 
     [SerializeField]
     public GameObject sceneOrigin;
+    [SerializeField]
+    public Vector3 sceneHorizontalDirection;
+    [SerializeField]
+    public Vector3 sceneVerticalDirection;
+    [SerializeField]
+    public Vector3 sceneLeftBottomCorner;
+    [SerializeField]
+    public Vector3 sceneLeftUpperCorner;
+    [SerializeField]
+    public Vector3 sceneRightUpperCorner;
+
 
     [SerializeField]
     public TextMesh consoleTitle;
@@ -48,7 +59,9 @@ public class SystemManager : MonoBehaviour
     {
         if (Instance == null) {
             Instance = this;
+            // this.OVRCameraRig = GameObject.Find("OVRCameraRig");
             DontDestroyOnLoad(this.gameObject);
+            // DontDestroyOnLoad(this.OVRCameraRig);
         }
         else {
             Destroy(this.gameObject);
@@ -58,12 +71,21 @@ public class SystemManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.systemInitialize();
+        // this.systemInitialize();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (this.OVRCameraRig == null) {
+            this.OVRCameraRig = GameObject.Find("OVRCameraRig");
+        }
+
+        if (this.sceneBuilding == null && (this.cur_systemMode == SystemMode.Training || this.cur_systemMode == SystemMode.Testing)) {
+            this.sceneBuilding = GameObject.Find("SceneBuilding").GetComponent<SceneBuilding>();
+        }
+
+
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
             if (this.cur_systemMode == SystemMode.Calibration_Size) {
                 this.consoleTitle.text = "Calibration: Distance";
@@ -80,9 +102,16 @@ public class SystemManager : MonoBehaviour
             this.passthroughSwitch();
         }
 
-        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch)) {
-            this.calibrationManager.CalibrationInitialize();
-        } 
+        // if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch)) {
+        //     // if(this.cur_systemMode == SystemMode.Calibration_Size || this.cur_systemMode == SystemMode.Calibration_ArmLength) {
+        //     //     this.calibrationManager.CalibrationInitialize();
+        //     // }
+        //     // else if (this.cur_systemMode == SystemMode.Training || this.cur_systemMode == SystemMode.Testing) {
+        //     //     this.sceneBuilding.SceneInitialization();
+        //     // }
+            
+        //     this.changeScene("Calibration");
+        // } 
 
     }
 
