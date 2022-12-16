@@ -59,9 +59,7 @@ public class SystemManager : MonoBehaviour
     {
         if (Instance == null) {
             Instance = this;
-            // this.OVRCameraRig = GameObject.Find("OVRCameraRig");
             DontDestroyOnLoad(this.gameObject);
-            // DontDestroyOnLoad(this.OVRCameraRig);
         }
         else {
             Destroy(this.gameObject);
@@ -81,10 +79,19 @@ public class SystemManager : MonoBehaviour
             this.OVRCameraRig = GameObject.Find("OVRCameraRig");
         }
 
+        if (this.calibrationManager == null && (this.cur_systemMode == SystemMode.Calibration_Size || this.cur_systemMode == SystemMode.Calibration_ArmLength)) {
+            this.calibrationManager = GameObject.Find("CalibrationManager").GetComponent<CalibrationManager>();
+        }
+
         if (this.sceneBuilding == null && (this.cur_systemMode == SystemMode.Training || this.cur_systemMode == SystemMode.Testing)) {
             this.sceneBuilding = GameObject.Find("SceneBuilding").GetComponent<SceneBuilding>();
         }
 
+        // if (this.OVRCameraRig != null && (this.cur_systemMode == SystemMode.Training || this.cur_systemMode == SystemMode.Testing) && this.sceneBuilding != null) {
+        //     if (!this.sceneBuilding.coach.activeSelf) {
+        //         this.sceneBuilding.putCoach();
+        //     }
+        // }
 
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
             if (this.cur_systemMode == SystemMode.Calibration_Size) {

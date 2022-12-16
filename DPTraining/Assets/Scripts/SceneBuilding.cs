@@ -10,6 +10,8 @@ public class SceneBuilding : MonoBehaviour
     [SerializeField]
     public GameObject gym;
     [SerializeField]
+    public GameObject coach;
+    [SerializeField]
     private LineRenderer[] verticalLines;
     [SerializeField]
     private LineRenderer[] horizontalLines;
@@ -42,23 +44,29 @@ public class SceneBuilding : MonoBehaviour
         this.boxingSceneTransform();
         this.boxingSceneResize();
         this.boxingSceneTransform();
-        // this.gym.SetActive(true);
+        this.gym.SetActive(true);
+
         this.drawBoundsLines();
-        
+        this.systemManager.sceneOrigin.SetActive(false);
+
+        this.coachTransform();
+        this.coach.SetActive(true);
     }
 
     void boxingSceneResize() {
-        this.gym.transform.localScale = new Vector3 ( this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor,
-                                                      this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor,
-                                                    //   this.gym.transform.localScale.y, 
-                                                      this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
+        // Prefab Scale: 1,1,1 -> Ring Size = 4m x 4m (Gernal Size)
+
+        // float boxingRingSize = this.systemManager.referenceDistance;
+        float boxingRingSize = 4.0f / 4.0f;
+        this.gym.transform.localScale = this.gym.transform.localScale * boxingRingSize * this.systemManager.scaleTransferFactor;
     }
 
     void boxingSceneTransform() {
-        this.gym.transform.position = this.systemManager.sceneOrigin.transform.position;
-        // this.gym.transform.position = new Vector3 (this.systemManager.sceneOrigin.transform.position.x,
-        //                                             this.systemManager.sceneOrigin.transform.position.y - 0.347f,
-        //                                             this.systemManager.sceneOrigin.transform.position.z);
+        float boxingRingSize = 4.0f / 4.0f;
+        float y_shift = 0.808f * this.systemManager.scaleTransferFactor * boxingRingSize;
+        this.gym.transform.position = new Vector3 (this.systemManager.sceneOrigin.transform.position.x,
+                                                    this.systemManager.sceneOrigin.transform.position.y - y_shift,
+                                                    this.systemManager.sceneOrigin.transform.position.z);
         this.gym.transform.rotation = this.systemManager.sceneOrigin.transform.rotation;
     }
 
@@ -75,14 +83,37 @@ public class SceneBuilding : MonoBehaviour
         **/
         
         for(int i = 0; i < 2; i++) {
-            this.verticalLines[i].SetPosition(0, this.systemManager.sceneLeftUpperCorner + this.systemManager.sceneHorizontalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
-            this.verticalLines[i].SetPosition(1, this.systemManager.sceneLeftBottomCorner + this.systemManager.sceneHorizontalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
+            Vector3 point1 = this.systemManager.sceneLeftUpperCorner + this.systemManager.sceneHorizontalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor;
+            point1 = new Vector3(point1.x, point1.y - 0.01f, point1.z);
+            Vector3 point2 = this.systemManager.sceneLeftBottomCorner + this.systemManager.sceneHorizontalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor;
+            point2 = new Vector3(point2.x, point2.y - 0.01f, point2.z);
+            this.verticalLines[i].SetPosition(0, point1);
+            this.verticalLines[i].SetPosition(1, point2);
             this.verticalLines[i].gameObject.SetActive(true);
         }
         for(int i = 0; i < 2; i++) {
-            this.horizontalLines[i].SetPosition(0, this.systemManager.sceneLeftUpperCorner + this.systemManager.sceneVerticalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
-            this.horizontalLines[i].SetPosition(1, this.systemManager.sceneRightUpperCorner + this.systemManager.sceneVerticalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
+            Vector3 point1 = this.systemManager.sceneLeftUpperCorner + this.systemManager.sceneVerticalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor;
+            point1 = new Vector3(point1.x, point1.y - 0.01f, point1.z);
+            Vector3 point2 = this.systemManager.sceneRightUpperCorner + this.systemManager.sceneVerticalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor;
+            point2 = new Vector3(point2.x, point2.y - 0.01f, point2.z);
+            this.horizontalLines[i].SetPosition(0, point1);
+            this.horizontalLines[i].SetPosition(1, point2);
             this.horizontalLines[i].gameObject.SetActive(true);
         }
+    }
+
+    void coachTransform() {
+        Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position - this.systemManager.sceneVerticalDirection * 2 * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor;
+        this.coach.transform.position = new Vector3 (tmpPoint.x,
+                                                    this.gym.transform.position.y + 0.77f,
+                                                    tmpPoint.z);
+
+        // Vector3 lookTarget = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
+        // this.coach.transform.LookAt(lookTarget);
+
+        Vector3 lookTarget = this.systemManager.sceneOrigin.transform.position;
+        this.coach.transform.LookAt(lookTarget);
+
+        // this.coach.transform.rotation = this.systemManager.sceneOrigin.transform.rotation;
     }
 }

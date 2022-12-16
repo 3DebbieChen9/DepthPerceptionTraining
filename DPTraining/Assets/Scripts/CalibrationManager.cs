@@ -43,7 +43,7 @@ public class CalibrationManager : MonoBehaviour
         if (this.distanceMarkerCount < this.distanceMarkers.Length) {
             this.distanceMarkers[this.distanceMarkerCount].SetActive(true);
             this.distanceMarkers[this.distanceMarkerCount].transform.position = new Vector3(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position.x, 
-                                                                                            this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().trackerAnchor.position.y, 
+                                                                                            this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().trackerAnchor.position.y + 0.01f, 
                                                                                             this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position.z);
             if (this.distanceMarkerCount == this.distanceMarkers.Length-1) {
                 this.systemManager.avgDistance = this.calculateAvgDistance();
@@ -119,6 +119,7 @@ public class CalibrationManager : MonoBehaviour
             this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_ArmLength);
             this.setSceneOrigin();
             this.systemManager.scaleTransferFactor = this.systemManager.avgDistance / systemManager.referenceDistance;
+            // this.systemManager.scaleTransferFactor = 1.002f; /// Debug
             this.systemManager.consoleTitle.text = "Calibration: Arm Length";
             this.systemManager.consoleText.text = "-";
         }
@@ -130,9 +131,7 @@ public class CalibrationManager : MonoBehaviour
             this.systemManager.consoleTitle.text = "Training";
             this.systemManager.consoleText.text = "-";
             this.systemManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
-            // this.systemManager.sceneBuilding.BuildTheScene();
             this.clearCalibrationMarkers();
-            // this.systemManager.switchControllerToGloves();
             this.systemManager.changeScene("Training");
         }
         else {

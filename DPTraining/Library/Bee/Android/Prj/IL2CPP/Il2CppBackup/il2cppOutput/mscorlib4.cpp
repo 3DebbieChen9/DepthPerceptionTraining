@@ -11847,6 +11847,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Math_Cos_m03188A7A537364912249402E868F
 {
 	return cos(___d0);
 }
+// System.Double System.Math::Exp(System.Double)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Math_Exp_mD4B23863C2C53306E6562BA6BEFEBEEA7C8821A1 (double ___d0, const RuntimeMethod* method) 
+{
+	return exp(___d0);
+}
 // System.Double System.Math::Floor(System.Double)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Math_Floor_mDFB3752DF269EEF4B75FCFAD048CF1158C286FAF (double ___d0, const RuntimeMethod* method) 
 {
