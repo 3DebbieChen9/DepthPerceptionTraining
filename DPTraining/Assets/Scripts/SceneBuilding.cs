@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,19 @@ public class SceneBuilding : MonoBehaviour
     public SystemManager systemManager;
 
     [SerializeField]
+    public bool isOnRing = false;
+    [SerializeField]
     public GameObject gym;
     [SerializeField]
+    public GameObject boxingRing;
+    [SerializeField]
+    public GameObject movablePlaneOnFloor;
+    [SerializeField]
+    public GameObject movablePlaneOnRing;
+    
+    [SerializeField]
     public GameObject coach;
+    
     [SerializeField]
     private LineRenderer[] verticalLines;
     [SerializeField]
@@ -20,6 +31,7 @@ public class SceneBuilding : MonoBehaviour
     void Start()
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
+        this.SceneInitialization();
         this.BuildTheScene();
     }
 
@@ -42,32 +54,31 @@ public class SceneBuilding : MonoBehaviour
     public void BuildTheScene() {
         
         this.boxingSceneTransform();
-        this.boxingSceneResize();
-        this.boxingSceneTransform();
         this.gym.SetActive(true);
+        this.boxingRing.SetActive(this.isOnRing);
+        this.movablePlaneOnRing.SetActive(this.isOnRing);
+        this.movablePlaneOnFloor.SetActive(!this.isOnRing);
 
-        this.drawBoundsLines();
+        // this.drawBoundsLines();
         this.systemManager.sceneOrigin.SetActive(false);
 
         this.coachTransform();
         this.coach.SetActive(true);
     }
 
-    void boxingSceneResize() {
-        // Prefab Scale: 1,1,1 -> Ring Size = 4m x 4m (Gernal Size)
-
-        // float boxingRingSize = this.systemManager.referenceDistance;
-        float boxingRingSize = 4.0f / 4.0f;
-        this.gym.transform.localScale = this.gym.transform.localScale * boxingRingSize * this.systemManager.scaleTransferFactor;
-    }
-
     void boxingSceneTransform() {
-        float boxingRingSize = 4.0f / 4.0f;
-        float y_shift = 0.808f * this.systemManager.scaleTransferFactor * boxingRingSize;
+        float y_shift = 1.0f * Convert.ToInt32(this.isOnRing) + 0.01f;
         this.gym.transform.position = new Vector3 (this.systemManager.sceneOrigin.transform.position.x,
                                                     this.systemManager.sceneOrigin.transform.position.y - y_shift,
                                                     this.systemManager.sceneOrigin.transform.position.z);
         this.gym.transform.rotation = this.systemManager.sceneOrigin.transform.rotation;
+
+        this.movablePlaneOnFloor.transform.localScale = new Vector3 (this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor,
+                                                            0.001f,
+                                                            this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
+        this.movablePlaneOnRing.transform.localScale = new Vector3 (this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor,
+                                                            0.001f,
+                                                            this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
     }
 
     void drawBoundsLines() {
@@ -105,15 +116,10 @@ public class SceneBuilding : MonoBehaviour
     void coachTransform() {
         Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position - this.systemManager.sceneVerticalDirection * 2 * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor;
         this.coach.transform.position = new Vector3 (tmpPoint.x,
-                                                    this.gym.transform.position.y + 0.77f,
+                                                    this.gym.transform.position.y + 1.0f * Convert.ToInt32(this.isOnRing),
                                                     tmpPoint.z);
-
-        // Vector3 lookTarget = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
-        // this.coach.transform.LookAt(lookTarget);
 
         Vector3 lookTarget = this.systemManager.sceneOrigin.transform.position;
         this.coach.transform.LookAt(lookTarget);
-
-        // this.coach.transform.rotation = this.systemManager.sceneOrigin.transform.rotation;
     }
 }

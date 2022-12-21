@@ -385,7 +385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &148156104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -687,7 +687,9 @@ MonoBehaviour:
   cur_systemMode: 0
   OVRCameraRig: {fileID: 876558772}
   calibrationManager: {fileID: 1999965299}
-  sceneBuilding: {fileID: 0}
+  modeSelectionManager: {fileID: 0}
+  sceneBuildingManager: {fileID: 0}
+  coachMotionManager: {fileID: 0}
   scaleTransferFactor: 1
   referenceDistance: 2
   avgDistance: 0
@@ -1677,6 +1679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   systemManager: {fileID: 0}
+  useRealWorldReference: 0
   distanceMarkerCount: 0
   distanceMarkers:
   - {fileID: 1690511976}

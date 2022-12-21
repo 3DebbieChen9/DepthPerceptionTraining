@@ -8,6 +8,9 @@ public class CalibrationManager : MonoBehaviour
     public SystemManager systemManager;
     
     [SerializeField]
+    public bool useRealWorldReference = false;
+
+    [SerializeField]
     private int distanceMarkerCount = 0;
     [SerializeField]
     public GameObject[] distanceMarkers;
@@ -21,6 +24,7 @@ public class CalibrationManager : MonoBehaviour
     void Start()
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
+        this.CalibrationInitialize();
     }
 
     // Update is called once per frame
@@ -29,7 +33,7 @@ public class CalibrationManager : MonoBehaviour
         
     }
 
-    private void clearCalibrationMarkers() {
+    public void clearCalibrationMarkers() {
         foreach (GameObject marker in this.distanceMarkers) {
             marker.SetActive(false);
         }
@@ -106,7 +110,7 @@ public class CalibrationManager : MonoBehaviour
         foreach (GameObject marker in this.armLengthMarkers) {
             marker.SetActive(false);
         }
-        this.systemManager.sceneOrigin.SetActive(false);
+        this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
         this.systemManager.consoleTitle.text = "Initialize";
         this.systemManager.consoleText.text = "-";
     }
@@ -116,11 +120,15 @@ public class CalibrationManager : MonoBehaviour
             this.putDistanceMarker();
         }
         else {
-            this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_ArmLength);
+            this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_Noitom);
             this.setSceneOrigin();
-            this.systemManager.scaleTransferFactor = this.systemManager.avgDistance / systemManager.referenceDistance;
-            // this.systemManager.scaleTransferFactor = 1.002f; /// Debug
-            this.systemManager.consoleTitle.text = "Calibration: Arm Length";
+            if (this.useRealWorldReference) {
+                this.systemManager.scaleTransferFactor = this.systemManager.avgDistance / systemManager.referenceDistance;
+            }
+            else {
+                this.systemManager.scaleTransferFactor = 1.0f;
+            }
+            this.systemManager.consoleTitle.text = "Calibration: Noitom";
             this.systemManager.consoleText.text = "-";
         }
     }
@@ -128,11 +136,11 @@ public class CalibrationManager : MonoBehaviour
     public void calibrateArmLength() {
         if (this.armLengthMarkerStatue == 2) {
             this.systemManager.changeSystemMode(SystemManager.SystemMode.Training);
-            this.systemManager.consoleTitle.text = "Training";
-            this.systemManager.consoleText.text = "-";
+            // this.systemManager.consoleTitle.text = "Training";
+            // this.systemManager.consoleText.text = "-";
             this.systemManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
             this.clearCalibrationMarkers();
-            this.systemManager.changeScene("Training");
+            // this.systemManager.changeScene("Training");
         }
         else {
             this.putArmLengthMarker();
@@ -153,7 +161,7 @@ public class CalibrationManager : MonoBehaviour
 
         this.systemManager.sceneOrigin.transform.position = centroid;
         this.systemManager.sceneOrigin.transform.LookAt(lookTarget);
-        this.systemManager.sceneOrigin.SetActive(true);
+        this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = true;
         this.calculateSceneVectors();
     }
     
@@ -173,4 +181,5 @@ public class CalibrationManager : MonoBehaviour
                                     + this.systemManager.sceneHorizontalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor
                                     - this.systemManager.sceneVerticalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor;
     }
+
 }

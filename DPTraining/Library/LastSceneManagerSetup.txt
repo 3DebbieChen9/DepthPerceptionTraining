@@ -3,11 +3,15 @@ sceneSetups:
   isLoaded: 1
   isActive: 1
   isSubScene: 0
+- path: Assets/Scenes/ModeSelection.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
 - path: Assets/Scenes/Training.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/BoxingSceneTesting.unity
+- path: Assets/Scenes/BoxingSceneTesting_2.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0

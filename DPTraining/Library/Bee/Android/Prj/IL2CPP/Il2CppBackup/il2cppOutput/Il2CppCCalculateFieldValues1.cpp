@@ -24541,14 +24541,16 @@ struct CalibrationManager_t6F0E141FEBE008D3EAF2774985049EEA3F652C81  : public Mo
 {
 	// SystemManager CalibrationManager::systemManager
 	SystemManager_t43A586A7B2EC0AE94FE039E430BDFEEEB40EA9C7* ___systemManager_4;
+	// System.Boolean CalibrationManager::useRealWorldReference
+	bool ___useRealWorldReference_5;
 	// System.Int32 CalibrationManager::distanceMarkerCount
-	int32_t ___distanceMarkerCount_5;
+	int32_t ___distanceMarkerCount_6;
 	// UnityEngine.GameObject[] CalibrationManager::distanceMarkers
-	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___distanceMarkers_6;
+	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___distanceMarkers_7;
 	// System.Int32 CalibrationManager::armLengthMarkerStatue
-	int32_t ___armLengthMarkerStatue_7;
+	int32_t ___armLengthMarkerStatue_8;
 	// UnityEngine.GameObject[] CalibrationManager::armLengthMarkers
-	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___armLengthMarkers_8;
+	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___armLengthMarkers_9;
 };
 
 // Oculus.Platform.CallbackRunner
@@ -29509,14 +29511,22 @@ struct SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C  : public MonoBeh
 {
 	// SystemManager SceneBuilding::systemManager
 	SystemManager_t43A586A7B2EC0AE94FE039E430BDFEEEB40EA9C7* ___systemManager_4;
+	// System.Boolean SceneBuilding::isOnRing
+	bool ___isOnRing_5;
 	// UnityEngine.GameObject SceneBuilding::gym
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___gym_5;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___gym_6;
+	// UnityEngine.GameObject SceneBuilding::boxingRing
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___boxingRing_7;
+	// UnityEngine.GameObject SceneBuilding::movablePlaneOnFloor
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___movablePlaneOnFloor_8;
+	// UnityEngine.GameObject SceneBuilding::movablePlaneOnRing
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___movablePlaneOnRing_9;
 	// UnityEngine.GameObject SceneBuilding::coach
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___coach_6;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___coach_10;
 	// UnityEngine.LineRenderer[] SceneBuilding::verticalLines
-	LineRendererU5BU5D_t5AA0E11EC99A18A11BCCCABDF088C854E50D394A* ___verticalLines_7;
+	LineRendererU5BU5D_t5AA0E11EC99A18A11BCCCABDF088C854E50D394A* ___verticalLines_11;
 	// UnityEngine.LineRenderer[] SceneBuilding::horizontalLines
-	LineRendererU5BU5D_t5AA0E11EC99A18A11BCCCABDF088C854E50D394A* ___horizontalLines_8;
+	LineRendererU5BU5D_t5AA0E11EC99A18A11BCCCABDF088C854E50D394A* ___horizontalLines_12;
 };
 
 // SceneSampler
@@ -39854,12 +39864,12 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5727[3] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5728[5] = 
 {
 	static_cast<int32_t>(offsetof(CalibrationEvaluation_t131CACCEA760BB084126CF33561424E84DAB5751, ___systemManager_4)),static_cast<int32_t>(offsetof(CalibrationEvaluation_t131CACCEA760BB084126CF33561424E84DAB5751, ___calibrationManager_5)),static_cast<int32_t>(offsetof(CalibrationEvaluation_t131CACCEA760BB084126CF33561424E84DAB5751, ___plane_6)),static_cast<int32_t>(offsetof(CalibrationEvaluation_t131CACCEA760BB084126CF33561424E84DAB5751, ___verticalLines_7)),static_cast<int32_t>(offsetof(CalibrationEvaluation_t131CACCEA760BB084126CF33561424E84DAB5751, ___horizontalLines_8)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5729[5] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5729[6] = 
 {
-	static_cast<int32_t>(offsetof(CalibrationManager_t6F0E141FEBE008D3EAF2774985049EEA3F652C81, ___systemManager_4)),static_cast<int32_t>(offsetof(CalibrationManager_t6F0E141FEBE008D3EAF2774985049EEA3F652C81, ___distanceMarkerCount_5)),static_cast<int32_t>(offsetof(CalibrationManager_t6F0E141FEBE008D3EAF2774985049EEA3F652C81, ___distanceMarkers_6)),static_cast<int32_t>(offsetof(CalibrationManager_t6F0E141FEBE008D3EAF2774985049EEA3F652C81, ___armLengthMarkerStatue_7)),static_cast<int32_t>(offsetof(CalibrationManager_t6F0E141FEBE008D3EAF2774985049EEA3F652C81, ___armLengthMarkers_8)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5730[5] = 
+	static_cast<int32_t>(offsetof(CalibrationManager_t6F0E141FEBE008D3EAF2774985049EEA3F652C81, ___systemManager_4)),static_cast<int32_t>(offsetof(CalibrationManager_t6F0E141FEBE008D3EAF2774985049EEA3F652C81, ___useRealWorldReference_5)),static_cast<int32_t>(offsetof(CalibrationManager_t6F0E141FEBE008D3EAF2774985049EEA3F652C81, ___distanceMarkerCount_6)),static_cast<int32_t>(offsetof(CalibrationManager_t6F0E141FEBE008D3EAF2774985049EEA3F652C81, ___distanceMarkers_7)),static_cast<int32_t>(offsetof(CalibrationManager_t6F0E141FEBE008D3EAF2774985049EEA3F652C81, ___armLengthMarkerStatue_8)),static_cast<int32_t>(offsetof(CalibrationManager_t6F0E141FEBE008D3EAF2774985049EEA3F652C81, ___armLengthMarkers_9)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5730[9] = 
 {
-	static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___systemManager_4)),static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___gym_5)),static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___coach_6)),static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___verticalLines_7)),static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___horizontalLines_8)),};
+	static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___systemManager_4)),static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___isOnRing_5)),static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___gym_6)),static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___boxingRing_7)),static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___movablePlaneOnFloor_8)),static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___movablePlaneOnRing_9)),static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___coach_10)),static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___verticalLines_11)),static_cast<int32_t>(offsetof(SceneBuilding_tE3CC0D1FF9C0CB2D725B3EF8566CAC4F28BF904C, ___horizontalLines_12)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5731[4] = 
 {
 	static_cast<int32_t>(offsetof(SDKFunctionTest_t372D8B631D9B5105CE80603BB890382E891A3AE7, ____OVRCameraRig_4)),static_cast<int32_t>(offsetof(SDKFunctionTest_t372D8B631D9B5105CE80603BB890382E891A3AE7, ____plane_5)),static_cast<int32_t>(offsetof(SDKFunctionTest_t372D8B631D9B5105CE80603BB890382E891A3AE7, ____cube_6)),static_cast<int32_t>(offsetof(SDKFunctionTest_t372D8B631D9B5105CE80603BB890382E891A3AE7, ____conseolText_7)),};

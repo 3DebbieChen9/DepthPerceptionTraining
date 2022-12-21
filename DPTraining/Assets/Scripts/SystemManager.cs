@@ -7,7 +7,8 @@ public class SystemManager : MonoBehaviour
 {
     public enum SystemMode {
         Calibration_Size,
-        Calibration_ArmLength,
+        Calibration_Noitom,
+        Mode_Selection,
         Testing,
         Training,
     }
@@ -24,7 +25,11 @@ public class SystemManager : MonoBehaviour
     [SerializeField]
     public CalibrationManager calibrationManager;
     [SerializeField]
-    public SceneBuilding sceneBuilding;
+    public ModeSelection modeSelectionManager;
+    [SerializeField]
+    public SceneBuilding sceneBuildingManager;
+    [SerializeField]
+    public CoachMotionManager coachMotionManager;
 
     [SerializeField]
     public float scaleTransferFactor = 1.0f; // vr-distance / real-distance
@@ -69,7 +74,7 @@ public class SystemManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // this.systemInitialize();
+        
     }
 
     // Update is called once per frame
@@ -79,19 +84,21 @@ public class SystemManager : MonoBehaviour
             this.OVRCameraRig = GameObject.Find("OVRCameraRig");
         }
 
-        if (this.calibrationManager == null && (this.cur_systemMode == SystemMode.Calibration_Size || this.cur_systemMode == SystemMode.Calibration_ArmLength)) {
+        if (this.calibrationManager == null && this.cur_systemMode == SystemMode.Calibration_Size) {
             this.calibrationManager = GameObject.Find("CalibrationManager").GetComponent<CalibrationManager>();
         }
 
-        if (this.sceneBuilding == null && (this.cur_systemMode == SystemMode.Training || this.cur_systemMode == SystemMode.Testing)) {
-            this.sceneBuilding = GameObject.Find("SceneBuilding").GetComponent<SceneBuilding>();
+        if (this.modeSelectionManager == null && this.cur_systemMode == SystemMode.Mode_Selection) {
+            this.modeSelectionManager = GameObject.Find("ModeSelection").GetComponent<ModeSelection>();
         }
 
-        // if (this.OVRCameraRig != null && (this.cur_systemMode == SystemMode.Training || this.cur_systemMode == SystemMode.Testing) && this.sceneBuilding != null) {
-        //     if (!this.sceneBuilding.coach.activeSelf) {
-        //         this.sceneBuilding.putCoach();
-        //     }
-        // }
+        if (this.sceneBuildingManager == null && (this.cur_systemMode == SystemMode.Training || this.cur_systemMode == SystemMode.Testing)) {
+            this.sceneBuildingManager = GameObject.Find("SceneBuilding").GetComponent<SceneBuilding>();
+        }
+
+        if (this.coachMotionManager == null && (this.cur_systemMode == SystemMode.Training || this.cur_systemMode == SystemMode.Testing)) {
+            this.coachMotionManager = GameObject.Find("CoachMotionManager").GetComponent<CoachMotionManager>();
+        }
 
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
             if (this.cur_systemMode == SystemMode.Calibration_Size) {
@@ -99,9 +106,30 @@ public class SystemManager : MonoBehaviour
                 this.calibrationManager.calibrateSize();
                 
             }
-            else if (this.cur_systemMode == SystemMode.Calibration_ArmLength) {
-                this.consoleTitle.text = "Calibration: Arm Length";
-                this.calibrationManager.calibrateArmLength();
+            else if (this.cur_systemMode == SystemMode.Calibration_Noitom) {
+                this.calibrationManager.clearCalibrationMarkers();
+                this.consoleTitle.text = "Training";
+                this.consoleText.text = "-";
+                this.changeSystemMode(SystemMode.Mode_Selection);
+                this.changeScene("ModeSelection");
+                // this.consoleTitle.text = "Training";
+                // this.consoleText.text = "-";
+                // this.changeSystemMode(SystemMode.Training);
+                // this.changeScene("Training");
+            }
+            else if (this.cur_systemMode == SystemMode.Training) {
+                if (this.coachMotionManager.isMoving) {
+                    this.coachMotionManager.stopMoving();
+                }
+                else {
+                    this.coachMotionManager.startMoving();
+                }
+            }
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
+            if (this.cur_systemMode == SystemMode.Training) {
+                this.coachMotionManager.switchDirection();
             }
         }
 
@@ -109,22 +137,6 @@ public class SystemManager : MonoBehaviour
             this.passthroughSwitch();
         }
 
-        // if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch)) {
-        //     // if(this.cur_systemMode == SystemMode.Calibration_Size || this.cur_systemMode == SystemMode.Calibration_ArmLength) {
-        //     //     this.calibrationManager.CalibrationInitialize();
-        //     // }
-        //     // else if (this.cur_systemMode == SystemMode.Training || this.cur_systemMode == SystemMode.Testing) {
-        //     //     this.sceneBuilding.SceneInitialization();
-        //     // }
-            
-        //     this.changeScene("Calibration");
-        // } 
-
-    }
-
-    public void systemInitialize() {
-        this.calibrationManager.CalibrationInitialize();
-        this.sceneBuilding.SceneInitialization();
     }
 
     private void passthroughSwitch() {
