@@ -25,7 +25,7 @@ public class CalibrationEvaluation : MonoBehaviour
     void Update()
     {
         if(OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)){
-            if (this.systemManager.cur_systemMode == SystemManager.SystemMode.Testing) {
+            if (this.systemManager.curSystemMode == SystemManager.SystemMode.Testing) {
                 this.planeResize();
                 this.planeMove();
                 // _plane.SetActive(true);

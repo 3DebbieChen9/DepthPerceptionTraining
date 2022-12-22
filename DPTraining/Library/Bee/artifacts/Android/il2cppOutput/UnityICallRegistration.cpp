@@ -718,6 +718,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Animation_Rewind();
 		Register_UnityEngine_Animation_Rewind();
 
+		//System.Void UnityEngine.Animation::Stop()
+		void Register_UnityEngine_Animation_Stop();
+		Register_UnityEngine_Animation_Stop();
+
 		//UnityEngine.AnimationState UnityEngine.Animation::GetStateAtIndex(System.Int32)
 		void Register_UnityEngine_Animation_GetStateAtIndex();
 		Register_UnityEngine_Animation_GetStateAtIndex();
@@ -2365,6 +2369,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Int32 UnityEngine.GameObject::get_layer()
 		void Register_UnityEngine_GameObject_get_layer();
 		Register_UnityEngine_GameObject_get_layer();
+
+		//System.String UnityEngine.GameObject::get_tag()
+		void Register_UnityEngine_GameObject_get_tag();
+		Register_UnityEngine_GameObject_get_tag();
 
 		//System.Void UnityEngine.GameObject::GetComponentFastPath(System.Type,System.IntPtr)
 		void Register_UnityEngine_GameObject_GetComponentFastPath();

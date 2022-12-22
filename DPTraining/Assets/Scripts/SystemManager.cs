@@ -7,17 +7,18 @@ public class SystemManager : MonoBehaviour
 {
     public enum SystemMode {
         Calibration_Size,
-        Calibration_Noitom,
+        Calibration_MoCap,
         Mode_Selection,
         Testing,
-        Training,
+        Training_Traditional,
+        Training_Hint,
     }
     
     [SerializeField]
     public static SystemManager Instance;
 
     [SerializeField]
-    public SystemMode cur_systemMode = SystemMode.Calibration_Size;
+    public SystemMode curSystemMode = SystemMode.Calibration_Size;
 
     [SerializeField] 
     public GameObject OVRCameraRig;
@@ -30,6 +31,12 @@ public class SystemManager : MonoBehaviour
     public SceneBuilding sceneBuildingManager;
     [SerializeField]
     public CoachMotionManager coachMotionManager;
+
+    [SerializeField]
+    public bool isOnRing = false;
+    [SerializeField]
+    public SystemMode targetSystemMode = SystemMode.Training_Traditional;
+    private List<SystemMode> modeWithSceneBuildCoach = new List<SystemMode>();
 
     [SerializeField]
     public float scaleTransferFactor = 1.0f; // vr-distance / real-distance
@@ -74,7 +81,9 @@ public class SystemManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        modeWithSceneBuildCoach.Add(SystemMode.Testing);
+        modeWithSceneBuildCoach.Add(SystemMode.Training_Traditional);
+        modeWithSceneBuildCoach.Add(SystemMode.Training_Hint);
     }
 
     // Update is called once per frame
@@ -84,40 +93,36 @@ public class SystemManager : MonoBehaviour
             this.OVRCameraRig = GameObject.Find("OVRCameraRig");
         }
 
-        if (this.calibrationManager == null && this.cur_systemMode == SystemMode.Calibration_Size) {
+        if (this.calibrationManager == null && this.curSystemMode == SystemMode.Calibration_Size) {
             this.calibrationManager = GameObject.Find("CalibrationManager").GetComponent<CalibrationManager>();
         }
 
-        if (this.modeSelectionManager == null && this.cur_systemMode == SystemMode.Mode_Selection) {
+        if (this.modeSelectionManager == null && this.curSystemMode == SystemMode.Mode_Selection) {
             this.modeSelectionManager = GameObject.Find("ModeSelection").GetComponent<ModeSelection>();
         }
 
-        if (this.sceneBuildingManager == null && (this.cur_systemMode == SystemMode.Training || this.cur_systemMode == SystemMode.Testing)) {
+        if (this.sceneBuildingManager == null && this.modeWithSceneBuildCoach.Contains(this.curSystemMode)) {
             this.sceneBuildingManager = GameObject.Find("SceneBuilding").GetComponent<SceneBuilding>();
         }
 
-        if (this.coachMotionManager == null && (this.cur_systemMode == SystemMode.Training || this.cur_systemMode == SystemMode.Testing)) {
+        if (this.coachMotionManager == null && this.modeWithSceneBuildCoach.Contains(this.curSystemMode)) {
             this.coachMotionManager = GameObject.Find("CoachMotionManager").GetComponent<CoachMotionManager>();
         }
 
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
-            if (this.cur_systemMode == SystemMode.Calibration_Size) {
+            if (this.curSystemMode == SystemMode.Calibration_Size) {
                 this.consoleTitle.text = "Calibration: Distance";
                 this.calibrationManager.calibrateSize();
                 
             }
-            else if (this.cur_systemMode == SystemMode.Calibration_Noitom) {
+            else if (this.curSystemMode == SystemMode.Calibration_MoCap) {
                 this.calibrationManager.clearCalibrationMarkers();
-                this.consoleTitle.text = "Training";
-                this.consoleText.text = "-";
+                this.consoleTitle.text = "Mode Selection";
+                this.consoleText.text = "";
                 this.changeSystemMode(SystemMode.Mode_Selection);
                 this.changeScene("ModeSelection");
-                // this.consoleTitle.text = "Training";
-                // this.consoleText.text = "-";
-                // this.changeSystemMode(SystemMode.Training);
-                // this.changeScene("Training");
             }
-            else if (this.cur_systemMode == SystemMode.Training) {
+            else if (this.curSystemMode == SystemMode.Training_Traditional) {
                 if (this.coachMotionManager.isMoving) {
                     this.coachMotionManager.stopMoving();
                 }
@@ -128,7 +133,7 @@ public class SystemManager : MonoBehaviour
         }
 
         if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
-            if (this.cur_systemMode == SystemMode.Training) {
+            if (this.curSystemMode == SystemMode.Training_Traditional) {
                 this.coachMotionManager.switchDirection();
             }
         }
@@ -144,7 +149,7 @@ public class SystemManager : MonoBehaviour
     }
 
     public void changeSystemMode(SystemMode curMode) {
-        this.cur_systemMode = curMode;
+        this.curSystemMode = curMode;
     }
 
     public void changeScene(string sceneName)

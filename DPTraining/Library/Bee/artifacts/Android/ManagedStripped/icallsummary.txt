@@ -170,6 +170,7 @@ UnityEngine.AndroidJNIHelper::set_debug
 UnityEngine.Animation::PlayDefaultAnimation
 UnityEngine.Animation::GetStateCount
 UnityEngine.Animation::Rewind
+UnityEngine.Animation::Stop
 UnityEngine.Animation::GetStateAtIndex
 UnityEngine.AnimationCurve::Internal_Equals
 UnityEngine.AnimationCurve::Internal_Create
@@ -540,6 +541,7 @@ UnityEngine.GameObject::CompareTag
 UnityEngine.GameObject::get_activeInHierarchy
 UnityEngine.GameObject::get_activeSelf
 UnityEngine.GameObject::get_layer
+UnityEngine.GameObject::get_tag
 UnityEngine.GameObject::GetComponentFastPath
 UnityEngine.GameObject::Internal_CreateGameObject
 UnityEngine.GameObject::SendMessage

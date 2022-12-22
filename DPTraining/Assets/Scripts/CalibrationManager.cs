@@ -101,7 +101,7 @@ public class CalibrationManager : MonoBehaviour
     }
 
     public void CalibrationInitialize() {
-        this.systemManager.cur_systemMode = SystemManager.SystemMode.Calibration_Size;
+        this.systemManager.curSystemMode = SystemManager.SystemMode.Calibration_Size;
         this.distanceMarkerCount = 0;
         foreach (GameObject marker in this.distanceMarkers) {
             marker.SetActive(false);
@@ -120,7 +120,7 @@ public class CalibrationManager : MonoBehaviour
             this.putDistanceMarker();
         }
         else {
-            this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_Noitom);
+            this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_MoCap);
             this.setSceneOrigin();
             if (this.useRealWorldReference) {
                 this.systemManager.scaleTransferFactor = this.systemManager.avgDistance / systemManager.referenceDistance;
@@ -128,14 +128,14 @@ public class CalibrationManager : MonoBehaviour
             else {
                 this.systemManager.scaleTransferFactor = 1.0f;
             }
-            this.systemManager.consoleTitle.text = "Calibration: Noitom";
+            this.systemManager.consoleTitle.text = "Calibration: MoCap";
             this.systemManager.consoleText.text = "-";
         }
     }
 
     public void calibrateArmLength() {
         if (this.armLengthMarkerStatue == 2) {
-            this.systemManager.changeSystemMode(SystemManager.SystemMode.Training);
+            this.systemManager.changeSystemMode(SystemManager.SystemMode.Mode_Selection);
             // this.systemManager.consoleTitle.text = "Training";
             // this.systemManager.consoleText.text = "-";
             this.systemManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;

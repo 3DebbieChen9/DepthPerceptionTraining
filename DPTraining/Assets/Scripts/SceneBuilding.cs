@@ -9,8 +9,6 @@ public class SceneBuilding : MonoBehaviour
     public SystemManager systemManager;
 
     [SerializeField]
-    public bool isOnRing = false;
-    [SerializeField]
     public GameObject gym;
     [SerializeField]
     public GameObject boxingRing;
@@ -55,19 +53,19 @@ public class SceneBuilding : MonoBehaviour
         
         this.boxingSceneTransform();
         this.gym.SetActive(true);
-        this.boxingRing.SetActive(this.isOnRing);
-        this.movablePlaneOnRing.SetActive(this.isOnRing);
-        this.movablePlaneOnFloor.SetActive(!this.isOnRing);
+        this.boxingRing.SetActive(this.systemManager.isOnRing);
+        this.movablePlaneOnRing.SetActive(this.systemManager.isOnRing);
+        this.movablePlaneOnFloor.SetActive(!this.systemManager.isOnRing);
 
         // this.drawBoundsLines();
-        this.systemManager.sceneOrigin.SetActive(false);
+        this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
 
         this.coachTransform();
         this.coach.SetActive(true);
     }
 
     void boxingSceneTransform() {
-        float y_shift = 1.0f * Convert.ToInt32(this.isOnRing) + 0.01f;
+        float y_shift = 1.0f * Convert.ToInt32(this.systemManager.isOnRing) + 0.01f;
         this.gym.transform.position = new Vector3 (this.systemManager.sceneOrigin.transform.position.x,
                                                     this.systemManager.sceneOrigin.transform.position.y - y_shift,
                                                     this.systemManager.sceneOrigin.transform.position.z);
@@ -116,7 +114,7 @@ public class SceneBuilding : MonoBehaviour
     void coachTransform() {
         Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position - this.systemManager.sceneVerticalDirection * 2 * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor;
         this.coach.transform.position = new Vector3 (tmpPoint.x,
-                                                    this.gym.transform.position.y + 1.0f * Convert.ToInt32(this.isOnRing),
+                                                    this.gym.transform.position.y + 1.0f * Convert.ToInt32(this.systemManager.isOnRing),
                                                     tmpPoint.z);
 
         Vector3 lookTarget = this.systemManager.sceneOrigin.transform.position;
