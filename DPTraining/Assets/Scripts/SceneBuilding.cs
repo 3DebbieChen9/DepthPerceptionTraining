@@ -66,6 +66,8 @@ public class SceneBuilding : MonoBehaviour
 
     void boxingSceneTransform() {
         float y_shift = 1.0f * Convert.ToInt32(this.systemManager.isOnRing) + 0.01f;
+        // float y_shift = 1.0f * Convert.ToInt32(this.systemManager.isOnRing) - 0.02f;
+        // float y_shift = 1.0f * Convert.ToInt32(this.systemManager.isOnRing);
         this.gym.transform.position = new Vector3 (this.systemManager.sceneOrigin.transform.position.x,
                                                     this.systemManager.sceneOrigin.transform.position.y - y_shift,
                                                     this.systemManager.sceneOrigin.transform.position.z);

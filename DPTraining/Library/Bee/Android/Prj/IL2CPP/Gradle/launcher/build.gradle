@@ -21,7 +21,7 @@ android {
             abiFilters 'arm64-v8a'
         }
         versionCode 1
-        versionName '1.6.0'
+        versionName '1.6.1'
     }
 
     aaptOptions {

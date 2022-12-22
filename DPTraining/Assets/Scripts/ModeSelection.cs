@@ -19,8 +19,8 @@ public class ModeSelection : MonoBehaviour
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
         this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
-        this.selectionRoom.SetActive(true);
         this.selectionRoomTransform();
+        this.selectionRoom.SetActive(true);
     }
 
     // Update is called once per frame
@@ -33,12 +33,13 @@ public class ModeSelection : MonoBehaviour
         // Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position - this.systemManager.sceneVerticalDirection * 1.70f * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor;
         Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position;
         this.selectionRoom.transform.position = new Vector3 (tmpPoint.x,
-                                                    // this.systemManager.sceneOrigin.transform.position.y + 2.5f,
-                                                    this.systemManager.sceneOrigin.transform.position.y,
+                                                    this.systemManager.sceneOrigin.transform.position.y - 0.01f,
+                                                    // this.systemManager.sceneOrigin.transform.position.y + 0.02f,
+                                                    // this.systemManager.sceneOrigin.transform.position.y,
                                                     tmpPoint.z);
 
         Vector3 lookTarget = this.systemManager.sceneOrigin.transform.position;
-        this.selectionRoom.transform.LookAt(lookTarget);
+        // this.selectionRoom.transform.LookAt(lookTarget);
         // this.selectionRoom.transform.LookAt(lookTarget, Vector3.right);
     }
 
