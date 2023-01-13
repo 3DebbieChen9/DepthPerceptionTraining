@@ -67,7 +67,7 @@ public class SceneBuilding : MonoBehaviour
         // this.drawBoundsLines();
         this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
 
-        this.coachTransformInitial(1.5f);
+        this.coachTransformInitial(2.0f);
         this.coach.SetActive(true);
     }
 

@@ -80,6 +80,9 @@ public class TestingManager : MonoBehaviour
         this.timeTarget = 7.0f;
         
         this.unitNumText.text = "Press 'A' to start";
+        this.timerCircle.fillAmount = 0;
+        this.timerText.text = "";
+        this.reactionTimeText.text = "";
         this.curTestLevel = TestLevel.level_0;
 
         Vector3 temp = this.displayCanvas.transform.position;
