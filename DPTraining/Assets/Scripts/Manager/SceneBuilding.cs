@@ -67,7 +67,7 @@ public class SceneBuilding : MonoBehaviour
         // this.drawBoundsLines();
         this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
 
-        this.coachTransformInitial(2.0f);
+        this.coachTransformInitial(2.5f);
         this.coach.SetActive(true);
     }
 
@@ -80,12 +80,18 @@ public class SceneBuilding : MonoBehaviour
                                                     this.systemManager.sceneOrigin.transform.position.z);
         this.gym.transform.rotation = this.systemManager.sceneOrigin.transform.rotation;
 
-        this.movablePlaneOnFloor.transform.localScale = new Vector3 (this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor,
+        // this.movablePlaneOnFloor.transform.localScale = new Vector3 (this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor,
+        //                                                     0.001f,
+        //                                                     this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
+        // this.movablePlaneOnRing.transform.localScale = new Vector3 (this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor,
+        //                                                     0.001f,
+        //                                                     this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
+        this.movablePlaneOnFloor.transform.localScale = new Vector3 (this.systemManager.avgDistance * this.systemManager.scaleTransferFactor,
                                                             0.001f,
-                                                            this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
-        this.movablePlaneOnRing.transform.localScale = new Vector3 (this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor,
+                                                            this.systemManager.avgDistance * this.systemManager.scaleTransferFactor);
+        this.movablePlaneOnRing.transform.localScale = new Vector3 (this.systemManager.avgDistance * this.systemManager.scaleTransferFactor,
                                                             0.001f,
-                                                            this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
+                                                            this.systemManager.avgDistance * this.systemManager.scaleTransferFactor);
     }
 
     void drawBoundsLines() {

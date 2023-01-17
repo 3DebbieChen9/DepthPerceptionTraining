@@ -214,11 +214,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 906517396}
     m_Modifications:
+    - target: {fileID: 100070, guid: 218853c5bb1e87a42980e5917d3e0e67, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100072, guid: 218853c5bb1e87a42980e5917d3e0e67, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 100078, guid: 218853c5bb1e87a42980e5917d3e0e67, type: 3}
       propertyPath: m_Name
       value: PN_Stickman_v12.1_NoPrefix
       objectReference: {fileID: 0}
     - target: {fileID: 100078, guid: 218853c5bb1e87a42980e5917d3e0e67, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100144, guid: 218853c5bb1e87a42980e5917d3e0e67, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100148, guid: 218853c5bb1e87a42980e5917d3e0e67, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100246, guid: 218853c5bb1e87a42980e5917d3e0e67, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100248, guid: 218853c5bb1e87a42980e5917d3e0e67, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100250, guid: 218853c5bb1e87a42980e5917d3e0e67, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

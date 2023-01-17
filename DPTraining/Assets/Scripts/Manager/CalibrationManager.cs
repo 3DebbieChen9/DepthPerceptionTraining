@@ -16,10 +16,21 @@ public class CalibrationManager : MonoBehaviour
     public GameObject[] distanceMarkers;
 
     [SerializeField]
-    private int armLengthMarkerStatue = 0; // 0: not started, 1: R-hand done, 2: L-hand done
+    private int armLengthMarkerStatue = 0; 
+    // 0: not started, 1: R-hand forearm done, 2: R-hand upperarm done, 3: L-hand forearm done, 4: L-hand upperarm done
+    
     [SerializeField]
     private GameObject[] armLengthMarkers;
-    
+
+    [SerializeField]
+    private float RUpperArmLength = 0.0f;
+    [SerializeField]
+    private float RForeArmLength = 0.0f;
+    [SerializeField]
+    private float LUpperArmLength = 0.0f;
+    [SerializeField]
+    private float LForeArmLength = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,31 +85,58 @@ public class CalibrationManager : MonoBehaviour
     }
 
     private void putArmLengthMarker() {
-        if (this.armLengthMarkerStatue == 0) { // 0: not started, 1: R-hand done, 2: L-hand done
-            this.armLengthMarkers[0].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
+        //0: not started, 1: R-hand forearm done, 2: R-hand upperarm done, 3: L-hand forearm done, 4: L-hand upperarm done
+        if (this.armLengthMarkerStatue == 0) { 
+            // this.armLengthMarkers[0].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
+            // this.armLengthMarkers[1].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
+            // this.systemManager.avgArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[0].transform.position, this.armLengthMarkers[1].transform.position);
             this.armLengthMarkers[1].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
-            this.systemManager.avgArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[0].transform.position, this.armLengthMarkers[1].transform.position);
-            this.armLengthMarkers[0].SetActive(true);
+            this.armLengthMarkers[2].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
+            this.RForeArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[2].transform.position);
+
             this.armLengthMarkers[1].SetActive(true);
+            this.armLengthMarkers[2].SetActive(true);
             this.armLengthMarkerStatue = 1;
 
-            this.systemManager.consoleText.text = "Right Arm Length = " + this.systemManager.avgArmLength.ToString();
+            this.systemManager.consoleText.text = "R-ForeArm Length = " + this.RForeArmLength.ToString();
         }
-        else if (this.armLengthMarkerStatue == 1) { // 0: not started, 1: R-hand done, 2: L-hand done
-            this.armLengthMarkers[1].SetActive(false);
-
-            this.armLengthMarkers[0].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
+        else if (this.armLengthMarkerStatue == 1) {
+            this.armLengthMarkers[1].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
             this.armLengthMarkers[2].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
-            this.systemManager.avgArmLength += this.calculateHorizatonalDistance(this.armLengthMarkers[0].transform.position, this.armLengthMarkers[2].transform.position);
-            this.systemManager.avgArmLength /= 2;
+            this.RUpperArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[2].transform.position) - this.RForeArmLength;
 
-            this.armLengthMarkers[0].SetActive(true);
+            this.armLengthMarkers[1].SetActive(true);
             this.armLengthMarkers[2].SetActive(true);
             this.armLengthMarkerStatue = 2;
 
-            this.systemManager.consoleText.text = "Average Arm Length = " + this.systemManager.avgArmLength.ToString();
-            print("Average Arm Length = " + this.systemManager.avgArmLength.ToString());
-        }      
+            this.systemManager.consoleText.text = "R-UpperArm Length = " + this.RUpperArmLength.ToString();
+        }
+        else if (this.armLengthMarkerStatue == 2) {
+            this.armLengthMarkers[1].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
+            this.armLengthMarkers[2].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
+            this.LForeArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[2].transform.position);
+
+            this.armLengthMarkers[1].SetActive(true);
+            this.armLengthMarkers[2].SetActive(true);
+            this.armLengthMarkerStatue = 3;
+
+            this.systemManager.consoleText.text = "L-ForeArm Length = " + this.LForeArmLength.ToString();
+        }
+        else if (this.armLengthMarkerStatue == 3) {
+            this.armLengthMarkers[1].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
+            this.armLengthMarkers[2].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
+            this.LUpperArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[2].transform.position) - this.LForeArmLength;
+
+            this.armLengthMarkers[1].SetActive(true);
+            this.armLengthMarkers[2].SetActive(true);
+            this.armLengthMarkerStatue = 4;
+
+            this.systemManager.avgUpperArmLength = (this.RUpperArmLength + this.LUpperArmLength) / 2;
+            this.systemManager.avgForeArmLength = (this.RForeArmLength + this.LForeArmLength) / 2;
+
+            this.systemManager.consoleText.text = "UpperArm Length = " + this.systemManager.avgUpperArmLength.ToString() + "\nForeArm Length = " + this.systemManager.avgForeArmLength.ToString();
+
+        }
     }
 
     public void CalibrationInitialize() {
@@ -116,12 +154,20 @@ public class CalibrationManager : MonoBehaviour
         this.systemManager.consoleText.text = "-";
     }
     
+    public void calibrationArmLengthInitialize() {
+        this.systemManager.curSystemMode = SystemManager.SystemMode.Calibration_ArmLength;
+        this.armLengthMarkerStatue = 0;
+        foreach (GameObject marker in this.armLengthMarkers) {
+            marker.SetActive(false);
+        }
+    }
+
     public void calibrateSize() {
         if (this.distanceMarkerCount < this.distanceMarkers.Length) {
             this.putDistanceMarker();
         }
         else {
-            this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_MoCap);
+            this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_ArmLength);
             this.setSceneOrigin();
             if (this.useRealWorldReference) {
                 this.systemManager.scaleTransferFactor = this.systemManager.avgDistance / systemManager.referenceDistance;
@@ -129,19 +175,17 @@ public class CalibrationManager : MonoBehaviour
             else {
                 this.systemManager.scaleTransferFactor = 1.0f;
             }
-            this.systemManager.consoleTitle.text = "Calibration: MoCap";
+            this.systemManager.consoleTitle.text = "Calibration: ArmLength";
             this.systemManager.consoleText.text = "-";
         }
     }
 
     public void calibrateArmLength() {
-        if (this.armLengthMarkerStatue == 2) {
-            this.systemManager.changeSystemMode(SystemManager.SystemMode.Mode_Selection);
-            // this.systemManager.consoleTitle.text = "Training";
-            // this.systemManager.consoleText.text = "-";
+        if (this.armLengthMarkerStatue == 4) {
             this.systemManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
             this.clearCalibrationMarkers();
-            // this.systemManager.changeScene("Training");
+            this.systemManager.changeSystemMode(SystemManager.SystemMode.Mode_Selection);
+            this.systemManager.changeScene("ModeSelection");
         }
         else {
             this.putArmLengthMarker();

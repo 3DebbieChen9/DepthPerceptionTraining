@@ -38,13 +38,17 @@ public class SystemManager : MonoBehaviour
     public ModeSelection modeSelectionManager;
     [SerializeField]
     public SceneBuilding sceneBuildingManager;
+    [SerializeField]
+    public TestingManager testingManager;
     // [SerializeField]
     // public CoachMotionManager coachMotionManager;
 
     [SerializeField]
     public bool isOnRing = false;
     [SerializeField]
-    public SystemMode targetSystemMode = SystemMode.Training_Traditional;
+    public bool isRightHanded = true;
+    [SerializeField]
+    public SystemMode targetSystemMode = SystemMode.Testing;
     private List<SystemMode> modeWithSceneBuildCoach = new List<SystemMode>();
 
     [SerializeField]
@@ -54,7 +58,9 @@ public class SystemManager : MonoBehaviour
     [SerializeField]
     public float avgDistance = 0.0f; // in meters
     [SerializeField]
-    public float avgArmLength = 0.0f; // in meters
+    public float avgUpperArmLength = 0.0f; // in meters
+    [SerializeField]
+    public float avgForeArmLength = 0.0f; // in meters
 
     [SerializeField]
     public GameObject sceneOrigin;
@@ -114,6 +120,10 @@ public class SystemManager : MonoBehaviour
             this.sceneBuildingManager = GameObject.Find("SceneBuilding").GetComponent<SceneBuilding>();
         }
 
+        if (this.testingManager == null && this.curSystemMode == SystemMode.Testing) {
+            this.testingManager = GameObject.Find("TestingModeManager").GetComponent<TestingManager>();
+        }
+
         // if (this.coachMotionManager == null && this.modeWithSceneBuildCoach.Contains(this.curSystemMode)) {
         //     this.coachMotionManager = GameObject.Find("CoachMotionManager").GetComponent<CoachMotionManager>();
         // }
@@ -122,31 +132,26 @@ public class SystemManager : MonoBehaviour
             if (this.curSystemMode == SystemMode.Calibration_Size) {
                 this.consoleTitle.text = "Calibration: Distance";
                 this.calibrationManager.calibrateSize();
-                
             }
-            else if (this.curSystemMode == SystemMode.Calibration_MoCap) {
-                this.calibrationManager.clearCalibrationMarkers();
-                this.consoleTitle.text = "Mode Selection";
+            else if (this.curSystemMode == SystemMode.Calibration_ArmLength) {
+                this.consoleTitle.text = "Calibration: Arm Length";
                 this.consoleText.text = "";
-                this.changeSystemMode(SystemMode.Mode_Selection);
-                this.changeScene("ModeSelection");
+                this.calibrationManager.calibrateArmLength();
             }
-            // else if (this.curSystemMode == SystemMode.Training_Traditional) {
-            //     if (this.coachMotionManager.isMoving) {
-            //         this.coachMotionManager.stopMoving();
-            //     }
-            //     else {
-            //         this.coachMotionManager.startMoving();
-            //     }
-            // }
         }
 
-        // if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
-        //     if (this.curSystemMode == SystemMode.Training_Traditional) {
-        //         this.coachMotionManager.switchDirection();
-        //     }
-        // }
-
+        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
+            if (this.curSystemMode == SystemMode.Calibration_Size) {
+                this.calibrationManager.CalibrationInitialize();
+            }
+            else if (this.curSystemMode == SystemMode.Calibration_ArmLength) {
+                this.calibrationManager.calibrationArmLengthInitialize();
+            }
+            else if (this.curSystemMode == SystemMode.Testing) {
+                this.testingManager.testingInitialize();
+            }
+        }
+        
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch)) {
             this.passthroughSwitch();
         }

@@ -46,13 +46,7 @@ public class ModeSelection : MonoBehaviour
         Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position;
         this.selectionRoom.transform.position = new Vector3 (tmpPoint.x,
                                                     this.systemManager.sceneOrigin.transform.position.y - 0.01f,
-                                                    // this.systemManager.sceneOrigin.transform.position.y + 0.02f,
-                                                    // this.systemManager.sceneOrigin.transform.position.y,
                                                     tmpPoint.z);
-
-        Vector3 lookTarget = this.systemManager.sceneOrigin.transform.position;
-        // this.selectionRoom.transform.LookAt(lookTarget);
-        // this.selectionRoom.transform.LookAt(lookTarget, Vector3.right);
     }
 
     public void switchTargetMode() {
@@ -86,9 +80,13 @@ public class ModeSelection : MonoBehaviour
         }
     }
 
+    public void switchHandedness() {
+        this.systemManager.isRightHanded = !this.systemManager.isRightHanded;
+    }
+
     public void startSystem() {
         this.systemManager.changeSystemMode(this.systemManager.targetSystemMode);
-        this.systemManager.consoleTitle.text = "Training";
+        this.systemManager.consoleTitle.text = "Testing";
         this.systemManager.consoleText.text = "-";
         this.systemManager.changeScene("Testing");
     }

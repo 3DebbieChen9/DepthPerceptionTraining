@@ -66,12 +66,16 @@ public class TestingManager : MonoBehaviour
 
     private float coachDistancetoCenter = 1.0f;
     
+    [SerializeField]
+    public GameObject neuronStickman;
 
     // Start is called before the first frame update
     void Start()
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
-        
+        // Vector3 tempHeadset = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
+        // Vector3 tempSceneOrigin = this.systemManager.sceneOrigin.transform.position;
+        // this.neuronStickman.transform.position = new Vector3(tempSceneOrigin.x, this.neuronStickman.transform.position.y, tempSceneOrigin.z);
         this.unitNum = 0;
         this.speed = 0.0f;
         this.movingDirection = 0;
@@ -160,7 +164,7 @@ public class TestingManager : MonoBehaviour
         this.speed = 0.0f;
         this.coach.GetComponent<Animation>().Stop();
         print("Stop");
-        Invoke("performanceResult", 2.0f);
+        Invoke("performanceResult", 3.0f);
     }
 
     public void performanceResult() {
@@ -177,22 +181,31 @@ public class TestingManager : MonoBehaviour
         this.reactionTimeText.text = this.reactionTime.ToString("0.00") + " (s)";
     }
     public void reachTarget(string target) {
-        this.successCount += 1;
-        this.isSuccess = true;
-        this.performanceResult();
+        if (this.unitNum != 0 && this.timerOn == false) {
+            this.successCount += 1;
+            this.isSuccess = true;
+            this.performanceResult();
+        }
     }
-    // [SerializeField]
-    // public GameObject sceneOrigin;
-    // [SerializeField]
-    // public GameObject gym;
-    // public void coachTransformInitial() {
-    //     Vector3 tmpPoint = this.sceneOrigin.transform.position;
-    //     this.coach.transform.position = new Vector3 (tmpPoint.x,
-    //                                                 this.gym.transform.position.y + 1.0f,
-    //                                                 tmpPoint.z);
 
-    //     Vector3 lookTarget = this.sceneOrigin.transform.position;
-    //     this.coach.transform.LookAt(lookTarget);
-    // }
-    
+    public void testingInitialize() {
+        this.unitNum = 0;
+        this.speed = 0.0f;
+        this.movingDirection = 0;
+        this.reactionTime = 0.0f;
+        this.reactionTimeTotal = 0.0f;
+        this.timeTarget = 7.0f;
+        this.timerOn = false;
+        this.reactionTimerOn = false;
+        
+        this.unitNumText.text = "Press 'A' to start";
+        this.timerCircle.fillAmount = 0;
+        this.timerText.text = "";
+        this.reactionTimeText.text = "";
+        this.curTestLevel = TestLevel.level_0;
+
+        Vector3 temp = this.displayCanvas.transform.position;
+        this.displayCanvas.transform.position = new Vector3(temp.x, temp.y - 1.0f * Convert.ToInt32(!this.systemManager.isOnRing), temp.z);
+        print("Testing Initialize");
+    }
 }
