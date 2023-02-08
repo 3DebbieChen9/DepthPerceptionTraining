@@ -90,7 +90,7 @@ public class TestingManager : MonoBehaviour
         this.curTestLevel = TestLevel.level_0;
 
         Vector3 temp = this.displayCanvas.transform.position;
-        this.displayCanvas.transform.position = new Vector3(temp.x, temp.y - 1.0f * Convert.ToInt32(!this.systemManager.isOnRing), temp.z);
+        this.displayCanvas.transform.position = new Vector3(temp.x, temp.y - 1.0f * Convert.ToInt32(!this.systemManager.mySettingInfo.isOnRing), temp.z);
     }
 
     // Update is called once per frame
@@ -205,7 +205,7 @@ public class TestingManager : MonoBehaviour
         this.curTestLevel = TestLevel.level_0;
 
         Vector3 temp = this.displayCanvas.transform.position;
-        this.displayCanvas.transform.position = new Vector3(temp.x, temp.y - 1.0f * Convert.ToInt32(!this.systemManager.isOnRing), temp.z);
+        this.displayCanvas.transform.position = new Vector3(temp.x, temp.y - 1.0f * Convert.ToInt32(!this.systemManager.mySettingInfo.isOnRing), temp.z);
         print("Testing Initialize");
     }
 }

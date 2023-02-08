@@ -35,9 +35,9 @@ public class CalibrationEvaluation : MonoBehaviour
     }
 
     void planeResize() {
-        this.plane.transform.localScale = new Vector3 ( this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor, 
+        this.plane.transform.localScale = new Vector3 ( this.systemManager.myMovableRangeInfo.referenceRanageLength * this.systemManager.scaleTransferFactor, 
                                                         this.plane.transform.localScale.y, 
-                                                        this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
+                                                        this.systemManager.myMovableRangeInfo.referenceRanageLength * this.systemManager.scaleTransferFactor);
     }
 
     void planeMove() {
@@ -60,28 +60,28 @@ public class CalibrationEvaluation : MonoBehaviour
         **/
         Vector3 horizontalMidPoint = (this.calibrationManager.distanceMarkers[0].transform.position + this.calibrationManager.distanceMarkers[1].transform.position) / 2;
         Vector3 verticalMidPoint = (this.calibrationManager.distanceMarkers[0].transform.position + this.calibrationManager.distanceMarkers[3].transform.position) / 2;
-        this.systemManager.sceneHorizontalDirection = (this.systemManager.sceneOrigin.transform.position - verticalMidPoint).normalized;
-        this.systemManager.sceneVerticalDirection = (this.systemManager.sceneOrigin.transform.position - horizontalMidPoint).normalized;
+        this.systemManager.myMovableRangeInfo.horizontalDirection = (this.systemManager.sceneOrigin.transform.position - verticalMidPoint).normalized;
+        this.systemManager.myMovableRangeInfo.verticalDirection = (this.systemManager.sceneOrigin.transform.position - horizontalMidPoint).normalized;
 
-        this.systemManager.sceneLeftBottomCorner = this.systemManager.sceneOrigin.transform.position 
-                                    - this.systemManager.sceneHorizontalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor
-                                    + this.systemManager.sceneVerticalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor;
-        this.systemManager.sceneLeftUpperCorner = this.systemManager.sceneOrigin.transform.position
-                                    - this.systemManager.sceneHorizontalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor
-                                    - this.systemManager.sceneVerticalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor;
-        this.systemManager.sceneRightUpperCorner = this.systemManager.sceneOrigin.transform.position
-                                    + this.systemManager.sceneHorizontalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor
-                                    - this.systemManager.sceneVerticalDirection * (this.systemManager.referenceDistance / 2.0f) * this.systemManager.scaleTransferFactor;
+        this.systemManager.myMovableRangeInfo.leftBottomCorner = this.systemManager.sceneOrigin.transform.position 
+                                    - this.systemManager.myMovableRangeInfo.horizontalDirection * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 2.0f) * this.systemManager.scaleTransferFactor
+                                    + this.systemManager.myMovableRangeInfo.verticalDirection * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 2.0f) * this.systemManager.scaleTransferFactor;
+        this.systemManager.myMovableRangeInfo.leftUpperCorner = this.systemManager.sceneOrigin.transform.position
+                                    - this.systemManager.myMovableRangeInfo.horizontalDirection * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 2.0f) * this.systemManager.scaleTransferFactor
+                                    - this.systemManager.myMovableRangeInfo.verticalDirection * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 2.0f) * this.systemManager.scaleTransferFactor;
+        this.systemManager.myMovableRangeInfo.rightUpperCorner = this.systemManager.sceneOrigin.transform.position
+                                    + this.systemManager.myMovableRangeInfo.horizontalDirection * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 2.0f) * this.systemManager.scaleTransferFactor
+                                    - this.systemManager.myMovableRangeInfo.verticalDirection * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 2.0f) * this.systemManager.scaleTransferFactor;
 
         for(int i = 0; i < 5; i++) {
-            this.verticalLines[i].SetPosition(0, this.systemManager.sceneLeftUpperCorner + this.systemManager.sceneHorizontalDirection * i * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor);
-            this.verticalLines[i].SetPosition(1, this.systemManager.sceneLeftBottomCorner + this.systemManager.sceneHorizontalDirection * i * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor);
+            this.verticalLines[i].SetPosition(0, this.systemManager.myMovableRangeInfo.leftUpperCorner + this.systemManager.myMovableRangeInfo.horizontalDirection * i * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 4.0f) * this.systemManager.scaleTransferFactor);
+            this.verticalLines[i].SetPosition(1, this.systemManager.myMovableRangeInfo.leftBottomCorner + this.systemManager.myMovableRangeInfo.horizontalDirection * i * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 4.0f) * this.systemManager.scaleTransferFactor);
             this.verticalLines[i].gameObject.SetActive(true);
         }
 
         for(int i = 0; i < 5; i++) {
-            this.horizontalLines[i].SetPosition(0, this.systemManager.sceneLeftUpperCorner + this.systemManager.sceneVerticalDirection * i * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor);
-            this.horizontalLines[i].SetPosition(1, this.systemManager.sceneRightUpperCorner + this.systemManager.sceneVerticalDirection * i * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor);
+            this.horizontalLines[i].SetPosition(0, this.systemManager.myMovableRangeInfo.leftUpperCorner + this.systemManager.myMovableRangeInfo.verticalDirection * i * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 4.0f) * this.systemManager.scaleTransferFactor);
+            this.horizontalLines[i].SetPosition(1, this.systemManager.myMovableRangeInfo.rightUpperCorner + this.systemManager.myMovableRangeInfo.verticalDirection * i * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 4.0f) * this.systemManager.scaleTransferFactor);
             this.horizontalLines[i].gameObject.SetActive(true);
         }
     }

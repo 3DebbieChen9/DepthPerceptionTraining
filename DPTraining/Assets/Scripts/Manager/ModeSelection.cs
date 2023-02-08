@@ -26,12 +26,12 @@ public class ModeSelection : MonoBehaviour
         this.selectionRoomTransform();
         this.selectionRoom.SetActive(true);
 
-        if (this.systemManager.isOnRing) {
+        if (this.systemManager.mySettingInfo.isOnRing) {
             this.ringModeText.text = "On Ring";
         } else {
             this.ringModeText.text = "Off Ring";
         }
-        this.systemManager.targetSystemMode = SystemManager.SystemMode.Testing;
+        this.systemManager.mySettingInfo.targetSystemMode = SystemManager.SystemMode.Testing;
         this.targetSystemModeText.text = "Testing";
     }
 
@@ -50,30 +50,30 @@ public class ModeSelection : MonoBehaviour
     }
 
     public void switchTargetMode() {
-        switch (this.systemManager.targetSystemMode)
+        switch (this.systemManager.mySettingInfo.targetSystemMode)
         {
             case SystemManager.SystemMode.Testing:
-                this.systemManager.targetSystemMode = SystemManager.SystemMode.Training_Traditional;
+                this.systemManager.mySettingInfo.targetSystemMode = SystemManager.SystemMode.Training_Traditional;
                 this.targetSystemModeText.text = "Traditional\nTraining";
                 break;
             case SystemManager.SystemMode.Training_Traditional:
-                this.systemManager.targetSystemMode = SystemManager.SystemMode.Training_Hint;
+                this.systemManager.mySettingInfo.targetSystemMode = SystemManager.SystemMode.Training_Hint;
                 this.targetSystemModeText.text = "Hint\nTraining";
                 break;
             case SystemManager.SystemMode.Training_Hint:
-                this.systemManager.targetSystemMode = SystemManager.SystemMode.Testing;
+                this.systemManager.mySettingInfo.targetSystemMode = SystemManager.SystemMode.Testing;
                 this.targetSystemModeText.text = "Testing";
                 break;
             default:
-                this.systemManager.targetSystemMode = SystemManager.SystemMode.Testing;
+                this.systemManager.mySettingInfo.targetSystemMode = SystemManager.SystemMode.Testing;
                 this.targetSystemModeText.text = "Testing";
                 break;
         }
     }
 
     public void switchOnRing() {
-        this.systemManager.isOnRing = !this.systemManager.isOnRing;
-        if (this.systemManager.isOnRing) {
+        this.systemManager.mySettingInfo.isOnRing = !this.systemManager.mySettingInfo.isOnRing;
+        if (this.systemManager.mySettingInfo.isOnRing) {
             this.ringModeText.text = "On Ring";
         } else {
             this.ringModeText.text = "Off Ring";
@@ -81,11 +81,11 @@ public class ModeSelection : MonoBehaviour
     }
 
     public void switchHandedness() {
-        this.systemManager.isRightHanded = !this.systemManager.isRightHanded;
+        this.systemManager.mySettingInfo.targetIsRightHanded = !this.systemManager.mySettingInfo.targetIsRightHanded;
     }
 
     public void startSystem() {
-        this.systemManager.changeSystemMode(this.systemManager.targetSystemMode);
+        this.systemManager.changeSystemMode(this.systemManager.mySettingInfo.targetSystemMode);
         this.systemManager.consoleTitle.text = "Testing";
         this.systemManager.consoleText.text = "-";
         this.systemManager.changeScene("Testing");

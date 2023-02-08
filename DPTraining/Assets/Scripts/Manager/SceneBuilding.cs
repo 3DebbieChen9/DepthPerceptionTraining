@@ -60,9 +60,9 @@ public class SceneBuilding : MonoBehaviour
         
         this.boxingSceneTransform();
         this.gym.SetActive(true);
-        this.boxingRing.SetActive(this.systemManager.isOnRing);
-        this.movablePlaneOnRing.SetActive(this.systemManager.isOnRing);
-        this.movablePlaneOnFloor.SetActive(!this.systemManager.isOnRing);
+        this.boxingRing.SetActive(this.systemManager.mySettingInfo.isOnRing);
+        this.movablePlaneOnRing.SetActive(this.systemManager.mySettingInfo.isOnRing);
+        this.movablePlaneOnFloor.SetActive(!this.systemManager.mySettingInfo.isOnRing);
 
         // this.drawBoundsLines();
         this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
@@ -72,7 +72,7 @@ public class SceneBuilding : MonoBehaviour
     }
 
     void boxingSceneTransform() {
-        float y_shift = 1.0f * Convert.ToInt32(this.systemManager.isOnRing) + 0.01f;
+        float y_shift = 1.0f * Convert.ToInt32(this.systemManager.mySettingInfo.isOnRing) + 0.01f;
         // float y_shift = 1.0f * Convert.ToInt32(this.systemManager.isOnRing) - 0.02f;
         // float y_shift = 1.0f * Convert.ToInt32(this.systemManager.isOnRing);
         this.gym.transform.position = new Vector3 (this.systemManager.sceneOrigin.transform.position.x,
@@ -86,12 +86,12 @@ public class SceneBuilding : MonoBehaviour
         // this.movablePlaneOnRing.transform.localScale = new Vector3 (this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor,
         //                                                     0.001f,
         //                                                     this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
-        this.movablePlaneOnFloor.transform.localScale = new Vector3 (this.systemManager.avgDistance * this.systemManager.scaleTransferFactor,
+        this.movablePlaneOnFloor.transform.localScale = new Vector3 (this.systemManager.myMovableRangeInfo.avgLengthInVR * this.systemManager.scaleTransferFactor,
                                                             0.001f,
-                                                            this.systemManager.avgDistance * this.systemManager.scaleTransferFactor);
-        this.movablePlaneOnRing.transform.localScale = new Vector3 (this.systemManager.avgDistance * this.systemManager.scaleTransferFactor,
+                                                            this.systemManager.myMovableRangeInfo.avgLengthInVR * this.systemManager.scaleTransferFactor);
+        this.movablePlaneOnRing.transform.localScale = new Vector3 (this.systemManager.myMovableRangeInfo.avgLengthInVR * this.systemManager.scaleTransferFactor,
                                                             0.001f,
-                                                            this.systemManager.avgDistance * this.systemManager.scaleTransferFactor);
+                                                            this.systemManager.myMovableRangeInfo.avgLengthInVR * this.systemManager.scaleTransferFactor);
     }
 
     void drawBoundsLines() {
@@ -107,18 +107,18 @@ public class SceneBuilding : MonoBehaviour
         **/
         
         for(int i = 0; i < 2; i++) {
-            Vector3 point1 = this.systemManager.sceneLeftUpperCorner + this.systemManager.sceneHorizontalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor;
+            Vector3 point1 = this.systemManager.myMovableRangeInfo.leftUpperCorner + this.systemManager.myMovableRangeInfo.horizontalDirection * i * this.systemManager.myMovableRangeInfo.referenceRanageLength * this.systemManager.scaleTransferFactor;
             point1 = new Vector3(point1.x, point1.y - 0.01f, point1.z);
-            Vector3 point2 = this.systemManager.sceneLeftBottomCorner + this.systemManager.sceneHorizontalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor;
+            Vector3 point2 = this.systemManager.myMovableRangeInfo.leftBottomCorner + this.systemManager.myMovableRangeInfo.horizontalDirection * i * this.systemManager.myMovableRangeInfo.referenceRanageLength * this.systemManager.scaleTransferFactor;
             point2 = new Vector3(point2.x, point2.y - 0.01f, point2.z);
             this.verticalLines[i].SetPosition(0, point1);
             this.verticalLines[i].SetPosition(1, point2);
             this.verticalLines[i].gameObject.SetActive(true);
         }
         for(int i = 0; i < 2; i++) {
-            Vector3 point1 = this.systemManager.sceneLeftUpperCorner + this.systemManager.sceneVerticalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor;
+            Vector3 point1 = this.systemManager.myMovableRangeInfo.leftUpperCorner + this.systemManager.myMovableRangeInfo.verticalDirection * i * this.systemManager.myMovableRangeInfo.referenceRanageLength * this.systemManager.scaleTransferFactor;
             point1 = new Vector3(point1.x, point1.y - 0.01f, point1.z);
-            Vector3 point2 = this.systemManager.sceneRightUpperCorner + this.systemManager.sceneVerticalDirection * i * this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor;
+            Vector3 point2 = this.systemManager.myMovableRangeInfo.rightUpperCorner + this.systemManager.myMovableRangeInfo.verticalDirection * i * this.systemManager.myMovableRangeInfo.referenceRanageLength * this.systemManager.scaleTransferFactor;
             point2 = new Vector3(point2.x, point2.y - 0.01f, point2.z);
             this.horizontalLines[i].SetPosition(0, point1);
             this.horizontalLines[i].SetPosition(1, point2);
@@ -127,9 +127,9 @@ public class SceneBuilding : MonoBehaviour
     }
 
     public void coachTransformInitial(float distance) {
-        Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position - this.systemManager.sceneVerticalDirection * distance * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor;
+        Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position - this.systemManager.myMovableRangeInfo.verticalDirection * distance * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 4.0f) * this.systemManager.scaleTransferFactor;
         this.coach.transform.position = new Vector3 (tmpPoint.x,
-                                                    this.gym.transform.position.y + 1.0f * Convert.ToInt32(this.systemManager.isOnRing),
+                                                    this.gym.transform.position.y + 1.0f * Convert.ToInt32(this.systemManager.mySettingInfo.isOnRing),
                                                     tmpPoint.z);
 
         Vector3 lookTarget = this.systemManager.sceneOrigin.transform.position;

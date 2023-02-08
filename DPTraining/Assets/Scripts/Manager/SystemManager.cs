@@ -5,10 +5,68 @@ using UnityEngine.SceneManagement;
 
 public class SystemManager : MonoBehaviour
 {
+    public class UserSizeInfo 
+    {
+        public float avgUpperArmLength; // in meters
+        public float avgForeArmLength; // in meters
+        public float idlePoseRadius; // in meters
+        public float idlePoseHeight; // in meters
+
+        public UserSizeInfo(float _avgUpperArmLength, float _avgForeArmLength, float _idlePoseRadius, float _idlePoseHeight) {
+            this.avgUpperArmLength = _avgUpperArmLength;
+            this.avgForeArmLength = _avgForeArmLength;
+            this.idlePoseRadius = _idlePoseRadius;
+            this.idlePoseHeight = _idlePoseHeight;
+        }
+    }
+
+    public class MovableRangeInfo
+    {
+        public Vector3 horizontalDirection;
+        public Vector3 verticalDirection;
+        public Vector3 leftBottomCorner;
+        public Vector3 leftUpperCorner;
+        public Vector3 rightUpperCorner;
+
+        public float referenceRanageLength; // in meters
+        public float avgLengthInVR; // in meters
+
+        public MovableRangeInfo() {
+            this.horizontalDirection = new Vector3(0.0f, 0.0f, 0.0f);
+            this.verticalDirection = new Vector3(0.0f, 0.0f, 0.0f);
+            this.leftBottomCorner = new Vector3(0.0f, 0.0f, 0.0f);
+            this.leftUpperCorner = new Vector3(0.0f, 0.0f, 0.0f);
+            this.rightUpperCorner = new Vector3(0.0f, 0.0f, 0.0f);
+
+            this.referenceRanageLength = 2.0f;
+            this.avgLengthInVR = 0.0f;
+        }
+    }
+
+    public class SettingInfo
+    {
+        public bool isOnRing;
+        public bool targetIsRightHanded;
+        public SystemMode targetSystemMode;
+        public List<SystemMode> modeWithSceneBuildCoach = new List<SystemMode>();
+
+        public SettingInfo() {
+            this.isOnRing = false;
+            this.targetIsRightHanded = true;
+            this.targetSystemMode = SystemMode.Testing;
+
+            this.modeWithSceneBuildCoach.Add(SystemMode.Testing);
+            this.modeWithSceneBuildCoach.Add(SystemMode.Training_Traditional);
+            this.modeWithSceneBuildCoach.Add(SystemMode.Training_Hint);
+        }
+    }
+
+
     public enum SystemMode {
-        Calibration_Size,
+        Calibration_MovableSize,
         Calibration_ArmLength,
-        Calibration_MoCap,
+        Calibration_IdlePose,
+        // Calibration_MoCap,
         Mode_Selection,
         Testing,
         Training_Traditional,
@@ -19,7 +77,12 @@ public class SystemManager : MonoBehaviour
     public static SystemManager Instance;
 
     [SerializeField]
-    public SystemMode curSystemMode = SystemMode.Calibration_Size;
+    public SystemMode curSystemMode = SystemMode.Calibration_MovableSize;
+
+    [SerializeField]
+    public UserSizeInfo myUserSizeInfo = new UserSizeInfo(0.21f, 0.40f, 0.45f, 1.6f);
+    [SerializeField]
+    public GameObject userIdlePose;
 
     [SerializeField] 
     public GameObject OVRCameraRig;
@@ -31,6 +94,8 @@ public class SystemManager : MonoBehaviour
     public GameObject OVRBoxingLeft;
     [SerializeField]
     public GameObject OVRBoxingRight;
+    
+
 
     [SerializeField]
     public CalibrationManager calibrationManager;
@@ -42,39 +107,16 @@ public class SystemManager : MonoBehaviour
     public TestingManager testingManager;
     // [SerializeField]
     // public CoachMotionManager coachMotionManager;
-
+    
     [SerializeField]
-    public bool isOnRing = false;
-    [SerializeField]
-    public bool isRightHanded = true;
-    [SerializeField]
-    public SystemMode targetSystemMode = SystemMode.Testing;
-    private List<SystemMode> modeWithSceneBuildCoach = new List<SystemMode>();
-
-    [SerializeField]
-    public float scaleTransferFactor = 1.0f; // vr-distance / real-distance
-    [SerializeField]
-    public float referenceDistance = 2.0f; // in meters
-    [SerializeField]
-    public float avgDistance = 0.0f; // in meters
-    [SerializeField]
-    public float avgUpperArmLength = 0.0f; // in meters
-    [SerializeField]
-    public float avgForeArmLength = 0.0f; // in meters
+    public SettingInfo mySettingInfo = new SettingInfo();
 
     [SerializeField]
     public GameObject sceneOrigin;
     [SerializeField]
-    public Vector3 sceneHorizontalDirection;
+    public MovableRangeInfo myMovableRangeInfo = new MovableRangeInfo();
     [SerializeField]
-    public Vector3 sceneVerticalDirection;
-    [SerializeField]
-    public Vector3 sceneLeftBottomCorner;
-    [SerializeField]
-    public Vector3 sceneLeftUpperCorner;
-    [SerializeField]
-    public Vector3 sceneRightUpperCorner;
-
+    public float scaleTransferFactor = 1.0f; // vr-distance / real-distance
 
     [SerializeField]
     public TextMesh consoleTitle;
@@ -96,9 +138,9 @@ public class SystemManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        modeWithSceneBuildCoach.Add(SystemMode.Testing);
-        modeWithSceneBuildCoach.Add(SystemMode.Training_Traditional);
-        modeWithSceneBuildCoach.Add(SystemMode.Training_Hint);
+        this.userIdlePose.GetComponent<CapsuleCollider>().radius = this.myUserSizeInfo.idlePoseRadius;
+        this.userIdlePose.GetComponent<CapsuleCollider>().height = this.myUserSizeInfo.idlePoseHeight;
+        this.userIdlePose.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.myUserSizeInfo.idlePoseHeight / 2.0f, 0.0f);
     }
 
     // Update is called once per frame
@@ -108,7 +150,7 @@ public class SystemManager : MonoBehaviour
             this.OVRCameraRig = GameObject.Find("OVRCameraRig");
         }
 
-        if (this.calibrationManager == null && this.curSystemMode == SystemMode.Calibration_Size) {
+        if (this.calibrationManager == null && this.curSystemMode == SystemMode.Calibration_MovableSize) {
             this.calibrationManager = GameObject.Find("CalibrationManager").GetComponent<CalibrationManager>();
         }
 
@@ -116,7 +158,7 @@ public class SystemManager : MonoBehaviour
             this.modeSelectionManager = GameObject.Find("ModeSelection").GetComponent<ModeSelection>();
         }
 
-        if (this.sceneBuildingManager == null && this.modeWithSceneBuildCoach.Contains(this.curSystemMode)) {
+        if (this.sceneBuildingManager == null && this.mySettingInfo.modeWithSceneBuildCoach.Contains(this.curSystemMode)) {
             this.sceneBuildingManager = GameObject.Find("SceneBuilding").GetComponent<SceneBuilding>();
         }
 
@@ -129,19 +171,24 @@ public class SystemManager : MonoBehaviour
         // }
 
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
-            if (this.curSystemMode == SystemMode.Calibration_Size) {
+            if (this.curSystemMode == SystemMode.Calibration_MovableSize) {
                 this.consoleTitle.text = "Calibration: Distance";
-                this.calibrationManager.calibrateSize();
+                this.calibrationManager.calibrateMovableSize();
             }
             else if (this.curSystemMode == SystemMode.Calibration_ArmLength) {
                 this.consoleTitle.text = "Calibration: Arm Length";
                 this.consoleText.text = "";
                 this.calibrationManager.calibrateArmLength();
             }
+            else if (this.curSystemMode == SystemMode.Calibration_IdlePose) {
+                this.consoleTitle.text = "Calibration Idle Pose";
+                this.consoleText.text = "";
+                this.calibrationManager.calibrateIdlePose();
+            }
         }
 
         if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
-            if (this.curSystemMode == SystemMode.Calibration_Size) {
+            if (this.curSystemMode == SystemMode.Calibration_MovableSize) {
                 this.calibrationManager.CalibrationInitialize();
             }
             else if (this.curSystemMode == SystemMode.Calibration_ArmLength) {
