@@ -9,9 +9,10 @@ public class SystemManager : MonoBehaviour
     {
         public float avgUpperArmLength; // in meters
         public float avgForeArmLength; // in meters
+        public float avgCenterEyeToControllerLength; // in meters
         public float idlePoseRadius; // in meters
         public float idlePoseHeight; // in meters
-
+        
         public UserSizeInfo(float _avgUpperArmLength, float _avgForeArmLength, float _idlePoseRadius, float _idlePoseHeight) {
             this.avgUpperArmLength = _avgUpperArmLength;
             this.avgForeArmLength = _avgForeArmLength;
@@ -80,7 +81,7 @@ public class SystemManager : MonoBehaviour
     public SystemMode curSystemMode = SystemMode.Calibration_MovableSize;
 
     [SerializeField]
-    public UserSizeInfo myUserSizeInfo = new UserSizeInfo(0.21f, 0.40f, 0.45f, 1.6f);
+    public UserSizeInfo myUserSizeInfo = new UserSizeInfo(0.21f, 0.23f, 0.45f, 1.6f);
     [SerializeField]
     public GameObject userIdlePose;
 

@@ -30,6 +30,10 @@ public class CalibrationManager : MonoBehaviour
     private float LUpperArmLength = 0.0f;
     [SerializeField]
     private float LForeArmLength = 0.0f;
+    [SerializeField]
+    private float RCenterEyeToControllerLength = 0.0f;
+    [SerializeField]
+    private float LCenterEyeToControllerLength = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +68,7 @@ public class CalibrationManager : MonoBehaviour
             if (this.distanceMarkerCount == this.distanceMarkers.Length-1) {
                 this.systemManager.myMovableRangeInfo.avgLengthInVR = this.calculateAvgDistance();
                 this.systemManager.consoleText.text = "Average Distance = " + this.systemManager.myMovableRangeInfo.avgLengthInVR.ToString();
-                print("Average Distance = " + this.systemManager.myMovableRangeInfo.avgLengthInVR.ToString());
+                print("[DC]\nAverage Distance = " + this.systemManager.myMovableRangeInfo.avgLengthInVR.ToString());
             }
             this.distanceMarkerCount++;
         }
@@ -92,50 +96,62 @@ public class CalibrationManager : MonoBehaviour
             // this.systemManager.avgArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[0].transform.position, this.armLengthMarkers[1].transform.position);
             this.armLengthMarkers[1].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
             this.armLengthMarkers[2].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
-            this.RForeArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[2].transform.position);
+            this.RForeArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[2].transform.position) * this.systemManager.scaleTransferFactor;
 
             this.armLengthMarkers[1].SetActive(true);
             this.armLengthMarkers[2].SetActive(true);
             this.armLengthMarkerStatue = 1;
 
             this.systemManager.consoleText.text = "R-ForeArm Length = " + this.RForeArmLength.ToString();
+            print("[DC]\nR-ForeArm Length = " + this.RForeArmLength.ToString());
         }
         else if (this.armLengthMarkerStatue == 1) {
+            this.armLengthMarkers[0].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
             this.armLengthMarkers[1].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
             this.armLengthMarkers[2].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
-            this.RUpperArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[2].transform.position) - this.RForeArmLength;
+            this.RUpperArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[2].transform.position) * this.systemManager.scaleTransferFactor - this.RForeArmLength;
+
+            this.RCenterEyeToControllerLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[0].transform.position) * this.systemManager.scaleTransferFactor;
 
             this.armLengthMarkers[1].SetActive(true);
             this.armLengthMarkers[2].SetActive(true);
             this.armLengthMarkerStatue = 2;
 
-            this.systemManager.consoleText.text = "R-UpperArm Length = " + this.RUpperArmLength.ToString();
+            this.systemManager.consoleText.text = "R-UpperArm Length = " + this.RUpperArmLength.ToString()+ "\nR-CenterEyeToController Length = " + this.RCenterEyeToControllerLength.ToString();
+            print("[DC]\nR-UpperArm Length = " + this.RUpperArmLength.ToString() + "\nR-CenterEyeToController Length = " + this.RCenterEyeToControllerLength.ToString());
         }
         else if (this.armLengthMarkerStatue == 2) {
             this.armLengthMarkers[1].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
             this.armLengthMarkers[2].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
-            this.LForeArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[2].transform.position);
+            this.LForeArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[2].transform.position) * this.systemManager.scaleTransferFactor;
 
             this.armLengthMarkers[1].SetActive(true);
             this.armLengthMarkers[2].SetActive(true);
             this.armLengthMarkerStatue = 3;
 
             this.systemManager.consoleText.text = "L-ForeArm Length = " + this.LForeArmLength.ToString();
+            print("[DC]\nL-ForeArm Length = " + this.LForeArmLength.ToString());
         }
         else if (this.armLengthMarkerStatue == 3) {
+            this.armLengthMarkers[0].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
             this.armLengthMarkers[1].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
             this.armLengthMarkers[2].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
-            this.LUpperArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[2].transform.position) - this.LForeArmLength;
+            this.LUpperArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[2].transform.position) * this.systemManager.scaleTransferFactor - this.LForeArmLength;
+
+            this.LCenterEyeToControllerLength = this.calculateHorizatonalDistance(this.armLengthMarkers[2].transform.position, this.armLengthMarkers[0].transform.position) * this.systemManager.scaleTransferFactor;
+            print("[DC]\nL-UpperArm Length = " + this.LUpperArmLength.ToString() + "\nL-CenterEyeToController Length = " + this.LCenterEyeToControllerLength.ToString());
 
             this.armLengthMarkers[1].SetActive(true);
             this.armLengthMarkers[2].SetActive(true);
             this.armLengthMarkerStatue = 4;
 
-            this.systemManager.myUserSizeInfo.avgUpperArmLength = (this.RUpperArmLength + this.LUpperArmLength) / 2;
-            this.systemManager.myUserSizeInfo.avgUpperArmLength = (this.RForeArmLength + this.LForeArmLength) / 2;
+            this.systemManager.myUserSizeInfo.avgUpperArmLength = (this.RUpperArmLength + this.LUpperArmLength) / 2.0f;
+            this.systemManager.myUserSizeInfo.avgForeArmLength = (this.RForeArmLength + this.LForeArmLength) / 2.0f;
+            this.systemManager.myUserSizeInfo.avgCenterEyeToControllerLength = (this.RCenterEyeToControllerLength + this.LCenterEyeToControllerLength) / 2.0f;
 
-            this.systemManager.consoleText.text = "UpperArm Length = " + this.systemManager.myUserSizeInfo.avgUpperArmLength.ToString() + "\nForeArm Length = " + this.systemManager.myUserSizeInfo.avgForeArmLength.ToString();
+            print("[DC]\nUpperArm Length = " + this.systemManager.myUserSizeInfo.avgUpperArmLength.ToString() + "\nForeArm Length = " + this.systemManager.myUserSizeInfo.avgForeArmLength.ToString() + "\nCenterEyeToController Length = " + this.systemManager.myUserSizeInfo.avgCenterEyeToControllerLength.ToString());
 
+            this.systemManager.consoleText.text = "UpperArm Length = " + this.systemManager.myUserSizeInfo.avgUpperArmLength.ToString() + "\nForeArm Length = " + this.systemManager.myUserSizeInfo.avgForeArmLength.ToString() + "\nCenterEyeToController Length = " + this.systemManager.myUserSizeInfo.avgCenterEyeToControllerLength.ToString();
         }
     }
 
@@ -199,6 +215,8 @@ public class CalibrationManager : MonoBehaviour
         this.systemManager.myUserSizeInfo.idlePoseRadius = radius * this.systemManager.scaleTransferFactor;
         float avgDistanceBetweenEyesAndTopHead = 0.11f; // 11 cm
         this.systemManager.myUserSizeInfo.idlePoseHeight = (this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.y + avgDistanceBetweenEyesAndTopHead) * this.systemManager.scaleTransferFactor;
+
+        print("[DC]\nIdlePose Radius = " + this.systemManager.myUserSizeInfo.idlePoseRadius.ToString() + "\nIdlePose Height = " + this.systemManager.myUserSizeInfo.idlePoseHeight.ToString());
 
         this.systemManager.userIdlePose.GetComponent<CapsuleCollider>().radius = this.systemManager.myUserSizeInfo.idlePoseRadius;
         this.systemManager.userIdlePose.GetComponent<CapsuleCollider>().height = this.systemManager.myUserSizeInfo.idlePoseHeight;

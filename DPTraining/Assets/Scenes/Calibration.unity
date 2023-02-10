@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curSystemMode: 0
-  userIdlePose: {fileID: 0}
+  userIdlePose: {fileID: 493953613}
   OVRCameraRig: {fileID: 876558772}
   OVRControllerLeft: {fileID: 767448044}
   OVRControllerRight: {fileID: 1534344777}
@@ -1208,6 +1208,10 @@ PrefabInstance:
       value: PN_Stickman_v12.1_NoPrefix
       objectReference: {fileID: 0}
     - target: {fileID: 100078, guid: 218853c5bb1e87a42980e5917d3e0e67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100078, guid: 218853c5bb1e87a42980e5917d3e0e67, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -1728,6 +1732,8 @@ MonoBehaviour:
   RForeArmLength: 0
   LUpperArmLength: 0
   LForeArmLength: 0
+  RCenterEyeToControllerLength: 0
+  LCenterEyeToControllerLength: 0
 --- !u!4 &1999965300
 Transform:
   m_ObjectHideFlags: 0
