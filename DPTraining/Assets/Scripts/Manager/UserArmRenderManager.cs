@@ -81,7 +81,10 @@ public class UserArmRenderManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (this.systemManager.curSystemMode != SystemManager.SystemMode.Calibration_ArmLength || this.systemManager.curSystemMode != SystemManager.SystemMode.Calibration_ArmLength || this.systemManager.curSystemMode != SystemManager.SystemMode.Calibration_IdlePose) {
+            this.reRotationUserArm();
+            this.userAvatar.transform.position = new Vector3(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.userAvatar.transform.position.y, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z);
+        }
     }
 
     public void resizeUserArm() 
@@ -122,17 +125,20 @@ public class UserArmRenderManager : MonoBehaviour
     }
 
     private void reRotationUserArm() {
-        this.hips.transform.rotation = this.hipsTransform.rotation;
-        this.spine.transform.rotation = this.spineTransform.rotation;
-        this.spine1.transform.rotation = this.spine1Transform.rotation;
-        this.spine2.transform.rotation = this.spine2Transform.rotation;
-        this.leftShoulder.transform.rotation = this.leftShoulderTransform.rotation;
-        this.leftArm.transform.rotation = this.leftArmTransform.rotation;
-        this.leftForeArm.transform.rotation = this.leftForeArmTransform.rotation;
-        this.leftHand.transform.rotation = this.leftHandTransform.rotation;
-        this.rightShoulder.transform.rotation = this.rightShoulderTransform.rotation;
-        this.rightArm.transform.rotation = this.rightArmTransform.rotation;
-        this.rightForeArm.transform.rotation = this.rightForeArmTransform.rotation;
-        this.rightHand.transform.rotation = this.rightHandTransform.rotation;
+        // this.hips.transform.localRotation = this.hipsTransform.localRotation;
+        // this.spine.transform.localRotation = this.spineTransform.localRotation;
+        // this.spine1.transform.localRotation = this.spine1Transform.localRotation;
+        // this.spine2.transform.localRotation = this.spine2Transform.localRotation;
+        this.leftShoulder.transform.localRotation = this.leftShoulderTransform.localRotation;
+        this.leftArm.transform.localRotation = this.leftArmTransform.localRotation;
+        this.leftForeArm.transform.localRotation = this.leftForeArmTransform.localRotation;
+        this.leftHand.transform.localRotation = this.leftHandTransform.localRotation;
+        this.rightShoulder.transform.localRotation = this.rightShoulderTransform.localRotation;
+        this.rightArm.transform.localRotation = this.rightArmTransform.localRotation;
+        this.rightForeArm.transform.localRotation = this.rightForeArmTransform.localRotation;
+        this.rightHand.transform.localRotation = this.rightHandTransform.localRotation;
+
+        this.userAvatar.transform.forward = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.forward; 
+        this.userAvatar.transform.rotation = Quaternion.LookRotation(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.forward, this.userAvatar.transform.up);
     }
 }

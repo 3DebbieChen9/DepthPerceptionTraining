@@ -1,6 +1,6 @@
 sceneSetups:
 - path: Assets/Scenes/Calibration.unity
-  isLoaded: 0
+  isLoaded: 1
   isActive: 0
   isSubScene: 0
 - path: Assets/Scenes/ModeSelection.unity
@@ -15,7 +15,7 @@ sceneSetups:
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/DevelopeTesting/Noitom.unity
+- path: Assets/Scenes/DevelopeTesting/FuntionTest.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

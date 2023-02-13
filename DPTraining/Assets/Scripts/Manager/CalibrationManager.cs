@@ -91,9 +91,6 @@ public class CalibrationManager : MonoBehaviour
     private void putArmLengthMarker() {
         //0: not started, 1: R-hand forearm done, 2: R-hand upperarm done, 3: L-hand forearm done, 4: L-hand upperarm done
         if (this.armLengthMarkerStatue == 0) { 
-            // this.armLengthMarkers[0].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
-            // this.armLengthMarkers[1].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
-            // this.systemManager.avgArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[0].transform.position, this.armLengthMarkers[1].transform.position);
             this.armLengthMarkers[1].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
             this.armLengthMarkers[2].transform.position = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
             this.RForeArmLength = this.calculateHorizatonalDistance(this.armLengthMarkers[1].transform.position, this.armLengthMarkers[2].transform.position) * this.systemManager.scaleTransferFactor;
@@ -185,6 +182,7 @@ public class CalibrationManager : MonoBehaviour
         }
         else {
             this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_ArmLength);
+            this.systemManager.consoleTitle.text = "Calibration Arm Length";
             this.setSceneOrigin();
             if (this.useRealWorldReference) {
                 this.systemManager.scaleTransferFactor = this.systemManager.myMovableRangeInfo.avgLengthInVR / this.systemManager.myMovableRangeInfo.referenceRanageLength;
@@ -197,7 +195,9 @@ public class CalibrationManager : MonoBehaviour
 
     public void calibrateArmLength() {
         if (this.armLengthMarkerStatue == 4) {
+            this.systemManager.consoleTitle.text = "Setting Scene";
             this.clearCalibrationMarkers();
+            this.systemManager.userArmRenderManager.resizeUserArm();
             this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_IdlePose);
         }
         else {
@@ -221,6 +221,10 @@ public class CalibrationManager : MonoBehaviour
         this.systemManager.userIdlePose.GetComponent<CapsuleCollider>().radius = this.systemManager.myUserSizeInfo.idlePoseRadius;
         this.systemManager.userIdlePose.GetComponent<CapsuleCollider>().height = this.systemManager.myUserSizeInfo.idlePoseHeight;
         this.systemManager.userIdlePose.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.systemManager.myUserSizeInfo.idlePoseHeight / 2.0f, 0.0f);
+
+        this.systemManager.userInitialPosition.GetComponent<CapsuleCollider>().radius = this.systemManager.mySettingInfo.tolerateRaduisBetweenOriginAndUser;
+        this.systemManager.userInitialPosition.GetComponent<CapsuleCollider>().height = this.systemManager.myUserSizeInfo.idlePoseHeight;
+        this.systemManager.userInitialPosition.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.systemManager.myUserSizeInfo.idlePoseHeight / 2.0f, 0.0f);
 
         this.systemManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
         this.systemManager.changeSystemMode(SystemManager.SystemMode.Mode_Selection);

@@ -48,12 +48,14 @@ public class SystemManager : MonoBehaviour
     {
         public bool isOnRing;
         public bool targetIsRightHanded;
+        public float tolerateRaduisBetweenOriginAndUser;
         public SystemMode targetSystemMode;
         public List<SystemMode> modeWithSceneBuildCoach = new List<SystemMode>();
 
         public SettingInfo() {
             this.isOnRing = false;
             this.targetIsRightHanded = true;
+            this.tolerateRaduisBetweenOriginAndUser = 0.3f;
             this.targetSystemMode = SystemMode.Testing;
 
             this.modeWithSceneBuildCoach.Add(SystemMode.Testing);
@@ -62,16 +64,20 @@ public class SystemManager : MonoBehaviour
         }
     }
 
-
     public enum SystemMode {
         Calibration_MovableSize,
         Calibration_ArmLength,
         Calibration_IdlePose,
-        // Calibration_MoCap,
         Mode_Selection,
         Testing,
         Training_Traditional,
         Training_Hint,
+    }
+
+    public enum MovingDirection {
+        initial,
+        forward,
+        backward,
     }
     
     [SerializeField]
@@ -84,6 +90,8 @@ public class SystemManager : MonoBehaviour
     public UserSizeInfo myUserSizeInfo = new UserSizeInfo(0.21f, 0.23f, 0.45f, 1.6f);
     [SerializeField]
     public GameObject userIdlePose;
+    [SerializeField]
+    public GameObject userInitialPosition;
 
     [SerializeField] 
     public GameObject OVRCameraRig;
@@ -99,6 +107,9 @@ public class SystemManager : MonoBehaviour
 
 
     [SerializeField]
+    public UserArmRenderManager userArmRenderManager;
+
+    [SerializeField]
     public CalibrationManager calibrationManager;
     [SerializeField]
     public ModeSelection modeSelectionManager;
@@ -106,8 +117,6 @@ public class SystemManager : MonoBehaviour
     public SceneBuilding sceneBuildingManager;
     [SerializeField]
     public TestingManager testingManager;
-    // [SerializeField]
-    // public CoachMotionManager coachMotionManager;
     
     [SerializeField]
     public SettingInfo mySettingInfo = new SettingInfo();
@@ -139,6 +148,7 @@ public class SystemManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.userArmRenderManager.userAvatar.SetActive(false);
         this.userIdlePose.GetComponent<CapsuleCollider>().radius = this.myUserSizeInfo.idlePoseRadius;
         this.userIdlePose.GetComponent<CapsuleCollider>().height = this.myUserSizeInfo.idlePoseHeight;
         this.userIdlePose.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.myUserSizeInfo.idlePoseHeight / 2.0f, 0.0f);
@@ -159,17 +169,14 @@ public class SystemManager : MonoBehaviour
             this.modeSelectionManager = GameObject.Find("ModeSelection").GetComponent<ModeSelection>();
         }
 
-        if (this.sceneBuildingManager == null && this.mySettingInfo.modeWithSceneBuildCoach.Contains(this.curSystemMode)) {
+        // if (this.sceneBuildingManager == null && this.mySettingInfo.modeWithSceneBuildCoach.Contains(this.curSystemMode)) {
+        if (this.sceneBuildingManager == null && (this.curSystemMode == SystemMode.Testing || this.curSystemMode == SystemMode.Training_Traditional || this.curSystemMode == SystemMode.Training_Hint)) {
             this.sceneBuildingManager = GameObject.Find("SceneBuilding").GetComponent<SceneBuilding>();
         }
 
         if (this.testingManager == null && this.curSystemMode == SystemMode.Testing) {
             this.testingManager = GameObject.Find("TestingModeManager").GetComponent<TestingManager>();
         }
-
-        // if (this.coachMotionManager == null && this.modeWithSceneBuildCoach.Contains(this.curSystemMode)) {
-        //     this.coachMotionManager = GameObject.Find("CoachMotionManager").GetComponent<CoachMotionManager>();
-        // }
 
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
             if (this.curSystemMode == SystemMode.Calibration_MovableSize) {

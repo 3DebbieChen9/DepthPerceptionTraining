@@ -22,7 +22,7 @@ public class TargetInteraction_R : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Player") {
+        if (other.gameObject.tag == "Glove_R" || other.gameObject.tag == "Glove_L") {
             this.testingModeManager.reachTarget("R");
         }
     }
