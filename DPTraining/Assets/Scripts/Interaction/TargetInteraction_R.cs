@@ -5,13 +5,14 @@ using UnityEngine;
 public class TargetInteraction_R : MonoBehaviour
 {
     [SerializeField]
-    private TestingManager testingModeManager;
+    // private TestingManager testingModeManager;
+    private EvaluationReachModule evaluationReachModule;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (this.testingModeManager == null) {
-            this.testingModeManager = GameObject.Find("TestingModeManager").GetComponent<TestingManager>();
+        if (this.evaluationReachModule == null) {
+            this.evaluationReachModule = GameObject.Find("EvaluationManager").GetComponent<EvaluationReachModule>();
         }
     }
 
@@ -23,7 +24,7 @@ public class TargetInteraction_R : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Glove_R" || other.gameObject.tag == "Glove_L") {
-            this.testingModeManager.reachTarget("R");
+            this.evaluationReachModule.reachTarget("R");
         }
     }
 }

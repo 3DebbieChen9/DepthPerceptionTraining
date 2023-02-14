@@ -6,6 +6,9 @@ public class UserArmRenderManager : MonoBehaviour
 {
     [SerializeField]
     public SystemManager systemManager;
+
+    [SerializeField]
+    public EvaluationStraightModule evaluationStraightModule;
     
     [SerializeField]
     public GameObject userAvatar;
@@ -24,26 +27,32 @@ public class UserArmRenderManager : MonoBehaviour
     [SerializeField]
     private GameObject leftArm;
     [SerializeField]
-    public GameObject SM_leftArm;
-    [SerializeField]
     private GameObject leftForeArm;
-    [SerializeField]
-    public GameObject SM_leftForeArm;
-    [SerializeField]
-    private GameObject leftHand;
+    // [SerializeField]
+    // private GameObject leftHand;
 
     [SerializeField]
     private GameObject rightShoulder;
     [SerializeField]
     private GameObject rightArm;
     [SerializeField]
+    private GameObject rightForeArm;
+    
+    // [SerializeField]
+    // private GameObject rightHand;
+
+    // [SerializeField]
+    // public GameObject SM_leftShoulder;
+    [SerializeField]
+    public GameObject SM_leftArm;
+    [SerializeField]
+    public GameObject SM_leftForeArm;
+    // [SerializeField]
+    // public GameObject SM_rightShoulder;
+    [SerializeField]
     public GameObject SM_rightArm;
     [SerializeField]
-    private GameObject rightForeArm;
-    [SerializeField]
     public GameObject SM_rightForeArm;
-    [SerializeField]
-    private GameObject rightHand;
 
     // For Rotation reference
     [SerializeField]
@@ -68,8 +77,8 @@ public class UserArmRenderManager : MonoBehaviour
     private Transform rightArmTransform;
     [SerializeField]
     private Transform rightForeArmTransform;
-    [SerializeField]
-    private Transform rightHandTransform;
+    // [SerializeField]
+    // private Transform rightHandTransform;
 
 
     // Start is called before the first frame update
@@ -81,7 +90,11 @@ public class UserArmRenderManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.systemManager.curSystemMode != SystemManager.SystemMode.Calibration_ArmLength || this.systemManager.curSystemMode != SystemManager.SystemMode.Calibration_ArmLength || this.systemManager.curSystemMode != SystemManager.SystemMode.Calibration_IdlePose) {
+        // if (this.systemManager.curSystemMode != SystemManager.SystemMode.Calibration_ArmLength || this.systemManager.curSystemMode != SystemManager.SystemMode.Calibration_MovableSize || this.systemManager.curSystemMode != SystemManager.SystemMode.Calibration_IdlePose) {
+        //     this.reRotationUserArm();
+        //     this.userAvatar.transform.position = new Vector3(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.userAvatar.transform.position.y, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z);
+        // }
+        if (this.systemManager.curSystemMode != SystemManager.SystemMode.Calibration_MovableSize) {
             this.reRotationUserArm();
             this.userAvatar.transform.position = new Vector3(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.userAvatar.transform.position.y, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z);
         }
@@ -90,9 +103,9 @@ public class UserArmRenderManager : MonoBehaviour
     public void resizeUserArm() 
     {
         // parameters of user info
-        float centerEyetoControllerLength = this.systemManager.myUserSizeInfo.avgCenterEyeToControllerLength;
-        float uppperarmLength = this.systemManager.myUserSizeInfo.avgUpperArmLength;
-        float forearmLength = this.systemManager.myUserSizeInfo.avgForeArmLength;
+        float centerEyetoControllerLength = this.systemManager.myUserInfo.avgCenterEyeToControllerLength;
+        float uppperarmLength = this.systemManager.myUserInfo.avgUpperArmLength;
+        float forearmLength = this.systemManager.myUserInfo.avgForeArmLength;
         /////////////////////////////////////////////
 
         // Modify the userAvatar's height
@@ -120,8 +133,8 @@ public class UserArmRenderManager : MonoBehaviour
         this.leftForeArm.transform.localPosition = new Vector3(-uppperarmLength, this.leftForeArm.transform.localPosition.y, this.leftForeArm.transform.localPosition.z);
         this.rightForeArm.transform.localPosition = new Vector3(uppperarmLength, this.rightForeArm.transform.localPosition.y, this.rightForeArm.transform.localPosition.z);
 
-        this.leftHand.transform.localPosition = new Vector3(-forearmLength, this.leftHand.transform.localPosition.y, this.leftHand.transform.localPosition.z);
-        this.rightHand.transform.localPosition = new Vector3(forearmLength, this.rightHand.transform.localPosition.y, this.rightHand.transform.localPosition.z);
+        // this.leftHand.transform.localPosition = new Vector3(-forearmLength, this.leftHand.transform.localPosition.y, this.leftHand.transform.localPosition.z);
+        // this.rightHand.transform.localPosition = new Vector3(forearmLength, this.rightHand.transform.localPosition.y, this.rightHand.transform.localPosition.z);
     }
 
     private void reRotationUserArm() {
@@ -132,13 +145,41 @@ public class UserArmRenderManager : MonoBehaviour
         this.leftShoulder.transform.localRotation = this.leftShoulderTransform.localRotation;
         this.leftArm.transform.localRotation = this.leftArmTransform.localRotation;
         this.leftForeArm.transform.localRotation = this.leftForeArmTransform.localRotation;
-        this.leftHand.transform.localRotation = this.leftHandTransform.localRotation;
+        // this.leftHand.transform.localRotation = this.leftHandTransform.localRotation;
         this.rightShoulder.transform.localRotation = this.rightShoulderTransform.localRotation;
         this.rightArm.transform.localRotation = this.rightArmTransform.localRotation;
         this.rightForeArm.transform.localRotation = this.rightForeArmTransform.localRotation;
-        this.rightHand.transform.localRotation = this.rightHandTransform.localRotation;
+        // this.rightHand.transform.localRotation = this.rightHandTransform.localRotation;
 
-        this.userAvatar.transform.forward = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.forward; 
-        this.userAvatar.transform.rotation = Quaternion.LookRotation(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.forward, this.userAvatar.transform.up);
+        // this.userAvatar.transform.forward = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.forward; 
+        // this.userAvatar.transform.rotation = Quaternion.LookRotation(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.forward, this.userAvatar.transform.up);
+        this.userAvatar.transform.rotation = Quaternion.Euler(0.0f, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f);
+
+    }
+
+
+
+    public void userAvatarMeshSetActive(bool active) {
+        // this.SM_leftShoulder.SetActive(active);
+        this.SM_leftArm.SetActive(active);
+        this.SM_leftForeArm.SetActive(active);
+        
+        // this.SM_rightShoulder.SetActive(active);
+        this.SM_rightArm.SetActive(active);
+        this.SM_rightForeArm.SetActive(active);
+    }
+
+    public void setRightHandStraightAngle() {
+        float[] angles = this.evaluationStraightModule.calculate_lowArmToUpArmAngle(this.rightArm.transform, this.rightForeArm.transform);
+        this.systemManager.myUserInfo.straightAngle_forward_R = angles[0];
+        this.systemManager.myUserInfo.straightAngle_up_R = angles[1];
+        this.systemManager.myUserInfo.straightAngle_right_R = angles[2];
+    }
+
+    public void setLeftHandStraightAngle() {
+        float[] angles = this.evaluationStraightModule.calculate_lowArmToUpArmAngle(this.leftArm.transform, this.leftForeArm.transform);
+        this.systemManager.myUserInfo.straightAngle_forward_L = angles[0];
+        this.systemManager.myUserInfo.straightAngle_up_L = angles[1];
+        this.systemManager.myUserInfo.straightAngle_right_L = angles[2];
     }
 }

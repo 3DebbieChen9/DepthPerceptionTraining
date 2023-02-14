@@ -23,6 +23,7 @@ public class EvaluationManager : MonoBehaviour
         public bool isPunching;
         public bool isReacting;
         public bool isStraight;
+        public bool isReachTarget;
         public bool isMovingCorrectly;
         public float reactionTime;
 
@@ -30,6 +31,7 @@ public class EvaluationManager : MonoBehaviour
             this.isPunching = false;
             this.isReacting = false;
             this.isStraight = false;
+            this.isReachTarget = false;
             this.isMovingCorrectly = false;
             this.reactionTime = 0.0f;
         }
@@ -38,7 +40,9 @@ public class EvaluationManager : MonoBehaviour
             this.isPunching = false;
             this.isReacting = false;
             this.isStraight = false;
+            this.isReachTarget = false;
             this.isMovingCorrectly = false;
+            this.reactionTime = 0.0f;
         }
     }
 
@@ -92,4 +96,9 @@ public class EvaluationManager : MonoBehaviour
         this.userPerformanceEachUnit.isReacting = true;
         this.userPerformanceEachUnit.isMovingCorrectly = this.evaluationDirectionModule.judgeMovingDirection();
     }
+
+    public void userIsHitTarget() {
+        this.userPerformanceEachUnit.isReachTarget = true;
+    }
+    
 }

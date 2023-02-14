@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SystemManager : MonoBehaviour
 {
-    public class UserSizeInfo 
+    public class UserInfo 
     {
         public float avgUpperArmLength; // in meters
         public float avgForeArmLength; // in meters
@@ -13,11 +13,27 @@ public class SystemManager : MonoBehaviour
         public float idlePoseRadius; // in meters
         public float idlePoseHeight; // in meters
         
-        public UserSizeInfo(float _avgUpperArmLength, float _avgForeArmLength, float _idlePoseRadius, float _idlePoseHeight) {
+        public float straightAngle_forward_R;
+        public float straightAngle_forward_L;
+        public float straightAngle_up_R;
+        public float straightAngle_up_L;
+        public float straightAngle_right_R;
+        public float straightAngle_right_L;
+
+        public float handStraight_tolerateAngleThreshold;
+        
+        public UserInfo(float _avgUpperArmLength, float _avgForeArmLength, float _idlePoseRadius, float _idlePoseHeight) {
             this.avgUpperArmLength = _avgUpperArmLength;
             this.avgForeArmLength = _avgForeArmLength;
             this.idlePoseRadius = _idlePoseRadius;
             this.idlePoseHeight = _idlePoseHeight;
+            this.straightAngle_forward_R = 90.0f;
+            this.straightAngle_forward_L = 90.0f;
+            this.straightAngle_up_R = 90.0f;
+            this.straightAngle_up_L = 90.0f;
+            this.straightAngle_right_R = 180.0f;
+            this.straightAngle_right_L = 0.0f;
+            this.handStraight_tolerateAngleThreshold = 10.0f;
         }
     }
 
@@ -87,11 +103,19 @@ public class SystemManager : MonoBehaviour
     public SystemMode curSystemMode = SystemMode.Calibration_MovableSize;
 
     [SerializeField]
-    public UserSizeInfo myUserSizeInfo = new UserSizeInfo(0.21f, 0.23f, 0.45f, 1.6f);
+    public UserInfo myUserInfo = new UserInfo(0.21f, 0.23f, 0.45f, 1.6f);
     [SerializeField]
     public GameObject userIdlePose;
     [SerializeField]
     public GameObject userInitialPosition;
+
+    [SerializeField]
+    public MovableRangeInfo myMovableRangeInfo = new MovableRangeInfo();
+    [SerializeField]
+    public SettingInfo mySettingInfo = new SettingInfo();
+
+    [SerializeField]
+    public GameObject sceneOrigin;
 
     [SerializeField] 
     public GameObject OVRCameraRig;
@@ -104,7 +128,6 @@ public class SystemManager : MonoBehaviour
     [SerializeField]
     public GameObject OVRBoxingRight;
     
-
 
     [SerializeField]
     public UserArmRenderManager userArmRenderManager;
@@ -119,14 +142,9 @@ public class SystemManager : MonoBehaviour
     public TestingManager testingManager;
     
     [SerializeField]
-    public SettingInfo mySettingInfo = new SettingInfo();
-
-    [SerializeField]
-    public GameObject sceneOrigin;
-    [SerializeField]
-    public MovableRangeInfo myMovableRangeInfo = new MovableRangeInfo();
-    [SerializeField]
     public float scaleTransferFactor = 1.0f; // vr-distance / real-distance
+
+
 
     [SerializeField]
     public TextMesh consoleTitle;
@@ -148,10 +166,10 @@ public class SystemManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.userArmRenderManager.userAvatar.SetActive(false);
-        this.userIdlePose.GetComponent<CapsuleCollider>().radius = this.myUserSizeInfo.idlePoseRadius;
-        this.userIdlePose.GetComponent<CapsuleCollider>().height = this.myUserSizeInfo.idlePoseHeight;
-        this.userIdlePose.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.myUserSizeInfo.idlePoseHeight / 2.0f, 0.0f);
+        this.userArmRenderManager.userAvatarMeshSetActive(false);
+        this.userIdlePose.GetComponent<CapsuleCollider>().radius = this.myUserInfo.idlePoseRadius;
+        this.userIdlePose.GetComponent<CapsuleCollider>().height = this.myUserInfo.idlePoseHeight;
+        this.userIdlePose.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.myUserInfo.idlePoseHeight / 2.0f, 0.0f);
     }
 
     // Update is called once per frame
@@ -189,7 +207,7 @@ public class SystemManager : MonoBehaviour
                 this.calibrationManager.calibrateArmLength();
             }
             else if (this.curSystemMode == SystemMode.Calibration_IdlePose) {
-                this.consoleTitle.text = "Calibration Idle Pose";
+                this.consoleTitle.text = "Calibration: Idle Pose";
                 this.consoleText.text = "";
                 this.calibrationManager.calibrateIdlePose();
             }

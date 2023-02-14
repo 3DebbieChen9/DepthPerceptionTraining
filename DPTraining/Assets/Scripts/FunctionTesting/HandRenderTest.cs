@@ -84,9 +84,9 @@ public class HandRenderTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
-        //     this.isRerotation = !this.isRerotation;
-        // }
+        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
+            this.isRerotation = !this.isRerotation;
+        }
         if (isRerotation) {
             this.reRotationUserArm();
             // this.userAvatar.transform.position = new Vector3(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.userAvatar.transform.position.y, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z);

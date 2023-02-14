@@ -25,4 +25,14 @@ public class EvaluationStraightModule : MonoBehaviour
         print("Determine whether the user's arm is straight or not according to right/left hand");
         return true; // TODO: Implement this function
     }
+
+    public float[] calculate_lowArmToUpArmAngle(Transform upArm, Transform lowArm) {        
+        Vector3 upArmToLowArmNormalized = (lowArm.position - upArm.position).normalized;
+        
+        float angle_forward = Vector3.Angle(lowArm.forward, -upArmToLowArmNormalized);
+        float angle_up = Vector3.Angle(lowArm.up, -upArmToLowArmNormalized);
+        float angle_right = Vector3.Angle(lowArm.right, -upArmToLowArmNormalized);
+
+        return new float[] {angle_forward, angle_up, angle_right};
+    }
 }

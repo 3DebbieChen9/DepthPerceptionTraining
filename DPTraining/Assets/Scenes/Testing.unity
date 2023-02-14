@@ -738,7 +738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 599999384}
-  - component: {fileID: 599999383}
+  - component: {fileID: 599999385}
   m_Layer: 0
   m_Name: TestingModeManager
   m_TagString: Untagged
@@ -746,41 +746,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &599999383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599999382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad5b4d6502228fa43867560afef168bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  systemManager: {fileID: 0}
-  sceneBuildingManager: {fileID: 1046819823}
-  curTestLevel: 0
-  coach: {fileID: 2012913361}
-  unitNum: 0
-  targetUnitNum: 7
-  unitNumText: {fileID: 1412093686}
-  successCount: 0
-  isSuccess: 0
-  reactionTimerOn: 0
-  reactionTime: 0
-  reactionTimeTotal: 0
-  reactionTimeText: {fileID: 799518222}
-  isMoving: 0
-  speed: 0
-  movingDirection: 0
-  timeTarget: 7
-  timeLeft: 0
-  timerOn: 0
-  timerCircle: {fileID: 1080702959}
-  timerText: {fileID: 1349337099}
-  displayCanvas: {fileID: 1407915380}
-  neuronStickman: {fileID: 0}
 --- !u!4 &599999384
 Transform:
   m_ObjectHideFlags: 0
@@ -796,6 +761,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &599999385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599999382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8020fe0155db54596e0d117f5f4582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &680047430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,7 +2098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79e8bb93164afd479b106c4adbb8d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testingModeManager: {fileID: 0}
+  evaluationReachModule: {fileID: 0}
 --- !u!136 &2012913365
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2148,7 +2125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b45322a7e94ea46ac7a8a9d9acabba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testingModeManager: {fileID: 599999383}
+  evaluationReachModule: {fileID: 0}
 --- !u!136 &2012913367
 CapsuleCollider:
   m_ObjectHideFlags: 0
