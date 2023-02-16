@@ -12,11 +12,16 @@ public class EvaluationManager : MonoBehaviour
     // public TestingManager testingManager;
 
     [SerializeField]
-    public Vector3 startingPosition; // Camera Rig's Position when the unit is started
+    public Transform startingTransform; // Player's initial Transform when the unit is started
     [SerializeField]
-    public SystemManager.MovingDirection curMovingDirection = SystemManager.MovingDirection.initial;
+    public SystemManager.MovingDirection userMovingDirection = SystemManager.MovingDirection.initial;
+    [SerializeField]
+    public SystemManager.MovingDirection targetMovingDirection = SystemManager.MovingDirection.initial;
+    
     [SerializeField]
     public bool isDuringTheUnit = false;
+    [SerializeField]
+    public bool playerStartMoving = false;
 
     public class UserPerformanceEachUnit
     {
@@ -25,7 +30,7 @@ public class EvaluationManager : MonoBehaviour
         public bool isStraight;
         public bool isReachTarget;
         public bool isMovingCorrectly;
-        public float reactionTime;
+        // public float reactionTime;
 
         public UserPerformanceEachUnit() {
             this.isPunching = false;
@@ -33,7 +38,7 @@ public class EvaluationManager : MonoBehaviour
             this.isStraight = false;
             this.isReachTarget = false;
             this.isMovingCorrectly = false;
-            this.reactionTime = 0.0f;
+            // this.reactionTime = 0.0f;
         }
 
         public void reset() {
@@ -42,7 +47,7 @@ public class EvaluationManager : MonoBehaviour
             this.isStraight = false;
             this.isReachTarget = false;
             this.isMovingCorrectly = false;
-            this.reactionTime = 0.0f;
+            // this.reactionTime = 0.0f;
         }
     }
 
@@ -61,6 +66,7 @@ public class EvaluationManager : MonoBehaviour
     void Start()
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
+        this.startingTransform = this.systemManager.sceneOrigin.transform;
         this.evaluationStatusInitial();
     }
 
@@ -72,11 +78,14 @@ public class EvaluationManager : MonoBehaviour
 
     public void evaluationStatusInitial() {
         this.userPerformanceEachUnit.reset();
-        this.curMovingDirection = SystemManager.MovingDirection.initial;
+        this.userMovingDirection = SystemManager.MovingDirection.initial;
+        this.targetMovingDirection = SystemManager.MovingDirection.initial;
+        this.playerStartMoving = false;
     }
 
     public void setUserStartingPosition() {
-        this.startingPosition = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
+        this.startingTransform.position = this.systemManager.userCenterPosition.transform.position;
+        this.startingTransform.rotation = Quaternion.Euler(0.0f, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f);
     }
 
     public enum Hand {
@@ -84,21 +93,61 @@ public class EvaluationManager : MonoBehaviour
         right
     }
     public void userIsPunching(Hand hand) {
-        this.userPerformanceEachUnit.isPunching = true;
-        this.userPerformanceEachUnit.isReacting = true;
-        this.userPerformanceEachUnit.isStraight = this.evaluationStraightModule.judgeArmStraight(hand);
-        
-        this.isDuringTheUnit = false;
-        print("Stop the unit timer"); // TODO: Link to the testManager to determine the unit timer, and calculate the reaction time
+        if (this.isDuringTheUnit) {
+            this.userPerformanceEachUnit.isPunching = true;
+            this.userPerformanceEachUnit.isReacting = true;
+            this.userPerformanceEachUnit.isStraight = this.evaluationStraightModule.judgeArmStraight(hand);
+            this.systemManager.consoleTitle.text += "Punching";
+            this.isDuringTheUnit = false;
+            this.systemManager.testingModeManager.unitOver();
+        }
+        else {
+            this.userPerformanceEachUnit.isPunching = false;
+            this.userPerformanceEachUnit.isReacting = false;
+            this.userPerformanceEachUnit.isStraight = false;
+        }
     }
 
     public void userIsMoving() {
-        this.userPerformanceEachUnit.isReacting = true;
-        this.userPerformanceEachUnit.isMovingCorrectly = this.evaluationDirectionModule.judgeMovingDirection();
+        if (this.isDuringTheUnit) {
+            this.userPerformanceEachUnit.isReacting = true;
+            this.userPerformanceEachUnit.isMovingCorrectly = this.evaluationDirectionModule.judgeMovingDirection();
+        }
+        else {
+            this.userPerformanceEachUnit.isReacting = false;
+        }
     }
 
-    public void userIsHitTarget() {
-        this.userPerformanceEachUnit.isReachTarget = true;
+    public void userIsHitTarget(Hand hand) {
+        if (this.isDuringTheUnit) {
+            this.userPerformanceEachUnit.isReachTarget = true;
+            this.isDuringTheUnit = false;
+            this.systemManager.testingModeManager.unitOver();
+        }
+        else {
+            this.userPerformanceEachUnit.isReachTarget = false;
+        }
     }
     
+    public int getScore() {
+        int score = 0;
+        if (this.userPerformanceEachUnit.isReacting) {
+            score += 1;
+            this.systemManager.consoleText.text += "\nReacting score +1";
+            print("Reacting score +1");
+        }
+
+        if (this.userPerformanceEachUnit.isMovingCorrectly) {
+            score += 1;
+            this.systemManager.consoleText.text += "\nMoving Correctly score +1";
+            print("Moving Correctly score +1");
+        }
+
+        if (this.userPerformanceEachUnit.isStraight && this.userPerformanceEachUnit.isReachTarget) {
+            score += 1;
+            this.systemManager.consoleText.text += "\nStraight and Reach score +1";
+            print("Straight and Reach score +1");
+        }
+        return score;
+    }
 }

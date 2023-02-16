@@ -13,6 +13,7 @@ public class EvaluationMovingModule : MonoBehaviour
         if (this.evaluationManager == null) {
             this.evaluationManager = GameObject.Find("EvaluationManager").GetComponent<EvaluationManager>();
         }
+        this.evaluationManager.playerStartMoving = false;
     }
 
     // Update is called once per frame
@@ -23,12 +24,15 @@ public class EvaluationMovingModule : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (this.evaluationManager.isDuringTheUnit) {
-            if (other.gameObject.tag == "Main Camera") {
+        if (other.gameObject.name == "UserCenterPosition") {
+            if (this.evaluationManager.isDuringTheUnit && !this.evaluationManager.playerStartMoving) {
                 this.evaluationManager.userIsMoving();
+                this.evaluationManager.playerStartMoving = true;
                 print("Player is moving!");
             }
+            this.evaluationManager.userIsAtOrigin = false;
         }
+        
     }
 
     // void OnTriggerEnter(Collider other) 
@@ -43,7 +47,7 @@ public class EvaluationMovingModule : MonoBehaviour
     void OnTriggerStay (Collider other) 
     {
         if (!this.evaluationManager.isDuringTheUnit) {
-            if (other.gameObject.tag == "Main Camera") {
+            if (other.gameObject.name == "UserCenterPosition") {
                 this.evaluationManager.userIsAtOrigin = true;
                 print("The user is at the sceneOrigin");
             }

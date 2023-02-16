@@ -19,7 +19,7 @@ public class ModeSelection : MonoBehaviour
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
         
-        this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
+        // this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
         this.systemManager.OVRControllerLeft.SetActive(false);
         this.systemManager.OVRControllerRight.SetActive(false);
         this.systemManager.OVRBoxingLeft.SetActive(true);

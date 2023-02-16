@@ -96,7 +96,7 @@ public class UserArmRenderManager : MonoBehaviour
         // }
         if (this.systemManager.curSystemMode != SystemManager.SystemMode.Calibration_MovableSize) {
             this.reRotationUserArm();
-            this.userAvatar.transform.position = new Vector3(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.userAvatar.transform.position.y, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z);
+            // this.userAvatar.transform.position = new Vector3(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.userAvatar.transform.position.y, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z);
         }
     }
 
@@ -108,11 +108,13 @@ public class UserArmRenderManager : MonoBehaviour
         float forearmLength = this.systemManager.myUserInfo.avgForeArmLength;
         /////////////////////////////////////////////
 
-        // Modify the userAvatar's height
-        float avatarDafaultCenterToHandLength = 0.73f;
-        float newAvatarScale = centerEyetoControllerLength / avatarDafaultCenterToHandLength;
+        // // Modify the userAvatar's height
+        // float avatarDefaultCenterToHandLength = 0.73f;
+        // float avatarDefaultHeight = 1.83f;
+        // // float newAvatarScale = centerEyetoControllerLength / avatarDefaultCenterToHandLength;
+        // float newAvatarScale = this.systemManager.myUserInfo.userHeight / avatarDefaultHeight;
         
-        this.userAvatar.transform.localScale = new Vector3(1.0f, newAvatarScale, 1.0f);
+        // this.userAvatar.transform.localScale = new Vector3(1.0f, newAvatarScale, 1.0f);
 
         // Modify the userAvatar's hand length
         float avatarDefaultUpperArmLength = 0.28f;
@@ -138,10 +140,10 @@ public class UserArmRenderManager : MonoBehaviour
     }
 
     private void reRotationUserArm() {
-        // this.hips.transform.localRotation = this.hipsTransform.localRotation;
-        // this.spine.transform.localRotation = this.spineTransform.localRotation;
-        // this.spine1.transform.localRotation = this.spine1Transform.localRotation;
-        // this.spine2.transform.localRotation = this.spine2Transform.localRotation;
+        this.hips.transform.localRotation = this.hipsTransform.localRotation;
+        this.spine.transform.localRotation = this.spineTransform.localRotation;
+        this.spine1.transform.localRotation = this.spine1Transform.localRotation;
+        this.spine2.transform.localRotation = this.spine2Transform.localRotation;
         this.leftShoulder.transform.localRotation = this.leftShoulderTransform.localRotation;
         this.leftArm.transform.localRotation = this.leftArmTransform.localRotation;
         this.leftForeArm.transform.localRotation = this.leftForeArmTransform.localRotation;
@@ -153,7 +155,7 @@ public class UserArmRenderManager : MonoBehaviour
 
         // this.userAvatar.transform.forward = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.forward; 
         // this.userAvatar.transform.rotation = Quaternion.LookRotation(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.forward, this.userAvatar.transform.up);
-        this.userAvatar.transform.rotation = Quaternion.Euler(0.0f, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f);
+        // this.userAvatar.transform.rotation = Quaternion.Euler(0.0f, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f);
 
     }
 

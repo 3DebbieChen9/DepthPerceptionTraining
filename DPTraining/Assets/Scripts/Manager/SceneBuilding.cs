@@ -19,8 +19,8 @@ public class SceneBuilding : MonoBehaviour
     
     [SerializeField]
     public GameObject coach;
-    [SerializeField]
-    public GameObject userModel;
+    // [SerializeField]
+    // public GameObject userModel;
     
     [SerializeField]
     private LineRenderer[] verticalLines;
@@ -31,7 +31,7 @@ public class SceneBuilding : MonoBehaviour
     void Start()
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
-        this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
+        // this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
         this.systemManager.OVRControllerLeft.SetActive(false);
         this.systemManager.OVRControllerRight.SetActive(false);
         this.systemManager.OVRBoxingLeft.SetActive(true);
@@ -65,7 +65,7 @@ public class SceneBuilding : MonoBehaviour
         this.movablePlaneOnFloor.SetActive(!this.systemManager.mySettingInfo.isOnRing);
 
         // this.drawBoundsLines();
-        this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
+        // this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
 
         this.coachTransformInitial(2.5f);
         this.coach.SetActive(true);

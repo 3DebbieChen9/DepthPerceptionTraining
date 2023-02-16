@@ -11,7 +11,7 @@ public class SystemManager : MonoBehaviour
         public float avgForeArmLength; // in meters
         public float avgCenterEyeToControllerLength; // in meters
         public float idlePoseRadius; // in meters
-        public float idlePoseHeight; // in meters
+        public float userHeight; // in meters
         
         public float straightAngle_forward_R;
         public float straightAngle_forward_L;
@@ -22,11 +22,12 @@ public class SystemManager : MonoBehaviour
 
         public float handStraight_tolerateAngleThreshold;
         
-        public UserInfo(float _avgUpperArmLength, float _avgForeArmLength, float _idlePoseRadius, float _idlePoseHeight) {
+        public UserInfo(float _avgUpperArmLength, float _avgForeArmLength, float _avgCenterEyeToControllerLength, float _idlePoseRadius, float _userHeight) {
             this.avgUpperArmLength = _avgUpperArmLength;
             this.avgForeArmLength = _avgForeArmLength;
+            this.avgCenterEyeToControllerLength = _avgCenterEyeToControllerLength;
             this.idlePoseRadius = _idlePoseRadius;
-            this.idlePoseHeight = _idlePoseHeight;
+            this.userHeight = _userHeight;
             this.straightAngle_forward_R = 90.0f;
             this.straightAngle_forward_L = 90.0f;
             this.straightAngle_up_R = 90.0f;
@@ -65,13 +66,14 @@ public class SystemManager : MonoBehaviour
         public bool isOnRing;
         public bool targetIsRightHanded;
         public float tolerateRaduisBetweenOriginAndUser;
+        public float userBodyRadius;
         public SystemMode targetSystemMode;
         public List<SystemMode> modeWithSceneBuildCoach = new List<SystemMode>();
 
         public SettingInfo() {
             this.isOnRing = false;
             this.targetIsRightHanded = true;
-            this.tolerateRaduisBetweenOriginAndUser = 0.3f;
+            this.tolerateRaduisBetweenOriginAndUser = 0.15f;
             this.targetSystemMode = SystemMode.Testing;
 
             this.modeWithSceneBuildCoach.Add(SystemMode.Testing);
@@ -103,11 +105,15 @@ public class SystemManager : MonoBehaviour
     public SystemMode curSystemMode = SystemMode.Calibration_MovableSize;
 
     [SerializeField]
-    public UserInfo myUserInfo = new UserInfo(0.21f, 0.23f, 0.45f, 1.6f);
+    public UserInfo myUserInfo = new UserInfo(0.21f, 0.23f, 0.60f, 0.45f, 1.6f);
+    [SerializeField]
+    public GameObject userAvatar;
     [SerializeField]
     public GameObject userIdlePose;
     [SerializeField]
     public GameObject userInitialPosition;
+    [SerializeField]
+    public GameObject userCenterPosition;
 
     [SerializeField]
     public MovableRangeInfo myMovableRangeInfo = new MovableRangeInfo();
@@ -139,7 +145,9 @@ public class SystemManager : MonoBehaviour
     [SerializeField]
     public SceneBuilding sceneBuildingManager;
     [SerializeField]
-    public TestingManager testingManager;
+    public TestingModeManager testingModeManager;
+    // [SerializeField]
+    // public TestingManager testingManager;
     
     [SerializeField]
     public float scaleTransferFactor = 1.0f; // vr-distance / real-distance
@@ -168,8 +176,8 @@ public class SystemManager : MonoBehaviour
     {
         this.userArmRenderManager.userAvatarMeshSetActive(false);
         this.userIdlePose.GetComponent<CapsuleCollider>().radius = this.myUserInfo.idlePoseRadius;
-        this.userIdlePose.GetComponent<CapsuleCollider>().height = this.myUserInfo.idlePoseHeight;
-        this.userIdlePose.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.myUserInfo.idlePoseHeight / 2.0f, 0.0f);
+        this.userIdlePose.GetComponent<CapsuleCollider>().height = this.myUserInfo.userHeight;
+        this.userIdlePose.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.myUserInfo.userHeight / 2.0f, 0.0f);
     }
 
     // Update is called once per frame
@@ -192,8 +200,17 @@ public class SystemManager : MonoBehaviour
             this.sceneBuildingManager = GameObject.Find("SceneBuilding").GetComponent<SceneBuilding>();
         }
 
-        if (this.testingManager == null && this.curSystemMode == SystemMode.Testing) {
-            this.testingManager = GameObject.Find("TestingModeManager").GetComponent<TestingManager>();
+        if (this.testingModeManager == null && this.curSystemMode == SystemMode.Testing) {
+            this.testingModeManager = GameObject.Find("TestingModeManager").GetComponent<TestingModeManager>();
+        }
+
+        if (this.curSystemMode != SystemMode.Calibration_MovableSize && this.curSystemMode != SystemMode.Calibration_ArmLength) {
+             this.userAvatar.transform.position = new Vector3(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.userAvatar.transform.position.y, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z);
+             this.userAvatar.transform.rotation = Quaternion.Euler(0.0f, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f);
+             this.userIdlePose.transform.position = new Vector3(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.userIdlePose.transform.position.y, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z);
+             this.userIdlePose.transform.rotation = Quaternion.Euler(0.0f, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f);
+             this.userCenterPosition.transform.position = new Vector3(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.userCenterPosition.transform.position.y, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z);
+             this.userCenterPosition.transform.rotation = Quaternion.Euler(0.0f, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f);
         }
 
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
@@ -221,7 +238,7 @@ public class SystemManager : MonoBehaviour
                 this.calibrationManager.calibrationArmLengthInitialize();
             }
             else if (this.curSystemMode == SystemMode.Testing) {
-                this.testingManager.testingInitialize();
+                this.testingModeManager.testingModeInitial();
             }
         }
         

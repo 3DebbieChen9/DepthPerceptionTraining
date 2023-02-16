@@ -773,6 +773,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8020fe0155db54596e0d117f5f4582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  systemManager: {fileID: 0}
+  evaluationManager: {fileID: 0}
+  sceneBuildingManager: {fileID: 1046819823}
+  targetUnitNum: 7
+  curTestLevel: 0
+  curUnitNum: 0
+  reactionTimeOutCount: 0
+  reactionTimeOut: 0
+  totalReactionTime: 0
+  totalScore: 0
 --- !u!1 &680047430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1033,6 @@ MonoBehaviour:
   movablePlaneOnFloor: {fileID: 436195933}
   movablePlaneOnRing: {fileID: 436195934}
   coach: {fileID: 2012913361}
-  userModel: {fileID: 0}
   verticalLines:
   - {fileID: 400800241}
   - {fileID: 917597}

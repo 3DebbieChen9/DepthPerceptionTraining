@@ -23,8 +23,11 @@ public class TargetInteraction_L : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Glove_R" || other.gameObject.tag == "Glove_L") {
+        if (other.gameObject.tag == "Glove_L") {
             this.evaluationReachModule.reachTarget("L");
+        }
+        else if (other.gameObject.tag == "Glove_R") {
+            this.evaluationReachModule.reachTarget("R");
         }
     }
 }

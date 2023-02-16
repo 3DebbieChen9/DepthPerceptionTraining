@@ -6,6 +6,8 @@ public class EvaluationDirectionModule : MonoBehaviour
 {
     [SerializeField]
     public EvaluationManager evaluationManager;
+    [SerializeField]
+    public Transform userCurTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,25 @@ public class EvaluationDirectionModule : MonoBehaviour
     }
 
     public bool judgeMovingDirection() {
-        print("Determine whether the user's moving direction is correct or not (compare to the target's movement)");
-        return true; // TODO: Implement this function
+        Vector3 movingDirection = (this.userCurTransform.position - this.evaluationManager.startingTransform.position).normalized;
+        Vector3 startForward = this.evaluationManager.startingTransform.forward;
+        float angle = Vector3.Angle(startForward, movingDirection);
+        if (angle > 90.0f) {
+            this.evaluationManager.userMovingDirection = SystemManager.MovingDirection.backward;
+            print("[DC] Player Moving Backward");
+        }
+        else {
+            this.evaluationManager.userMovingDirection = SystemManager.MovingDirection.forward;
+            print("[DC] Player Moving Forward");
+        }
+
+        if (this.evaluationManager.userMovingDirection == this.evaluationManager.targetMovingDirection && this.evaluationManager.userMovingDirection != SystemManager.MovingDirection.initial) {
+            print("[DC] Player Moving Correct Direction");
+            return true;
+        }
+        else {
+            print("[DC] Player Moving Wrong Direction");
+            return false;
+        }
     }
 }

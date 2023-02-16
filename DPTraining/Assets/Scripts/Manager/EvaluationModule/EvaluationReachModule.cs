@@ -21,12 +21,16 @@ public class EvaluationReachModule : MonoBehaviour
         
     }
 
-    public void reachTarget(string target) {
-        print("Reach Target " + target);
-        // if (this.unitNum != 0 && this.timerOn == false) {
-        //     this.successCount += 1;
-        //     this.isSuccess = true;
-        //     this.performanceResult();
-        // }
+    public void reachTarget(string hand) {
+        if (this.evaluationManager.isDuringTheUnit) {
+            this.evaluationManager.systemManager.consoleText.text += "Reach Target with " + hand + "\n";
+            print("Reach Target with " + hand);
+            if (hand == "L") {
+                this.evaluationManager.userIsHitTarget(EvaluationManager.Hand.left);
+            }
+            else if(hand == "R") {
+                this.evaluationManager.userIsHitTarget(EvaluationManager.Hand.right);
+            }
+        }
     }
 }
