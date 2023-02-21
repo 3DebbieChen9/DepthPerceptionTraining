@@ -1,25 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Calibration.unity
+- path: Assets/Scenes/DevelopeTesting/BoxingSceneTesting_2.unity
   isLoaded: 1
   isActive: 1
-  isSubScene: 0
-- path: Assets/Scenes/ModeSelection.unity
-  isLoaded: 0
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Scenes/Testing.unity
-  isLoaded: 0
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Scenes/DevelopeTesting/FuntionTest.unity
-  isLoaded: 0
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Scenes/DevelopeTesting/VRTest.unity
-  isLoaded: 0
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/VRIK/VRIK (Basic).unity
-  isLoaded: 0
-  isActive: 0
   isSubScene: 0

@@ -120,6 +120,9 @@
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll"
+-r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
+-r:"Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -542,6 +545,7 @@
 "Assets/Scripts/FunctionTesting/PunchModuleTest.cs"
 "Assets/Scripts/FunctionTesting/SDKFunctionTest.cs"
 "Assets/Scripts/FunctionTesting/StraightDetermineModuleTest.cs"
+"Assets/Scripts/FunctionTesting/TargetMovementManagerTest.cs"
 "Assets/Scripts/FunctionTesting/TestingManager.cs"
 "Assets/Scripts/FunctionTesting/Timer.cs"
 "Assets/Scripts/Interaction/BoxingBagInteraction_1.cs"
@@ -559,6 +563,7 @@
 "Assets/Scripts/Manager/ModeSelection.cs"
 "Assets/Scripts/Manager/SceneBuilding.cs"
 "Assets/Scripts/Manager/SystemManager.cs"
+"Assets/Scripts/Manager/TargetManager.cs"
 "Assets/Scripts/Manager/TestingModeManager.cs"
 "Assets/Scripts/Manager/UserArmRenderManager.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"

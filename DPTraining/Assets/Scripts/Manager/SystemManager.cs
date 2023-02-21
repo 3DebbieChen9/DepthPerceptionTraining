@@ -64,7 +64,7 @@ public class SystemManager : MonoBehaviour
     public class SettingInfo
     {
         public bool isOnRing;
-        public bool targetIsRightHanded;
+        public bool targetIsLeftHanded;
         public float tolerateRaduisBetweenOriginAndUser;
         public float userBodyRadius;
         public SystemMode targetSystemMode;
@@ -72,7 +72,7 @@ public class SystemManager : MonoBehaviour
 
         public SettingInfo() {
             this.isOnRing = false;
-            this.targetIsRightHanded = true;
+            this.targetIsLeftHanded = true;
             this.tolerateRaduisBetweenOriginAndUser = 0.15f;
             this.targetSystemMode = SystemMode.Testing;
 

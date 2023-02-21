@@ -82,7 +82,7 @@ public class ModeSelection : MonoBehaviour
     }
 
     public void switchHandedness() {
-        this.systemManager.mySettingInfo.targetIsRightHanded = !this.systemManager.mySettingInfo.targetIsRightHanded;
+        this.systemManager.mySettingInfo.targetIsLeftHanded = !this.systemManager.mySettingInfo.targetIsLeftHanded;
     }
 
     public void startSystem() {
