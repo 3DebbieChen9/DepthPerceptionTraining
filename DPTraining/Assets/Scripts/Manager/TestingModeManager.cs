@@ -37,6 +37,8 @@ public class TestingModeManager : MonoBehaviour
     public EvaluationManager evaluationManager;
     [SerializeField]
     public SceneBuilding sceneBuildingManager;
+    [SerializeField]
+    public TargetManager targetManager;
     
     [SerializeField]
     public int targetUnitNum = 7;
@@ -69,6 +71,7 @@ public class TestingModeManager : MonoBehaviour
         
         this.systemManager.userInitialPosition.transform.position = this.systemManager.sceneOrigin.transform.position;
         this.sceneBuildingManager = GameObject.Find("SceneBuilding").GetComponent<SceneBuilding>();
+        this.targetManager = GameObject.Find("TargetManager").GetComponent<TargetManager>();
     }
 
     // Update is called once per frame
@@ -81,9 +84,9 @@ public class TestingModeManager : MonoBehaviour
                     this.reactionTimer.ResetTimer();
                     this.readyTimer.ResetTimer();
                     
-                    float coachDistancetoCenter = 1.0f;
-                    this.sceneBuildingManager.coachTransformInitial(coachDistancetoCenter);
-                    this.evaluationManager.targetMovingDirection = SystemManager.MovingDirection.backward; // DEBUG only
+                    // float coachDistancetoCenter = 1.0f;
+                    // this.sceneBuildingManager.coachTransformInitial(coachDistancetoCenter);
+                    // this.evaluationManager.targetMovingDirection = SystemManager.MovingDirection.backward; // DEBUG only
                     this.evaluationManager.evaluationStatusInitial();
                     this.evaluationManager.setUserStartingPosition();
 
@@ -97,6 +100,7 @@ public class TestingModeManager : MonoBehaviour
                 this.systemManager.consoleText.text = "Move to the center please!!!";
                 print("Move to the center please!!!");
             }
+            
             
             if (this.curUnitNum == this.targetUnitNum && this.reactionTimer.timerOn == false && this.readyTimer.timerOn == false) {
                 int timeUsefulCount = this.targetUnitNum - this.reactionTimeOutCount;
@@ -117,6 +121,8 @@ public class TestingModeManager : MonoBehaviour
                 this.readyTimer.ResetTimer();
 
                 this.evaluationManager.isDuringTheUnit = true;
+                this.targetManager.targetAnimator.SetBool("isDuringUnit", true);
+                this.targetManager.randomTargetMovement(this.curTestLevel);
 
                 this.reactionTimer.StartTimer();
                 this.systemManager.consoleText.text = "Unit " + this.curUnitNum.ToString() + " start";
@@ -130,6 +136,7 @@ public class TestingModeManager : MonoBehaviour
                 this.reactionTimer.ResetTimer();
                 if (this.evaluationManager.isDuringTheUnit) {
                     this.evaluationManager.isDuringTheUnit = false;
+                    this.targetManager.targetAnimator.SetBool("isDuringUnit", false);
                     this.unitOver();
                 }
                 this.reactionTimeOut = true;
@@ -152,6 +159,9 @@ public class TestingModeManager : MonoBehaviour
     }
 
     public void unitOver() {
+        this.targetManager.targetAnimator.SetBool("isDuringUnit", false);
+        this.targetManager.targetMoveToInitial();
+
         this.reactionTimer.timerOn = false;
         if (this.reactionTimeOut) {
             this.reactionTimeOut = false;

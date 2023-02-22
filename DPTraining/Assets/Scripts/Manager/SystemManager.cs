@@ -47,7 +47,7 @@ public class SystemManager : MonoBehaviour
         public Vector3 rightUpperCorner;
 
         public float referenceRanageLength; // in meters
-        public float avgLengthInVR; // in meters
+        public float avgLengthInVR; // movable range length in VR in meters
 
         public MovableRangeInfo() {
             this.horizontalDirection = new Vector3(0.0f, 0.0f, 0.0f);
@@ -151,8 +151,6 @@ public class SystemManager : MonoBehaviour
     
     [SerializeField]
     public float scaleTransferFactor = 1.0f; // vr-distance / real-distance
-
-
 
     [SerializeField]
     public TextMesh consoleTitle;

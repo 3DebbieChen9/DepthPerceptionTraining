@@ -26,12 +26,19 @@ public class SceneBuilding : MonoBehaviour
     private LineRenderer[] verticalLines;
     [SerializeField]
     private LineRenderer[] horizontalLines;
+
+    private bool isStarted = false;
     
     // Start is called before the first frame update
     void Start()
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
         // this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
+        // this.sceneBuildingStart();
+    }
+
+    private void sceneBuildingStart() {
+        this.isStarted = true;
         this.systemManager.OVRControllerLeft.SetActive(false);
         this.systemManager.OVRControllerRight.SetActive(false);
         this.systemManager.OVRBoxingLeft.SetActive(true);
@@ -39,13 +46,13 @@ public class SceneBuilding : MonoBehaviour
         this.SceneInitialization();
         this.BuildTheScene();
     }
-
     // Update is called once per frame
     void Update()
     {
-        // this.userTransform();
+        if (systemManager != null && !this.isStarted) {
+            this.sceneBuildingStart();
+        }
     }
-
     public void SceneInitialization() {
         this.gym.SetActive(false);
         foreach(LineRenderer line in this.verticalLines) {
@@ -67,8 +74,8 @@ public class SceneBuilding : MonoBehaviour
         // this.drawBoundsLines();
         // this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
 
-        this.coachTransformInitial(2.5f);
-        this.coach.SetActive(true);
+        // this.coachTransformInitial(2.5f);
+        // this.coach.SetActive(true);
     }
 
     void boxingSceneTransform() {

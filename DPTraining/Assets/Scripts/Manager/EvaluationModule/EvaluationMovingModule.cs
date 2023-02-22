@@ -49,7 +49,7 @@ public class EvaluationMovingModule : MonoBehaviour
         if (!this.evaluationManager.isDuringTheUnit) {
             if (other.gameObject.name == "UserCenterPosition") {
                 this.evaluationManager.userIsAtOrigin = true;
-                print("The user is at the sceneOrigin");
+                // print("The user is at the sceneOrigin");
             }
         }    
     }

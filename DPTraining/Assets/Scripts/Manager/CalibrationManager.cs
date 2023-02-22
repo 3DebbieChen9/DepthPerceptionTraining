@@ -67,6 +67,7 @@ public class CalibrationManager : MonoBehaviour
                                                                                             this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position.z);
             if (this.distanceMarkerCount == this.distanceMarkers.Length-1) {
                 this.systemManager.myMovableRangeInfo.avgLengthInVR = this.calculateAvgDistance();
+                this.systemManager.myMovableRangeInfo.avgLengthInVR = 4.0f; // DEBUG ONLY
                 this.systemManager.consoleTitle.text = "Movable Range Result";
                 this.systemManager.consoleText.text = "Average Distance = " + this.systemManager.myMovableRangeInfo.avgLengthInVR.ToString();
                 print("[DC]\nAverage Distance = " + this.systemManager.myMovableRangeInfo.avgLengthInVR.ToString());
