@@ -29,20 +29,25 @@ public class EvaluationDirectionModule : MonoBehaviour
         float angle = Vector3.Angle(startForward, movingDirection);
         if (angle > 90.0f) {
             this.evaluationManager.userMovingDirection = SystemManager.MovingDirection.backward;
-            print("[DC] Player Moving Backward");
+            if (this.evaluationManager.targetMovingDirection == SystemManager.MovingDirection.forward) {
+                print("[DC] Player Moving Backward / Correct Direction");
+                return true;
+            }
+            else {
+                print("[DC] Player Moving Backward / Wrong Direction");
+                return false;
+            }
         }
         else {
             this.evaluationManager.userMovingDirection = SystemManager.MovingDirection.forward;
-            print("[DC] Player Moving Forward");
-        }
-
-        if (this.evaluationManager.userMovingDirection == this.evaluationManager.targetMovingDirection && this.evaluationManager.userMovingDirection != SystemManager.MovingDirection.initial) {
-            print("[DC] Player Moving Correct Direction");
-            return true;
-        }
-        else {
-            print("[DC] Player Moving Wrong Direction");
-            return false;
+            if (this.evaluationManager.targetMovingDirection == SystemManager.MovingDirection.backward) {
+                print("[DC] Player Moving Forward / Correct Direction");
+                return true;
+            }
+            else {
+                print("[DC] Player Moving Forward / Wrong Direction");
+                return false;
+            }
         }
     }
 }

@@ -236,8 +236,14 @@ public class SystemManager : MonoBehaviour
                 this.calibrationManager.calibrationArmLengthInitialize();
             }
             else if (this.curSystemMode == SystemMode.Testing) {
+                this.sceneBuildingManager.SceneInitialization();
                 this.testingModeManager.testingModeInitial();
+                this.testingModeManager.targetManager.targetMoveToInitial();
             }
+            else if (this.curSystemMode == SystemMode.Testing) {
+                
+            }
+            
         }
         
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch)) {

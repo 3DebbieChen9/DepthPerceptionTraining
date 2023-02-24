@@ -1,7 +1,7 @@
 sceneSetups:
 - path: Assets/Scenes/Calibration.unity
-  isLoaded: 1
-  isActive: 1
+  isLoaded: 0
+  isActive: 0
   isSubScene: 0
 - path: Assets/Scenes/ModeSelection.unity
   isLoaded: 0
@@ -14,4 +14,20 @@ sceneSetups:
 - path: Assets/Scenes/DevelopeTesting/BoxingSceneTesting_2.unity
   isLoaded: 0
   isActive: 0
+  isSubScene: 0
+- path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/VRIK/VRIK (Moving Platform Controller).unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/VRIK/VRIK (Basic Head & Hands Calibration).unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/VRIK/VRIK (Calibration).unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/DevelopeTesting/VRIK_test.unity
+  isLoaded: 1
+  isActive: 1
   isSubScene: 0

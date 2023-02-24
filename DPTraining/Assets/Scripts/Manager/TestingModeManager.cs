@@ -140,7 +140,7 @@ public class TestingModeManager : MonoBehaviour
                     this.unitOver();
                 }
                 this.reactionTimeOut = true;
-                this.systemManager.consoleText.text += "Unit " + this.curUnitNum.ToString() + " timeout";
+                this.systemManager.consoleText.text = "Unit " + this.curUnitNum.ToString() + " timeout";
                 print("Unit " + this.curUnitNum.ToString() + " timeout");
             }
         }
@@ -160,7 +160,7 @@ public class TestingModeManager : MonoBehaviour
 
     public void unitOver() {
         this.targetManager.targetAnimator.SetBool("isDuringUnit", false);
-        this.targetManager.targetMoveToInitial();
+        this.targetManager.invokeTargetMoveToInitial(0.5f);
 
         this.reactionTimer.timerOn = false;
         if (this.reactionTimeOut) {

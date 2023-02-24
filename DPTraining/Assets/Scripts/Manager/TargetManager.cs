@@ -60,7 +60,8 @@ public class TargetManager : MonoBehaviour
                                                     this.systemManager.sceneBuildingManager.gym.transform.position.y + 1.0f * Convert.ToInt32(this.systemManager.mySettingInfo.isOnRing), 
                                                     this.targetInitialPosition.z);
         this.targetMoveToInitial();
-        this.targetTransform.DOLookAt(this.systemManager.sceneOrigin.transform.position, 3.0f);
+        Invoke("RotateTarget", 2.1f);
+        // this.targetTransform.LookAt(this.systemManager.sceneOrigin.transform.position);
 
         this.targetMoveDistanceMin_Forward = this.userArmLength * this.targetToUserMultiple + this.targetCenterToEdgeLength;
         this.targetMoveDistanceMax_Forward = Mathf.Max(this.systemManager.myMovableRangeInfo.avgLengthInVR / 2.0f - this.userArmLength * 2.0f + 
@@ -69,8 +70,13 @@ public class TargetManager : MonoBehaviour
 
         this.targetMoveDistanceMin_Backward = this.userArmLength;
         this.targetMoveDistanceMax_Backward = Mathf.Max(this.systemManager.myMovableRangeInfo.avgLengthInVR / 2.0f 
-                                                        - this.userArmLength * (1.0f + this.targetToUserMultiple) + this.targetCenterToEdgeLength, 
+                                                        - (this.userArmLength * (1.0f + this.targetToUserMultiple) + this.targetCenterToEdgeLength), 
                                                         targetMoveDistanceMin_Backward);
+        print("[DC] userArmLength: " + this.userArmLength);
+        print("[DC] targetMoveDistanceMin_Forward: " + this.targetMoveDistanceMin_Forward + "\ntargetMoveDistanceMax_Forward: " + (this.systemManager.myMovableRangeInfo.avgLengthInVR / 2.0f - this.userArmLength * 2.0f + 
+                                                        this.userArmLength * this.targetToUserMultiple + this.targetCenterToEdgeLength));
+        print("[DC] targetMoveDistanceMin_Backward: " + this.targetMoveDistanceMin_Backward + "\ntargetMoveDistanceMax_Backward: " + (this.systemManager.myMovableRangeInfo.avgLengthInVR / 2.0f 
+                                                        - (this.userArmLength * (1.0f + this.targetToUserMultiple) + this.targetCenterToEdgeLength)));
     }
 
     public void targetMoveToInitial() {
@@ -83,12 +89,14 @@ public class TargetManager : MonoBehaviour
         float rad = angle * Mathf.Deg2Rad;
         this.targetAnimator.SetBool("Moving", true);
         this.targetAnimator.SetFloat("Direction", rad);
-        this.targetTransform.DOMove(this.targetInitialPosition, 5.0f);
-        // this.targetTransform.DOLookAt(this.systemManager.sceneOrigin.transform.position, 3.0f);
-        Invoke("StopMoving", 5.0f);
-        Invoke("TargetIsAtInitial", 5.0f);
+        this.targetTransform.DOMove(this.targetInitialPosition, 2.0f);
+        Invoke("StopMoving", 2.0f);
+        Invoke("TargetIsAtInitial", 2.0f);
     }
 
+    public void invokeTargetMoveToInitial(float delayTime) {
+        Invoke("targetMoveToInitial", delayTime);
+    }
     
     public void randomTargetMovement(TestingModeManager.TestLevel testLevel) {
         Vector3 movingDirectionVector = new Vector3(0.0f, 0.0f, 0.0f);
@@ -130,8 +138,8 @@ public class TargetManager : MonoBehaviour
         float speed = UnityEngine.Random.Range(speedMin, speedMax);
         float distance = UnityEngine.Random.Range(distanceMin, distanceMax);
         float duration = distance / speed;
-        
         print("Speed: " + speed + ", Distance: " + distance + ", Duration: " + duration);
+
         targetPosition = this.targetTransform.position + movingDirectionVector * distance;
         this.StartMoving(movingDirectionVector, duration, targetPosition);
     }
@@ -154,5 +162,9 @@ public class TargetManager : MonoBehaviour
 
     private void TargetIsAtInitial() {
         this.targetCoachIsAtInitial = true;
+    }
+    private void RotateTarget() {
+        print("RotateTarget");
+        this.targetTransform.DOLookAt(this.systemManager.sceneOrigin.transform.position, 1.0f);
     }
 }

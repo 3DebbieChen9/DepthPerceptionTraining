@@ -97,7 +97,6 @@ public class EvaluationManager : MonoBehaviour
             this.userPerformanceEachUnit.isPunching = true;
             this.userPerformanceEachUnit.isReacting = true;
             this.userPerformanceEachUnit.isStraight = this.evaluationStraightModule.judgeArmStraight(hand);
-            this.systemManager.consoleTitle.text += "Punching";
             this.isDuringTheUnit = false;
             this.systemManager.testingModeManager.unitOver();
         }
@@ -148,6 +147,17 @@ public class EvaluationManager : MonoBehaviour
             this.systemManager.consoleText.text += "\nStraight and Reach score +1";
             print("Straight and Reach score +1");
         }
+
+        // DEBUG
+        if (this.userPerformanceEachUnit.isStraight && !this.userPerformanceEachUnit.isReachTarget) {
+            this.systemManager.consoleText.text += "\nStraight but not Reach";
+            print("Straight but not Reach");
+        }
+        if (!this.userPerformanceEachUnit.isStraight && this.userPerformanceEachUnit.isReachTarget) {
+            this.systemManager.consoleText.text += "\nReach but not Straight";
+            print("Reach but not Straight");
+        }
+
         return score;
     }
 }

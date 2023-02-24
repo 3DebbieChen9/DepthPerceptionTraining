@@ -6,6 +6,7 @@ public class BoxingGlovesInteraction : MonoBehaviour
 {
     [SerializeField]
     private ModeSelection modeSelectionManager;
+    private bool isInteracted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -13,6 +14,7 @@ public class BoxingGlovesInteraction : MonoBehaviour
         if (this.modeSelectionManager == null) {
             this.modeSelectionManager = GameObject.Find("ModeSelection").GetComponent<ModeSelection>();
         }
+        this.isInteracted = false;
     }
 
     // Update is called once per frame
@@ -23,7 +25,10 @@ public class BoxingGlovesInteraction : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Glove_R" || other.gameObject.tag == "Glove_L") {
-            this.modeSelectionManager.startSystem();
+            if (!this.isInteracted) {
+                this.isInteracted = true;
+                this.modeSelectionManager.startSystem();
+            }
         }
     }
 }
