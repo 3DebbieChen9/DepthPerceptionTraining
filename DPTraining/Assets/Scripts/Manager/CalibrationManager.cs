@@ -208,7 +208,8 @@ public class CalibrationManager : MonoBehaviour
         if (this.armLengthMarkerStatue == 4) {
             this.systemManager.consoleTitle.text = "Ready to Calibrate Idle Pose";
             this.clearCalibrationMarkers();
-            this.systemManager.userArmRenderManager.resizeUserArm();
+            this.systemManager.userArmRenderManager.resizeUserScale();
+            // this.systemManager.userArmRenderManager.resizeUserArm();
             this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_IdlePose);
         }
         else {
@@ -219,7 +220,7 @@ public class CalibrationManager : MonoBehaviour
 
     public void calibrateIdlePose() {
         // TODO: Idle Pose UI Reference
-        // this.systemManager.userArmRenderManager.userAvatarMeshSetActive(true);
+        this.systemManager.userArmRenderManager.userAvatarMeshSetActive(true);
 
         float headToLeftHand = this.calculateHorizatonalDistance(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position);
         float headToRightHand = this.calculateHorizatonalDistance(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position);
@@ -229,11 +230,6 @@ public class CalibrationManager : MonoBehaviour
         
         float avgDistanceBetweenEyesAndTopHead = 0.11f; // 11 cm
         this.systemManager.myUserInfo.userHeight = (this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.y + avgDistanceBetweenEyesAndTopHead) * this.systemManager.scaleTransferFactor;
-
-        // Modify the userAvatar's height
-        float avatarDefaultHeight = 1.83f;
-        float newAvatarScale = this.systemManager.myUserInfo.userHeight / avatarDefaultHeight;        
-        this.systemManager.userAvatar.transform.localScale = new Vector3(1.0f, newAvatarScale, 1.0f);
 
         // print("[DC]\nIdlePose Radius = " + this.systemManager.myUserInfo.idlePoseRadius.ToString() + "\nIdlePose Height = " + this.systemManager.myUserInfo.userHeight.ToString());
 
