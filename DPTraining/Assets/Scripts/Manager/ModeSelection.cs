@@ -18,8 +18,7 @@ public class ModeSelection : MonoBehaviour
     void Start()
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
-        
-        // this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
+
         this.systemManager.OVRControllerLeft.SetActive(false);
         this.systemManager.OVRControllerRight.SetActive(false);
         this.systemManager.OVRBoxingLeft.SetActive(true);
@@ -43,11 +42,16 @@ public class ModeSelection : MonoBehaviour
     }
 
     void selectionRoomTransform() {
-        // Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position - this.systemManager.sceneVerticalDirection * 1.70f * (this.systemManager.referenceDistance / 4.0f) * this.systemManager.scaleTransferFactor;
-        Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position;
+        Vector3 tmpPoint = this.systemManager.sceneOrigin_poisition;
+        // Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position;
         this.selectionRoom.transform.position = new Vector3 (tmpPoint.x,
-                                                    this.systemManager.sceneOrigin.transform.position.y - 0.01f,
+                                                    this.systemManager.sceneOrigin_poisition.y - 0.01f,
                                                     tmpPoint.z);
+        // this.selectionRoom.transform.position = new Vector3 (tmpPoint.x,
+        //                                             this.systemManager.sceneOrigin.transform.position.y - 0.01f,
+        //                                             tmpPoint.z);
+        this.selectionRoom.transform.rotation = this.systemManager.sceneOrigin_rotation;
+        // this.selectionRoom.transform.rotation = this.systemManager.sceneOrigin.transform.rotation;
     }
 
     public void switchTargetMode() {

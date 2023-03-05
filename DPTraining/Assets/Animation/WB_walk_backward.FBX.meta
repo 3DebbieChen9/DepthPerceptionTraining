@@ -1,269 +1,23 @@
 fileFormatVersion: 2
-guid: 61744a26b57e22047865301157d9579a
+guid: 280e91bc947d18f4396b4efacf086b70
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      1: 100000
-    second: Bip001 Head001
-  - first:
-      1: 100002
-    second: Bip001 L Calf001
-  - first:
-      1: 100004
-    second: Bip001 L Clavicle001
-  - first:
-      1: 100006
-    second: Bip001 L Foot001
-  - first:
-      1: 100008
-    second: Bip001 L Forearm001
-  - first:
-      1: 100010
-    second: Bip001 L Hand001
-  - first:
-      1: 100012
-    second: Bip001 L Thigh001
-  - first:
-      1: 100014
-    second: Bip001 L Toe001
-  - first:
-      1: 100016
-    second: Bip001 L UpperArm001
-  - first:
-      1: 100018
-    second: Bip001 Neck001
-  - first:
-      1: 100020
-    second: Bip001 Pelvis001
-  - first:
-      1: 100022
-    second: Bip001 R Calf001
-  - first:
-      1: 100024
-    second: Bip001 R Clavicle001
-  - first:
-      1: 100026
-    second: Bip001 R Foot001
-  - first:
-      1: 100028
-    second: Bip001 R Forearm001
-  - first:
-      1: 100030
-    second: Bip001 R Hand001
-  - first:
-      1: 100032
-    second: Bip001 R Thigh001
-  - first:
-      1: 100034
-    second: Bip001 R Toe001
-  - first:
-      1: 100036
-    second: Bip001 R UpperArm001
-  - first:
-      1: 100038
-    second: Bip001 Spine003
-  - first:
-      1: 100040
-    second: Bip001 Spine004
-  - first:
-      1: 100042
-    second: Bip001 Spine005
-  - first:
-      1: 100044
-    second: Bip002
-  - first:
-      1: 100046
-    second: Bone_Brow_C
-  - first:
-      1: 100048
-    second: Bone_Brow_L
-  - first:
-      1: 100050
-    second: Bone_Brow_R
-  - first:
-      1: 100052
-    second: Bone_Eye_L
-  - first:
-      1: 100054
-    second: Bone_Eye_R
-  - first:
-      1: 100056
-    second: Bone_Jaw
-  - first:
-      1: 100058
-    second: Bone_Lid_Down_L
-  - first:
-      1: 100060
-    second: Bone_Lid_Down_R
-  - first:
-      1: 100062
-    second: Bone_Lid_Up_L
-  - first:
-      1: 100064
-    second: Bone_Lid_Up_R
-  - first:
-      1: 100066
-    second: Bone_Lip_1
-  - first:
-      1: 100068
-    second: Bone_Lip_2
-  - first:
-      1: 100070
-    second: Bone_Lip_3
-  - first:
-      1: 100072
-    second: Bone_Lip_4
-  - first:
-      1: 100074
-    second: WB
-  - first:
-      1: 100076
-    second: //RootNode
-  - first:
-      4: 400000
-    second: Bip001 Head001
-  - first:
-      4: 400002
-    second: Bip001 L Calf001
-  - first:
-      4: 400004
-    second: Bip001 L Clavicle001
-  - first:
-      4: 400006
-    second: Bip001 L Foot001
-  - first:
-      4: 400008
-    second: Bip001 L Forearm001
-  - first:
-      4: 400010
-    second: Bip001 L Hand001
-  - first:
-      4: 400012
-    second: Bip001 L Thigh001
-  - first:
-      4: 400014
-    second: Bip001 L Toe001
-  - first:
-      4: 400016
-    second: Bip001 L UpperArm001
-  - first:
-      4: 400018
-    second: Bip001 Neck001
-  - first:
-      4: 400020
-    second: Bip001 Pelvis001
-  - first:
-      4: 400022
-    second: Bip001 R Calf001
-  - first:
-      4: 400024
-    second: Bip001 R Clavicle001
-  - first:
-      4: 400026
-    second: Bip001 R Foot001
-  - first:
-      4: 400028
-    second: Bip001 R Forearm001
-  - first:
-      4: 400030
-    second: Bip001 R Hand001
-  - first:
-      4: 400032
-    second: Bip001 R Thigh001
-  - first:
-      4: 400034
-    second: Bip001 R Toe001
-  - first:
-      4: 400036
-    second: Bip001 R UpperArm001
-  - first:
-      4: 400038
-    second: Bip001 Spine003
-  - first:
-      4: 400040
-    second: Bip001 Spine004
-  - first:
-      4: 400042
-    second: Bip001 Spine005
-  - first:
-      4: 400044
-    second: Bip002
-  - first:
-      4: 400046
-    second: Bone_Brow_C
-  - first:
-      4: 400048
-    second: Bone_Brow_L
-  - first:
-      4: 400050
-    second: Bone_Brow_R
-  - first:
-      4: 400052
-    second: Bone_Eye_L
-  - first:
-      4: 400054
-    second: Bone_Eye_R
-  - first:
-      4: 400056
-    second: Bone_Jaw
-  - first:
-      4: 400058
-    second: Bone_Lid_Down_L
-  - first:
-      4: 400060
-    second: Bone_Lid_Down_R
-  - first:
-      4: 400062
-    second: Bone_Lid_Up_L
-  - first:
-      4: 400064
-    second: Bone_Lid_Up_R
-  - first:
-      4: 400066
-    second: Bone_Lip_1
-  - first:
-      4: 400068
-    second: Bone_Lip_2
-  - first:
-      4: 400070
-    second: Bone_Lip_3
-  - first:
-      4: 400072
-    second: Bone_Lip_4
-  - first:
-      4: 400074
-    second: WB
-  - first:
-      4: 400076
-    second: //RootNode
-  - first:
-      43: 4300000
-    second: WB
-  - first:
-      74: 7400000
+      74: 1827226128182048838
     second: Take 001
-  - first:
-      95: 9500000
-    second: //RootNode
-  - first:
-      111: 11100000
-    second: //RootNode
-  - first:
-      137: 13700000
-    second: WB
   externalObjects: {}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 0
+    removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -271,30 +25,59 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
+    importAnimatedCustomProperties: 1
     importConstraints: 1
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
-    isReadable: 1
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.01
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
-    nodeNameCollisionStrategy: 0
-    fileIdsGeneration: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -307,7 +90,7 @@ ModelImporter:
     minBoneWeight: 0.001
     optimizeBones: 1
     meshOptimizationFlags: -1
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -315,13 +98,13 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 4
-    normalCalculationMode: 0
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
@@ -337,18 +120,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.01
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
-    skeletonHasParents: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 1
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
-  remapMaterialsIfMaterialImportModeIsNone: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

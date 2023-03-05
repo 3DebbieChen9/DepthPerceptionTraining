@@ -11,8 +11,13 @@ public class EvaluationManager : MonoBehaviour
     // [SerializeField]
     // public TestingManager testingManager;
 
+    // [SerializeField]
+    // public Transform startingTransform; 
+    // Player's initial Transform when the unit is started
     [SerializeField]
-    public Transform startingTransform; // Player's initial Transform when the unit is started
+    public Vector3 startingPosition;
+    [SerializeField]
+    public Quaternion startingRotation;
     [SerializeField]
     public SystemManager.MovingDirection userMovingDirection = SystemManager.MovingDirection.initial;
     [SerializeField]
@@ -66,7 +71,9 @@ public class EvaluationManager : MonoBehaviour
     void Start()
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
-        this.startingTransform = this.systemManager.sceneOrigin.transform;
+        this.startingPosition = this.systemManager.sceneOrigin_poisition;
+        this.startingRotation = this.systemManager.sceneOrigin_rotation;
+        // this.startingTransform = this.systemManager.sceneOrigin.transform;
         this.evaluationStatusInitial();
     }
 
@@ -84,8 +91,8 @@ public class EvaluationManager : MonoBehaviour
     }
 
     public void setUserStartingPosition() {
-        this.startingTransform.position = this.systemManager.userCenterPosition.transform.position;
-        this.startingTransform.rotation = Quaternion.Euler(0.0f, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f);
+        this.startingPosition = this.systemManager.userCenterPosition.transform.position;
+        this.startingRotation = Quaternion.Euler(0.0f, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f);
     }
 
     public enum Hand {

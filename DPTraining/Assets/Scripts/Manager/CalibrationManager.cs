@@ -102,7 +102,7 @@ public class CalibrationManager : MonoBehaviour
             this.armLengthMarkerStatue = 1;
 
             this.systemManager.userArmRenderManager.setRightHandStraightAngle();
-            print("[DC]\nR-Angles(F|U|R): (" + this.systemManager.myUserInfo.straightAngle_forward_R.ToString() + "|" + this.systemManager.myUserInfo.straightAngle_up_R.ToString() + "|" + this.systemManager.myUserInfo.straightAngle_right_R.ToString() + ")");
+            // print("[DC]\nR-Angles(F|U|R): (" + this.systemManager.myUserInfo.straightAngle_forward_R.ToString() + "|" + this.systemManager.myUserInfo.straightAngle_up_R.ToString() + "|" + this.systemManager.myUserInfo.straightAngle_right_R.ToString() + ")");
             
             this.systemManager.consoleText.text = "R-ForeArm Length = " + this.RForeArmLength.ToString();
             print("[DC]\nR-ForeArm Length = " + this.RForeArmLength.ToString());
@@ -132,7 +132,7 @@ public class CalibrationManager : MonoBehaviour
             this.armLengthMarkerStatue = 3;
 
             this.systemManager.userArmRenderManager.setLeftHandStraightAngle();
-            print("[DC]\nL-Angles(F|U|R): (" + this.systemManager.myUserInfo.straightAngle_forward_L.ToString() + "|" + this.systemManager.myUserInfo.straightAngle_up_L.ToString() + "|" + this.systemManager.myUserInfo.straightAngle_right_L.ToString() + ")");
+            // print("[DC]\nL-Angles(F|U|R): (" + this.systemManager.myUserInfo.straightAngle_forward_L.ToString() + "|" + this.systemManager.myUserInfo.straightAngle_up_L.ToString() + "|" + this.systemManager.myUserInfo.straightAngle_right_L.ToString() + ")");
             
             this.systemManager.consoleText.text = "L-ForeArm Length = " + this.LForeArmLength.ToString();
             // print("[DC]\nL-ForeArm Length = " + this.LForeArmLength.ToString());
@@ -268,22 +268,26 @@ public class CalibrationManager : MonoBehaviour
         this.systemManager.sceneOrigin.transform.position = centroid;
         this.systemManager.sceneOrigin.transform.LookAt(lookTarget);
         this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = true;
+        
+        this.systemManager.sceneOrigin_poisition = centroid;
+        this.systemManager.sceneOrigin_rotation = this.systemManager.sceneOrigin.transform.rotation;
+        
         this.calculateSceneVectors();
     }
     
     public void calculateSceneVectors() {
         Vector3 horizontalMidPoint = (this.distanceMarkers[0].transform.position + this.distanceMarkers[1].transform.position) / 2;
         Vector3 verticalMidPoint = (this.distanceMarkers[0].transform.position + this.distanceMarkers[3].transform.position) / 2;
-        this.systemManager.myMovableRangeInfo.horizontalDirection = (this.systemManager.sceneOrigin.transform.position - verticalMidPoint).normalized;
-        this.systemManager.myMovableRangeInfo.verticalDirection = (this.systemManager.sceneOrigin.transform.position - horizontalMidPoint).normalized;
+        this.systemManager.myMovableRangeInfo.horizontalDirection = (this.systemManager.sceneOrigin_poisition - verticalMidPoint).normalized;
+        this.systemManager.myMovableRangeInfo.verticalDirection = (this.systemManager.sceneOrigin_poisition - horizontalMidPoint).normalized;
 
-        this.systemManager.myMovableRangeInfo.leftBottomCorner = this.systemManager.sceneOrigin.transform.position 
+        this.systemManager.myMovableRangeInfo.leftBottomCorner = this.systemManager.sceneOrigin_poisition
                                     - this.systemManager.myMovableRangeInfo.horizontalDirection * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 2.0f) * this.systemManager.scaleTransferFactor
                                     + this.systemManager.myMovableRangeInfo.verticalDirection * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 2.0f) * this.systemManager.scaleTransferFactor;
-        this.systemManager.myMovableRangeInfo.leftUpperCorner = this.systemManager.sceneOrigin.transform.position
+        this.systemManager.myMovableRangeInfo.leftUpperCorner = this.systemManager.sceneOrigin_poisition
                                     - this.systemManager.myMovableRangeInfo.horizontalDirection * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 2.0f) * this.systemManager.scaleTransferFactor
                                     - this.systemManager.myMovableRangeInfo.verticalDirection * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 2.0f) * this.systemManager.scaleTransferFactor;
-        this.systemManager.myMovableRangeInfo.rightUpperCorner = this.systemManager.sceneOrigin.transform.position
+        this.systemManager.myMovableRangeInfo.rightUpperCorner = this.systemManager.sceneOrigin_poisition
                                     + this.systemManager.myMovableRangeInfo.horizontalDirection * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 2.0f) * this.systemManager.scaleTransferFactor
                                     - this.systemManager.myMovableRangeInfo.verticalDirection * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 2.0f) * this.systemManager.scaleTransferFactor;
     }

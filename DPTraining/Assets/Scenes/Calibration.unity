@@ -331,7 +331,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148156103}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.089999996, y: 0.02, z: 0.089999996}
   m_ConstrainProportionsScale: 0
@@ -525,6 +525,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8216447092838162845, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
   m_PrefabInstance: {fileID: 246759779}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &387495110
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387495104}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &395171401
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +673,8 @@ MonoBehaviour:
   userInitialPosition: {fileID: 800368728}
   userCenterPosition: {fileID: 1064837080}
   sceneOrigin: {fileID: 148156103}
+  sceneOrigin_poisition: {x: 0, y: 0, z: 0}
+  sceneOrigin_rotation: {x: 0, y: 0, z: 0, w: 0}
   OVRCameraRig: {fileID: 876558772}
   OVRControllerLeft: {fileID: 767448044}
   OVRControllerRight: {fileID: 1534344777}
@@ -767,8 +785,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -932,8 +950,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -1040,8 +1058,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -8712,30 +8730,18 @@ MonoBehaviour:
   systemManager: {fileID: 406019538}
   evaluationStraightModule: {fileID: 1913595994}
   userAvatar: {fileID: 1531826191}
-  hips: {fileID: 1531826245}
-  spine: {fileID: 1531826557}
-  spine1: {fileID: 1531826559}
-  spine2: {fileID: 1531826497}
-  leftShoulder: {fileID: 1531826177}
-  leftArm: {fileID: 1531826247}
-  leftForeArm: {fileID: 1531826251}
-  rightShoulder: {fileID: 1531826635}
-  rightArm: {fileID: 1531826193}
-  rightForeArm: {fileID: 1531826197}
   SM_leftArm: {fileID: 1531826647}
   SM_leftForeArm: {fileID: 1531826653}
   SM_rightArm: {fileID: 1531826569}
   SM_rightForeArm: {fileID: 1531826575}
-  hipsTransform: {fileID: 2034928330}
-  spineTransform: {fileID: 2034928331}
-  spine1Transform: {fileID: 2034928332}
-  spine2Transform: {fileID: 2034928333}
-  leftShoulderTransform: {fileID: 2034928360}
-  leftArmTransform: {fileID: 2034928361}
-  leftForeArmTransform: {fileID: 2034928362}
-  rightShoulderTransform: {fileID: 2034928334}
-  rightArmTransform: {fileID: 2034928335}
-  rightForeArmTransform: {fileID: 2034928336}
+  leftArmTransform_noitom: {fileID: 2034928361}
+  leftForeArmTransform_noitom: {fileID: 2034928362}
+  rightArmTransform_noitom: {fileID: 2034928335}
+  rightForeArmTransform_noitom: {fileID: 2034928336}
+  leftArmTransform_finalIK: {fileID: 1531595879}
+  leftForeArmTransform_finalIK: {fileID: 1531595883}
+  rightArmTransform_finalIK: {fileID: 1531595825}
+  rightForeArmTransform_finalIK: {fileID: 1531595829}
 --- !u!1 &1690511976
 GameObject:
   m_ObjectHideFlags: 0
@@ -8948,7 +8954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 140111397045077169, guid: a088380b5cbca784a8ad386fa70c3d15, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.27157235
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 140111397045077169, guid: a088380b5cbca784a8ad386fa70c3d15, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8968,11 +8974,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 140111397045077169, guid: a088380b5cbca784a8ad386fa70c3d15, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.047895722
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 140111397045077169, guid: a088380b5cbca784a8ad386fa70c3d15, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.5005543
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 140111397045077169, guid: a088380b5cbca784a8ad386fa70c3d15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9085,7 +9091,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   systemManager: {fileID: 406019538}
-  startingTransform: {fileID: 0}
+  startingPosition: {x: 0, y: 0, z: 0}
+  startingRotation: {x: 0, y: 0, z: 0, w: 0}
   userMovingDirection: 0
   targetMovingDirection: 0
   isDuringTheUnit: 0
@@ -9944,7 +9951,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082726516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.067306176, y: 0.033618435, z: 1.0993507}
+  m_LocalPosition: {x: 0, y: 0.708, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

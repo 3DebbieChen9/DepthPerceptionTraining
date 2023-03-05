@@ -33,8 +33,6 @@ public class SceneBuilding : MonoBehaviour
     void Start()
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
-        // this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
-        // this.sceneBuildingStart();
     }
 
     private void sceneBuildingStart() {
@@ -70,29 +68,19 @@ public class SceneBuilding : MonoBehaviour
         this.boxingRing.SetActive(this.systemManager.mySettingInfo.isOnRing);
         this.movablePlaneOnRing.SetActive(this.systemManager.mySettingInfo.isOnRing);
         this.movablePlaneOnFloor.SetActive(!this.systemManager.mySettingInfo.isOnRing);
-
-        // this.drawBoundsLines();
-        // this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
-
-        // this.coachTransformInitial(2.5f);
-        // this.coach.SetActive(true);
     }
 
     void boxingSceneTransform() {
         float y_shift = 1.0f * Convert.ToInt32(this.systemManager.mySettingInfo.isOnRing) + 0.01f;
-        // float y_shift = 1.0f * Convert.ToInt32(this.systemManager.isOnRing) - 0.02f;
-        // float y_shift = 1.0f * Convert.ToInt32(this.systemManager.isOnRing);
-        this.gym.transform.position = new Vector3 (this.systemManager.sceneOrigin.transform.position.x,
-                                                    this.systemManager.sceneOrigin.transform.position.y - y_shift,
-                                                    this.systemManager.sceneOrigin.transform.position.z);
-        this.gym.transform.rotation = this.systemManager.sceneOrigin.transform.rotation;
-
-        // this.movablePlaneOnFloor.transform.localScale = new Vector3 (this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor,
-        //                                                     0.001f,
-        //                                                     this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
-        // this.movablePlaneOnRing.transform.localScale = new Vector3 (this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor,
-        //                                                     0.001f,
-        //                                                     this.systemManager.referenceDistance * this.systemManager.scaleTransferFactor);
+        this.gym.transform.position = new Vector3 (this.systemManager.sceneOrigin_poisition.x,
+                                                    this.systemManager.sceneOrigin_poisition.y - y_shift,
+                                                    this.systemManager.sceneOrigin_poisition.z);
+        // this.gym.transform.position = new Vector3 (this.systemManager.sceneOrigin.transform.position.x,
+        //                                             this.systemManager.sceneOrigin.transform.position.y - y_shift,
+        //                                             this.systemManager.sceneOrigin.transform.position.z);
+        this.gym.transform.rotation = this.systemManager.sceneOrigin_rotation;
+        // this.gym.transform.rotation = this.systemManager.sceneOrigin.transform.rotation;
+        
         this.movablePlaneOnFloor.transform.localScale = new Vector3 (this.systemManager.myMovableRangeInfo.avgLengthInVR * this.systemManager.scaleTransferFactor,
                                                             0.001f,
                                                             this.systemManager.myMovableRangeInfo.avgLengthInVR * this.systemManager.scaleTransferFactor);
@@ -134,20 +122,14 @@ public class SceneBuilding : MonoBehaviour
     }
 
     public void coachTransformInitial(float distance) {
-        Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position - this.systemManager.myMovableRangeInfo.verticalDirection * distance * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 4.0f) * this.systemManager.scaleTransferFactor;
+        Vector3 tmpPoint = this.systemManager.sceneOrigin_poisition - this.systemManager.myMovableRangeInfo.verticalDirection * distance * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 4.0f) * this.systemManager.scaleTransferFactor;
+        // Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position - this.systemManager.myMovableRangeInfo.verticalDirection * distance * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 4.0f) * this.systemManager.scaleTransferFactor;
         this.coach.transform.position = new Vector3 (tmpPoint.x,
                                                     this.gym.transform.position.y + 1.0f * Convert.ToInt32(this.systemManager.mySettingInfo.isOnRing),
                                                     tmpPoint.z);
 
-        Vector3 lookTarget = this.systemManager.sceneOrigin.transform.position;
+        Vector3 lookTarget = this.systemManager.sceneOrigin_poisition;
+        // Vector3 lookTarget = this.systemManager.sceneOrigin.transform.position;
         this.coach.transform.LookAt(lookTarget);
     }
-
-    // void userTransform() {
-    //     Vector3 centerEyeAnchorPosition = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
-    //     this.userModel.transform.position = new Vector3 (centerEyeAnchorPosition.x,
-    //                                                     centerEyeAnchorPosition.y - 1.2f,
-    //                                                     centerEyeAnchorPosition.z);
-    //     print("WTF???");
-    // }
 }

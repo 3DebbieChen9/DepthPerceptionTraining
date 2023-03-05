@@ -67,9 +67,11 @@ public class TestingModeManager : MonoBehaviour
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
         this.evaluationManager = GameObject.Find("EvaluationManager").GetComponent<EvaluationManager>();
-        this.evaluationManager.startingTransform.position = this.systemManager.sceneOrigin.transform.position;
+        this.evaluationManager.startingPosition = this.systemManager.sceneOrigin_poisition;
+        // this.evaluationManager.startingTransform.position = this.systemManager.sceneOrigin.transform.position;
         
-        this.systemManager.userInitialPosition.transform.position = this.systemManager.sceneOrigin.transform.position;
+        this.systemManager.userInitialPosition.transform.position = this.systemManager.sceneOrigin_poisition;
+        // this.systemManager.userInitialPosition.transform.position = this.systemManager.sceneOrigin.transform.position;
         this.sceneBuildingManager = GameObject.Find("SceneBuilding").GetComponent<SceneBuilding>();
         this.targetManager = GameObject.Find("TargetManager").GetComponent<TargetManager>();
     }
@@ -78,15 +80,14 @@ public class TestingModeManager : MonoBehaviour
     void Update()
     {
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
+            this.systemManager.sceneOrigin.transform.position = this.systemManager.sceneOrigin_poisition;
+            this.systemManager.sceneOrigin.transform.rotation = this.systemManager.sceneOrigin_rotation;
             if(this.evaluationManager.userIsAtOrigin) {
                 if (this.curUnitNum < this.targetUnitNum && this.reactionTimer.timerOn == false && this.readyTimer.timerOn == false) {
                     this.curUnitNum += 1;
                     this.reactionTimer.ResetTimer();
                     this.readyTimer.ResetTimer();
-                    
-                    // float coachDistancetoCenter = 1.0f;
-                    // this.sceneBuildingManager.coachTransformInitial(coachDistancetoCenter);
-                    // this.evaluationManager.targetMovingDirection = SystemManager.MovingDirection.backward; // DEBUG only
+            
                     this.evaluationManager.evaluationStatusInitial();
                     this.evaluationManager.setUserStartingPosition();
 
@@ -115,6 +116,7 @@ public class TestingModeManager : MonoBehaviour
                 print("Test finished" + "\n" + "Average reaction time: " + averageReactionTime + "\n" + "Total score: " + this.totalScore.ToString() + "\n" + "Reaction time out count: " + this.reactionTimeOutCount.ToString());
             }
         }
+
         if (this.readyTimer.timerOn) {
             this.readyTimer.timeLeft -= Time.deltaTime;
             if (this.readyTimer.timeLeft <= 0.0f) {

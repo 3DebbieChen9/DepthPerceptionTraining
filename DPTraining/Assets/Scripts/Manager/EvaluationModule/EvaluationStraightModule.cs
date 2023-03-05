@@ -54,9 +54,21 @@ public class EvaluationStraightModule : MonoBehaviour
         float lowArmToUpArmAngle_right_L = Vector3.Angle(lowArmRight_L, -upArmToLowArmNormalized_L);
 
         float tolerateAngleThreshold = this.evaluationManager.systemManager.myUserInfo.handStraight_tolerateAngleThreshold;
-        float lowArmToUpArm_forward_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_forward_L;
-        float lowArmToUpArm_up_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_up_L;
-        float lowArmToUpArm_right_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_right_L;
+
+        float lowArmToUpArm_forward_straightAngle = 0.0f;
+        float lowArmToUpArm_up_straightAngle = 0.0f;
+        float lowArmToUpArm_right_straightAngle = 0.0f;
+        
+        if (this.evaluationManager.systemManager.mySettingInfo.isUsingNoitom) {
+            lowArmToUpArm_forward_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_forward_L_noitom;
+            lowArmToUpArm_up_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_up_L_noitom;
+            lowArmToUpArm_right_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_right_L_noitom;
+        }
+        else {
+            lowArmToUpArm_forward_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_forward_L_finalIK;
+            lowArmToUpArm_up_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_up_L_finalIK;
+            lowArmToUpArm_right_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_right_L_finalIK;
+        }
 
         Debug.Log("Left Arm Angle(F|U|R): " + lowArmToUpArmAngle_forward_L + " | " + lowArmToUpArmAngle_up_L + " | " + lowArmToUpArmAngle_right_L);
 
@@ -96,9 +108,22 @@ public class EvaluationStraightModule : MonoBehaviour
         float lowArmToUpArmAngle_right_R = Vector3.Angle(lowArmRight_R, -upArmToLowArmNormalized_R);
 
         float tolerateAngleThreshold = this.evaluationManager.systemManager.myUserInfo.handStraight_tolerateAngleThreshold;
-        float lowArmToUpArm_forward_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_forward_R;
-        float lowArmToUpArm_up_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_up_R;
-        float lowArmToUpArm_right_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_right_R;
+
+        float lowArmToUpArm_forward_straightAngle = 0.0f;
+        float lowArmToUpArm_up_straightAngle = 0.0f;
+        float lowArmToUpArm_right_straightAngle = 0.0f;
+        
+        if (this.evaluationManager.systemManager.mySettingInfo.isUsingNoitom) {
+            lowArmToUpArm_forward_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_forward_R_noitom;
+            lowArmToUpArm_up_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_up_R_noitom;
+            lowArmToUpArm_right_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_right_R_noitom;
+        }
+        else {
+            lowArmToUpArm_forward_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_forward_R_finalIK;
+            lowArmToUpArm_up_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_up_R_finalIK;
+            lowArmToUpArm_right_straightAngle = this.evaluationManager.systemManager.myUserInfo.straightAngle_right_R_finalIK;
+        }
+        
 
         Debug.Log("Right Arm Angle(F|U|R): " + lowArmToUpArmAngle_forward_R + " | " + lowArmToUpArmAngle_up_R + " | " + lowArmToUpArmAngle_right_R);
 

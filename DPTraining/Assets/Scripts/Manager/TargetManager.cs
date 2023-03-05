@@ -53,15 +53,18 @@ public class TargetManager : MonoBehaviour
         
         this.userArmLength = this.systemManager.myUserInfo.avgUpperArmLength + this.systemManager.myUserInfo.avgForeArmLength;
         
-        this.targetInitialPosition = this.systemManager.sceneOrigin.transform.position + 
-                                        this.systemManager.sceneOrigin.transform.forward * this.userArmLength * targetToUserMultiple + 
-                                        this.systemManager.sceneOrigin.transform.forward * this.targetCenterToEdgeLength;
+        Vector3 originForward = this.systemManager.sceneOrigin_rotation * Vector3.forward;
+        this.targetInitialPosition = this.systemManager.sceneOrigin_poisition + 
+                                        originForward * this.userArmLength * targetToUserMultiple + 
+                                        originForward * this.targetCenterToEdgeLength;
+        print("DC SOS: " + originForward + " | " + this.systemManager.sceneOrigin.transform.forward);
+        // this.targetInitialPosition = this.systemManager.sceneOrigin.transform.position + 
+        //                                 this.systemManager.sceneOrigin.transform.forward * this.userArmLength * targetToUserMultiple + 
+        //                                 this.systemManager.sceneOrigin.transform.forward * this.targetCenterToEdgeLength;
         this.targetInitialPosition = new Vector3 (this.targetInitialPosition.x, 
                                                     this.systemManager.sceneBuildingManager.gym.transform.position.y + 1.0f * Convert.ToInt32(this.systemManager.mySettingInfo.isOnRing), 
                                                     this.targetInitialPosition.z);
         this.targetMoveToInitial();
-        Invoke("RotateTarget", 2.1f);
-        // this.targetTransform.LookAt(this.systemManager.sceneOrigin.transform.position);
 
         this.targetMoveDistanceMin_Forward = this.userArmLength * this.targetToUserMultiple + this.targetCenterToEdgeLength;
         this.targetMoveDistanceMax_Forward = Mathf.Max(this.systemManager.myMovableRangeInfo.avgLengthInVR / 2.0f - this.userArmLength * 2.0f + 
@@ -83,6 +86,7 @@ public class TargetManager : MonoBehaviour
         if(!this.targetTransform.gameObject.activeSelf) {
             this.targetTransform.gameObject.SetActive(true);
         }
+        this.RotateTarget();
         Vector3 movingDirection = (this.targetInitialPosition - this.targetTransform.position).normalized;
         Vector3 startForward = this.targetTransform.forward;
         float angle = Vector3.Angle(startForward, movingDirection);
@@ -110,13 +114,15 @@ public class TargetManager : MonoBehaviour
         float randomValue = UnityEngine.Random.Range(0.0f, 1.0f);
         if (randomValue < 0.5f) {
             this.systemManager.testingModeManager.evaluationManager.targetMovingDirection = SystemManager.MovingDirection.forward;
-            movingDirectionVector = (this.systemManager.sceneOrigin.transform.position - this.targetTransform.position).normalized;
+            movingDirectionVector = (this.systemManager.sceneOrigin_poisition - this.targetTransform.position).normalized;
+            // movingDirectionVector = (this.systemManager.sceneOrigin.transform.position - this.targetTransform.position).normalized;
             distanceMin = this.targetMoveDistanceMin_Forward;
             distanceMax = this.targetMoveDistanceMax_Forward;
         } 
         else {
             this.systemManager.testingModeManager.evaluationManager.targetMovingDirection = SystemManager.MovingDirection.backward;
-            movingDirectionVector = -(this.systemManager.sceneOrigin.transform.position - this.targetTransform.position).normalized;
+            movingDirectionVector = -(this.systemManager.sceneOrigin_poisition - this.targetTransform.position).normalized;
+            // movingDirectionVector = -(this.systemManager.sceneOrigin.transform.position - this.targetTransform.position).normalized;
             distanceMin = this.targetMoveDistanceMin_Backward;
             distanceMax = this.targetMoveDistanceMax_Backward;
         }
@@ -145,7 +151,8 @@ public class TargetManager : MonoBehaviour
     }
 
     private void StartMoving(Vector3 movingDirectionVector, float duration, Vector3 movingTargetPosition) {
-        Vector3 startForward = this.targetTransform.forward;
+        Vector3 startForward = this.targetTransform.localRotation * Vector3.forward;
+        // Vector3 startForward = this.targetTransform.forward;
         float angle = Vector3.Angle(startForward, movingDirectionVector);
         float rad = angle * Mathf.Deg2Rad;
         this.targetAnimator.SetBool("Moving", true);
@@ -165,6 +172,7 @@ public class TargetManager : MonoBehaviour
     }
     private void RotateTarget() {
         print("RotateTarget");
-        this.targetTransform.DOLookAt(this.systemManager.sceneOrigin.transform.position, 1.0f);
+        this.targetTransform.rotation = this.systemManager.sceneOrigin_rotation * Quaternion.Euler(0,180f,0);
+        // this.targetTransform.rotation = this.systemManager.sceneOrigin.transform.rotation * Quaternion.Euler(0,180f,0);
     }
 }

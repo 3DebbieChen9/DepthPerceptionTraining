@@ -73,9 +73,6 @@ public class TestingManager : MonoBehaviour
     void Start()
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
-        // Vector3 tempHeadset = this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
-        // Vector3 tempSceneOrigin = this.systemManager.sceneOrigin.transform.position;
-        // this.neuronStickman.transform.position = new Vector3(tempSceneOrigin.x, this.neuronStickman.transform.position.y, tempSceneOrigin.z);
         this.unitNum = 0;
         this.speed = 0.0f;
         this.movingDirection = 0;
@@ -97,6 +94,8 @@ public class TestingManager : MonoBehaviour
     void Update()
     {
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
+            this.systemManager.sceneOrigin.transform.position = this.systemManager.sceneOrigin_poisition;
+            this.systemManager.sceneOrigin.transform.rotation = this.systemManager.sceneOrigin_rotation;
             if (this.unitNum < this.targetUnitNum && this.timerOn == false && this.isMoving == false) {
                 this.sceneBuildingManager.coachTransformInitial(coachDistancetoCenter);
                 this.resetTimer();
@@ -109,6 +108,7 @@ public class TestingManager : MonoBehaviour
                 this.reactionTimeText.text = (this.reactionTimeTotal / (float)this.targetUnitNum).ToString("0.00") + " (s)";
             }
         }
+
         if(this.timerOn) {
             if (this.timeLeft > 0)
             {

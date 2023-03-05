@@ -24,8 +24,9 @@ public class EvaluationDirectionModule : MonoBehaviour
     }
 
     public bool judgeMovingDirection() {
-        Vector3 movingDirection = (this.userCurTransform.position - this.evaluationManager.startingTransform.position).normalized;
-        Vector3 startForward = this.evaluationManager.startingTransform.forward;
+        Vector3 movingDirection = (this.userCurTransform.position - this.evaluationManager.startingPosition).normalized;
+        Vector3 startForward = this.evaluationManager.startingRotation * Vector3.forward;
+        // Vector3 startForward = this.evaluationManager.startingTransform.forward;
         float angle = Vector3.Angle(startForward, movingDirection);
         if (angle > 90.0f) {
             this.evaluationManager.userMovingDirection = SystemManager.MovingDirection.backward;

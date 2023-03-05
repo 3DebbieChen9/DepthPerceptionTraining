@@ -24,28 +24,27 @@ public class UserArmRenderManager : MonoBehaviour
     [SerializeField]
     public GameObject SM_rightForeArm;
 
-    // For Rotation reference
+    // For Rotation reference - Noitom
     [SerializeField]
-    private Transform hipsTransform;
+    private Transform leftArmTransform_noitom;
     [SerializeField]
-    private Transform spineTransform;
-    [SerializeField]
-    private Transform spine1Transform;
-    [SerializeField]
-    private Transform spine2Transform;
-    [SerializeField]
-    private Transform leftShoulderTransform;
-    [SerializeField]
-    private Transform leftArmTransform;
-    [SerializeField]
-    private Transform leftForeArmTransform;
+    private Transform leftForeArmTransform_noitom;
 
     [SerializeField]
-    private Transform rightShoulderTransform;
+    private Transform rightArmTransform_noitom;
     [SerializeField]
-    private Transform rightArmTransform;
+    private Transform rightForeArmTransform_noitom;
+
+    // For Roataion reference - FinalIK
     [SerializeField]
-    private Transform rightForeArmTransform;
+    private Transform leftArmTransform_finalIK;
+    [SerializeField]
+    private Transform leftForeArmTransform_finalIK;
+
+    [SerializeField]
+    private Transform rightArmTransform_finalIK;
+    [SerializeField]
+    private Transform rightForeArmTransform_finalIK;
 
     // Start is called before the first frame update
     void Start()
@@ -77,16 +76,26 @@ public class UserArmRenderManager : MonoBehaviour
     }
 
     public void setRightHandStraightAngle() {
-        float[] angles = this.evaluationStraightModule.calculate_lowArmToUpArmAngle(this.rightArmTransform.transform, this.rightForeArmTransform.transform);
-        this.systemManager.myUserInfo.straightAngle_forward_R = angles[0];
-        this.systemManager.myUserInfo.straightAngle_up_R = angles[1];
-        this.systemManager.myUserInfo.straightAngle_right_R = angles[2];
+        float[] angles_noitom = this.evaluationStraightModule.calculate_lowArmToUpArmAngle(this.rightArmTransform_noitom.transform, this.rightForeArmTransform_noitom.transform);
+        this.systemManager.myUserInfo.straightAngle_forward_R_noitom = angles_noitom[0];
+        this.systemManager.myUserInfo.straightAngle_up_R_noitom = angles_noitom[1];
+        this.systemManager.myUserInfo.straightAngle_right_R_noitom = angles_noitom[2];
+
+        float[] angles_finalIK = this.evaluationStraightModule.calculate_lowArmToUpArmAngle(this.rightArmTransform_finalIK.transform, this.rightForeArmTransform_finalIK.transform);
+        this.systemManager.myUserInfo.straightAngle_forward_R_finalIK = angles_finalIK[0];
+        this.systemManager.myUserInfo.straightAngle_up_R_finalIK = angles_finalIK[1];
+        this.systemManager.myUserInfo.straightAngle_right_R_finalIK = angles_finalIK[2];
     }
 
     public void setLeftHandStraightAngle() {
-        float[] angles = this.evaluationStraightModule.calculate_lowArmToUpArmAngle(this.leftArmTransform.transform, this.leftForeArmTransform.transform);
-        this.systemManager.myUserInfo.straightAngle_forward_L = angles[0];
-        this.systemManager.myUserInfo.straightAngle_up_L = angles[1];
-        this.systemManager.myUserInfo.straightAngle_right_L = angles[2];
+        float[] angles_noitom = this.evaluationStraightModule.calculate_lowArmToUpArmAngle(this.leftArmTransform_noitom.transform, this.leftForeArmTransform_noitom.transform);
+        this.systemManager.myUserInfo.straightAngle_forward_L_noitom = angles_noitom[0];
+        this.systemManager.myUserInfo.straightAngle_up_L_noitom = angles_noitom[1];
+        this.systemManager.myUserInfo.straightAngle_right_L_noitom = angles_noitom[2];
+
+        float[] angles_finalIK = this.evaluationStraightModule.calculate_lowArmToUpArmAngle(this.leftArmTransform_finalIK.transform, this.leftForeArmTransform_finalIK.transform);
+        this.systemManager.myUserInfo.straightAngle_forward_L_finalIK = angles_finalIK[0];
+        this.systemManager.myUserInfo.straightAngle_up_L_finalIK = angles_finalIK[1];
+        this.systemManager.myUserInfo.straightAngle_right_L_finalIK = angles_finalIK[2];
     }
 }

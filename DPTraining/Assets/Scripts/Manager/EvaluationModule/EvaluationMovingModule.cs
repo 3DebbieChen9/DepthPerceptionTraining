@@ -35,15 +35,6 @@ public class EvaluationMovingModule : MonoBehaviour
         
     }
 
-    // void OnTriggerEnter(Collider other) 
-    // {
-    //     if (!this.evaluationManager.isDuringTheUnit) {
-    //         if (other.gameObject.tag == "Main Camera") {
-    //             this.evaluationManager.userIsAtOrigin = true;
-    //             print("The user is back to the sceneOrigin");
-    //         }
-    //     }    
-    // }
     void OnTriggerStay (Collider other) 
     {
         if (!this.evaluationManager.isDuringTheUnit) {

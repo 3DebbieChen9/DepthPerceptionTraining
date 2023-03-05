@@ -13,12 +13,19 @@ public class SystemManager : MonoBehaviour
         public float idlePoseRadius; // in meters
         public float userHeight; // in meters
         
-        public float straightAngle_forward_R;
-        public float straightAngle_forward_L;
-        public float straightAngle_up_R;
-        public float straightAngle_up_L;
-        public float straightAngle_right_R;
-        public float straightAngle_right_L;
+        public float straightAngle_forward_R_noitom;
+        public float straightAngle_forward_L_noitom;
+        public float straightAngle_up_R_noitom;
+        public float straightAngle_up_L_noitom;
+        public float straightAngle_right_R_noitom;
+        public float straightAngle_right_L_noitom;
+
+        public float straightAngle_forward_R_finalIK;
+        public float straightAngle_forward_L_finalIK;
+        public float straightAngle_up_R_finalIK;
+        public float straightAngle_up_L_finalIK;
+        public float straightAngle_right_R_finalIK;
+        public float straightAngle_right_L_finalIK;
 
         public float handStraight_tolerateAngleThreshold;
         
@@ -28,12 +35,18 @@ public class SystemManager : MonoBehaviour
             this.avgCenterEyeToControllerLength = _avgCenterEyeToControllerLength;
             this.idlePoseRadius = _idlePoseRadius;
             this.userHeight = _userHeight;
-            this.straightAngle_forward_R = 90.0f;
-            this.straightAngle_forward_L = 90.0f;
-            this.straightAngle_up_R = 90.0f;
-            this.straightAngle_up_L = 90.0f;
-            this.straightAngle_right_R = 180.0f;
-            this.straightAngle_right_L = 0.0f;
+            this.straightAngle_forward_R_noitom = 90.0f;
+            this.straightAngle_forward_R_finalIK = 90.0f;
+            this.straightAngle_forward_L_noitom = 90.0f;
+            this.straightAngle_forward_L_finalIK = 90.0f;
+            this.straightAngle_up_R_noitom = 90.0f;
+            this.straightAngle_up_R_finalIK = 90.0f;
+            this.straightAngle_up_L_noitom = 90.0f;
+            this.straightAngle_up_L_finalIK = 90.0f;
+            this.straightAngle_right_R_noitom = 180.0f;
+            this.straightAngle_right_R_finalIK = 180.0f;
+            this.straightAngle_right_L_noitom = 0.0f;
+            this.straightAngle_right_L_finalIK = 0.0f;
             this.handStraight_tolerateAngleThreshold = 10.0f;
         }
     }
@@ -65,14 +78,17 @@ public class SystemManager : MonoBehaviour
     {
         public bool isOnRing;
         public bool targetIsLeftHanded;
+        public bool isUsingNoitom;
         public float tolerateRaduisBetweenOriginAndUser;
         public float userBodyRadius;
+        
         public SystemMode targetSystemMode;
         public List<SystemMode> modeWithSceneBuildCoach = new List<SystemMode>();
 
         public SettingInfo() {
             this.isOnRing = false;
             this.targetIsLeftHanded = true;
+            this.isUsingNoitom = false;
             this.tolerateRaduisBetweenOriginAndUser = 0.15f;
             this.targetSystemMode = SystemMode.Testing;
 
@@ -122,6 +138,12 @@ public class SystemManager : MonoBehaviour
 
     [SerializeField]
     public GameObject sceneOrigin;
+    // [SerializeField]
+    // public Transform sceneOriginTransform;
+    [SerializeField]
+    public Vector3 sceneOrigin_poisition;
+    [SerializeField]
+    public Quaternion sceneOrigin_rotation;
 
     [SerializeField] 
     public GameObject OVRCameraRig;
@@ -249,7 +271,6 @@ public class SystemManager : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch)) {
             this.passthroughSwitch();
         }
-
     }
 
     private void passthroughSwitch() {
