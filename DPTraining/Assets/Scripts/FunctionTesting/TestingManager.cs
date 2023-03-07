@@ -97,13 +97,13 @@ public class TestingManager : MonoBehaviour
             this.systemManager.sceneOrigin.transform.position = this.systemManager.sceneOrigin_poisition;
             this.systemManager.sceneOrigin.transform.rotation = this.systemManager.sceneOrigin_rotation;
             if (this.unitNum < this.targetUnitNum && this.timerOn == false && this.isMoving == false) {
-                this.sceneBuildingManager.coachTransformInitial(coachDistancetoCenter);
+                // this.sceneBuildingManager.coachTransformInitial(coachDistancetoCenter);
                 this.resetTimer();
                 this.unitNum += 1;
                 this.unitNumText.text = "Unit: " + this.unitNum.ToString() + "/" + this.targetUnitNum.ToString();
             }
             if(this.unitNum == this.targetUnitNum && this.timerOn == false && this.isMoving == false) {
-                this.sceneBuildingManager.coachTransformInitial(coachDistancetoCenter);
+                // this.sceneBuildingManager.coachTransformInitial(coachDistancetoCenter);
                 this.unitNumText.text = "Preformance: " + this.successCount.ToString() + "/" + this.targetUnitNum.ToString();
                 this.reactionTimeText.text = (this.reactionTimeTotal / (float)this.targetUnitNum).ToString("0.00") + " (s)";
             }

@@ -18,11 +18,6 @@ public class SceneBuilding : MonoBehaviour
     public GameObject movablePlaneOnRing;
     
     [SerializeField]
-    public GameObject coach;
-    // [SerializeField]
-    // public GameObject userModel;
-    
-    [SerializeField]
     private LineRenderer[] verticalLines;
     [SerializeField]
     private LineRenderer[] horizontalLines;
@@ -119,17 +114,5 @@ public class SceneBuilding : MonoBehaviour
             this.horizontalLines[i].SetPosition(1, point2);
             this.horizontalLines[i].gameObject.SetActive(true);
         }
-    }
-
-    public void coachTransformInitial(float distance) {
-        Vector3 tmpPoint = this.systemManager.sceneOrigin_poisition - this.systemManager.myMovableRangeInfo.verticalDirection * distance * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 4.0f) * this.systemManager.scaleTransferFactor;
-        // Vector3 tmpPoint = this.systemManager.sceneOrigin.transform.position - this.systemManager.myMovableRangeInfo.verticalDirection * distance * (this.systemManager.myMovableRangeInfo.referenceRanageLength / 4.0f) * this.systemManager.scaleTransferFactor;
-        this.coach.transform.position = new Vector3 (tmpPoint.x,
-                                                    this.gym.transform.position.y + 1.0f * Convert.ToInt32(this.systemManager.mySettingInfo.isOnRing),
-                                                    tmpPoint.z);
-
-        Vector3 lookTarget = this.systemManager.sceneOrigin_poisition;
-        // Vector3 lookTarget = this.systemManager.sceneOrigin.transform.position;
-        this.coach.transform.LookAt(lookTarget);
     }
 }

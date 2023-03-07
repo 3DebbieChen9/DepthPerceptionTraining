@@ -62,6 +62,9 @@ public class TestingModeManager : MonoBehaviour
     [SerializeField]
     public int totalScore = 0;
 
+    [SerializeField]
+    public TargetRenderInitial m_targetRenderInitial;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +86,7 @@ public class TestingModeManager : MonoBehaviour
             this.systemManager.sceneOrigin.transform.position = this.systemManager.sceneOrigin_poisition;
             this.systemManager.sceneOrigin.transform.rotation = this.systemManager.sceneOrigin_rotation;
             if(this.evaluationManager.userIsAtOrigin) {
+                this.m_targetRenderInitial.initialTargetRender();
                 if (this.curUnitNum < this.targetUnitNum && this.reactionTimer.timerOn == false && this.readyTimer.timerOn == false) {
                     this.curUnitNum += 1;
                     this.reactionTimer.ResetTimer();

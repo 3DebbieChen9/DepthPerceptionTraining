@@ -57,13 +57,14 @@ public class TargetManager : MonoBehaviour
         this.targetInitialPosition = this.systemManager.sceneOrigin_poisition + 
                                         originForward * this.userArmLength * targetToUserMultiple + 
                                         originForward * this.targetCenterToEdgeLength;
-        print("DC SOS: " + originForward + " | " + this.systemManager.sceneOrigin.transform.forward);
+        // print("DC SOS: " + originForward + " | " + this.systemManager.sceneOrigin.transform.forward);
         // this.targetInitialPosition = this.systemManager.sceneOrigin.transform.position + 
         //                                 this.systemManager.sceneOrigin.transform.forward * this.userArmLength * targetToUserMultiple + 
         //                                 this.systemManager.sceneOrigin.transform.forward * this.targetCenterToEdgeLength;
         this.targetInitialPosition = new Vector3 (this.targetInitialPosition.x, 
-                                                    this.systemManager.sceneBuildingManager.gym.transform.position.y + 1.0f * Convert.ToInt32(this.systemManager.mySettingInfo.isOnRing), 
+                                                    this.systemManager.sceneBuildingManager.gym.transform.position.y + 1.0f * Convert.ToInt32(this.systemManager.mySettingInfo.isOnRing) + 0.005f, 
                                                     this.targetInitialPosition.z);
+        this.systemManager.testingModeManager.m_targetRenderInitial.initialTargetRender();
         this.targetMoveToInitial();
 
         this.targetMoveDistanceMin_Forward = this.userArmLength * this.targetToUserMultiple + this.targetCenterToEdgeLength;
