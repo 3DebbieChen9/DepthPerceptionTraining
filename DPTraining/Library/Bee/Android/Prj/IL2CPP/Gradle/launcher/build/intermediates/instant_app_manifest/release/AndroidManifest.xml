@@ -4,7 +4,7 @@
     android:installLocation="auto"
     android:targetSandboxVersion="2"
     android:versionCode="1"
-    android:versionName="1.8.1" >
+    android:versionName="1.9.0" >
 
     <uses-sdk
         android:minSdkVersion="29"

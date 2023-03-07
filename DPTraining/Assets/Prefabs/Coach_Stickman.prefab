@@ -2690,8 +2690,6 @@ GameObject:
   - component: {fileID: 6714715004057791129}
   - component: {fileID: 6714715004059118377}
   - component: {fileID: 6714715004060084713}
-  - component: {fileID: 6714715004058089120}
-  - component: {fileID: 6714715004058089122}
   m_Layer: 0
   m_Name: SM_LeftHand
   m_TagString: Untagged
@@ -2765,32 +2763,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6714715004058089120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6714715004058089145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fd3c23f24902dc4ab4ce4b5752ce772, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!136 &6714715004058089122
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6714715004058089145}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.027971469
-  m_Height: 0.11572754
-  m_Direction: 0
-  m_Center: {x: -0.0523501, y: -0.0059516523, z: 0.0065050926}
 --- !u!1 &6714715004058089147
 GameObject:
   m_ObjectHideFlags: 0
@@ -5634,8 +5606,6 @@ GameObject:
   - component: {fileID: 6714715004057791191}
   - component: {fileID: 6714715004059118439}
   - component: {fileID: 6714715004060084519}
-  - component: {fileID: 6714715004058089202}
-  - component: {fileID: 6714715004058089204}
   m_Layer: 0
   m_Name: SM_RightHand
   m_TagString: Untagged
@@ -5709,32 +5679,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6714715004058089202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6714715004058089207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fd3c23f24902dc4ab4ce4b5752ce772, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!136 &6714715004058089204
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6714715004058089207}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.027971469
-  m_Height: 0.11572754
-  m_Direction: 0
-  m_Center: {x: 0.0523501, y: -0.0059516523, z: 0.0065050926}
 --- !u!1 &6714715004058089209
 GameObject:
   m_ObjectHideFlags: 0
@@ -7351,28 +7295,28 @@ MonoBehaviour:
   - {fileID: 6714715004058089199}
   - {fileID: 6714715004058089193}
   m_targetOriginColors:
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
+  - {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 0}
 --- !u!1 &6714715004058089323
 GameObject:
   m_ObjectHideFlags: 0

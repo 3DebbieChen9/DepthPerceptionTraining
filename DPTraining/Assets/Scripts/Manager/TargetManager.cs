@@ -16,7 +16,8 @@ public class TargetManager : MonoBehaviour
     [SerializeField]
     public bool targetCoachIsAtInitial = false;
 
-    private Vector3 targetInitialPosition = new Vector3(0.0f, 0.0f, 0.0f);
+    [SerializeField]
+    private Vector3 targetInitialPosition = new Vector3(0.0f, 0.0f, 5.46f);
     private float userArmLength = 0.0f;
     private float targetCenterToEdgeLength = 0.43f;
     public float targetToUserMultiple = 1.5f; // Write as modify parameters for coach
@@ -51,16 +52,16 @@ public class TargetManager : MonoBehaviour
         this.isStarted = true;
         this.targetAnimator.SetBool("LeftHanded", this.systemManager.mySettingInfo.targetIsLeftHanded);
         
-        this.userArmLength = this.systemManager.myUserInfo.avgUpperArmLength + this.systemManager.myUserInfo.avgForeArmLength;
+        this.userArmLength = this.systemManager.myUserInfo.avgArmLength;
         
         Vector3 originForward = this.systemManager.sceneOrigin_rotation * Vector3.forward;
         this.targetInitialPosition = this.systemManager.sceneOrigin_poisition + 
                                         originForward * this.userArmLength * targetToUserMultiple + 
                                         originForward * this.targetCenterToEdgeLength;
-        // print("DC SOS: " + originForward + " | " + this.systemManager.sceneOrigin.transform.forward);
-        // this.targetInitialPosition = this.systemManager.sceneOrigin.transform.position + 
-        //                                 this.systemManager.sceneOrigin.transform.forward * this.userArmLength * targetToUserMultiple + 
-        //                                 this.systemManager.sceneOrigin.transform.forward * this.targetCenterToEdgeLength;
+        print("DC SOS: " + originForward + " | " + this.systemManager.sceneOrigin.transform.forward);
+        this.targetInitialPosition = this.systemManager.sceneOrigin.transform.position + 
+                                        this.systemManager.sceneOrigin.transform.forward * this.userArmLength * targetToUserMultiple + 
+                                        this.systemManager.sceneOrigin.transform.forward * this.targetCenterToEdgeLength;
         this.targetInitialPosition = new Vector3 (this.targetInitialPosition.x, 
                                                     this.systemManager.sceneBuildingManager.gym.transform.position.y + 1.0f * Convert.ToInt32(this.systemManager.mySettingInfo.isOnRing) + 0.005f, 
                                                     this.targetInitialPosition.z);
@@ -94,9 +95,9 @@ public class TargetManager : MonoBehaviour
         float rad = angle * Mathf.Deg2Rad;
         this.targetAnimator.SetBool("Moving", true);
         this.targetAnimator.SetFloat("Direction", rad);
-        this.targetTransform.DOMove(this.targetInitialPosition, 2.0f);
-        Invoke("StopMoving", 2.0f);
-        Invoke("TargetIsAtInitial", 2.0f);
+        this.targetTransform.DOMove(this.targetInitialPosition, 0.5f);
+        Invoke("StopMoving", 0.7f);
+        Invoke("TargetIsAtInitial", 0.5f);
     }
 
     public void invokeTargetMoveToInitial(float delayTime) {

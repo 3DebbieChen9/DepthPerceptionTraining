@@ -7,8 +7,9 @@ public class SystemManager : MonoBehaviour
 {
     public class UserInfo 
     {
-        public float avgUpperArmLength; // in meters
-        public float avgForeArmLength; // in meters
+        // public float avgUpperArmLength; // in meters
+        // public float avgForeArmLength; // in meters
+        public float avgArmLength; // in meters
         public float avgCenterEyeToControllerLength; // in meters
         public float idlePoseRadius; // in meters
         public float userHeight; // in meters
@@ -29,9 +30,8 @@ public class SystemManager : MonoBehaviour
 
         public float handStraight_tolerateAngleThreshold;
         
-        public UserInfo(float _avgUpperArmLength, float _avgForeArmLength, float _avgCenterEyeToControllerLength, float _idlePoseRadius, float _userHeight) {
-            this.avgUpperArmLength = _avgUpperArmLength;
-            this.avgForeArmLength = _avgForeArmLength;
+        public UserInfo(float _avgArmLength, float _avgCenterEyeToControllerLength, float _idlePoseRadius, float _userHeight) {
+            this.avgArmLength = _avgArmLength;
             this.avgCenterEyeToControllerLength = _avgCenterEyeToControllerLength;
             this.idlePoseRadius = _idlePoseRadius;
             this.userHeight = _userHeight;
@@ -121,7 +121,7 @@ public class SystemManager : MonoBehaviour
     public SystemMode curSystemMode = SystemMode.Calibration_MovableSize;
 
     [SerializeField]
-    public UserInfo myUserInfo = new UserInfo(0.21f, 0.23f, 0.60f, 0.45f, 1.6f);
+    public UserInfo myUserInfo = new UserInfo(0.44f, 0.60f, 0.45f, 1.6f);
     [SerializeField]
     public GameObject userAvatar;
     [SerializeField]
@@ -235,17 +235,17 @@ public class SystemManager : MonoBehaviour
 
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
             if (this.curSystemMode == SystemMode.Calibration_MovableSize) {
-                this.consoleTitle.text = "Calibration: Distance";
+                // this.consoleTitle.text = "Calibration: Distance";
                 this.calibrationManager.calibrateMovableSize();
             }
             else if (this.curSystemMode == SystemMode.Calibration_ArmLength) {
-                this.consoleTitle.text = "Calibration: Arm Length";
-                this.consoleText.text = "";
+                // this.consoleTitle.text = "Calibration: Arm Length";
+                // this.consoleText.text = "";
                 this.calibrationManager.calibrateArmLength();
             }
             else if (this.curSystemMode == SystemMode.Calibration_IdlePose) {
-                this.consoleTitle.text = "Calibration: Idle Pose";
-                this.consoleText.text = "";
+                // this.consoleTitle.text = "Calibration: Idle Pose";
+                // this.consoleText.text = "";
                 this.calibrationManager.calibrateIdlePose();
             }
         }

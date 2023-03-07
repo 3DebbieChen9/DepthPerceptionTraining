@@ -68,11 +68,11 @@ public class UserArmRenderManager : MonoBehaviour
     }
 
     public void userAvatarMeshSetActive(bool active) {
-        this.SM_leftArm.SetActive(active);
-        this.SM_leftForeArm.SetActive(active);
-        
-        this.SM_rightArm.SetActive(active);
-        this.SM_rightForeArm.SetActive(active);
+        this.SM_leftArm.GetComponent<MeshRenderer>().enabled = active;
+        this.SM_leftForeArm.GetComponent<MeshRenderer>().enabled = active;
+
+        this.SM_rightArm.GetComponent<MeshRenderer>().enabled = active;
+        this.SM_rightForeArm.GetComponent<MeshRenderer>().enabled = active;
     }
 
     public void setRightHandStraightAngle() {
