@@ -778,10 +778,11 @@ MonoBehaviour:
   sceneBuildingManager: {fileID: 1046819823}
   targetManager: {fileID: 994587608}
   targetUnitNum: 7
+  isTesting: 0
   curTestLevel: 0
   curUnitNum: 0
-  reactionTimeOutCount: 0
   reactionTimeOut: 0
+  reactionTimeOutCount: 0
   totalReactionTime: 0
   totalScore: 0
   m_targetRenderInitial: {fileID: 709749497}
@@ -872,6 +873,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6714715002575295914, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715002883682108, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715003013553743, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715003258243404, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715003850615972, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
     - target: {fileID: 6714715004057791305, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -916,6 +937,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6714715004058088976, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715004058088980, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715004058088984, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715004058088988, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715004058089126, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715004058089146, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715004058089148, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715004058089150, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715004058089158, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715004058089172, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715004058089186, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715004058089192, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715004058089194, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
+    - target: {fileID: 6714715004058089196, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: testingModeManager
+      value: 
+      objectReference: {fileID: 599999385}
     - target: {fileID: 6714715004058089321, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
       propertyPath: m_Name
       value: Coach_Stickman

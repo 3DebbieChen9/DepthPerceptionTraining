@@ -82,6 +82,10 @@ public class SystemManager : MonoBehaviour
         public float tolerateRaduisBetweenOriginAndUser;
         public float userBodyRadius;
         
+        public float controllerVibrationAmplitude;
+        public int targetUnitNum;
+        public float readyTime;
+
         public SystemMode targetSystemMode;
         public List<SystemMode> modeWithSceneBuildCoach = new List<SystemMode>();
 
@@ -90,6 +94,11 @@ public class SystemManager : MonoBehaviour
             this.targetIsLeftHanded = true;
             this.isUsingNoitom = false;
             this.tolerateRaduisBetweenOriginAndUser = 0.15f;
+            this.controllerVibrationAmplitude = 0.8f;
+            
+            this.targetUnitNum = 7;
+            this.readyTime = 5.0f;
+
             this.targetSystemMode = SystemMode.Testing;
 
             this.modeWithSceneBuildCoach.Add(SystemMode.Testing);
@@ -258,7 +267,6 @@ public class SystemManager : MonoBehaviour
                 this.calibrationManager.calibrationArmLengthInitialize();
             }
             else if (this.curSystemMode == SystemMode.Testing) {
-                this.sceneBuildingManager.SceneInitialization();
                 this.testingModeManager.testingModeInitial();
                 this.testingModeManager.targetManager.targetMoveToInitial();
             }

@@ -22,16 +22,23 @@ public class HitTargetInteraction : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
+        float vibrationAmplitude = this.evaluationReachModule.evaluationManager.systemManager.mySettingInfo.controllerVibrationAmplitude;
         if (other.gameObject.tag == "Glove_L") {
-            this.evaluationReachModule.reachTarget("L");
-            this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
-            OVRInput.SetControllerVibration(0.8f, 0.5f, OVRInput.Controller.LTouch);
+            if (this.evaluationReachModule.evaluationManager.isDuringTheUnit) {
+                this.evaluationReachModule.reachTarget("L");
+                this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
+            }
+            
+            OVRInput.SetControllerVibration(0.8f, vibrationAmplitude, OVRInput.Controller.LTouch);
             Invoke("stopControllerVibration", 0.3f);
         }
         else if (other.gameObject.tag == "Glove_R") {
-            this.evaluationReachModule.reachTarget("R");
-            this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
-            OVRInput.SetControllerVibration(0.8f, 0.5f, OVRInput.Controller.RTouch);
+            if (this.evaluationReachModule.evaluationManager.isDuringTheUnit) {
+                this.evaluationReachModule.reachTarget("R");
+                this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
+            }
+            
+            OVRInput.SetControllerVibration(0.8f, vibrationAmplitude, OVRInput.Controller.RTouch);
             Invoke("stopControllerVibration", 0.3f);
         }
     }

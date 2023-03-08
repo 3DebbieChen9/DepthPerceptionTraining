@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class HitCoachInteraction : MonoBehaviour
 {
+    [SerializeField]
+    private TestingModeManager testingModeManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (this.testingModeManager == null) {
+            this.testingModeManager = GameObject.Find("TestingModeManager").GetComponent<TestingModeManager>();
+        }
     }
 
     // Update is called once per frame
@@ -17,25 +22,28 @@ public class HitCoachInteraction : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
+        float vibrationAmplitude = this.testingModeManager.systemManager.mySettingInfo.controllerVibrationAmplitude;
         if (other.gameObject.tag == "Glove_L" || other.gameObject.tag == "Glove_R") {
-            if (this.gameObject.GetComponent<MeshRenderer>().materials.Length <= 1) {
-                this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.red;
-            }
-            else {
-                foreach (Material m in this.gameObject.GetComponent<MeshRenderer>().materials) {
-                    if(m.name == "M_Body (Instance)") {
-                        m.color = Color.red;
-                        break;
+            if (this.testingModeManager.evaluationManager.isDuringTheUnit) {
+                if (this.gameObject.GetComponent<MeshRenderer>().materials.Length <= 1) {
+                    this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.red;
+                }
+                else {
+                    foreach (Material m in this.gameObject.GetComponent<MeshRenderer>().materials) {
+                        if(m.name == "M_Body (Instance)") {
+                            m.color = Color.red;
+                            break;
+                        }
                     }
                 }
             }
-
+            
             if (other.gameObject.tag == "Glove_L") {
-                OVRInput.SetControllerVibration(0.5f, 0.5f, OVRInput.Controller.LTouch);
+                OVRInput.SetControllerVibration(0.5f, vibrationAmplitude, OVRInput.Controller.LTouch);
                 Invoke("stopControllerVibration", 0.3f);
             }
             else if (other.gameObject.tag == "Glove_R") {
-                OVRInput.SetControllerVibration(0.5f, 0.5f, OVRInput.Controller.RTouch);
+                OVRInput.SetControllerVibration(0.5f, vibrationAmplitude, OVRInput.Controller.RTouch);
                 Invoke("stopControllerVibration", 0.3f);
             }
         }
