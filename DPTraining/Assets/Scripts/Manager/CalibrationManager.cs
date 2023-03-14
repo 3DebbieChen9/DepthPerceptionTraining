@@ -64,7 +64,11 @@ public class CalibrationManager : MonoBehaviour
             }
             this.distanceMarkerCount++;
         }
-        
+        if (this.distanceMarkerCount == this.distanceMarkers.Length) {
+            this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_ArmLength);
+            this.systemManager.consoleTitle.text = "Next: Calibrate Arm Length (T-Pose)";
+            this.setSceneOrigin();
+        }
     }
 
     private float calculateHorizatonalDistance(Vector3 p1,  Vector3 p2) {
@@ -187,11 +191,6 @@ public class CalibrationManager : MonoBehaviour
             // TODO: Movable Size UI Reference
             this.putDistanceMarker();
         }
-        else {
-            this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_ArmLength);
-            this.systemManager.consoleTitle.text = "Next: Calibrate Arm Length (T-Pose)";
-            this.setSceneOrigin();
-        }
     }
 
     public void calibrateArmLength() {
@@ -230,8 +229,8 @@ public class CalibrationManager : MonoBehaviour
         this.systemManager.userCenterPosition.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.systemManager.myUserInfo.userHeight / 2.0f, 0.0f);
 
         this.systemManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
-        this.systemManager.changeSystemMode(SystemManager.SystemMode.Mode_Selection);
-        this.systemManager.changeScene("ModeSelection");
+        this.systemManager.changeSystemMode(SystemManager.SystemMode.Setting);
+        this.systemManager.changeScene("Setting");
         this.systemManager.consoleTitle.text = "Ready to Select Mode";
         this.systemManager.consoleText.text = "";
     }

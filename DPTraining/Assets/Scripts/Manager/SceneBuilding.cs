@@ -47,7 +47,7 @@ public class SceneBuilding : MonoBehaviour
         }
     }
     public void SceneInitialization() {
-        this.gym.SetActive(false);
+        // this.gym.SetActive(false);
         foreach(LineRenderer line in this.verticalLines) {
             line.gameObject.SetActive(false);
         }
@@ -70,12 +70,7 @@ public class SceneBuilding : MonoBehaviour
         this.gym.transform.position = new Vector3 (this.systemManager.sceneOrigin_poisition.x,
                                                     this.systemManager.sceneOrigin_poisition.y - y_shift,
                                                     this.systemManager.sceneOrigin_poisition.z);
-        // this.gym.transform.position = new Vector3 (this.systemManager.sceneOrigin.transform.position.x,
-        //                                             this.systemManager.sceneOrigin.transform.position.y - y_shift,
-        //                                             this.systemManager.sceneOrigin.transform.position.z);
         this.gym.transform.rotation = this.systemManager.sceneOrigin_rotation;
-        // this.gym.transform.rotation = this.systemManager.sceneOrigin.transform.rotation;
-        
         this.movablePlaneOnFloor.transform.localScale = new Vector3 (this.systemManager.myMovableRangeInfo.avgLengthInVR * this.systemManager.scaleTransferFactor,
                                                             0.001f,
                                                             this.systemManager.myMovableRangeInfo.avgLengthInVR * this.systemManager.scaleTransferFactor);

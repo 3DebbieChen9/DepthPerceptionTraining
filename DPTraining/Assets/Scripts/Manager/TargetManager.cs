@@ -59,11 +59,12 @@ public class TargetManager : MonoBehaviour
                                         originForward * this.userArmLength * targetToUserMultiple + 
                                         originForward * this.targetCenterToEdgeLength;
         print("DC SOS: " + originForward + " | " + this.systemManager.sceneOrigin.transform.forward);
+        float y_shift = 1.0f * Convert.ToInt32(this.systemManager.mySettingInfo.isOnRing) + 0.005f - 1.0f * Convert.ToInt32(this.systemManager.mySettingInfo.isOnRing) + 0.01f;
         this.targetInitialPosition = this.systemManager.sceneOrigin.transform.position + 
                                         this.systemManager.sceneOrigin.transform.forward * this.userArmLength * targetToUserMultiple + 
                                         this.systemManager.sceneOrigin.transform.forward * this.targetCenterToEdgeLength;
         this.targetInitialPosition = new Vector3 (this.targetInitialPosition.x, 
-                                                    this.systemManager.sceneBuildingManager.gym.transform.position.y + 1.0f * Convert.ToInt32(this.systemManager.mySettingInfo.isOnRing) + 0.005f, 
+                                                    this.targetInitialPosition.y + y_shift, 
                                                     this.targetInitialPosition.z);
         this.systemManager.testingModeManager.m_targetRenderInitial.initialTargetRender();
         this.targetMoveToInitial();
@@ -77,7 +78,6 @@ public class TargetManager : MonoBehaviour
         this.targetMoveDistanceMax_Backward = Mathf.Max(this.systemManager.myMovableRangeInfo.avgLengthInVR / 2.0f 
                                                         - (this.userArmLength * (1.0f + this.targetToUserMultiple) + this.targetCenterToEdgeLength), 
                                                         targetMoveDistanceMin_Backward);
-        print("[DC] userArmLength: " + this.userArmLength);
         print("[DC] targetMoveDistanceMin_Forward: " + this.targetMoveDistanceMin_Forward + "\ntargetMoveDistanceMax_Forward: " + (this.systemManager.myMovableRangeInfo.avgLengthInVR / 2.0f - this.userArmLength * 2.0f + 
                                                         this.userArmLength * this.targetToUserMultiple + this.targetCenterToEdgeLength));
         print("[DC] targetMoveDistanceMin_Backward: " + this.targetMoveDistanceMin_Backward + "\ntargetMoveDistanceMax_Backward: " + (this.systemManager.myMovableRangeInfo.avgLengthInVR / 2.0f 

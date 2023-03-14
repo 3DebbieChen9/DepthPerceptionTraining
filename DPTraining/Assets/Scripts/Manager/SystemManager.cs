@@ -86,8 +86,7 @@ public class SystemManager : MonoBehaviour
         public int targetUnitNum;
         public float readyTime;
 
-        public SystemMode targetSystemMode;
-        public List<SystemMode> modeWithSceneBuildCoach = new List<SystemMode>();
+        // public SystemMode targetSystemMode;
 
         public SettingInfo() {
             this.isOnRing = false;
@@ -99,11 +98,7 @@ public class SystemManager : MonoBehaviour
             this.targetUnitNum = 7;
             this.readyTime = 5.0f;
 
-            this.targetSystemMode = SystemMode.Testing;
-
-            this.modeWithSceneBuildCoach.Add(SystemMode.Testing);
-            this.modeWithSceneBuildCoach.Add(SystemMode.Training_Traditional);
-            this.modeWithSceneBuildCoach.Add(SystemMode.Training_Hint);
+            // this.targetSystemMode = SystemMode.Testing;
         }
     }
 
@@ -111,7 +106,7 @@ public class SystemManager : MonoBehaviour
         Calibration_MovableSize,
         Calibration_ArmLength,
         Calibration_IdlePose,
-        Mode_Selection,
+        Setting,
         Testing,
         Training_Traditional,
         Training_Hint,
@@ -147,8 +142,7 @@ public class SystemManager : MonoBehaviour
 
     [SerializeField]
     public GameObject sceneOrigin;
-    // [SerializeField]
-    // public Transform sceneOriginTransform;
+
     [SerializeField]
     public Vector3 sceneOrigin_poisition;
     [SerializeField]
@@ -171,14 +165,11 @@ public class SystemManager : MonoBehaviour
 
     [SerializeField]
     public CalibrationManager calibrationManager;
-    [SerializeField]
-    public ModeSelection modeSelectionManager;
+
     [SerializeField]
     public SceneBuilding sceneBuildingManager;
     [SerializeField]
     public TestingModeManager testingModeManager;
-    // [SerializeField]
-    // public TestingManager testingManager;
     
     [SerializeField]
     public float scaleTransferFactor = 1.0f; // vr-distance / real-distance
@@ -220,11 +211,6 @@ public class SystemManager : MonoBehaviour
             this.calibrationManager = GameObject.Find("CalibrationManager").GetComponent<CalibrationManager>();
         }
 
-        if (this.modeSelectionManager == null && this.curSystemMode == SystemMode.Mode_Selection) {
-            this.modeSelectionManager = GameObject.Find("ModeSelection").GetComponent<ModeSelection>();
-        }
-
-        // if (this.sceneBuildingManager == null && this.mySettingInfo.modeWithSceneBuildCoach.Contains(this.curSystemMode)) {
         if (this.sceneBuildingManager == null && (this.curSystemMode == SystemMode.Testing || this.curSystemMode == SystemMode.Training_Traditional || this.curSystemMode == SystemMode.Training_Hint)) {
             this.sceneBuildingManager = GameObject.Find("SceneBuilding").GetComponent<SceneBuilding>();
         }
@@ -267,8 +253,9 @@ public class SystemManager : MonoBehaviour
                 this.calibrationManager.calibrationArmLengthInitialize();
             }
             else if (this.curSystemMode == SystemMode.Testing) {
-                this.testingModeManager.testingModeInitial();
-                this.testingModeManager.targetManager.targetMoveToInitial();
+                this.changeScene("Testing");
+                // this.testingModeManager.testingModeInitial();
+                // this.testingModeManager.targetManager.targetMoveToInitial();
             }
             
         }
