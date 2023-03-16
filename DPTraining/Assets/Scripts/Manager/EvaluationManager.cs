@@ -139,30 +139,50 @@ public class EvaluationManager : MonoBehaviour
         int score = 0;
         if (this.userPerformanceEachUnit.isReacting) {
             score += 1;
-            this.systemManager.consoleText.text += "\nReacting score +1";
-            print("Reacting score +1");
+            if (this.systemManager.uiTesting.resultDescription_text.text != "") {
+                this.systemManager.uiTesting.resultDescription_text.text += "\n";
+            }
+            this.systemManager.uiTesting.resultDescription_text.text += "Reacting score +1";
+            // this.systemManager.consoleText.text += "\nReacting score +1";
+            // print("Reacting score +1");
         }
 
         if (this.userPerformanceEachUnit.isMovingCorrectly) {
             score += 1;
-            this.systemManager.consoleText.text += "\nMoving Correctly score +1";
-            print("Moving Correctly score +1");
+            if (this.systemManager.uiTesting.resultDescription_text.text != "") {
+                this.systemManager.uiTesting.resultDescription_text.text += "\n";
+            }
+            this.systemManager.uiTesting.resultDescription_text.text += "Moving Correctly score +1";
+            // this.systemManager.consoleText.text += "\nMoving Correctly score +1";
+            // print("Moving Correctly score +1");
         }
 
         if (this.userPerformanceEachUnit.isStraight && this.userPerformanceEachUnit.isReachTarget) {
             score += 1;
-            this.systemManager.consoleText.text += "\nStraight and Reach score +1";
-            print("Straight and Reach score +1");
+            if (this.systemManager.uiTesting.resultDescription_text.text != "") {
+                this.systemManager.uiTesting.resultDescription_text.text += "\n";
+            }
+            this.systemManager.uiTesting.resultDescription_text.text += "Straight and Reach score +1";
+            // this.systemManager.consoleText.text += "\nStraight and Reach score +1";
+            // print("Straight and Reach score +1");
         }
 
         // DEBUG
         if (this.userPerformanceEachUnit.isStraight && !this.userPerformanceEachUnit.isReachTarget) {
-            this.systemManager.consoleText.text += "\nStraight but not Reach";
-            print("Straight but not Reach");
+            if (this.systemManager.uiTesting.resultDescription_text.text != "") {
+                this.systemManager.uiTesting.resultDescription_text.text += "\n";
+            }
+            this.systemManager.uiTesting.resultDescription_text.text += "Straight but not Reach";
+            // this.systemManager.consoleText.text += "\nStraight but not Reach";
+            // print("Straight but not Reach");
         }
         if (!this.userPerformanceEachUnit.isStraight && this.userPerformanceEachUnit.isReachTarget) {
-            this.systemManager.consoleText.text += "\nReach but not Straight";
-            print("Reach but not Straight");
+            if (this.systemManager.uiTesting.resultDescription_text.text != "") {
+                this.systemManager.uiTesting.resultDescription_text.text += "\n";
+            }
+            this.systemManager.uiTesting.resultDescription_text.text += "Reach but not Straight";
+            // this.systemManager.consoleText.text += "\nReach but not Straight";
+            // print("Reach but not Straight");
         }
 
         return score;

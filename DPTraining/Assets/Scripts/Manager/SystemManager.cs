@@ -174,11 +174,15 @@ public class SystemManager : MonoBehaviour
     [SerializeField]
     public float scaleTransferFactor = 1.0f; // vr-distance / real-distance
 
+    // [SerializeField]
+    // public TextMesh consoleTitle;
+    // [SerializeField]
+    // public TextMesh consoleText;
+
     [SerializeField]
-    public TextMesh consoleTitle;
+    public UICalibration uiCalibration;
     [SerializeField]
-    public TextMesh consoleText;
-    
+    public UITesting uiTesting;    
 
     private void Awake() 
     {

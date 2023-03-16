@@ -91,8 +91,8 @@ public class ModeSelection : MonoBehaviour
 
     public void startSystem() {
         // this.systemManager.changeSystemMode(this.systemManager.mySettingInfo.targetSystemMode);
-        this.systemManager.consoleTitle.text = "Testing";
-        this.systemManager.consoleText.text = "-";
+        // this.systemManager.consoleTitle.text = "Testing";
+        // this.systemManager.consoleText.text = "-";
         this.systemManager.changeScene("Testing");
     }
 }

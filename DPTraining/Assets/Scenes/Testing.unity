@@ -1081,6 +1081,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coach_Stickman
       objectReference: {fileID: 0}
+    - target: {fileID: 6714715004694123736, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: m_Mass
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6714715004694123736, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6714715004694123736, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
 --- !u!95 &709749495 stripped
@@ -1098,7 +1110,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6714715004058089302, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
   m_PrefabInstance: {fileID: 709749494}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1856468797}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8069b9eaa6a81a44a8dc8f8c90b94a6d, type: 3}
@@ -2070,6 +2082,24 @@ CapsuleCollider:
   m_Height: 0.21454084
   m_Direction: 2
   m_Center: {x: -0.0013221204, y: -0.050443277, z: 0.053673774}
+--- !u!1 &1856468797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6714715004058089321, guid: c4d090a8a924c154685f7f13f313c8a8, type: 3}
+  m_PrefabInstance: {fileID: 709749494}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1856468798
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856468797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.12209886, z: 1.1163416}
+  m_Center: {x: 0, y: 0.04259351, z: 0.04640484}
 --- !u!1 &1933139652
 GameObject:
   m_ObjectHideFlags: 0

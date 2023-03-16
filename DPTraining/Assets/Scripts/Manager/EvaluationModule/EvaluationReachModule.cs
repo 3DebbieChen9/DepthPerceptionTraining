@@ -23,7 +23,7 @@ public class EvaluationReachModule : MonoBehaviour
 
     public void reachTarget(string hand) {
         if (this.evaluationManager.isDuringTheUnit) {
-            this.evaluationManager.systemManager.consoleText.text += "Reach Target with " + hand + "\n";
+            // this.evaluationManager.systemManager.consoleText.text += "Reach Target with " + hand + "\n";
             print("Reach Target with " + hand);
             if (hand == "L") {
                 this.evaluationManager.userIsHitTarget(EvaluationManager.Hand.left);

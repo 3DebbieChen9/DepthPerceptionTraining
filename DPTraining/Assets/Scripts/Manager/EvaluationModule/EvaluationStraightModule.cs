@@ -77,7 +77,7 @@ public class EvaluationStraightModule : MonoBehaviour
             if (lowArmToUpArmAngle_up_L < lowArmToUpArm_up_straightAngle + tolerateAngleThreshold && lowArmToUpArmAngle_up_L > lowArmToUpArm_up_straightAngle - tolerateAngleThreshold) {
                 if (lowArmToUpArmAngle_right_L < lowArmToUpArm_right_straightAngle + tolerateAngleThreshold && lowArmToUpArmAngle_right_L > lowArmToUpArm_right_straightAngle - tolerateAngleThreshold) {
                     Debug.Log("Left Arm is Straight");
-                    this.evaluationManager.systemManager.consoleTitle.text = "Left Arm is Straight";
+                    // this.evaluationManager.systemManager.consoleTitle.text = "Left Arm is Straight";
                     return true;
                 }
                 else {
@@ -132,7 +132,7 @@ public class EvaluationStraightModule : MonoBehaviour
             if (lowArmToUpArmAngle_up_R < lowArmToUpArm_up_straightAngle + tolerateAngleThreshold && lowArmToUpArmAngle_up_R > lowArmToUpArm_up_straightAngle - tolerateAngleThreshold) {
                 if (lowArmToUpArmAngle_right_R < lowArmToUpArm_right_straightAngle + tolerateAngleThreshold && lowArmToUpArmAngle_right_R > lowArmToUpArm_right_straightAngle - tolerateAngleThreshold) {
                     Debug.Log("Right Arm is Straight");
-                    this.evaluationManager.systemManager.consoleTitle.text = "Right Arm is Straight";
+                    // this.evaluationManager.systemManager.consoleTitle.text = "Right Arm is Straight";
                     return true;
                 }
                 else {

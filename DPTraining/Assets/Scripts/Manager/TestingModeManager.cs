@@ -61,8 +61,6 @@ public class TestingModeManager : MonoBehaviour
     // Testing Mode 會隨著測試進行而改變的變數
     [SerializeField]
     public TestState curTestState = TestState.idle;
-    // [SerializeField]
-    // public bool isTesting = false;
     [SerializeField]
     public TestLevel curTestLevel = TestLevel.level_0;
     [SerializeField]
@@ -109,27 +107,38 @@ public class TestingModeManager : MonoBehaviour
             if(this.evaluationManager.userIsAtOrigin) {
                 if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
                     this.curTestState = TestState.begin;
+                    this.systemManager.uiTesting.initial_Canvas.SetActive(false);
+                    this.systemManager.uiTesting.front_Canvas.SetActive(true);
                 }
             }
-            else {
-                this.systemManager.consoleText.text = "Move to the center please!!!";
-            }
+            // else {
+                
+            //     // this.systemManager.consoleText.text = "Move to the center please!!!";
+            // }
         }
 
         // 測試進行中，判斷是否在中心點
         if (this.curTestState == TestState.begin) {
+            this.systemManager.uiTesting.front_Canvas.SetActive(true);
+            this.systemManager.uiTesting.readyUnit_text.text = "Ready for unit " + this.curUnitNum.ToString();
             if(this.evaluationManager.userIsAtOrigin) {
                 this.curTestState = TestState.ready;
                 this.readyStart();
             }
             else {
-                this.systemManager.consoleText.text = "Move to the center please!!!";
+                this.systemManager.uiTesting.readyCountdown_text.text = "Please move to the center.";
+                // this.systemManager.consoleText.text = "Move to the center please!!!";
             }
         }
 
         // Ready Time for each unit
         if (this.readyTimer.timerOn) {
+            this.systemManager.uiTesting.readyCountdown_text.text = this.readyTimer.timeLeft.ToString("F0");
+            this.systemManager.uiTesting.readyCountdown_image.fillAmount = this.readyTimer.timeLeft / this.readyTimer.timeTarget;
             this.readyTimer.timeLeft -= Time.deltaTime;
+            if (this.readyTimer.timeLeft <= 1.0f) {
+                this.systemManager.uiTesting.readyUnit_text.text = "Unit " + this.curUnitNum.ToString() + " start!!!";
+            } 
             if (this.readyTimer.timeLeft <= 0.0f) {
                 this.readyTimer.ResetTimer();
 
@@ -139,8 +148,15 @@ public class TestingModeManager : MonoBehaviour
                 this.targetManager.randomTargetMovement(this.curTestLevel);
 
                 this.reactionTimer.StartTimer();
-                this.systemManager.consoleTitle.text = "Unit " + this.curUnitNum.ToString() + " start";
-                print("Unit " + this.curUnitNum.ToString() + " start");
+
+                this.systemManager.uiTesting.front_Canvas.SetActive(false);
+                this.systemManager.uiTesting.readyCountdown_image.fillAmount = 0;
+                this.systemManager.uiTesting.readyCountdown_text.text = "";
+                this.systemManager.uiTesting.readyUnit_text.text = "";
+                this.systemManager.uiTesting.side_Canvas.SetActive(false);
+
+                // this.systemManager.consoleTitle.text = "Unit " + this.curUnitNum.ToString() + " start";
+                // print("Unit " + this.curUnitNum.ToString() + " start");
             }
         }
 
@@ -156,7 +172,7 @@ public class TestingModeManager : MonoBehaviour
                     this.unitOver();
                 }
                 this.reactionTimeOut = true;
-                this.systemManager.consoleTitle.text = "Unit " + this.curUnitNum.ToString() + " timeout";
+                // this.systemManager.consoleTitle.text = "Unit " + this.curUnitNum.ToString() + " timeout";
                 print("Unit " + this.curUnitNum.ToString() + " timeout");
             }
         }
@@ -176,25 +192,42 @@ public class TestingModeManager : MonoBehaviour
         this.readyTimer.ResetTimer();
 
         this.evaluationManager.evaluationStatusInitial();
+
+        this.systemManager.uiTesting.testingUI_Canvas.SetActive(true);
+        this.systemManager.uiTesting.initial_Canvas.SetActive(true);
+        this.systemManager.uiTesting.side_Canvas.SetActive(false);
+        this.systemManager.uiTesting.front_Canvas.SetActive(false);
+        this.systemManager.uiTesting.final_Canvas.SetActive(false);
+
+        this.systemManager.uiTesting.initialTitle_text.text = "Welcome to Testing Mode";
+        this.systemManager.uiTesting.initialDescription_text.text = "There will be " + this.systemManager.mySettingInfo.targetUnitNum.ToString() + " units in this test." + "\nPlease move to center and press the button 'A' to start.";
     }
 
     public void unitOver() {
         this.targetManager.targetAnimator.SetBool("isDuringUnit", false);
-        this.targetManager.invokeTargetMoveToInitial(0.5f);
+        this.targetManager.invokeTargetMoveToInitial(1.5f);
+
+        this.systemManager.uiTesting.side_Canvas.SetActive(true);
+        this.systemManager.uiTesting.resultUnit_text.text = "Unit " + this.curUnitNum.ToString() + " result";
 
         this.reactionTimer.timerOn = false;
         if (this.reactionTimeOut) {
             this.reactionTimeOut = false;
             this.reactionTimeOutCount += 1;
-            this.systemManager.consoleTitle.text = "Result: Time Out";
-            print("Result: Time Out");
+            
+            this.systemManager.uiTesting.resultScore_text.text = "Time Out";
+            // this.systemManager.consoleTitle.text = "Result: Time Out";
+            // print("Result: Time Out");
         }
         else {
             this.totalReactionTime += this.reactionTimer.timeLeft;
             int curScore = this.evaluationManager.getScore();
             this.totalScore += curScore;
-            this.systemManager.consoleTitle.text += "\nResult: " + this.reactionTimer.timeLeft.ToString() + " (s)" + " | Score: " + curScore.ToString();
-            print("Result: " + this.reactionTimer.timeLeft.ToString() + " (s)" + " | Score: " + curScore.ToString());
+
+            this.systemManager.uiTesting.resultScore_text.text = "Score: " + curScore.ToString();
+
+            // this.systemManager.consoleTitle.text += "\nResult: " + this.reactionTimer.timeLeft.ToString() + " (s)" + " | Score: " + curScore.ToString();
+            // print("Result: " + this.reactionTimer.timeLeft.ToString() + " (s)" + " | Score: " + curScore.ToString());
         }
 
         if (this.curUnitNum == this.targetUnitNum) {
@@ -207,8 +240,16 @@ public class TestingModeManager : MonoBehaviour
             else {
                 averageReactionTime = this.totalReactionTime / timeUsefulCount;
             }
-            this.systemManager.consoleText.text += "\nTest finished" + "\n" + "Average reaction time: " + averageReactionTime + "\n" + "Total score: " + this.totalScore.ToString() + "\n" + "Reaction time out count: " + this.reactionTimeOutCount.ToString();
-            print("Test finished" + "\n" + "Average reaction time: " + averageReactionTime + "\n" + "Total score: " + this.totalScore.ToString() + "\n" + "Reaction time out count: " + this.reactionTimeOutCount.ToString());
+
+            this.systemManager.uiTesting.final_Canvas.SetActive(true);
+            this.systemManager.uiTesting.side_Canvas.SetActive(false);
+            this.systemManager.uiTesting.front_Canvas.SetActive(false);
+
+            this.systemManager.uiTesting.finalTitle_text.text = "Test finished";
+            this.systemManager.uiTesting.finalDescription_text.text = "Average reaction time: " + averageReactionTime.ToString() + "\n" + "Total score: " + this.totalScore.ToString() + "\n" + "Reaction time out count: " + this.reactionTimeOutCount.ToString();
+
+            // this.systemManager.consoleText.text += "\nTest finished" + "\n" + "Average reaction time: " + averageReactionTime + "\n" + "Total score: " + this.totalScore.ToString() + "\n" + "Reaction time out count: " + this.reactionTimeOutCount.ToString();
+            // print("Test finished" + "\n" + "Average reaction time: " + averageReactionTime + "\n" + "Total score: " + this.totalScore.ToString() + "\n" + "Reaction time out count: " + this.reactionTimeOutCount.ToString());
         }
         else {
             this.curTestState = TestState.begin;
@@ -226,9 +267,12 @@ public class TestingModeManager : MonoBehaviour
             this.evaluationManager.setUserStartingPosition();
 
             this.readyTimer.StartTimer();
-            this.systemManager.consoleTitle.text = "";
-            this.systemManager.consoleText.text = "Unit " + this.curUnitNum.ToString() + " ready";
-            print("Unit " + this.curUnitNum.ToString() + " ready");
+
+            this.systemManager.uiTesting.readyUnit_text.text = "Ready for unit " + this.curUnitNum.ToString();
+            
+            // this.systemManager.consoleTitle.text = "";
+            // this.systemManager.consoleText.text = "Unit " + this.curUnitNum.ToString() + " ready";
+            // print("Unit " + this.curUnitNum.ToString() + " ready");
         }
     }
 

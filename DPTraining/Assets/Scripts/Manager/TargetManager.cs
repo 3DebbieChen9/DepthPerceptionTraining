@@ -95,7 +95,7 @@ public class TargetManager : MonoBehaviour
         float rad = angle * Mathf.Deg2Rad;
         this.targetAnimator.SetBool("Moving", true);
         this.targetAnimator.SetFloat("Direction", rad);
-        this.targetTransform.DOMove(this.targetInitialPosition, 0.5f);
+        this.targetTransform.DOMove(this.targetInitialPosition, 0.0f);
         Invoke("StopMoving", 0.7f);
         Invoke("TargetIsAtInitial", 0.5f);
     }
@@ -116,15 +116,15 @@ public class TargetManager : MonoBehaviour
         float randomValue = UnityEngine.Random.Range(0.0f, 1.0f);
         if (randomValue < 0.5f) {
             this.systemManager.testingModeManager.evaluationManager.targetMovingDirection = SystemManager.MovingDirection.forward;
-            movingDirectionVector = (this.systemManager.sceneOrigin_poisition - this.targetTransform.position).normalized;
-            // movingDirectionVector = (this.systemManager.sceneOrigin.transform.position - this.targetTransform.position).normalized;
+            movingDirectionVector = this.targetTransform.forward.normalized;
+            // movingDirectionVector = (this.systemManager.sceneOrigin_poisition - this.targetTransform.position).normalized;
             distanceMin = this.targetMoveDistanceMin_Forward;
             distanceMax = this.targetMoveDistanceMax_Forward;
         } 
         else {
             this.systemManager.testingModeManager.evaluationManager.targetMovingDirection = SystemManager.MovingDirection.backward;
-            movingDirectionVector = -(this.systemManager.sceneOrigin_poisition - this.targetTransform.position).normalized;
-            // movingDirectionVector = -(this.systemManager.sceneOrigin.transform.position - this.targetTransform.position).normalized;
+            movingDirectionVector = -this.targetTransform.forward.normalized;
+            // movingDirectionVector = -(this.systemManager.sceneOrigin_poisition - this.targetTransform.position).normalized;
             distanceMin = this.targetMoveDistanceMin_Backward;
             distanceMax = this.targetMoveDistanceMax_Backward;
         }
