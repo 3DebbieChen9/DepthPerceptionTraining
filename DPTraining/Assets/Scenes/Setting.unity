@@ -1933,7 +1933,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001876872}
   m_LocalRotation: {x: 0.18301274, y: -0.6830127, z: 0.18301274, w: 0.6830127}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00999999}
+  m_LocalPosition: {x: 0, y: 0, z: -0.01}
   m_LocalScale: {x: 0.0006099999, y: 0.0006100001, z: 0.0006099999}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1943,7 +1943,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 30, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.901, y: -1.58}
+  m_AnchoredPosition: {x: 1.006, y: -1.58}
   m_SizeDelta: {x: 893.7233, y: 124.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1001876874
@@ -3905,7 +3905,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0.00000023841858, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.5180002, y: 0.00000023841858, z: 0.012000024}
+  m_ConnectedAnchor: {x: 0.6230002, y: 0.00000023841858, z: 0.012000024}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -3977,7 +3977,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513837610022732483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.518, y: 0, z: 0.012}
+  m_LocalPosition: {x: 0.623, y: 0, z: 0.012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

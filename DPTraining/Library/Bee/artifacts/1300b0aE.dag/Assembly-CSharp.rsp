@@ -554,6 +554,7 @@
 "Assets/Scripts/FunctionTesting/TargetInteraction_L.cs"
 "Assets/Scripts/FunctionTesting/TargetInteraction_R.cs"
 "Assets/Scripts/FunctionTesting/TargetMovementManagerTest.cs"
+"Assets/Scripts/FunctionTesting/TargetMovementTest.cs"
 "Assets/Scripts/FunctionTesting/TestingManager.cs"
 "Assets/Scripts/FunctionTesting/Timer.cs"
 "Assets/Scripts/Interaction/BoxingBagInteraction.cs"

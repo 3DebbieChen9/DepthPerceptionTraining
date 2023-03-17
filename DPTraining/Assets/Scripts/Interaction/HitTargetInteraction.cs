@@ -24,6 +24,7 @@ public class HitTargetInteraction : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         float vibrationAmplitude = this.evaluationReachModule.evaluationManager.systemManager.mySettingInfo.controllerVibrationAmplitude;
         if (other.gameObject.tag == "Glove_L") {
+            this.evaluationReachModule.evaluationManager.systemManager.testingModeManager.targetManager.StopMoving();
             if (this.evaluationReachModule.evaluationManager.isDuringTheUnit) {
                 this.evaluationReachModule.reachTarget("L");
                 this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
@@ -33,6 +34,7 @@ public class HitTargetInteraction : MonoBehaviour
             Invoke("stopControllerVibration", 0.3f);
         }
         else if (other.gameObject.tag == "Glove_R") {
+            this.evaluationReachModule.evaluationManager.systemManager.testingModeManager.targetManager.StopMoving();
             if (this.evaluationReachModule.evaluationManager.isDuringTheUnit) {
                 this.evaluationReachModule.reachTarget("R");
                 this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;

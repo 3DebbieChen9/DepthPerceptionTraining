@@ -24,6 +24,7 @@ public class HitCoachInteraction : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         float vibrationAmplitude = this.testingModeManager.systemManager.mySettingInfo.controllerVibrationAmplitude;
         if (other.gameObject.tag == "Glove_L" || other.gameObject.tag == "Glove_R") {
+            this.testingModeManager.targetManager.StopMoving();
             if (this.testingModeManager.evaluationManager.isDuringTheUnit) {
                 if (this.gameObject.GetComponent<MeshRenderer>().materials.Length <= 1) {
                     this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.red;

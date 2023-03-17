@@ -59,8 +59,8 @@ public class SettingSceneManager : MonoBehaviour
             if (this.selectionToggle.activeSelf) {
                 this.selectionToggle.SetActive(false);
             }
-            if (!this.sceneChoices.activeSelf) {
-                Invoke("SceneChoiceActive", 0.2f);
+            if (!this.sceneChoices.activeSelf && !this.selectionToggle.activeSelf) {
+                this.sceneChoices.SetActive(true);
             }
         }
     }
@@ -155,8 +155,4 @@ public class SettingSceneManager : MonoBehaviour
                 break;
         }
     }
-    
-    private void SceneChoiceActive() {
-        this.sceneChoices.SetActive(true);
-    }    
 }

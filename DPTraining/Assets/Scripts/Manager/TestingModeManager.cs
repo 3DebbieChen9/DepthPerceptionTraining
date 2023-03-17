@@ -144,7 +144,7 @@ public class TestingModeManager : MonoBehaviour
 
                 this.curTestState = TestState.reaction;
                 this.evaluationManager.isDuringTheUnit = true;
-                this.targetManager.targetAnimator.SetBool("isDuringUnit", true);
+                this.targetManager.targetAnimator.SetBool("isDuringTheUnit", true);
                 this.targetManager.randomTargetMovement(this.curTestLevel);
 
                 this.reactionTimer.StartTimer();
@@ -168,7 +168,7 @@ public class TestingModeManager : MonoBehaviour
                 this.reactionTimer.ResetTimer();
                 if (this.evaluationManager.isDuringTheUnit) {
                     this.evaluationManager.isDuringTheUnit = false;
-                    this.targetManager.targetAnimator.SetBool("isDuringUnit", false);
+                    this.targetManager.targetAnimator.SetBool("isDuringTheUnit", false);
                     this.unitOver();
                 }
                 this.reactionTimeOut = true;
@@ -204,7 +204,7 @@ public class TestingModeManager : MonoBehaviour
     }
 
     public void unitOver() {
-        this.targetManager.targetAnimator.SetBool("isDuringUnit", false);
+        this.targetManager.targetAnimator.SetBool("isDuringTheUnit", false);
         this.targetManager.invokeTargetMoveToInitial(1.5f);
 
         this.systemManager.uiTesting.side_Canvas.SetActive(true);
