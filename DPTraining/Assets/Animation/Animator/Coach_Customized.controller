@@ -163,7 +163,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 1
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
@@ -172,7 +172,7 @@ AnimatorState:
   m_SpeedParameter: Speed
   m_MirrorParameter: LeftHanded
   m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_TimeParameter: Direction
 --- !u!1102 &-3639768091423546167
 AnimatorState:
   serializedVersion: 6
@@ -281,6 +281,12 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: isDuringTheUnit
     m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Speed
+    m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0

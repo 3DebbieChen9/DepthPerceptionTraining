@@ -116,12 +116,13 @@ public class TargetManager : MonoBehaviour
         float randomValue = UnityEngine.Random.Range(0.0f, 1.0f);
         if (randomValue < 0.5f) {
             this.systemManager.testingModeManager.evaluationManager.targetMovingDirection = SystemManager.MovingDirection.forward;
+            movingDirectionVector = -(this.systemManager.sceneOrigin_rotation * Vector3.forward).normalized;
             distanceMin = this.targetMoveDistanceMin_Forward;
             distanceMax = this.targetMoveDistanceMax_Forward;
         } 
         else {
             this.systemManager.testingModeManager.evaluationManager.targetMovingDirection = SystemManager.MovingDirection.backward;
-            movingDirectionVector = -movingDirectionVector;
+            movingDirectionVector = (this.systemManager.sceneOrigin_rotation * Vector3.forward).normalized;
             distanceMin = this.targetMoveDistanceMin_Backward;
             distanceMax = this.targetMoveDistanceMax_Backward;
         }
@@ -141,23 +142,34 @@ public class TargetManager : MonoBehaviour
             speedMax = 1.5f;
         }
         float speed = UnityEngine.Random.Range(speedMin, speedMax);
+        float movingAnimationDefaultSpeed = 0.8f; 
+        float movingAnimationSpeed = 1.0f;
+        if (speed > movingAnimationDefaultSpeed) {
+            movingAnimationSpeed = speed / movingAnimationDefaultSpeed;
+        }
+        else {
+            movingAnimationSpeed = 1.0f;
+        }
+        this.targetAnimator.SetFloat("Speed", movingAnimationSpeed);
         float distance = UnityEngine.Random.Range(distanceMin, distanceMax);
         float duration = distance / speed;
-        print("Speed: " + speed + ", Distance: " + distance + ", Duration: " + duration);
-
+    
         targetPosition = this.targetTransform.position + movingDirectionVector * distance;
+        Debug.Log("Initial Position: " + this.targetTransform.position + ", Target Position: " + targetPosition + ", Moving Direction: " + movingDirectionVector);
         this.StartMoving(movingDirectionVector, duration, targetPosition);
     }
 
     private void StartMoving(Vector3 movingDirectionVector, float duration, Vector3 movingTargetPosition) {
         Vector3 startForward = (this.targetTransform.localRotation * Vector3.forward).normalized;
         // Vector3 startForward = this.targetTransform.forward;
-        Debug.DrawLine(this.targetTransform.position, this.targetTransform.position + startForward * 10.0f, Color.green, 100.0f);
+        // Debug.DrawLine(this.targetTransform.position, this.targetTransform.position + startForward * 10.0f, Color.green, 100.0f);
+        Debug.DrawLine(this.targetTransform.position, this.targetTransform.position + movingDirectionVector * 10.0f, Color.blue, 100.0f);
         float angle = Vector3.Angle(startForward, movingDirectionVector);
         float rad = angle * Mathf.Deg2Rad;
         this.targetAnimator.SetBool("Moving", true);
         this.targetAnimator.SetFloat("Direction", rad);
-        this.targetTransform.DOMoveZ(movingTargetPosition.z, duration);
+        // this.targetTransform.DOMoveZ(movingTargetPosition.z, duration);
+        this.targetTransform.DOMove(movingTargetPosition, duration);
 
         this.targetCoachIsAtInitial = false;
         Invoke("StopMoving", duration);

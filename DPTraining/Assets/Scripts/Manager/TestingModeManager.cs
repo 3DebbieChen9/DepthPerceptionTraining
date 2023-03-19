@@ -79,26 +79,26 @@ public class TestingModeManager : MonoBehaviour
     [SerializeField]
     public TargetRenderInitial m_targetRenderInitial;
 
+    private bool isStarted = false;
+
     // Start is called before the first frame update
     void Start()
     {
         this.systemManager = GameObject.Find("SystemManager").GetComponent<SystemManager>();
         this.evaluationManager = GameObject.Find("EvaluationManager").GetComponent<EvaluationManager>();
-        this.evaluationManager.startingPosition = this.systemManager.sceneOrigin_poisition;
-        
-        this.systemManager.userInitialPosition.transform.position = this.systemManager.sceneOrigin_poisition;
-        this.targetUnitNum = this.systemManager.mySettingInfo.targetUnitNum;
-        this.readyTimer.timeTarget = this.systemManager.mySettingInfo.readyTime;
-
         this.sceneBuildingManager = GameObject.Find("SceneBuilding").GetComponent<SceneBuilding>();
         this.targetManager = GameObject.Find("TargetManager").GetComponent<TargetManager>();
 
-        this.testingModeInitial();
+        this.isStarted = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (this.systemManager != null && !this.isStarted) {
+            this.testingModeInitial();
+        }
+
         this.systemManager.sceneOrigin.transform.position = this.systemManager.sceneOrigin_poisition;
         this.systemManager.sceneOrigin.transform.rotation = this.systemManager.sceneOrigin_rotation;
 
@@ -108,7 +108,6 @@ public class TestingModeManager : MonoBehaviour
                 if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
                     this.curTestState = TestState.begin;
                     this.systemManager.uiTesting.initial_Canvas.SetActive(false);
-                    this.systemManager.uiTesting.front_Canvas.SetActive(true);
                 }
             }
             // else {
@@ -119,14 +118,16 @@ public class TestingModeManager : MonoBehaviour
 
         // 測試進行中，判斷是否在中心點
         if (this.curTestState == TestState.begin) {
-            this.systemManager.uiTesting.front_Canvas.SetActive(true);
-            this.systemManager.uiTesting.readyUnit_text.text = "Ready for unit " + this.curUnitNum.ToString();
+            if (!this.systemManager.uiTesting.front_Canvas.activeSelf) {
+                this.systemManager.uiTesting.front_Canvas.SetActive(true);
+            }
             if(this.evaluationManager.userIsAtOrigin) {
+                this.systemManager.uiTesting.readyUnit_text.text = "Ready for unit " + this.curUnitNum.ToString();
                 this.curTestState = TestState.ready;
                 this.readyStart();
             }
             else {
-                this.systemManager.uiTesting.readyCountdown_text.text = "Please move to the center.";
+                this.systemManager.uiTesting.readyUnit_text.text = "Please move to the center.";
                 // this.systemManager.consoleText.text = "Move to the center please!!!";
             }
         }
@@ -136,7 +137,7 @@ public class TestingModeManager : MonoBehaviour
             this.systemManager.uiTesting.readyCountdown_text.text = this.readyTimer.timeLeft.ToString("F0");
             this.systemManager.uiTesting.readyCountdown_image.fillAmount = this.readyTimer.timeLeft / this.readyTimer.timeTarget;
             this.readyTimer.timeLeft -= Time.deltaTime;
-            if (this.readyTimer.timeLeft <= 1.0f) {
+            if (this.readyTimer.timeLeft <= 0.2f) {
                 this.systemManager.uiTesting.readyUnit_text.text = "Unit " + this.curUnitNum.ToString() + " start!!!";
             } 
             if (this.readyTimer.timeLeft <= 0.0f) {
@@ -150,10 +151,12 @@ public class TestingModeManager : MonoBehaviour
                 this.reactionTimer.StartTimer();
 
                 this.systemManager.uiTesting.front_Canvas.SetActive(false);
+                this.systemManager.uiTesting.side_Canvas.SetActive(false);
+                this.systemManager.uiTesting.resultDescription_text.text = "";
+
                 this.systemManager.uiTesting.readyCountdown_image.fillAmount = 0;
                 this.systemManager.uiTesting.readyCountdown_text.text = "";
                 this.systemManager.uiTesting.readyUnit_text.text = "";
-                this.systemManager.uiTesting.side_Canvas.SetActive(false);
 
                 // this.systemManager.consoleTitle.text = "Unit " + this.curUnitNum.ToString() + " start";
                 // print("Unit " + this.curUnitNum.ToString() + " start");
@@ -179,8 +182,14 @@ public class TestingModeManager : MonoBehaviour
     }
 
     public void testingModeInitial() {
-        this.curTestState = TestState.idle;
+        this.isStarted = true;
 
+        this.evaluationManager.startingPosition = this.systemManager.sceneOrigin_poisition;
+        this.systemManager.userInitialPosition.transform.position = this.systemManager.sceneOrigin_poisition;
+        this.targetUnitNum = this.systemManager.mySettingInfo.targetUnitNum;
+        this.readyTimer.timeTarget = this.systemManager.mySettingInfo.readyTime;
+
+        this.curTestState = TestState.idle;
         this.curTestLevel = TestLevel.level_0;
         this.curUnitNum = 0;
         this.reactionTimeOutCount = 0;
@@ -201,6 +210,7 @@ public class TestingModeManager : MonoBehaviour
 
         this.systemManager.uiTesting.initialTitle_text.text = "Welcome to Testing Mode";
         this.systemManager.uiTesting.initialDescription_text.text = "There will be " + this.systemManager.mySettingInfo.targetUnitNum.ToString() + " units in this test." + "\nPlease move to center and press the button 'A' to start.";
+        this.systemManager.uiTesting.resultDescription_text.text = "";
     }
 
     public void unitOver() {
@@ -241,10 +251,12 @@ public class TestingModeManager : MonoBehaviour
                 averageReactionTime = this.totalReactionTime / timeUsefulCount;
             }
 
+            this.m_targetRenderInitial.initialTargetRender();
+            
             this.systemManager.uiTesting.final_Canvas.SetActive(true);
             this.systemManager.uiTesting.side_Canvas.SetActive(false);
             this.systemManager.uiTesting.front_Canvas.SetActive(false);
-
+            
             this.systemManager.uiTesting.finalTitle_text.text = "Test finished";
             this.systemManager.uiTesting.finalDescription_text.text = "Average reaction time: " + averageReactionTime.ToString() + "\n" + "Total score: " + this.totalScore.ToString() + "\n" + "Reaction time out count: " + this.reactionTimeOutCount.ToString();
 
