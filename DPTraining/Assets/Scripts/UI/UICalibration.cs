@@ -7,24 +7,29 @@ using TMPro;
 public class UICalibration : MonoBehaviour
 {
     [SerializeField]
-    public GameObject calibrationUI_Canvas;
+    public GameObject calibrationUI;
     [SerializeField]
-    public TMP_Text stepTitle_text;
+    public TMP_Text instructionTitle_text;
     [SerializeField]
-    public TMP_Text stepDescription_text;
+    public TMP_Text instruction_text;
+    [SerializeField]
+    public Image instructionImage;
+    [SerializeField]
+    public Sprite[] instructionImagesSource;
+
     [SerializeField]
     public TMP_Text resultTitle_text;
     [SerializeField]
     public TMP_Text resultDescription_text;
 
     [SerializeField]
-    public Image resultBackgroundImage;
+    public GameObject resultCanvas;
+    
     
     // Start is called before the first frame update
     void Start()
     {
-        this.resultBackgroundImage.enabled = false;
-        this.calibrationUI_Canvas.SetActive(true);
+        
     }
 
     // Update is called once per frame

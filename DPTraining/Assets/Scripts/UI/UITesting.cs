@@ -7,10 +7,10 @@ using TMPro;
 public class UITesting : MonoBehaviour
 {
     [SerializeField]
-    public GameObject testingUI_Canvas;
+    public GameObject testingUI;
 
     [SerializeField]
-    public GameObject front_Canvas;
+    public GameObject canvas_countdown;
     [SerializeField]
     public TMP_Text readyUnit_text;
     [SerializeField]
@@ -19,7 +19,7 @@ public class UITesting : MonoBehaviour
     public Image readyCountdown_image;
     
     [SerializeField]
-    public GameObject side_Canvas;
+    public GameObject canvas_result;
     [SerializeField]
     public TMP_Text resultUnit_text;
     [SerializeField]
@@ -28,14 +28,14 @@ public class UITesting : MonoBehaviour
     public TMP_Text resultDescription_text;
 
     [SerializeField]
-    public GameObject initial_Canvas;
+    public GameObject canvas_start;
     [SerializeField]
-    public TMP_Text initialTitle_text;
+    public TMP_Text startTitle_text;
     [SerializeField]
-    public TMP_Text initialDescription_text;
+    public TMP_Text startDescription_text;
 
     [SerializeField]
-    public GameObject final_Canvas;
+    public GameObject canvas_final;
     [SerializeField]
     public TMP_Text finalTitle_text;
     [SerializeField]
@@ -45,10 +45,7 @@ public class UITesting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.testingUI_Canvas.SetActive(false);
-        this.front_Canvas.SetActive(false);
-        this.side_Canvas.SetActive(false);
-        this.final_Canvas.SetActive(false);
+        
     }
 
     // Update is called once per frame

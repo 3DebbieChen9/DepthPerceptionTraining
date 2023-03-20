@@ -11,11 +11,7 @@ sceneSetups:
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/DevelopeTesting/BoxingSceneTesting_2.unity
-  isLoaded: 0
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Scenes/DevelopeTesting/TargetTesting.unity
+- path: Assets/Scenes/DevelopeTesting/GetImage.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0

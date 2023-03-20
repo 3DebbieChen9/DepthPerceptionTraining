@@ -26,6 +26,7 @@ public class HitCoachInteraction : MonoBehaviour
         if (other.gameObject.tag == "Glove_L" || other.gameObject.tag == "Glove_R") {
             this.testingModeManager.targetManager.StopMoving();
             if (this.testingModeManager.evaluationManager.isDuringTheUnit) {
+                this.testingModeManager.evaluationManager.userIsHitTarget(EvaluationManager.Hand.left, false);
                 if (this.gameObject.GetComponent<MeshRenderer>().materials.Length <= 1) {
                     this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.red;
                 }

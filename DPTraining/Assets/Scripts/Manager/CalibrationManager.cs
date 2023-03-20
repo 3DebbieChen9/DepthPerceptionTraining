@@ -61,8 +61,9 @@ public class CalibrationManager : MonoBehaviour
                 this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_ArmLength);
                 // this.systemManager.consoleTitle.text = "Next: Calibrate Arm Length (T-Pose)";
 
-                this.systemManager.uiCalibration.stepTitle_text.text = "T-Pose Calibration";
-                this.systemManager.uiCalibration.stepDescription_text.text = "Raise your right hand as T-Pose, move your head to look at your right controller, and press button 'A'.";
+                this.systemManager.uiCalibration.instructionTitle_text.text = "T-Pose Calibration";
+                this.systemManager.uiCalibration.instruction_text.text = "Raise your right hand as T-Pose, move your head to look at your right controller, and press button 'A'.";
+                this.systemManager.uiCalibration.instructionImage.sprite = this.systemManager.uiCalibration.instructionImagesSource[armLengthMarkerStatue+1];
                 this.setSceneOrigin();
                 // this.systemManager.consoleTitle.text = "Movable Range Result";
                 // this.systemManager.consoleText.text = "Average Distance = " + this.systemManager.myMovableRangeInfo.avgLengthInVR.ToString();
@@ -86,7 +87,7 @@ public class CalibrationManager : MonoBehaviour
         lengethList.Sort(); // Sort in ascending order 
         float result = (lengethList[1] + lengethList[2]) / 2.0f;
 
-        this.systemManager.uiCalibration.resultBackgroundImage.enabled = true;
+        this.systemManager.uiCalibration.resultCanvas.SetActive(true);
         this.systemManager.uiCalibration.resultTitle_text.text = "Movable Range Result";
         
         if (result < 4.0f) {
@@ -115,8 +116,9 @@ public class CalibrationManager : MonoBehaviour
             this.systemManager.uiCalibration.resultTitle_text.text = "T-Pose Result";
             this.systemManager.uiCalibration.resultDescription_text.text = "Center Eye to R-Controller Length = " + this.RCenterEyeToControllerLength.ToString("F2") + " (m)";
 
-            this.systemManager.uiCalibration.stepTitle_text.text = "T-Pose Calibration";
-            this.systemManager.uiCalibration.stepDescription_text.text = "Raise your left hand as T-Pose, move your head to look at your left controller, and press button 'A'.";
+            this.systemManager.uiCalibration.instructionTitle_text.text = "T-Pose Calibration";
+            this.systemManager.uiCalibration.instruction_text.text = "Raise your left hand as T-Pose, move your head to look at your left controller, and press button 'A'.";
+            this.systemManager.uiCalibration.instructionImage.sprite = this.systemManager.uiCalibration.instructionImagesSource[armLengthMarkerStatue+1];
 
             print("[DC] R - CenterEyeToControllerLength = " + this.RCenterEyeToControllerLength.ToString());
         }
@@ -143,8 +145,9 @@ public class CalibrationManager : MonoBehaviour
             this.systemManager.uiCalibration.resultDescription_text.text =  "Center Eye to Controller Length = " + this.systemManager.myUserInfo.avgCenterEyeToControllerLength.ToString("F2") + " (m)"+
                                                                             "\nUser Height = " + this.systemManager.myUserInfo.userHeight.ToString("F2") + " (m)";
 
-            this.systemManager.uiCalibration.stepTitle_text.text = "Straight forward Pose";
-            this.systemManager.uiCalibration.stepDescription_text.text = "Please put your right hand straight to the front, put your L-controller on your right shoudler, and press the button 'A'.";
+            this.systemManager.uiCalibration.instructionTitle_text.text = "Straight forward Pose";
+            this.systemManager.uiCalibration.instruction_text.text = "Please put your right hand straight to the front, put your L-controller on your right shoudler, and press the button 'A'.";
+            this.systemManager.uiCalibration.instructionImage.sprite = this.systemManager.uiCalibration.instructionImagesSource[armLengthMarkerStatue+1];
 
             // this.systemManager.consoleTitle.text = "Next: R-Arm Straight to Front";
             // this.systemManager.consoleText.text = "CenterEyeToController Length = " + this.systemManager.myUserInfo.avgCenterEyeToControllerLength.ToString() + "\nUser Height = " + this.systemManager.myUserInfo.userHeight.ToString();
@@ -165,8 +168,9 @@ public class CalibrationManager : MonoBehaviour
             this.systemManager.uiCalibration.resultTitle_text.text = "Straight forward Pose Result";
             this.systemManager.uiCalibration.resultDescription_text.text = "Right Arm Length = " + this.RArmLength.ToString("F2") + " (m)";
 
-            this.systemManager.uiCalibration.stepTitle_text.text = "Straight forward Pose";
-            this.systemManager.uiCalibration.stepDescription_text.text = "Please put your left hand straight to the front, put your R-controller on your left shoudler, and press the button 'A'.";
+            this.systemManager.uiCalibration.instructionTitle_text.text = "Straight forward Pose";
+            this.systemManager.uiCalibration.instruction_text.text = "Please put your left hand straight to the front, put your R-controller on your left shoudler, and press the button 'A'.";
+            this.systemManager.uiCalibration.instructionImage.sprite = this.systemManager.uiCalibration.instructionImagesSource[armLengthMarkerStatue+1];
 
             // this.systemManager.consoleTitle.text = "Next: L-Arm Straight to Front";
             // this.systemManager.consoleText.text = "R - Arm Length = " + this.RArmLength.ToString();
@@ -186,9 +190,9 @@ public class CalibrationManager : MonoBehaviour
             this.systemManager.uiCalibration.resultTitle_text.text = "Straight forward Pose Result";
             this.systemManager.uiCalibration.resultDescription_text.text = "Average Arm Length = " + this.systemManager.myUserInfo.avgArmLength.ToString("F2") + " (m)";
 
-            this.systemManager.uiCalibration.stepTitle_text.text = "Idle Pose Calibration";
-            this.systemManager.uiCalibration.stepDescription_text.text = "Please make yourself in boxing ready idle pose, and press the button 'A'.";
-
+            this.systemManager.uiCalibration.instructionTitle_text.text = "Idle Pose Calibration";
+            this.systemManager.uiCalibration.instruction_text.text = "Please make yourself in boxing ready idle pose, and press the button 'A'.";
+            this.systemManager.uiCalibration.instructionImage.sprite = this.systemManager.uiCalibration.instructionImagesSource[armLengthMarkerStatue+1];
             // this.systemManager.consoleText.text = "Avg Arm Length = " + this.systemManager.myUserInfo.avgArmLength.ToString();
             // this.systemManager.consoleTitle.text = "Ready to Calibrate Idle Pose";
 
@@ -207,10 +211,11 @@ public class CalibrationManager : MonoBehaviour
         armLengthMarkerStatue = 0;
         this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
 
-        this.systemManager.uiCalibration.calibrationUI_Canvas.SetActive(true);
-        this.systemManager.uiCalibration.resultBackgroundImage.enabled = false;
-        this.systemManager.uiCalibration.stepTitle_text.text = "Movable Size Calibration";
-        this.systemManager.uiCalibration.stepDescription_text.text = "Please put your left controller on a floor around the movable place and press button 'A'.";
+        this.systemManager.uiCalibration.calibrationUI.SetActive(true);
+        this.systemManager.uiCalibration.resultCanvas.SetActive(false);
+        this.systemManager.uiCalibration.instructionTitle_text.text = "Movable Size Calibration";
+        this.systemManager.uiCalibration.instruction_text.text = "Please put your left controller on a floor around the movable place and press button 'A'.";
+        this.systemManager.uiCalibration.instructionImage.sprite = this.systemManager.uiCalibration.instructionImagesSource[0];
         // this.systemManager.consoleTitle.text = "Initialize";
         // this.systemManager.consoleText.text = "";
     }
@@ -222,8 +227,9 @@ public class CalibrationManager : MonoBehaviour
         // this.systemManager.consoleText.text = "";
         this.systemManager.uiCalibration.resultTitle_text.text = "Movable Range Result";
         this.systemManager.uiCalibration.resultDescription_text.text = "Average Distance = " + this.systemManager.myMovableRangeInfo.avgLengthInVR.ToString("F2") + " (m)";
-        this.systemManager.uiCalibration.stepTitle_text.text = "T-Pose Calibration";
-        this.systemManager.uiCalibration.stepDescription_text.text = "Raise your right hand as T-Pose, move your head to look at your right controller, and press button 'A'.";
+        this.systemManager.uiCalibration.instructionTitle_text.text = "T-Pose Calibration";
+        this.systemManager.uiCalibration.instruction_text.text = "Raise your right hand as T-Pose, move your head to look at your right controller, and press button 'A'.";
+        this.systemManager.uiCalibration.instructionImage.sprite = this.systemManager.uiCalibration.instructionImagesSource[armLengthMarkerStatue+1];
     }
 
     public void calibrateMovableSize() {
@@ -266,7 +272,7 @@ public class CalibrationManager : MonoBehaviour
         this.systemManager.userCenterPosition.GetComponent<CapsuleCollider>().height = this.systemManager.myUserInfo.userHeight;
         this.systemManager.userCenterPosition.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.systemManager.myUserInfo.userHeight / 2.0f, 0.0f);
 
-        this.systemManager.uiCalibration.calibrationUI_Canvas.SetActive(false);
+        this.systemManager.uiCalibration.calibrationUI.SetActive(false);
         this.systemManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
         this.systemManager.changeSystemMode(SystemManager.SystemMode.Setting);
         this.systemManager.changeScene("Setting");
@@ -286,6 +292,7 @@ public class CalibrationManager : MonoBehaviour
         lookTarget += this.distanceMarkers[1].transform.position;
         lookTarget /= 2;
 
+        this.systemManager.sceneOrigin.transform.localScale = new Vector3(this.systemManager.mySettingInfo.tolerateRaduisBetweenOriginAndUser, 0.02f, this.systemManager.mySettingInfo.tolerateRaduisBetweenOriginAndUser);
         this.systemManager.sceneOrigin.transform.position = centroid;
         this.systemManager.sceneOrigin.transform.LookAt(lookTarget);
         this.systemManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = true;

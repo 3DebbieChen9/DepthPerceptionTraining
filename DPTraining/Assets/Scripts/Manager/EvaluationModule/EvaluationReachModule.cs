@@ -26,10 +26,10 @@ public class EvaluationReachModule : MonoBehaviour
             // this.evaluationManager.systemManager.consoleText.text += "Reach Target with " + hand + "\n";
             print("Reach Target with " + hand);
             if (hand == "L") {
-                this.evaluationManager.userIsHitTarget(EvaluationManager.Hand.left);
+                this.evaluationManager.userIsHitTarget(EvaluationManager.Hand.left, true);
             }
             else if(hand == "R") {
-                this.evaluationManager.userIsHitTarget(EvaluationManager.Hand.right);
+                this.evaluationManager.userIsHitTarget(EvaluationManager.Hand.right, true);
             }
         }
     }

@@ -124,13 +124,23 @@ public class EvaluationManager : MonoBehaviour
         }
     }
 
-    public void userIsHitTarget(Hand hand) {
+    public void userIsHitTarget(Hand hand, bool isShoulder) {
         if (this.isDuringTheUnit) {
-            this.userPerformanceEachUnit.isReachTarget = true;
+            if (isShoulder) {
+                this.userPerformanceEachUnit.isReachTarget = true;
+                this.evaluationStraightModule.judgeArmStraight(hand);
+            }
+            else {
+                this.userPerformanceEachUnit.isReachTarget = false;
+            }
+            this.userPerformanceEachUnit.isPunching = true;
+            this.userPerformanceEachUnit.isReacting = true;
             this.isDuringTheUnit = false;
             this.systemManager.testingModeManager.unitOver();
         }
         else {
+            this.userPerformanceEachUnit.isPunching = false;
+            this.userPerformanceEachUnit.isReacting = false;
             this.userPerformanceEachUnit.isReachTarget = false;
         }
     }
