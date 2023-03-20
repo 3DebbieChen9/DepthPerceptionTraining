@@ -169,6 +169,7 @@ class RuntimeInitializeOnLoadManager; template <> void RegisterUnityClass<Runtim
 class Shader; template <> void RegisterUnityClass<Shader>(const char*);
 class ShaderNameRegistry; template <> void RegisterUnityClass<ShaderNameRegistry>(const char*);
 class SkinnedMeshRenderer; template <> void RegisterUnityClass<SkinnedMeshRenderer>(const char*);
+class SortingGroup; template <> void RegisterUnityClass<SortingGroup>(const char*);
 class Sprite; template <> void RegisterUnityClass<Sprite>(const char*);
 class SpriteAtlas; template <> void RegisterUnityClass<SpriteAtlas>(const char*);
 class SpriteRenderer; template <> void RegisterUnityClass<SpriteRenderer>(const char*);
@@ -212,7 +213,7 @@ void RegisterAllClasses()
 {
 void RegisterBuiltinTypes();
 RegisterBuiltinTypes();
-	//Total: 101 non stripped classes
+	//Total: 102 non stripped classes
 	//0. NavMeshProjectSettings
 	RegisterUnityClass<NavMeshProjectSettings>("AI");
 	//1. NavMeshSettings
@@ -339,81 +340,83 @@ RegisterBuiltinTypes();
 	RegisterUnityClass<ShaderNameRegistry>("Core");
 	//62. SkinnedMeshRenderer
 	RegisterUnityClass<SkinnedMeshRenderer>("Core");
-	//63. Sprite
+	//63. SortingGroup
+	RegisterUnityClass<SortingGroup>("Core");
+	//64. Sprite
 	RegisterUnityClass<Sprite>("Core");
-	//64. SpriteAtlas
+	//65. SpriteAtlas
 	RegisterUnityClass<SpriteAtlas>("Core");
-	//65. SpriteRenderer
+	//66. SpriteRenderer
 	RegisterUnityClass<SpriteRenderer>("Core");
-	//66. TagManager
+	//67. TagManager
 	RegisterUnityClass<TagManager>("Core");
-	//67. TextAsset
+	//68. TextAsset
 	RegisterUnityClass<TextAsset>("Core");
-	//68. Texture
+	//69. Texture
 	RegisterUnityClass<Texture>("Core");
-	//69. Texture2D
+	//70. Texture2D
 	RegisterUnityClass<Texture2D>("Core");
-	//70. Texture2DArray
+	//71. Texture2DArray
 	RegisterUnityClass<Texture2DArray>("Core");
-	//71. Texture3D
+	//72. Texture3D
 	RegisterUnityClass<Texture3D>("Core");
-	//72. TimeManager
+	//73. TimeManager
 	RegisterUnityClass<TimeManager>("Core");
-	//73. TrailRenderer
+	//74. TrailRenderer
 	RegisterUnityClass<TrailRenderer>("Core");
-	//74. Transform
+	//75. Transform
 	RegisterUnityClass<Transform>("Core");
-	//75. PlayableDirector
+	//76. PlayableDirector
 	RegisterUnityClass<PlayableDirector>("Director");
-	//76. ParticleSystem
+	//77. ParticleSystem
 	RegisterUnityClass<ParticleSystem>("ParticleSystem");
-	//77. ParticleSystemRenderer
+	//78. ParticleSystemRenderer
 	RegisterUnityClass<ParticleSystemRenderer>("ParticleSystem");
-	//78. BoxCollider
+	//79. BoxCollider
 	RegisterUnityClass<BoxCollider>("Physics");
-	//79. CapsuleCollider
+	//80. CapsuleCollider
 	RegisterUnityClass<CapsuleCollider>("Physics");
-	//80. CharacterController
+	//81. CharacterController
 	RegisterUnityClass<CharacterController>("Physics");
-	//81. CharacterJoint
+	//82. CharacterJoint
 	RegisterUnityClass<Unity::CharacterJoint>("Physics");
-	//82. Collider
+	//83. Collider
 	RegisterUnityClass<Collider>("Physics");
-	//83. ConfigurableJoint
+	//84. ConfigurableJoint
 	RegisterUnityClass<Unity::ConfigurableJoint>("Physics");
-	//84. FixedJoint
+	//85. FixedJoint
 	RegisterUnityClass<Unity::FixedJoint>("Physics");
-	//85. Joint
+	//86. Joint
 	RegisterUnityClass<Unity::Joint>("Physics");
-	//86. MeshCollider
+	//87. MeshCollider
 	RegisterUnityClass<MeshCollider>("Physics");
-	//87. PhysicMaterial
+	//88. PhysicMaterial
 	RegisterUnityClass<PhysicMaterial>("Physics");
-	//88. PhysicsManager
+	//89. PhysicsManager
 	RegisterUnityClass<PhysicsManager>("Physics");
-	//89. Rigidbody
+	//90. Rigidbody
 	RegisterUnityClass<Rigidbody>("Physics");
-	//90. SphereCollider
+	//91. SphereCollider
 	RegisterUnityClass<SphereCollider>("Physics");
-	//91. Physics2DSettings
+	//92. Physics2DSettings
 	RegisterUnityClass<Physics2DSettings>("Physics2D");
-	//92. Rigidbody2D
+	//93. Rigidbody2D
 	RegisterUnityClass<Rigidbody2D>("Physics2D");
-	//93. Terrain
+	//94. Terrain
 	RegisterUnityClass<Terrain>("Terrain");
-	//94. TerrainData
+	//95. TerrainData
 	RegisterUnityClass<TerrainData>("Terrain");
-	//95. Font
+	//96. Font
 	RegisterUnityClass<TextRendering::Font>("TextRendering");
-	//96. TextMesh
+	//97. TextMesh
 	RegisterUnityClass<TextRenderingPrivate::TextMesh>("TextRendering");
-	//97. Canvas
+	//98. Canvas
 	RegisterUnityClass<UI::Canvas>("UI");
-	//98. CanvasGroup
+	//99. CanvasGroup
 	RegisterUnityClass<UI::CanvasGroup>("UI");
-	//99. CanvasRenderer
+	//100. CanvasRenderer
 	RegisterUnityClass<UI::CanvasRenderer>("UI");
-	//100. VideoPlayer
+	//101. VideoPlayer
 	RegisterUnityClass<VideoPlayer>("Video");
 
 }

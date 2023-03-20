@@ -1,0 +1,2050 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.6f1 (7da38d85baf6) revision 8233869'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'en' Physical Memory: 32645 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+D:/CGVLab(D)/DepthPerceptionTraining/DPTraining
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+62391
+Successfully changed project path to: D:/CGVLab(D)/DepthPerceptionTraining/DPTraining
+D:/CGVLab(D)/DepthPerceptionTraining/DPTraining
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 126.08 ms, found 9 plugins.
+Preloading 1 native plugins for Editor in 0.72 ms.
+Initialize engine version: 2021.3.6f1 (7da38d85baf6)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/CGVLab(D)/DepthPerceptionTraining/DPTraining/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3060 (ID=0x2504)
+    Vendor:   NVIDIA
+    VRAM:     12129 MB
+    Driver:   31.0.15.2849
+Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56288
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.005730 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 125.54 ms, found 9 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.698 seconds
+Domain Reload Profiling:
+	ReloadAssembly (699ms)
+		BeginReloadAssembly (72ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (506ms)
+			LoadAssemblies (71ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (112ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (319ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (49ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (126ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (98ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.009234 seconds.
+Android Extension - Scanning For ADB Devices 703 ms
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.07 ms, found 9 plugins.
+Preloading 1 native plugins for Editor in 0.05 ms.
+Package Manager log level set to [2]
+[XR] OculusXRPlugin: registering subsystems
+[XR] Unable to register display lifecyle provider: [1]
+[XR] Oculus Input lifecycle provider registered.
+[XR] Unable to register input lifecyle provider: [1]
+[XR] OVRP version 1.74.0
+Mono: successfully reloaded assembly
+- Completed reload, in  1.076 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1077ms)
+		BeginReloadAssembly (88ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (890ms)
+			LoadAssemblies (77ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (285ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (72ms)
+			SetupLoadedEditorAssemblies (411ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (264ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 1.31 ms, found 9 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Unloading 5029 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 63 unused Assets / (188.9 KB). Loaded Objects now: 5493.
+Memory consumption went from 184.2 MB to 184.1 MB.
+Total: 3.531100 ms (FindLiveObjects: 0.553600 ms CreateObjectMapping: 0.454400 ms MarkObjects: 2.337200 ms  DeleteObjects: 0.184400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 37917.863140 seconds.
+  path: Assets/Noitom/NeuronMocapExamples/SimpleFBXAnimations/HipContact_1_chr00.fbx
+  artifactKey: Guid(0ae99be59d581da4bb8d56be2d2c25a1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Noitom/NeuronMocapExamples/SimpleFBXAnimations/HipContact_1_chr00.fbx using Guid(0ae99be59d581da4bb8d56be2d2c25a1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5434d2fccbbc4ea449381ed7ebc19019') in 0.248624 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Noitom/AliceMocapExamples/AliceHybridMocap/Materials/Mat_WiiMoteBase.mat
+  artifactKey: Guid(9e61999ee2116264a8062c9fdf7df016) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Noitom/AliceMocapExamples/AliceHybridMocap/Materials/Mat_WiiMoteBase.mat using Guid(9e61999ee2116264a8062c9fdf7df016) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0214a4b0037466491bea0f15fc468285') in 0.067046 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Props/M4/Textures/M4 Diffuse.tga
+  artifactKey: Guid(8bb64b30715a946c4af195846eb24774) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Props/M4/Textures/M4 Diffuse.tga using Guid(8bb64b30715a946c4af195846eb24774) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6f7c10dcb764b1d109c801e53108d862') in 0.048115 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/Baker/Scripts
+  artifactKey: Guid(8d2079bf8fd63d640a121f8fea6f5c5f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Baker/Scripts using Guid(8d2079bf8fd63d640a121f8fea6f5c5f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e0d0c108fa0e6c0516f139a45b36a3c5') in 0.005780 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Textures/Rope_Climbing_512_Metallic.tif
+  artifactKey: Guid(df214260ff878b34bb0b01fdae9ee902) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Textures/Rope_Climbing_512_Metallic.tif using Guid(df214260ff878b34bb0b01fdae9ee902) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'aa72e01408dfb02fd66e437d7594f331') in 0.016392 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Textures/Rope_Climbing_512_Height.tif
+  artifactKey: Guid(856f29cd5e1a5e64bb2ee3dc49e94e26) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Textures/Rope_Climbing_512_Height.tif using Guid(856f29cd5e1a5e64bb2ee3dc49e94e26) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3378ac8bd2b16da25c125357f6c8afd4') in 0.014930 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/Shared Scripts/Interp.cs
+  artifactKey: Guid(8d23298dba9a44325997366a9dc5314f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Scripts/Interp.cs using Guid(8d23298dba9a44325997366a9dc5314f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '01179534339e192a00654f3e560c0845') in 0.012053 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Noitom/Resources/Textures/NEURON_LOGO.png
+  artifactKey: Guid(11f2a3468ee8fbb458f43c830a95226d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Noitom/Resources/Textures/NEURON_LOGO.png using Guid(11f2a3468ee8fbb458f43c830a95226d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd94224fb8d3686a41b80c5e2568202a4') in 0.408137 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Animation/Animator
+  artifactKey: Guid(ce3f7a1b0e36e384e85ec96007260978) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Animation/Animator using Guid(ce3f7a1b0e36e384e85ec96007260978) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '600bd807ad92125430cd81d211c6e6bd') in 0.007164 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Noitom/Scripts/Utilities/BoneLines.cs
+  artifactKey: Guid(182955e4c69f2dd49b55611c827c2b80) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Noitom/Scripts/Utilities/BoneLines.cs using Guid(182955e4c69f2dd49b55611c827c2b80) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '957382e46ca758774e9d844f35c1a75f') in 0.009629 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Noitom/Docs/NoitomMocapLive_Unity_Handbook_v1.1.0_EN.pdf
+  artifactKey: Guid(ed2234c71c2a21d42a21319a6d469bf3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Noitom/Docs/NoitomMocapLive_Unity_Handbook_v1.1.0_EN.pdf using Guid(ed2234c71c2a21d42a21319a6d469bf3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '07aa1edd8ba09dfb62ab8661c392e270') in 0.011132 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Finger Rig/FingerRig.cs
+  artifactKey: Guid(ee545149746b44547897f32030465e57) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Finger Rig/FingerRig.cs using Guid(ee545149746b44547897f32030465e57) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '32a52ea170a2fe3a617901aa6d10dfe1') in 0.008333 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Components/LookAtIK.cs
+  artifactKey: Guid(776adaaacdc5c4e8ab0395120a6e972b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Components/LookAtIK.cs using Guid(776adaaacdc5c4e8ab0395120a6e972b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7ad41667e62fce02e46d596a1a9b1e8e') in 0.014215 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Aim IK/Aim Controller.unity
+  artifactKey: Guid(f097b72f6aff88c4c8120011f31f3891) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Aim IK/Aim Controller.unity using Guid(f097b72f6aff88c4c8120011f31f3891) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd49cf98a08e185b46bf7f122e8039433') in 0.007220 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Plugins/RootMotion/Shared Scripts/SolverManager.cs
+  artifactKey: Guid(24f5c8273305e4aed8dd09bf3a1a379a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Scripts/SolverManager.cs using Guid(24f5c8273305e4aed8dd09bf3a1a379a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c5599837bd934e866b7b33432bef54f7') in 0.009017 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Scripts/Character Controllers/CharacterAnimationThirdPerson.cs
+  artifactKey: Guid(44963f0d149a94b76a8afd23095c42df) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Scripts/Character Controllers/CharacterAnimationThirdPerson.cs using Guid(44963f0d149a94b76a8afd23095c42df) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '86da3e1ec4f015d9b405cdb33ca34411') in 0.006885 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Props/MP-40
+  artifactKey: Guid(a359f18c68dbc4f2b817add0cd8cbcdb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Props/MP-40 using Guid(a359f18c68dbc4f2b817add0cd8cbcdb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ea903a4f98918f6954eb243a4cbbf260') in 0.162990 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Plugins/RootMotion/Baker/_DEMOS
+  artifactKey: Guid(c41cf13236c01a747b3dfb963402b3a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Baker/_DEMOS using Guid(c41cf13236c01a747b3dfb963402b3a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '602b743b00a67e1aa2c0d8541de64a30') in 0.064964 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Gizmos/Mapping Icon.png
+  artifactKey: Guid(8e949b7451d544077b75cb3246f9f739) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Gizmos/Mapping Icon.png using Guid(8e949b7451d544077b75cb3246f9f739) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b6c6b9ff3be02c7ebc3507b215167245') in 0.178777 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Mech Spider/Prefabs
+  artifactKey: Guid(8c81e0f4ec6734a5fa89dd3e08bc21b2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Mech Spider/Prefabs using Guid(8c81e0f4ec6734a5fa89dd3e08bc21b2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd9786aef2eeab26724453990029b138a') in 0.035714 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Swing Right Loop.FBX
+  artifactKey: Guid(687c90bad30a015408181d40c120d2c6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Swing Right Loop.FBX using Guid(687c90bad30a015408181d40c120d2c6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b0d2a4ec9353cb18e4c466c14a7ad2ca') in 0.093751 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Viking Humanoid.FBX
+  artifactKey: Guid(77175d72106534d05bbaa1a44d43c57e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Viking Humanoid.FBX using Guid(77175d72106534d05bbaa1a44d43c57e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c1b19053292f4a11449c9a3668bef4b3') in 0.036829 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Baked Clips/AimIK/Walk L_Aiming.anim
+  artifactKey: Guid(b52244fb11924b3458c118c0824e909e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Baked Clips/AimIK/Walk L_Aiming.anim using Guid(b52244fb11924b3458c118c0824e909e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'caa68927abf3ca6a12afdd11de85f794') in 0.341278 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Posers/Poser.cs
+  artifactKey: Guid(5c8218556cda043adb17da42f8151df0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Posers/Poser.cs using Guid(5c8218556cda043adb17da42f8151df0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f51780389d3dd8a20ff424462ef47238') in 0.009798 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_Integration/Steam VR (Unity 2017.4.28f1, SteamVR Plugin v2.6.1).unitypackage
+  artifactKey: Guid(57ddc43ace113674392034825a54600a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_Integration/Steam VR (Unity 2017.4.28f1, SteamVR Plugin v2.6.1).unitypackage using Guid(57ddc43ace113674392034825a54600a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ac944a2e5bf46b45883d003f0414a5cc') in 0.033237 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Textures/Smoke.tif
+  artifactKey: Guid(08f28e42a647e2a4cbd32e793359aa3c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Textures/Smoke.tif using Guid(08f28e42a647e2a4cbd32e793359aa3c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ce03f67d5f21f29f4b71455222ae2142') in 0.136970 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/Baker/Scripts/Animation Modifiers
+  artifactKey: Guid(490fde02f41ae014abec4edfce28648f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Baker/Scripts/Animation Modifiers using Guid(490fde02f41ae014abec4edfce28648f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b2cc17c256f0094c4548f380071f5246') in 0.007484 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS
+  artifactKey: Guid(87af50c1c6a114d27947497bc67d3be7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS using Guid(87af50c1c6a114d27947497bc67d3be7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8e047a0424c3d520e2ea489ff7151f4d') in 0.006261 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Hit Reaction.unity
+  artifactKey: Guid(8777d34ec9e694f2c98e65d98922b023) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Hit Reaction.unity using Guid(8777d34ec9e694f2c98e65d98922b023) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6565c9f648a93c6d65fe785f6a995ed5') in 0.014355 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/RootMotion/Baker/Scripts/Helpers/AvatarUtility.cs
+  artifactKey: Guid(2f9e403f0f8255c42b90254abc55f528) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Baker/Scripts/Helpers/AvatarUtility.cs using Guid(2f9e403f0f8255c42b90254abc55f528) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '81f3f90b8f7005dc7a5e891e61be0a03') in 0.008769 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/Editor/FinalIK/AimPoserInspector.cs
+  artifactKey: Guid(079587d3635eb48c3a5c0d57f8c3cc6f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Editor/FinalIK/AimPoserInspector.cs using Guid(079587d3635eb48c3a5c0d57f8c3cc6f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'db0c09df7e54106880d4ec45bc342dd7') in 0.008338 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Gizmos/TrigonometricIK Icon.png
+  artifactKey: Guid(ff34b0ecb22e7466fbd0a856b7a00621) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Gizmos/TrigonometricIK Icon.png using Guid(ff34b0ecb22e7466fbd0a856b7a00621) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'cd01e24258e623896ca236fe4c00064f') in 0.017147 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/AnimatorController3rdPersonIK.cs
+  artifactKey: Guid(7cacab300efda4d8c8c72660683917b8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/AnimatorController3rdPersonIK.cs using Guid(7cacab300efda4d8c8c72660683917b8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e5ef683272c656b88043ea479b30d212') in 0.010996 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Tools/FABRIKBendGoal.cs
+  artifactKey: Guid(e00635d593e21414082963c80e4a4327) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Tools/FABRIKBendGoal.cs using Guid(e00635d593e21414082963c80e4a4327) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '512722de4ddf8681bab5b54f33395624') in 0.006934 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/PendulumExample.cs
+  artifactKey: Guid(a4e2a7601da0546edbfe147eb9f95826) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/PendulumExample.cs using Guid(a4e2a7601da0546edbfe147eb9f95826) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8910b330a92cd905a15c7a19664804d6') in 0.008289 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/CharacterAnimationThirdPersonIK.cs
+  artifactKey: Guid(da28f9c80db074b10842df00a4b50b12) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/CharacterAnimationThirdPersonIK.cs using Guid(da28f9c80db074b10842df00a4b50b12) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4400b213ba8aefba5d9da3c246fd16f9') in 0.008564 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRBodyPart.cs
+  artifactKey: Guid(cf16693a882bc4380a0b4cdaa370777e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRBodyPart.cs using Guid(cf16693a882bc4380a0b4cdaa370777e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '80e68ef8027eb095d2758ca7f2d39870') in 0.007708 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Scripts/Character Controllers/UserControlThirdPerson.cs
+  artifactKey: Guid(bc555ffe423d44c2f983615b1af3cef4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Scripts/Character Controllers/UserControlThirdPerson.cs using Guid(bc555ffe423d44c2f983615b1af3cef4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9769e5f9c69a4c5070f527c09d8ffcb4') in 0.009888 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Look At IK/LookAt Controller.unity
+  artifactKey: Guid(d4e9ce9d99ee4b146b2f5dbd8fe14faf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Look At IK/LookAt Controller.unity using Guid(d4e9ce9d99ee4b146b2f5dbd8fe14faf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '28ef0bc390720b137432a0f18a9c022f') in 0.014768 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Interaction Pick Up 2-Handed.unity
+  artifactKey: Guid(c8c08a518832d484b8d8de7804c18a97) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Interaction Pick Up 2-Handed.unity using Guid(c8c08a518832d484b8d8de7804c18a97) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '43dfb1c951902d0f43246658d296cb5a') in 0.007246 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Shoulder Rotator.unity
+  artifactKey: Guid(bc5f346da81df4248903956bdc9fb735) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Shoulder Rotator.unity using Guid(bc5f346da81df4248903956bdc9fb735) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f68fc6503df22ae038a093cf15c4bd1c') in 0.008108 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/RootMotion/Editor/Baker/Helpers/SaveClipFolderPanel.cs
+  artifactKey: Guid(7edb6cbf0a3b9924d8f631c4c00fd38a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Editor/Baker/Helpers/SaveClipFolderPanel.cs using Guid(7edb6cbf0a3b9924d8f631c4c00fd38a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c10e6bb82fea6a6669ec1f02a5c9cc82') in 0.013981 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Interaction Animations/Door
+  artifactKey: Guid(3217531d842884b17a92f08b72714e0c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Interaction Animations/Door using Guid(3217531d842884b17a92f08b72714e0c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7dfe4f007c5d7cccf2f0d60f2446aa1f') in 0.013628 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Teddy/Textures
+  artifactKey: Guid(b35c7a5ff54af49aaa9ebf229c71cabc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Teddy/Textures using Guid(b35c7a5ff54af49aaa9ebf229c71cabc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7d845479f1b5ebdf51a3d6f7b31f1b93') in 0.006279 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/RecoilTest.cs
+  artifactKey: Guid(e57aceae1698147d69f2012c0956d475) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/RecoilTest.cs using Guid(e57aceae1698147d69f2012c0956d475) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b8f91a71a237532d1117ccdec0579f5e') in 0.007615 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Components/FABRIK.cs
+  artifactKey: Guid(52af154b35b9e48af96507346dc649ba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Components/FABRIK.cs using Guid(52af154b35b9e48af96507346dc649ba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6991240c39b01d5deaf4340dd3dba14e') in 0.012322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Pilot/Pilot.FBX
+  artifactKey: Guid(7a2e6c216d01d1649b50691291befc2d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Pilot/Pilot.FBX using Guid(7a2e6c216d01d1649b50691291befc2d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '592af359ad7c84044e85489ead6c59e5') in 0.325234 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Solvers/FBIKChain.cs
+  artifactKey: Guid(d18c3d1b5f0274264811ca0b290c1c26) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Solvers/FBIKChain.cs using Guid(d18c3d1b5f0274264811ca0b290c1c26) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3010ceb9c6c1358aa6cc218d1318897c') in 0.008361 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Baked Clips/AimIK
+  artifactKey: Guid(4a994fc9f64a832488aa978ae9990cea) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Baked Clips/AimIK using Guid(4a994fc9f64a832488aa978ae9990cea) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6f6d9a378c42b125932efa119f03e797') in 0.074089 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Baked Clips/AimIK/Walk F_Aiming.anim
+  artifactKey: Guid(267cc1c369aed974a8b8ca154de46a23) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Baked Clips/AimIK/Walk F_Aiming.anim using Guid(267cc1c369aed974a8b8ca154de46a23) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0987d18822f4cb6bedaeb1ef83e7857e') in 0.261585 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Materials
+  artifactKey: Guid(25f7d03d8420d43fea5df2d94b9b505b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Materials using Guid(25f7d03d8420d43fea5df2d94b9b505b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e5ea01dae25ed0ad378c25b14b617ef4') in 0.005718 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Interaction Animations/Button
+  artifactKey: Guid(60dcf234039614874a4dff1bc0edd06e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Interaction Animations/Button using Guid(60dcf234039614874a4dff1bc0edd06e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '964d7df5e459c067b2146b887eceb471') in 0.061925 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animator Controllers/Humanoid Walking.controller
+  artifactKey: Guid(1204362ea160d44f7937305b219e3e19) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animator Controllers/Humanoid Walking.controller using Guid(1204362ea160d44f7937305b219e3e19) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9cafe8515c5792767f38325e9d8418f7') in 0.301348 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Teddy
+  artifactKey: Guid(98005ef78dbe04c4ba3c5bc9842b5490) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Teddy using Guid(98005ef78dbe04c4ba3c5bc9842b5490) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9d9723c2307f0e3bbe978718335eee53') in 0.010632 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_Integration/VRIK Photon2 Demo (Unity 2017.4.28f1, Oculus or SteamVR Integration, PUN 2.20.2).unitypackage
+  artifactKey: Guid(6fc8c59a5841497419287c5cf5324292) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_Integration/VRIK Photon2 Demo (Unity 2017.4.28f1, Oculus or SteamVR Integration, PUN 2.20.2).unitypackage using Guid(6fc8c59a5841497419287c5cf5324292) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9e276a9c727719ad94ed56b043413c98') in 0.009744 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Amplifier.unity
+  artifactKey: Guid(1a221864c2d4141cfab6c79846565174) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Amplifier.unity using Guid(1a221864c2d4141cfab6c79846565174) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a89d9470ef536a16a68a9d8e18507c91') in 0.012600 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Components/VRIK.cs
+  artifactKey: Guid(bfac4fa329d1f4f23814af71a247c14b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Components/VRIK.cs using Guid(bfac4fa329d1f4f23814af71a247c14b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '384ec9c9315f522c1d2cc7128d21ee93') in 0.008805 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Angry Bots Generic/Animator Controllers
+  artifactKey: Guid(6176db8e477ad40ec83562a8ee1783b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Angry Bots Generic/Animator Controllers using Guid(6176db8e477ad40ec83562a8ee1783b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1d6a453452776ec7e4ff51291a352bf9') in 0.137776 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Tools
+  artifactKey: Guid(9ee8e72065e2742a996360ea873ab65a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Tools using Guid(9ee8e72065e2742a996360ea873ab65a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a3c86072483d8179b0617b50f9f9756d') in 0.006314 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Scripts/Misc
+  artifactKey: Guid(1f8e444f617e246809eb51310e80dfe4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Scripts/Misc using Guid(1f8e444f617e246809eb51310e80dfe4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a1598c896050b85ba347d22d59c7f1c3') in 0.009460 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKMappingSpine.cs
+  artifactKey: Guid(d268325743f394a8a8e524836dceecf1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKMappingSpine.cs using Guid(d268325743f394a8a8e524836dceecf1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0028eb1447f7a24f5c0571125fd3e61e') in 0.007243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Tools/OffsetModifier.cs
+  artifactKey: Guid(7953027cc122548b0861e027c35af21c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Tools/OffsetModifier.cs using Guid(7953027cc122548b0861e027c35af21c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'fa5362784aa91914c96e66bf267ca22a') in 0.010067 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Dummy/Dummy.FBX
+  artifactKey: Guid(959d14bf134f54a6e993fe6ca6e063c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Dummy/Dummy.FBX using Guid(959d14bf134f54a6e993fe6ca6e063c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9bdd859dab7534be297af5bad8c63a95') in 0.022002 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animator Controllers/Humanoid Idle.controller
+  artifactKey: Guid(faed11bba652f41a1994daac6de46ca8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animator Controllers/Humanoid Idle.controller using Guid(faed11bba652f41a1994daac6de46ca8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8a57f27c177bafdf9ae23e44c533d520') in 0.076493 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Components/LegIK.cs
+  artifactKey: Guid(d45baccdcad47264da4758094969d5d5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Components/LegIK.cs using Guid(d45baccdcad47264da4758094969d5d5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'cf7ebc760696c90190f58a12286186ac') in 0.007281 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/TouchWalls.cs
+  artifactKey: Guid(297254b376ff546e7963a77deeba8787) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/TouchWalls.cs using Guid(297254b376ff546e7963a77deeba8787) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b9cb975d0556bda71122304ad2e6e786') in 0.008895 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/Editor/Shared Scripts/InspectorCommentDrawer.cs
+  artifactKey: Guid(c87de0c0b96012c43b2684edd36e3289) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Editor/Shared Scripts/InspectorCommentDrawer.cs using Guid(c87de0c0b96012c43b2684edd36e3289) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c94d3fef86d2daf99b6f8681dcfe4d65') in 0.008599 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Dummy/Masks/Dummy Upper-body.mask
+  artifactKey: Guid(45957e7cd1ead4dfb89705040fff0f86) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Dummy/Masks/Dummy Upper-body.mask using Guid(45957e7cd1ead4dfb89705040fff0f86) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '420e1eb0865cf313a159f72ed5e40b85') in 0.023634 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Rotation Limits/Scripts/Turret.cs
+  artifactKey: Guid(287e53df824774c4dbfc71e796a515f5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Rotation Limits/Scripts/Turret.cs using Guid(287e53df824774c4dbfc71e796a515f5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c631be0ea2c0e95e4b5e3cbef643db8f') in 0.007802 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Plugins/RootMotion/Editor/FinalIK/FABRIKRootInspector.cs
+  artifactKey: Guid(97f4f303b23be42ddabd838850dd9c03) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Editor/FinalIK/FABRIKRootInspector.cs using Guid(97f4f303b23be42ddabd838850dd9c03) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '10788b3fe4936e52ee26b548f2b4e7f8') in 0.012960 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Carry Box.unity
+  artifactKey: Guid(0c1f1d575fa3e405d8214cda9f3e60ae) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Carry Box.unity using Guid(0c1f1d575fa3e405d8214cda9f3e60ae) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ae0c0b8da6ada41ab619464216094896') in 0.065343 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/InteractionC2CDemo.cs
+  artifactKey: Guid(c7e8eb3221b4c45078730c0cad5bde83) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/InteractionC2CDemo.cs using Guid(c7e8eb3221b4c45078730c0cad5bde83) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ad74dda8f607c2d79beec82ed1282bc8') in 0.018415 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Props/M4/Textures
+  artifactKey: Guid(87deba4ab170844339809338b93a562d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Props/M4/Textures using Guid(87deba4ab170844339809338b93a562d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'bd5c47d17affa1dc8a23d1b41c8c6833') in 0.012373 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Prototyping/Materials/Prototype Black Grid.mat
+  artifactKey: Guid(035a48a539312914f8762cf7100ec0cb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Prototyping/Materials/Prototype Black Grid.mat using Guid(035a48a539312914f8762cf7100ec0cb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'fa1cfa8d4e013286c91636cf72562fb4') in 0.367811 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Gizmos/Chain Icon.png
+  artifactKey: Guid(e394bb73c6c534de1a49e2eff63b4f6d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Gizmos/Chain Icon.png using Guid(e394bb73c6c534de1a49e2eff63b4f6d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'caf906aa99884d00f824fa1055da8e86') in 0.134033 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Components/TrigonometricIK.cs
+  artifactKey: Guid(76b6217e3524c44358e310a531792c50) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Components/TrigonometricIK.cs using Guid(76b6217e3524c44358e310a531792c50) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '219fb6097c8c891c18fd6efae5d277bc') in 0.015549 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Idles.fbx
+  artifactKey: Guid(d556ab52e17604958b19876c5f242758) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Idles.fbx using Guid(d556ab52e17604958b19876c5f242758) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f9b40ec615c1338bb8c1289634834f6c') in 0.790168 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Prototyping/Textures
+  artifactKey: Guid(9c60602b25f47af4ba24e91d3e30279b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Prototyping/Textures using Guid(9c60602b25f47af4ba24e91d3e30279b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7cab0200cd0916757cb6e024a0a34fb5') in 0.102399 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/CCD IK/FABRIK Root/FABRIK Root.unity
+  artifactKey: Guid(8c3a06490bd824f38ba8dae3780a889c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/CCD IK/FABRIK Root/FABRIK Root.unity using Guid(8c3a06490bd824f38ba8dae3780a889c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd1f62c839d74a34c270c3df5ad3dd000') in 0.319385 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Rotation Limits/RotationLimitHinge.cs
+  artifactKey: Guid(484718f2c4ab849829491782b508958a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Rotation Limits/RotationLimitHinge.cs using Guid(484718f2c4ab849829491782b508958a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7fff84707dfc263748bac9a5a37837e7') in 0.020754 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Tools/PenetrationAvoidance.cs
+  artifactKey: Guid(0095dcee0a4564ca993da4df9dfb070e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Tools/PenetrationAvoidance.cs using Guid(0095dcee0a4564ca993da4df9dfb070e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '90a30670180fcb938e3fdf24d8296383') in 0.027497 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Scripts
+  artifactKey: Guid(f28e78bf331c4408ca33af5563bd5380) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Scripts using Guid(f28e78bf331c4408ca33af5563bd5380) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '36a1f67234a2331afe9ecb0224bbf39c') in 0.005847 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Interaction Animations/Door/Door Open.anim
+  artifactKey: Guid(4f00b2f1412ae4836a1c6d852e3ce540) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Interaction Animations/Door/Door Open.anim using Guid(4f00b2f1412ae4836a1c6d852e3ce540) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8b53975db9e5cdcbf4d46fbd42f0e0b3') in 0.816227 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Dummy/Materials
+  artifactKey: Guid(b40509dde8f564d9a9f16ad502221e99) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Dummy/Materials using Guid(b40509dde8f564d9a9f16ad502221e99) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3d1f7d9530f3b492459aa79873fc5d8d') in 0.053662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/SoccerDemo.cs
+  artifactKey: Guid(bc23dc714ba34439baef55424d701225) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/SoccerDemo.cs using Guid(bc23dc714ba34439baef55424d701225) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8bcb530606c500dcd24dbe8f80764069') in 0.008060 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FABRIK
+  artifactKey: Guid(72d392513c2f2442b92bc84d15a44cca) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FABRIK using Guid(72d392513c2f2442b92bc84d15a44cca) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e8ad334a0ecb92c17ecde9b23e4c6cc6') in 0.007488 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Oculus/VR/Editor/OVRADBTool.cs
+  artifactKey: Guid(41c2cab7d83278a4f8f44a44b694770f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Oculus/VR/Editor/OVRADBTool.cs using Guid(41c2cab7d83278a4f8f44a44b694770f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a2dfd73dc92994cdf724577da650512') in 0.006171 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Angry Bots Generic/Mech Bot Idle.FBX
+  artifactKey: Guid(a051f9ee8d34e4038b0539c5ab5f6e43) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Angry Bots Generic/Mech Bot Idle.FBX using Guid(a051f9ee8d34e4038b0539c5ab5f6e43) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c277470c31b34b4f748dffb4f705820b') in 0.209762 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Oculus/SampleFramework/Core/DebugUI/Textures/radio_PSD.psd
+  artifactKey: Guid(e18f01d9439b38045b70e908d6f06d82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Oculus/SampleFramework/Core/DebugUI/Textures/radio_PSD.psd using Guid(e18f01d9439b38045b70e908d6f06d82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33e7096cf3b2873e5942ede04a3989d6') in 0.036613 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverFABRIKRoot.cs
+  artifactKey: Guid(d3832891e51da482f8856a7689ca7c1b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverFABRIKRoot.cs using Guid(d3832891e51da482f8856a7689ca7c1b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4a04d2250482b8e76a99cdb9665d9ea9') in 0.008311 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Oculus/SampleFramework/Core/HandsInteraction/Scripts/Tools/RayToolView.cs
+  artifactKey: Guid(a4e71869e3ccfde47a7a16e2f483b328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Oculus/SampleFramework/Core/HandsInteraction/Scripts/Tools/RayToolView.cs using Guid(a4e71869e3ccfde47a7a16e2f483b328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87a8c3558986baaa92b6b9ce39e7e61d') in 0.004697 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Posers
+  artifactKey: Guid(43b6761b003b743cda8f670687e26dcb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Posers using Guid(43b6761b003b743cda8f670687e26dcb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f5611c82aebde3c52e309a7459fd22a7') in 0.008910 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Mid Air 2.fbx
+  artifactKey: Guid(f7b6954ec8fb0de4cbe60b244d54f758) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Mid Air 2.fbx using Guid(f7b6954ec8fb0de4cbe60b244d54f758) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c67b1c680c80c1f1c309d1df4a0f3d7c') in 0.471332 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/CCD IK/Scripts/MechSpiderLeg.cs
+  artifactKey: Guid(ed6e75890d3ab4d4baef5ecd91784aba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/CCD IK/Scripts/MechSpiderLeg.cs using Guid(ed6e75890d3ab4d4baef5ecd91784aba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1a446c1d02c2a7f77431c6eac89b7769') in 0.195533 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Tools/HitReactionVRIK.cs
+  artifactKey: Guid(01147feb37a92684a9c362eb43225c67) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Tools/HitReactionVRIK.cs using Guid(01147feb37a92684a9c362eb43225c67) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd70c4765eb48555d67b6c6e78c1f7dc1') in 0.009200 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Idle.FBX
+  artifactKey: Guid(266e8e95875a44f0aa086f6e752b4508) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Idle.FBX using Guid(266e8e95875a44f0aa086f6e752b4508) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd12a9a7f25537f04f883d4ed28782ad5') in 0.320920 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Ragdoll Utility/RagdollUtility.cs
+  artifactKey: Guid(bc258957e94624710928e65beef13de4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Ragdoll Utility/RagdollUtility.cs using Guid(bc258957e94624710928e65beef13de4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '92ef7d6cdc72eec7ff3f5bea862dfb9d') in 0.012045 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Viking Run.FBX
+  artifactKey: Guid(483d1fd2fddd24ffc8ea3f8bef918e47) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Viking Run.FBX using Guid(483d1fd2fddd24ffc8ea3f8bef918e47) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b9a366e930b11f07e489bd5b6f409f1f') in 0.114993 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Tools/VRIKLODController.cs
+  artifactKey: Guid(1158802e47cf684439400e5c8e03cba9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Tools/VRIKLODController.cs using Guid(1158802e47cf684439400e5c8e03cba9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4074949ca958541e95cfe06d07b08a7c') in 0.007248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/Editor/FinalIK/RotationLimitAngleInspector.cs
+  artifactKey: Guid(c1549de5f5a6641758443bebbd5eb733) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Editor/FinalIK/RotationLimitAngleInspector.cs using Guid(c1549de5f5a6641758443bebbd5eb733) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ebbe62dbcafbfa78a0f6de7174eda140') in 0.028448 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Biped IK/Biped IK.unity
+  artifactKey: Guid(91d841eb8ee2f3043a1306d5ed5880c5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Biped IK/Biped IK.unity using Guid(91d841eb8ee2f3043a1306d5ed5880c5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ab87fd7b9d54479e0f92abc7c4035721') in 0.014461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/MotionAbsorbCharacter.cs
+  artifactKey: Guid(278ffbe117e4c4edba3d761b55ba7bbb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/MotionAbsorbCharacter.cs using Guid(278ffbe117e4c4edba3d761b55ba7bbb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '12af6521cb4001b8521cdc917c18f9d8') in 0.009161 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/RootMotion/Editor/FinalIK/InteractionTargetInspector.cs
+  artifactKey: Guid(244e0878f45b6442cac28a34942f9ac3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Editor/FinalIK/InteractionTargetInspector.cs using Guid(244e0878f45b6442cac28a34942f9ac3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5a03c5fe7c19150a85425d2605f2d7d2') in 0.013968 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Scripts/FunctionTesting/TargetInteraction_L.cs
+  artifactKey: Guid(f79e8bb93164afd479b106c4adbb8d4e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/FunctionTesting/TargetInteraction_L.cs using Guid(f79e8bb93164afd479b106c4adbb8d4e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '18641763a47ccf5b2d7f75203eadf80f') in 0.009055 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Humanoid Baker (AimIK).unity
+  artifactKey: Guid(00987384d60623849896282c10c1246a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Humanoid Baker (AimIK).unity using Guid(00987384d60623849896282c10c1246a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '573a48b380e84ba759a287d73f41050d') in 0.008267 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Gizmos/InteractionSystem Icon.png
+  artifactKey: Guid(5e7cd1ffcb3304ceba342d37416ceb2c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Gizmos/InteractionSystem Icon.png using Guid(5e7cd1ffcb3304ceba342d37416ceb2c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ec24bc71e653b587222651c1292711d8') in 0.020477 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/First Person Shooter (Recoil).unity
+  artifactKey: Guid(6b33fdae1f2dc4c7c875a10e438ea419) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/First Person Shooter (Recoil).unity using Guid(6b33fdae1f2dc4c7c875a10e438ea419) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '99749446aca0670777e3f5a7f67f75d1') in 0.009049 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Rotation Limits/RotationLimitPolygonal.cs
+  artifactKey: Guid(dae00b1bdc58d499396776ce508a5078) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Rotation Limits/RotationLimitPolygonal.cs using Guid(dae00b1bdc58d499396776ce508a5078) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f1620babfe11d46c2ef9519678ce7c89') in 0.011688 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Offset Effector.unity
+  artifactKey: Guid(0ef9773715d234a1c826469b246b2209) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Offset Effector.unity using Guid(0ef9773715d234a1c826469b246b2209) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'eb174998ef512ca3d46ca11f593c9c5c') in 0.008716 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Noitom/Resources/Models/Materials/M_Body.mat
+  artifactKey: Guid(378551c8a15cb3a499878e09d9af1418) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Noitom/Resources/Models/Materials/M_Body.mat using Guid(378551c8a15cb3a499878e09d9af1418) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '129f2ae4cafe3b2ebbb6799f5cf10fb4') in 0.049808 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Props/Prefabs
+  artifactKey: Guid(36b6e0e8da3804150816c18e0cdc37eb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Props/Prefabs using Guid(36b6e0e8da3804150816c18e0cdc37eb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'deb649afa093ab0c2764bf7b5a74621d') in 0.010032 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets
+  artifactKey: Guid(d13b6eaeef85d480ca4fbed9cf6ead2c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets using Guid(d13b6eaeef85d480ca4fbed9cf6ead2c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '69a9610e4129618d611f3a576994498b') in 0.026987 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Angry Bots Generic/Materials/Mech Bot.mat
+  artifactKey: Guid(fcba9c984fc1146d1a6040e5356cecce) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Angry Bots Generic/Materials/Mech Bot.mat using Guid(fcba9c984fc1146d1a6040e5356cecce) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b98a87ecf1336d75e4f6f3a530b18d7b') in 0.024952 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverLimb.cs
+  artifactKey: Guid(579cdedbac97d4a8fa6c00c94404c86c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverLimb.cs using Guid(579cdedbac97d4a8fa6c00c94404c86c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6ffbb14dd758fc471e31f87d30a2f4d5') in 0.009545 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/RootMotion/Editor/FinalIK/_DEMOS
+  artifactKey: Guid(d0741bad3e4d74bb99540a06e7929fc4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Editor/FinalIK/_DEMOS using Guid(d0741bad3e4d74bb99540a06e7929fc4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ed9c9300e5f96f111c1c675965e7d8dd') in 0.007889 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverFABRIK.cs
+  artifactKey: Guid(ebaef965ad4344c66afa96b93bc53c7a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverFABRIK.cs using Guid(ebaef965ad4344c66afa96b93bc53c7a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9b21cb63de2196a241606a85eb00b4b0') in 0.010792 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Angry Bots Generic/Materials
+  artifactKey: Guid(1e468ff03ed71469dabb9f0f3a946d02) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Angry Bots Generic/Materials using Guid(1e468ff03ed71469dabb9f0f3a946d02) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8e93517a4f3a6b3c493d16f2811f8a25') in 0.006731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverAim.cs
+  artifactKey: Guid(4b9d7f152c7074f6ba84fdb7c6ee721c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverAim.cs using Guid(4b9d7f152c7074f6ba84fdb7c6ee721c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4b4f372f52d05ba632afdc23d7571a7f') in 0.046227 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Components/IK.cs
+  artifactKey: Guid(e8ad84abaddc346b9a51365d3dc292e7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Components/IK.cs using Guid(e8ad84abaddc346b9a51365d3dc292e7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '59769f7edcc4c44d81d9e40dedc57f27') in 0.014063 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/VRIK/VRIK (Animated Locomotion).unity
+  artifactKey: Guid(20e7a82a9c260894cab875fd831bd5a7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/VRIK/VRIK (Animated Locomotion).unity using Guid(20e7a82a9c260894cab875fd831bd5a7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7ca45555ca899cb8041b2a0a904a4b97') in 0.015612 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Grounder/GrounderFBBIK.cs
+  artifactKey: Guid(6c72e1df647af4c0098866e944a04b01) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Grounder/GrounderFBBIK.cs using Guid(6c72e1df647af4c0098866e944a04b01) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f5d06ccd6f53fd95331c92a93a59527f') in 0.012172 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/Editor/FinalIK/IKSolverInspector.cs
+  artifactKey: Guid(f8fadad0d2804439bad44738bf137eb3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Editor/FinalIK/IKSolverInspector.cs using Guid(f8fadad0d2804439bad44738bf137eb3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '14306bac355a7c6002171d14d81edc0c') in 0.008012 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/RootMotion/Shared Scripts
+  artifactKey: Guid(41a4db1ffd252414f9d8690735f70078) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Scripts using Guid(41a4db1ffd252414f9d8690735f70078) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7d34c080e39a210d65fb4ebfe4ce8de8') in 0.010562 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRLeg.cs
+  artifactKey: Guid(4efd2428843f841ed90f8096223b612d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRLeg.cs using Guid(4efd2428843f841ed90f8096223b612d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '53ae10d99ce63461ab280b0b08099029') in 0.006966 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animator Controllers/Humanoid Swing Prop.controller
+  artifactKey: Guid(c6a41433f43f04320a84210d6839f609) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animator Controllers/Humanoid Swing Prop.controller using Guid(c6a41433f43f04320a84210d6839f609) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7ab34a5832f5376b984e3f3003008666') in 0.026730 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Plugins/RootMotion/Shared Scripts/PropertyAttributes.cs
+  artifactKey: Guid(075dde4e7ae31b440915c8bd52e13197) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Scripts/PropertyAttributes.cs using Guid(075dde4e7ae31b440915c8bd52e13197) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '30f65c421e75412dab25bddda9087899') in 0.011100 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Penetration Avoidance.unity
+  artifactKey: Guid(888b8015bdd29f540b676314d9b6576e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Penetration Avoidance.unity using Guid(888b8015bdd29f540b676314d9b6576e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd6601124fdc7560ab0cdb995a73fc564') in 0.138191 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Environments/Textures/Sand 2.png
+  artifactKey: Guid(5461d399a38c0ad42b70028dce1636a8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Environments/Textures/Sand 2.png using Guid(5461d399a38c0ad42b70028dce1636a8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4cab2d7d64d9133da30a1dfb8bcf7a24') in 0.092590 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolver.cs
+  artifactKey: Guid(2613038c163cb4eb4b8ca6f6b9021588) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolver.cs using Guid(2613038c163cb4eb4b8ca6f6b9021588) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '24c157b01a7fc9bd34a950812feb391f') in 0.031651 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Body Tilt.unity
+  artifactKey: Guid(15dd3a3d1606b41ab8169e92e914a946) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Body Tilt.unity using Guid(15dd3a3d1606b41ab8169e92e914a946) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd87473d7f56472e5b022a3de309413ad') in 0.019924 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverFullBodyBiped.cs
+  artifactKey: Guid(b06331060dc2744f495261b5eccb9ad9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverFullBodyBiped.cs using Guid(b06331060dc2744f495261b5eccb9ad9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '387843b49cad58dcabc6628966b8db01') in 0.012549 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/BipedIK/BipedIKSolvers.cs
+  artifactKey: Guid(552b6be99351d42019784667c84a7d5a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/BipedIK/BipedIKSolvers.cs using Guid(552b6be99351d42019784667c84a7d5a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c3aa5b5848d511c9ed04ef321be23c6b') in 0.018152 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Run Turn.fbx
+  artifactKey: Guid(f2058580a3b66b041bc906b2a8d0accd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Run Turn.fbx using Guid(f2058580a3b66b041bc906b2a8d0accd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '22f88aae545c82d6ccb45f419b5ff7e6') in 0.047239 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/RootMotion/Shared Scripts/LazySingleton.cs
+  artifactKey: Guid(38a253ce1de8036419e9f6c792893d7e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Scripts/LazySingleton.cs using Guid(38a253ce1de8036419e9f6c792893d7e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6991a5f20b311dec3b361b18c96a1d17') in 0.007645 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Tools/OffsetModifierVRIK.cs
+  artifactKey: Guid(8e5a797878a3ba546bb923162b51a8e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Tools/OffsetModifierVRIK.cs using Guid(8e5a797878a3ba546bb923162b51a8e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b2dba3ead478d56f5eb761d131f491c2') in 0.008405 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/InteractionSystem/InteractionTarget.cs
+  artifactKey: Guid(4c15924752853459490d29011ba18d1d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/InteractionSystem/InteractionTarget.cs using Guid(4c15924752853459490d29011ba18d1d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3f2e00e51f92e863ea2c40ea13e8c1c3') in 0.011390 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Tools/AimPoser.cs
+  artifactKey: Guid(4267160fb35f54254be87414e585c1a7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Tools/AimPoser.cs using Guid(4267160fb35f54254be87414e585c1a7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c70ff11da6cd589b7b74a92778802aab') in 0.007648 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Gizmos/RotationLimitPolygonal Icon.png
+  artifactKey: Guid(03a93cc74a1364909b1ddd071896ad75) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Gizmos/RotationLimitPolygonal Icon.png using Guid(03a93cc74a1364909b1ddd071896ad75) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '94c85fa7e9506fb7ad501d2b57a2b472') in 0.013572 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Prototyping/Materials
+  artifactKey: Guid(965a714c229c5ac41b72804451b86f49) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Prototyping/Materials using Guid(965a714c229c5ac41b72804451b86f49) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '81592e4eb56d3e0cb7045bd4e73352a5') in 0.008742 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/RootMotion/Editor/FinalIK/IKSolverTrigonometricInspector.cs
+  artifactKey: Guid(3474539eeb23c491fbd6a10e0951ce9d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Editor/FinalIK/IKSolverTrigonometricInspector.cs using Guid(3474539eeb23c491fbd6a10e0951ce9d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0e7ed43bddcbe7a5a84d84952dd5ac37') in 0.010379 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Mech Spider/Prefabs/Leg.prefab
+  artifactKey: Guid(dce249a3642fd4545af6e17f16431483) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Mech Spider/Prefabs/Leg.prefab using Guid(dce249a3642fd4545af6e17f16431483) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e43170e3b04a4534b7a4c9050d1b0772') in 0.172435 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_Integration/IK Jobs (Unity 2018.2.4f1).unitypackage
+  artifactKey: Guid(b3e58808cb15120468eafdef64280407) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_Integration/IK Jobs (Unity 2018.2.4f1).unitypackage using Guid(b3e58808cb15120468eafdef64280407) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '26e74cf8e12b3d46a04e84e7f200d6b8') in 0.009568 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/TransferMotion.cs
+  artifactKey: Guid(c04b635d86be14966ba65dfbaabb0571) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/TransferMotion.cs using Guid(c04b635d86be14966ba65dfbaabb0571) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'bd9b0571be0deb3ab3112d75b90a357a') in 0.010646 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Scripts/Character Controllers/SimpleLocomotion.cs
+  artifactKey: Guid(eb82cec62d812495d878b167e9cdf49c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Scripts/Character Controllers/SimpleLocomotion.cs using Guid(eb82cec62d812495d878b167e9cdf49c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9523e67382d6c9b258cc0804898d990f') in 0.012614 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Dummy/Textures/Dummy.png
+  artifactKey: Guid(c23f3ade5d43d489a93828764fc31699) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Dummy/Textures/Dummy.png using Guid(c23f3ade5d43d489a93828764fc31699) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '371aa6f509c1452e01cce803f4958e64') in 0.019974 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Mech Spider/Textures
+  artifactKey: Guid(efd42c5d8091b4857b81a038e76c494f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Mech Spider/Textures using Guid(efd42c5d8091b4857b81a038e76c494f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1bfbfda0087619c2bc852478dddadb68') in 0.006272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations
+  artifactKey: Guid(766d49e212cbc4b9ea2fe394b91567a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations using Guid(766d49e212cbc4b9ea2fe394b91567a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'eca9cb1fddb40a38ea3ad88195be555c') in 0.019269 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/PickUpSphere.cs
+  artifactKey: Guid(d97cb37f537ae4749a8c8eeb8e918335) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/PickUpSphere.cs using Guid(d97cb37f537ae4749a8c8eeb8e918335) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b51d0c6ba77448ab20a870b47bd14352') in 0.009900 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Gizmos/GrounderFBBIK Icon.png
+  artifactKey: Guid(36056811931e14f20adcc2767d6262e7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Gizmos/GrounderFBBIK Icon.png using Guid(36056811931e14f20adcc2767d6262e7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'acadd7437d51c625f2628109758b2188') in 0.020211 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Prototyping/Materials/Smoke.mat
+  artifactKey: Guid(c7cf1644632654b25826f171555081f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Prototyping/Materials/Smoke.mat using Guid(c7cf1644632654b25826f171555081f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '94f3a2b8f03c56afd0975b36cf513369') in 0.018169 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Grounder
+  artifactKey: Guid(258c3b5ae61ce43709b091de671b9686) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Grounder using Guid(258c3b5ae61ce43709b091de671b9686) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '618fa02113458d4fcd327ba893364923') in 0.008667 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Components/LimbIK.cs
+  artifactKey: Guid(4db3c450680fd4c809d5ad90a2f24e5f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Components/LimbIK.cs using Guid(4db3c450680fd4c809d5ad90a2f24e5f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '650a228aa8ec289042d138a262f5f680') in 0.017621 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Solvers/TwistRelaxer.cs
+  artifactKey: Guid(e561d2b0d3d2241fd9bc4929a8f64b7f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Solvers/TwistRelaxer.cs using Guid(e561d2b0d3d2241fd9bc4929a8f64b7f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f811a4cfd78dc22771dc4b763092660e') in 0.009760 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Baked Clips/LimbIK/Clip 1_Baked.anim
+  artifactKey: Guid(65e031c14d02fb949a87a96c07d09f2c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Baked Clips/LimbIK/Clip 1_Baked.anim using Guid(65e031c14d02fb949a87a96c07d09f2c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1dd7e82eb8712e793a228323656e0ae4') in 0.058250 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/CCD IK/Scripts/MechSpiderParticles.cs
+  artifactKey: Guid(e1a69cb78a14c451884988d32da4a529) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/CCD IK/Scripts/MechSpiderParticles.cs using Guid(e1a69cb78a14c451884988d32da4a529) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '11b85526e4c149764e275ba832b4bb1d') in 0.009047 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Aim IK/Aim Boxing.unity
+  artifactKey: Guid(723636789bb96481ba1f2aad8b8837e9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Aim IK/Aim Boxing.unity using Guid(723636789bb96481ba1f2aad8b8837e9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1f19b942cd2dc3bc1412e5685104efed') in 0.008767 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/RootMotion/Baker/Scripts/Helpers/BakerUtilities.cs
+  artifactKey: Guid(582052db0a6096149a7b2b75914ef3a6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Baker/Scripts/Helpers/BakerUtilities.cs using Guid(582052db0a6096149a7b2b75914ef3a6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a8008d5c107a3f3abe26c85a64124104') in 0.013662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/RootMotion/Editor/Shared Scripts/Inspector.cs
+  artifactKey: Guid(c18519ac3faf848ca878cd0509c4ce8c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Editor/Shared Scripts/Inspector.cs using Guid(c18519ac3faf848ca878cd0509c4ce8c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5e02354db970da06b34ec36c40b5ed7f') in 0.007637 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Gizmos/LookAtIK Icon.png
+  artifactKey: Guid(dc3f34dec09f54c4d8a48bf1a653b179) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Gizmos/LookAtIK Icon.png using Guid(dc3f34dec09f54c4d8a48bf1a653b179) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '84124145c71a093f94fedc2e4aa2b306') in 0.013787 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/Shared Scripts/Singleton.cs
+  artifactKey: Guid(e1c8f0459a8434e80acd2f821a30412d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Scripts/Singleton.cs using Guid(e1c8f0459a8434e80acd2f821a30412d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '45a76548b363870311362c8a763f680a') in 0.009122 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/BipedIK
+  artifactKey: Guid(24b4e6f1f9c204bc5bd16676aecf434d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/BipedIK using Guid(24b4e6f1f9c204bc5bd16676aecf434d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '22278772b17f07b09b8ca5f5e1e01601') in 0.006440 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Scenes/Calibration.unity
+  artifactKey: Guid(4949f7a6c0dd97a45b56bff19dd46675) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scenes/Calibration.unity using Guid(4949f7a6c0dd97a45b56bff19dd46675) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e5589959e129ad6271424f468cab9545') in 0.007965 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/RootMotion/Editor/FinalIK/BipedIKInspector.cs
+  artifactKey: Guid(f5864bb0a05eb491697063685c4d6cb3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Editor/FinalIK/BipedIKInspector.cs using Guid(f5864bb0a05eb491697063685c4d6cb3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3682573098d8a24aa0535a056cc73b71') in 0.008254 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Materials/face_color_map.mat
+  artifactKey: Guid(ca7d34d59a8424cc5a2fecb099a96a5c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Materials/face_color_map.mat using Guid(ca7d34d59a8424cc5a2fecb099a96a5c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '51550aa1f6797a5c0159a51a77fbcaf6') in 0.080715 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/RootMotion/Baker/_DEMOS/Baked Clips/Clip 1_Baked.anim
+  artifactKey: Guid(3451f091c656bfc429396cc701ac5b8d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Baker/_DEMOS/Baked Clips/Clip 1_Baked.anim using Guid(3451f091c656bfc429396cc701ac5b8d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2744c1ff4efa3756ea6eef98510728b1') in 0.169199 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Plugins/RootMotion/Shared Scripts/V2Tools.cs
+  artifactKey: Guid(28fecd3bd2d91b84bb40145282fa8bf5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Scripts/V2Tools.cs using Guid(28fecd3bd2d91b84bb40145282fa8bf5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f0bfa08c7dfdb7d4e55850c87ee003cd') in 0.017596 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Components/AimIK.cs
+  artifactKey: Guid(5013856973b27429d937d256dc082f2e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Components/AimIK.cs using Guid(5013856973b27429d937d256dc082f2e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'defef510787f8ed9b4bd4e4e19a62003') in 0.009745 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_Integration/IK Jobs (Unity 2019.3).unitypackage
+  artifactKey: Guid(59d63bcae2fecff42be7b4fc8b1df10f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_Integration/IK Jobs (Unity 2019.3).unitypackage using Guid(59d63bcae2fecff42be7b4fc8b1df10f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '91333d5ed6b849f60402766e20fda4d9') in 0.010987 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/ResetInteractionObject.cs
+  artifactKey: Guid(08f23f958fb674118b480dde5c371a3a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/ResetInteractionObject.cs using Guid(08f23f958fb674118b480dde5c371a3a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '17536e6104d7ce007dbe2446d7d7c4d4') in 0.036967 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/FBIKBoxing.cs
+  artifactKey: Guid(d2b4d13a962bb4d0e9a622c7f12937d7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/FBIKBoxing.cs using Guid(d2b4d13a962bb4d0e9a622c7f12937d7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1752fdb56f87e15e2bd108e46dddd31a') in 0.009091 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Baked Clips/LimbIK
+  artifactKey: Guid(d5e86cf65279aab40a28c7de056bb286) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Baked Clips/LimbIK using Guid(d5e86cf65279aab40a28c7de056bb286) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'bffd7c7034d23578ed7c024c30c18027') in 0.007085 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverHeuristic.cs
+  artifactKey: Guid(0ffa2c48532b04a7388e16278fe595ad) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverHeuristic.cs using Guid(0ffa2c48532b04a7388e16278fe595ad) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '44789d5443d240ddb725b8e56f759cca') in 0.007908 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Tools/HitReaction.cs
+  artifactKey: Guid(6acf54e73e0704cd79c7669317e0cd14) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Tools/HitReaction.cs using Guid(6acf54e73e0704cd79c7669317e0cd14) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c6d7b09d5227bce1aed1bf59a5bb5cc7') in 0.009955 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Look At IK
+  artifactKey: Guid(b77d22ad66df1644d85abceec81b448b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Look At IK using Guid(b77d22ad66df1644d85abceec81b448b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'dca7bc5f88332744bd931cf3b7b22a4d') in 0.010526 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/OffsetEffector.cs
+  artifactKey: Guid(863f1c6a1b50e40cfa321c4b7bd7b004) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/OffsetEffector.cs using Guid(863f1c6a1b50e40cfa321c4b7bd7b004) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '85928ac0c4159b4113649e312c2bc11f') in 0.011209 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Prototyping/Models
+  artifactKey: Guid(e1c179e097d4041f1bc5d4e5e7661851) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Prototyping/Models using Guid(e1c179e097d4041f1bc5d4e5e7661851) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd8fc89018f348004692786d7dc19068e') in 0.007225 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Baked Clips
+  artifactKey: Guid(0382f04dbe443174896331ac6f1835f2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Baker/Baked Clips using Guid(0382f04dbe443174896331ac6f1835f2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7c93a5bd5b7c4a2d1044c29c309fcca4') in 0.007666 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/RootMotion/Shared Scripts/Hierarchy.cs
+  artifactKey: Guid(3a3d07bf34b8e46d69638784c913e10a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Scripts/Hierarchy.cs using Guid(3a3d07bf34b8e46d69638784c913e10a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'af1f54dd45922a4ea501435d89c0a113') in 0.009697 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/VRIK/Scripts/VRIKArmMocap.cs
+  artifactKey: Guid(6dd78a58cae96804baf3bbd2bd73caf1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/VRIK/Scripts/VRIKArmMocap.cs using Guid(6dd78a58cae96804baf3bbd2bd73caf1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a208ca685a9c38021e3d499d978b9947') in 0.009024 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Environments
+  artifactKey: Guid(c7ffdc47eaf14434d864c290fde49496) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Environments using Guid(c7ffdc47eaf14434d864c290fde49496) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '55372e9b74befc8878ae18c2096fc935') in 0.008284 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/RootMotion/Editor/FinalIK/LookAtIKInspector.cs
+  artifactKey: Guid(76c03a228cc7d4cfab5b65bf55ca89a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Editor/FinalIK/LookAtIKInspector.cs using Guid(76c03a228cc7d4cfab5b65bf55ca89a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f9e0781ee1f9a770092f2d5be1d5818c') in 0.009618 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Prototyping/Textures/Prototype Blue.png
+  artifactKey: Guid(a728074dab499e0498b46729b7258ad9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Prototyping/Textures/Prototype Blue.png using Guid(a728074dab499e0498b46729b7258ad9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '40a70edefab1cd484bff09ecc9541e5d') in 0.021991 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Constraints/ConstraintPosition.cs
+  artifactKey: Guid(071793b8887c44ddda2d9dc3a0525167) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Constraints/ConstraintPosition.cs using Guid(071793b8887c44ddda2d9dc3a0525167) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '13542fa7929a0dc07c80124e0c91313f') in 0.011195 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/VRIK/VRIK (Calibration).unity
+  artifactKey: Guid(e3b3977f14c1e92489be1774a9df3113) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/VRIK/VRIK (Calibration).unity using Guid(e3b3977f14c1e92489be1774a9df3113) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '64246ea0a47550055344ac961712fbe0') in 0.011384 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRUtilities.cs
+  artifactKey: Guid(16c601bf2e7a39247856d2c8521cbe4d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRUtilities.cs using Guid(16c601bf2e7a39247856d2c8521cbe4d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '18bad70cfdd1ef596e8daadee7e48cac') in 0.016761 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animator Controllers/Humanoid Dying 2.controller
+  artifactKey: Guid(a598b804d995fc344a7be78aeb63e040) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animator Controllers/Humanoid Dying 2.controller using Guid(a598b804d995fc344a7be78aeb63e040) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd82385833821adb27f6a185f64aa8520') in 0.075342 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Dummy/Prefabs/Dummy Ragdoll (Configurable Joints).prefab
+  artifactKey: Guid(fbaf655e9611a43f1b59d21277ccca6d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Dummy/Prefabs/Dummy Ragdoll (Configurable Joints).prefab using Guid(fbaf655e9611a43f1b59d21277ccca6d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '83d869d1478a4b1569efda6237b71ea0') in 0.020559 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Props/MP-40/Materials/MP-40.mat
+  artifactKey: Guid(eb554719301d24a27a03d90e35702330) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Props/MP-40/Materials/MP-40.mat using Guid(eb554719301d24a27a03d90e35702330) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ecb751f7b017b121038b0c4f765d0b0d') in 0.047664 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Mech Spider/Materials
+  artifactKey: Guid(2c3308f8736b447deb6b2f8935d85153) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Assets/Mech Spider/Materials using Guid(2c3308f8736b447deb6b2f8935d85153) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1fc1eb17d502cddd642ae04198349262') in 0.012219 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/Tools/EditorIKPose.cs
+  artifactKey: Guid(c8598cb8df1b85a4e8e2bd3c92a6ba62) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/Tools/EditorIKPose.cs using Guid(c8598cb8df1b85a4e8e2bd3c92a6ba62) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '422762d987add484e20103f5e59e9c36') in 0.012511 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/Limb IK/LimbIK Bend Goal.unity
+  artifactKey: Guid(d87e6a87e0971f44a84b91db0b6258d2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/Limb IK/LimbIK Bend Goal.unity using Guid(d87e6a87e0971f44a84b91db0b6258d2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6ac8ab992027b9d40270a598aa8bd638') in 0.009557 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Pilot/Materials/Pilot Body.mat
+  artifactKey: Guid(b7aea302419e848208876c3110d87629) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Pilot/Materials/Pilot Body.mat using Guid(b7aea302419e848208876c3110d87629) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6bbd6ce4ccc5c2b7e9bc92c9e16badba') in 0.024393 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animator Controllers/Humanoid Test Sequence.controller
+  artifactKey: Guid(8ada2a086e971a7428b7eeb624b2ae9f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animator Controllers/Humanoid Test Sequence.controller using Guid(8ada2a086e971a7428b7eeb624b2ae9f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6aa54b1029b6bd0137fb8f13731a5c15') in 0.217786 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs
+  artifactKey: Guid(230fe34542e175245ba74b4659dae700) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs using Guid(230fe34542e175245ba74b4659dae700) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '89de7e10b8affcef7eac956a2ab18d27') in 0.016703 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_slanted.png
+  artifactKey: Guid(c99a391f381fe534c80a193fe9f307a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_slanted.png using Guid(c99a391f381fe534c80a193fe9f307a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '977dade6ea7adb4fd158c8c2abaa8187') in 0.236980 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/Demigiant/DOTween/Modules
+  artifactKey: Guid(143604b8bad857d47a6f7cc7a533e2dc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DOTween/Modules using Guid(143604b8bad857d47a6f7cc7a533e2dc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '60662a762c9bacf9181842e16981655b') in 0.008238 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_light_border.png
+  artifactKey: Guid(252f207d01ecc87419cdba1d1c0ab1ea) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_light_border.png using Guid(252f207d01ecc87419cdba1d1c0ab1ea) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '55943ac0d7d0622207be5ae18fbf44d9') in 0.279618 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_play.png
+  artifactKey: Guid(d8306b1e159c72c4ebc9a4fc31debe60) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_play.png using Guid(d8306b1e159c72c4ebc9a4fc31debe60) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '923b9ed78941b4987e24f15b0bdb879f') in 0.072076 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll.mdb
+  artifactKey: Guid(d719ed2e2c87eae4e8dd520e2df659c1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll.mdb using Guid(d719ed2e2c87eae4e8dd520e2df659c1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3b3e485009f2f42e410a0c028b50685a') in 0.013832 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.xml
+  artifactKey: Guid(9bf2564c9817bb34988453ae948954d2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.xml using Guid(9bf2564c9817bb34988453ae948954d2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b01009c56d3774f4cd776568a698349e') in 0.096336 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderAlpha15.png
+  artifactKey: Guid(dfd33662d9f6f3849bd92f6e159ca226) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderAlpha15.png using Guid(dfd33662d9f6f3849bd92f6e159ca226) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8a8700eaa7743b25d5677de2361fcc9d') in 0.086583 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Scripts/FunctionTesting/DirectionDetermineModuleTest.cs
+  artifactKey: Guid(6cfe8e4b1a2bbfe4f9415c11ab829725) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/FunctionTesting/DirectionDetermineModuleTest.cs using Guid(6cfe8e4b1a2bbfe4f9415c11ab829725) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e67d90e2f82bbe310225a5ccd9fd3a4d') in 0.016242 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_terrains.png
+  artifactKey: Guid(4a091a7609ef2d34bbdfaa1a886deb18) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_terrains.png using Guid(4a091a7609ef2d34bbdfaa1a886deb18) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '65e324c76f4c0489f9d4a07bb96c5719') in 0.414793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty02.png
+  artifactKey: Guid(29b0e8156f6fb774faf129c83bc9ee33) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty02.png using Guid(29b0e8156f6fb774faf129c83bc9ee33) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'fb27d778ec84491e1615f5db07ef1cb8') in 0.242793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/circle_dashedBorderEmpty.png
+  artifactKey: Guid(522b0133a9838674ca9a12e0c6e5a59c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/circle_dashedBorderEmpty.png using Guid(522b0133a9838674ca9a12e0c6e5a59c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ce031a57c94f32ce5742e7bb8dc2a4d2') in 0.030155 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_comment_border.png
+  artifactKey: Guid(d98b8847646169c4fb5af28dd84c4179) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_comment_border.png using Guid(d98b8847646169c4fb5af28dd84c4179) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '444be9aa09cc3f9e1117ec776c2dace2') in 0.111447 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/orangeSquare.png
+  artifactKey: Guid(3e730492361eb6e45be5c5fdafac23be) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/orangeSquare.png using Guid(3e730492361eb6e45be5c5fdafac23be) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7c50179d0f92d18850a917b484088a0e') in 0.173991 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_nodeArrow.png
+  artifactKey: Guid(4aa34055b1d36ef479af3d7b5701b28a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_nodeArrow.png using Guid(4aa34055b1d36ef479af3d7b5701b28a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c96371f7ec38153007d7a18494947914') in 0.065750 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCR.png
+  artifactKey: Guid(6f504a3fa8848264bb4fb9bb7d582dd5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCR.png using Guid(6f504a3fa8848264bb4fb9bb7d582dd5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '613a109dbcabce455fccc89092ae1ffe') in 0.210313 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/Demigiant
+  artifactKey: Guid(9f80792dcd2829e41b1f075e7245ca5b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant using Guid(9f80792dcd2829e41b1f075e7245ca5b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2af7d5c97cb3fc1477a33ddc3d401744') in 0.009263 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Recoil.unity
+  artifactKey: Guid(d48f3468e9a994c9ea6cee5166cf194d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Recoil.unity using Guid(d48f3468e9a994c9ea6cee5166cf194d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'fb3d7a489c82e434a021400c38dac88d') in 0.009592 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scripts/FunctionTesting/TargetMovementManagerTest.cs
+  artifactKey: Guid(c3db0739e98bb654da26aa6530c58642) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/FunctionTesting/TargetMovementManagerTest.cs using Guid(c3db0739e98bb654da26aa6530c58642) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd51f688f4f6948f5b0ecc7ed2559a633') in 0.006635 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/RootMotion/Shared Scripts/QuaTools.cs
+  artifactKey: Guid(a5860b124f5b94f3fb04cf4180b7ad67) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Scripts/QuaTools.cs using Guid(a5860b124f5b94f3fb04cf4180b7ad67) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ad6f5f2b20c9ca1ffd75016098835a13') in 0.007590 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_bundle.png
+  artifactKey: Guid(58676a985ae875646b7be748cf4499fd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_bundle.png using Guid(58676a985ae875646b7be748cf4499fd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7f236b4b28cd930de29899d96ad218bf') in 0.154248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/Demigiant/DOTweenPro Examples/DOTweenAnimation_Advanced.unity
+  artifactKey: Guid(a5f7a56d339da84449899ecf95fbe33d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DOTweenPro Examples/DOTweenAnimation_Advanced.unity using Guid(a5f7a56d339da84449899ecf95fbe33d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '35f2c593e2541fb7190aa64926a1dc19') in 0.019240 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs
+  artifactKey: Guid(dae9aa560b4242648a3affa2bfabc365) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs using Guid(dae9aa560b4242648a3affa2bfabc365) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e01ee9ac7cd3e3c22baf3f1c42c29bf4') in 0.007631 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll.mdb
+  artifactKey: Guid(2c20a7b4db3cd0a4a99bcf6218f92860) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll.mdb using Guid(2c20a7b4db3cd0a4a99bcf6218f92860) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c88b2136e0bbcc0b1e072dd581939402') in 0.010301 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/Demigiant/DOTween/DOTween.dll
+  artifactKey: Guid(a811bde74b26b53498b4f6d872b09b6d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DOTween/DOTween.dll using Guid(a811bde74b26b53498b4f6d872b09b6d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd6c97504fd96ef4d8f20f33eab14756e') in 0.021234 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg
+  artifactKey: Guid(78a59ca99f8987941adb61f9e14a06a7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg using Guid(78a59ca99f8987941adb61f9e14a06a7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6938246e9833b8b5044cd8ea1aa65331') in 0.158078 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib
+  artifactKey: Guid(5a499e4809836274eb38cd99b370a2c1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib using Guid(5a499e4809836274eb38cd99b370a2c1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'cfb43617a680ea657135365187d4d7d6') in 0.039322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/redSquare.png
+  artifactKey: Guid(fbdd7ecf39c13bf48a5bd02a1159c90b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/redSquare.png using Guid(fbdd7ecf39c13bf48a5bd02a1159c90b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9b6759d7b46a421554d97ba897dd9228') in 0.060902 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/purpleSquare.png
+  artifactKey: Guid(dc0ca9b32ae9fd049911671cf1a480bf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/purpleSquare.png using Guid(dc0ca9b32ae9fd049911671cf1a480bf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a39b104c0d84e5da170ef8b2274bc960') in 0.040261 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickEmpty.png
+  artifactKey: Guid(c456d5ac01d2aa843a63985497b04931) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickEmpty.png using Guid(c456d5ac01d2aa843a63985497b04931) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'df0f25131f571898d2048825870f1585') in 0.095884 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02.png
+  artifactKey: Guid(ff88be84254fb1f4b9a81a27ae0b2e81) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02.png using Guid(ff88be84254fb1f4b9a81a27ae0b2e81) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '070b2072e52eb15b9cd409d91615c3db') in 0.053292 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Plugins/Demigiant/DOTweenPro/DOTweenDeAudio.cs
+  artifactKey: Guid(1d1aa01bacf85c04ea18116651a7f0db) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DOTweenPro/DOTweenDeAudio.cs using Guid(1d1aa01bacf85c04ea18116651a7f0db) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'aaec106baf1c78897561de5ce4925cb0') in 0.009095 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/Demigiant/DOTween
+  artifactKey: Guid(a50bd9a009c8dfc4ebd88cc8101225a7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DOTween using Guid(a50bd9a009c8dfc4ebd88cc8101225a7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '1223441af88185cbde3706b281b03585') in 0.039570 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare_fadeOut_bt.png
+  artifactKey: Guid(a40dc0d6372a9084fb45976308087290) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare_fadeOut_bt.png using Guid(a40dc0d6372a9084fb45976308087290) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '733e5e01a22a87cf6b58a31796c17593') in 0.053074 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha25.png
+  artifactKey: Guid(511f6b24c50557a40a09633b12b8b8ef) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha25.png using Guid(511f6b24c50557a40a09633b12b8b8ef) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9fb62c393bd6d83df655a8faacc3fbbe') in 0.111574 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignVC.png
+  artifactKey: Guid(d1d45eadab0e41c4a82cdffb6396b1d7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignVC.png using Guid(d1d45eadab0e41c4a82cdffb6396b1d7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ea60f623e05a59af4ac78756615fa9de') in 0.176943 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_end.png
+  artifactKey: Guid(a248c8288afb9184f953d9aa07a696b0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_end.png using Guid(a248c8288afb9184f953d9aa07a696b0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0ac060c76ecaceb81ef185d5766ddcb9') in 0.086342 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha15.png
+  artifactKey: Guid(53d696c01f6ca524383f11fcc34dd13c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha15.png using Guid(53d696c01f6ca524383f11fcc34dd13c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '7be801d2e86cd301ee3504f278e2e137') in 0.050661 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs
+  artifactKey: Guid(1efb03f507a60b949a70ed828ac18eb8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs using Guid(1efb03f507a60b949a70ed828ac18eb8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e93ab91640dde8cc089e605682449c8a') in 0.012357 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/Demigiant/DOTweenPro/DOTweenDeUnityExtended.cs
+  artifactKey: Guid(0a0cc3e90c4a6ea41bb14d7f35c577c3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DOTweenPro/DOTweenDeUnityExtended.cs using Guid(0a0cc3e90c4a6ea41bb14d7f35c577c3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '570e4ce5dddeec0de0beaa641b8b9ce4') in 0.009943 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/Demigiant/DOTweenPro Examples/DOTweenPathSettings.lighting
+  artifactKey: Guid(eda0edf7e9fd3e54291f1e306c4fbd54) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DOTweenPro Examples/DOTweenPathSettings.lighting using Guid(eda0edf7e9fd3e54291f1e306c4fbd54) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) LightingSettings: switching bake backend from 1 to 0.
+Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a668aed443693dcaaf803b42640d607b') in 0.022884 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cog.png
+  artifactKey: Guid(fb605a2688b31194887f2e7a6769235b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cog.png using Guid(fb605a2688b31194887f2e7a6769235b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '73c1f15ab15d6bf9baaa192ec71f1866') in 0.076876 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_heart.png
+  artifactKey: Guid(20794834c0a413f408b80110d0fc73b8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_heart.png using Guid(20794834c0a413f408b80110d0fc73b8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2354d71a616875fc882f4945dd42c408') in 0.105303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_flipV.png
+  artifactKey: Guid(c44ae4a96937e2c4b8be481648364682) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_flipV.png using Guid(c44ae4a96937e2c4b8be481648364682) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'bce82dc43f31b8c89e8420b9aaae00cb') in 0.018725 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility_off.png
+  artifactKey: Guid(0c0132429106c8a4d89d9d0a6b723ec3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility_off.png using Guid(0c0132429106c8a4d89d9d0a6b723ec3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9b4666e108b7e75d77eb15c0268d5ba2') in 0.065851 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBC.png
+  artifactKey: Guid(2cdc0bc527f7a434496c6be9236e636f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBC.png using Guid(2cdc0bc527f7a434496c6be9236e636f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '90d6abfbc627e2c437c115ed73d64afd') in 0.136509 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Animation/AnimationClips/WB_Forward.anim
+  artifactKey: Guid(b8a580f839d7d4945adef08295c7d221) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Animation/AnimationClips/WB_Forward.anim using Guid(b8a580f839d7d4945adef08295c7d221) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '20583ec326f4298a5dcde4826c1fb2c3') in 0.024069 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui_border.png
+  artifactKey: Guid(c0c40ceac3c6df146a0fcd4e6b226540) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui_border.png using Guid(c0c40ceac3c6df146a0fcd4e6b226540) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2369f3d35039775b4cf55e71177126de') in 0.082912 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Mixamo/X Bot@Ready Idle.fbx
+  artifactKey: Guid(bb0af688b747a8543802648545416b09) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Mixamo/X Bot@Ready Idle.fbx using Guid(bb0af688b747a8543802648545416b09) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9e5f1700ce2207288389e8d7505ab204') in 0.047630 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Oculus/SampleFramework/Core/DebugUI/Prefabs/CanvasWithDebug.prefab
+  artifactKey: Guid(ddb963bcde7d8a04a88b3ee4709f46c7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Oculus/SampleFramework/Core/DebugUI/Prefabs/CanvasWithDebug.prefab using Guid(ddb963bcde7d8a04a88b3ee4709f46c7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9d4cef2e6b365ba08bfebc29cddbbc12') in 1.508246 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Mixamo/Y Bot@Step Backward.fbx
+  artifactKey: Guid(89ec8306cce985541bbc93fc5563e8e5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Mixamo/Y Bot@Step Backward.fbx using Guid(89ec8306cce985541bbc93fc5563e8e5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e81d1a45d01e9c2ad16803b55fd8482b') in 0.865231 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Materials/DC_Body_Dark.mat
+  artifactKey: Guid(6b4beb9444317b146bd546fb01d77fb8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Materials/DC_Body_Dark.mat using Guid(6b4beb9444317b146bd546fb01d77fb8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd1afd1794ae0af0e3465f0123853eefa') in 0.167186 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Animation/Animator/Coach_Customized.controller
+  artifactKey: Guid(4b59403e9bf6bd041a1f7fda443b4025) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Animation/Animator/Coach_Customized.controller using Guid(4b59403e9bf6bd041a1f7fda443b4025) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '40d3c01483c34c9834b3b9f5e9186b14') in 0.077170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Animation/AnimationClips/Mixamo_Idle.anim
+  artifactKey: Guid(268e18d87053dca44bd85082c7d8a998) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Animation/AnimationClips/Mixamo_Idle.anim using Guid(268e18d87053dca44bd85082c7d8a998) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6520b794be1d0d3777e44e5531d05dcf') in 0.029301 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Materials/DC_Body_HitWrong.mat
+  artifactKey: Guid(ea5bb2b27785f36468ecf3475c8faad3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Materials/DC_Body_HitWrong.mat using Guid(ea5bb2b27785f36468ecf3475c8faad3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '28624a4c9f23fd3839fabff65b37f862') in 0.016299 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Scripts/TargetRenderInitial.cs
+  artifactKey: Guid(8069b9eaa6a81a44a8dc8f8c90b94a6d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/TargetRenderInitial.cs using Guid(8069b9eaa6a81a44a8dc8f8c90b94a6d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd601370a603eae6aea82057ce4cdd0b8') in 0.007800 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Resources/ThirdPerson.renderTexture
+  artifactKey: Guid(03790446ef3c69643bfd011b3b209a7d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/ThirdPerson.renderTexture using Guid(03790446ef3c69643bfd011b3b209a7d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd9633a2b733788495318d03c4e0efd4f') in 0.031118 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Scripts/Interaction/BoxingBagInteraction.cs
+  artifactKey: Guid(b8eaa56aefbd3c8498d4262fc1e4845c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Interaction/BoxingBagInteraction.cs using Guid(b8eaa56aefbd3c8498d4262fc1e4845c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3a58862daf8a32de913022bec041a36c') in 0.033285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Oculus/Interaction/Samples/Objects/Props/CurvedUnityCanvas.prefab
+  artifactKey: Guid(d6733f35cecdc984c9d50925eb25939e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Oculus/Interaction/Samples/Objects/Props/CurvedUnityCanvas.prefab using Guid(d6733f35cecdc984c9d50925eb25939e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a5e270578f174c16743cba3979c3cd0d') in 0.136540 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_camera_border.png
+  artifactKey: Guid(358cddede8023574191e0aae610a4645) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_camera_border.png using Guid(358cddede8023574191e0aae610a4645) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '40c4d1a80cd96d6f65fd3ec92ede48ff') in 0.071792 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Animation/WB_walk_forward.FBX
+  artifactKey: Guid(2196bb6850093c94092f47f59395ead7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Animation/WB_walk_forward.FBX using Guid(2196bb6850093c94092f47f59395ead7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '8716057f158fca1b3762bfe03e616693') in 0.367933 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Pilot/Materials/Pilot Body Ghost.mat
+  artifactKey: Guid(bee4cfbf3d15cba4db1eb2194e6a3523) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Pilot/Materials/Pilot Body Ghost.mat using Guid(bee4cfbf3d15cba4db1eb2194e6a3523) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f121a5b8d397575edd6d0a32a24c6816') in 0.032313 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Oculus/Interaction/Samples/Objects/Props/FlatUnityCanvas.prefab
+  artifactKey: Guid(df64bf5efda75be4db0c812f9277d678) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Oculus/Interaction/Samples/Objects/Props/FlatUnityCanvas.prefab using Guid(df64bf5efda75be4db0c812f9277d678) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '6bfc60a18ea37dc8c318fb3956dc6ab0') in 0.254288 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_audio.png
+  artifactKey: Guid(e1af8927fb6f5634896d59aed409a589) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_audio.png using Guid(e1af8927fb6f5634896d59aed409a589) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3f378fd0a219015ced10f0e34e475293') in 0.056053 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Mixamo/PN_Stickman@Step Backward.fbx
+  artifactKey: Guid(1bc875c50815d814c84117d946f6b02e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Mixamo/PN_Stickman@Step Backward.fbx using Guid(1bc875c50815d814c84117d946f6b02e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '847b02aeb2481b1cfe87b1b905672e8e') in 0.053627 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha25.png
+  artifactKey: Guid(f7ff421f40d548444864a01cd7f47112) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha25.png using Guid(f7ff421f40d548444864a01cd7f47112) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '74f09c2293dbdcd117ea71cddf967c0b') in 0.105674 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_darkBorder.png
+  artifactKey: Guid(27df4ca974a8eaf40803907859421506) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_darkBorder.png using Guid(27df4ca974a8eaf40803907859421506) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4eab176e334b29f60de0dac4be6a648f') in 0.102622 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_scripts.png
+  artifactKey: Guid(96cbdf605b8ddb34da384703f2d0b849) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_scripts.png using Guid(96cbdf605b8ddb34da384703f2d0b849) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e6e6f01af42d721a9755a93384e245c9') in 0.095248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/ExplosionDemo.cs
+  artifactKey: Guid(5ee6c787adaa94deaa3c39e20323f559) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/ExplosionDemo.cs using Guid(5ee6c787adaa94deaa3c39e20323f559) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'da58f5b4fed0c25e27dd021deebb550d') in 0.009114 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/RootMotion/FinalIK/IK Components/CCDIK.cs
+  artifactKey: Guid(98b9a1a9e9a934b23a7db351dd9ec69e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/FinalIK/IK Components/CCDIK.cs using Guid(98b9a1a9e9a934b23a7db351dd9ec69e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'e12ae1003db6314c783ef38da7dc796e') in 0.011112 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Scripts/Manager/TargetManager.cs
+  artifactKey: Guid(a6612be281bc0b841a2a67ddd9caadaa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/Manager/TargetManager.cs using Guid(a6612be281bc0b841a2a67ddd9caadaa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'fd793add18302c4ca8bed9b567006c94') in 0.010016 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animator Controllers/Humanoid Strafing and Aiming.controller
+  artifactKey: Guid(f3ae42774e2a946d09a0ed798fa10406) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animator Controllers/Humanoid Strafing and Aiming.controller using Guid(f3ae42774e2a946d09a0ed798fa10406) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '15012aa4ff69661886c27d21d820a4aa') in 0.096107 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Noitom/Resources/Shaders
+  artifactKey: Guid(b0c711ecf6878434eac34ddd76dea70f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Noitom/Resources/Shaders using Guid(b0c711ecf6878434eac34ddd76dea70f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '85fb2e1c04aa96da1d77bf15a119daa8') in 0.073838 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Mixamo
+  artifactKey: Guid(1c428bd4e30ad3640a0982dc5e292b93) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Mixamo using Guid(1c428bd4e30ad3640a0982dc5e292b93) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '204c75c0b140fc6bcf0113c908ee92f7') in 0.037353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Mid Air 3.fbx
+  artifactKey: Guid(25275a2ff07f278408cfa0a8ff8ebce9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Mid Air 3.fbx using Guid(25275a2ff07f278408cfa0a8ff8ebce9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '72ee7acf709014813e3771e74d0a4a91') in 0.217564 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

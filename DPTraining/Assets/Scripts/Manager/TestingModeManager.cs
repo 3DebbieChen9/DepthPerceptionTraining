@@ -78,6 +78,8 @@ public class TestingModeManager : MonoBehaviour
 
     [SerializeField]
     public TargetRenderInitial m_targetRenderInitial;
+    [SerializeField]
+    public GameObject coachStickman;
 
     private bool isStarted = false;
 
@@ -108,6 +110,7 @@ public class TestingModeManager : MonoBehaviour
                 if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
                     this.curTestState = TestState.begin;
                     this.systemManager.uiTesting.canvas_start.SetActive(false);
+                    this.systemManager.uiFollowHead.EnableControllerInteractorVisual(false);
                 }
             }
         }
@@ -124,7 +127,6 @@ public class TestingModeManager : MonoBehaviour
             }
             else {
                 this.systemManager.uiTesting.readyUnit_text.text = "Please move to the center.";
-                // this.systemManager.consoleText.text = "Move to the center please!!!";
             }
         }
 
@@ -153,16 +155,12 @@ public class TestingModeManager : MonoBehaviour
                 this.systemManager.uiTesting.readyCountdown_image.fillAmount = 0;
                 this.systemManager.uiTesting.readyCountdown_text.text = "";
                 this.systemManager.uiTesting.readyUnit_text.text = "";
-
-                // this.systemManager.consoleTitle.text = "Unit " + this.curUnitNum.ToString() + " start";
-                // print("Unit " + this.curUnitNum.ToString() + " start");
             }
         }
 
         // Calculate the reaction time
         if (this.reactionTimer.timerOn) {
             this.reactionTimer.timeLeft += Time.deltaTime;
-            // print("Reaction time: " + this.reactionTimer.timeLeft.ToString());
             if (this.reactionTimer.timeLeft >= 5.0f) {
                 this.reactionTimer.ResetTimer();
                 if (this.evaluationManager.isDuringTheUnit) {
@@ -171,14 +169,15 @@ public class TestingModeManager : MonoBehaviour
                     this.unitOver();
                 }
                 this.reactionTimeOut = true;
-                // this.systemManager.consoleTitle.text = "Unit " + this.curUnitNum.ToString() + " timeout";
-                print("Unit " + this.curUnitNum.ToString() + " timeout");
+                Debug.Log("Unit " + this.curUnitNum.ToString() + " timeout");
             }
         }
     }
 
     public void testingModeInitial() {
         this.isStarted = true;
+
+        this.coachStickman.SetActive(true);
 
         this.evaluationManager.startingPosition = this.systemManager.sceneOrigin_poisition;
         this.systemManager.userInitialPosition.transform.position = this.systemManager.sceneOrigin_poisition;
@@ -204,6 +203,10 @@ public class TestingModeManager : MonoBehaviour
         this.systemManager.uiTesting.canvas_countdown.SetActive(false);
         this.systemManager.uiTesting.canvas_final.SetActive(false);
 
+        this.systemManager.uiFollowHead.tolerateAngle = 180.0f;
+        this.systemManager.uiFollowHead.toleratteDistance = 1.0f;
+        this.systemManager.uiFollowHead.EnableControllerInteractorVisual(true); // Parameter Setting Only
+
         this.systemManager.uiTesting.startTitle_text.text = "Welcome to Testing Mode";
         this.systemManager.uiTesting.startDescription_text.text = "There will be " + this.systemManager.mySettingInfo.targetUnitNum.ToString() + " units in this test." + "\nPlease move to center and press the button 'A' to start.";
         this.systemManager.uiTesting.resultDescription_text.text = "";
@@ -211,7 +214,6 @@ public class TestingModeManager : MonoBehaviour
 
     public void unitOver() {
         this.targetManager.targetAnimator.SetBool("isDuringTheUnit", false);
-        this.targetManager.invokeTargetMoveToInitial(1.5f);
 
         this.systemManager.uiTesting.canvas_result.SetActive(true);
         this.systemManager.uiTesting.resultUnit_text.text = "Unit " + this.curUnitNum.ToString() + " result";
@@ -248,19 +250,23 @@ public class TestingModeManager : MonoBehaviour
             }
 
             this.m_targetRenderInitial.initialTargetRender();
+            this.coachStickman.SetActive(false);
             
             this.systemManager.uiTesting.canvas_final.SetActive(true);
-            this.systemManager.uiTesting.canvas_result.SetActive(true);
+            this.systemManager.uiTesting.canvas_result.SetActive(false);
             this.systemManager.uiTesting.canvas_countdown.SetActive(false);
             
-            this.systemManager.uiTesting.finalTitle_text.text = "Test finished";
+            this.systemManager.uiTesting.finalTitle_text.text = "Test Finished";
             this.systemManager.uiTesting.finalDescription_text.text = "Average reaction time: " + averageReactionTime.ToString() + "\n" + "Total score: " + this.totalScore.ToString() + "\n" + "Reaction time out count: " + this.reactionTimeOutCount.ToString();
+
+            this.systemManager.uiFollowHead.EnableControllerInteractorVisual(true);
 
             // this.systemManager.consoleText.text += "\nTest finished" + "\n" + "Average reaction time: " + averageReactionTime + "\n" + "Total score: " + this.totalScore.ToString() + "\n" + "Reaction time out count: " + this.reactionTimeOutCount.ToString();
             // print("Test finished" + "\n" + "Average reaction time: " + averageReactionTime + "\n" + "Total score: " + this.totalScore.ToString() + "\n" + "Reaction time out count: " + this.reactionTimeOutCount.ToString());
         }
         else {
             this.curTestState = TestState.begin;
+            this.targetManager.invokeTargetMoveToInitial(1.5f);
         }
     }
 
@@ -283,6 +289,4 @@ public class TestingModeManager : MonoBehaviour
             // print("Unit " + this.curUnitNum.ToString() + " ready");
         }
     }
-
-
 }

@@ -180,6 +180,8 @@ public class SystemManager : MonoBehaviour
     // public TextMesh consoleText;
 
     [SerializeField]
+    public UIFollowHead uiFollowHead;
+    [SerializeField]
     public UICalibration uiCalibration;
     [SerializeField]
     public UITesting uiTesting;    
@@ -211,6 +213,7 @@ public class SystemManager : MonoBehaviour
             this.OVRCameraRig = GameObject.Find("OVRCameraRig");
         }
 
+
         if (this.calibrationManager == null && this.curSystemMode == SystemMode.Calibration_MovableSize) {
             this.calibrationManager = GameObject.Find("CalibrationManager").GetComponent<CalibrationManager>();
         }
@@ -230,6 +233,12 @@ public class SystemManager : MonoBehaviour
              this.userIdlePose.transform.rotation = Quaternion.Euler(0.0f, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f);
              this.userCenterPosition.transform.position = new Vector3(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.userCenterPosition.transform.position.y, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z);
              this.userCenterPosition.transform.rotation = Quaternion.Euler(0.0f, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f);
+        }
+
+        if (this.curSystemMode != SystemMode.Testing) {
+            if (this.uiFollowHead.controllerRayInteractor_visual[0].activeSelf) {
+                this.uiFollowHead.EnableControllerInteractorVisual(false);
+            }
         }
 
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
@@ -256,10 +265,11 @@ public class SystemManager : MonoBehaviour
             else if (this.curSystemMode == SystemMode.Calibration_ArmLength) {
                 this.calibrationManager.calibrationArmLengthInitialize();
             }
+            else if (this.curSystemMode == SystemMode.Setting) {
+                this.changeScene("Setting");
+            }
             else if (this.curSystemMode == SystemMode.Testing) {
                 this.changeScene("Testing");
-                // this.testingModeManager.testingModeInitial();
-                // this.testingModeManager.targetManager.targetMoveToInitial();
             }
             
         }
@@ -281,5 +291,13 @@ public class SystemManager : MonoBehaviour
     {
         Debug.Log("Change Scene to " + sceneName);
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void saveTestingResult() {
+        this.uiTesting.finalDescription_text.text += "\n" + "File saved at: \n" + Application.persistentDataPath + "/testing_result.txt";
+    }
+
+    public void exitSystem() {
+        Application.Quit();
     }
 }

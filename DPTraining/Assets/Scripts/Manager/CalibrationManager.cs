@@ -216,15 +216,14 @@ public class CalibrationManager : MonoBehaviour
         this.systemManager.uiCalibration.instructionTitle_text.text = "Movable Size Calibration";
         this.systemManager.uiCalibration.instruction_text.text = "Please put your left controller on a floor around the movable place and press button 'A'.";
         this.systemManager.uiCalibration.instructionImage.sprite = this.systemManager.uiCalibration.instructionImagesSource[0];
-        // this.systemManager.consoleTitle.text = "Initialize";
-        // this.systemManager.consoleText.text = "";
+        
+        this.systemManager.uiFollowHead.tolerateAngle = 120.0f;
+        this.systemManager.uiFollowHead.EnableControllerInteractorVisual(false);
     }
     
     public void calibrationArmLengthInitialize() {
         this.systemManager.curSystemMode = SystemManager.SystemMode.Calibration_ArmLength;
         this.armLengthMarkerStatue = 0;
-        // this.systemManager.consoleTitle.text = "Arm Length Initialize";
-        // this.systemManager.consoleText.text = "";
         this.systemManager.uiCalibration.resultTitle_text.text = "Movable Range Result";
         this.systemManager.uiCalibration.resultDescription_text.text = "Average Distance = " + this.systemManager.myMovableRangeInfo.avgLengthInVR.ToString("F2") + " (m)";
         this.systemManager.uiCalibration.instructionTitle_text.text = "T-Pose Calibration";

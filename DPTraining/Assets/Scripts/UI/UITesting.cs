@@ -40,7 +40,6 @@ public class UITesting : MonoBehaviour
     public TMP_Text finalTitle_text;
     [SerializeField]
     public TMP_Text finalDescription_text;
-
     
     // Start is called before the first frame update
     void Start()

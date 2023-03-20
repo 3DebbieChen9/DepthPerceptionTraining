@@ -830,6 +830,10 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.Animator
 
+		//System.Boolean UnityEngine.Animator::GetBoolString(System.String)
+		void Register_UnityEngine_Animator_GetBoolString();
+		Register_UnityEngine_Animator_GetBoolString();
+
 		//System.Boolean UnityEngine.Animator::IsInIKPass()
 		void Register_UnityEngine_Animator_IsInIKPass();
 		Register_UnityEngine_Animator_IsInIKPass();
@@ -5733,10 +5737,6 @@ void RegisterAllStrippedInternalCalls()
 	//End Registrations for type : UnityEngine.TextGenerator
 
 	//Start Registrations for type : UnityEngine.TextMesh
-
-		//System.String UnityEngine.TextMesh::get_text()
-		void Register_UnityEngine_TextMesh_get_text();
-		Register_UnityEngine_TextMesh_get_text();
 
 		//System.Void UnityEngine.TextMesh::get_color_Injected(UnityEngine.Color&)
 		void Register_UnityEngine_TextMesh_get_color_Injected();

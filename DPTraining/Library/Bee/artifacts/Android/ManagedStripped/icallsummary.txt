@@ -193,6 +193,7 @@ UnityEngine.AnimationCurve::GetKeys
 UnityEngine.Animations.AnimationLayerMixerPlayable::SetSingleLayerOptimizationInternal
 UnityEngine.AnimationState::set_layer
 UnityEngine.AnimationState::set_normalizedTime
+UnityEngine.Animator::GetBoolString
 UnityEngine.Animator::IsInIKPass
 UnityEngine.Animator::get_applyRootMotion
 UnityEngine.Animator::get_hasBoundPlayables
@@ -1286,7 +1287,6 @@ UnityEngine.TextGenerator::GetLinesInternal
 UnityEngine.TextGenerator::GetVerticesInternal
 UnityEngine.TextGenerator::Internal_Destroy
 UnityEngine.TextGenerator::get_rectExtents_Injected
-UnityEngine.TextMesh::get_text
 UnityEngine.TextMesh::get_color_Injected
 UnityEngine.TextMesh::set_anchor
 UnityEngine.TextMesh::set_color_Injected
