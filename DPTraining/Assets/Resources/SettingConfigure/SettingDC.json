@@ -1,0 +1,16 @@
+{
+    "isUsingNoitom": false,
+    "isOnRing": false,
+    "targetIsLeftHanded": true,
+    
+    "tolerateRaduiBetweenOriginAndUser": 0.15,
+    "handStraight_tolerateAngleThreshold": 10.0,
+
+    "targetHeightDifference": 0.05,
+    "targetUnitNum": 7,
+    "readyTime": 5.0,
+
+    "controllerVibrationAmplitude": 1.0,
+
+    "loadfileTest": "FUCK"
+}

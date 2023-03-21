@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class SystemManager : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class SystemManager : MonoBehaviour
         public float straightAngle_right_R_finalIK;
         public float straightAngle_right_L_finalIK;
 
-        public float handStraight_tolerateAngleThreshold;
+        
         
         public UserInfo(float _avgArmLength, float _avgCenterEyeToControllerLength, float _idlePoseRadius, float _userHeight) {
             this.avgArmLength = _avgArmLength;
@@ -47,7 +48,6 @@ public class SystemManager : MonoBehaviour
             this.straightAngle_right_R_finalIK = 180.0f;
             this.straightAngle_right_L_noitom = 0.0f;
             this.straightAngle_right_L_finalIK = 0.0f;
-            this.handStraight_tolerateAngleThreshold = 10.0f;
         }
     }
 
@@ -80,23 +80,30 @@ public class SystemManager : MonoBehaviour
         public bool targetIsLeftHanded;
         public bool isUsingNoitom;
         public float tolerateRaduisBetweenOriginAndUser;
-        public float userBodyRadius;
         
         public float controllerVibrationAmplitude;
         public int targetUnitNum;
         public float readyTime;
 
-        // public SystemMode targetSystemMode;
+        public float targetHeightDifference;
+
+        public float handStraight_tolerateAngleThreshold;
+
+        public string loadfileTest;
 
         public SettingInfo() {
             this.isOnRing = false;
             this.targetIsLeftHanded = true;
             this.isUsingNoitom = false;
             this.tolerateRaduisBetweenOriginAndUser = 0.15f;
-            this.controllerVibrationAmplitude = 0.8f;
+            this.controllerVibrationAmplitude = 1.0f;
             
             this.targetUnitNum = 7;
             this.readyTime = 5.0f;
+
+            this.targetHeightDifference = 0.05f;
+            this.handStraight_tolerateAngleThreshold = 10.0f;
+            this.loadfileTest = "";
 
             // this.targetSystemMode = SystemMode.Testing;
         }
@@ -106,6 +113,7 @@ public class SystemManager : MonoBehaviour
         Calibration_MovableSize,
         Calibration_ArmLength,
         Calibration_IdlePose,
+        Selection,
         Setting,
         Testing,
         Training_Traditional,
@@ -204,6 +212,7 @@ public class SystemManager : MonoBehaviour
         this.userIdlePose.GetComponent<CapsuleCollider>().radius = this.myUserInfo.idlePoseRadius;
         this.userIdlePose.GetComponent<CapsuleCollider>().height = this.myUserInfo.userHeight;
         this.userIdlePose.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.myUserInfo.userHeight / 2.0f, 0.0f);
+        this.loadSettingJSON();
     }
 
     // Update is called once per frame
@@ -265,8 +274,8 @@ public class SystemManager : MonoBehaviour
             else if (this.curSystemMode == SystemMode.Calibration_ArmLength) {
                 this.calibrationManager.calibrationArmLengthInitialize();
             }
-            else if (this.curSystemMode == SystemMode.Setting) {
-                this.changeScene("Setting");
+            else if (this.curSystemMode == SystemMode.Selection) {
+                this.changeScene("Selection");
             }
             else if (this.curSystemMode == SystemMode.Testing) {
                 this.changeScene("Testing");
@@ -290,6 +299,8 @@ public class SystemManager : MonoBehaviour
     public void changeScene(string sceneName)
     {
         Debug.Log("Change Scene to " + sceneName);
+        this.uiCalibration.calibrationUI.SetActive(false);
+        this.uiTesting.testingUI.SetActive(false);
         SceneManager.LoadScene(sceneName);
     }
 
@@ -299,5 +310,22 @@ public class SystemManager : MonoBehaviour
 
     public void exitSystem() {
         Application.Quit();
+    }
+
+    public void saveUserInfoToJSON() 
+    {
+        string jsonString = JsonUtility.ToJson(this.myUserInfo);
+        string filePath = Application.persistentDataPath + "/UserInfo.json";
+        File.WriteAllText(filePath, jsonString);
+
+        Debug.Log("JSON file saved at " + filePath);
+    }
+
+    public void loadSettingJSON()
+    {
+        TextAsset jsonFile = Resources.Load<TextAsset>("SettingConfigure/SettingDC");
+        this.mySettingInfo = JsonUtility.FromJson<SettingInfo>(jsonFile.text);
+
+        Debug.Log($"JSON file loaded, test string = {this.mySettingInfo.loadfileTest}");
     }
 }

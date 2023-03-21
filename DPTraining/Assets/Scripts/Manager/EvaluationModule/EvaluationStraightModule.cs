@@ -53,7 +53,7 @@ public class EvaluationStraightModule : MonoBehaviour
         float lowArmToUpArmAngle_up_L = Vector3.Angle(lowArmUp_L, -upArmToLowArmNormalized_L);
         float lowArmToUpArmAngle_right_L = Vector3.Angle(lowArmRight_L, -upArmToLowArmNormalized_L);
 
-        float tolerateAngleThreshold = this.evaluationManager.systemManager.myUserInfo.handStraight_tolerateAngleThreshold;
+        float tolerateAngleThreshold = this.evaluationManager.systemManager.mySettingInfo.handStraight_tolerateAngleThreshold;
 
         float lowArmToUpArm_forward_straightAngle = 0.0f;
         float lowArmToUpArm_up_straightAngle = 0.0f;
@@ -107,7 +107,7 @@ public class EvaluationStraightModule : MonoBehaviour
         float lowArmToUpArmAngle_up_R = Vector3.Angle(lowArmUp_R, -upArmToLowArmNormalized_R);
         float lowArmToUpArmAngle_right_R = Vector3.Angle(lowArmRight_R, -upArmToLowArmNormalized_R);
 
-        float tolerateAngleThreshold = this.evaluationManager.systemManager.myUserInfo.handStraight_tolerateAngleThreshold;
+        float tolerateAngleThreshold = this.evaluationManager.systemManager.mySettingInfo.handStraight_tolerateAngleThreshold;
 
         float lowArmToUpArm_forward_straightAngle = 0.0f;
         float lowArmToUpArm_up_straightAngle = 0.0f;
