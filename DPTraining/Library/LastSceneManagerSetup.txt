@@ -1,13 +1,17 @@
 sceneSetups:
-- path: Assets/Scenes/Calibration.unity
+- path: Assets/Scenes/CalibrationScenes.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
-- path: Assets/Scenes/Selection.unity
+- path: Assets/Scenes/Old Version/Calibration_old.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/Old Version/Selection_old.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/Testing.unity
+- path: Assets/Scenes/Old Version/Testing_old.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
