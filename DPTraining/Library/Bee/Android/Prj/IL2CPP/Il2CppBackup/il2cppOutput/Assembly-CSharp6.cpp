@@ -67,23 +67,23 @@ struct InvokerFuncInvoker2
 	}
 };
 template <typename R, typename T1, typename T2>
-struct InvokerFuncInvoker2<R, T1*, T2>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2)
-	{
-		R ret;
-		void* params[2] = { p1, &p2 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2>
 struct InvokerFuncInvoker2<R, T1, T2*>
 {
 	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1 p1, T2* p2)
 	{
 		R ret;
 		void* params[2] = { &p1, p2 };
+		method->invoker_method(methodPtr, method, obj, params, &ret);
+		return ret;
+	}
+};
+template <typename R, typename T1, typename T2>
+struct InvokerFuncInvoker2<R, T1*, T2>
+{
+	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2)
+	{
+		R ret;
+		void* params[2] = { p1, &p2 };
 		method->invoker_method(methodPtr, method, obj, params, &ret);
 		return ret;
 	}
@@ -122,23 +122,23 @@ struct InvokerFuncInvoker3<R, T1*, T2, T3>
 	}
 };
 template <typename R, typename T1, typename T2, typename T3>
-struct InvokerFuncInvoker3<R, T1*, T2*, T3>
-{
-	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3 p3)
-	{
-		R ret;
-		void* params[3] = { p1, p2, &p3 };
-		method->invoker_method(methodPtr, method, obj, params, &ret);
-		return ret;
-	}
-};
-template <typename R, typename T1, typename T2, typename T3>
 struct InvokerFuncInvoker3<R, T1*, T2, T3*>
 {
 	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2 p2, T3* p3)
 	{
 		R ret;
 		void* params[3] = { p1, &p2, p3 };
+		method->invoker_method(methodPtr, method, obj, params, &ret);
+		return ret;
+	}
+};
+template <typename R, typename T1, typename T2, typename T3>
+struct InvokerFuncInvoker3<R, T1*, T2*, T3>
+{
+	static inline R Invoke (Il2CppMethodPointer methodPtr, const RuntimeMethod* method, void* obj, T1* p1, T2* p2, T3 p3)
+	{
+		R ret;
+		void* params[3] = { p1, p2, &p3 };
 		method->invoker_method(methodPtr, method, obj, params, &ret);
 		return ret;
 	}
@@ -309,10 +309,20 @@ struct _GetCalibrateMotionProgressProgressOfPose_t09D8BFC4EFE2161CE4522B9B50B49E
 struct _GetCalibrateMotionProgressStepOfCurrentPose_t856D174D640E90DACF819E4804E9353B0396DC5B;
 // MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfPose
 struct _GetCalibrateMotionProgressStepOfPose_tB261282BD6E5E3C1E0BF31E7EB335E66B8C77B0C;
+// MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand
+struct _CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8;
 // MocapApi.IMCPCommand/MCPCommand_ProcTable/_DestroyCommand
 struct _DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0;
 // MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandProgress
 struct _GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05;
+// MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode
+struct _GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA;
+// MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage
+struct _GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69;
+// MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags
+struct _SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C;
+// MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong
+struct _SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3;
 // MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_CreateRenderSettings
 struct _CreateRenderSettings_t66CD7D78A37F03A1CE67036B65338D2E85F3E988;
 // MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_DestroyRenderSettings
@@ -390,9 +400,11 @@ IL2CPP_EXTERN_C RuntimeClass* Utils_tD2F6277E98404D73B4D3FE5F2C4357EEABCB472C_il
 IL2CPP_EXTERN_C RuntimeClass* _ApplicationCacheEventsIsEnabled_tFDD2E79FCA66D9850A58BE3608E661F142DF08BA_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _CloseApplication_t10583D83CC3ED6DA0B0DB266C6310D8ACB55E6E3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _CreateApplication_t3A5ED7B6CFE6CD9CB1F1E2CFAA7CA3F1AE0C4626_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* _CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _CreateRenderSettings_t66CD7D78A37F03A1CE67036B65338D2E85F3E988_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _CreateSettings_t5900F1EEB5A5CDD624CF6BDF3C4AF00D2DAF3151_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _DestroyApplication_t242285073E9357F10FB91828160661BF2CF584AE_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* _DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _DestroyRenderSettings_tFF64CA6B14E9603952FB82AB01FEE41F96419E71_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _DestroySettings_tBB55105BFA3E4D4664A8B44C08B3A39DA8305ADD_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _DisableApplicationCacheEvents_t68D13C4906508720FFE33B5540F6CCB4290A7D0B_il2cpp_TypeInfo_var;
@@ -409,6 +421,9 @@ IL2CPP_EXTERN_C RuntimeClass* _GetCalibrateMotionProgressProgressOfCurrentPose_t
 IL2CPP_EXTERN_C RuntimeClass* _GetCalibrateMotionProgressProgressOfPose_t09D8BFC4EFE2161CE4522B9B50B49E724DFA3DD5_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _GetCalibrateMotionProgressStepOfCurrentPose_t856D174D640E90DACF819E4804E9353B0396DC5B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _GetCalibrateMotionProgressStepOfPose_tB261282BD6E5E3C1E0BF31E7EB335E66B8C77B0C_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* _GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* _GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* _GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _GetCoordSystem_t8BD4FC889397BE4F6928E32AFDEC838606C619BC_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _GetFrontVector_t2C1B8A437DE5C9AF5334BAA1102DD9DF5D5129CC_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _GetPreDefRenderSettings_tBB55DAA69818BD41FEFF9FB818F335B117226681_il2cpp_TypeInfo_var;
@@ -420,6 +435,8 @@ IL2CPP_EXTERN_C RuntimeClass* _PollApplicationNextEvent_t530A6E6B5B06824A696938A
 IL2CPP_EXTERN_C RuntimeClass* _QueuedServerCommand_t57F00E1354D10C3EB56958E0D0E5D0D42389B2F8_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _SetApplicationRenderSettings_t674D3D30E962794CE9801F71DED799D8ED097F37_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _SetApplicationSettings_t6842DC6BF126717B6439D092002CEE1A8FC6AFAE_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* _SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* _SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _SetCoordSystem_t1E6B48BD5209BBC3F7530904D21C6CE1A704F904_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _SetFrontVector_tD4DF996F3848D25CDBAAD94AF755BAAB21A21BE6_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* _SetRotatingDirection_t96508CD1B26386C0AC1B4F98E19E91C592CDCF78_il2cpp_TypeInfo_var;
@@ -847,6 +864,47 @@ struct MCPCalibrateMotionProgress_ProcTable_t37203FFE67BEACE9A0EBB41707A1D28BEDA
 	Il2CppMethodPointer ___GetCalibrateMotionProgressStepOfCurrentPose_5;
 	Il2CppMethodPointer ___GetCalibrateMotionProgressCountdownOfCurrentPose_6;
 	Il2CppMethodPointer ___GetCalibrateMotionProgressProgressOfCurrentPose_7;
+};
+
+// MocapApi.IMCPCommand/MCPCommand_ProcTable
+struct MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456 
+{
+	// MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand MocapApi.IMCPCommand/MCPCommand_ProcTable::CreateCommand
+	_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8* ___CreateCommand_0;
+	// MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags MocapApi.IMCPCommand/MCPCommand_ProcTable::SetCommandExtraFlags
+	_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C* ___SetCommandExtraFlags_1;
+	// MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong MocapApi.IMCPCommand/MCPCommand_ProcTable::SetCommandExtraLong
+	_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3* ___SetCommandExtraLong_2;
+	// MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage MocapApi.IMCPCommand/MCPCommand_ProcTable::GetCommandResultMessage
+	_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69* ___GetCommandResultMessage_3;
+	// MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode MocapApi.IMCPCommand/MCPCommand_ProcTable::GetCommandResultCode
+	_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA* ___GetCommandResultCode_4;
+	// MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandProgress MocapApi.IMCPCommand/MCPCommand_ProcTable::GetCommandProgress
+	_GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05* ___GetCommandProgress_5;
+	// MocapApi.IMCPCommand/MCPCommand_ProcTable/_DestroyCommand MocapApi.IMCPCommand/MCPCommand_ProcTable::DestroyCommand
+	_DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0* ___DestroyCommand_6;
+};
+// Native definition for P/Invoke marshalling of MocapApi.IMCPCommand/MCPCommand_ProcTable
+struct MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshaled_pinvoke
+{
+	Il2CppMethodPointer ___CreateCommand_0;
+	Il2CppMethodPointer ___SetCommandExtraFlags_1;
+	Il2CppMethodPointer ___SetCommandExtraLong_2;
+	Il2CppMethodPointer ___GetCommandResultMessage_3;
+	Il2CppMethodPointer ___GetCommandResultCode_4;
+	Il2CppMethodPointer ___GetCommandProgress_5;
+	Il2CppMethodPointer ___DestroyCommand_6;
+};
+// Native definition for COM marshalling of MocapApi.IMCPCommand/MCPCommand_ProcTable
+struct MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshaled_com
+{
+	Il2CppMethodPointer ___CreateCommand_0;
+	Il2CppMethodPointer ___SetCommandExtraFlags_1;
+	Il2CppMethodPointer ___SetCommandExtraLong_2;
+	Il2CppMethodPointer ___GetCommandResultMessage_3;
+	Il2CppMethodPointer ___GetCommandResultCode_4;
+	Il2CppMethodPointer ___GetCommandProgress_5;
+	Il2CppMethodPointer ___DestroyCommand_6;
 };
 
 // MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable
@@ -1439,6 +1497,11 @@ struct _GetCalibrateMotionProgressStepOfPose_tB261282BD6E5E3C1E0BF31E7EB335E66B8
 {
 };
 
+// MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand
+struct _CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8  : public MulticastDelegate_t
+{
+};
+
 // MocapApi.IMCPCommand/MCPCommand_ProcTable/_DestroyCommand
 struct _DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0  : public MulticastDelegate_t
 {
@@ -1446,6 +1509,26 @@ struct _DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0  : public Multi
 
 // MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandProgress
 struct _GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05  : public MulticastDelegate_t
+{
+};
+
+// MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode
+struct _GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA  : public MulticastDelegate_t
+{
+};
+
+// MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage
+struct _GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69  : public MulticastDelegate_t
+{
+};
+
+// MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags
+struct _SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C  : public MulticastDelegate_t
+{
+};
+
+// MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong
+struct _SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3  : public MulticastDelegate_t
 {
 };
 
@@ -1783,6 +1866,679 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t Marshal_AllocHGlobal_m0187620AAB78B8
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Marshal_Copy_mB1CECEA99856A7296FF33D2C9C51CC7E7150E5F8 (ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___source0, int32_t ___startIndex1, intptr_t ___destination2, int32_t ___length3, const RuntimeMethod* method) ;
 #if FORCE_PINVOKE_INTERNAL || FORCE_PINVOKE_MocapApi_INTERNAL
 IL2CPP_EXTERN_C int32_t CDECL MCPGetGenericInterface(char*, intptr_t*);
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// Conversion methods for marshalling of: MocapApi.IMCPCommand/MCPCommand_ProcTable
+IL2CPP_EXTERN_C void MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshal_pinvoke(const MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456& unmarshaled, MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshaled_pinvoke& marshaled)
+{
+	marshaled.___CreateCommand_0 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___CreateCommand_0));
+	marshaled.___SetCommandExtraFlags_1 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___SetCommandExtraFlags_1));
+	marshaled.___SetCommandExtraLong_2 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___SetCommandExtraLong_2));
+	marshaled.___GetCommandResultMessage_3 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___GetCommandResultMessage_3));
+	marshaled.___GetCommandResultCode_4 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___GetCommandResultCode_4));
+	marshaled.___GetCommandProgress_5 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___GetCommandProgress_5));
+	marshaled.___DestroyCommand_6 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___DestroyCommand_6));
+}
+IL2CPP_EXTERN_C void MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshal_pinvoke_back(const MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshaled_pinvoke& marshaled, MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456& unmarshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	unmarshaled.___CreateCommand_0 = il2cpp_codegen_marshal_function_ptr_to_delegate<_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8>(marshaled.___CreateCommand_0, _CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___CreateCommand_0), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8>(marshaled.___CreateCommand_0, _CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8_il2cpp_TypeInfo_var));
+	unmarshaled.___SetCommandExtraFlags_1 = il2cpp_codegen_marshal_function_ptr_to_delegate<_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C>(marshaled.___SetCommandExtraFlags_1, _SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___SetCommandExtraFlags_1), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C>(marshaled.___SetCommandExtraFlags_1, _SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C_il2cpp_TypeInfo_var));
+	unmarshaled.___SetCommandExtraLong_2 = il2cpp_codegen_marshal_function_ptr_to_delegate<_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3>(marshaled.___SetCommandExtraLong_2, _SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___SetCommandExtraLong_2), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3>(marshaled.___SetCommandExtraLong_2, _SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3_il2cpp_TypeInfo_var));
+	unmarshaled.___GetCommandResultMessage_3 = il2cpp_codegen_marshal_function_ptr_to_delegate<_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69>(marshaled.___GetCommandResultMessage_3, _GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___GetCommandResultMessage_3), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69>(marshaled.___GetCommandResultMessage_3, _GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69_il2cpp_TypeInfo_var));
+	unmarshaled.___GetCommandResultCode_4 = il2cpp_codegen_marshal_function_ptr_to_delegate<_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA>(marshaled.___GetCommandResultCode_4, _GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___GetCommandResultCode_4), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA>(marshaled.___GetCommandResultCode_4, _GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA_il2cpp_TypeInfo_var));
+	unmarshaled.___GetCommandProgress_5 = il2cpp_codegen_marshal_function_ptr_to_delegate<_GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05>(marshaled.___GetCommandProgress_5, _GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___GetCommandProgress_5), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05>(marshaled.___GetCommandProgress_5, _GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05_il2cpp_TypeInfo_var));
+	unmarshaled.___DestroyCommand_6 = il2cpp_codegen_marshal_function_ptr_to_delegate<_DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0>(marshaled.___DestroyCommand_6, _DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___DestroyCommand_6), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0>(marshaled.___DestroyCommand_6, _DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0_il2cpp_TypeInfo_var));
+}
+// Conversion method for clean up from marshalling of: MocapApi.IMCPCommand/MCPCommand_ProcTable
+IL2CPP_EXTERN_C void MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshal_pinvoke_cleanup(MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshaled_pinvoke& marshaled)
+{
+}
+// Conversion methods for marshalling of: MocapApi.IMCPCommand/MCPCommand_ProcTable
+IL2CPP_EXTERN_C void MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshal_com(const MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456& unmarshaled, MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshaled_com& marshaled)
+{
+	marshaled.___CreateCommand_0 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___CreateCommand_0));
+	marshaled.___SetCommandExtraFlags_1 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___SetCommandExtraFlags_1));
+	marshaled.___SetCommandExtraLong_2 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___SetCommandExtraLong_2));
+	marshaled.___GetCommandResultMessage_3 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___GetCommandResultMessage_3));
+	marshaled.___GetCommandResultCode_4 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___GetCommandResultCode_4));
+	marshaled.___GetCommandProgress_5 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___GetCommandProgress_5));
+	marshaled.___DestroyCommand_6 = il2cpp_codegen_marshal_delegate(reinterpret_cast<MulticastDelegate_t*>(unmarshaled.___DestroyCommand_6));
+}
+IL2CPP_EXTERN_C void MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshal_com_back(const MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshaled_com& marshaled, MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456& unmarshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	unmarshaled.___CreateCommand_0 = il2cpp_codegen_marshal_function_ptr_to_delegate<_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8>(marshaled.___CreateCommand_0, _CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___CreateCommand_0), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8>(marshaled.___CreateCommand_0, _CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8_il2cpp_TypeInfo_var));
+	unmarshaled.___SetCommandExtraFlags_1 = il2cpp_codegen_marshal_function_ptr_to_delegate<_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C>(marshaled.___SetCommandExtraFlags_1, _SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___SetCommandExtraFlags_1), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C>(marshaled.___SetCommandExtraFlags_1, _SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C_il2cpp_TypeInfo_var));
+	unmarshaled.___SetCommandExtraLong_2 = il2cpp_codegen_marshal_function_ptr_to_delegate<_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3>(marshaled.___SetCommandExtraLong_2, _SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___SetCommandExtraLong_2), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3>(marshaled.___SetCommandExtraLong_2, _SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3_il2cpp_TypeInfo_var));
+	unmarshaled.___GetCommandResultMessage_3 = il2cpp_codegen_marshal_function_ptr_to_delegate<_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69>(marshaled.___GetCommandResultMessage_3, _GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___GetCommandResultMessage_3), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69>(marshaled.___GetCommandResultMessage_3, _GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69_il2cpp_TypeInfo_var));
+	unmarshaled.___GetCommandResultCode_4 = il2cpp_codegen_marshal_function_ptr_to_delegate<_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA>(marshaled.___GetCommandResultCode_4, _GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___GetCommandResultCode_4), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA>(marshaled.___GetCommandResultCode_4, _GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA_il2cpp_TypeInfo_var));
+	unmarshaled.___GetCommandProgress_5 = il2cpp_codegen_marshal_function_ptr_to_delegate<_GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05>(marshaled.___GetCommandProgress_5, _GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___GetCommandProgress_5), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05>(marshaled.___GetCommandProgress_5, _GetCommandProgress_tF9C8FEB2DC5B416B1D5D21B7595B8D34AA2B7E05_il2cpp_TypeInfo_var));
+	unmarshaled.___DestroyCommand_6 = il2cpp_codegen_marshal_function_ptr_to_delegate<_DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0>(marshaled.___DestroyCommand_6, _DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0_il2cpp_TypeInfo_var);
+	Il2CppCodeGenWriteBarrier((void**)(&unmarshaled.___DestroyCommand_6), (void*)il2cpp_codegen_marshal_function_ptr_to_delegate<_DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0>(marshaled.___DestroyCommand_6, _DestroyCommand_t3842038BBDDB72A8EC398C3B48AACC2C24C865A0_il2cpp_TypeInfo_var));
+}
+// Conversion method for clean up from marshalling of: MocapApi.IMCPCommand/MCPCommand_ProcTable
+IL2CPP_EXTERN_C void MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshal_com_cleanup(MCPCommand_ProcTable_t1B3EEC044BA50BFB77B058D41E45321CF8CE2456_marshaled_com& marshaled)
+{
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+int32_t _CreateCommand_Invoke_m1ED2F70B0ABC1B0CB5E78459B00BF11A4A49ED83_Multicast(_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8* __this, uint32_t ___cmd0, uint64_t* ___handle_1, const RuntimeMethod* method)
+{
+	il2cpp_array_size_t length = __this->___delegates_13->max_length;
+	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
+	int32_t retVal = 0;
+	for (il2cpp_array_size_t i = 0; i < length; i++)
+	{
+		_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8* currentDelegate = reinterpret_cast<_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8*>(delegatesToInvoke[i]);
+		typedef int32_t (*FunctionPointerType) (RuntimeObject*, uint32_t, uint64_t*, const RuntimeMethod*);
+		retVal = ((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___cmd0, ___handle_1, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
+	}
+	return retVal;
+}
+int32_t _CreateCommand_Invoke_m1ED2F70B0ABC1B0CB5E78459B00BF11A4A49ED83_OpenInst(_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8* __this, uint32_t ___cmd0, uint64_t* ___handle_1, const RuntimeMethod* method)
+{
+	typedef int32_t (*FunctionPointerType) (uint32_t, uint64_t*, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___method_ptr_0)(___cmd0, ___handle_1, method);
+}
+int32_t _CreateCommand_Invoke_m1ED2F70B0ABC1B0CB5E78459B00BF11A4A49ED83_OpenStatic(_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8* __this, uint32_t ___cmd0, uint64_t* ___handle_1, const RuntimeMethod* method)
+{
+	typedef int32_t (*FunctionPointerType) (uint32_t, uint64_t*, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___method_ptr_0)(___cmd0, ___handle_1, method);
+}
+int32_t _CreateCommand_Invoke_m1ED2F70B0ABC1B0CB5E78459B00BF11A4A49ED83_OpenStaticInvoker(_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8* __this, uint32_t ___cmd0, uint64_t* ___handle_1, const RuntimeMethod* method)
+{
+	return InvokerFuncInvoker2< int32_t, uint32_t, uint64_t* >::Invoke(__this->___method_ptr_0, method, NULL, ___cmd0, ___handle_1);
+}
+int32_t _CreateCommand_Invoke_m1ED2F70B0ABC1B0CB5E78459B00BF11A4A49ED83_ClosedStaticInvoker(_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8* __this, uint32_t ___cmd0, uint64_t* ___handle_1, const RuntimeMethod* method)
+{
+	return InvokerFuncInvoker3< int32_t, RuntimeObject*, uint32_t, uint64_t* >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___cmd0, ___handle_1);
+}
+IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper__CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8 (_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8* __this, uint32_t ___cmd0, uint64_t* ___handle_1, const RuntimeMethod* method)
+{
+	typedef int32_t (STDCALL *PInvokeFunc)(uint32_t, uint64_t*);
+	PInvokeFunc il2cppPInvokeFunc = reinterpret_cast<PInvokeFunc>(il2cpp_codegen_get_reverse_pinvoke_function_ptr(__this));
+	// Native function invocation
+	int32_t returnValue = il2cppPInvokeFunc(___cmd0, ___handle_1);
+
+	return returnValue;
+}
+// System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void _CreateCommand__ctor_m09A23E4A98DE63129A566FB3B064D0B060CA14D6 (_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
+{
+	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_3 = ___method1;
+	__this->___m_target_2 = ___object0;
+	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
+	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
+	__this->___method_code_6 = (intptr_t)__this;
+	if (MethodIsStatic((RuntimeMethod*)___method1))
+	{
+		bool isOpen = parameterCount == 2;
+		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&_CreateCommand_Invoke_m1ED2F70B0ABC1B0CB5E78459B00BF11A4A49ED83_OpenStaticInvoker;
+			else
+				__this->___invoke_impl_1 = (intptr_t)&_CreateCommand_Invoke_m1ED2F70B0ABC1B0CB5E78459B00BF11A4A49ED83_ClosedStaticInvoker;
+		else
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&_CreateCommand_Invoke_m1ED2F70B0ABC1B0CB5E78459B00BF11A4A49ED83_OpenStatic;
+			else
+				{
+					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+				}
+	}
+	else
+	{
+		if (___object0 == NULL)
+			il2cpp_codegen_raise_exception(il2cpp_codegen_get_argument_exception(NULL, "Delegate to an instance method cannot have null 'this'."), NULL);
+		__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+		__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+	}
+	__this->___extra_arg_5 = (intptr_t)&_CreateCommand_Invoke_m1ED2F70B0ABC1B0CB5E78459B00BF11A4A49ED83_Multicast;
+}
+// MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand::Invoke(System.UInt32,System.UInt64&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t _CreateCommand_Invoke_m1ED2F70B0ABC1B0CB5E78459B00BF11A4A49ED83 (_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8* __this, uint32_t ___cmd0, uint64_t* ___handle_1, const RuntimeMethod* method) 
+{
+	typedef int32_t (*FunctionPointerType) (RuntimeObject*, uint32_t, uint64_t*, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___cmd0, ___handle_1, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+// System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand::BeginInvoke(System.UInt32,System.UInt64&,System.AsyncCallback,System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* _CreateCommand_BeginInvoke_m9DACC8CF90A513AFC9F4C364E1E2F3F51BD06D34 (_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8* __this, uint32_t ___cmd0, uint64_t* ___handle_1, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___callback2, RuntimeObject* ___object3, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	void *__d_args[3] = {0};
+	__d_args[0] = Box(UInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_il2cpp_TypeInfo_var, &___cmd0);
+	__d_args[1] = Box(UInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_il2cpp_TypeInfo_var, &*___handle_1);
+	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___callback2, (RuntimeObject*)___object3);
+}
+// MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand::EndInvoke(System.UInt64&,System.IAsyncResult)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t _CreateCommand_EndInvoke_m67A178234A25A1D43A29637EAB07EC928E77D7BD (_CreateCommand_t376386CEB1DC86042A78495E6F45502E85F966B8* __this, uint64_t* ___handle_0, RuntimeObject* ___result1, const RuntimeMethod* method) 
+{
+	void* ___out_args[] = {
+	___handle_0,
+	};
+	RuntimeObject *__result = il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___result1, ___out_args);
+	return *(int32_t*)UnBox ((RuntimeObject*)__result);
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+int32_t _SetCommandExtraFlags_Invoke_m5E10C8DA7D555C2BE8C1D084CC9E29F5DA18CBCE_Multicast(_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C* __this, uint32_t ___extraFlags0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	il2cpp_array_size_t length = __this->___delegates_13->max_length;
+	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
+	int32_t retVal = 0;
+	for (il2cpp_array_size_t i = 0; i < length; i++)
+	{
+		_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C* currentDelegate = reinterpret_cast<_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C*>(delegatesToInvoke[i]);
+		typedef int32_t (*FunctionPointerType) (RuntimeObject*, uint32_t, uint64_t, const RuntimeMethod*);
+		retVal = ((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___extraFlags0, ___handle_1, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
+	}
+	return retVal;
+}
+int32_t _SetCommandExtraFlags_Invoke_m5E10C8DA7D555C2BE8C1D084CC9E29F5DA18CBCE_OpenInst(_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C* __this, uint32_t ___extraFlags0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	typedef int32_t (*FunctionPointerType) (uint32_t, uint64_t, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___method_ptr_0)(___extraFlags0, ___handle_1, method);
+}
+int32_t _SetCommandExtraFlags_Invoke_m5E10C8DA7D555C2BE8C1D084CC9E29F5DA18CBCE_OpenStatic(_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C* __this, uint32_t ___extraFlags0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	typedef int32_t (*FunctionPointerType) (uint32_t, uint64_t, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___method_ptr_0)(___extraFlags0, ___handle_1, method);
+}
+int32_t _SetCommandExtraFlags_Invoke_m5E10C8DA7D555C2BE8C1D084CC9E29F5DA18CBCE_OpenStaticInvoker(_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C* __this, uint32_t ___extraFlags0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	return InvokerFuncInvoker2< int32_t, uint32_t, uint64_t >::Invoke(__this->___method_ptr_0, method, NULL, ___extraFlags0, ___handle_1);
+}
+int32_t _SetCommandExtraFlags_Invoke_m5E10C8DA7D555C2BE8C1D084CC9E29F5DA18CBCE_ClosedStaticInvoker(_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C* __this, uint32_t ___extraFlags0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	return InvokerFuncInvoker3< int32_t, RuntimeObject*, uint32_t, uint64_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___extraFlags0, ___handle_1);
+}
+IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper__SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C (_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C* __this, uint32_t ___extraFlags0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	typedef int32_t (STDCALL *PInvokeFunc)(uint32_t, uint64_t);
+	PInvokeFunc il2cppPInvokeFunc = reinterpret_cast<PInvokeFunc>(il2cpp_codegen_get_reverse_pinvoke_function_ptr(__this));
+	// Native function invocation
+	int32_t returnValue = il2cppPInvokeFunc(___extraFlags0, ___handle_1);
+
+	return returnValue;
+}
+// System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void _SetCommandExtraFlags__ctor_mBD08641245BE14E25425B289A011597B29B1770F (_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
+{
+	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_3 = ___method1;
+	__this->___m_target_2 = ___object0;
+	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
+	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
+	__this->___method_code_6 = (intptr_t)__this;
+	if (MethodIsStatic((RuntimeMethod*)___method1))
+	{
+		bool isOpen = parameterCount == 2;
+		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&_SetCommandExtraFlags_Invoke_m5E10C8DA7D555C2BE8C1D084CC9E29F5DA18CBCE_OpenStaticInvoker;
+			else
+				__this->___invoke_impl_1 = (intptr_t)&_SetCommandExtraFlags_Invoke_m5E10C8DA7D555C2BE8C1D084CC9E29F5DA18CBCE_ClosedStaticInvoker;
+		else
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&_SetCommandExtraFlags_Invoke_m5E10C8DA7D555C2BE8C1D084CC9E29F5DA18CBCE_OpenStatic;
+			else
+				{
+					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+				}
+	}
+	else
+	{
+		if (___object0 == NULL)
+			il2cpp_codegen_raise_exception(il2cpp_codegen_get_argument_exception(NULL, "Delegate to an instance method cannot have null 'this'."), NULL);
+		__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+		__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+	}
+	__this->___extra_arg_5 = (intptr_t)&_SetCommandExtraFlags_Invoke_m5E10C8DA7D555C2BE8C1D084CC9E29F5DA18CBCE_Multicast;
+}
+// MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags::Invoke(System.UInt32,System.UInt64)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t _SetCommandExtraFlags_Invoke_m5E10C8DA7D555C2BE8C1D084CC9E29F5DA18CBCE (_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C* __this, uint32_t ___extraFlags0, uint64_t ___handle_1, const RuntimeMethod* method) 
+{
+	typedef int32_t (*FunctionPointerType) (RuntimeObject*, uint32_t, uint64_t, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___extraFlags0, ___handle_1, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+// System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags::BeginInvoke(System.UInt32,System.UInt64,System.AsyncCallback,System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* _SetCommandExtraFlags_BeginInvoke_mAA06CE3598EF4318F0E03F8B9F108F943B847EC8 (_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C* __this, uint32_t ___extraFlags0, uint64_t ___handle_1, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___callback2, RuntimeObject* ___object3, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	void *__d_args[3] = {0};
+	__d_args[0] = Box(UInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_il2cpp_TypeInfo_var, &___extraFlags0);
+	__d_args[1] = Box(UInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_il2cpp_TypeInfo_var, &___handle_1);
+	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___callback2, (RuntimeObject*)___object3);
+}
+// MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags::EndInvoke(System.IAsyncResult)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t _SetCommandExtraFlags_EndInvoke_mDABE7E680A8DB15C384824546920CE053D15650F (_SetCommandExtraFlags_tC218CFBEE2E21DD7AF0F5778F424DB25ABAF384C* __this, RuntimeObject* ___result0, const RuntimeMethod* method) 
+{
+	RuntimeObject *__result = il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___result0, 0);
+	return *(int32_t*)UnBox ((RuntimeObject*)__result);
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+int32_t _SetCommandExtraLong_Invoke_m1C7D9A4675813BE96332EF54BE24D8CCFD15AAE2_Multicast(_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3* __this, uint32_t ___extraLongIndex0, intptr_t ___extraLong1, uint64_t ___handle_2, const RuntimeMethod* method)
+{
+	il2cpp_array_size_t length = __this->___delegates_13->max_length;
+	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
+	int32_t retVal = 0;
+	for (il2cpp_array_size_t i = 0; i < length; i++)
+	{
+		_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3* currentDelegate = reinterpret_cast<_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3*>(delegatesToInvoke[i]);
+		typedef int32_t (*FunctionPointerType) (RuntimeObject*, uint32_t, intptr_t, uint64_t, const RuntimeMethod*);
+		retVal = ((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___extraLongIndex0, ___extraLong1, ___handle_2, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
+	}
+	return retVal;
+}
+int32_t _SetCommandExtraLong_Invoke_m1C7D9A4675813BE96332EF54BE24D8CCFD15AAE2_OpenInst(_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3* __this, uint32_t ___extraLongIndex0, intptr_t ___extraLong1, uint64_t ___handle_2, const RuntimeMethod* method)
+{
+	typedef int32_t (*FunctionPointerType) (uint32_t, intptr_t, uint64_t, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___method_ptr_0)(___extraLongIndex0, ___extraLong1, ___handle_2, method);
+}
+int32_t _SetCommandExtraLong_Invoke_m1C7D9A4675813BE96332EF54BE24D8CCFD15AAE2_OpenStatic(_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3* __this, uint32_t ___extraLongIndex0, intptr_t ___extraLong1, uint64_t ___handle_2, const RuntimeMethod* method)
+{
+	typedef int32_t (*FunctionPointerType) (uint32_t, intptr_t, uint64_t, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___method_ptr_0)(___extraLongIndex0, ___extraLong1, ___handle_2, method);
+}
+int32_t _SetCommandExtraLong_Invoke_m1C7D9A4675813BE96332EF54BE24D8CCFD15AAE2_OpenStaticInvoker(_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3* __this, uint32_t ___extraLongIndex0, intptr_t ___extraLong1, uint64_t ___handle_2, const RuntimeMethod* method)
+{
+	return InvokerFuncInvoker3< int32_t, uint32_t, intptr_t, uint64_t >::Invoke(__this->___method_ptr_0, method, NULL, ___extraLongIndex0, ___extraLong1, ___handle_2);
+}
+int32_t _SetCommandExtraLong_Invoke_m1C7D9A4675813BE96332EF54BE24D8CCFD15AAE2_ClosedStaticInvoker(_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3* __this, uint32_t ___extraLongIndex0, intptr_t ___extraLong1, uint64_t ___handle_2, const RuntimeMethod* method)
+{
+	return InvokerFuncInvoker4< int32_t, RuntimeObject*, uint32_t, intptr_t, uint64_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___extraLongIndex0, ___extraLong1, ___handle_2);
+}
+IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper__SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3 (_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3* __this, uint32_t ___extraLongIndex0, intptr_t ___extraLong1, uint64_t ___handle_2, const RuntimeMethod* method)
+{
+	typedef int32_t (STDCALL *PInvokeFunc)(uint32_t, intptr_t, uint64_t);
+	PInvokeFunc il2cppPInvokeFunc = reinterpret_cast<PInvokeFunc>(il2cpp_codegen_get_reverse_pinvoke_function_ptr(__this));
+	// Native function invocation
+	int32_t returnValue = il2cppPInvokeFunc(___extraLongIndex0, ___extraLong1, ___handle_2);
+
+	return returnValue;
+}
+// System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void _SetCommandExtraLong__ctor_m5F8B2BA699044B990ABF69D16EB43007270EEC24 (_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
+{
+	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_3 = ___method1;
+	__this->___m_target_2 = ___object0;
+	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
+	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
+	__this->___method_code_6 = (intptr_t)__this;
+	if (MethodIsStatic((RuntimeMethod*)___method1))
+	{
+		bool isOpen = parameterCount == 3;
+		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&_SetCommandExtraLong_Invoke_m1C7D9A4675813BE96332EF54BE24D8CCFD15AAE2_OpenStaticInvoker;
+			else
+				__this->___invoke_impl_1 = (intptr_t)&_SetCommandExtraLong_Invoke_m1C7D9A4675813BE96332EF54BE24D8CCFD15AAE2_ClosedStaticInvoker;
+		else
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&_SetCommandExtraLong_Invoke_m1C7D9A4675813BE96332EF54BE24D8CCFD15AAE2_OpenStatic;
+			else
+				{
+					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+				}
+	}
+	else
+	{
+		if (___object0 == NULL)
+			il2cpp_codegen_raise_exception(il2cpp_codegen_get_argument_exception(NULL, "Delegate to an instance method cannot have null 'this'."), NULL);
+		__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+		__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+	}
+	__this->___extra_arg_5 = (intptr_t)&_SetCommandExtraLong_Invoke_m1C7D9A4675813BE96332EF54BE24D8CCFD15AAE2_Multicast;
+}
+// MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong::Invoke(System.UInt32,System.IntPtr,System.UInt64)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t _SetCommandExtraLong_Invoke_m1C7D9A4675813BE96332EF54BE24D8CCFD15AAE2 (_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3* __this, uint32_t ___extraLongIndex0, intptr_t ___extraLong1, uint64_t ___handle_2, const RuntimeMethod* method) 
+{
+	typedef int32_t (*FunctionPointerType) (RuntimeObject*, uint32_t, intptr_t, uint64_t, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___extraLongIndex0, ___extraLong1, ___handle_2, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+// System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong::BeginInvoke(System.UInt32,System.IntPtr,System.UInt64,System.AsyncCallback,System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* _SetCommandExtraLong_BeginInvoke_m9E084028DA87015FCC9B41CC9DEB4E7BAC59C019 (_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3* __this, uint32_t ___extraLongIndex0, intptr_t ___extraLong1, uint64_t ___handle_2, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___callback3, RuntimeObject* ___object4, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntPtr_t_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	void *__d_args[4] = {0};
+	__d_args[0] = Box(UInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_il2cpp_TypeInfo_var, &___extraLongIndex0);
+	__d_args[1] = Box(IntPtr_t_il2cpp_TypeInfo_var, &___extraLong1);
+	__d_args[2] = Box(UInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_il2cpp_TypeInfo_var, &___handle_2);
+	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___callback3, (RuntimeObject*)___object4);
+}
+// MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong::EndInvoke(System.IAsyncResult)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t _SetCommandExtraLong_EndInvoke_m1823BE87AF160E677665A5585730E06C8199BE37 (_SetCommandExtraLong_t064A14B73081CA7CEAF05E21624F031A70ADC2E3* __this, RuntimeObject* ___result0, const RuntimeMethod* method) 
+{
+	RuntimeObject *__result = il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___result0, 0);
+	return *(int32_t*)UnBox ((RuntimeObject*)__result);
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+int32_t _GetCommandResultMessage_Invoke_m7B3CDCE0E4AC7F675FAB78C7064501D46DA14E57_Multicast(_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69* __this, intptr_t* ___pMsg0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	il2cpp_array_size_t length = __this->___delegates_13->max_length;
+	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
+	int32_t retVal = 0;
+	for (il2cpp_array_size_t i = 0; i < length; i++)
+	{
+		_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69* currentDelegate = reinterpret_cast<_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69*>(delegatesToInvoke[i]);
+		typedef int32_t (*FunctionPointerType) (RuntimeObject*, intptr_t*, uint64_t, const RuntimeMethod*);
+		retVal = ((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___pMsg0, ___handle_1, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
+	}
+	return retVal;
+}
+int32_t _GetCommandResultMessage_Invoke_m7B3CDCE0E4AC7F675FAB78C7064501D46DA14E57_OpenInst(_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69* __this, intptr_t* ___pMsg0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	typedef int32_t (*FunctionPointerType) (intptr_t*, uint64_t, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___method_ptr_0)(___pMsg0, ___handle_1, method);
+}
+int32_t _GetCommandResultMessage_Invoke_m7B3CDCE0E4AC7F675FAB78C7064501D46DA14E57_OpenStatic(_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69* __this, intptr_t* ___pMsg0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	typedef int32_t (*FunctionPointerType) (intptr_t*, uint64_t, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___method_ptr_0)(___pMsg0, ___handle_1, method);
+}
+int32_t _GetCommandResultMessage_Invoke_m7B3CDCE0E4AC7F675FAB78C7064501D46DA14E57_OpenStaticInvoker(_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69* __this, intptr_t* ___pMsg0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	return InvokerFuncInvoker2< int32_t, intptr_t*, uint64_t >::Invoke(__this->___method_ptr_0, method, NULL, ___pMsg0, ___handle_1);
+}
+int32_t _GetCommandResultMessage_Invoke_m7B3CDCE0E4AC7F675FAB78C7064501D46DA14E57_ClosedStaticInvoker(_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69* __this, intptr_t* ___pMsg0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	return InvokerFuncInvoker3< int32_t, RuntimeObject*, intptr_t*, uint64_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___pMsg0, ___handle_1);
+}
+IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper__GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69 (_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69* __this, intptr_t* ___pMsg0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	typedef int32_t (STDCALL *PInvokeFunc)(intptr_t*, uint64_t);
+	PInvokeFunc il2cppPInvokeFunc = reinterpret_cast<PInvokeFunc>(il2cpp_codegen_get_reverse_pinvoke_function_ptr(__this));
+	// Native function invocation
+	int32_t returnValue = il2cppPInvokeFunc(___pMsg0, ___handle_1);
+
+	return returnValue;
+}
+// System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void _GetCommandResultMessage__ctor_m31EAD1EFF6BC996F78A239B02865D1428A469E2F (_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
+{
+	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_3 = ___method1;
+	__this->___m_target_2 = ___object0;
+	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
+	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
+	__this->___method_code_6 = (intptr_t)__this;
+	if (MethodIsStatic((RuntimeMethod*)___method1))
+	{
+		bool isOpen = parameterCount == 2;
+		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&_GetCommandResultMessage_Invoke_m7B3CDCE0E4AC7F675FAB78C7064501D46DA14E57_OpenStaticInvoker;
+			else
+				__this->___invoke_impl_1 = (intptr_t)&_GetCommandResultMessage_Invoke_m7B3CDCE0E4AC7F675FAB78C7064501D46DA14E57_ClosedStaticInvoker;
+		else
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&_GetCommandResultMessage_Invoke_m7B3CDCE0E4AC7F675FAB78C7064501D46DA14E57_OpenStatic;
+			else
+				{
+					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+				}
+	}
+	else
+	{
+		bool isOpen = parameterCount == 1;
+		if (isOpen)
+		{
+			__this->___invoke_impl_1 = (intptr_t)&_GetCommandResultMessage_Invoke_m7B3CDCE0E4AC7F675FAB78C7064501D46DA14E57_OpenInst;
+		}
+		else
+		{
+			if (___object0 == NULL)
+				il2cpp_codegen_raise_exception(il2cpp_codegen_get_argument_exception(NULL, "Delegate to an instance method cannot have null 'this'."), NULL);
+			__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+			__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+		}
+	}
+	__this->___extra_arg_5 = (intptr_t)&_GetCommandResultMessage_Invoke_m7B3CDCE0E4AC7F675FAB78C7064501D46DA14E57_Multicast;
+}
+// MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage::Invoke(System.IntPtr&,System.UInt64)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t _GetCommandResultMessage_Invoke_m7B3CDCE0E4AC7F675FAB78C7064501D46DA14E57 (_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69* __this, intptr_t* ___pMsg0, uint64_t ___handle_1, const RuntimeMethod* method) 
+{
+	typedef int32_t (*FunctionPointerType) (RuntimeObject*, intptr_t*, uint64_t, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___pMsg0, ___handle_1, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+// System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage::BeginInvoke(System.IntPtr&,System.UInt64,System.AsyncCallback,System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* _GetCommandResultMessage_BeginInvoke_m1FA598211A190BDDBF9D9D9BF4EB6BAC9C60907C (_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69* __this, intptr_t* ___pMsg0, uint64_t ___handle_1, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___callback2, RuntimeObject* ___object3, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntPtr_t_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	void *__d_args[3] = {0};
+	__d_args[0] = Box(IntPtr_t_il2cpp_TypeInfo_var, &*___pMsg0);
+	__d_args[1] = Box(UInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_il2cpp_TypeInfo_var, &___handle_1);
+	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___callback2, (RuntimeObject*)___object3);
+}
+// MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage::EndInvoke(System.IntPtr&,System.IAsyncResult)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t _GetCommandResultMessage_EndInvoke_mD2BDCC16145A9D6F815D0E4531D4DB4AC76F16A4 (_GetCommandResultMessage_tFBA97E358AC227381F69E8F523F50CC7C4E95A69* __this, intptr_t* ___pMsg0, RuntimeObject* ___result1, const RuntimeMethod* method) 
+{
+	void* ___out_args[] = {
+	___pMsg0,
+	};
+	RuntimeObject *__result = il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___result1, ___out_args);
+	return *(int32_t*)UnBox ((RuntimeObject*)__result);
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+int32_t _GetCommandResultCode_Invoke_m885920CA57961BBB4446FD823F42E8D63DC719F4_Multicast(_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA* __this, uint32_t* ___pResCode0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	il2cpp_array_size_t length = __this->___delegates_13->max_length;
+	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
+	int32_t retVal = 0;
+	for (il2cpp_array_size_t i = 0; i < length; i++)
+	{
+		_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA* currentDelegate = reinterpret_cast<_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA*>(delegatesToInvoke[i]);
+		typedef int32_t (*FunctionPointerType) (RuntimeObject*, uint32_t*, uint64_t, const RuntimeMethod*);
+		retVal = ((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___pResCode0, ___handle_1, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
+	}
+	return retVal;
+}
+int32_t _GetCommandResultCode_Invoke_m885920CA57961BBB4446FD823F42E8D63DC719F4_OpenInst(_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA* __this, uint32_t* ___pResCode0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	typedef int32_t (*FunctionPointerType) (uint32_t*, uint64_t, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___method_ptr_0)(___pResCode0, ___handle_1, method);
+}
+int32_t _GetCommandResultCode_Invoke_m885920CA57961BBB4446FD823F42E8D63DC719F4_OpenStatic(_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA* __this, uint32_t* ___pResCode0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	typedef int32_t (*FunctionPointerType) (uint32_t*, uint64_t, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___method_ptr_0)(___pResCode0, ___handle_1, method);
+}
+int32_t _GetCommandResultCode_Invoke_m885920CA57961BBB4446FD823F42E8D63DC719F4_OpenStaticInvoker(_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA* __this, uint32_t* ___pResCode0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	return InvokerFuncInvoker2< int32_t, uint32_t*, uint64_t >::Invoke(__this->___method_ptr_0, method, NULL, ___pResCode0, ___handle_1);
+}
+int32_t _GetCommandResultCode_Invoke_m885920CA57961BBB4446FD823F42E8D63DC719F4_ClosedStaticInvoker(_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA* __this, uint32_t* ___pResCode0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	return InvokerFuncInvoker3< int32_t, RuntimeObject*, uint32_t*, uint64_t >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___pResCode0, ___handle_1);
+}
+IL2CPP_EXTERN_C  int32_t DelegatePInvokeWrapper__GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA (_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA* __this, uint32_t* ___pResCode0, uint64_t ___handle_1, const RuntimeMethod* method)
+{
+	typedef int32_t (STDCALL *PInvokeFunc)(uint32_t*, uint64_t);
+	PInvokeFunc il2cppPInvokeFunc = reinterpret_cast<PInvokeFunc>(il2cpp_codegen_get_reverse_pinvoke_function_ptr(__this));
+	// Native function invocation
+	int32_t returnValue = il2cppPInvokeFunc(___pResCode0, ___handle_1);
+
+	return returnValue;
+}
+// System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void _GetCommandResultCode__ctor_mD5EADF3F8158C6A3DF1DFE0E84AEC56492EF710F (_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
+{
+	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
+	__this->___method_3 = ___method1;
+	__this->___m_target_2 = ___object0;
+	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
+	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
+	__this->___method_code_6 = (intptr_t)__this;
+	if (MethodIsStatic((RuntimeMethod*)___method1))
+	{
+		bool isOpen = parameterCount == 2;
+		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&_GetCommandResultCode_Invoke_m885920CA57961BBB4446FD823F42E8D63DC719F4_OpenStaticInvoker;
+			else
+				__this->___invoke_impl_1 = (intptr_t)&_GetCommandResultCode_Invoke_m885920CA57961BBB4446FD823F42E8D63DC719F4_ClosedStaticInvoker;
+		else
+			if (isOpen)
+				__this->___invoke_impl_1 = (intptr_t)&_GetCommandResultCode_Invoke_m885920CA57961BBB4446FD823F42E8D63DC719F4_OpenStatic;
+			else
+				{
+					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+				}
+	}
+	else
+	{
+		bool isOpen = parameterCount == 1;
+		if (isOpen)
+		{
+			__this->___invoke_impl_1 = (intptr_t)&_GetCommandResultCode_Invoke_m885920CA57961BBB4446FD823F42E8D63DC719F4_OpenInst;
+		}
+		else
+		{
+			if (___object0 == NULL)
+				il2cpp_codegen_raise_exception(il2cpp_codegen_get_argument_exception(NULL, "Delegate to an instance method cannot have null 'this'."), NULL);
+			__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+			__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+		}
+	}
+	__this->___extra_arg_5 = (intptr_t)&_GetCommandResultCode_Invoke_m885920CA57961BBB4446FD823F42E8D63DC719F4_Multicast;
+}
+// MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode::Invoke(System.UInt32&,System.UInt64)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t _GetCommandResultCode_Invoke_m885920CA57961BBB4446FD823F42E8D63DC719F4 (_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA* __this, uint32_t* ___pResCode0, uint64_t ___handle_1, const RuntimeMethod* method) 
+{
+	typedef int32_t (*FunctionPointerType) (RuntimeObject*, uint32_t*, uint64_t, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___pResCode0, ___handle_1, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+// System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode::BeginInvoke(System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* _GetCommandResultCode_BeginInvoke_m1DCED8E2246D4D40D299C7B06F9535BED114EF26 (_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA* __this, uint32_t* ___pResCode0, uint64_t ___handle_1, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___callback2, RuntimeObject* ___object3, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	void *__d_args[3] = {0};
+	__d_args[0] = Box(UInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_il2cpp_TypeInfo_var, &*___pResCode0);
+	__d_args[1] = Box(UInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_il2cpp_TypeInfo_var, &___handle_1);
+	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___callback2, (RuntimeObject*)___object3);
+}
+// MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode::EndInvoke(System.UInt32&,System.IAsyncResult)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t _GetCommandResultCode_EndInvoke_m207748D820D1F4F0BBB4BB1A2E6F31974561B829 (_GetCommandResultCode_tC24CF877B282B2835FA444D0D051EDAFBA84DADA* __this, uint32_t* ___pResCode0, RuntimeObject* ___result1, const RuntimeMethod* method) 
+{
+	void* ___out_args[] = {
+	___pResCode0,
+	};
+	RuntimeObject *__result = il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___result1, ___out_args);
+	return *(int32_t*)UnBox ((RuntimeObject*)__result);
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
 #endif
 #ifdef __clang__
 #pragma clang diagnostic push

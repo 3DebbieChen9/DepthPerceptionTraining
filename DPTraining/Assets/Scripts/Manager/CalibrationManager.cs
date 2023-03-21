@@ -148,12 +148,6 @@ public class CalibrationManager : MonoBehaviour
             this.systemManager.uiCalibration.instructionTitle_text.text = "Straight forward Pose";
             this.systemManager.uiCalibration.instruction_text.text = "Please put your right hand straight to the front, put your L-controller on your right shoudler, and press the button 'A'.";
             this.systemManager.uiCalibration.instructionImage.sprite = this.systemManager.uiCalibration.instructionImagesSource[armLengthMarkerStatue+1];
-
-            // this.systemManager.consoleTitle.text = "Next: R-Arm Straight to Front";
-            // this.systemManager.consoleText.text = "CenterEyeToController Length = " + this.systemManager.myUserInfo.avgCenterEyeToControllerLength.ToString() + "\nUser Height = " + this.systemManager.myUserInfo.userHeight.ToString();
-            // print("[DC] CenterEyeToController Length = " + this.systemManager.myUserInfo.avgCenterEyeToControllerLength.ToString() + 
-            //             "\nUser Height = " + this.systemManager.myUserInfo.userHeight.ToString() +
-            //             "\nCenter Eye To Floor = " + (this.userHeight / 2.0f).ToString());
         }
         else if (this.armLengthMarkerStatue == 2) {
             // Get Right Arm Length, Right Hand Straight Angle
@@ -172,8 +166,6 @@ public class CalibrationManager : MonoBehaviour
             this.systemManager.uiCalibration.instruction_text.text = "Please put your left hand straight to the front, put your R-controller on your left shoudler, and press the button 'A'.";
             this.systemManager.uiCalibration.instructionImage.sprite = this.systemManager.uiCalibration.instructionImagesSource[armLengthMarkerStatue+1];
 
-            // this.systemManager.consoleTitle.text = "Next: L-Arm Straight to Front";
-            // this.systemManager.consoleText.text = "R - Arm Length = " + this.RArmLength.ToString();
         }
         else if (this.armLengthMarkerStatue == 3) {
             // Get Left Arm Length, Left Hand Straight Angle -> Save 
@@ -193,8 +185,6 @@ public class CalibrationManager : MonoBehaviour
             this.systemManager.uiCalibration.instructionTitle_text.text = "Idle Pose Calibration";
             this.systemManager.uiCalibration.instruction_text.text = "Please make yourself in boxing ready idle pose, and press the button 'A'.";
             this.systemManager.uiCalibration.instructionImage.sprite = this.systemManager.uiCalibration.instructionImagesSource[armLengthMarkerStatue+1];
-            // this.systemManager.consoleText.text = "Avg Arm Length = " + this.systemManager.myUserInfo.avgArmLength.ToString();
-            // this.systemManager.consoleTitle.text = "Ready to Calibrate Idle Pose";
 
             this.clearCalibrationMarkers();
             this.systemManager.changeSystemMode(SystemManager.SystemMode.Calibration_IdlePose);
@@ -217,7 +207,7 @@ public class CalibrationManager : MonoBehaviour
         this.systemManager.uiCalibration.instruction_text.text = "Please put your left controller on a floor around the movable place and press button 'A'.";
         this.systemManager.uiCalibration.instructionImage.sprite = this.systemManager.uiCalibration.instructionImagesSource[0];
         
-        this.systemManager.uiFollowHead.tolerateAngle = 120.0f;
+        this.systemManager.uiFollowHead.tolerateAngle = 90.0f;
         this.systemManager.uiFollowHead.EnableControllerInteractorVisual(false);
     }
     
@@ -247,7 +237,6 @@ public class CalibrationManager : MonoBehaviour
     }
 
     public void calibrateIdlePose() {
-        // TODO: Idle Pose UI Reference
         this.systemManager.userArmRenderManager.userAvatarMeshSetActive(true);
 
         float headToLeftHand = this.calculateHorizatonalDistance(this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position, this.systemManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position);
@@ -273,10 +262,10 @@ public class CalibrationManager : MonoBehaviour
 
         this.systemManager.uiCalibration.calibrationUI.SetActive(false);
         this.systemManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
-        this.systemManager.changeSystemMode(SystemManager.SystemMode.Setting);
-        this.systemManager.changeScene("Setting");
-        // this.systemManager.consoleTitle.text = "Ready to Select Mode";
-        // this.systemManager.consoleText.text = "";
+        
+        this.systemManager.saveUserInfoToJSON();
+        this.systemManager.changeSystemMode(SystemManager.SystemMode.Selection);
+        this.systemManager.changeScene("Selection");
     }
 
     public void setSceneOrigin() {

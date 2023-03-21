@@ -78,8 +78,6 @@ public class TestingModeManager : MonoBehaviour
 
     [SerializeField]
     public TargetRenderInitial m_targetRenderInitial;
-    [SerializeField]
-    public GameObject coachStickman;
 
     private bool isStarted = false;
 
@@ -177,8 +175,6 @@ public class TestingModeManager : MonoBehaviour
     public void testingModeInitial() {
         this.isStarted = true;
 
-        this.coachStickman.SetActive(true);
-
         this.evaluationManager.startingPosition = this.systemManager.sceneOrigin_poisition;
         this.systemManager.userInitialPosition.transform.position = this.systemManager.sceneOrigin_poisition;
         this.targetUnitNum = this.systemManager.mySettingInfo.targetUnitNum;
@@ -203,7 +199,7 @@ public class TestingModeManager : MonoBehaviour
         this.systemManager.uiTesting.canvas_countdown.SetActive(false);
         this.systemManager.uiTesting.canvas_final.SetActive(false);
 
-        this.systemManager.uiFollowHead.tolerateAngle = 180.0f;
+        this.systemManager.uiFollowHead.tolerateAngle = 120.0f;
         this.systemManager.uiFollowHead.toleratteDistance = 1.0f;
         this.systemManager.uiFollowHead.EnableControllerInteractorVisual(true); // Parameter Setting Only
 
@@ -224,8 +220,6 @@ public class TestingModeManager : MonoBehaviour
             this.reactionTimeOutCount += 1;
             
             this.systemManager.uiTesting.resultScore_text.text = "Time Out";
-            // this.systemManager.consoleTitle.text = "Result: Time Out";
-            // print("Result: Time Out");
         }
         else {
             this.totalReactionTime += this.reactionTimer.timeLeft;
@@ -233,9 +227,6 @@ public class TestingModeManager : MonoBehaviour
             this.totalScore += curScore;
 
             this.systemManager.uiTesting.resultScore_text.text = "Score: " + curScore.ToString();
-
-            // this.systemManager.consoleTitle.text += "\nResult: " + this.reactionTimer.timeLeft.ToString() + " (s)" + " | Score: " + curScore.ToString();
-            // print("Result: " + this.reactionTimer.timeLeft.ToString() + " (s)" + " | Score: " + curScore.ToString());
         }
 
         if (this.curUnitNum == this.targetUnitNum) {
@@ -249,15 +240,14 @@ public class TestingModeManager : MonoBehaviour
                 averageReactionTime = this.totalReactionTime / timeUsefulCount;
             }
 
-            this.m_targetRenderInitial.initialTargetRender();
-            this.coachStickman.SetActive(false);
+            this.targetManager.coachStickman.SetActive(false);
             
             this.systemManager.uiTesting.canvas_final.SetActive(true);
             this.systemManager.uiTesting.canvas_result.SetActive(false);
             this.systemManager.uiTesting.canvas_countdown.SetActive(false);
             
             this.systemManager.uiTesting.finalTitle_text.text = "Test Finished";
-            this.systemManager.uiTesting.finalDescription_text.text = "Average reaction time: " + averageReactionTime.ToString() + "\n" + "Total score: " + this.totalScore.ToString() + "\n" + "Reaction time out count: " + this.reactionTimeOutCount.ToString();
+            this.systemManager.uiTesting.finalDescription_text.text = "Average reaction time: " + averageReactionTime.ToString("F3") + "\n" + "Total score: " + this.totalScore.ToString() + "\n" + "Reaction time out count: " + this.reactionTimeOutCount.ToString();
 
             this.systemManager.uiFollowHead.EnableControllerInteractorVisual(true);
 
@@ -271,7 +261,7 @@ public class TestingModeManager : MonoBehaviour
     }
 
     public void readyStart() {
-        this.m_targetRenderInitial.initialTargetRender();
+        Invoke("callTargetRenderInitial", 1.5f);
         if (this.curUnitNum < this.targetUnitNum && this.reactionTimer.timerOn == false && this.readyTimer.timerOn == false) {
             this.curUnitNum += 1;
             this.reactionTimer.ResetTimer();
@@ -288,5 +278,9 @@ public class TestingModeManager : MonoBehaviour
             // this.systemManager.consoleText.text = "Unit " + this.curUnitNum.ToString() + " ready";
             // print("Unit " + this.curUnitNum.ToString() + " ready");
         }
+    }
+
+    private void callTargetRenderInitial() {
+        this.m_targetRenderInitial.initialTargetRender();
     }
 }

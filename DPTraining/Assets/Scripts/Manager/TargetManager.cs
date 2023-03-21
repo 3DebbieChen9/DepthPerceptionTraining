@@ -31,6 +31,8 @@ public class TargetManager : MonoBehaviour
     [SerializeField]
     private float targetMoveDistanceMax_Backward = 0.0f;
 
+    [SerializeField]
+    public GameObject coachStickman;
     private bool isStarted = false;
 
     // Start is called before the first frame update
@@ -65,9 +67,11 @@ public class TargetManager : MonoBehaviour
         this.targetInitialPosition = new Vector3 (this.targetInitialPosition.x, 
                                                     this.targetInitialPosition.y + y_shift, 
                                                     this.targetInitialPosition.z);
-        this.systemManager.testingModeManager.m_targetRenderInitial.initialTargetRender();
+        
+        float coachStickman_scale = this.systemManager.myUserInfo.userHeight / 1.8f + this.systemManager.mySettingInfo.targetHeightDifference;
+        this.coachStickman.transform.localScale = new Vector3(coachStickman_scale, coachStickman_scale, coachStickman_scale);
         this.targetMoveToInitial();
-
+        
         this.targetMoveDistanceMin_Forward = this.userArmLength * this.targetToUserMultiple + this.targetCenterToEdgeLength;
         this.targetMoveDistanceMax_Forward = Mathf.Max(this.systemManager.myMovableRangeInfo.avgLengthInVR / 2.0f - this.userArmLength * 2.0f + 
                                                         this.userArmLength * this.targetToUserMultiple + this.targetCenterToEdgeLength, 
@@ -88,6 +92,7 @@ public class TargetManager : MonoBehaviour
             this.targetTransform.gameObject.SetActive(true);
         }
         DOTween.Kill(this.targetTransform);
+        // this.systemManager.testingModeManager.m_targetRenderInitial.initialTargetRender();
         this.RotateTarget();
         Vector3 movingDirection = (this.targetInitialPosition - this.targetTransform.position).normalized;
         Vector3 startForward = this.targetTransform.forward;

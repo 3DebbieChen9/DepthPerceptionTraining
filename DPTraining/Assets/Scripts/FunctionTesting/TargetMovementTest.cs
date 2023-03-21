@@ -57,7 +57,6 @@ public class TargetMovementTest : MonoBehaviour
             this.targetInitialPosition = this.sceneOriginPosition + 
                                             originForward * 0.55f * 1.5f + 
                                             originForward * 0.43f;
-            this.targetRenderInitial.initialTargetRender();
 
             this.targetMoveDistanceMin_Forward = 0.55f * 1.5f + 0.43f;
             this.targetMoveDistanceMax_Forward = Mathf.Max(4.0f / 2.0f - 0.55f* 2.0f + 
@@ -91,6 +90,7 @@ public class TargetMovementTest : MonoBehaviour
 
     private void targetMoveToInitial() {
         DOTween.Kill(this.targetTransform);
+        this.targetRenderInitial.initialTargetRender();
         this.RotateTarget();
         Vector3 movingDirection = (this.targetInitialPosition - this.targetTransform.position).normalized;
         Vector3 startForward = this.targetTransform.forward;

@@ -25,13 +25,16 @@ public class UIFollowHead : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.OVRCameraRig = GameObject.Find("OVRCameraRig");
         this.transform.DOMove(new Vector3(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.height, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z), this.moveTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (OVRInput.GetDown(OVRInput.Button.Start, OVRInput.Controller.LTouch)) {
+            this.recenterUI();
+        }
     }
     void FixedUpdate() {
         // this.transform.DOMove(new Vector3(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.height, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z), this.moveSpeed);
@@ -52,5 +55,10 @@ public class UIFollowHead : MonoBehaviour
             gameObject.SetActive(enable);
         }
         Debug.Log("EnableControllerInteractorVisual: " + enable);
+    }
+
+    public void recenterUI() {
+        this.transform.DORotateQuaternion(Quaternion.Euler(0.0f, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f), this.moveTime);
+        this.transform.DOMove(new Vector3(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.height, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z), this.moveTime);
     }
 }
