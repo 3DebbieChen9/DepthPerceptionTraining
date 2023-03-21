@@ -795,6 +795,7 @@ UnityEngine.Joint::set_enableCollision
 UnityEngine.Joint::set_enablePreprocessing
 UnityEngine.Joint::set_massScale
 UnityEngine.Joint::get_connectedBody
+UnityEngine.JsonUtility::FromJsonInternal
 UnityEngine.JsonUtility::ToJsonInternal
 UnityEngine.LayerMask::NameToLayer
 UnityEngine.LayerMask::LayerToName

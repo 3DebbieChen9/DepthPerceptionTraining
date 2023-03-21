@@ -5,13 +5,13 @@ using UnityEngine;
 public class BoxingBagInteraction : MonoBehaviour
 {
     [SerializeField]
-    private SettingSceneManager settingSceneManager;
+    private SelectionSceneManager selectionSceneManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (this.settingSceneManager == null) {
-            this.settingSceneManager = GameObject.Find("SettingSceneManager").GetComponent<SettingSceneManager>();
+        if (this.selectionSceneManager == null) {
+            this.selectionSceneManager = GameObject.Find("SelectionSceneManager").GetComponent<SelectionSceneManager>();
         }
     }
 
@@ -25,19 +25,19 @@ public class BoxingBagInteraction : MonoBehaviour
         if (other.gameObject.tag == "Glove_R" || other.gameObject.tag == "Glove_L") {
             switch (this.gameObject.name) {
                 case "Choice_L":
-                    this.settingSceneManager.toggleSelect(false);
+                    this.selectionSceneManager.toggleSelect(false);
                     break;
                 case "Choice_R":
-                    this.settingSceneManager.toggleSelect(true);
+                    this.selectionSceneManager.toggleSelect(true);
                     break;
                 case "Choice_Testing":
-                    this.settingSceneManager.sceneChoicesSelect(SystemManager.SystemMode.Testing);
+                    this.selectionSceneManager.sceneChoicesSelect(SystemManager.SystemMode.Testing);
                     break;
                 case "Choice_Training":
-                    this.settingSceneManager.sceneChoicesSelect(SystemManager.SystemMode.Training_Traditional);
+                    this.selectionSceneManager.sceneChoicesSelect(SystemManager.SystemMode.Training_Traditional);
                     break;
                 case "Choice_Depth":
-                    this.settingSceneManager.sceneChoicesSelect(SystemManager.SystemMode.Training_Hint);
+                    this.selectionSceneManager.sceneChoicesSelect(SystemManager.SystemMode.Training_Hint);
                     break;
                 default:
                     break;
