@@ -3,13 +3,83 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
+using DepthPerceptionSystem;
+using Newtonsoft.Json;
+using InstructionText;
 
 public class MainManager : MonoBehaviour
 {
+    [SerializeField]
+    public static MainManager Instance;
+    [SerializeField]
+    public Lanaguage curLanguage = Lanaguage.English;
+
+    [SerializeField]
+    public UserInfo myUserInfo;
+    [SerializeField]
+    public SelectionInfo mySelectionInfo;
+    [SerializeField]
+    public SettingInfo mySettingInfo;
+
+    [SerializeField]
+    public SystemMode curSystemMode = SystemMode.CalibrationMode;
+
+    [SerializeField]
+    public Vector3 sceneOriginPosition;
+    [SerializeField]
+    public Quaternion sceneOriginRotation;
+
+    [SerializeField]
+    public GameObject sceneOrigin;
+    
+    [SerializeField] 
+    public GameObject OVRCameraRig;
+    [SerializeField]
+    public GameObject OVRControllerLeft;
+    [SerializeField]
+    public GameObject OVRControllerRight;
+    [SerializeField]
+    public GameObject OVRBoxingLeft;
+    [SerializeField]
+    public GameObject OVRBoxingRight;
+
+    [SerializeField]
+    public GameObject rightUpperArm_noitom;
+    [SerializeField]
+    public GameObject rightLowerArm_noitom;
+    [SerializeField]
+    public GameObject leftUpperArm_noitom;
+    [SerializeField]
+    public GameObject leftLowerArm_noitom;
+    [SerializeField]
+    public GameObject rightUpperArm_IK;
+    [SerializeField]
+    public GameObject rightLowerArm_IK;
+    [SerializeField]
+    public GameObject leftUpperArm_IK;
+    [SerializeField]
+    public GameObject leftLowerArm_IK; 
+
+    [SerializeField]
+    public GameObject userIK;
+    [SerializeField]
+    public MeshRenderer[] userArmMeshRenderers;
+
+    private void Awake() 
+    {
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else {
+            Destroy(this.gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.mainManagerInitialize();
     }
 
     // Update is called once per frame
@@ -17,4 +87,109 @@ public class MainManager : MonoBehaviour
     {
         
     }
+
+    void mainManagerInitialize() 
+    {
+        this.curLanguage = Lanaguage.English;
+        this.myUserInfo = new UserInfo();
+        this.mySelectionInfo = new SelectionInfo();
+        this.mySettingInfo = new SettingInfo();
+        this.curSystemMode = SystemMode.CalibrationMode;
+
+        this.sceneOriginPosition = new Vector3(0.0f, 0.0f, 0.0f);
+        this.sceneOriginRotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+
+        this.enableUserArmMeshRenderers(false);
+        // this.loadFromJSON_setting();
+    }
+
+    public void resizeUserIK()
+    {
+        float scale = this.myUserInfo.userBodySize.height / this.mySettingInfo.coachDefaultValue.avtarDefaultHeight;
+        this.userIK.GetComponent<RootMotion.Demos.VRIKCalibrationBasic>().scaleMlp = scale;
+    }
+    public void enableUserArmMeshRenderers (bool enable) 
+    {
+        foreach (MeshRenderer meshRenderer in userArmMeshRenderers) {
+            meshRenderer.enabled = enable;
+        }
+    }
+
+    public float[] calculateLowArmToUpArmAngle(Transform upArm, Transform lowArm) {        
+        Vector3 upArmToLowArmNormalized = (lowArm.position - upArm.position).normalized;
+        
+        float angle_forward = Vector3.Angle(lowArm.forward, -upArmToLowArmNormalized);
+        float angle_up = Vector3.Angle(lowArm.up, -upArmToLowArmNormalized);
+        float angle_right = Vector3.Angle(lowArm.right, -upArmToLowArmNormalized);
+
+        return new float[] {angle_forward, angle_up, angle_right};
+    }
+
+    public void getHandStraightDefaultAngle(Hand hand) {
+        if (hand == Hand.Right) {
+            float[] anglesNoitom = this.calculateLowArmToUpArmAngle(this.rightUpperArm_noitom.transform, this.rightLowerArm_noitom.transform);
+            this.myUserInfo.userArmStraightAngle.rightNoitom.forward = anglesNoitom[0];
+            this.myUserInfo.userArmStraightAngle.rightNoitom.up = anglesNoitom[1];
+            this.myUserInfo.userArmStraightAngle.rightNoitom.right = anglesNoitom[2];
+
+            float[] anglesIK = this.calculateLowArmToUpArmAngle(this.rightUpperArm_IK.transform, this.rightLowerArm_IK.transform);
+            this.myUserInfo.userArmStraightAngle.rightIK.forward = anglesIK[0];
+            this.myUserInfo.userArmStraightAngle.rightIK.up = anglesIK[1];
+            this.myUserInfo.userArmStraightAngle.rightIK.right = anglesIK[2];
+        }
+        else {
+            float[] anglesNoitom = this.calculateLowArmToUpArmAngle(this.leftUpperArm_noitom.transform, this.leftLowerArm_noitom.transform);
+            this.myUserInfo.userArmStraightAngle.leftNoitom.forward = anglesNoitom[0];
+            this.myUserInfo.userArmStraightAngle.leftNoitom.up = anglesNoitom[1];
+            this.myUserInfo.userArmStraightAngle.leftNoitom.right = anglesNoitom[2];
+
+            float[] anglesIK = this.calculateLowArmToUpArmAngle(this.leftUpperArm_IK.transform, this.leftLowerArm_IK.transform);
+            this.myUserInfo.userArmStraightAngle.leftIK.forward = anglesIK[0];
+            this.myUserInfo.userArmStraightAngle.leftIK.up = anglesIK[1];
+            this.myUserInfo.userArmStraightAngle.leftIK.right = anglesIK[2];
+        }
+        
+    }
+
+
+    public void changeScene(string sceneName) 
+    {
+        Debug.Log("Change Scene to " + sceneName);
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void saveToJSON_user (UserInfo userInfo) 
+    {
+        string json = JsonUtility.ToJson(userInfo);
+        File.WriteAllText(Application.dataPath + "/Resources/UserInfo_" + System.DateTime.Now + ".json", json);
+    }
+    public void saveToJSON_selection (SelectionInfo selectionInfo) 
+    {
+        string json = JsonUtility.ToJson(selectionInfo);
+        File.WriteAllText(Application.dataPath + "/Resources/SelectionInfo_" + System.DateTime.Now + ".json", json);
+    }
+    public void saveToJSON_setting (SettingInfo settingInfo) 
+    {
+        string json = JsonUtility.ToJson(settingInfo);
+        File.WriteAllText(Application.dataPath + "/Resources/SettingInfo_" + System.DateTime.Now + ".json", json);
+    }
+    public void saveToJSON_testResult (TestResult testResult) 
+    {
+        string json = JsonUtility.ToJson(testResult);
+        File.WriteAllText(Application.dataPath + "/Resources/TestResult_" + System.DateTime.Now + ".json", json);
+    }
+    public void saveToJSON_unitResult (UnitResult unitResult) 
+    {
+        int curUnit = 1; // TODO: get current unit
+        string json = JsonUtility.ToJson(unitResult);
+        File.WriteAllText(Application.dataPath + "/Resources/UnitResult_" + curUnit + "_" + System.DateTime.Now + ".json", json);
+    }
+    public void loadFromJSON_setting ()
+    {
+        string fileName = "SettingInfo_2020-11-18 15_00_00"; // TODO: get file name
+        TextAsset jsonFile = Resources.Load<TextAsset>(fileName);
+        this.mySettingInfo = JsonConvert.DeserializeObject<SettingInfo>(jsonFile.text);
+    }
+
+    
 }

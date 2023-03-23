@@ -1,0 +1,245 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace DepthPerceptionSystem
+{
+    public enum SystemMode {
+        CalibrationMode,
+        SelectionMode,
+        SettingMode,
+        TestingMode,
+        // TrainingMode,
+    }
+
+    public enum MovingDirection {
+        Forward,
+        Backward,
+    }
+
+    public enum Hand {
+        Right,
+        Left,
+    }
+
+    public enum CalibrationState {
+        MovableRange,
+        TPose_RHand,
+        TPose_LHand,
+        ArmStraight_RHand,
+        ArmStraight_LHand,
+        IdlePose,
+    }
+
+    public enum SelectionState {
+        Noitom,
+        Place,
+        Handedness,
+        SelectMode,
+    }
+
+    public enum TestingState {
+        idle, // 剛進到 TestingMode Scene / 從頭開始
+        begin, // 按下按鈕開始測試
+        ready, // 準備階段(倒數計時)
+        reaction, // unit中，等待反應結束
+        result // 每個 unit 結束後的最終結果
+    }
+    public enum TestLevel {
+        Easy,
+        Medium,
+        Hard,
+    }
+
+    public class MovableRange
+    {
+        public float minRequiredLengthInVR;
+        public float detectedLengthInVR;
+        public float length; // Use to set the target movement range
+
+        public MovableRange() {
+            this.minRequiredLengthInVR = 4.0f;
+            this.detectedLengthInVR = 0.0f;
+            this.length = 4.0f;
+        }
+    }
+
+    public class UserBodySize
+    {
+        public float armLength; // Use to set the default distance between Interaction Objects, Coach
+        public float centerEyeToControllerLength; // Use to calculate the shoulder width
+        public float shoulderWidth; // Use to set the user's center collider radius  (To determine whether the user's location is as commanded)
+        public float height; // CenterEye.Y + SettingInfo.avgDistanceBetweenEyesAndTopHead
+        public float idlePoseRadius; // Use to determine whether the user is punching
+
+        public UserBodySize() {
+            this.armLength = 0.5f;
+            this.centerEyeToControllerLength = 0.66f;
+            this.shoulderWidth = 0.26f;
+            this.height = 1.55f;
+            this.idlePoseRadius = 0.5f;
+        }
+
+    }
+    public class ArmRotationAngle 
+    {
+        public float forward;
+        public float up;
+        public float right;
+
+        public ArmRotationAngle(float _forward, float _up, float _right) {
+            this.forward = _forward;
+            this.up = _up;
+            this.right = _right;
+        }
+    }
+    public class UserArmStraightAngle
+    {
+        public ArmRotationAngle rightNoitom;
+        public ArmRotationAngle leftNoitom;
+        public ArmRotationAngle rightIK;
+        public ArmRotationAngle leftIK;
+
+        public UserArmStraightAngle() {
+            this.rightNoitom = new ArmRotationAngle(90.0f, 90.0f, 180.0f);
+            this.leftNoitom = new ArmRotationAngle(90.0f, 90.0f, 0.0f);
+            this.rightIK = new ArmRotationAngle(90.0f, 90.0f, 180.0f);
+            this.leftIK = new ArmRotationAngle(90.0f, 90.0f, 0.0f);
+        }
+    }
+    public class UserInfo
+    {
+        public MovableRange movableRange;
+        public UserBodySize userBodySize;
+        public UserArmStraightAngle userArmStraightAngle;
+
+        public UserInfo() { 
+            this.movableRange = new MovableRange();
+            this.userBodySize = new UserBodySize();
+            this.userArmStraightAngle = new UserArmStraightAngle();
+        }
+    }
+
+    public class SelectionInfo
+    {
+        public bool isUsingNoitom;
+        public bool isOnRing;
+        public bool coachIsLeftHanded;
+        public SystemMode selectedMode;
+
+        public SelectionInfo() {
+            this.isUsingNoitom = false;
+            this.isOnRing = false;
+            this.coachIsLeftHanded = true;
+            this.selectedMode = SystemMode.CalibrationMode;
+        }
+    }
+
+    public class CoachDefaultValue
+    {
+        public float avtarCenterToEdgeLength;
+        public float avtarDefaultHeight;
+        public float heightDifferenceWithUser;
+        public float distanceToUserMultiple;
+        public float movingSpeedMax;
+        public float movingSpeedMin;
+
+        public CoachDefaultValue() {
+            this.avtarCenterToEdgeLength = 0.43f;
+            this.avtarDefaultHeight = 1.80f;
+            this.heightDifferenceWithUser = 0.05f;
+            this.distanceToUserMultiple = 1.5f;
+            this.movingSpeedMax = 1.5f;
+            this.movingSpeedMin = 0.2f;
+        }
+    }
+
+    public class TestingModeSetting 
+    {
+        public float readyTime;
+        public float timeLimit; // Over the time limit, means the task is fail
+        public int targetNumberOfTasks; // User should do 'targetNumberOTasks' to complete the test 7
+        
+        public TestingModeSetting() {
+            this.readyTime = 5.0f;
+            this.timeLimit = 5.0f;
+            this.targetNumberOfTasks = 7;
+        }
+    }
+
+    public class EvaluationThreshold
+    {
+        public float radiusBetweenOriginAndUser;
+        public float handStraightAngle;
+
+        public EvaluationThreshold() {
+            this.radiusBetweenOriginAndUser = 0.15f;
+            this.handStraightAngle = 10.0f;
+        }
+    }
+    public class SettingInfo 
+    {
+        public float userAvgDistanceBetweenEyesAndTopHead;
+        public float controllerVibrationAmplitude; // Ranger from 0.0f to 1.0f
+        public CoachDefaultValue coachDefaultValue;
+        public EvaluationThreshold evaluationThreshold;
+        public TestingModeSetting testingModeSetting;
+        
+        public SettingInfo() {
+            this.userAvgDistanceBetweenEyesAndTopHead = 0.11f;
+            this.controllerVibrationAmplitude = 1.0f;
+            this.coachDefaultValue = new CoachDefaultValue();
+            this.evaluationThreshold = new EvaluationThreshold();
+            this.testingModeSetting = new TestingModeSetting();
+        }
+    }
+
+    public class TestResult
+    {
+
+    }
+
+    public class UnitResult
+    {
+        
+    }
+
+
+    public class Timer {
+        public bool timerOn;
+        public float timeTarget; // in seconds // count-up: timeTarget = 0.0f
+        public float timeLeft;
+
+        public Timer (bool _timerOn, float _timeTarget, float _timeLeft) {
+            this.timerOn = _timerOn;
+            this.timeTarget = _timeTarget;
+            this.timeLeft = _timeLeft;
+        }
+
+        public void ResetTimer() {
+            this.timerOn = false;
+            this.timeLeft = this.timeTarget;
+        }
+
+        public void StartTimer() {
+            this.timerOn = true;
+        }
+    }
+
+
+    // public class NamespaceDefine : MonoBehaviour
+    // {
+    //     // Start is called before the first frame update
+    //     void Start()
+    //     {
+            
+    //     }
+
+    //     // Update is called once per frame
+    //     void Update()
+    //     {
+            
+    //     }
+    // }
+
+}
