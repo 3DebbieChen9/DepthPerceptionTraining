@@ -161,28 +161,33 @@ public class MainManager : MonoBehaviour
     public void saveToJSON_user (UserInfo userInfo) 
     {
         string json = JsonUtility.ToJson(userInfo);
-        File.WriteAllText(Application.dataPath + "/Resources/UserInfo_" + System.DateTime.Now + ".json", json);
+        string filePath = Application.persistentDataPath + "/UserInfo_" + System.DateTime.Now + ".json";
+        File.WriteAllText(filePath + ".json", json);
     }
     public void saveToJSON_selection (SelectionInfo selectionInfo) 
     {
         string json = JsonUtility.ToJson(selectionInfo);
-        File.WriteAllText(Application.dataPath + "/Resources/SelectionInfo_" + System.DateTime.Now + ".json", json);
+        string filePath = Application.persistentDataPath + "/SelectionInfo_" + System.DateTime.Now + ".json";
+        File.WriteAllText(filePath + ".json", json);
     }
     public void saveToJSON_setting (SettingInfo settingInfo) 
     {
         string json = JsonUtility.ToJson(settingInfo);
-        File.WriteAllText(Application.dataPath + "/Resources/SettingInfo_" + System.DateTime.Now + ".json", json);
+        string filePath = Application.persistentDataPath + "/SettingInfo_" + System.DateTime.Now + ".json";
+        File.WriteAllText(filePath + ".json", json);
     }
     public void saveToJSON_testResult (TestResult testResult) 
     {
         string json = JsonUtility.ToJson(testResult);
-        File.WriteAllText(Application.dataPath + "/Resources/TestResult_" + System.DateTime.Now + ".json", json);
+        string filePath = Application.persistentDataPath + "/TestResult_" + System.DateTime.Now + ".json";
+        File.WriteAllText(filePath, json);
     }
     public void saveToJSON_unitResult (UnitResult unitResult) 
     {
         int curUnit = 1; // TODO: get current unit
         string json = JsonUtility.ToJson(unitResult);
-        File.WriteAllText(Application.dataPath + "/Resources/UnitResult_" + curUnit + "_" + System.DateTime.Now + ".json", json);
+        string filePath = Application.persistentDataPath + "/UnitResult_" + curUnit + "_" + System.DateTime.Now + ".json";
+        File.WriteAllText(filePath, json);
     }
     public void loadFromJSON_setting ()
     {

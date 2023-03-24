@@ -9,7 +9,8 @@ namespace DepthPerceptionSystem
         SelectionMode,
         SettingMode,
         TestingMode,
-        // TrainingMode,
+        TrainingMode,
+        TrainingHintMode,
     }
 
     public enum MovingDirection {
@@ -196,12 +197,106 @@ namespace DepthPerceptionSystem
 
     public class TestResult
     {
+        public int numberOfTasks;
+        
+        public int numberOfMoving;
+        public int numberOfPunching;
+        public int numberOfReachNotStraight;
+        public int numberOfStraightNotReach;
 
+        public int numberOfReacting;
+        public int numberOfMovingCorrectly;
+        public int numberOfSuccess; // Reach + Arm Straight
+        
+        public int numberOfOverTime;
+        public float totalReactionTime;
+        public float averageReactionTime;
+        public int totalScore;
+        // [TODO] test level
+        public TestResult() {
+            this.numberOfTasks = 0;
+            
+            this.numberOfMoving = 0;
+            this.numberOfPunching = 0;
+            this.numberOfReachNotStraight = 0;
+            this.numberOfStraightNotReach = 0;
+
+            this.numberOfReacting = 0;
+            this.numberOfMovingCorrectly = 0;
+            this.numberOfSuccess = 0;
+            
+            this.numberOfOverTime = 0;
+            this.totalReactionTime = 0.0f;
+            this.averageReactionTime = 0.0f;
+            this.totalScore = 0;
+        }
+
+        public void reset() {
+            this.numberOfTasks = 0;
+            
+            this.numberOfMoving = 0;
+            this.numberOfPunching = 0;
+            this.numberOfReachNotStraight = 0;
+            this.numberOfStraightNotReach = 0;
+
+            this.numberOfReacting = 0;
+            this.numberOfMovingCorrectly = 0;
+            this.numberOfSuccess = 0;
+            
+            this.numberOfOverTime = 0;
+            this.totalReactionTime = 0.0f;
+            this.averageReactionTime = 0.0f;
+            this.totalScore = 0;
+        }
     }
 
     public class UnitResult
     {
+        public int unitNum;
+        public bool isMoving;
+        public bool isPunching;
+        public bool isReach;
+        public bool isStraight;
         
+        public bool isReacting;
+        public bool isMovingCorrectly;
+        public bool isSuccess;
+
+        public bool isOverTime;
+        public float reactionTime;
+        public int score;
+        
+        public UnitResult() {
+            this.unitNum = 0;
+            this.isMoving = false;
+            this.isPunching = false;
+            this.isReach = false;
+            this.isStraight = false;
+
+            this.isReacting = false;
+            this.isMovingCorrectly = false;
+            this.isSuccess = false;
+
+            this.isOverTime = false;
+            this.reactionTime = 0.0f;
+            this.score = 0;
+        }
+
+        public void reset() {
+            this.unitNum = 0;
+            this.isMoving = false;
+            this.isPunching = false;
+            this.isReach = false;
+            this.isStraight = false;
+
+            this.isReacting = false;
+            this.isMovingCorrectly = false;
+            this.isSuccess = false;
+            
+            this.isOverTime = false;
+            this.reactionTime = 0.0f;
+            this.score = 0;
+        }
     }
 
 

@@ -12,6 +12,7 @@ namespace InstructionText
     public class CalibrationInstruction {
         public MovableRangeInstruction movableRangeInstruction;
         public TPoseInstruction tPoseInstruction;
+        // public ArmLengthInstruction straightArmInstruction;
 
         public CalibrationInstruction() {
             this.movableRangeInstruction = new MovableRangeInstruction();
@@ -23,6 +24,7 @@ namespace InstructionText
     public class MovableRangeInstruction {
         public List<string> title;
         public List<string> instruction;
+        public List<string> resultTitle;
         public List<string> result;
         public List<string> resultDefault;
 
@@ -34,6 +36,10 @@ namespace InstructionText
             this.instruction = new List<string>();
             this.instruction.Add("Please put your LEFT-controller on a floor around the movable place and press button 'A' on R-controller.");
             this.instruction.Add("請將左手控制器放在可移動範圍的角落，並按下右手控制器上的 'A' 按鈕。");
+
+            this.resultTitle = new List<string>();
+            this.resultTitle.Add("Movable Range Result");
+            this.resultTitle.Add("可移動範圍結果");
 
             this.result = new List<string>();
             this.result.Add("Range Side Length (m) = ");
@@ -49,10 +55,8 @@ namespace InstructionText
         public List<string> title;
         public List<string> instructionR;
         public List<string> instructionL;
+        public List<string> resultTitle;
         public List<string> resultLengthR;
-        public List<string> resultHeightR;
-        public List<string> resultLengthL;
-        public List<string> resultHeightL;
         public List<string> resultLength;
         public List<string> resultHeight;
 
@@ -69,29 +73,21 @@ namespace InstructionText
             this.instructionL.Add("Raise your LEFT hand as T-Pose, move your head to look at your L-controller, and press button 'A' on R-controller.");
             this.instructionL.Add("將左手向左伸直(T-Pose)，並將頭部轉動看向左手控制器，並按下右手控制器上的 'A' 按鈕。");
 
+            this.resultTitle = new List<string>();
+            this.resultTitle.Add("T-Pose Result");
+            this.resultTitle.Add("T-Pose 結果");
+
             this.resultLengthR = new List<string>();
             this.resultLengthR.Add("Length of Center Eye to Right Hand (m) = ");
             this.resultLengthR.Add("頭部到右手的距離 (公尺) = ");
-
-            this.resultHeightR = new List<string>();
-            this.resultHeightR.Add("Height of Center Eye to Floor (m) = ");
-            this.resultHeightR.Add("眼睛到地板的高度 (公尺) = ");
-
-            this.resultLengthL = new List<string>();
-            this.resultLengthL.Add("Length of Center Eye to Left Hand (m) = ");
-            this.resultLengthL.Add("頭部到左手的距離 (公尺) = ");
-
-            this.resultHeightL = new List<string>();
-            this.resultHeightL.Add("Height of Center Eye to Floor (m) = ");
-            this.resultHeightL.Add("眼睛到地板的高度 (公尺) = ");
 
             this.resultLength = new List<string>();
             this.resultLength.Add("Average Length of Center Eye to Hand (m) = ");
             this.resultLength.Add("頭部到手的平均距離 (公尺) = ");
 
             this.resultHeight = new List<string>();
-            this.resultHeight.Add("Average Height of Center Eye to Floor (m) = ");
-            this.resultHeight.Add("眼睛到地板的平均高度 (公尺) = ");
+            this.resultHeight.Add("Height (m) = ");
+            this.resultHeight.Add("身高 (公尺) = ");
         }
     }
 
