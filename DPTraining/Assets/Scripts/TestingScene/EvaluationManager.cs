@@ -113,51 +113,67 @@ public class EvaluationManager : MonoBehaviour
         }
     }
 
-    public int getScore() {
-        int score = 0;
+    public UnitResultComment getScoreComment() {
+        UnitResultComment comment = new UnitResultComment();
         if (this.testingModeManager.curUnitResult.isMoving) {
             this.testingModeManager.myTestResult.numberOfMoving += 1;
+            Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is moving");
         }
         else {
-            // [TODO] UI: User is not moving
+            // [----] UI: User is not moving
+            comment.comments.Add(this.testingModeManager.UIManager.userNotMoving());
+            Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is not moving");
         }
 
         if (this.testingModeManager.curUnitResult.isPunching) {
             this.testingModeManager.myTestResult.numberOfPunching += 1;
+            Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is punching");
         }
         else {
-            // [TODO] UI: User is not punching
+            // [----] UI: User is not punching
+            comment.comments.Add(this.testingModeManager.UIManager.userNotPunching());
+            Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is not punching");
         }
 
         if (this.testingModeManager.curUnitResult.isReach && !this.testingModeManager.curUnitResult.isStraight) {
             this.testingModeManager.myTestResult.numberOfReachNotStraight += 1;
-            // [TODO] UI: Reach but not straight
+            // [----] UI: Reach but not straight
+            comment.comments.Add(this.testingModeManager.UIManager.userReachNotStraight());
+            Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User reach but not straight");
         }
 
         if (!this.testingModeManager.curUnitResult.isReach && this.testingModeManager.curUnitResult.isStraight) {
             this.testingModeManager.myTestResult.numberOfStraightNotReach += 1;
-            // [TODO] UI: Straight but not reach
+            // [----] UI: Straight but not reach
+            comment.comments.Add(this.testingModeManager.UIManager.userStraightNotReach());
+            Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User straight but not reach");
         }
         
         if (this.testingModeManager.curUnitResult.isReacting) {
-            score += 1;
+            comment.score += 1;
             this.testingModeManager.myTestResult.numberOfReacting += 1;
-            // [TODO] UI: Reaction score + 1
+            // [----] UI: Reaction score + 1
+            comment.comments.Add(this.testingModeManager.UIManager.reactionScore());
+            Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is reacting");
         }
 
         if (this.testingModeManager.curUnitResult.isMovingCorrectly) {
-            score += 1;
+            comment.score += 1;
             this.testingModeManager.myTestResult.numberOfMovingCorrectly += 1;
-            // [TODO] UI: Moving Correctly score + 1
+            // [----] UI: Moving Correctly score + 1
+            comment.comments.Add(this.testingModeManager.UIManager.movingCorretlyScore());
+            Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is moving correctly");
         }
 
         if (this.testingModeManager.curUnitResult.isReach && this.testingModeManager.curUnitResult.isStraight) {
-            score += 1;
+            comment.score += 1;
             this.testingModeManager.curUnitResult.isSuccess = true;
             this.testingModeManager.myTestResult.numberOfSuccess += 1;
-            // [TODO] UI: Straight and Reach score + 1
+            // [----] UI: Straight and Reach score + 1
+            comment.comments.Add(this.testingModeManager.UIManager.reachAndStraightScore());
+            Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is straight and reach");
         }
 
-        return score;
+        return comment;
     }
 }

@@ -112,7 +112,8 @@ public class CalibrationModeManager : MonoBehaviour
     void calibrateIdlePose() {
         this.getIdlePoseData();
         this.mainManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
-        this.mainManager.saveToJSON_user(this.mainManager.myUserInfo);
+        // [TODO] Save User Info to JSON
+        // this.mainManager.saveToJSON_user(this.mainManager.myUserInfo);
         this.mainManager.curSystemMode = SystemMode.SelectionMode;
         this.mainManager.changeScene("SelectionScene");
     }
@@ -121,7 +122,7 @@ public class CalibrationModeManager : MonoBehaviour
         if (this.markerPutCount < this.movableRangeMarkers.Length) {
             this.movableRangeMarkers[this.markerPutCount].transform.position = new Vector3 (
                 this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position.x,
-                this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().trackerAnchor.position.y + this.movableRangeMarkers[this.markerPutCount].transform.localScale.y / 2.0f,
+                this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().trackerAnchor.position.y,
                 this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position.z
             );
             this.movableRangeMarkers[this.markerPutCount].SetActive(true);

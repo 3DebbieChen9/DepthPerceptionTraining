@@ -150,7 +150,7 @@ namespace DepthPerceptionSystem
             this.avtarDefaultHeight = 1.80f;
             this.heightDifferenceWithUser = 0.05f;
             this.distanceToUserMultiple = 1.5f;
-            this.movingSpeedMax = 1.5f;
+            this.movingSpeedMax = 0.8f;
             this.movingSpeedMin = 0.2f;
         }
     }
@@ -212,6 +212,8 @@ namespace DepthPerceptionSystem
         public float totalReactionTime;
         public float averageReactionTime;
         public int totalScore;
+
+        public List<UnitResult> unitResultList;
         // [TODO] test level
         public TestResult() {
             this.numberOfTasks = 0;
@@ -229,6 +231,7 @@ namespace DepthPerceptionSystem
             this.totalReactionTime = 0.0f;
             this.averageReactionTime = 0.0f;
             this.totalScore = 0;
+            this.unitResultList = new List<UnitResult>();
         }
 
         public void reset() {
@@ -247,6 +250,7 @@ namespace DepthPerceptionSystem
             this.totalReactionTime = 0.0f;
             this.averageReactionTime = 0.0f;
             this.totalScore = 0;
+            this.unitResultList.Clear();
         }
     }
 
@@ -299,7 +303,15 @@ namespace DepthPerceptionSystem
         }
     }
 
+    public class UnitResultComment {
+        public int score;
+        public List<string> comments;
 
+        public UnitResultComment() {
+            this.score = 0;
+            this.comments = new List<string>();
+        }
+    }
     public class Timer {
         public bool timerOn;
         public float timeTarget; // in seconds // count-up: timeTarget = 0.0f

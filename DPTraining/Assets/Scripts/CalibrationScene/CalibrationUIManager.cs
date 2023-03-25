@@ -13,6 +13,9 @@ public class CalibrationUIManager : MonoBehaviour
 
     [SerializeField]
     private CalibrationInstruction instructions;
+
+    [SerializeField]
+    public GameObject UICylinder;
     
     [SerializeField]
     public GameObject OVRCameraRig;
@@ -68,24 +71,26 @@ public class CalibrationUIManager : MonoBehaviour
 
     void FixedUpdate() {
         if (Mathf.Abs(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y - this.transform.rotation.eulerAngles.y) > this.tolerateAngle) {
-            this.transform.DORotateQuaternion(Quaternion.Euler(0.0f, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f), this.moveTime);
+            this.UICylinder.transform.DORotateQuaternion(Quaternion.Euler(0.0f, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f), this.moveTime);
         }
 
         if ((Mathf.Abs(Vector2.Distance(new Vector2(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z), new Vector2(this.transform.position.x, this.transform.position.z))) > this.tolerateDistanceMax) || 
             (Mathf.Abs(Vector2.Distance(new Vector2(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z), new Vector2(this.transform.position.x, this.transform.position.z))) < this.tolerateDistanceMin)) {
-            this.transform.DOMove(new Vector3(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.canvasHeight, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z), this.moveTime);
+            this.UICylinder.transform.DOMove(new Vector3(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.canvasHeight, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z), this.moveTime);
         }
     }
 
     void recenterUICanvas() {
-        this.transform.DORotateQuaternion(Quaternion.Euler(0.0f, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f), this.moveTime);
-        this.transform.DOMove(new Vector3(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.canvasHeight, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z), this.moveTime);
+        this.UICylinder.transform.DORotateQuaternion(Quaternion.Euler(0.0f, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f), this.moveTime);
+        this.UICylinder.transform.DOMove(new Vector3(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.canvasHeight, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z), this.moveTime);
     }
 
     public void movableRangeInstruction(CalibrationState state) {
         int languageIndex = Convert.ToInt32(this.mainManager.curLanguage);
-        this.instructionTitle.text = this.instructions.movableRangeInstruction.title[languageIndex];
-        this.instructionText.text = this.instructions.movableRangeInstruction.instruction[languageIndex];
+        // this.instructionTitle.text = this.instructions.movableRangeInstruction.title[languageIndex];
+        // this.instructionText.text = this.instructions.movableRangeInstruction.instruction[languageIndex];
+        this.instructionTitle.text = "Movable Range Calibration";
+        this.instructionText.text = "Please put your LEFT-controller on a floor around the movable place and press button 'A' on R-controller.";
         this.image.sprite = this.imageSources[Convert.ToInt32(state)];
         this.resultPanel.enabled = false;
     }
@@ -95,10 +100,10 @@ public class CalibrationUIManager : MonoBehaviour
         this.resultPanel.enabled = true;
         this.resultTitle.text = this.instructions.movableRangeInstruction.resultTitle[languageIndex];
         if (isTooShort) {
-            this.resultText.text = this.instructions.movableRangeInstruction.resultDefault[languageIndex] + length;
+            this.resultText.text = this.instructions.movableRangeInstruction.resultDefault[languageIndex] + length.ToString("F2");
         }
         else {
-            this.resultText.text = this.instructions.movableRangeInstruction.result[languageIndex] + length;
+            this.resultText.text = this.instructions.movableRangeInstruction.result[languageIndex] + length.ToString("F2");
         }
     }
 

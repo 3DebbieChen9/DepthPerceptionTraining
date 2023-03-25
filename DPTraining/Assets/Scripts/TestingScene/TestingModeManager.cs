@@ -8,7 +8,7 @@ public class TestingModeManager : MonoBehaviour
     [SerializeField]
     private MainManager mainManager;
     [SerializeField]
-    private TestingUIManager UIManager;
+    public TestingUIManager UIManager;
     [SerializeField]
     private EvaluationManager evaluationManager;
     [SerializeField]
@@ -68,33 +68,33 @@ public class TestingModeManager : MonoBehaviour
             if(this.evaluationManager.userIsAtOrigin) {
                 if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
                     this.curState = TestingState.begin;
-                    // [TODO] UI: Start Countdown (Ready View), Close Welcome View
+                    // [----] UI: Close Welcome View
+                    this.UIManager.closeStartCanvas();
                 }
             }
         }
         // 測試進行中，判斷是否在中心點
         if (this.curState == TestingState.begin) {
-            // [TODO] UI: Make sure the Ready View is active
-
+            // [----] UI: Make sure the Ready View is active
+            this.UIManager.openReadyCanvas();
             if(this.evaluationManager.userIsAtOrigin) {
-                // [TODO] UI: Ready View, Countdown
                 this.curState = TestingState.ready;
                 this.readyStart();
             }
             else {
-                // [TODO] UI: Please move to the center.
+                // [----] UI: Please move to the center.
+                this.UIManager.showMoveToCenter();
             }
         }
 
         // Ready Time for each unit
         if (this.readyTimer.timerOn) {
-            // [TODO] UI: Ready View, Countdown
-            // this.systemManager.uiTesting.readyCountdown_text.text = this.readyTimer.timeLeft.ToString("F0");
-            // this.systemManager.uiTesting.readyCountdown_image.fillAmount = this.readyTimer.timeLeft / this.readyTimer.timeTarget;
+            // [----] UI: Ready View, Countdown
+            this.UIManager.readyCountdownView(this.readyTimer.timeLeft, this.readyTimer.timeTarget);
             this.readyTimer.timeLeft -= Time.deltaTime;
             if (this.readyTimer.timeLeft <= 0.2f) {
-                // [TODO] UI: Unit x start!!!
-                // this.systemManager.uiTesting.readyUnit_text.text = "Unit " + this.curUnitNum.ToString() + " start!!!";
+                // [----] UI: Unit x start!!!
+                this.UIManager.readyStartView(this.curUnitNum);
             } 
             if (this.readyTimer.timeLeft <= 0.0f) {
                 this.readyTimer.ResetTimer();
@@ -106,7 +106,9 @@ public class TestingModeManager : MonoBehaviour
 
                 this.reactionTimer.StartTimer();
 
-                // [TODO] UI: Close Every UI (Initialize the UI), Start the unit
+                // [----] UI: Close Every UI (Initialize the UI), Start the unit
+                this.UIManager.closeReadyCanvas();
+                this.UIManager.closeResultCanvas();
             }
         }
 
@@ -114,21 +116,23 @@ public class TestingModeManager : MonoBehaviour
         if (this.reactionTimer.timerOn) {
             this.reactionTimer.timeLeft += Time.deltaTime;
             if (this.reactionTimer.timeLeft >= this.mainManager.mySettingInfo.testingModeSetting.timeLimit) {
-                this.reactionTimer.ResetTimer();
-                if (this.evaluationManager.isDuringTheUnit) {
-                    this.evaluationManager.isDuringTheUnit = false;
-                    this.coachManager.coachAnimator.SetBool("isDuringTheUnit", false);
-                    this.unitOver();
-                }
+                // if (this.evaluationManager.isDuringTheUnit) {
+                    
+                // }
+                this.evaluationManager.isDuringTheUnit = false;
+                this.coachManager.coachAnimator.SetBool("isDuringTheUnit", false);
+                this.unitOver();
                 this.reactionOverTime = true;
+                this.reactionTimer.ResetTimer();
             }
         }
     }
 
     void testingSceneInitialized() {
+        this.UIManager.settingInfoDisplay(this.mainManager.mySettingInfo);
         
         this.curState = TestingState.idle;
-        // this.evaluationManager.startingPosition = this.systemManager.sceneOrigin_poisition;
+
         this.targetNumberOfTasks = this.mainManager.mySettingInfo.testingModeSetting.targetNumberOfTasks;
         this.readyTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.readyTime;
         this.curUnitNum = 0;
@@ -141,33 +145,46 @@ public class TestingModeManager : MonoBehaviour
         this.reactionTimer.ResetTimer();
         this.readyTimer.ResetTimer();
 
-        // this.evaluationManager.evaluationStatusInitial();
+        this.evaluationManager.evaluationStatusInitialize();
 
-        // [TODO] UI: Welcome View, Setting Panel on the wall
+        // [----] UI: Welcome View
+        this.UIManager.welcomToTestingMode(this.targetNumberOfTasks);
+        // this.UIManager.relocateResultCanvas(this.mainManager.mySelectionInfo.isOnRing);
+
+        // [TODO] Setting Panel on the wall
     }
 
     public void unitOver() {
         this.coachManager.coachAnimator.SetBool("isDuringTheUnit", false);
-        // [TODO] UI: Unit Over View
+
         this.reactionTimer.timerOn = false;
         if (this.reactionOverTime) {
             this.reactionOverTime = false;
-            this.myTestResult.numberOfOverTime++;
+            
             this.curUnitResult.isOverTime = true;
             this.curUnitResult.reactionTime = -1.0f;
-            // [TODO] UI: Reaction Over Time View
+            this.curUnitResult.score = 0;
+
+            this.myTestResult.numberOfOverTime++;
+            // [----] UI: Reaction Over Time View
+            List<string> commentList = new List<string>();
+            this.UIManager.unitResultView(this.curUnitNum, this.curUnitResult.score, this.curUnitResult.reactionTime, commentList, this.curUnitResult.isOverTime);
         }
         else {
             this.curUnitResult.isOverTime = false;
             this.curUnitResult.reactionTime = this.reactionTimer.timeLeft;
-            this.curUnitResult.score = 0; // this.evaluationManager.getScore();
+            UnitResultComment unitResultComment = this.evaluationManager.getScoreComment();
+            this.curUnitResult.score = unitResultComment.score;
+
             this.myTestResult.totalReactionTime += this.curUnitResult.reactionTime;
-            this.myTestResult.totalScore += this.curUnitResult.score;;
-            // [TODO] UI: Reaction Time View
+            this.myTestResult.totalScore += this.curUnitResult.score;
+            // [----] UI: Reaction Time View
+            this.UIManager.unitResultView(this.curUnitNum, this.curUnitResult.score, this.curUnitResult.reactionTime, unitResultComment.comments, this.curUnitResult.isOverTime);
             
         }
 
         // [TODO] JSON: Save Unit Result
+        this.myTestResult.unitResultList.Add(this.curUnitResult);
         this.curUnitResult.reset();
 
         if (this.curUnitNum == this.targetNumberOfTasks) {
@@ -181,11 +198,14 @@ public class TestingModeManager : MonoBehaviour
             }
 
             this.coachManager.coachStickman.SetActive(false);
-            // [TODO] UI: Result View
+            Invoke("callCloseCoachAvatar", 0.3f);
+            // [----] UI: Result View
+            this.UIManager.finalResultView(this.myTestResult.totalScore, this.myTestResult.averageReactionTime, this.myTestResult.numberOfMovingCorrectly, this.myTestResult.numberOfReacting, this.myTestResult.numberOfSuccess, this.myTestResult.numberOfOverTime);
             // [TODO] JSON: Save Final Result
         }
         else {
             this.curState = TestingState.begin;
+            this.coachManager.invokeTargetMoveToInitial(0.5f);
         }
     }
 
@@ -196,15 +216,19 @@ public class TestingModeManager : MonoBehaviour
             this.curUnitNum++;
             this.reactionTimer.ResetTimer();
             this.readyTimer.ResetTimer();
-
-            // this.evaluationManager.evaluationStatusInitial();
+            this.evaluationManager.evaluationStatusInitialize();
             
             this.readyTimer.StartTimer();
-            // [TODO] UI: Ready View
+            // [----] UI: Ready View
+            this.UIManager.readyTitleView(this.curUnitNum);
         }
     }
 
     private void callClearCoachColor() {
         this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
+    }
+
+    private void callCloseCoachAvatar() {
+        this.coachManager.coachStickman.SetActive(false);
     }
 }

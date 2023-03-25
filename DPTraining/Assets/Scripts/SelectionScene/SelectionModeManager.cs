@@ -61,7 +61,7 @@ public class SelectionModeManager : MonoBehaviour
         this.mainManager.OVRBoxingRight.SetActive(true);
 
         this.ROOM.transform.position = new Vector3(this.mainManager.sceneOriginPosition.x,
-                                                  this.mainManager.sceneOriginPosition.y - this.mainManager.sceneOrigin.transform.localScale.y,
+                                                  this.mainManager.sceneOriginPosition.y,
                                                   this.mainManager.sceneOriginPosition.z);
         this.ROOM.transform.rotation = this.mainManager.sceneOriginRotation;
 
@@ -98,6 +98,8 @@ public class SelectionModeManager : MonoBehaviour
         this.mainManager.curSystemMode = mode;
         switch (mode) {
             case SystemMode.TestingMode:
+                OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.LTouch);
+                OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.RTouch);
                 this.mainManager.changeScene("TestingScene");
                 break;
             case SystemMode.TrainingMode:

@@ -35,7 +35,7 @@ public class VRBoxBuildingManager : MonoBehaviour
         this.mainManager.OVRBoxingLeft.SetActive(true);
         this.mainManager.OVRBoxingRight.SetActive(true);
 
-        float y_shift = 1.0f * Convert.ToInt32(this.mainManager.mySelectionInfo.isOnRing) - this.mainManager.sceneOrigin.transform.localScale.y;
+        float y_shift = 1.0f * Convert.ToInt32(this.mainManager.mySelectionInfo.isOnRing);
         this.gym.transform.position = new Vector3(this.mainManager.sceneOriginPosition.x, this.mainManager.sceneOriginPosition.y - y_shift, this.mainManager.sceneOriginPosition.z);
         this.gym.transform.rotation = this.mainManager.sceneOriginRotation;
         this.gym.SetActive(true);

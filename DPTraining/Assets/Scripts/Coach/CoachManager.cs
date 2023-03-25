@@ -32,7 +32,7 @@ public class CoachManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.coachSettingInitial();
     }
 
     // Update is called once per frame
@@ -51,7 +51,7 @@ public class CoachManager : MonoBehaviour
         this.coachInitialPosition = this.mainManager.sceneOriginPosition + 
                                     originForward * this.userArmLength * this.distanceToUserMultiple +
                                     originForward * this.avtarCenterToEdgeLength;
-        float y_shift = 1.0f * Convert.ToInt32(this.mainManager.mySelectionInfo.isOnRing) + 0.005f + 0.01f - this.mainManager.sceneOrigin.transform.localScale.y;
+        float y_shift = 0.005f;
         // float y_shift = 1.0f * Convert.ToInt32(this.mainManager.mySelectionInfo.isOnRing) + 0.005f - 1.0f * Convert.ToInt32(this.mainManager.mySelectionInfo.isOnRing) + 0.01f;
         this.coachInitialPosition.y += y_shift;
         float coachScale = this.mainManager.myUserInfo.userBodySize.height / this.mainManager.mySettingInfo.coachDefaultValue.avtarDefaultHeight + this.mainManager.mySettingInfo.coachDefaultValue.heightDifferenceWithUser;
@@ -80,8 +80,11 @@ public class CoachManager : MonoBehaviour
         this.coachAnimator.SetBool("Moving", true);
         this.coachAnimator.SetFloat("Direction", rad);
         this.coachStickman.transform.DOMove(this.coachInitialPosition, 0.1f);
-        Invoke("StopMoving", 0.11f);
-        Invoke("TargetIsAtInitial", 0.5f);
+        Invoke("stopMoving", 0.11f);
+    }
+
+    public void invokeTargetMoveToInitial(float delayTime) {
+        Invoke("moveToInitialPosition", delayTime);
     }
 
     public void randomMovement() {
@@ -136,7 +139,7 @@ public class CoachManager : MonoBehaviour
         this.coachAnimator.SetBool("Moving", true);
         this.coachAnimator.SetFloat("Direction", rad);
         this.coachStickman.transform.DOMove(destination, duration);
-        Invoke("StopMoving", duration);
+        Invoke("stopMoving", duration);
         
     }
     public void stopMoving() {

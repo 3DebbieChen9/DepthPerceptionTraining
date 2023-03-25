@@ -49,15 +49,15 @@ public class HolderBagInteraction : MonoBehaviour
             }
         }
 
-        float vibrationAmplitude = this.selectionModeManager.mainManager.mySettingInfo.controllerVibrationAmplitude;
-        if (other.gameObject.tag == "Glove_L") {
-            OVRInput.SetControllerVibration(0.5f, vibrationAmplitude, OVRInput.Controller.LTouch);
-            Invoke("stopControllerVibration", 0.3f);
-        }
-        else if (other.gameObject.tag == "Glove_R") {
-            OVRInput.SetControllerVibration(0.5f, vibrationAmplitude, OVRInput.Controller.RTouch);
-            Invoke("stopControllerVibration", 0.3f);
-        }   
+        // float vibrationAmplitude = this.selectionModeManager.mainManager.mySettingInfo.controllerVibrationAmplitude;
+        // if (other.gameObject.tag == "Glove_L") {
+        //     OVRInput.SetControllerVibration(0.2f, vibrationAmplitude, OVRInput.Controller.LTouch);
+        //     Invoke("stopControllerVibration", 0.1f);
+        // }
+        // else if (other.gameObject.tag == "Glove_R") {
+        //     OVRInput.SetControllerVibration(0.2f, vibrationAmplitude, OVRInput.Controller.RTouch);
+        //     Invoke("stopControllerVibration", 0.1f);
+        // }   
     }
 
     void stopControllerVibration() {
