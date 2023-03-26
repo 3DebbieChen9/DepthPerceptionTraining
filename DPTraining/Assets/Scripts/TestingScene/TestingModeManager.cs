@@ -50,8 +50,8 @@ public class TestingModeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.reactionTimer = new Timer(false, 0.0f, 0.0f);
-        this.readyTimer = new Timer(false, this.mainManager.mySettingInfo.testingModeSetting.readyTime, 0.0f);
+        this.reactionTimer = new Timer(false, false, this.mainManager.mySettingInfo.testingModeSetting.timeLimit, 0.0f);
+        this.readyTimer = new Timer(false, true, this.mainManager.mySettingInfo.testingModeSetting.readyTime, this.mainManager.mySettingInfo.testingModeSetting.readyTime);
         this.myTestResult = new TestResult();
         this.curUnitResult = new UnitResult();
         this.testingSceneInitialized();
@@ -60,6 +60,10 @@ public class TestingModeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
+            this.mainManager.changeScene("TestingScene");
+        }
+
         this.mainManager.sceneOrigin.transform.position = this.mainManager.sceneOriginPosition;
         this.mainManager.sceneOrigin.transform.rotation = this.mainManager.sceneOriginRotation;
 
@@ -115,10 +119,7 @@ public class TestingModeManager : MonoBehaviour
         // Calculate the reaction time
         if (this.reactionTimer.timerOn) {
             this.reactionTimer.timeLeft += Time.deltaTime;
-            if (this.reactionTimer.timeLeft >= this.mainManager.mySettingInfo.testingModeSetting.timeLimit) {
-                // if (this.evaluationManager.isDuringTheUnit) {
-                    
-                // }
+            if (this.reactionTimer.timeLeft >= this.reactionTimer.timeTarget) {
                 this.evaluationManager.isDuringTheUnit = false;
                 this.coachManager.coachAnimator.SetBool("isDuringTheUnit", false);
                 this.unitOver();
@@ -129,12 +130,13 @@ public class TestingModeManager : MonoBehaviour
     }
 
     void testingSceneInitialized() {
-        this.UIManager.settingInfoDisplay(this.mainManager.mySettingInfo);
-        
         this.curState = TestingState.idle;
 
         this.targetNumberOfTasks = this.mainManager.mySettingInfo.testingModeSetting.targetNumberOfTasks;
+        this.readyTimer.timeLeft = this.mainManager.mySettingInfo.testingModeSetting.readyTime;
         this.readyTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.readyTime;
+        this.reactionTimer.timeLeft = 0.0f;
+        this.reactionTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.timeLimit;
         this.curUnitNum = 0;
 
         this.myTestResult.reset();
@@ -149,9 +151,9 @@ public class TestingModeManager : MonoBehaviour
 
         // [----] UI: Welcome View
         this.UIManager.welcomToTestingMode(this.targetNumberOfTasks);
-        // this.UIManager.relocateResultCanvas(this.mainManager.mySelectionInfo.isOnRing);
 
-        // [TODO] Setting Panel on the wall
+        // [----] Setting Panel on the wall
+        this.UIManager.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
     }
 
     public void unitOver() {
@@ -183,8 +185,9 @@ public class TestingModeManager : MonoBehaviour
             
         }
 
-        // [TODO] JSON: Save Unit Result
-        this.myTestResult.unitResultList.Add(this.curUnitResult);
+        // [----] JSON: Save Unit Result
+        this.mainManager.saveToJSON_unitResult(this.curUnitResult, this.curUnitNum);
+        this.myTestResult.addUnitResult(this.curUnitResult);
         this.curUnitResult.reset();
 
         if (this.curUnitNum == this.targetNumberOfTasks) {
@@ -198,10 +201,11 @@ public class TestingModeManager : MonoBehaviour
             }
 
             this.coachManager.coachStickman.SetActive(false);
-            Invoke("callCloseCoachAvatar", 0.3f);
+            Invoke("callCloseCoachAvatar", 1.0f);
             // [----] UI: Result View
             this.UIManager.finalResultView(this.myTestResult.totalScore, this.myTestResult.averageReactionTime, this.myTestResult.numberOfMovingCorrectly, this.myTestResult.numberOfReacting, this.myTestResult.numberOfSuccess, this.myTestResult.numberOfOverTime);
-            // [TODO] JSON: Save Final Result
+            // [----] JSON: Save Final Result
+            this.mainManager.saveToJSON_testResult(this.myTestResult);
         }
         else {
             this.curState = TestingState.begin;
@@ -224,7 +228,7 @@ public class TestingModeManager : MonoBehaviour
         }
     }
 
-    private void callClearCoachColor() {
+    public void callClearCoachColor() {
         this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
     }
 

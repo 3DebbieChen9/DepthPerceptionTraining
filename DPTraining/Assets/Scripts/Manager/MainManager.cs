@@ -22,7 +22,7 @@ public class MainManager : MonoBehaviour
     public SettingInfo mySettingInfo;
 
     [SerializeField]
-    public SystemMode curSystemMode = SystemMode.CalibrationMode;
+    public SystemMode curSystemMode = SystemMode.StartMode;
 
     [SerializeField]
     public Vector3 sceneOriginPosition;
@@ -94,11 +94,12 @@ public class MainManager : MonoBehaviour
         this.myUserInfo = new UserInfo();
         this.mySelectionInfo = new SelectionInfo();
         this.mySettingInfo = new SettingInfo();
-        this.curSystemMode = SystemMode.CalibrationMode;
+        this.curSystemMode = SystemMode.StartMode;
 
         this.sceneOriginPosition = new Vector3(0.0f, 0.0f, 0.0f);
         this.sceneOriginRotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
 
+        this.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = true;
         this.enableUserArmMeshRenderers(false);
         // this.loadFromJSON_setting();
     }
@@ -160,40 +161,56 @@ public class MainManager : MonoBehaviour
 
     public void saveToJSON_user (UserInfo userInfo) 
     {
-        string json = JsonUtility.ToJson(userInfo);
-        string filePath = Application.persistentDataPath + "/UserInfo_" + System.DateTime.Now + ".json";
-        File.WriteAllText(filePath + ".json", json);
+        string jsonString = JsonConvert.SerializeObject(userInfo);
+        string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
+        string filePath = $"{Application.persistentDataPath}/UserInfo_{dateTime}.json";
+        File.WriteAllText(filePath, jsonString);
+
+        Debug.Log($"UserInfo saved to {filePath}");
     }
     public void saveToJSON_selection (SelectionInfo selectionInfo) 
     {
-        string json = JsonUtility.ToJson(selectionInfo);
-        string filePath = Application.persistentDataPath + "/SelectionInfo_" + System.DateTime.Now + ".json";
-        File.WriteAllText(filePath + ".json", json);
+        string jsonString = JsonConvert.SerializeObject(selectionInfo);
+        string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
+        string filePath = $"{Application.persistentDataPath}/SelectionInfo_{dateTime}.json";
+        File.WriteAllText(filePath, jsonString);
+
+        Debug.Log($"SelectionInfo saved to {filePath}");
     }
     public void saveToJSON_setting (SettingInfo settingInfo) 
     {
-        string json = JsonUtility.ToJson(settingInfo);
-        string filePath = Application.persistentDataPath + "/SettingInfo_" + System.DateTime.Now + ".json";
-        File.WriteAllText(filePath + ".json", json);
+        string jsonString = JsonConvert.SerializeObject(settingInfo);
+        string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
+        string filePath = $"{Application.persistentDataPath}/SettingInfo_{dateTime}.json";
+        File.WriteAllText(filePath, jsonString);
+
+        Debug.Log($"SettingInfo saved to {filePath}");
     }
     public void saveToJSON_testResult (TestResult testResult) 
     {
-        string json = JsonUtility.ToJson(testResult);
-        string filePath = Application.persistentDataPath + "/TestResult_" + System.DateTime.Now + ".json";
-        File.WriteAllText(filePath, json);
+        string jsonString = JsonConvert.SerializeObject(testResult);
+        string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
+        string filePath = $"{Application.persistentDataPath}/TestResult_{dateTime}.json";
+        File.WriteAllText(filePath, jsonString);
+
+        Debug.Log($"TestResult saved to {filePath}");
     }
-    public void saveToJSON_unitResult (UnitResult unitResult) 
+    public void saveToJSON_unitResult (UnitResult unitResult, int unitNum) 
     {
-        int curUnit = 1; // TODO: get current unit
-        string json = JsonUtility.ToJson(unitResult);
-        string filePath = Application.persistentDataPath + "/UnitResult_" + curUnit + "_" + System.DateTime.Now + ".json";
-        File.WriteAllText(filePath, json);
+        string jsonString = JsonConvert.SerializeObject(unitResult);
+        string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
+        string filePath = $"{Application.persistentDataPath}/UniResult_{unitNum}_{dateTime}.json";
+        File.WriteAllText(filePath, jsonString);
+
+        Debug.Log($"UnitResult_{unitNum} saved to {filePath}");
     }
     public void loadFromJSON_setting ()
     {
         string fileName = "SettingInfo_2020-11-18 15_00_00"; // TODO: get file name
         TextAsset jsonFile = Resources.Load<TextAsset>(fileName);
         this.mySettingInfo = JsonConvert.DeserializeObject<SettingInfo>(jsonFile.text);
+
+        Debug.Log($"SettingInfo loaded from {fileName}");
     }
 
     

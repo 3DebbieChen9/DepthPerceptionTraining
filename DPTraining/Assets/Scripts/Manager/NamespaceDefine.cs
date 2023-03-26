@@ -5,6 +5,7 @@ using UnityEngine;
 namespace DepthPerceptionSystem
 {
     public enum SystemMode {
+        StartMode,
         CalibrationMode,
         SelectionMode,
         SettingMode,
@@ -50,6 +51,16 @@ namespace DepthPerceptionSystem
         Easy,
         Medium,
         Hard,
+    }
+
+    public enum SettingState {
+        UserSize,
+        CoachSize,
+        MovingSpeed,
+        ControllerVibartion,
+        TestingMode,
+        StraightCollecting,
+        StraightDataResult,
     }
 
     public class MovableRange
@@ -178,17 +189,26 @@ namespace DepthPerceptionSystem
             this.handStraightAngle = 10.0f;
         }
     }
+    public class ControllerVibration {
+        public float amplitude;
+        public float frequency;
+
+        public ControllerVibration() { 
+            this.amplitude = 1.0f;
+            this.frequency = 1.0f;
+        }
+    }
     public class SettingInfo 
     {
         public float userAvgDistanceBetweenEyesAndTopHead;
-        public float controllerVibrationAmplitude; // Ranger from 0.0f to 1.0f
+        public ControllerVibration controllerVibration; // Ranger from 0.0f to 1.0f
         public CoachDefaultValue coachDefaultValue;
         public EvaluationThreshold evaluationThreshold;
         public TestingModeSetting testingModeSetting;
         
         public SettingInfo() {
             this.userAvgDistanceBetweenEyesAndTopHead = 0.11f;
-            this.controllerVibrationAmplitude = 1.0f;
+            this.controllerVibration = new ControllerVibration();
             this.coachDefaultValue = new CoachDefaultValue();
             this.evaluationThreshold = new EvaluationThreshold();
             this.testingModeSetting = new TestingModeSetting();
@@ -232,6 +252,23 @@ namespace DepthPerceptionSystem
             this.averageReactionTime = 0.0f;
             this.totalScore = 0;
             this.unitResultList = new List<UnitResult>();
+        }
+
+        public void addUnitResult(UnitResult unitResult) {
+            UnitResult tmp = new UnitResult();
+            tmp.unitNum = unitResult.unitNum;
+            tmp.isMoving = unitResult.isMoving;
+            tmp.isPunching = unitResult.isPunching;
+            tmp.isReach = unitResult.isReach;
+            tmp.isStraight = unitResult.isStraight;
+            tmp.isReacting = unitResult.isReacting;
+            tmp.isMovingCorrectly = unitResult.isMovingCorrectly;
+            tmp.isSuccess = unitResult.isSuccess;
+            tmp.isOverTime = unitResult.isOverTime;
+            tmp.reactionTime = unitResult.reactionTime;
+            tmp.score = unitResult.score;
+
+            this.unitResultList.Add(tmp);
         }
 
         public void reset() {
@@ -314,18 +351,25 @@ namespace DepthPerceptionSystem
     }
     public class Timer {
         public bool timerOn;
-        public float timeTarget; // in seconds // count-up: timeTarget = 0.0f
-        public float timeLeft;
+        public float timeTarget; // in seconds // count-up: timeTarget = over-time
+        public float timeLeft; // in seconds // count-up: timeLeft = 0.0
+        public bool countDown;
 
-        public Timer (bool _timerOn, float _timeTarget, float _timeLeft) {
+        public Timer (bool _timerOn, bool _countDown, float _timeTarget, float _timeLeft) {
             this.timerOn = _timerOn;
+            this.countDown = _countDown;
             this.timeTarget = _timeTarget;
             this.timeLeft = _timeLeft;
         }
 
         public void ResetTimer() {
             this.timerOn = false;
-            this.timeLeft = this.timeTarget;
+            if (this.countDown) {
+                this.timeLeft = this.timeTarget;
+            }
+            else {
+                this.timeLeft = 0.0f;
+            }
         }
 
         public void StartTimer() {
@@ -333,7 +377,48 @@ namespace DepthPerceptionSystem
         }
     }
 
+    public class PunchStraightUnit {
+        public float handStraightAngleThreshold;
+        public bool systemJudgeAsStraight;
+        public bool coachJudgeAsStraight;
+        public Hand hand;
+        public ArmRotationAngle armRotationAngle;
 
+        public PunchStraightUnit() {
+            this.handStraightAngleThreshold = 0.0f;
+            this.systemJudgeAsStraight = false;
+            this.coachJudgeAsStraight = false;
+            this.hand = new Hand();
+            this.armRotationAngle = new ArmRotationAngle(0.0f, 0.0f, 0.0f);
+        }
+    }
+    public class PunchStraightUnitTest {
+        public float userHeight;
+        public float userArmLength;
+        public List<PunchStraightUnit> punchStraightUnitList;
+
+        public PunchStraightUnitTest() {
+            this.userHeight = 0.0f;
+            this.userArmLength = 0.0f;
+            this.punchStraightUnitList = new List<PunchStraightUnit>();
+        }
+
+        public void addUnitResult(PunchStraightUnit unit) {
+            PunchStraightUnit tmp = new PunchStraightUnit();
+            tmp.handStraightAngleThreshold = unit.handStraightAngleThreshold;
+            tmp.systemJudgeAsStraight = unit.systemJudgeAsStraight;
+            tmp.coachJudgeAsStraight = unit.coachJudgeAsStraight;
+            tmp.hand = unit.hand;
+            tmp.armRotationAngle = unit.armRotationAngle;
+            this.punchStraightUnitList.Add(tmp);
+        }
+
+        public void reset() {
+            this.userHeight = 0.0f;
+            this.userArmLength = 0.0f;
+            this.punchStraightUnitList.Clear();
+        }
+    }
     // public class NamespaceDefine : MonoBehaviour
     // {
     //     // Start is called before the first frame update

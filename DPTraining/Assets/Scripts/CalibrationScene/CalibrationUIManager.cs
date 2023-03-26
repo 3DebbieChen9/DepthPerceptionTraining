@@ -59,6 +59,7 @@ public class CalibrationUIManager : MonoBehaviour
         this.tolerateDistanceMin = 1.0f;
         this.tolerateDistanceMax = 3.0f;
         this.moveTime = 1.0f;
+        this.OVRCameraRig = this.mainManager.OVRCameraRig;
     }
 
     // Update is called once per frame

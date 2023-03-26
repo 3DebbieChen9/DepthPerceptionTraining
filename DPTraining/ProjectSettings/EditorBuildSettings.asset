@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 398ebb6abad0cba4a91b4aa028676680
+  - enabled: 1
     path: Assets/Scenes/CalibrationScene.unity
     guid: 601ae1020bf6d954a98afb0d62125ecc
   - enabled: 1
@@ -14,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestingScene.unity
     guid: 0e0c4ac07ddd13a458d21d6bac34454a
+  - enabled: 1
+    path: Assets/Scenes/SettingScene.unity
+    guid: d1dc695fbd394174391a0b1118d70a3a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d28718cf987fffd4d9cbb96ae05ea633, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 544cc10a852abaf469d07f95ab19e37c, type: 2}

@@ -46,13 +46,14 @@ public class HitCoachInteraction : MonoBehaviour
             
             
         }
-        float vibrationAmplitude = this.evaluationManager.mainManager.mySettingInfo.controllerVibrationAmplitude;
+        float vibrationAmplitude = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.amplitude;
+        float vibrationFrequency = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.frequency;
         if (other.gameObject.tag == "Glove_L") {
-            OVRInput.SetControllerVibration(0.5f, vibrationAmplitude, OVRInput.Controller.LTouch);
+            OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.LTouch);
             Invoke("stopControllerVibration", 0.3f);
         }
         else if (other.gameObject.tag == "Glove_R") {
-            OVRInput.SetControllerVibration(0.5f, vibrationAmplitude, OVRInput.Controller.RTouch);
+            OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.RTouch);
             Invoke("stopControllerVibration", 0.3f);
         }
     }

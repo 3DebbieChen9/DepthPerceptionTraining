@@ -46,6 +46,8 @@ public class TestingUIManager : MonoBehaviour
 
     [SerializeField]
     private TMP_Text settingText;
+    [SerializeField]
+    private TMP_Text userText;
 
 
     // Start is called before the first frame update
@@ -65,11 +67,11 @@ public class TestingUIManager : MonoBehaviour
             this.startCanvas.transform.position = this.startCanvasRect.position;
             this.startCanvas.transform.rotation = this.startCanvasRect.rotation;
         }
-
         if (this.readyCanvas.activeSelf) {
             this.readyCanvas.transform.position = this.readyCanvasRect.position;
             this.readyCanvas.transform.rotation = this.readyCanvasRect.rotation;
         }
+         
     }
 
     public void welcomToTestingMode(int targetUnit) {
@@ -131,6 +133,7 @@ public class TestingUIManager : MonoBehaviour
             foreach (string c in comment) {
                 this.unitResultText.text += "\n" + c;
             }
+            Debug.Log(this.unitResultText.text);
         }
     }
 
@@ -215,18 +218,18 @@ public class TestingUIManager : MonoBehaviour
     public void btnSetting() {
         string sceneName = "SettingScene";
         Debug.Log("Change Scene to " + sceneName);
-        //[TODO] SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName);
     }
 
-    public void settingInfoDisplay(SettingInfo settingInfo) {
-        this.settingText.text = $"Controller Vibration Amplitude: {settingInfo.controllerVibrationAmplitude}\n" + 
-                             $"Coach Height Difference w/ user: {settingInfo.coachDefaultValue.heightDifferenceWithUser}\n" + 
-                             $"Coach Distance to user (multiple): {settingInfo.coachDefaultValue.distanceToUserMultiple}\n" +
-                             $"Moving Speed Max: {settingInfo.coachDefaultValue.movingSpeedMax}\n" +
-                             $"Moving Speed Min: {settingInfo.coachDefaultValue.movingSpeedMin}\n" +
-                             $"Threshold of Straight: {settingInfo.evaluationThreshold.handStraightAngle}\n" +
-                             $"Testing Mode Ready Time: {settingInfo.testingModeSetting.readyTime}\n" +
-                             $"Testing Mode Time Limit: {settingInfo.testingModeSetting.timeLimit}\n" +
-                             $"Testing Mode Number of Tasks: {settingInfo.testingModeSetting.targetNumberOfTasks}\n";
+    public void settingInfoDisplay(SettingInfo settingInfo, UserInfo userInfo) {
+        this.settingText.text = $"Coach Height Difference w/ user: {settingInfo.coachDefaultValue.heightDifferenceWithUser:F2}\n" + 
+                                $"Coach Distance to user (multiple): {settingInfo.coachDefaultValue.distanceToUserMultiple:F2}\n" +
+                                $"Moving Speed Max: {settingInfo.coachDefaultValue.movingSpeedMax:F2} (m/s) | Min: {settingInfo.coachDefaultValue.movingSpeedMin:F2} (m/s)\n" +
+                                $"Controller Vibration Amplitude: {settingInfo.controllerVibration.amplitude:F1} | Frequency: {settingInfo.controllerVibration.frequency:F1}\n" +
+                                $"Threshold of Straight: {settingInfo.evaluationThreshold.handStraightAngle:F2} (degree)\n" +
+                                $"Testing Mode Ready Time: {settingInfo.testingModeSetting.readyTime:F1} (s) | Time Limit: {settingInfo.testingModeSetting.timeLimit:F1} (s)\n" +
+                                $"Testing Mode Number of Tasks: {settingInfo.testingModeSetting.targetNumberOfTasks} units\n";
+        
+        this.userText.text = $"User Height: {userInfo.userBodySize.height:F2} (m) | Arm Length: {userInfo.userBodySize.armLength:F2} (m)\n";
     }
 }

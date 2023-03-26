@@ -7,8 +7,6 @@ public class StraightModule : MonoBehaviour
 {
     [SerializeField]
     private MainManager mainManager;
-    [SerializeField]
-    private EvaluationManager evaluationManager;
 
     void Awake() {
         if (this.mainManager == null) {
@@ -51,7 +49,57 @@ public class StraightModule : MonoBehaviour
                 return false;
             }
         }
-        
+    }
+
+    public ArmRotationAngle getArmAngle(Hand hand) {
+        if (this.mainManager.mySelectionInfo.isUsingNoitom) {
+            if (hand == Hand.Right) {
+                return this.getRightAnglesNoitom();
+            }
+            else if (hand == Hand.Left) {
+                return this.getLeftAnglesNoitom();
+            }
+            else {
+                return new ArmRotationAngle(0, 0, 0);
+            }
+        }
+        else {
+            if (hand == Hand.Right) {
+                return this.getRightAnglesIK();
+            }
+            else if (hand == Hand.Left) {
+                return this.getLeftAnglesIK();
+            }
+            else {
+                return new ArmRotationAngle(0, 0, 0);
+            }
+        }
+    }
+
+    public ArmRotationAngle getRightAnglesNoitom() {
+        Vector3 upArmToLowArmNormalized = (this.mainManager.rightLowerArm_noitom.transform.position - this.mainManager.rightUpperArm_noitom.transform.position).normalized;
+        Vector3 lowArmForward = this.mainManager.rightLowerArm_noitom.transform.forward;
+        Vector3 lowArmUp = this.mainManager.rightLowerArm_noitom.transform.up;
+        Vector3 lowArmRight = this.mainManager.rightLowerArm_noitom.transform.right;
+
+        float lowArmToUpArmAngle_forward = Vector3.Angle(lowArmForward, -upArmToLowArmNormalized);
+        float lowArmToUpArmAngle_up = Vector3.Angle(lowArmUp, -upArmToLowArmNormalized);
+        float lowArmToUpArmAngle_right = Vector3.Angle(lowArmRight, -upArmToLowArmNormalized);
+
+        return new ArmRotationAngle(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right);
+    }
+
+    public ArmRotationAngle getLeftAnglesNoitom() {
+        Vector3 upArmToLowArmNormalized = (this.mainManager.leftLowerArm_noitom.transform.position - this.mainManager.leftUpperArm_noitom.transform.position).normalized;
+        Vector3 lowArmForward = this.mainManager.leftLowerArm_noitom.transform.forward;
+        Vector3 lowArmUp = this.mainManager.leftLowerArm_noitom.transform.up;
+        Vector3 lowArmRight = this.mainManager.leftLowerArm_noitom.transform.right;
+
+        float lowArmToUpArmAngle_forward = Vector3.Angle(lowArmForward, -upArmToLowArmNormalized);
+        float lowArmToUpArmAngle_up = Vector3.Angle(lowArmUp, -upArmToLowArmNormalized);
+        float lowArmToUpArmAngle_right = Vector3.Angle(lowArmRight, -upArmToLowArmNormalized);
+
+        return new ArmRotationAngle(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right);
     }
 
     public bool rightStraightJudgerNoitom() {
@@ -92,6 +140,32 @@ public class StraightModule : MonoBehaviour
 
         return this.straightAngleJudger(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right, 
                                         tolerateAngleThreshold, lowArmToUpArm_forward_straightAngle, lowArmToUpArm_up_straightAngle, lowArmToUpArm_right_straightAngle);
+    }
+
+    public ArmRotationAngle getRightAnglesIK() {
+        Vector3 upArmToLowArmNormalized = (this.mainManager.rightLowerArm_IK.transform.position - this.mainManager.rightUpperArm_IK.transform.position).normalized;
+        Vector3 lowArmForward = this.mainManager.rightLowerArm_IK.transform.forward;
+        Vector3 lowArmUp = this.mainManager.rightLowerArm_IK.transform.up;
+        Vector3 lowArmRight = this.mainManager.rightLowerArm_IK.transform.right;
+
+        float lowArmToUpArmAngle_forward = Vector3.Angle(lowArmForward, -upArmToLowArmNormalized);
+        float lowArmToUpArmAngle_up = Vector3.Angle(lowArmUp, -upArmToLowArmNormalized);
+        float lowArmToUpArmAngle_right = Vector3.Angle(lowArmRight, -upArmToLowArmNormalized);
+
+        return new ArmRotationAngle(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right);
+    }
+
+    public ArmRotationAngle getLeftAnglesIK() {
+        Vector3 upArmToLowArmNormalized = (this.mainManager.leftLowerArm_IK.transform.position - this.mainManager.leftUpperArm_IK.transform.position).normalized;
+        Vector3 lowArmForward = this.mainManager.leftLowerArm_IK.transform.forward;
+        Vector3 lowArmUp = this.mainManager.leftLowerArm_IK.transform.up;
+        Vector3 lowArmRight = this.mainManager.leftLowerArm_IK.transform.right;
+
+        float lowArmToUpArmAngle_forward = Vector3.Angle(lowArmForward, -upArmToLowArmNormalized);
+        float lowArmToUpArmAngle_up = Vector3.Angle(lowArmUp, -upArmToLowArmNormalized);
+        float lowArmToUpArmAngle_right = Vector3.Angle(lowArmRight, -upArmToLowArmNormalized);
+
+        return new ArmRotationAngle(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right);
     }
 
     public bool rightStraightJudgerIK() {

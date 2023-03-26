@@ -52,6 +52,10 @@ public class SelectionModeManager : MonoBehaviour
                 this.sceneChoices.SetActive(true);
             }
         }
+
+        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
+            this.mainManager.changeScene("SelectionScene");
+        }
     }
 
     public void selectionSceneInitialized() {
@@ -100,13 +104,16 @@ public class SelectionModeManager : MonoBehaviour
             case SystemMode.TestingMode:
                 OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.LTouch);
                 OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.RTouch);
+                this.mainManager.saveToJSON_selection(this.mainManager.mySelectionInfo);
                 this.mainManager.changeScene("TestingScene");
                 break;
             case SystemMode.TrainingMode:
+                this.mainManager.saveToJSON_selection(this.mainManager.mySelectionInfo);
                 // [TODO] Change Scene to "Training Scene"
                 Debug.LogWarning("Training Scene is not implemented yet.");
                 break;
             case SystemMode.TrainingHintMode:
+                this.mainManager.saveToJSON_selection(this.mainManager.mySelectionInfo);
                 // [TODO] Change Scene to "Training Hint Scene"
                 Debug.LogWarning("Training Hint Scene is not implemented yet.");
                 break;

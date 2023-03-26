@@ -112,8 +112,8 @@ public class CalibrationModeManager : MonoBehaviour
     void calibrateIdlePose() {
         this.getIdlePoseData();
         this.mainManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
-        // [TODO] Save User Info to JSON
-        // this.mainManager.saveToJSON_user(this.mainManager.myUserInfo);
+        // [----] Save User Info to JSON
+        this.mainManager.saveToJSON_user(this.mainManager.myUserInfo);
         this.mainManager.curSystemMode = SystemMode.SelectionMode;
         this.mainManager.changeScene("SelectionScene");
     }

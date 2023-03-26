@@ -17,7 +17,7 @@ public class CoachManager : MonoBehaviour
     private Vector3 coachInitialPosition = new Vector3(0.0f, 0.0f, 5.46f);
     private float userArmLength;
     private float avtarCenterToEdgeLength;
-    private float distanceToUserMultiple;
+    public float distanceToUserMultiple;
     private float moveDistanceForwardMin;
     private float moveDistanceForwardMax;
     private float moveDistanceBackwardMin;
@@ -41,7 +41,7 @@ public class CoachManager : MonoBehaviour
         
     }
 
-    void coachSettingInitial() {
+    public void coachSettingInitial() {
         this.coachAnimator.SetBool("LeftHanded", this.mainManager.mySelectionInfo.coachIsLeftHanded);
         this.userArmLength = this.mainManager.myUserInfo.userBodySize.armLength;
         this.avtarCenterToEdgeLength = this.mainManager.mySettingInfo.coachDefaultValue.avtarCenterToEdgeLength;
@@ -55,6 +55,9 @@ public class CoachManager : MonoBehaviour
         // float y_shift = 1.0f * Convert.ToInt32(this.mainManager.mySelectionInfo.isOnRing) + 0.005f - 1.0f * Convert.ToInt32(this.mainManager.mySelectionInfo.isOnRing) + 0.01f;
         this.coachInitialPosition.y += y_shift;
         float coachScale = this.mainManager.myUserInfo.userBodySize.height / this.mainManager.mySettingInfo.coachDefaultValue.avtarDefaultHeight + this.mainManager.mySettingInfo.coachDefaultValue.heightDifferenceWithUser;
+        if (this.mainManager.myUserInfo.userBodySize.height > 2.0f) {
+            coachScale = 2.0f / this.mainManager.mySettingInfo.coachDefaultValue.avtarDefaultHeight + this.mainManager.mySettingInfo.coachDefaultValue.heightDifferenceWithUser;
+        }
         this.coachStickman.transform.localScale = new Vector3(coachScale, coachScale, coachScale);
         this.moveToInitialPosition();
         this.moveDistanceForwardMin = this.userArmLength * this.distanceToUserMultiple + this.avtarCenterToEdgeLength;
@@ -67,7 +70,7 @@ public class CoachManager : MonoBehaviour
                                                         moveDistanceBackwardMin);
     }
 
-    void moveToInitialPosition() {
+    public void moveToInitialPosition() {
         if (!this.coachStickman.activeSelf) {
             this.coachStickman.SetActive(true);
         }
@@ -145,6 +148,15 @@ public class CoachManager : MonoBehaviour
     public void stopMoving() {
         this.coachAnimator.SetBool("Moving", false);
         DOTween.Kill(this.coachStickman.transform);
+    }
+
+    public void moveToFurthest(MovingDirection movingDirection, float speed) {
+        if (movingDirection == MovingDirection.Forward) {
+            this.startMoving(movingDirection, speed, this.moveDistanceForwardMax);
+        }
+        else {
+            this.startMoving(movingDirection, speed, this.moveDistanceBackwardMax);
+        }
     }
 }
 
