@@ -1670,7 +1670,7 @@ ScriptsOnlyBuild:
     className: GenericBaker
   - hash:
       serializedVersion: 2
-      Hash: 0ab38d5d70627fa668e0e8537e6ccf53
+      Hash: 08c0450561668486413bcc15afdc3bdc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EvaluationManager

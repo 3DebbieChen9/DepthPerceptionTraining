@@ -83,6 +83,10 @@ public class CalibrationModeManager : MonoBehaviour
     public void calibrationSceneInitialized() {
         this.mainManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = true;
         this.mainManager.curSystemMode = SystemMode.CalibrationMode;
+        this.mainManager.OVRControllerLeft.SetActive(true);
+        this.mainManager.OVRControllerRight.SetActive(true);
+        this.mainManager.OVRBoxingLeft.SetActive(false);
+        this.mainManager.OVRBoxingRight.SetActive(false);
 
         this.curState = CalibrationState.MovableRange;
         this.markerPutCount = 0;

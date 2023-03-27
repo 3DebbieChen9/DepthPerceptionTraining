@@ -69,7 +69,7 @@ namespace DepthPerceptionSystem
         public float detectedLengthInVR;
         public float length; // Use to set the target movement range
 
-        public MovableRange() {
+        public MovableRange(int a = 0) {
             this.minRequiredLengthInVR = 4.0f;
             this.detectedLengthInVR = 0.0f;
             this.length = 4.0f;
@@ -84,7 +84,7 @@ namespace DepthPerceptionSystem
         public float height; // CenterEye.Y + SettingInfo.avgDistanceBetweenEyesAndTopHead
         public float idlePoseRadius; // Use to determine whether the user is punching
 
-        public UserBodySize() {
+        public UserBodySize(int a = 0) {
             this.armLength = 0.5f;
             this.centerEyeToControllerLength = 0.66f;
             this.shoulderWidth = 0.26f;
@@ -104,6 +104,12 @@ namespace DepthPerceptionSystem
             this.up = _up;
             this.right = _right;
         }
+
+        public void initial() {
+            this.forward = 0.0f;
+            this.up = 0.0f;
+            this.right = 0.0f;
+        }
     }
     public class UserArmStraightAngle
     {
@@ -112,7 +118,7 @@ namespace DepthPerceptionSystem
         public ArmRotationAngle rightIK;
         public ArmRotationAngle leftIK;
 
-        public UserArmStraightAngle() {
+        public UserArmStraightAngle(int a = 0) {
             this.rightNoitom = new ArmRotationAngle(90.0f, 90.0f, 180.0f);
             this.leftNoitom = new ArmRotationAngle(90.0f, 90.0f, 0.0f);
             this.rightIK = new ArmRotationAngle(90.0f, 90.0f, 180.0f);
@@ -125,7 +131,7 @@ namespace DepthPerceptionSystem
         public UserBodySize userBodySize;
         public UserArmStraightAngle userArmStraightAngle;
 
-        public UserInfo() { 
+        public UserInfo(int a = 0) { 
             this.movableRange = new MovableRange();
             this.userBodySize = new UserBodySize();
             this.userArmStraightAngle = new UserArmStraightAngle();
@@ -156,7 +162,7 @@ namespace DepthPerceptionSystem
         public float movingSpeedMax;
         public float movingSpeedMin;
 
-        public CoachDefaultValue() {
+        public CoachDefaultValue(int a = 0) {
             this.avtarCenterToEdgeLength = 0.43f;
             this.avtarDefaultHeight = 1.80f;
             this.heightDifferenceWithUser = 0.05f;
@@ -172,7 +178,7 @@ namespace DepthPerceptionSystem
         public float timeLimit; // Over the time limit, means the task is fail
         public int targetNumberOfTasks; // User should do 'targetNumberOTasks' to complete the test 7
         
-        public TestingModeSetting() {
+        public TestingModeSetting(int a = 0) {
             this.readyTime = 5.0f;
             this.timeLimit = 5.0f;
             this.targetNumberOfTasks = 7;
@@ -184,7 +190,7 @@ namespace DepthPerceptionSystem
         public float radiusBetweenOriginAndUser;
         public float handStraightAngle;
 
-        public EvaluationThreshold() {
+        public EvaluationThreshold(int a = 0) {
             this.radiusBetweenOriginAndUser = 0.15f;
             this.handStraightAngle = 20.0f;
         }
@@ -193,7 +199,7 @@ namespace DepthPerceptionSystem
         public float amplitude;
         public float frequency;
 
-        public ControllerVibration() { 
+        public ControllerVibration(int a = 0) { 
             this.amplitude = 1.0f;
             this.frequency = 1.0f;
         }
@@ -206,7 +212,7 @@ namespace DepthPerceptionSystem
         public EvaluationThreshold evaluationThreshold;
         public TestingModeSetting testingModeSetting;
         
-        public SettingInfo() {
+        public SettingInfo(int a = 0) {
             this.userAvgDistanceBetweenEyesAndTopHead = 0.11f;
             this.controllerVibration = new ControllerVibration();
             this.coachDefaultValue = new CoachDefaultValue();
@@ -235,7 +241,7 @@ namespace DepthPerceptionSystem
 
         public List<UnitResult> unitResultList;
         // [TODO] test level
-        public TestResult() {
+        public TestResult(int a = 0) {
             this.numberOfTasks = 0;
             
             this.numberOfMoving = 0;
@@ -307,7 +313,7 @@ namespace DepthPerceptionSystem
         public float reactionTime;
         public int score;
         
-        public UnitResult() {
+        public UnitResult(int a = 0) {
             this.unitNum = 0;
             this.isMoving = false;
             this.isPunching = false;
@@ -344,7 +350,7 @@ namespace DepthPerceptionSystem
         public int score;
         public List<string> comments;
 
-        public UnitResultComment() {
+        public UnitResultComment(int a = 0) {
             this.score = 0;
             this.comments = new List<string>();
         }
@@ -384,7 +390,7 @@ namespace DepthPerceptionSystem
         public Hand hand;
         public ArmRotationAngle armRotationAngle;
 
-        public PunchStraightUnit() {
+        public PunchStraightUnit(int a = 0) {
             this.handStraightAngleThreshold = 0.0f;
             this.systemJudgeAsStraight = false;
             this.coachJudgeAsStraight = false;
@@ -395,13 +401,8 @@ namespace DepthPerceptionSystem
     public class PunchStraightUnitTest {
         public float userHeight;
         public float userArmLength;
+        public UserArmStraightAngle userArmStraightAngle;
         public List<PunchStraightUnit> punchStraightUnitList;
-
-        public PunchStraightUnitTest() {
-            this.userHeight = 0.0f;
-            this.userArmLength = 0.0f;
-            this.punchStraightUnitList = new List<PunchStraightUnit>();
-        }
 
         public void addUnitResult(PunchStraightUnit unit) {
             PunchStraightUnit tmp = new PunchStraightUnit();

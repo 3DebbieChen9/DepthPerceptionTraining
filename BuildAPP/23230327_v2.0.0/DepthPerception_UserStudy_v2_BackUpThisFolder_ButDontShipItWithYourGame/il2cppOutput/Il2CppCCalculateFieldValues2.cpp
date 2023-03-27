@@ -4682,8 +4682,10 @@ struct PunchStraightUnitTest_t5D008D8CA3D8856CCFA4ADCAFF11C91929B621DE  : public
 	float ___userHeight_0;
 	// System.Single DepthPerceptionSystem.PunchStraightUnitTest::userArmLength
 	float ___userArmLength_1;
+	// DepthPerceptionSystem.UserArmStraightAngle DepthPerceptionSystem.PunchStraightUnitTest::userArmStraightAngle
+	UserArmStraightAngle_tC03199FA8127C9FB429E697DBAAF57A37A6E51AB* ___userArmStraightAngle_2;
 	// System.Collections.Generic.List`1<DepthPerceptionSystem.PunchStraightUnit> DepthPerceptionSystem.PunchStraightUnitTest::punchStraightUnitList
-	List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867* ___punchStraightUnitList_2;
+	List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867* ___punchStraightUnitList_3;
 };
 
 // System.Threading.ReaderWriterCount
@@ -23157,16 +23159,20 @@ struct EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39  : public Mon
 	int32_t ___coachMovingDirection_8;
 	// System.Boolean EvaluationManager::isDuringTheUnit
 	bool ___isDuringTheUnit_9;
+	// System.Boolean EvaluationManager::checkMoving
+	bool ___checkMoving_10;
+	// System.Boolean EvaluationManager::checkPunching
+	bool ___checkPunching_11;
 	// System.Boolean EvaluationManager::userStartMoving
-	bool ___userStartMoving_10;
+	bool ___userStartMoving_12;
 	// System.Boolean EvaluationManager::userIsAtOrigin
-	bool ___userIsAtOrigin_11;
+	bool ___userIsAtOrigin_13;
 	// DirectionModule EvaluationManager::directionModule
-	DirectionModule_t0A6E5A6F2005B74CC1CE8AF7BB46D23D0937057D* ___directionModule_12;
+	DirectionModule_t0A6E5A6F2005B74CC1CE8AF7BB46D23D0937057D* ___directionModule_14;
 	// StraightModule EvaluationManager::straightModule
-	StraightModule_t36D738A39F82D80245D8FFD25BF3A5F52B58148E* ___straightModule_13;
+	StraightModule_t36D738A39F82D80245D8FFD25BF3A5F52B58148E* ___straightModule_15;
 	// ReachModule EvaluationManager::reachModule
-	ReachModule_t6ACBB40F261F3DC1BB2FFE68DF07332F5818DFFA* ___reachModule_14;
+	ReachModule_t6ACBB40F261F3DC1BB2FFE68DF07332F5818DFFA* ___reachModule_16;
 };
 
 // UnityEngine.EventSystems.EventTrigger
@@ -33518,9 +33524,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7327[3] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7328[4] = 
 {
 	static_cast<int32_t>(offsetof(StartModeScene_t91BE51AEC8A17478E57EDFF35A69F75AF56FDD8C, ___UICylinder_4)),static_cast<int32_t>(offsetof(StartModeScene_t91BE51AEC8A17478E57EDFF35A69F75AF56FDD8C, ___OVRCameraRig_5)),static_cast<int32_t>(offsetof(StartModeScene_t91BE51AEC8A17478E57EDFF35A69F75AF56FDD8C, ___canvasHeight_6)),static_cast<int32_t>(offsetof(StartModeScene_t91BE51AEC8A17478E57EDFF35A69F75AF56FDD8C, ___moveTime_7)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7329[11] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7329[13] = 
 {
-	static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___mainManager_4)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___testingModeManager_5)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___startingPoint_6)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___userMovingDirection_7)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___coachMovingDirection_8)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___isDuringTheUnit_9)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___userStartMoving_10)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___userIsAtOrigin_11)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___directionModule_12)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___straightModule_13)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___reachModule_14)),};
+	static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___mainManager_4)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___testingModeManager_5)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___startingPoint_6)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___userMovingDirection_7)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___coachMovingDirection_8)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___isDuringTheUnit_9)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___checkMoving_10)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___checkPunching_11)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___userStartMoving_12)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___userIsAtOrigin_13)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___directionModule_14)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___straightModule_15)),static_cast<int32_t>(offsetof(EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39, ___reachModule_16)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7330[2] = 
 {
 	static_cast<int32_t>(offsetof(DirectionModule_t0A6E5A6F2005B74CC1CE8AF7BB46D23D0937057D, ___evaluationManager_4)),static_cast<int32_t>(offsetof(DirectionModule_t0A6E5A6F2005B74CC1CE8AF7BB46D23D0937057D, ___userCenter_5)),};
@@ -33797,9 +33803,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7428[4] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7429[5] = 
 {
 	static_cast<int32_t>(offsetof(PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838, ___handStraightAngleThreshold_0)),static_cast<int32_t>(offsetof(PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838, ___systemJudgeAsStraight_1)),static_cast<int32_t>(offsetof(PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838, ___coachJudgeAsStraight_2)),static_cast<int32_t>(offsetof(PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838, ___hand_3)),static_cast<int32_t>(offsetof(PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838, ___armRotationAngle_4)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7430[3] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7430[4] = 
 {
-	static_cast<int32_t>(offsetof(PunchStraightUnitTest_t5D008D8CA3D8856CCFA4ADCAFF11C91929B621DE, ___userHeight_0)),static_cast<int32_t>(offsetof(PunchStraightUnitTest_t5D008D8CA3D8856CCFA4ADCAFF11C91929B621DE, ___userArmLength_1)),static_cast<int32_t>(offsetof(PunchStraightUnitTest_t5D008D8CA3D8856CCFA4ADCAFF11C91929B621DE, ___punchStraightUnitList_2)),};
+	static_cast<int32_t>(offsetof(PunchStraightUnitTest_t5D008D8CA3D8856CCFA4ADCAFF11C91929B621DE, ___userHeight_0)),static_cast<int32_t>(offsetof(PunchStraightUnitTest_t5D008D8CA3D8856CCFA4ADCAFF11C91929B621DE, ___userArmLength_1)),static_cast<int32_t>(offsetof(PunchStraightUnitTest_t5D008D8CA3D8856CCFA4ADCAFF11C91929B621DE, ___userArmStraightAngle_2)),static_cast<int32_t>(offsetof(PunchStraightUnitTest_t5D008D8CA3D8856CCFA4ADCAFF11C91929B621DE, ___punchStraightUnitList_3)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7431[3] = 
 {
 	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,};

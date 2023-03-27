@@ -18,6 +18,10 @@ public class EvaluationManager : MonoBehaviour
     [SerializeField]
     public bool isDuringTheUnit = false;
     [SerializeField]
+    public bool checkMoving = false;
+    [SerializeField]
+    public bool checkPunching = false;
+    [SerializeField]
     public bool userStartMoving = false;
     [SerializeField]
     public bool userIsAtOrigin = false;
@@ -59,14 +63,15 @@ public class EvaluationManager : MonoBehaviour
         this.coachMovingDirection = MovingDirection.Forward;
         this.isDuringTheUnit = false;
         this.userStartMoving = false;
+        this.checkMoving = false;
+        this.checkPunching = false;
     }
 
     public void userIsPunching(Hand hand) {
-        if (this.isDuringTheUnit) {
+        if (this.isDuringTheUnit || this.checkPunching) {
             this.testingModeManager.curUnitResult.isPunching = true;
             this.testingModeManager.curUnitResult.isReacting = true;
             this.testingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
-
             this.isDuringTheUnit = false;
             this.testingModeManager.unitOver();
         }
@@ -78,7 +83,7 @@ public class EvaluationManager : MonoBehaviour
     }
 
     public void userIsMoving() {
-        if (this.isDuringTheUnit) {
+        if (this.isDuringTheUnit || this.checkMoving) {
             this.testingModeManager.curUnitResult.isMoving = true;
             this.testingModeManager.curUnitResult.isReacting = true;
             this.testingModeManager.curUnitResult.isMovingCorrectly =  this.directionModule.judgeMovingDirection();
@@ -95,14 +100,15 @@ public class EvaluationManager : MonoBehaviour
         if (this.isDuringTheUnit) {
             if (isHitShoulder) {
                 this.testingModeManager.curUnitResult.isReach = true;
-                this.testingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
             }
             else {
                 this.testingModeManager.curUnitResult.isReach = false;
-                this.testingModeManager.curUnitResult.isStraight = false;
             }
             this.testingModeManager.curUnitResult.isReacting = true;
-
+            this.testingModeManager.curUnitResult.isPunching = true;
+            this.testingModeManager.curUnitResult.isReacting = true;
+            this.testingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
+            
             this.isDuringTheUnit = false;
             this.testingModeManager.unitOver();
         }
@@ -117,6 +123,7 @@ public class EvaluationManager : MonoBehaviour
         UnitResultComment comment = new UnitResultComment();
         if (this.testingModeManager.curUnitResult.isMoving) {
             this.testingModeManager.myTestResult.numberOfMoving += 1;
+            comment.comments.Add(this.testingModeManager.UIManager.userIsMoving());
             // Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is moving");
         }
         else {
@@ -127,6 +134,7 @@ public class EvaluationManager : MonoBehaviour
 
         if (this.testingModeManager.curUnitResult.isPunching) {
             this.testingModeManager.myTestResult.numberOfPunching += 1;
+            comment.comments.Add(this.testingModeManager.UIManager.userIsPunching());
             // Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is punching");
         }
         else {
@@ -163,6 +171,9 @@ public class EvaluationManager : MonoBehaviour
             // [----] UI: Moving Correctly score + 1
             comment.comments.Add(this.testingModeManager.UIManager.movingCorretlyScore());
             // Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is moving correctly");
+        }
+        else {
+            comment.comments.Add(this.testingModeManager.UIManager.movingWrong());
         }
 
         if (this.testingModeManager.curUnitResult.isReach && this.testingModeManager.curUnitResult.isStraight) {

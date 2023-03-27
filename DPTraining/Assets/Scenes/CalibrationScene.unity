@@ -1951,7 +1951,7 @@ MonoBehaviour:
   _dimensionsDriveMode: 0
   _resolution: {x: 128, y: 128}
   _pixelsPerUnit: 500
-  _renderingMode: 101
+  _renderingMode: 1
   _generateMipMaps: 1
   _useAlphaToMask: 1
   _alphaCutoutThreshold: 0.5

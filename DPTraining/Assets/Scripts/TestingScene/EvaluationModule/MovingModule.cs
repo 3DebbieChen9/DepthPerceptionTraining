@@ -22,9 +22,10 @@ public class MovingModule : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.name == "UserCenter") {
-            if (this.evaluationManager.isDuringTheUnit && !this.evaluationManager.userStartMoving) {
+            if ((this.evaluationManager.isDuringTheUnit || this.evaluationManager.checkMoving) && !this.evaluationManager.userStartMoving) {
                 this.evaluationManager.userIsMoving();
                 this.evaluationManager.userStartMoving = true;
+                this.evaluationManager.checkMoving = false;
             }
             this.evaluationManager.userIsAtOrigin = false;
         }

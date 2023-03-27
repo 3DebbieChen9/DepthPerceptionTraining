@@ -1711,8 +1711,10 @@ struct PunchStraightUnitTest_t5D008D8CA3D8856CCFA4ADCAFF11C91929B621DE  : public
 	float ___userHeight_0;
 	// System.Single DepthPerceptionSystem.PunchStraightUnitTest::userArmLength
 	float ___userArmLength_1;
+	// DepthPerceptionSystem.UserArmStraightAngle DepthPerceptionSystem.PunchStraightUnitTest::userArmStraightAngle
+	UserArmStraightAngle_tC03199FA8127C9FB429E697DBAAF57A37A6E51AB* ___userArmStraightAngle_2;
 	// System.Collections.Generic.List`1<DepthPerceptionSystem.PunchStraightUnit> DepthPerceptionSystem.PunchStraightUnitTest::punchStraightUnitList
-	List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867* ___punchStraightUnitList_2;
+	List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867* ___punchStraightUnitList_3;
 };
 
 // DepthPerceptionSystem.SelectionInfo
@@ -14759,6 +14761,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArmRotationAngle__ctor_mC993FE62104AC191
 		return;
 	}
 }
+// System.Void DepthPerceptionSystem.ArmRotationAngle::initial()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArmRotationAngle_initial_m4E91C863067A7471A6665D2A4BE731668A1C0A15 (ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* __this, const RuntimeMethod* method) 
+{
+	{
+		// this.forward = 0.0f;
+		__this->___forward_0 = (0.0f);
+		// this.up = 0.0f;
+		__this->___up_1 = (0.0f);
+		// this.right = 0.0f;
+		__this->___right_2 = (0.0f);
+		// }
+		return;
+	}
+}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -15453,6 +15469,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchStraightUnitTest__ctor_mBEAE0BAA39A
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1__ctor_mFB329855107C9A8FE595F911A1E4651344815CB4_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UserArmStraightAngle_tC03199FA8127C9FB429E697DBAAF57A37A6E51AB_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -15462,12 +15479,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchStraightUnitTest__ctor_mBEAE0BAA39A
 		__this->___userHeight_0 = (0.0f);
 		// this.userArmLength = 0.0f;
 		__this->___userArmLength_1 = (0.0f);
-		// this.punchStraightUnitList = new List<PunchStraightUnit>();
-		List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867* L_0 = (List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867*)il2cpp_codegen_object_new(List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867_il2cpp_TypeInfo_var);
+		// this.userArmStraightAngle = new UserArmStraightAngle();
+		UserArmStraightAngle_tC03199FA8127C9FB429E697DBAAF57A37A6E51AB* L_0 = (UserArmStraightAngle_tC03199FA8127C9FB429E697DBAAF57A37A6E51AB*)il2cpp_codegen_object_new(UserArmStraightAngle_tC03199FA8127C9FB429E697DBAAF57A37A6E51AB_il2cpp_TypeInfo_var);
 		NullCheck(L_0);
-		List_1__ctor_mFB329855107C9A8FE595F911A1E4651344815CB4(L_0, List_1__ctor_mFB329855107C9A8FE595F911A1E4651344815CB4_RuntimeMethod_var);
-		__this->___punchStraightUnitList_2 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___punchStraightUnitList_2), (void*)L_0);
+		UserArmStraightAngle__ctor_mF0442CEE024285CA5EF8704492F1E4C937BF41D9(L_0, NULL);
+		__this->___userArmStraightAngle_2 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___userArmStraightAngle_2), (void*)L_0);
+		// this.punchStraightUnitList = new List<PunchStraightUnit>();
+		List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867* L_1 = (List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867*)il2cpp_codegen_object_new(List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867_il2cpp_TypeInfo_var);
+		NullCheck(L_1);
+		List_1__ctor_mFB329855107C9A8FE595F911A1E4651344815CB4(L_1, List_1__ctor_mFB329855107C9A8FE595F911A1E4651344815CB4_RuntimeMethod_var);
+		__this->___punchStraightUnitList_3 = L_1;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___punchStraightUnitList_3), (void*)L_1);
 		// }
 		return;
 	}
@@ -15526,7 +15549,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchStraightUnitTest_addUnitResult_mEC3
 		L_13->___armRotationAngle_4 = L_15;
 		Il2CppCodeGenWriteBarrier((void**)(&L_13->___armRotationAngle_4), (void*)L_15);
 		// this.punchStraightUnitList.Add(tmp);
-		List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867* L_16 = __this->___punchStraightUnitList_2;
+		List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867* L_16 = __this->___punchStraightUnitList_3;
 		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_17 = V_0;
 		NullCheck(L_16);
 		List_1_Add_mC47CA0C58063189C9FFE3E15266889AF0784B7C3_inline(L_16, L_17, List_1_Add_mC47CA0C58063189C9FFE3E15266889AF0784B7C3_RuntimeMethod_var);
@@ -15549,7 +15572,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchStraightUnitTest_reset_mBD22E121D9D
 		// this.userArmLength = 0.0f;
 		__this->___userArmLength_1 = (0.0f);
 		// this.punchStraightUnitList.Clear();
-		List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867* L_0 = __this->___punchStraightUnitList_2;
+		List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867* L_0 = __this->___punchStraightUnitList_3;
 		NullCheck(L_0);
 		List_1_Clear_m33D6CBAC11915CD61BDD16AD3241A3822F6CBA6F_inline(L_0, List_1_Clear_m33D6CBAC11915CD61BDD16AD3241A3822F6CBA6F_RuntimeMethod_var);
 		// }

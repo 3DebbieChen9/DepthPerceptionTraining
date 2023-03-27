@@ -147,6 +147,7 @@ public class SettingManager : MonoBehaviour
             }
             if (OVRInput.GetDown(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch)) {
                 this.coachManager.moveToInitialPosition();
+                this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
             }
             if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch)) {
                 this.coachManager.stopMoving();
@@ -518,6 +519,7 @@ public class SettingManager : MonoBehaviour
             this.curState = SettingState.StraightDataResult;
             this.punchUnitTestResult.userArmLength = this.mainManager.myUserInfo.userBodySize.armLength;
             this.punchUnitTestResult.userHeight = this.mainManager.myUserInfo.userBodySize.height;
+            this.punchUnitTestResult.userArmStraightAngle = this.mainManager.myUserInfo.userArmStraightAngle;
             this.saveToJSON_punchResult();
             this.straightPanel.SetActive(false);
             this.straightResultPanel.SetActive(true);

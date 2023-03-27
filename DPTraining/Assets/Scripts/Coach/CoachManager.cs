@@ -75,7 +75,7 @@ public class CoachManager : MonoBehaviour
             this.coachStickman.SetActive(true);
         }
         DOTween.Kill(this.coachStickman.transform);
-        this.coachStickman.transform.rotation = this.mainManager.sceneOriginRotation * Quaternion.Euler(0,180f,0);
+        this.coachStickman.transform.rotation = this.mainManager.sceneOriginRotation * Quaternion.Euler(0,180.0f,0);
         Vector3 movingDirection = (this.coachInitialPosition - this.coachStickman.transform.position).normalized;
         Vector3 startForward = this.coachStickman.transform.rotation * Vector3.forward;
         float angle = Vector3.Angle(startForward, movingDirection);

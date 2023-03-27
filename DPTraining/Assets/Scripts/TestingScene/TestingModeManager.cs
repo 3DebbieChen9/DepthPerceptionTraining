@@ -106,6 +106,8 @@ public class TestingModeManager : MonoBehaviour
 
                 this.curState = TestingState.reaction;
                 this.evaluationManager.isDuringTheUnit = true;
+                this.evaluationManager.checkMoving = true;
+                this.evaluationManager.checkPunching = true;
                 this.coachManager.coachAnimator.SetBool("isDuringTheUnit", true);
                 this.coachManager.randomMovement();
 
@@ -183,10 +185,10 @@ public class TestingModeManager : MonoBehaviour
             this.myTestResult.totalScore += this.curUnitResult.score;
             // [----] UI: Reaction Time View
             this.UIManager.unitResultView(this.curUnitNum, this.curUnitResult.score, this.curUnitResult.reactionTime, unitResultComment.comments, this.curUnitResult.isOverTime);
-            
         }
 
         // [----] JSON: Save Unit Result
+        this.curUnitResult.unitNum = this.curUnitNum;
         this.mainManager.saveToJSON_unitResult(this.curUnitResult, this.curUnitNum);
         this.myTestResult.addUnitResult(this.curUnitResult);
         this.curUnitResult.reset();
@@ -222,7 +224,6 @@ public class TestingModeManager : MonoBehaviour
             this.reactionTimer.ResetTimer();
             this.readyTimer.ResetTimer();
             this.evaluationManager.evaluationStatusInitialize();
-            
             this.readyTimer.StartTimer();
             // [----] UI: Ready View
             this.UIManager.readyTitleView(this.curUnitNum);

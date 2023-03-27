@@ -164,9 +164,14 @@ public class TestingUIManager : MonoBehaviour
         this.readyUnitTitle.text = "Unit " + curUnitNum.ToString() + " Start!";
     }
 
-
+    public string userIsMoving() {
+        return "User is moving";
+    }
     public string userNotMoving() {
         return "User is not moving";
+    }
+    public string userIsPunching() {
+        return "User is punching";
     }
 
     public string userNotPunching() {
@@ -185,6 +190,9 @@ public class TestingUIManager : MonoBehaviour
         return "Reaction Score + 1";
     }
 
+    public string movingWrong() {
+        return "Moving Wrong Direction";
+    }
     public string movingCorretlyScore() {
         return "Moving Correctly Score + 1";
     }
