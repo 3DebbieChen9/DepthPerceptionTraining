@@ -186,7 +186,7 @@ namespace DepthPerceptionSystem
 
         public EvaluationThreshold() {
             this.radiusBetweenOriginAndUser = 0.15f;
-            this.handStraightAngle = 10.0f;
+            this.handStraightAngle = 20.0f;
         }
     }
     public class ControllerVibration {

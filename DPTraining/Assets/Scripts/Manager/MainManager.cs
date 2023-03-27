@@ -163,7 +163,7 @@ public class MainManager : MonoBehaviour
     {
         string jsonString = JsonConvert.SerializeObject(userInfo);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-        string filePath = $"{Application.persistentDataPath}/UserInfo_{dateTime}.json";
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_UserInfo.json";
         File.WriteAllText(filePath, jsonString);
 
         Debug.Log($"UserInfo saved to {filePath}");
@@ -172,7 +172,7 @@ public class MainManager : MonoBehaviour
     {
         string jsonString = JsonConvert.SerializeObject(selectionInfo);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-        string filePath = $"{Application.persistentDataPath}/SelectionInfo_{dateTime}.json";
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_SelectionInfo.json";
         File.WriteAllText(filePath, jsonString);
 
         Debug.Log($"SelectionInfo saved to {filePath}");
@@ -181,7 +181,7 @@ public class MainManager : MonoBehaviour
     {
         string jsonString = JsonConvert.SerializeObject(settingInfo);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-        string filePath = $"{Application.persistentDataPath}/SettingInfo_{dateTime}.json";
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_SettingInfo.json";
         File.WriteAllText(filePath, jsonString);
 
         Debug.Log($"SettingInfo saved to {filePath}");
@@ -190,7 +190,7 @@ public class MainManager : MonoBehaviour
     {
         string jsonString = JsonConvert.SerializeObject(testResult);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-        string filePath = $"{Application.persistentDataPath}/TestResult_{dateTime}.json";
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_TestResult.json";
         File.WriteAllText(filePath, jsonString);
 
         Debug.Log($"TestResult saved to {filePath}");
@@ -199,7 +199,7 @@ public class MainManager : MonoBehaviour
     {
         string jsonString = JsonConvert.SerializeObject(unitResult);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-        string filePath = $"{Application.persistentDataPath}/UniResult_{unitNum}_{dateTime}.json";
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_UniResult_{unitNum}.json";
         File.WriteAllText(filePath, jsonString);
 
         Debug.Log($"UnitResult_{unitNum} saved to {filePath}");

@@ -734,10 +734,6 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Animation_Rewind();
 		Register_UnityEngine_Animation_Rewind();
 
-		//System.Void UnityEngine.Animation::Stop()
-		void Register_UnityEngine_Animation_Stop();
-		Register_UnityEngine_Animation_Stop();
-
 		//UnityEngine.AnimationState UnityEngine.Animation::GetState(System.String)
 		void Register_UnityEngine_Animation_GetState();
 		Register_UnityEngine_Animation_GetState();
@@ -829,10 +825,6 @@ void RegisterAllStrippedInternalCalls()
 	//End Registrations for type : UnityEngine.AnimationState
 
 	//Start Registrations for type : UnityEngine.Animator
-
-		//System.Boolean UnityEngine.Animator::GetBoolString(System.String)
-		void Register_UnityEngine_Animator_GetBoolString();
-		Register_UnityEngine_Animator_GetBoolString();
 
 		//System.Boolean UnityEngine.Animator::IsInIKPass()
 		void Register_UnityEngine_Animator_IsInIKPass();
@@ -3469,10 +3461,6 @@ void RegisterAllStrippedInternalCalls()
 	//End Registrations for type : UnityEngine.Joint
 
 	//Start Registrations for type : UnityEngine.JsonUtility
-
-		//System.Object UnityEngine.JsonUtility::FromJsonInternal(System.String,System.Object,System.Type)
-		void Register_UnityEngine_JsonUtility_FromJsonInternal();
-		Register_UnityEngine_JsonUtility_FromJsonInternal();
 
 		//System.String UnityEngine.JsonUtility::ToJsonInternal(System.Object,System.Boolean)
 		void Register_UnityEngine_JsonUtility_ToJsonInternal();

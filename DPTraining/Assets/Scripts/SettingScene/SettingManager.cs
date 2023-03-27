@@ -528,6 +528,7 @@ public class SettingManager : MonoBehaviour
             this.thresholdText.text = this.mainManager.mySettingInfo.evaluationThreshold.handStraightAngle.ToString("F1");
             this.handText.text = "";
             this.systemResultText.text = "";
+            this.punchStraightUnit.coachJudgeAsStraight = false;
             this.coachResultText.text = this.punchStraightUnit.coachJudgeAsStraight.ToString();
             if (this.punchStraightUnit.coachJudgeAsStraight) {
                 this.coachResultButtonText.text = "Not Straight";
@@ -567,6 +568,7 @@ public class SettingManager : MonoBehaviour
         this.thresholdText.text = this.mainManager.mySettingInfo.evaluationThreshold.handStraightAngle.ToString("F1");
         this.handText.text = "";
         this.systemResultText.text = "";
+        this.punchStraightUnit.coachJudgeAsStraight = false;
         this.coachResultText.text = this.punchStraightUnit.coachJudgeAsStraight.ToString();
         if (this.punchStraightUnit.coachJudgeAsStraight) {
             this.coachResultButtonText.text = "Not Straight";
@@ -579,7 +581,7 @@ public class SettingManager : MonoBehaviour
     {
         string jsonString = JsonConvert.SerializeObject(this.punchUnitTestResult);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-        string filePath = $"{Application.persistentDataPath}/PunchUnitTest_{dateTime}.json";
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_PunchUnitTest.json";
         File.WriteAllText(filePath, jsonString);
 
         Debug.Log($"PunchUnitTest_{dateTime} saved to {filePath}");

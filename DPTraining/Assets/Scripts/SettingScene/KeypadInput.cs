@@ -28,4 +28,10 @@ public class KeypadInput : MonoBehaviour
     public void clearInput() {
         this.inputText.text = "";
     }
+
+    public void backspaceInput() {
+        if (this.inputText.text.Length > 0) {
+            this.inputText.text = this.inputText.text.Substring(0, this.inputText.text.Length - 1);
+        }
+    }
 }

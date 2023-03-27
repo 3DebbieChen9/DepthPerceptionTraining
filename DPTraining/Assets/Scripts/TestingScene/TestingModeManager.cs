@@ -83,6 +83,7 @@ public class TestingModeManager : MonoBehaviour
             this.UIManager.openReadyCanvas();
             if(this.evaluationManager.userIsAtOrigin) {
                 this.curState = TestingState.ready;
+                this.coachManager.moveToInitialPosition();
                 this.readyStart();
             }
             else {
