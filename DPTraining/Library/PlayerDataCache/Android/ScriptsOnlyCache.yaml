@@ -35,8 +35,6 @@ ScriptsOnlyBuild:
     - VRBoxBuildingManager
     DOTween.dll:
     - DG.Tweening.Core.DOTweenSettings
-    Oculus.Interaction.Samples.dll:
-    - Oculus.Interaction.AudioTrigger
     Oculus.Interaction.dll:
     - Oculus.Interaction.ActiveStateTracker
     - Oculus.Interaction.ControllerActiveState
@@ -157,8 +155,6 @@ ScriptsOnlyBuild:
     - Oculus.Interaction.PoseDetection.FingerFeatureThresholds
     - Oculus.Interaction.ProgressCurve
     - Oculus.Interaction.UnityCanvas.CanvasCylinder/MeshGenerationSettings
-    Oculus.Interaction.Samples:
-    - Oculus.Interaction.MinMaxPair
     Oculus.VR.Editor:
     - Assets.Oculus.VR.Editor.AssetConfigList
     Unity.TextMeshPro:
@@ -211,15 +207,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: TestingUIManager
     methodName: btnTesting
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingManager
+    methodName: saveSetting
   - assembly: Assembly-CSharp
     fullTypeName: KeypadInput
     methodName: inputNumber
@@ -271,6 +261,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: KeypadInput
     methodName: inputNumber
+  - assembly: Assembly-CSharp
+    fullTypeName: SettingManager
+    methodName: btnSkipClick
   - assembly: Assembly-CSharp
     fullTypeName: KeypadInput
     methodName: inputNumber
@@ -492,6 +485,9 @@ ScriptsOnlyBuild:
     methodName: inputNumber
   - assembly: Assembly-CSharp
     fullTypeName: KeypadInput
+    methodName: pushable
+  - assembly: Assembly-CSharp
+    fullTypeName: KeypadInput
     methodName: inputNumber
   - assembly: Assembly-CSharp
     fullTypeName: KeypadInput
@@ -532,6 +528,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: KeypadInput
     methodName: inputNumber
+  - assembly: Assembly-CSharp
+    fullTypeName: KeypadInput
+    methodName: pushable
   - assembly: Assembly-CSharp
     fullTypeName: KeypadInput
     methodName: inputNumber
@@ -817,8 +816,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11636}
     - Class: 115
       Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
@@ -898,7 +895,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/Scenes/SettingScene.unity:
+    Assets/Scenes/SettingScene_TC.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -1251,10 +1248,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
     - Class: 91
@@ -1280,8 +1273,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3364}
     - Class: 114
-      Script: {instanceID: 3396}
-    - Class: 114
       Script: {instanceID: 4144}
     - Class: 114
       Script: {instanceID: 4406}
@@ -1296,13 +1287,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5542}
     - Class: 114
-      Script: {instanceID: 5680}
-    - Class: 114
       Script: {instanceID: 6912}
-    - Class: 114
-      Script: {instanceID: 7138}
-    - Class: 114
-      Script: {instanceID: 7162}
     - Class: 114
       Script: {instanceID: 7190}
     - Class: 114
@@ -1327,8 +1312,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9374}
     - Class: 114
       Script: {instanceID: 9738}
-    - Class: 114
-      Script: {instanceID: 10284}
     - Class: 114
       Script: {instanceID: 11336}
     - Class: 114
@@ -1670,7 +1653,7 @@ ScriptsOnlyBuild:
     className: GenericBaker
   - hash:
       serializedVersion: 2
-      Hash: 08c0450561668486413bcc15afdc3bdc
+      Hash: 0ab38d5d70627fa668e0e8537e6ccf53
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EvaluationManager
@@ -3080,7 +3063,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: c6c3806ec69e4f0ac71d914d60246276
+      Hash: e974a7c6ccb925580a03f638c4b5beb2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: VRBoxBuildingManager
@@ -4292,7 +4275,7 @@ ScriptsOnlyBuild:
     className: CoachRenderManager
   - hash:
       serializedVersion: 2
-      Hash: 3bd5eebe9a90a0e12e5889de0d1ed1ea
+      Hash: d61410603697d41397130aa6c99303ef
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SettingManager
@@ -5924,7 +5907,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 6965f0fdd6f6a0aa96ac732ba44b7bfd
+      Hash: 36619f517dbc975f781c65d77311b030
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CalibrationUIManager
@@ -6176,7 +6159,7 @@ ScriptsOnlyBuild:
     className: FilteredTransform
   - hash:
       serializedVersion: 2
-      Hash: cc3d96e8d16bb46de7e92805a769993f
+      Hash: 4922ea93ad35e01e2f6f7a9dfb5322b9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CoachManager
@@ -6198,5 +6181,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/CalibrationScene.unity
   - Assets/Scenes/SelectionScene.unity
   - Assets/Scenes/TestingScene.unity
-  - Assets/Scenes/SettingScene.unity
-  playerPath: D:/CGVLab(D)/DepthPerceptionTraining/BuildAPP/23230327_v2.0.0/DepthPerception_UserStudy_v2.apk
+  - Assets/Scenes/SettingScene_TC.unity
+  playerPath: D:/CGVLab(D)/DepthPerceptionTraining/BuildAPP/DepthPerception_UserStudy_TC.apk

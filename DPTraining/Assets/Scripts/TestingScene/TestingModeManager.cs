@@ -6,7 +6,7 @@ using DepthPerceptionSystem;
 public class TestingModeManager : MonoBehaviour
 {
     [SerializeField]
-    private MainManager mainManager;
+    public MainManager mainManager;
     [SerializeField]
     public TestingUIManager UIManager;
     [SerializeField]
@@ -92,6 +92,13 @@ public class TestingModeManager : MonoBehaviour
             }
         }
 
+        // [TODO] 倒數階段中，但是使用者不在中心了
+        if (this.curState == TestingState.ready && !this.evaluationManager.userIsAtOrigin) {
+            this.UIManager.showMoveToCenter();
+            this.readyTimer.ResetTimer();
+            this.curState = TestingState.begin;
+        }
+
         // Ready Time for each unit
         if (this.readyTimer.timerOn) {
             // [----] UI: Ready View, Countdown
@@ -100,16 +107,17 @@ public class TestingModeManager : MonoBehaviour
             if (this.readyTimer.timeLeft <= 0.2f) {
                 // [----] UI: Unit x start!!!
                 this.UIManager.readyStartView(this.curUnitNum);
+                this.callClearCoachColor();
             } 
             if (this.readyTimer.timeLeft <= 0.0f) {
                 this.readyTimer.ResetTimer();
 
                 this.curState = TestingState.reaction;
                 this.evaluationManager.isDuringTheUnit = true;
-                this.evaluationManager.checkMoving = true;
-                this.evaluationManager.checkPunching = true;
+                this.evaluationManager.setStartingPoint(this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position, this.mainManager.sceneOriginRotation);
                 this.coachManager.coachAnimator.SetBool("isDuringTheUnit", true);
                 this.coachManager.randomMovement();
+                this.evaluationManager.coachMovingDirection = this.coachManager.coachMovingDirection;
 
                 this.reactionTimer.StartTimer();
 
@@ -140,7 +148,7 @@ public class TestingModeManager : MonoBehaviour
         this.readyTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.readyTime;
         this.reactionTimer.timeLeft = 0.0f;
         this.reactionTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.timeLimit;
-        this.curUnitNum = 0;
+        this.curUnitNum = 1;
 
         this.myTestResult.reset();
         this.myTestResult.numberOfTasks = this.targetNumberOfTasks;
@@ -154,8 +162,6 @@ public class TestingModeManager : MonoBehaviour
 
         // [----] UI: Welcome View
         this.UIManager.welcomToTestingMode(this.targetNumberOfTasks);
-
-        // [----] Setting Panel on the wall
         this.UIManager.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
     }
 
@@ -203,8 +209,7 @@ public class TestingModeManager : MonoBehaviour
                 this.myTestResult.averageReactionTime = this.myTestResult.totalReactionTime / timeUsefulCount;
             }
 
-            this.coachManager.coachStickman.SetActive(false);
-            Invoke("callCloseCoachAvatar", 1.0f);
+            Invoke("callCloseCoachAvatar", 2.0f);
             // [----] UI: Result View
             this.UIManager.finalResultView(this.myTestResult.totalScore, this.myTestResult.averageReactionTime, this.myTestResult.numberOfMovingCorrectly, this.myTestResult.numberOfReacting, this.myTestResult.numberOfSuccess, this.myTestResult.numberOfOverTime);
             // [----] JSON: Save Final Result
@@ -212,15 +217,17 @@ public class TestingModeManager : MonoBehaviour
         }
         else {
             this.curState = TestingState.begin;
-            this.coachManager.invokeTargetMoveToInitial(0.5f);
+            this.curUnitNum++;
+            // [TEST] Whether the user won't hit user
+            // this.coachManager.invokeTargetMoveToInitial(0.5f);
         }
     }
 
     public void readyStart() {
         Invoke("callClearCoachColor", this.mainManager.mySettingInfo.testingModeSetting.readyTime / 3.0f);
 
-        if (this.curUnitNum < this.targetNumberOfTasks && !this.reactionTimer.timerOn && !this.readyTimer.timerOn) {
-            this.curUnitNum++;
+        if (this.curUnitNum <= this.targetNumberOfTasks && !this.reactionTimer.timerOn && !this.readyTimer.timerOn) {
+            // this.curUnitNum++;
             this.reactionTimer.ResetTimer();
             this.readyTimer.ResetTimer();
             this.evaluationManager.evaluationStatusInitialize();

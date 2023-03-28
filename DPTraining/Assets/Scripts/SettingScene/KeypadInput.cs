@@ -34,4 +34,8 @@ public class KeypadInput : MonoBehaviour
             this.inputText.text = this.inputText.text.Substring(0, this.inputText.text.Length - 1);
         }
     }
+
+    public void pushable(bool isPushable) {
+        this.inputText.text = isPushable.ToString();
+    }
 }

@@ -30,7 +30,9 @@ public class HitCoachInteraction : MonoBehaviour
         if (other.gameObject.tag == "Glove_L" || other.gameObject.tag == "Glove_R") {
             this.evaluationManager.testingModeManager.coachManager.stopMoving();
             if (this.evaluationManager.isDuringTheUnit) {
-                this.evaluationManager.userIsHitCoach(Hand.Left, false);
+                this.evaluationManager.userIsHitCoach(Hand.Left, false);   
+            }
+            if (this.gameObject.name != "Boxing_Gloves_L" && this.gameObject.name != "Boxing_Gloves_R") {
                 if (this.gameObject.GetComponent<MeshRenderer>().materials.Length <= 1) {
                     this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.red;
                 }
@@ -43,9 +45,8 @@ public class HitCoachInteraction : MonoBehaviour
                     }
                 }
             }
-            
-            
         }
+
         float vibrationAmplitude = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.amplitude;
         float vibrationFrequency = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.frequency;
         if (other.gameObject.tag == "Glove_L") {

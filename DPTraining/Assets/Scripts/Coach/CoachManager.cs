@@ -14,7 +14,14 @@ public class CoachManager : MonoBehaviour
     [SerializeField]
     public Animator coachAnimator;
     [SerializeField]
-    private Vector3 coachInitialPosition = new Vector3(0.0f, 0.0f, 5.46f);
+    public MovingDirection coachMovingDirection;
+    [SerializeField]
+    private Vector3 coachInitialPosition = new Vector3(0.0f, 0.0f, 0.0f);
+    // private Vector3 coachInitialPosition = new Vector3(0.0f, 0.0f, 5.46f);
+    [SerializeField]
+    private GameObject[] coachBodyParts;
+    [SerializeField]
+    private Collider coachFloorCollider;
     private float userArmLength;
     private float avtarCenterToEdgeLength;
     public float distanceToUserMultiple;
@@ -41,8 +48,21 @@ public class CoachManager : MonoBehaviour
         
     }
 
+    public void setKinematic(bool isKinematic) {
+        this.coachStickman.GetComponent<Rigidbody>().isKinematic = isKinematic;
+        this.coachStickman.GetComponent<Rigidbody>().useGravity = !isKinematic;
+        this.coachFloorCollider.enabled = !isKinematic;
+        foreach (GameObject bodyPart in this.coachBodyParts) {
+            bodyPart.GetComponents<Collider>()[0].enabled = true;
+            bodyPart.GetComponents<Collider>()[0].isTrigger = true;
+            bodyPart.GetComponents<Collider>()[1].enabled = !isKinematic;
+            bodyPart.GetComponents<Collider>()[1].isTrigger = false;
+        }
+    }
+
     public void coachSettingInitial() {
         this.coachAnimator.SetBool("LeftHanded", this.mainManager.mySelectionInfo.coachIsLeftHanded);
+        this.setKinematic(this.mainManager.mySettingInfo.coachDefaultValue.isKinematic);
         this.userArmLength = this.mainManager.myUserInfo.userBodySize.armLength;
         this.avtarCenterToEdgeLength = this.mainManager.mySettingInfo.coachDefaultValue.avtarCenterToEdgeLength;
         this.distanceToUserMultiple = this.mainManager.mySettingInfo.coachDefaultValue.distanceToUserMultiple;
@@ -119,6 +139,7 @@ public class CoachManager : MonoBehaviour
     }
 
     public void startMoving(MovingDirection movingDirection, float speed, float distance) {
+        this.coachMovingDirection = movingDirection;
         Vector3 movingDirectionVector = new Vector3(0.0f, 0.0f, 0.0f);
         if (movingDirection == MovingDirection.Forward) {
             movingDirectionVector = -(this.mainManager.sceneOriginRotation * Vector3.forward).normalized;

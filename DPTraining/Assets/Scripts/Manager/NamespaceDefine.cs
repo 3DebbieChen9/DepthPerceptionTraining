@@ -118,7 +118,7 @@ namespace DepthPerceptionSystem
         public ArmRotationAngle rightIK;
         public ArmRotationAngle leftIK;
 
-        public UserArmStraightAngle(int a = 0) {
+        public UserArmStraightAngle() {
             this.rightNoitom = new ArmRotationAngle(90.0f, 90.0f, 180.0f);
             this.leftNoitom = new ArmRotationAngle(90.0f, 90.0f, 0.0f);
             this.rightIK = new ArmRotationAngle(90.0f, 90.0f, 180.0f);
@@ -155,6 +155,7 @@ namespace DepthPerceptionSystem
 
     public class CoachDefaultValue
     {
+        public bool isKinematic;
         public float avtarCenterToEdgeLength;
         public float avtarDefaultHeight;
         public float heightDifferenceWithUser;
@@ -162,7 +163,8 @@ namespace DepthPerceptionSystem
         public float movingSpeedMax;
         public float movingSpeedMin;
 
-        public CoachDefaultValue(int a = 0) {
+        public CoachDefaultValue() {
+            this.isKinematic = false;
             this.avtarCenterToEdgeLength = 0.43f;
             this.avtarDefaultHeight = 1.80f;
             this.heightDifferenceWithUser = 0.05f;
@@ -261,19 +263,7 @@ namespace DepthPerceptionSystem
         }
 
         public void addUnitResult(UnitResult unitResult) {
-            UnitResult tmp = new UnitResult();
-            tmp.unitNum = unitResult.unitNum;
-            tmp.isMoving = unitResult.isMoving;
-            tmp.isPunching = unitResult.isPunching;
-            tmp.isReach = unitResult.isReach;
-            tmp.isStraight = unitResult.isStraight;
-            tmp.isReacting = unitResult.isReacting;
-            tmp.isMovingCorrectly = unitResult.isMovingCorrectly;
-            tmp.isSuccess = unitResult.isSuccess;
-            tmp.isOverTime = unitResult.isOverTime;
-            tmp.reactionTime = unitResult.reactionTime;
-            tmp.score = unitResult.score;
-
+            UnitResult tmp = new UnitResult(unitResult.unitNum, unitResult.isMoving, unitResult.isPunching, unitResult.isReach, unitResult.isStraight, unitResult.isReacting, unitResult.isMovingCorrectly, unitResult.isSuccess, unitResult.isOverTime, unitResult.reactionTime, unitResult.score);
             this.unitResultList.Add(tmp);
         }
 
@@ -313,7 +303,7 @@ namespace DepthPerceptionSystem
         public float reactionTime;
         public int score;
         
-        public UnitResult(int a = 0) {
+        public UnitResult() {
             this.unitNum = 0;
             this.isMoving = false;
             this.isPunching = false;
@@ -327,6 +317,22 @@ namespace DepthPerceptionSystem
             this.isOverTime = false;
             this.reactionTime = 0.0f;
             this.score = 0;
+        }
+
+        public UnitResult(int _unitNum, bool _isMoving, bool _isPunching, bool _isReach, bool _isStraight, bool _isReacting, bool _isMovingCorrectly, bool _isSuccess, bool _isOverTime, float _reactionTime, int _score) {
+            this.unitNum = _unitNum;
+            this.isMoving = _isMoving;
+            this.isPunching = _isPunching;
+            this.isReach = _isReach;
+            this.isStraight = _isStraight;
+
+            this.isReacting = _isReacting;
+            this.isMovingCorrectly = _isMovingCorrectly;
+            this.isSuccess = _isSuccess;
+
+            this.isOverTime = _isOverTime;
+            this.reactionTime = _reactionTime;
+            this.score = _score;
         }
 
         public void reset() {
@@ -390,12 +396,19 @@ namespace DepthPerceptionSystem
         public Hand hand;
         public ArmRotationAngle armRotationAngle;
 
-        public PunchStraightUnit(int a = 0) {
+        public PunchStraightUnit() {
             this.handStraightAngleThreshold = 0.0f;
             this.systemJudgeAsStraight = false;
             this.coachJudgeAsStraight = false;
             this.hand = new Hand();
             this.armRotationAngle = new ArmRotationAngle(0.0f, 0.0f, 0.0f);
+        }
+        public PunchStraightUnit(float _angleThreshold, bool _systemJudgeAsStraight, bool _coachJudgeAsStraight, Hand _hand, ArmRotationAngle _armRotationAngle) {
+            this.handStraightAngleThreshold = _angleThreshold;
+            this.systemJudgeAsStraight = _systemJudgeAsStraight;
+            this.coachJudgeAsStraight = _coachJudgeAsStraight;
+            this.hand = _hand;
+            this.armRotationAngle = _armRotationAngle;
         }
     }
     public class PunchStraightUnitTest {
@@ -404,13 +417,14 @@ namespace DepthPerceptionSystem
         public UserArmStraightAngle userArmStraightAngle;
         public List<PunchStraightUnit> punchStraightUnitList;
 
+        public PunchStraightUnitTest() {
+            this.userHeight = 0.0f;
+            this.userArmLength = 0.0f;
+            this.userArmStraightAngle = new UserArmStraightAngle();
+            this.punchStraightUnitList = new List<PunchStraightUnit>();
+        }
         public void addUnitResult(PunchStraightUnit unit) {
-            PunchStraightUnit tmp = new PunchStraightUnit();
-            tmp.handStraightAngleThreshold = unit.handStraightAngleThreshold;
-            tmp.systemJudgeAsStraight = unit.systemJudgeAsStraight;
-            tmp.coachJudgeAsStraight = unit.coachJudgeAsStraight;
-            tmp.hand = unit.hand;
-            tmp.armRotationAngle = unit.armRotationAngle;
+            PunchStraightUnit tmp = new PunchStraightUnit(unit.handStraightAngleThreshold, unit.systemJudgeAsStraight, unit.coachJudgeAsStraight, unit.hand, unit.armRotationAngle);
             this.punchStraightUnitList.Add(tmp);
         }
 

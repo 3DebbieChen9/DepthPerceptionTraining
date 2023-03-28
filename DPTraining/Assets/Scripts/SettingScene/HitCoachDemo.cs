@@ -30,17 +30,20 @@ public class HitCoachDemo : MonoBehaviour
         
         if (other.gameObject.tag == "Glove_L" || other.gameObject.tag == "Glove_R") {
             this.settingManager.coachManager.stopMoving();
-            if (this.gameObject.GetComponent<MeshRenderer>().materials.Length <= 1) {
-                this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.red;
-            }
-            else {
-                foreach (Material m in this.gameObject.GetComponent<MeshRenderer>().materials) {
-                    if(m.name == "M_Body (Instance)") {
-                        m.color = Color.red;
-                        break;
-                    }
+            if (this.gameObject.name != "Boxing_Gloves_L" && this.gameObject.name != "Boxing_Gloves_R") {
+                if (this.gameObject.GetComponent<MeshRenderer>().materials.Length <= 1) {
+                    this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.red;
                 }
-            }            
+                else {
+                    foreach (Material m in this.gameObject.GetComponent<MeshRenderer>().materials) {
+                        if(m.name == "M_Body (Instance)") {
+                            m.color = Color.red;
+                            break;
+                        }
+                    }
+                }  
+            }
+                      
         }
         float vibrationAmplitude = this.settingManager.mainManager.mySettingInfo.controllerVibration.amplitude;
         float vibrationFrequency = this.settingManager.mainManager.mySettingInfo.controllerVibration.frequency;

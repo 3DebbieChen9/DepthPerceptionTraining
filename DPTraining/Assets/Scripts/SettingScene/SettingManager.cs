@@ -40,6 +40,8 @@ public class SettingManager : MonoBehaviour
     private TMP_Text heightText;
     [SerializeField]
     private TMP_Text distanceText;
+    [SerializeField]
+    private TMP_Text isPushableText;
 
     [SerializeField]
     private GameObject movingSpeedPanel;
@@ -181,7 +183,8 @@ public class SettingManager : MonoBehaviour
                 this.reactionTimer.timeLeft += Time.deltaTime;
                 this.readyCountdownView(this.reactionTimer.timeLeft, this.reactionTimer.timeTarget);
                 if (this.reactionTimer.timeLeft >= this.reactionTimer.timeTarget) {
-                    this.readyUnitTitle.text = "Over Time!!";
+                    // this.readyUnitTitle.text = "Over Time!!";
+                    this.readyUnitTitle.text = "超時了";
                     this.reactionTimer.ResetTimer();
                 }
             }
@@ -247,6 +250,22 @@ public class SettingManager : MonoBehaviour
         this.punchUnitTestResult = new PunchStraightUnitTest();
         this.punchStraightUnit = new PunchStraightUnit();
         this.punchUnitTestResult.punchStraightUnitList.Clear();
+    }
+    public void btnSkipClick() {
+        this.curState = SettingState.StraightCollecting;
+        this.setUserSize();
+        this.setCoachSize();
+        this.setMovingSpeed();
+        this.punchUnitTestInitial();
+        this.setControllerVibration();
+        this.setTestingMode();
+        this.userSizePanel.SetActive(false);
+        this.coachSizePanel.SetActive(false);
+        this.movingSpeedPanel.SetActive(false);
+        this.vibrationPanel.SetActive(false);
+        this.testingModePanel.SetActive(false);
+        this.readyCanvas.SetActive(false);
+        this.straightPanel.SetActive(true);
     }
     public void btnSetClick() {
         switch (this.curState) {
@@ -383,6 +402,20 @@ public class SettingManager : MonoBehaviour
             this.distanceText.text = e.ToString();
             Debug.Log(e);
         }
+
+        try {
+            this.mainManager.mySettingInfo.coachDefaultValue.isKinematic = !bool.Parse(this.isPushableText.text);
+        } catch (System.Exception e) {
+            this.isPushableText.text = "false";
+            Debug.Log(e);
+        }
+
+        this.coachManager.coachSettingInitial();
+        this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
+        this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
+    }
+    public void setCoachPushable() {
+        
         this.coachManager.coachSettingInitial();
         this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
         this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
@@ -408,7 +441,8 @@ public class SettingManager : MonoBehaviour
         try {
             float amplitude = float.Parse(this.vibationAText.text);
             if (amplitude > 1.0f || amplitude < 0.0f) {
-                this.vibationAText.text = "Out of range";
+                // this.vibationFText.text = "Out of range";
+                this.vibationFText.text = "超出範圍";
             }
             else {
                 this.mainManager.mySettingInfo.controllerVibration.amplitude = amplitude;
@@ -421,7 +455,8 @@ public class SettingManager : MonoBehaviour
         try {
             float frequency = float.Parse(this.vibationFText.text);
             if (frequency > 1.0f || frequency < 0.0f) {
-                this.vibationFText.text = "Out of range";
+                // this.vibationFText.text = "Out of range";
+                this.vibationFText.text = "超出範圍";
             }
             else {
                 this.mainManager.mySettingInfo.controllerVibration.frequency = frequency;
@@ -489,7 +524,8 @@ public class SettingManager : MonoBehaviour
             this.reactionTimer.ResetTimer();
             this.readyTimer.ResetTimer();
             this.readyTimer.StartTimer();
-            this.readyUnitTitle.text = "Ready for the Unit";
+            // this.readyUnitTitle.text = "Ready for the Unit";
+            this.readyUnitTitle.text = "準備開始本回合";
         }
     }
     void readyCountdownView (float timeLeft, float timeTarget) {
@@ -503,11 +539,13 @@ public class SettingManager : MonoBehaviour
             this.isDoingPunchingTest = true;
             this.punchTimer.ResetTimer();
             this.punchTimer.StartTimer();
-            this.readyUnitTitle.text = "Ready to punch!";
+            // this.readyUnitTitle.text = "Ready to punch!";
+            this.readyUnitTitle.text = "準備出拳!";
         }
     }
     public void readyStartView () {
-        this.readyUnitTitle.text = "Unit Start!";
+        // this.readyUnitTitle.text = "Unit Start!";
+        this.readyUnitTitle.text = "回合開始!";
     }
 
     public void savePunchUnitResult() {
@@ -533,10 +571,12 @@ public class SettingManager : MonoBehaviour
             this.punchStraightUnit.coachJudgeAsStraight = false;
             this.coachResultText.text = this.punchStraightUnit.coachJudgeAsStraight.ToString();
             if (this.punchStraightUnit.coachJudgeAsStraight) {
-                this.coachResultButtonText.text = "Not Straight";
+            // this.coachResultButtonText.text = "Not Straight";
+            this.coachResultButtonText.text = "沒伸直";
             }
             else {
-                this.coachResultButtonText.text = "Straight";
+                // this.coachResultButtonText.text = "Straight";
+                this.coachResultButtonText.text = "伸直";
             }
         }
     }
@@ -544,10 +584,12 @@ public class SettingManager : MonoBehaviour
         this.punchStraightUnit.coachJudgeAsStraight = !this.punchStraightUnit.coachJudgeAsStraight;
         this.coachResultText.text = this.punchStraightUnit.coachJudgeAsStraight.ToString();
         if (this.punchStraightUnit.coachJudgeAsStraight) {
-            this.coachResultButtonText.text = "Not Straight";
+            // this.coachResultButtonText.text = "Not Straight";
+            this.coachResultButtonText.text = "沒伸直";
         }
         else {
-            this.coachResultButtonText.text = "Straight";
+            // this.coachResultButtonText.text = "Straight";
+            this.coachResultButtonText.text = "伸直";
         }
     }
     public void displayPunchUnitResult(Hand _hand, bool _systemResult, ArmRotationAngle _armRotationAngle) {
@@ -556,10 +598,12 @@ public class SettingManager : MonoBehaviour
         this.punchStraightUnit.handStraightAngleThreshold = this.mainManager.mySettingInfo.evaluationThreshold.handStraightAngle;
         this.punchStraightUnit.hand = _hand;
         if (_hand == Hand.Right) {
-            this.handText.text = "Right";
+            // this.handText.text = "Right";
+            this.handText.text = "右手";
         }
         else {
-            this.handText.text = "Left";
+            // this.handText.text = "Left";
+            this.handText.text = "左手";
         }
         this.systemResultText.text = _systemResult.ToString();
     }
@@ -573,10 +617,12 @@ public class SettingManager : MonoBehaviour
         this.punchStraightUnit.coachJudgeAsStraight = false;
         this.coachResultText.text = this.punchStraightUnit.coachJudgeAsStraight.ToString();
         if (this.punchStraightUnit.coachJudgeAsStraight) {
-            this.coachResultButtonText.text = "Not Straight";
+            // this.coachResultButtonText.text = "Not Straight";
+            this.coachResultButtonText.text = "沒伸直";
         }
         else {
-            this.coachResultButtonText.text = "Straight";
+            // this.coachResultButtonText.text = "Straight";
+            this.coachResultButtonText.text = "伸直";
         }
     }
     public void saveToJSON_punchResult () 
@@ -589,15 +635,19 @@ public class SettingManager : MonoBehaviour
         Debug.Log($"PunchUnitTest_{dateTime} saved to {filePath}");
     }
     public void displayPunchResult() {
-        this.straightResultText.text = $"   | Threshold | System | Coach | Hand\n";
+        // this.straightResultText.text = $"    | Threshold | System | Coach | Hand\n";
+        this.straightResultText.text = $"    | 接受範圍 | 系統判定 | 教練判定 | 哪隻手\n";
+
         int i = 1;
         foreach (var item in this.punchUnitTestResult.punchStraightUnitList) {
             string hand = "";
             if (item.hand == Hand.Right) {
-                hand = "R";
+                // hand = "R";
+                hand = "右";
             }
             else {
-                hand = "L";
+                // hand = "L";
+                hand = "左";
             }
             this.straightResultText.text += $"{i:D2} | {item.handStraightAngleThreshold:F2} | {item.systemJudgeAsStraight} | {item.coachJudgeAsStraight:F2} |  {hand}\n";
             i++;
@@ -605,15 +655,26 @@ public class SettingManager : MonoBehaviour
     }
 
     public void settingInfoDisplay(SettingInfo settingInfo, UserInfo userInfo) {
-        this.settingText.text = $"Coach Height Difference w/ user: {settingInfo.coachDefaultValue.heightDifferenceWithUser:F2}\n" + 
-                                $"Coach Distance to user (multiple): {settingInfo.coachDefaultValue.distanceToUserMultiple:F2}\n" +
-                                $"Moving Speed Max: {settingInfo.coachDefaultValue.movingSpeedMax:F2} (m/s) | Min: {settingInfo.coachDefaultValue.movingSpeedMin:F2} (m/s)\n" +
-                                $"Controller Vibration Amplitude: {settingInfo.controllerVibration.amplitude:F1} | Frequency: {settingInfo.controllerVibration.frequency:F1}\n" +
-                                $"Threshold of Straight: {settingInfo.evaluationThreshold.handStraightAngle:F2} (degree)\n" +
-                                $"Testing Mode Ready Time: {settingInfo.testingModeSetting.readyTime:F1} (s) | Time Limit: {settingInfo.testingModeSetting.timeLimit:F1} (s)\n" +
-                                $"Testing Mode Number of Tasks: {settingInfo.testingModeSetting.targetNumberOfTasks} units\n";
+        // this.settingText.text = $"Coach Height Difference w/ user: {settingInfo.coachDefaultValue.heightDifferenceWithUser:F2}\n" + 
+        //                         $"Coach Distance to user (multiple): {settingInfo.coachDefaultValue.distanceToUserMultiple:F2}\n" +
+        //                         $"Coach is pushable (!isKinematic): {!settingInfo.coachDefaultValue.isKinematic}\n" +
+        //                         $"Moving Speed Max: {settingInfo.coachDefaultValue.movingSpeedMax:F2} (m/s) | Min: {settingInfo.coachDefaultValue.movingSpeedMin:F2} (m/s)\n" +
+        //                         $"Controller Vibration Amplitude: {settingInfo.controllerVibration.amplitude:F1} | Frequency: {settingInfo.controllerVibration.frequency:F1}\n" +
+        //                         $"Threshold of Straight: {settingInfo.evaluationThreshold.handStraightAngle:F2} (degree)\n" +
+        //                         $"Testing Mode Ready Time: {settingInfo.testingModeSetting.readyTime:F1} (s) | Time Limit: {settingInfo.testingModeSetting.timeLimit:F1} (s)\n" +
+        //                         $"Testing Mode Number of Tasks: {settingInfo.testingModeSetting.targetNumberOfTasks} units\n";
         
-        this.userText.text = $"User Height: {userInfo.userBodySize.height:F2} (m) | Arm Length: {userInfo.userBodySize.armLength:F2} (m)\n";
+        // this.userText.text = $"User Height: {userInfo.userBodySize.height:F2} (m) | Arm Length: {userInfo.userBodySize.armLength:F2} (m)\n";
+        this.settingText.text = $"教練與使用者的身高差: {settingInfo.coachDefaultValue.heightDifferenceWithUser:F2}\n" + 
+                                $"教練初始位置與使用者之間的距離(多少倍臂長): {settingInfo.coachDefaultValue.distanceToUserMultiple:F2}\n" +
+                                $"是否推得動教練 (!isKinematic): {!settingInfo.coachDefaultValue.isKinematic}\n" +
+                                $"移動速度最大值: {settingInfo.coachDefaultValue.movingSpeedMax:F2} (m/s) | 最小值: {settingInfo.coachDefaultValue.movingSpeedMin:F2} (m/s)\n" +
+                                $"遙控器震動振幅: {settingInfo.controllerVibration.amplitude:F1} | 頻率: {settingInfo.controllerVibration.frequency:F1}\n" +
+                                $"伸直的角度接受範圍: {settingInfo.evaluationThreshold.handStraightAngle:F2} (度)\n" +
+                                $"測試階段的預備時間: {settingInfo.testingModeSetting.readyTime:F1} (s) | 反應時間限制: {settingInfo.testingModeSetting.timeLimit:F1} (s)\n" +
+                                $"測試階段要進行的回合數: {settingInfo.testingModeSetting.targetNumberOfTasks} units\n";
+        
+        this.userText.text = $"使用者身高: {userInfo.userBodySize.height:F2} (m) | 臂長: {userInfo.userBodySize.armLength:F2} (m)\n";
     }
     public void saveSetting() {
         this.mainManager.saveToJSON_setting(this.mainManager.mySettingInfo);

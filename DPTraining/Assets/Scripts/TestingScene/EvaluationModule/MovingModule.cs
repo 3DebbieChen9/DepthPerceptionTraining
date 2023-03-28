@@ -22,16 +22,23 @@ public class MovingModule : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.name == "UserCenter") {
-            if ((this.evaluationManager.isDuringTheUnit || this.evaluationManager.checkMoving) && !this.evaluationManager.userStartMoving) {
+            // if ((this.evaluationManager.isDuringTheUnit || this.evaluationManager.checkMoving) && !this.evaluationManager.userStartMoving) {
+            if (this.evaluationManager.isDuringTheUnit && !this.evaluationManager.userStartMoving) {
                 this.evaluationManager.userIsMoving();
                 this.evaluationManager.userStartMoving = true;
-                this.evaluationManager.checkMoving = false;
+                // this.evaluationManager.checkMoving = false;
             }
             this.evaluationManager.userIsAtOrigin = false;
         }
         
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "UserCenter") {
+            this.evaluationManager.userIsAtOrigin = true;
+        }
+    }
     void OnTriggerStay (Collider other) 
     {
         if (!this.evaluationManager.isDuringTheUnit) {

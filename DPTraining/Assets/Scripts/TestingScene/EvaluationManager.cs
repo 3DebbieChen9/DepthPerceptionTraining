@@ -17,10 +17,10 @@ public class EvaluationManager : MonoBehaviour
     public MovingDirection coachMovingDirection = MovingDirection.Forward;
     [SerializeField]
     public bool isDuringTheUnit = false;
-    [SerializeField]
-    public bool checkMoving = false;
-    [SerializeField]
-    public bool checkPunching = false;
+    // [SerializeField]
+    // public bool checkMoving = false;
+    // [SerializeField]
+    // public bool checkPunching = false;
     [SerializeField]
     public bool userStartMoving = false;
     [SerializeField]
@@ -46,6 +46,7 @@ public class EvaluationManager : MonoBehaviour
     void Start()
     {
         this.startingPoint.transform.position = this.mainManager.sceneOriginPosition;
+        this.startingPoint.transform.rotation = this.mainManager.sceneOriginRotation;
         this.startingPoint.GetComponent<CapsuleCollider>().radius = this.mainManager.mySettingInfo.evaluationThreshold.radiusBetweenOriginAndUser;
         this.startingPoint.GetComponent<CapsuleCollider>().height = this.mainManager.myUserInfo.userBodySize.height;
         this.startingPoint.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.mainManager.myUserInfo.userBodySize.height / 2.0f, 0.0f);
@@ -59,16 +60,22 @@ public class EvaluationManager : MonoBehaviour
     }
 
     public void evaluationStatusInitialize() {
+        // this.startingPoint.transform.position = this.mainManager.sceneOriginPosition;
+        // this.startingPoint.transform.rotation = this.mainManager.sceneOriginRotation;
         this.userMovingDirection = MovingDirection.Forward;
         this.coachMovingDirection = MovingDirection.Forward;
         this.isDuringTheUnit = false;
         this.userStartMoving = false;
-        this.checkMoving = false;
-        this.checkPunching = false;
+    }
+
+    public void setStartingPoint(Vector3 position, Quaternion rotation) {
+        this.startingPoint.transform.position = position;
+        this.startingPoint.transform.rotation = rotation;
     }
 
     public void userIsPunching(Hand hand) {
-        if (this.isDuringTheUnit || this.checkPunching) {
+        // if (this.isDuringTheUnit || this.checkPunching) {
+        if (this.isDuringTheUnit) {
             this.testingModeManager.curUnitResult.isPunching = true;
             this.testingModeManager.curUnitResult.isReacting = true;
             this.testingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
@@ -83,11 +90,11 @@ public class EvaluationManager : MonoBehaviour
     }
 
     public void userIsMoving() {
-        if (this.isDuringTheUnit || this.checkMoving) {
+        // if (this.isDuringTheUnit || this.checkMoving) {
+        if (this.isDuringTheUnit) {
             this.testingModeManager.curUnitResult.isMoving = true;
             this.testingModeManager.curUnitResult.isReacting = true;
             this.testingModeManager.curUnitResult.isMovingCorrectly =  this.directionModule.judgeMovingDirection();
-            this.testingModeManager.myTestResult.numberOfMovingCorrectly += this.testingModeManager.curUnitResult.isMovingCorrectly ? 1 : 0;
         }
         else {
             this.testingModeManager.curUnitResult.isMoving = false;
@@ -104,9 +111,9 @@ public class EvaluationManager : MonoBehaviour
             else {
                 this.testingModeManager.curUnitResult.isReach = false;
             }
-            this.testingModeManager.curUnitResult.isReacting = true;
-            this.testingModeManager.curUnitResult.isPunching = true;
-            this.testingModeManager.curUnitResult.isReacting = true;
+            // this.testingModeManager.curUnitResult.isReacting = true;
+            // this.testingModeManager.curUnitResult.isPunching = true;
+            // this.testingModeManager.curUnitResult.isReacting = true;
             this.testingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
             
             this.isDuringTheUnit = false;
@@ -123,66 +130,48 @@ public class EvaluationManager : MonoBehaviour
         UnitResultComment comment = new UnitResultComment();
         if (this.testingModeManager.curUnitResult.isMoving) {
             this.testingModeManager.myTestResult.numberOfMoving += 1;
-            comment.comments.Add(this.testingModeManager.UIManager.userIsMoving());
-            // Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is moving");
+            if (this.testingModeManager.curUnitResult.isMovingCorrectly) {
+                comment.score += 1;
+                this.testingModeManager.myTestResult.numberOfMovingCorrectly += 1;
+                comment.comments.Add(this.testingModeManager.UIManager.movingCorretlyScore());
+            }
+            else {
+                comment.comments.Add(this.testingModeManager.UIManager.movingWrong());
+            }
         }
         else {
-            // [----] UI: User is not moving
             comment.comments.Add(this.testingModeManager.UIManager.userNotMoving());
-            // Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is not moving");
         }
 
         if (this.testingModeManager.curUnitResult.isPunching) {
             this.testingModeManager.myTestResult.numberOfPunching += 1;
             comment.comments.Add(this.testingModeManager.UIManager.userIsPunching());
-            // Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is punching");
         }
         else {
-            // [----] UI: User is not punching
             comment.comments.Add(this.testingModeManager.UIManager.userNotPunching());
-            // Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is not punching");
         }
 
         if (this.testingModeManager.curUnitResult.isReach && !this.testingModeManager.curUnitResult.isStraight) {
             this.testingModeManager.myTestResult.numberOfReachNotStraight += 1;
-            // [----] UI: Reach but not straight
             comment.comments.Add(this.testingModeManager.UIManager.userReachNotStraight());
-            // Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User reach but not straight");
         }
 
         if (!this.testingModeManager.curUnitResult.isReach && this.testingModeManager.curUnitResult.isStraight) {
             this.testingModeManager.myTestResult.numberOfStraightNotReach += 1;
-            // [----] UI: Straight but not reach
             comment.comments.Add(this.testingModeManager.UIManager.userStraightNotReach());
-            // Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User straight but not reach");
         }
         
         if (this.testingModeManager.curUnitResult.isReacting) {
             comment.score += 1;
             this.testingModeManager.myTestResult.numberOfReacting += 1;
-            // [----] UI: Reaction score + 1
             comment.comments.Add(this.testingModeManager.UIManager.reactionScore());
-            // Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is reacting");
-        }
-
-        if (this.testingModeManager.curUnitResult.isMovingCorrectly) {
-            comment.score += 1;
-            this.testingModeManager.myTestResult.numberOfMovingCorrectly += 1;
-            // [----] UI: Moving Correctly score + 1
-            comment.comments.Add(this.testingModeManager.UIManager.movingCorretlyScore());
-            // Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is moving correctly");
-        }
-        else {
-            comment.comments.Add(this.testingModeManager.UIManager.movingWrong());
         }
 
         if (this.testingModeManager.curUnitResult.isReach && this.testingModeManager.curUnitResult.isStraight) {
             comment.score += 1;
             this.testingModeManager.curUnitResult.isSuccess = true;
             this.testingModeManager.myTestResult.numberOfSuccess += 1;
-            // [----] UI: Straight and Reach score + 1
             comment.comments.Add(this.testingModeManager.UIManager.reachAndStraightScore());
-            // Debug.Log($"[Result] {this.testingModeManager.curUnitNum}: User is straight and reach");
         }
 
         return comment;

@@ -1572,18 +1572,20 @@ struct CalibrationInstruction_tA52A0ECA9329BE47D9DFD443C07658EA239A2178  : publi
 // DepthPerceptionSystem.CoachDefaultValue
 struct CoachDefaultValue_t5AB018E92F3F5F283F37DD34CEBADF8667A0E807  : public RuntimeObject
 {
+	// System.Boolean DepthPerceptionSystem.CoachDefaultValue::isKinematic
+	bool ___isKinematic_0;
 	// System.Single DepthPerceptionSystem.CoachDefaultValue::avtarCenterToEdgeLength
-	float ___avtarCenterToEdgeLength_0;
+	float ___avtarCenterToEdgeLength_1;
 	// System.Single DepthPerceptionSystem.CoachDefaultValue::avtarDefaultHeight
-	float ___avtarDefaultHeight_1;
+	float ___avtarDefaultHeight_2;
 	// System.Single DepthPerceptionSystem.CoachDefaultValue::heightDifferenceWithUser
-	float ___heightDifferenceWithUser_2;
+	float ___heightDifferenceWithUser_3;
 	// System.Single DepthPerceptionSystem.CoachDefaultValue::distanceToUserMultiple
-	float ___distanceToUserMultiple_3;
+	float ___distanceToUserMultiple_4;
 	// System.Single DepthPerceptionSystem.CoachDefaultValue::movingSpeedMax
-	float ___movingSpeedMax_4;
+	float ___movingSpeedMax_5;
 	// System.Single DepthPerceptionSystem.CoachDefaultValue::movingSpeedMin
-	float ___movingSpeedMin_5;
+	float ___movingSpeedMin_6;
 };
 
 // DepthPerceptionSystem.ControllerVibration
@@ -8295,27 +8297,27 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Vector3_Dot_m4688A1A5243066
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_Cross_m77F64620D73934C56BEE37A64016DBDCB9D21DB8_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___lhs0, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___rhs1, const RuntimeMethod* method) ;
 // System.Void DepthPerceptionSystem.ArmRotationAngle::.ctor(System.Single,System.Single,System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArmRotationAngle__ctor_mC993FE62104AC191530CD60E32C1D31477109068 (ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* __this, float ____forward0, float ____up1, float ____right2, const RuntimeMethod* method) ;
-// System.Void DepthPerceptionSystem.MovableRange::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MovableRange__ctor_mB957AE5D8C4A93CB9AE5F3A5C489541F7964CBC4 (MovableRange_t6BF8A30B3A78BB44A5F1159AE5BE5522CE26C06F* __this, const RuntimeMethod* method) ;
-// System.Void DepthPerceptionSystem.UserBodySize::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserBodySize__ctor_m017DA60558FB205155A77D15A3BCE535875BB4EB (UserBodySize_tD4EFDAF772B34F0B4D4807F6F94FDA39FC7E3A89* __this, const RuntimeMethod* method) ;
+// System.Void DepthPerceptionSystem.MovableRange::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MovableRange__ctor_mD71A6F482DF8A83908B6D09997F8829C79B0E2E4 (MovableRange_t6BF8A30B3A78BB44A5F1159AE5BE5522CE26C06F* __this, int32_t ___a0, const RuntimeMethod* method) ;
+// System.Void DepthPerceptionSystem.UserBodySize::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserBodySize__ctor_m73FAF17697D31AF723066D31760A326CB2ACB850 (UserBodySize_tD4EFDAF772B34F0B4D4807F6F94FDA39FC7E3A89* __this, int32_t ___a0, const RuntimeMethod* method) ;
 // System.Void DepthPerceptionSystem.UserArmStraightAngle::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserArmStraightAngle__ctor_mF0442CEE024285CA5EF8704492F1E4C937BF41D9 (UserArmStraightAngle_tC03199FA8127C9FB429E697DBAAF57A37A6E51AB* __this, const RuntimeMethod* method) ;
-// System.Void DepthPerceptionSystem.ControllerVibration::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ControllerVibration__ctor_mBC228C3D1FE50DBBA914EAD79364D33F8251350E (ControllerVibration_tBE3B83FEB6C21D1639C222FA15B5A80EFA699566* __this, const RuntimeMethod* method) ;
+// System.Void DepthPerceptionSystem.ControllerVibration::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ControllerVibration__ctor_mCD796324DF688D904FBABD636A169F5A18C96EA5 (ControllerVibration_tBE3B83FEB6C21D1639C222FA15B5A80EFA699566* __this, int32_t ___a0, const RuntimeMethod* method) ;
 // System.Void DepthPerceptionSystem.CoachDefaultValue::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CoachDefaultValue__ctor_mEFCFBE2CE744A7B91F3E935F6F1CB74DF8A39CC8 (CoachDefaultValue_t5AB018E92F3F5F283F37DD34CEBADF8667A0E807* __this, const RuntimeMethod* method) ;
-// System.Void DepthPerceptionSystem.EvaluationThreshold::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EvaluationThreshold__ctor_m8BB6A7EC9A0A6733DF633DECA338AFFE675D6BDE (EvaluationThreshold_t83F4504E99326E48FAD1C824B6B1F2E6AF9B3D71* __this, const RuntimeMethod* method) ;
-// System.Void DepthPerceptionSystem.TestingModeSetting::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TestingModeSetting__ctor_mD240E99561C2ADE376B81FBC9813CBEB6CF43EFF (TestingModeSetting_t1659A72353A789664C5DA545A6A2401D6993DFF9* __this, const RuntimeMethod* method) ;
+// System.Void DepthPerceptionSystem.EvaluationThreshold::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EvaluationThreshold__ctor_m4584A25C1B09CC4F145ACAF06C792B3598B2577C (EvaluationThreshold_t83F4504E99326E48FAD1C824B6B1F2E6AF9B3D71* __this, int32_t ___a0, const RuntimeMethod* method) ;
+// System.Void DepthPerceptionSystem.TestingModeSetting::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TestingModeSetting__ctor_m47E80F6E3DD0D1DC6BA4330E42775E8582545523 (TestingModeSetting_t1659A72353A789664C5DA545A6A2401D6993DFF9* __this, int32_t ___a0, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<DepthPerceptionSystem.UnitResult>::.ctor()
 inline void List_1__ctor_m6CDFF407DCED6D464F46C32F555EFB089E1F5ED1 (List_1_tF2159F200DAEB03C3E2FBE1836E3AA6B072DAE33* __this, const RuntimeMethod* method)
 {
 	((  void (*) (List_1_tF2159F200DAEB03C3E2FBE1836E3AA6B072DAE33*, const RuntimeMethod*))List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared)(__this, method);
 }
-// System.Void DepthPerceptionSystem.UnitResult::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult__ctor_mAA8215332B6CE9174141FBDE757AD033343B8CEE (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* __this, const RuntimeMethod* method) ;
+// System.Void DepthPerceptionSystem.UnitResult::.ctor(System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Single,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult__ctor_mB51921C155404D5CF278B1E469EA6067A1814C75 (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* __this, int32_t ____unitNum0, bool ____isMoving1, bool ____isPunching2, bool ____isReach3, bool ____isStraight4, bool ____isReacting5, bool ____isMovingCorrectly6, bool ____isSuccess7, bool ____isOverTime8, float ____reactionTime9, int32_t ____score10, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<DepthPerceptionSystem.UnitResult>::Add(T)
 inline void List_1_Add_m5BB9384DF17903FFF9DB1D9232B01A613C550AA1_inline (List_1_tF2159F200DAEB03C3E2FBE1836E3AA6B072DAE33* __this, UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* ___item0, const RuntimeMethod* method)
 {
@@ -8336,8 +8338,8 @@ inline void List_1__ctor_mFB329855107C9A8FE595F911A1E4651344815CB4 (List_1_t889A
 {
 	((  void (*) (List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867*, const RuntimeMethod*))List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared)(__this, method);
 }
-// System.Void DepthPerceptionSystem.PunchStraightUnit::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchStraightUnit__ctor_mAFDBC111C7B51B7A8ABA6BE5D4672619ACC039AD (PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* __this, const RuntimeMethod* method) ;
+// System.Void DepthPerceptionSystem.PunchStraightUnit::.ctor(System.Single,System.Boolean,System.Boolean,DepthPerceptionSystem.Hand,DepthPerceptionSystem.ArmRotationAngle)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchStraightUnit__ctor_mC2176D8C35051B675D6454C738C9C8FFE9393FB9 (PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* __this, float ____angleThreshold0, bool ____systemJudgeAsStraight1, bool ____coachJudgeAsStraight2, int32_t ____hand3, ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* ____armRotationAngle4, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<DepthPerceptionSystem.PunchStraightUnit>::Add(T)
 inline void List_1_Add_mC47CA0C58063189C9FFE3E15266889AF0784B7C3_inline (List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867* __this, PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* ___item0, const RuntimeMethod* method)
 {
@@ -14690,11 +14692,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CWarpTextU3Ed__8_System_Coll
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void DepthPerceptionSystem.MovableRange::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MovableRange__ctor_mB957AE5D8C4A93CB9AE5F3A5C489541F7964CBC4 (MovableRange_t6BF8A30B3A78BB44A5F1159AE5BE5522CE26C06F* __this, const RuntimeMethod* method) 
+// System.Void DepthPerceptionSystem.MovableRange::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MovableRange__ctor_mD71A6F482DF8A83908B6D09997F8829C79B0E2E4 (MovableRange_t6BF8A30B3A78BB44A5F1159AE5BE5522CE26C06F* __this, int32_t ___a0, const RuntimeMethod* method) 
 {
 	{
-		// public MovableRange() {
+		// public MovableRange(int a = 0) {
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		// this.minRequiredLengthInVR = 4.0f;
 		__this->___minRequiredLengthInVR_0 = (4.0f);
@@ -14714,11 +14716,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MovableRange__ctor_mB957AE5D8C4A93CB9AE5
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void DepthPerceptionSystem.UserBodySize::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserBodySize__ctor_m017DA60558FB205155A77D15A3BCE535875BB4EB (UserBodySize_tD4EFDAF772B34F0B4D4807F6F94FDA39FC7E3A89* __this, const RuntimeMethod* method) 
+// System.Void DepthPerceptionSystem.UserBodySize::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserBodySize__ctor_m73FAF17697D31AF723066D31760A326CB2ACB850 (UserBodySize_tD4EFDAF772B34F0B4D4807F6F94FDA39FC7E3A89* __this, int32_t ___a0, const RuntimeMethod* method) 
 {
 	{
-		// public UserBodySize() {
+		// public UserBodySize(int a = 0) {
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		// this.armLength = 0.5f;
 		__this->___armLength_0 = (0.5f);
@@ -14831,8 +14833,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserArmStraightAngle__ctor_mF0442CEE0242
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void DepthPerceptionSystem.UserInfo::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserInfo__ctor_m6EC4CE5AF0421EC9E669FAF5214387DEF4B36C9E (UserInfo_t977372B6AB94B589A70A6EBB1D5A179716F23D94* __this, const RuntimeMethod* method) 
+// System.Void DepthPerceptionSystem.UserInfo::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserInfo__ctor_mB9DE573449C78426C51BDA801237AC53E8FB4900 (UserInfo_t977372B6AB94B589A70A6EBB1D5A179716F23D94* __this, int32_t ___a0, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -14843,18 +14845,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserInfo__ctor_m6EC4CE5AF0421EC9E669FAF5
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// public UserInfo() {
+		// public UserInfo(int a = 0) {
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		// this.movableRange = new MovableRange();
 		MovableRange_t6BF8A30B3A78BB44A5F1159AE5BE5522CE26C06F* L_0 = (MovableRange_t6BF8A30B3A78BB44A5F1159AE5BE5522CE26C06F*)il2cpp_codegen_object_new(MovableRange_t6BF8A30B3A78BB44A5F1159AE5BE5522CE26C06F_il2cpp_TypeInfo_var);
 		NullCheck(L_0);
-		MovableRange__ctor_mB957AE5D8C4A93CB9AE5F3A5C489541F7964CBC4(L_0, NULL);
+		MovableRange__ctor_mD71A6F482DF8A83908B6D09997F8829C79B0E2E4(L_0, 0, NULL);
 		__this->___movableRange_0 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___movableRange_0), (void*)L_0);
 		// this.userBodySize = new UserBodySize();
 		UserBodySize_tD4EFDAF772B34F0B4D4807F6F94FDA39FC7E3A89* L_1 = (UserBodySize_tD4EFDAF772B34F0B4D4807F6F94FDA39FC7E3A89*)il2cpp_codegen_object_new(UserBodySize_tD4EFDAF772B34F0B4D4807F6F94FDA39FC7E3A89_il2cpp_TypeInfo_var);
 		NullCheck(L_1);
-		UserBodySize__ctor_m017DA60558FB205155A77D15A3BCE535875BB4EB(L_1, NULL);
+		UserBodySize__ctor_m73FAF17697D31AF723066D31760A326CB2ACB850(L_1, 0, NULL);
 		__this->___userBodySize_1 = L_1;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___userBodySize_1), (void*)L_1);
 		// this.userArmStraightAngle = new UserArmStraightAngle();
@@ -14907,18 +14909,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CoachDefaultValue__ctor_mEFCFBE2CE744A7B
 	{
 		// public CoachDefaultValue() {
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
+		// this.isKinematic = false;
+		__this->___isKinematic_0 = (bool)0;
 		// this.avtarCenterToEdgeLength = 0.43f;
-		__this->___avtarCenterToEdgeLength_0 = (0.430000007f);
+		__this->___avtarCenterToEdgeLength_1 = (0.430000007f);
 		// this.avtarDefaultHeight = 1.80f;
-		__this->___avtarDefaultHeight_1 = (1.79999995f);
+		__this->___avtarDefaultHeight_2 = (1.79999995f);
 		// this.heightDifferenceWithUser = 0.05f;
-		__this->___heightDifferenceWithUser_2 = (0.0500000007f);
+		__this->___heightDifferenceWithUser_3 = (0.0500000007f);
 		// this.distanceToUserMultiple = 1.5f;
-		__this->___distanceToUserMultiple_3 = (1.5f);
+		__this->___distanceToUserMultiple_4 = (1.5f);
 		// this.movingSpeedMax = 0.8f;
-		__this->___movingSpeedMax_4 = (0.800000012f);
+		__this->___movingSpeedMax_5 = (0.800000012f);
 		// this.movingSpeedMin = 0.2f;
-		__this->___movingSpeedMin_5 = (0.200000003f);
+		__this->___movingSpeedMin_6 = (0.200000003f);
 		// }
 		return;
 	}
@@ -14931,11 +14935,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CoachDefaultValue__ctor_mEFCFBE2CE744A7B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void DepthPerceptionSystem.TestingModeSetting::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TestingModeSetting__ctor_mD240E99561C2ADE376B81FBC9813CBEB6CF43EFF (TestingModeSetting_t1659A72353A789664C5DA545A6A2401D6993DFF9* __this, const RuntimeMethod* method) 
+// System.Void DepthPerceptionSystem.TestingModeSetting::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TestingModeSetting__ctor_m47E80F6E3DD0D1DC6BA4330E42775E8582545523 (TestingModeSetting_t1659A72353A789664C5DA545A6A2401D6993DFF9* __this, int32_t ___a0, const RuntimeMethod* method) 
 {
 	{
-		// public TestingModeSetting() {
+		// public TestingModeSetting(int a = 0) {
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		// this.readyTime = 5.0f;
 		__this->___readyTime_0 = (5.0f);
@@ -14955,11 +14959,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TestingModeSetting__ctor_mD240E99561C2AD
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void DepthPerceptionSystem.EvaluationThreshold::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EvaluationThreshold__ctor_m8BB6A7EC9A0A6733DF633DECA338AFFE675D6BDE (EvaluationThreshold_t83F4504E99326E48FAD1C824B6B1F2E6AF9B3D71* __this, const RuntimeMethod* method) 
+// System.Void DepthPerceptionSystem.EvaluationThreshold::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EvaluationThreshold__ctor_m4584A25C1B09CC4F145ACAF06C792B3598B2577C (EvaluationThreshold_t83F4504E99326E48FAD1C824B6B1F2E6AF9B3D71* __this, int32_t ___a0, const RuntimeMethod* method) 
 {
 	{
-		// public EvaluationThreshold() {
+		// public EvaluationThreshold(int a = 0) {
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		// this.radiusBetweenOriginAndUser = 0.15f;
 		__this->___radiusBetweenOriginAndUser_0 = (0.150000006f);
@@ -14977,11 +14981,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EvaluationThreshold__ctor_m8BB6A7EC9A0A6
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void DepthPerceptionSystem.ControllerVibration::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ControllerVibration__ctor_mBC228C3D1FE50DBBA914EAD79364D33F8251350E (ControllerVibration_tBE3B83FEB6C21D1639C222FA15B5A80EFA699566* __this, const RuntimeMethod* method) 
+// System.Void DepthPerceptionSystem.ControllerVibration::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ControllerVibration__ctor_mCD796324DF688D904FBABD636A169F5A18C96EA5 (ControllerVibration_tBE3B83FEB6C21D1639C222FA15B5A80EFA699566* __this, int32_t ___a0, const RuntimeMethod* method) 
 {
 	{
-		// public ControllerVibration() {
+		// public ControllerVibration(int a = 0) {
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		// this.amplitude = 1.0f;
 		__this->___amplitude_0 = (1.0f);
@@ -14999,8 +15003,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ControllerVibration__ctor_mBC228C3D1FE50
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void DepthPerceptionSystem.SettingInfo::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SettingInfo__ctor_mD7ED992D89FB60B4AC33B520359390D208F36B4E (SettingInfo_t3E39295A4EE3CAF3B936BA823AF4C330005DC67A* __this, const RuntimeMethod* method) 
+// System.Void DepthPerceptionSystem.SettingInfo::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SettingInfo__ctor_m4FED3A9FB5209CE2FD78BC1B084E9F365424F370 (SettingInfo_t3E39295A4EE3CAF3B936BA823AF4C330005DC67A* __this, int32_t ___a0, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -15012,14 +15016,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SettingInfo__ctor_mD7ED992D89FB60B4AC33B
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// public SettingInfo() {
+		// public SettingInfo(int a = 0) {
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		// this.userAvgDistanceBetweenEyesAndTopHead = 0.11f;
 		__this->___userAvgDistanceBetweenEyesAndTopHead_0 = (0.109999999f);
 		// this.controllerVibration = new ControllerVibration();
 		ControllerVibration_tBE3B83FEB6C21D1639C222FA15B5A80EFA699566* L_0 = (ControllerVibration_tBE3B83FEB6C21D1639C222FA15B5A80EFA699566*)il2cpp_codegen_object_new(ControllerVibration_tBE3B83FEB6C21D1639C222FA15B5A80EFA699566_il2cpp_TypeInfo_var);
 		NullCheck(L_0);
-		ControllerVibration__ctor_mBC228C3D1FE50DBBA914EAD79364D33F8251350E(L_0, NULL);
+		ControllerVibration__ctor_mCD796324DF688D904FBABD636A169F5A18C96EA5(L_0, 0, NULL);
 		__this->___controllerVibration_1 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___controllerVibration_1), (void*)L_0);
 		// this.coachDefaultValue = new CoachDefaultValue();
@@ -15031,13 +15035,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SettingInfo__ctor_mD7ED992D89FB60B4AC33B
 		// this.evaluationThreshold = new EvaluationThreshold();
 		EvaluationThreshold_t83F4504E99326E48FAD1C824B6B1F2E6AF9B3D71* L_2 = (EvaluationThreshold_t83F4504E99326E48FAD1C824B6B1F2E6AF9B3D71*)il2cpp_codegen_object_new(EvaluationThreshold_t83F4504E99326E48FAD1C824B6B1F2E6AF9B3D71_il2cpp_TypeInfo_var);
 		NullCheck(L_2);
-		EvaluationThreshold__ctor_m8BB6A7EC9A0A6733DF633DECA338AFFE675D6BDE(L_2, NULL);
+		EvaluationThreshold__ctor_m4584A25C1B09CC4F145ACAF06C792B3598B2577C(L_2, 0, NULL);
 		__this->___evaluationThreshold_3 = L_2;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___evaluationThreshold_3), (void*)L_2);
 		// this.testingModeSetting = new TestingModeSetting();
 		TestingModeSetting_t1659A72353A789664C5DA545A6A2401D6993DFF9* L_3 = (TestingModeSetting_t1659A72353A789664C5DA545A6A2401D6993DFF9*)il2cpp_codegen_object_new(TestingModeSetting_t1659A72353A789664C5DA545A6A2401D6993DFF9_il2cpp_TypeInfo_var);
 		NullCheck(L_3);
-		TestingModeSetting__ctor_mD240E99561C2ADE376B81FBC9813CBEB6CF43EFF(L_3, NULL);
+		TestingModeSetting__ctor_m47E80F6E3DD0D1DC6BA4330E42775E8582545523(L_3, 0, NULL);
 		__this->___testingModeSetting_4 = L_3;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___testingModeSetting_4), (void*)L_3);
 		// }
@@ -15052,8 +15056,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SettingInfo__ctor_mD7ED992D89FB60B4AC33B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void DepthPerceptionSystem.TestResult::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TestResult__ctor_m62E7B8C9F4179771BDA9E69F42D4623DF5AA111E (TestResult_t466CB637171E4F70A5442007B2AB924DE93E021A* __this, const RuntimeMethod* method) 
+// System.Void DepthPerceptionSystem.TestResult::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TestResult__ctor_m4AF489C244695B66DF2BBE0DE62C3CB4F8A2AAA6 (TestResult_t466CB637171E4F70A5442007B2AB924DE93E021A* __this, int32_t ___a0, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -15063,7 +15067,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TestResult__ctor_m62E7B8C9F4179771BDA9E6
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// public TestResult() {
+		// public TestResult(int a = 0) {
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		// this.numberOfTasks = 0;
 		__this->___numberOfTasks_0 = 0;
@@ -15111,93 +15115,49 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TestResult_addUnitResult_m690C59416A0D19
 	}
 	UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* V_0 = NULL;
 	{
-		// UnitResult tmp = new UnitResult();
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_0 = (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4*)il2cpp_codegen_object_new(UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4_il2cpp_TypeInfo_var);
+		// UnitResult tmp = new UnitResult(unitResult.unitNum, unitResult.isMoving, unitResult.isPunching, unitResult.isReach, unitResult.isStraight, unitResult.isReacting, unitResult.isMovingCorrectly, unitResult.isSuccess, unitResult.isOverTime, unitResult.reactionTime, unitResult.score);
+		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_0 = ___unitResult0;
 		NullCheck(L_0);
-		UnitResult__ctor_mAA8215332B6CE9174141FBDE757AD033343B8CEE(L_0, NULL);
-		V_0 = L_0;
-		// tmp.unitNum = unitResult.unitNum;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_1 = V_0;
+		int32_t L_1 = L_0->___unitNum_0;
 		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_2 = ___unitResult0;
 		NullCheck(L_2);
-		int32_t L_3 = L_2->___unitNum_0;
-		NullCheck(L_1);
-		L_1->___unitNum_0 = L_3;
-		// tmp.isMoving = unitResult.isMoving;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_4 = V_0;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_5 = ___unitResult0;
-		NullCheck(L_5);
-		bool L_6 = L_5->___isMoving_1;
+		bool L_3 = L_2->___isMoving_1;
+		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_4 = ___unitResult0;
 		NullCheck(L_4);
-		L_4->___isMoving_1 = L_6;
-		// tmp.isPunching = unitResult.isPunching;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_7 = V_0;
+		bool L_5 = L_4->___isPunching_2;
+		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_6 = ___unitResult0;
+		NullCheck(L_6);
+		bool L_7 = L_6->___isReach_3;
 		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_8 = ___unitResult0;
 		NullCheck(L_8);
-		bool L_9 = L_8->___isPunching_2;
-		NullCheck(L_7);
-		L_7->___isPunching_2 = L_9;
-		// tmp.isReach = unitResult.isReach;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_10 = V_0;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_11 = ___unitResult0;
-		NullCheck(L_11);
-		bool L_12 = L_11->___isReach_3;
+		bool L_9 = L_8->___isStraight_4;
+		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_10 = ___unitResult0;
 		NullCheck(L_10);
-		L_10->___isReach_3 = L_12;
-		// tmp.isStraight = unitResult.isStraight;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_13 = V_0;
+		bool L_11 = L_10->___isReacting_5;
+		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_12 = ___unitResult0;
+		NullCheck(L_12);
+		bool L_13 = L_12->___isMovingCorrectly_6;
 		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_14 = ___unitResult0;
 		NullCheck(L_14);
-		bool L_15 = L_14->___isStraight_4;
-		NullCheck(L_13);
-		L_13->___isStraight_4 = L_15;
-		// tmp.isReacting = unitResult.isReacting;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_16 = V_0;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_17 = ___unitResult0;
-		NullCheck(L_17);
-		bool L_18 = L_17->___isReacting_5;
+		bool L_15 = L_14->___isSuccess_7;
+		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_16 = ___unitResult0;
 		NullCheck(L_16);
-		L_16->___isReacting_5 = L_18;
-		// tmp.isMovingCorrectly = unitResult.isMovingCorrectly;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_19 = V_0;
+		bool L_17 = L_16->___isOverTime_8;
+		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_18 = ___unitResult0;
+		NullCheck(L_18);
+		float L_19 = L_18->___reactionTime_9;
 		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_20 = ___unitResult0;
 		NullCheck(L_20);
-		bool L_21 = L_20->___isMovingCorrectly_6;
-		NullCheck(L_19);
-		L_19->___isMovingCorrectly_6 = L_21;
-		// tmp.isSuccess = unitResult.isSuccess;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_22 = V_0;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_23 = ___unitResult0;
-		NullCheck(L_23);
-		bool L_24 = L_23->___isSuccess_7;
+		int32_t L_21 = L_20->___score_10;
+		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_22 = (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4*)il2cpp_codegen_object_new(UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4_il2cpp_TypeInfo_var);
 		NullCheck(L_22);
-		L_22->___isSuccess_7 = L_24;
-		// tmp.isOverTime = unitResult.isOverTime;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_25 = V_0;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_26 = ___unitResult0;
-		NullCheck(L_26);
-		bool L_27 = L_26->___isOverTime_8;
-		NullCheck(L_25);
-		L_25->___isOverTime_8 = L_27;
-		// tmp.reactionTime = unitResult.reactionTime;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_28 = V_0;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_29 = ___unitResult0;
-		NullCheck(L_29);
-		float L_30 = L_29->___reactionTime_9;
-		NullCheck(L_28);
-		L_28->___reactionTime_9 = L_30;
-		// tmp.score = unitResult.score;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_31 = V_0;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_32 = ___unitResult0;
-		NullCheck(L_32);
-		int32_t L_33 = L_32->___score_10;
-		NullCheck(L_31);
-		L_31->___score_10 = L_33;
+		UnitResult__ctor_mB51921C155404D5CF278B1E469EA6067A1814C75(L_22, L_1, L_3, L_5, L_7, L_9, L_11, L_13, L_15, L_17, L_19, L_21, NULL);
+		V_0 = L_22;
 		// this.unitResultList.Add(tmp);
-		List_1_tF2159F200DAEB03C3E2FBE1836E3AA6B072DAE33* L_34 = __this->___unitResultList_12;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_35 = V_0;
-		NullCheck(L_34);
-		List_1_Add_m5BB9384DF17903FFF9DB1D9232B01A613C550AA1_inline(L_34, L_35, List_1_Add_m5BB9384DF17903FFF9DB1D9232B01A613C550AA1_RuntimeMethod_var);
+		List_1_tF2159F200DAEB03C3E2FBE1836E3AA6B072DAE33* L_23 = __this->___unitResultList_12;
+		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_24 = V_0;
+		NullCheck(L_23);
+		List_1_Add_m5BB9384DF17903FFF9DB1D9232B01A613C550AA1_inline(L_23, L_24, List_1_Add_m5BB9384DF17903FFF9DB1D9232B01A613C550AA1_RuntimeMethod_var);
 		// }
 		return;
 	}
@@ -15284,6 +15244,49 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult__ctor_mAA8215332B6CE9174141FB
 		return;
 	}
 }
+// System.Void DepthPerceptionSystem.UnitResult::.ctor(System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Single,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult__ctor_mB51921C155404D5CF278B1E469EA6067A1814C75 (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* __this, int32_t ____unitNum0, bool ____isMoving1, bool ____isPunching2, bool ____isReach3, bool ____isStraight4, bool ____isReacting5, bool ____isMovingCorrectly6, bool ____isSuccess7, bool ____isOverTime8, float ____reactionTime9, int32_t ____score10, const RuntimeMethod* method) 
+{
+	{
+		// public UnitResult(int _unitNum, bool _isMoving, bool _isPunching, bool _isReach, bool _isStraight, bool _isReacting, bool _isMovingCorrectly, bool _isSuccess, bool _isOverTime, float _reactionTime, int _score) {
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
+		// this.unitNum = _unitNum;
+		int32_t L_0 = ____unitNum0;
+		__this->___unitNum_0 = L_0;
+		// this.isMoving = _isMoving;
+		bool L_1 = ____isMoving1;
+		__this->___isMoving_1 = L_1;
+		// this.isPunching = _isPunching;
+		bool L_2 = ____isPunching2;
+		__this->___isPunching_2 = L_2;
+		// this.isReach = _isReach;
+		bool L_3 = ____isReach3;
+		__this->___isReach_3 = L_3;
+		// this.isStraight = _isStraight;
+		bool L_4 = ____isStraight4;
+		__this->___isStraight_4 = L_4;
+		// this.isReacting = _isReacting;
+		bool L_5 = ____isReacting5;
+		__this->___isReacting_5 = L_5;
+		// this.isMovingCorrectly = _isMovingCorrectly;
+		bool L_6 = ____isMovingCorrectly6;
+		__this->___isMovingCorrectly_6 = L_6;
+		// this.isSuccess = _isSuccess;
+		bool L_7 = ____isSuccess7;
+		__this->___isSuccess_7 = L_7;
+		// this.isOverTime = _isOverTime;
+		bool L_8 = ____isOverTime8;
+		__this->___isOverTime_8 = L_8;
+		// this.reactionTime = _reactionTime;
+		float L_9 = ____reactionTime9;
+		__this->___reactionTime_9 = L_9;
+		// this.score = _score;
+		int32_t L_10 = ____score10;
+		__this->___score_10 = L_10;
+		// }
+		return;
+	}
+}
 // System.Void DepthPerceptionSystem.UnitResult::reset()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult_reset_m9D0E07417A6D4742492742DFB7ED9FD162DB2463 (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* __this, const RuntimeMethod* method) 
 {
@@ -15322,8 +15325,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult_reset_m9D0E07417A6D4742492742
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void DepthPerceptionSystem.UnitResultComment::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResultComment__ctor_mE2A1BA44C3DA20FAF689166FD9DCEF6C613959DA (UnitResultComment_t8AA5E2F8CA0BC4E1906D21126FE5A5BF4E705230* __this, const RuntimeMethod* method) 
+// System.Void DepthPerceptionSystem.UnitResultComment::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResultComment__ctor_mDEBE5ED10EF0E0A55A7C1AE8A631832C3D313A66 (UnitResultComment_t8AA5E2F8CA0BC4E1906D21126FE5A5BF4E705230* __this, int32_t ___a0, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -15333,7 +15336,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResultComment__ctor_mE2A1BA44C3DA20F
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// public UnitResultComment() {
+		// public UnitResultComment(int a = 0) {
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		// this.score = 0;
 		__this->___score_0 = 0;
@@ -15453,6 +15456,32 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchStraightUnit__ctor_mAFDBC111C7B51B7
 		return;
 	}
 }
+// System.Void DepthPerceptionSystem.PunchStraightUnit::.ctor(System.Single,System.Boolean,System.Boolean,DepthPerceptionSystem.Hand,DepthPerceptionSystem.ArmRotationAngle)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchStraightUnit__ctor_mC2176D8C35051B675D6454C738C9C8FFE9393FB9 (PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* __this, float ____angleThreshold0, bool ____systemJudgeAsStraight1, bool ____coachJudgeAsStraight2, int32_t ____hand3, ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* ____armRotationAngle4, const RuntimeMethod* method) 
+{
+	{
+		// public PunchStraightUnit(float _angleThreshold, bool _systemJudgeAsStraight, bool _coachJudgeAsStraight, Hand _hand, ArmRotationAngle _armRotationAngle) {
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
+		// this.handStraightAngleThreshold = _angleThreshold;
+		float L_0 = ____angleThreshold0;
+		__this->___handStraightAngleThreshold_0 = L_0;
+		// this.systemJudgeAsStraight = _systemJudgeAsStraight;
+		bool L_1 = ____systemJudgeAsStraight1;
+		__this->___systemJudgeAsStraight_1 = L_1;
+		// this.coachJudgeAsStraight = _coachJudgeAsStraight;
+		bool L_2 = ____coachJudgeAsStraight2;
+		__this->___coachJudgeAsStraight_2 = L_2;
+		// this.hand = _hand;
+		int32_t L_3 = ____hand3;
+		__this->___hand_3 = L_3;
+		// this.armRotationAngle = _armRotationAngle;
+		ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* L_4 = ____armRotationAngle4;
+		__this->___armRotationAngle_4 = L_4;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___armRotationAngle_4), (void*)L_4);
+		// }
+		return;
+	}
+}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -15507,52 +15536,31 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchStraightUnitTest_addUnitResult_mEC3
 	}
 	PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* V_0 = NULL;
 	{
-		// PunchStraightUnit tmp = new PunchStraightUnit();
-		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_0 = (PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838*)il2cpp_codegen_object_new(PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838_il2cpp_TypeInfo_var);
+		// PunchStraightUnit tmp = new PunchStraightUnit(unit.handStraightAngleThreshold, unit.systemJudgeAsStraight, unit.coachJudgeAsStraight, unit.hand, unit.armRotationAngle);
+		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_0 = ___unit0;
 		NullCheck(L_0);
-		PunchStraightUnit__ctor_mAFDBC111C7B51B7A8ABA6BE5D4672619ACC039AD(L_0, NULL);
-		V_0 = L_0;
-		// tmp.handStraightAngleThreshold = unit.handStraightAngleThreshold;
-		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_1 = V_0;
+		float L_1 = L_0->___handStraightAngleThreshold_0;
 		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_2 = ___unit0;
 		NullCheck(L_2);
-		float L_3 = L_2->___handStraightAngleThreshold_0;
-		NullCheck(L_1);
-		L_1->___handStraightAngleThreshold_0 = L_3;
-		// tmp.systemJudgeAsStraight = unit.systemJudgeAsStraight;
-		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_4 = V_0;
-		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_5 = ___unit0;
-		NullCheck(L_5);
-		bool L_6 = L_5->___systemJudgeAsStraight_1;
+		bool L_3 = L_2->___systemJudgeAsStraight_1;
+		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_4 = ___unit0;
 		NullCheck(L_4);
-		L_4->___systemJudgeAsStraight_1 = L_6;
-		// tmp.coachJudgeAsStraight = unit.coachJudgeAsStraight;
-		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_7 = V_0;
+		bool L_5 = L_4->___coachJudgeAsStraight_2;
+		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_6 = ___unit0;
+		NullCheck(L_6);
+		int32_t L_7 = L_6->___hand_3;
 		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_8 = ___unit0;
 		NullCheck(L_8);
-		bool L_9 = L_8->___coachJudgeAsStraight_2;
-		NullCheck(L_7);
-		L_7->___coachJudgeAsStraight_2 = L_9;
-		// tmp.hand = unit.hand;
-		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_10 = V_0;
-		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_11 = ___unit0;
-		NullCheck(L_11);
-		int32_t L_12 = L_11->___hand_3;
+		ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* L_9 = L_8->___armRotationAngle_4;
+		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_10 = (PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838*)il2cpp_codegen_object_new(PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838_il2cpp_TypeInfo_var);
 		NullCheck(L_10);
-		L_10->___hand_3 = L_12;
-		// tmp.armRotationAngle = unit.armRotationAngle;
-		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_13 = V_0;
-		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_14 = ___unit0;
-		NullCheck(L_14);
-		ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* L_15 = L_14->___armRotationAngle_4;
-		NullCheck(L_13);
-		L_13->___armRotationAngle_4 = L_15;
-		Il2CppCodeGenWriteBarrier((void**)(&L_13->___armRotationAngle_4), (void*)L_15);
+		PunchStraightUnit__ctor_mC2176D8C35051B675D6454C738C9C8FFE9393FB9(L_10, L_1, L_3, L_5, L_7, L_9, NULL);
+		V_0 = L_10;
 		// this.punchStraightUnitList.Add(tmp);
-		List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867* L_16 = __this->___punchStraightUnitList_3;
-		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_17 = V_0;
-		NullCheck(L_16);
-		List_1_Add_mC47CA0C58063189C9FFE3E15266889AF0784B7C3_inline(L_16, L_17, List_1_Add_mC47CA0C58063189C9FFE3E15266889AF0784B7C3_RuntimeMethod_var);
+		List_1_t889AFDDB7980B3648838809F6F62B1F6EB5B0867* L_11 = __this->___punchStraightUnitList_3;
+		PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838* L_12 = V_0;
+		NullCheck(L_11);
+		List_1_Add_mC47CA0C58063189C9FFE3E15266889AF0784B7C3_inline(L_11, L_12, List_1_Add_mC47CA0C58063189C9FFE3E15266889AF0784B7C3_RuntimeMethod_var);
 		// }
 		return;
 	}
