@@ -31,15 +31,22 @@ public class HitTargetDemo : MonoBehaviour
         float vibrationFrequency = this.settingManager.mainManager.mySettingInfo.controllerVibration.frequency;
         if (other.gameObject.tag == "Glove_L") {
             this.settingManager.coachManager.stopMoving();
-            this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
-            OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.LTouch);
-            Invoke("stopControllerVibration", 0.3f);
+            if (!this.settingManager.isHitTrigger) {
+                this.settingManager.isHitTrigger = true;
+                this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
+                OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.LTouch);
+                Invoke("stopControllerVibration", 0.3f);
+            }
+            
         }
         else if (other.gameObject.tag == "Glove_R") {
             this.settingManager.coachManager.stopMoving();
-            this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
-            OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.RTouch);
-            Invoke("stopControllerVibration", 0.3f);
+            if (!this.settingManager.isHitTrigger) {
+                this.settingManager.isHitTrigger = true;
+                this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
+                OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.RTouch);
+                Invoke("stopControllerVibration", 0.3f);
+            }   
         }
     }
 

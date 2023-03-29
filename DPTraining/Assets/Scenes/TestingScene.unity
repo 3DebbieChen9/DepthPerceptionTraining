@@ -1238,7 +1238,7 @@ MonoBehaviour:
   coachStickman: {fileID: 6714715004489424287}
   coachAnimator: {fileID: 6714715004479909393}
   coachMovingDirection: 0
-  coachInitialPosition: {x: 0, y: 0, z: 5.46}
+  coachInitialPosition: {x: 0, y: 10, z: 0}
   coachBodyParts:
   - {fileID: 6714715004489423891}
   - {fileID: 6714715004489423919}
@@ -1314,6 +1314,7 @@ MonoBehaviour:
   directionModule: {fileID: 599999392}
   straightModule: {fileID: 599999391}
   reachModule: {fileID: 599999390}
+  isHitTrigger: 0
 --- !u!114 &599999388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7776,7 +7777,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6714715004489424287}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.53, z: 2.23}
+  m_LocalPosition: {x: 0, y: 7.86, z: 2.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:

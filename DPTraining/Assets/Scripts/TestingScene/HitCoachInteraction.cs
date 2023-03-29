@@ -32,30 +32,32 @@ public class HitCoachInteraction : MonoBehaviour
             if (this.evaluationManager.isDuringTheUnit) {
                 this.evaluationManager.userIsHitCoach(Hand.Left, false);   
             }
-            if (this.gameObject.name != "Boxing_Gloves_L" && this.gameObject.name != "Boxing_Gloves_R") {
-                if (this.gameObject.GetComponent<MeshRenderer>().materials.Length <= 1) {
-                    this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.red;
-                }
-                else {
-                    foreach (Material m in this.gameObject.GetComponent<MeshRenderer>().materials) {
-                        if(m.name == "M_Body (Instance)") {
-                            m.color = Color.red;
-                            break;
+            if (!this.evaluationManager.isHitTrigger) {
+                this.evaluationManager.isHitTrigger = true;
+                if (this.gameObject.name != "Boxing_Gloves_L" && this.gameObject.name != "Boxing_Gloves_R") {
+                    if (this.gameObject.GetComponent<MeshRenderer>().materials.Length <= 1) {
+                        this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.red;
+                    }
+                    else {
+                        foreach (Material m in this.gameObject.GetComponent<MeshRenderer>().materials) {
+                            if(m.name == "M_Body (Instance)" || m.name == "M_Body") {
+                                m.color = Color.red;
+                                break;
+                            }
                         }
                     }
                 }
+                float vibrationAmplitude = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.amplitude;
+                float vibrationFrequency = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.frequency;
+                if (other.gameObject.tag == "Glove_L") {
+                    OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.LTouch);
+                    Invoke("stopControllerVibration", 0.3f);
+                }
+                else if (other.gameObject.tag == "Glove_R") {
+                    OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.RTouch);
+                    Invoke("stopControllerVibration", 0.3f);
+                }
             }
-        }
-
-        float vibrationAmplitude = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.amplitude;
-        float vibrationFrequency = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.frequency;
-        if (other.gameObject.tag == "Glove_L") {
-            OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.LTouch);
-            Invoke("stopControllerVibration", 0.3f);
-        }
-        else if (other.gameObject.tag == "Glove_R") {
-            OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.RTouch);
-            Invoke("stopControllerVibration", 0.3f);
         }
     }
 

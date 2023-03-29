@@ -32,6 +32,8 @@ public class EvaluationManager : MonoBehaviour
     private StraightModule straightModule;
     [SerializeField]
     public ReachModule reachModule;
+    [SerializeField]
+    public bool isHitTrigger = false;
 
     void Awake() {
         if (this.mainManager == null) {
@@ -66,6 +68,7 @@ public class EvaluationManager : MonoBehaviour
         this.coachMovingDirection = MovingDirection.Forward;
         this.isDuringTheUnit = false;
         this.userStartMoving = false;
+        this.isHitTrigger = false;
     }
 
     public void setStartingPoint(Vector3 position, Quaternion rotation) {

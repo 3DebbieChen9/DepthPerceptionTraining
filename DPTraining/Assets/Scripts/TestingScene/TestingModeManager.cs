@@ -107,6 +107,8 @@ public class TestingModeManager : MonoBehaviour
             if (this.readyTimer.timeLeft <= 0.2f) {
                 // [----] UI: Unit x start!!!
                 this.UIManager.readyStartView(this.curUnitNum);
+                
+                this.evaluationManager.isHitTrigger = false;
                 this.callClearCoachColor();
             } 
             if (this.readyTimer.timeLeft <= 0.0f) {

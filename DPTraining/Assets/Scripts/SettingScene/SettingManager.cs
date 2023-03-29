@@ -21,6 +21,8 @@ public class SettingManager : MonoBehaviour
 
     [SerializeField]
     private GameObject gym;
+    [SerializeField]
+    public bool isHitTrigger;
 
     [SerializeField]
     private TMP_Text settingText;
@@ -149,6 +151,7 @@ public class SettingManager : MonoBehaviour
             }
             if (OVRInput.GetDown(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch)) {
                 this.coachManager.moveToInitialPosition();
+                this.isHitTrigger = false;
                 this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
             }
             if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch)) {
@@ -193,6 +196,7 @@ public class SettingManager : MonoBehaviour
         if (this.curState == SettingState.StraightCollecting) {
             if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
                 this.coachManager.moveToInitialPosition();
+                this.isHitTrigger = false;
                 this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
                 this.readyPunchView();
             }
@@ -236,6 +240,8 @@ public class SettingManager : MonoBehaviour
         this.gym.transform.position = new Vector3(this.mainManager.sceneOriginPosition.x, this.mainManager.sceneOriginPosition.y, this.mainManager.sceneOriginPosition.z);
         this.gym.transform.rotation = this.mainManager.sceneOriginRotation;
         this.gym.SetActive(true);
+
+        this.isHitTrigger = false;
 
         this.userSizePanel.SetActive(true);
         this.coachSizePanel.SetActive(false);
@@ -411,12 +417,14 @@ public class SettingManager : MonoBehaviour
         }
 
         this.coachManager.coachSettingInitial();
+        this.isHitTrigger = false;
         this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
         this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
     }
     public void setCoachPushable() {
         
         this.coachManager.coachSettingInitial();
+        this.isHitTrigger = false;
         this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
         this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
     }
@@ -434,6 +442,7 @@ public class SettingManager : MonoBehaviour
             Debug.Log(e);
         }
         this.coachManager.coachSettingInitial();
+        this.isHitTrigger = false;
         this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
         this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
     }
@@ -467,6 +476,7 @@ public class SettingManager : MonoBehaviour
             Debug.Log(e);
         }
         this.coachManager.coachSettingInitial();
+        this.isHitTrigger = false;
         this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
         this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
     }
@@ -497,6 +507,7 @@ public class SettingManager : MonoBehaviour
             Debug.Log(e);
         }
         this.coachManager.moveToInitialPosition();
+        this.isHitTrigger = false;
         this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
         this.reactionTimer.ResetTimer();
         this.readyTimer.ResetTimer();
@@ -507,6 +518,7 @@ public class SettingManager : MonoBehaviour
         try {
             this.mainManager.mySettingInfo.evaluationThreshold.handStraightAngle = float.Parse(this.thresholdText.text);
             this.coachManager.moveToInitialPosition();
+            this.isHitTrigger = false;
             this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
             this.readyTimer.ResetTimer();
             this.readyCanvas.SetActive(true);
@@ -551,6 +563,7 @@ public class SettingManager : MonoBehaviour
     public void savePunchUnitResult() {
         this.punchUnitTestResult.addUnitResult(this.punchStraightUnit);
         this.coachManager.moveToInitialPosition();
+        this.isHitTrigger = false;
         this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
         this.curDataNum++;
         if (this.curDataNum > 10) {
