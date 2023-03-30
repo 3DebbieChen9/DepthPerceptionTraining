@@ -540,6 +540,7 @@
 "Assets/Scripts/CalibrationScene/CalibrationUIManager.cs"
 "Assets/Scripts/Coach/CoachManager.cs"
 "Assets/Scripts/Coach/CoachRenderManager.cs"
+"Assets/Scripts/FunctionDeveloping/CoachAnimationDeveloping.cs"
 "Assets/Scripts/Manager/InstructionsText.cs"
 "Assets/Scripts/Manager/MainManager.cs"
 "Assets/Scripts/Manager/NamespaceDefine.cs"
