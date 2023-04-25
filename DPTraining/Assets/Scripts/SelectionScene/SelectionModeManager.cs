@@ -18,7 +18,7 @@ public class SelectionModeManager : MonoBehaviour
     [SerializeField]
     private GameObject sceneChoices;
     [SerializeField]
-    private SelectionState curState = SelectionState.Noitom;
+    private SelectionState curState = SelectionState.Place;
 
     void Awake() {
         if (this.mainManager == null) {
@@ -59,10 +59,10 @@ public class SelectionModeManager : MonoBehaviour
     }
 
     public void selectionSceneInitialized() {
-        this.mainManager.OVRControllerLeft.SetActive(false);
-        this.mainManager.OVRControllerRight.SetActive(false);
-        this.mainManager.OVRBoxingLeft.SetActive(true);
-        this.mainManager.OVRBoxingRight.SetActive(true);
+        // this.mainManager.OVRControllerLeft.SetActive(false);
+        // this.mainManager.OVRControllerRight.SetActive(false);
+        // this.mainManager.OVRBoxingLeft.SetActive(true);
+        // this.mainManager.OVRBoxingRight.SetActive(true);
 
         this.ROOM.transform.position = new Vector3(this.mainManager.sceneOriginPosition.x,
                                                   this.mainManager.sceneOriginPosition.y,
@@ -70,7 +70,7 @@ public class SelectionModeManager : MonoBehaviour
         this.ROOM.transform.rotation = this.mainManager.sceneOriginRotation;
 
         this.selectionRoom.transform.localPosition = new Vector3(0.0f, 0.0f, this.mainManager.myUserInfo.userBodySize.armLength * 1.1f - (5.0f - 1.0f));
-        this.curState = SelectionState.Noitom;
+        this.curState = SelectionState.Place;
         this.UIManager.setSelectionToggleText(this.curState);
         this.selectionToggle.SetActive(true);
         this.sceneChoices.SetActive(false);
@@ -78,11 +78,11 @@ public class SelectionModeManager : MonoBehaviour
 
     public void toggleSelect(bool selection) {
         switch(this.curState) {
-            case SelectionState.Noitom:
-                this.mainManager.mySelectionInfo.isUsingNoitom = selection;
-                this.curState = SelectionState.Place;
-                this.UIManager.setSelectionToggleText(this.curState);
-                break;
+            // case SelectionState.Noitom:
+            //     this.mainManager.mySelectionInfo.isUsingNoitom = selection;
+            //     this.curState = SelectionState.Place;
+            //     this.UIManager.setSelectionToggleText(this.curState);
+            //     break;
             case SelectionState.Place:
                 this.mainManager.mySelectionInfo.isOnRing = selection;
                 this.curState = SelectionState.Handedness;

@@ -81,7 +81,7 @@ public class EvaluationManager : MonoBehaviour
         if (this.isDuringTheUnit) {
             this.testingModeManager.curUnitResult.isPunching = true;
             this.testingModeManager.curUnitResult.isReacting = true;
-            this.testingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
+            this.testingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand); // 改成在 Reach 的時候判斷是否伸直
             this.isDuringTheUnit = false;
             this.testingModeManager.unitOver();
         }

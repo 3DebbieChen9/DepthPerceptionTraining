@@ -187,11 +187,11 @@ public class MainManager : MonoBehaviour
 
         Debug.Log($"SettingInfo saved to {filePath}");
     }
-    public void saveToJSON_testResult (TestResult testResult) 
+    public void saveToJSON_testResult (TotalUnitResult testResult) 
     {
         string jsonString = JsonConvert.SerializeObject(testResult);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-        string filePath = $"{Application.persistentDataPath}/{dateTime}_TestResult.json";
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_TestTotalResult.json";
         File.WriteAllText(filePath, jsonString);
 
         Debug.Log($"TestResult saved to {filePath}");

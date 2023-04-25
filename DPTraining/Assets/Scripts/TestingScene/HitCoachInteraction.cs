@@ -35,17 +35,18 @@ public class HitCoachInteraction : MonoBehaviour
             if (!this.evaluationManager.isHitTrigger) {
                 this.evaluationManager.isHitTrigger = true;
                 if (this.gameObject.name != "Boxing_Gloves_L" && this.gameObject.name != "Boxing_Gloves_R") {
-                    if (this.gameObject.GetComponent<MeshRenderer>().materials.Length <= 1) {
-                        this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.red;
-                    }
-                    else {
-                        foreach (Material m in this.gameObject.GetComponent<MeshRenderer>().materials) {
-                            if(m.name == "M_Body (Instance)" || m.name == "M_Body") {
-                                m.color = Color.red;
-                                break;
-                            }
-                        }
-                    }
+                    Debug.Log("Hit Coach: Add Ball here");
+                    // if (this.gameObject.GetComponent<MeshRenderer>().materials.Length <= 1) {
+                    //     this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.red;
+                    // }
+                    // else {
+                    //     foreach (Material m in this.gameObject.GetComponent<MeshRenderer>().materials) {
+                    //         if(m.name == "M_Body (Instance)" || m.name == "M_Body") {
+                    //             m.color = Color.red;
+                    //             break;
+                    //         }
+                    //     }
+                    // }
                 }
                 float vibrationAmplitude = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.amplitude;
                 float vibrationFrequency = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.frequency;

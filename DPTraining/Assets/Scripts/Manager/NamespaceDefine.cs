@@ -34,7 +34,7 @@ namespace DepthPerceptionSystem
     }
 
     public enum SelectionState {
-        Noitom,
+        // Noitom,
         Place,
         Handedness,
         SelectMode,
@@ -44,6 +44,7 @@ namespace DepthPerceptionSystem
         idle, // 剛進到 TestingMode Scene / 從頭開始
         begin, // 按下按鈕開始測試
         ready, // 準備階段(倒數計時)
+        tentative, // unit 一開始，coach 2~3秒內隨機原地晃動
         reaction, // unit中，等待反應結束
         result // 每個 unit 結束後的最終結果
     }
@@ -153,36 +154,67 @@ namespace DepthPerceptionSystem
         }
     }
 
+    public class CoachMovingSpeed 
+    {
+        public float forwardMax;
+        public float forwardMin;
+        public float backwardMax;
+        public float backwardMin;
+
+        public CoachMovingSpeed() {
+            this.forwardMax = 0.6f;
+            this.forwardMin = 0.4f;
+            this.backwardMax = 0.8f;
+            this.backwardMin = 0.4f;
+        }
+    }
     public class CoachDefaultValue
     {
-        public bool isKinematic;
         public float avtarCenterToEdgeLength;
         public float avtarDefaultHeight;
         public float heightDifferenceWithUser;
         public float distanceToUserMultiple;
-        public float movingSpeedMax;
-        public float movingSpeedMin;
+        public CoachMovingSpeed movingSpeed;
 
         public CoachDefaultValue() {
-            this.isKinematic = false;
             this.avtarCenterToEdgeLength = 0.43f;
-            this.avtarDefaultHeight = 1.80f;
+            this.avtarDefaultHeight = 1.90f;
             this.heightDifferenceWithUser = 0.05f;
             this.distanceToUserMultiple = 1.5f;
-            this.movingSpeedMax = 0.8f;
-            this.movingSpeedMin = 0.2f;
+            this.movingSpeed = new CoachMovingSpeed();
         }
     }
 
     public class TestingModeSetting 
     {
         public float readyTime;
-        public float timeLimit; // Over the time limit, means the task is fail
+        public float tentativeTimeMin;
+        public float tentativeTimeMax;
+        public float unitTimeLimit; // Over the time limit, means the task is fail
         public int targetNumberOfTasks; // User should do 'targetNumberOTasks' to complete the test 7
         
-        public TestingModeSetting(int a = 0) {
-            this.readyTime = 5.0f;
-            this.timeLimit = 5.0f;
+        public TestingModeSetting() {
+            this.readyTime = 4.0f;
+            this.tentativeTimeMin = 2.0f;
+            this.tentativeTimeMax = 3.0f;
+            this.unitTimeLimit = 2.0f;
+            this.targetNumberOfTasks = 7;
+        }
+    }
+
+    public class TrainModeSetting 
+    {
+        public float readyTime;
+        public float tentativeTimeMin;
+        public float tentativeTimeMax;
+        public float unitTimeLimit; // Over the time limit, means the task is fail
+        public int targetNumberOfTasks; // User should do 'targetNumberOTasks' to complete the test 7
+        
+        public TrainModeSetting() {
+            this.readyTime = 6.0f;
+            this.tentativeTimeMin = 2.0f;
+            this.tentativeTimeMax = 3.0f;
+            this.unitTimeLimit = 2.0f;
             this.targetNumberOfTasks = 7;
         }
     }
@@ -223,7 +255,7 @@ namespace DepthPerceptionSystem
         }
     }
 
-    public class TestResult
+    public class TotalUnitResult
     {
         public int numberOfTasks;
         
@@ -242,8 +274,8 @@ namespace DepthPerceptionSystem
         public int totalScore;
 
         public List<UnitResult> unitResultList;
-        // [TODO] test level
-        public TestResult(int a = 0) {
+
+        public TotalUnitResult(int a = 0) {
             this.numberOfTasks = 0;
             
             this.numberOfMoving = 0;

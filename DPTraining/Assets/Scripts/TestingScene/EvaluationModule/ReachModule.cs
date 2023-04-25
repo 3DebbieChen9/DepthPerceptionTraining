@@ -23,6 +23,7 @@ public class ReachModule : MonoBehaviour
     public void reachTarget(Hand hand) {
         if (this.evaluationManager.isDuringTheUnit) {
             print("Reach Target with " + hand);
+            // 判斷是否伸直
             this.evaluationManager.userIsHitCoach(hand, true);
         }
     }

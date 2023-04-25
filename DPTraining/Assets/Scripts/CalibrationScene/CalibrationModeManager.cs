@@ -21,6 +21,10 @@ public class CalibrationModeManager : MonoBehaviour
 
     [SerializeField]
     public GameObject[] movableRangeMarkers;
+    [SerializeField]
+    public GameObject heightModifyKeyPad;
+    [SerializeField]
+    public GameObject heightModifyButton;
 
     void Awake() {
         if (this.mainManager == null) {
@@ -95,6 +99,8 @@ public class CalibrationModeManager : MonoBehaviour
         this.centerEyeToFloor = 0.0f;
         this.clearMarkers();
         this.mainManager.enableUserArmMeshRenderers(false);
+        this.heightModifyKeyPad.SetActive(false);
+        this.heightModifyButton.SetActive(false);
         // [----] Call Calibration UI Function
         // Movable Range Instruction
         this.calibrationUIManager.movableRangeInstruction(this.curState);
@@ -175,6 +181,12 @@ public class CalibrationModeManager : MonoBehaviour
                 this.curState = CalibrationState.ArmStraight_RHand;
                 // Arm Straight Instruction - Right
                 this.calibrationUIManager.armLengthInstruction(this.curState);
+                this.heightModifyButton.SetActive(true);
+                this.mainManager.enableUserArmMeshRenderers(true);
+                this.mainManager.OVRControllerLeft.SetActive(false);
+                this.mainManager.OVRControllerRight.SetActive(false);
+                this.mainManager.OVRBoxingLeft.SetActive(true);
+                this.mainManager.OVRBoxingRight.SetActive(true);
                 break;
             default:
                 Debug.LogError("Error: Something Wrong while getting T-Pose Data");
@@ -183,10 +195,12 @@ public class CalibrationModeManager : MonoBehaviour
     }
 
     void getArmStraightData() {
+
         Vector3 rightControllerPos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
         Vector3 leftControllerPos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
         switch (this.curState) {
             case CalibrationState.ArmStraight_RHand:
+                this.heightModifyButton.SetActive(false);
                 this.armLength += Vector3.Distance(rightControllerPos, leftControllerPos);
                 this.mainManager.getHandStraightDefaultAngle(Hand.Right);
 
@@ -209,6 +223,7 @@ public class CalibrationModeManager : MonoBehaviour
                 this.calibrationUIManager.armLengthResult(this.curState, this.mainManager.myUserInfo.userBodySize.armLength, this.mainManager.myUserInfo.userBodySize.shoulderWidth);
                 this.curState = CalibrationState.IdlePose;
                 // Idle Pose Instruction
+                // this.mainManager.enableUserArmMeshRenderers(true);
                 this.calibrationUIManager.idlePoseInstruction(this.curState);
                 break;
             default:
@@ -217,8 +232,6 @@ public class CalibrationModeManager : MonoBehaviour
     }
 
     void getIdlePoseData() {
-        this.mainManager.enableUserArmMeshRenderers(true);
-
         Vector3 centerEyePos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
         Vector3 rightControllerPos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
         Vector3 leftControllerPos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
@@ -288,5 +301,22 @@ public class CalibrationModeManager : MonoBehaviour
         this.mainManager.sceneOriginRotation = this.mainManager.sceneOrigin.transform.rotation;
 
         this.mainManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = true;
+    }
+
+    public void modifyHeightBtnClick() {
+        this.heightModifyKeyPad.GetComponent<KeypadInput>().inputText.text = this.mainManager.myUserInfo.userBodySize.height.ToString("F2");
+        this.heightModifyKeyPad.SetActive(true);
+    }
+
+    public void saveHeightBtnClick() {
+        try {
+            this.mainManager.myUserInfo.userBodySize.height = float.Parse(this.heightModifyKeyPad.GetComponent<KeypadInput>().inputText.text);
+            this.heightModifyKeyPad.SetActive(false);
+            this.mainManager.resizeUserIK();
+            this.calibrationUIManager.tPoseResult(this.curState, this.mainManager.myUserInfo.userBodySize.centerEyeToControllerLength, this.mainManager.myUserInfo.userBodySize.height);
+        } catch (System.Exception e) {
+            this.heightModifyKeyPad.GetComponent<KeypadInput>().inputText.text = this.mainManager.myUserInfo.userBodySize.height.ToString("F2");
+            Debug.Log(e);
+        }
     }
 }

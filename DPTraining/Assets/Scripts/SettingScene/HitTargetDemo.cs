@@ -33,7 +33,8 @@ public class HitTargetDemo : MonoBehaviour
             this.settingManager.coachManager.stopMoving();
             if (!this.settingManager.isHitTrigger) {
                 this.settingManager.isHitTrigger = true;
-                this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
+                // this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
+                Debug.Log("Hit Target(Shoulder): Add Ball here");
                 OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.LTouch);
                 Invoke("stopControllerVibration", 0.3f);
             }

@@ -27,14 +27,14 @@ public class SelectionUIManager : MonoBehaviour
 
     public void setSelectionToggleText(SelectionState state) {
         switch (state) {
-            case SelectionState.Noitom:
-                // this.toggleTitleText.text = "Use Noitom?";
-                // this.toggleContentTextR.text = "Use";
-                // this.toggleContentTextL.text = "Don't Use";
-                this.toggleTitleText.text = "使用 Noitom?";
-                this.toggleContentTextR.text = "使用";
-                this.toggleContentTextL.text = "不使用";
-                break;
+            // case SelectionState.Noitom:
+            //     // this.toggleTitleText.text = "Use Noitom?";
+            //     // this.toggleContentTextR.text = "Use";
+            //     // this.toggleContentTextL.text = "Don't Use";
+            //     this.toggleTitleText.text = "使用 Noitom?";
+            //     this.toggleContentTextR.text = "使用";
+            //     this.toggleContentTextL.text = "不使用";
+            //     break;
             case SelectionState.Place:
                 // this.toggleTitleText.text = "Where to train?";
                 // this.toggleContentTextR.text = "On Boxing Ring";

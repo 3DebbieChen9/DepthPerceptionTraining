@@ -10,7 +10,7 @@ public class CoachManager : MonoBehaviour
     [SerializeField]
     private MainManager mainManager;
     [SerializeField]
-    public GameObject coachStickman;
+    public GameObject coachAvatar;
     [SerializeField]
     public Animator coachAnimator;
     [SerializeField]
@@ -18,10 +18,6 @@ public class CoachManager : MonoBehaviour
     [SerializeField]
     private Vector3 coachInitialPosition = new Vector3(0.0f, 0.0f, 0.0f);
     // private Vector3 coachInitialPosition = new Vector3(0.0f, 0.0f, 5.46f);
-    [SerializeField]
-    private GameObject[] coachBodyParts;
-    [SerializeField]
-    private Collider coachFloorCollider;
     private float userArmLength;
     private float avtarCenterToEdgeLength;
     public float distanceToUserMultiple;
@@ -48,21 +44,8 @@ public class CoachManager : MonoBehaviour
         
     }
 
-    public void setKinematic(bool isKinematic) {
-        this.coachStickman.GetComponent<Rigidbody>().isKinematic = isKinematic;
-        this.coachStickman.GetComponent<Rigidbody>().useGravity = !isKinematic;
-        this.coachFloorCollider.enabled = !isKinematic;
-        foreach (GameObject bodyPart in this.coachBodyParts) {
-            bodyPart.GetComponents<Collider>()[0].enabled = true;
-            bodyPart.GetComponents<Collider>()[0].isTrigger = true;
-            bodyPart.GetComponents<Collider>()[1].enabled = !isKinematic;
-            bodyPart.GetComponents<Collider>()[1].isTrigger = false;
-        }
-    }
-
     public void coachSettingInitial() {
         this.coachAnimator.SetBool("LeftHanded", this.mainManager.mySelectionInfo.coachIsLeftHanded);
-        this.setKinematic(this.mainManager.mySettingInfo.coachDefaultValue.isKinematic);
         this.userArmLength = this.mainManager.myUserInfo.userBodySize.armLength;
         this.avtarCenterToEdgeLength = this.mainManager.mySettingInfo.coachDefaultValue.avtarCenterToEdgeLength;
         this.distanceToUserMultiple = this.mainManager.mySettingInfo.coachDefaultValue.distanceToUserMultiple;
@@ -78,7 +61,7 @@ public class CoachManager : MonoBehaviour
         if (this.mainManager.myUserInfo.userBodySize.height > 2.0f) {
             coachScale = 2.0f / this.mainManager.mySettingInfo.coachDefaultValue.avtarDefaultHeight + this.mainManager.mySettingInfo.coachDefaultValue.heightDifferenceWithUser;
         }
-        this.coachStickman.transform.localScale = new Vector3(coachScale, coachScale, coachScale);
+        this.coachAvatar.transform.localScale = new Vector3(coachScale, coachScale, coachScale);
         this.moveToInitialPosition();
         this.moveDistanceForwardMin = this.userArmLength * this.distanceToUserMultiple + this.avtarCenterToEdgeLength;
         this.moveDistanceForwardMax = Mathf.Max(this.mainManager.myUserInfo.movableRange.length / 2.0f - this.userArmLength * 2.0f + 
@@ -91,18 +74,18 @@ public class CoachManager : MonoBehaviour
     }
 
     public void moveToInitialPosition() {
-        if (!this.coachStickman.activeSelf) {
-            this.coachStickman.SetActive(true);
+        if (!this.coachAvatar.activeSelf) {
+            this.coachAvatar.SetActive(true);
         }
-        DOTween.Kill(this.coachStickman.transform);
-        this.coachStickman.transform.rotation = this.mainManager.sceneOriginRotation * Quaternion.Euler(0,180.0f,0);
-        Vector3 movingDirection = (this.coachInitialPosition - this.coachStickman.transform.position).normalized;
-        Vector3 startForward = this.coachStickman.transform.rotation * Vector3.forward;
+        DOTween.Kill(this.coachAvatar.transform);
+        this.coachAvatar.transform.rotation = this.mainManager.sceneOriginRotation * Quaternion.Euler(0,180.0f,0);
+        Vector3 movingDirection = (this.coachInitialPosition - this.coachAvatar.transform.position).normalized;
+        Vector3 startForward = this.coachAvatar.transform.rotation * Vector3.forward;
         float angle = Vector3.Angle(startForward, movingDirection);
         float rad = angle * Mathf.Deg2Rad;
         this.coachAnimator.SetBool("Moving", true);
         this.coachAnimator.SetFloat("Direction", rad);
-        this.coachStickman.transform.DOMove(this.coachInitialPosition, 0.1f);
+        this.coachAvatar.transform.DOMove(this.coachInitialPosition, 0.1f);
         Invoke("stopMoving", 0.11f);
     }
 
@@ -110,9 +93,12 @@ public class CoachManager : MonoBehaviour
         Invoke("moveToInitialPosition", delayTime);
     }
 
+    // [TODO] Modify Moving Speed According to Training Day
     public void randomMovement() {
         float distanceMin = 0.0f;
         float distanceMax = 0.0f;
+        float speedMin = 0.0f;
+        float speedMax = 0.0f;
         
         float randomValue = UnityEngine.Random.Range(0.0f, 1.0f);
         MovingDirection movingDirection = MovingDirection.Forward;
@@ -120,19 +106,16 @@ public class CoachManager : MonoBehaviour
             movingDirection = MovingDirection.Forward;
             distanceMin = this.moveDistanceForwardMin;
             distanceMax = this.moveDistanceForwardMax;
-            
+            speedMin = this.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.forwardMin;
+            speedMax = this.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.forwardMax;
         }
         else {
             movingDirection = MovingDirection.Backward;
             distanceMin = this.moveDistanceBackwardMin;
-            distanceMax = this.moveDistanceBackwardMax;    
+            distanceMax = this.moveDistanceBackwardMax; 
+            speedMin = this.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.backwardMin;
+            speedMax = this.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.backwardMax;   
         }
-
-        float speedMin = 0.0f;
-        float speedMax = 0.0f;
-        // [TODO] Modify speed range according to the level
-        speedMin = this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMin;
-        speedMax = this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMax;
         float speed = UnityEngine.Random.Range(speedMin, speedMax);
         float distance = UnityEngine.Random.Range(distanceMin, distanceMax);
         this.startMoving(movingDirection, speed, distance);
@@ -155,20 +138,20 @@ public class CoachManager : MonoBehaviour
         }
         this.coachAnimator.SetFloat("Speed", movingAnimationSpeed);
         float duration = distance / speed;
-        Vector3 destination = this.coachStickman.transform.position + movingDirectionVector * distance;
-        Vector3 startForward = (this.coachStickman.transform.rotation * Vector3.forward).normalized;
-        Debug.DrawLine(this.coachStickman.transform.position, destination, Color.blue, 100.0f);
+        Vector3 destination = this.coachAvatar.transform.position + movingDirectionVector * distance;
+        Vector3 startForward = (this.coachAvatar.transform.rotation * Vector3.forward).normalized;
+        Debug.DrawLine(this.coachAvatar.transform.position, destination, Color.blue, 100.0f);
         float angle = Vector3.Angle(startForward, movingDirectionVector);
         float rad = angle * Mathf.Deg2Rad;
         this.coachAnimator.SetBool("Moving", true);
         this.coachAnimator.SetFloat("Direction", rad);
-        this.coachStickman.transform.DOMove(destination, duration);
+        this.coachAvatar.transform.DOMove(destination, duration);
         Invoke("stopMoving", duration);
         
     }
     public void stopMoving() {
         this.coachAnimator.SetBool("Moving", false);
-        DOTween.Kill(this.coachStickman.transform);
+        DOTween.Kill(this.coachAvatar.transform);
     }
 
     public void moveToFurthest(MovingDirection movingDirection, float speed) {

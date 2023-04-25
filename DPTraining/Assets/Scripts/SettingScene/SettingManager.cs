@@ -137,22 +137,22 @@ public class SettingManager : MonoBehaviour
     void Update()
     {
         if (this.curState == SettingState.MovingSpeed) {
-            if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
-                this.coachManager.moveToFurthest(MovingDirection.Backward, this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMax);
-            }
-            if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
-                this.coachManager.moveToFurthest(MovingDirection.Forward, this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMax);
-            }
-            if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch)) {
-                this.coachManager.moveToFurthest(MovingDirection.Backward, this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMin);
-            }
-            if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch)) {
-                this.coachManager.moveToFurthest(MovingDirection.Forward, this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMin);
-            }
+            // if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
+            //     this.coachManager.moveToFurthest(MovingDirection.Backward, this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMax);
+            // }
+            // if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
+            //     this.coachManager.moveToFurthest(MovingDirection.Forward, this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMax);
+            // }
+            // if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch)) {
+            //     this.coachManager.moveToFurthest(MovingDirection.Backward, this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMin);
+            // }
+            // if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch)) {
+            //     this.coachManager.moveToFurthest(MovingDirection.Forward, this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMin);
+            // }
             if (OVRInput.GetDown(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch)) {
                 this.coachManager.moveToInitialPosition();
                 this.isHitTrigger = false;
-                this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
+                this.coachManager.coachAvatar.GetComponent<CoachRenderManager>().clearCoachColor();
             }
             if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch)) {
                 this.coachManager.stopMoving();
@@ -197,7 +197,7 @@ public class SettingManager : MonoBehaviour
             if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
                 this.coachManager.moveToInitialPosition();
                 this.isHitTrigger = false;
-                this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
+                this.coachManager.coachAvatar.GetComponent<CoachRenderManager>().clearCoachColor();
                 this.readyPunchView();
             }
 
@@ -221,7 +221,7 @@ public class SettingManager : MonoBehaviour
 
     void settingInitialize() {
         this.curState = SettingState.UserSize;
-        this.reactionTimer = new Timer(false, false, this.mainManager.mySettingInfo.testingModeSetting.timeLimit, 0.0f);
+        this.reactionTimer = new Timer(false, false, this.mainManager.mySettingInfo.testingModeSetting.unitTimeLimit, 0.0f);
         this.readyTimer = new Timer(false, true, this.mainManager.mySettingInfo.testingModeSetting.readyTime, this.mainManager.mySettingInfo.testingModeSetting.readyTime);
         this.punchTimer = new Timer(false, true, 3.0f, 3.0f);
         this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
@@ -229,12 +229,12 @@ public class SettingManager : MonoBehaviour
         this.userArmLengthText.text = this.mainManager.myUserInfo.userBodySize.armLength.ToString("F2");
         this.heightText.text = this.mainManager.mySettingInfo.coachDefaultValue.heightDifferenceWithUser.ToString("F2");
         this.distanceText.text = this.mainManager.mySettingInfo.coachDefaultValue.distanceToUserMultiple.ToString("F2");
-        this.speedMaxText.text = this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMax.ToString("F2");
-        this.speedMinText.text = this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMin.ToString("F2");
+        // this.speedMaxText.text = this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMax.ToString("F2");
+        // this.speedMinText.text = this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMin.ToString("F2");
         this.vibationAText.text = this.mainManager.mySettingInfo.controllerVibration.amplitude.ToString("F1");
         this.vibationFText.text = this.mainManager.mySettingInfo.controllerVibration.frequency.ToString("F1");
         this.readyTimeText.text = this.mainManager.mySettingInfo.testingModeSetting.readyTime.ToString("F1");
-        this.limitTimeText.text = this.mainManager.mySettingInfo.testingModeSetting.timeLimit.ToString("F1");
+        this.limitTimeText.text = this.mainManager.mySettingInfo.testingModeSetting.unitTimeLimit.ToString("F1");
         this.numTasksText.text = this.mainManager.mySettingInfo.testingModeSetting.targetNumberOfTasks.ToString();
 
         this.gym.transform.position = new Vector3(this.mainManager.sceneOriginPosition.x, this.mainManager.sceneOriginPosition.y, this.mainManager.sceneOriginPosition.z);
@@ -261,7 +261,7 @@ public class SettingManager : MonoBehaviour
         this.curState = SettingState.StraightCollecting;
         this.setUserSize();
         this.setCoachSize();
-        this.setMovingSpeed();
+        // this.setMovingSpeed();
         this.punchUnitTestInitial();
         this.setControllerVibration();
         this.setTestingMode();
@@ -282,7 +282,7 @@ public class SettingManager : MonoBehaviour
                 this.setCoachSize();
                 break;
             case SettingState.MovingSpeed:
-                this.setMovingSpeed();
+                // this.setMovingSpeed();
                 break;
             case SettingState.ControllerVibartion:
                 this.setControllerVibration();
@@ -309,7 +309,7 @@ public class SettingManager : MonoBehaviour
                 this.movingSpeedPanel.SetActive(true);
                 break;
             case SettingState.MovingSpeed:
-                this.setMovingSpeed();
+                // this.setMovingSpeed();
                 this.curState = SettingState.ControllerVibartion;
                 this.movingSpeedPanel.SetActive(false);
                 this.vibrationPanel.SetActive(true);
@@ -409,43 +409,36 @@ public class SettingManager : MonoBehaviour
             Debug.Log(e);
         }
 
-        try {
-            this.mainManager.mySettingInfo.coachDefaultValue.isKinematic = !bool.Parse(this.isPushableText.text);
-        } catch (System.Exception e) {
-            this.isPushableText.text = "false";
-            Debug.Log(e);
-        }
-
         this.coachManager.coachSettingInitial();
         this.isHitTrigger = false;
-        this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
+        this.coachManager.coachAvatar.GetComponent<CoachRenderManager>().clearCoachColor();
         this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
     }
     public void setCoachPushable() {
         
         this.coachManager.coachSettingInitial();
         this.isHitTrigger = false;
-        this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
+        this.coachManager.coachAvatar.GetComponent<CoachRenderManager>().clearCoachColor();
         this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
     }
-    public void setMovingSpeed() {
-        try {
-            this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMax = float.Parse(this.speedMaxText.text);
-        } catch (System.Exception e) {
-            this.speedMaxText.text = e.ToString();
-            Debug.Log(e);
-        }
-        try {
-            this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMin = float.Parse(this.speedMinText.text);
-        } catch (System.Exception e) {
-            this.speedMinText.text = e.ToString();
-            Debug.Log(e);
-        }
-        this.coachManager.coachSettingInitial();
-        this.isHitTrigger = false;
-        this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
-        this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
-    }
+    // public void setMovingSpeed() {
+    //     try {
+    //         this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMax = float.Parse(this.speedMaxText.text);
+    //     } catch (System.Exception e) {
+    //         this.speedMaxText.text = e.ToString();
+    //         Debug.Log(e);
+    //     }
+    //     try {
+    //         this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMin = float.Parse(this.speedMinText.text);
+    //     } catch (System.Exception e) {
+    //         this.speedMinText.text = e.ToString();
+    //         Debug.Log(e);
+    //     }
+    //     this.coachManager.coachSettingInitial();
+    //     this.isHitTrigger = false;
+    //     this.coachManager.coachAvatar.GetComponent<CoachRenderManager>().clearCoachColor();
+    //     this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
+    // }
     public void setControllerVibration() {
         try {
             float amplitude = float.Parse(this.vibationAText.text);
@@ -477,7 +470,7 @@ public class SettingManager : MonoBehaviour
         }
         this.coachManager.coachSettingInitial();
         this.isHitTrigger = false;
-        this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
+        this.coachManager.coachAvatar.GetComponent<CoachRenderManager>().clearCoachColor();
         this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
     }
     public void setTestingMode() {
@@ -491,8 +484,8 @@ public class SettingManager : MonoBehaviour
         }
 
         try {
-            this.mainManager.mySettingInfo.testingModeSetting.timeLimit = float.Parse(this.limitTimeText.text);
-            this.reactionTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.timeLimit;
+            this.mainManager.mySettingInfo.testingModeSetting.unitTimeLimit = float.Parse(this.limitTimeText.text);
+            this.reactionTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.unitTimeLimit;
         }
         catch (System.Exception e) {
             this.limitTimeText.text = e.ToString();
@@ -508,7 +501,7 @@ public class SettingManager : MonoBehaviour
         }
         this.coachManager.moveToInitialPosition();
         this.isHitTrigger = false;
-        this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
+        this.coachManager.coachAvatar.GetComponent<CoachRenderManager>().clearCoachColor();
         this.reactionTimer.ResetTimer();
         this.readyTimer.ResetTimer();
         this.readyCanvas.SetActive(true);
@@ -519,7 +512,7 @@ public class SettingManager : MonoBehaviour
             this.mainManager.mySettingInfo.evaluationThreshold.handStraightAngle = float.Parse(this.thresholdText.text);
             this.coachManager.moveToInitialPosition();
             this.isHitTrigger = false;
-            this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
+            this.coachManager.coachAvatar.GetComponent<CoachRenderManager>().clearCoachColor();
             this.readyTimer.ResetTimer();
             this.readyCanvas.SetActive(true);
             this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
@@ -564,7 +557,7 @@ public class SettingManager : MonoBehaviour
         this.punchUnitTestResult.addUnitResult(this.punchStraightUnit);
         this.coachManager.moveToInitialPosition();
         this.isHitTrigger = false;
-        this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
+        this.coachManager.coachAvatar.GetComponent<CoachRenderManager>().clearCoachColor();
         this.curDataNum++;
         if (this.curDataNum > 10) {
             this.curState = SettingState.StraightDataResult;
@@ -680,11 +673,10 @@ public class SettingManager : MonoBehaviour
         // this.userText.text = $"User Height: {userInfo.userBodySize.height:F2} (m) | Arm Length: {userInfo.userBodySize.armLength:F2} (m)\n";
         this.settingText.text = $"教練與使用者的身高差: {settingInfo.coachDefaultValue.heightDifferenceWithUser:F2}\n" + 
                                 $"教練初始位置與使用者之間的距離(多少倍臂長): {settingInfo.coachDefaultValue.distanceToUserMultiple:F2}\n" +
-                                $"是否推得動教練 (!isKinematic): {!settingInfo.coachDefaultValue.isKinematic}\n" +
-                                $"移動速度最大值: {settingInfo.coachDefaultValue.movingSpeedMax:F2} (m/s) | 最小值: {settingInfo.coachDefaultValue.movingSpeedMin:F2} (m/s)\n" +
+                                // $"移動速度最大值: {settingInfo.coachDefaultValue.movingSpeedMax:F2} (m/s) | 最小值: {settingInfo.coachDefaultValue.movingSpeedMin:F2} (m/s)\n" +
                                 $"遙控器震動振幅: {settingInfo.controllerVibration.amplitude:F1} | 頻率: {settingInfo.controllerVibration.frequency:F1}\n" +
                                 $"伸直的角度接受範圍: {settingInfo.evaluationThreshold.handStraightAngle:F2} (度)\n" +
-                                $"測試階段的預備時間: {settingInfo.testingModeSetting.readyTime:F1} (s) | 反應時間限制: {settingInfo.testingModeSetting.timeLimit:F1} (s)\n" +
+                                $"測試階段的預備時間: {settingInfo.testingModeSetting.readyTime:F1} (s) | 反應時間限制: {settingInfo.testingModeSetting.unitTimeLimit:F1} (s)\n" +
                                 $"測試階段要進行的回合數: {settingInfo.testingModeSetting.targetNumberOfTasks} units\n";
         
         this.userText.text = $"使用者身高: {userInfo.userBodySize.height:F2} (m) | 臂長: {userInfo.userBodySize.armLength:F2} (m)\n";

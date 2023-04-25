@@ -146,7 +146,7 @@ public class CalibrationUIManager : MonoBehaviour
     public void armLengthInstruction(CalibrationState state) {
         int languageIndex = Convert.ToInt32(this.mainManager.curLanguage);
         // this.instructionTitle.text = "Straight Forward Pose Calibration";
-        this.instructionTitle.text = "向前出直拳姿勢校正";
+        this.instructionTitle.text = "向前出直拳\n姿勢校正";
         if (state == CalibrationState.ArmStraight_RHand) {
             // this.instructionText.text = "Please put your RIGHT hand straight to the front, put your L-controller on your right shoulder, and press button 'A' on R-controller.";
             this.instructionText.text = "請將右手向前伸直，將左手控制器放在右手肩膀上，並按下右手控制器上的 'A' 按鈕。";
@@ -161,7 +161,7 @@ public class CalibrationUIManager : MonoBehaviour
     public void armLengthResult(CalibrationState state, float length, float width) {
         int languageIndex = Convert.ToInt32(this.mainManager.curLanguage);
         // this.resultTitle.text = "Straight Forward Pose Calibration Result";
-        this.resultTitle.text = "向前出直拳姿勢校正結果";
+        this.resultTitle.text = "向前出直拳姿勢\n校正結果";
         if (state == CalibrationState.ArmStraight_RHand) {
             // this.resultText.text = "RIGHT arm length (m) = " + length.ToString("F2");
             this.resultText.text = "右手臂長 (公尺) = " + length.ToString("F2");

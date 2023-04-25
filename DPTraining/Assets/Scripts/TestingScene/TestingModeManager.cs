@@ -18,6 +18,8 @@ public class TestingModeManager : MonoBehaviour
     private Timer reactionTimer;
     [SerializeField]
     private Timer readyTimer;
+    [SerializeField]
+    private Timer tentativeTimer;
     
     [SerializeField]
     private TestingState curState = TestingState.idle;
@@ -27,7 +29,7 @@ public class TestingModeManager : MonoBehaviour
     [SerializeField]
     public int curUnitNum;
     [SerializeField]
-    public TestResult myTestResult;
+    public TotalUnitResult myTestResult;
     [SerializeField]
     public UnitResult curUnitResult;
     [SerializeField]
@@ -50,9 +52,11 @@ public class TestingModeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.reactionTimer = new Timer(false, false, this.mainManager.mySettingInfo.testingModeSetting.timeLimit, 0.0f);
+        this.reactionTimer = new Timer(false, false, this.mainManager.mySettingInfo.testingModeSetting.unitTimeLimit, 0.0f);
         this.readyTimer = new Timer(false, true, this.mainManager.mySettingInfo.testingModeSetting.readyTime, this.mainManager.mySettingInfo.testingModeSetting.readyTime);
-        this.myTestResult = new TestResult();
+        float firstTentativeTime  = UnityEngine.Random.Range(this.mainManager.mySettingInfo.testingModeSetting.tentativeTimeMin, this.mainManager.mySettingInfo.testingModeSetting.tentativeTimeMax);
+        this.tentativeTimer = new Timer(false, true, firstTentativeTime, firstTentativeTime);
+        this.myTestResult = new TotalUnitResult();
         this.curUnitResult = new UnitResult();
         this.testingSceneInitialized();
     }
@@ -83,7 +87,9 @@ public class TestingModeManager : MonoBehaviour
             this.UIManager.openReadyCanvas();
             if(this.evaluationManager.userIsAtOrigin) {
                 this.curState = TestingState.ready;
-                this.coachManager.moveToInitialPosition();
+                if (this.coachManager.coachMovingDirection == MovingDirection.Backward) {
+                    this.coachManager.moveToInitialPosition();
+                }
                 this.readyStart();
             }
             else {
@@ -92,7 +98,7 @@ public class TestingModeManager : MonoBehaviour
             }
         }
 
-        // [TODO] 倒數階段中，但是使用者不在中心了
+        // 倒數階段中，但是使用者不在中心了
         if (this.curState == TestingState.ready && !this.evaluationManager.userIsAtOrigin) {
             this.UIManager.showMoveToCenter();
             this.readyTimer.ResetTimer();
@@ -113,19 +119,34 @@ public class TestingModeManager : MonoBehaviour
             } 
             if (this.readyTimer.timeLeft <= 0.0f) {
                 this.readyTimer.ResetTimer();
+                this.curState = TestingState.tentative;
+                this.coachManager.coachAnimator.SetBool("isTentative", true);
+                this.tentativeTimer.StartTimer();
+
+                this.evaluationManager.setStartingPoint(this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position, this.mainManager.sceneOriginRotation);
+                
+                // [----] UI: Close Every UI (Initialize the UI), Start the unit
+                this.UIManager.closeReadyCanvas();
+                this.UIManager.closeResultCanvas();
+            }
+        }
+
+        if (this.tentativeTimer.timerOn) {
+            this.tentativeTimer.timeLeft -= Time.deltaTime;
+            if (this.tentativeTimer.timeLeft <= 0.0f) {
+                this.tentativeTimer.timeTarget = UnityEngine.Random.Range(this.mainManager.mySettingInfo.testingModeSetting.tentativeTimeMin, this.mainManager.mySettingInfo.testingModeSetting.tentativeTimeMax);
+                this.tentativeTimer.timeLeft = this.tentativeTimer.timeTarget;
+                this.tentativeTimer.ResetTimer();
 
                 this.curState = TestingState.reaction;
                 this.evaluationManager.isDuringTheUnit = true;
-                this.evaluationManager.setStartingPoint(this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position, this.mainManager.sceneOriginRotation);
+                // this.evaluationManager.setStartingPoint(this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position, this.mainManager.sceneOriginRotation);
+                this.coachManager.coachAnimator.SetBool("isTentative", false);
                 this.coachManager.coachAnimator.SetBool("isDuringTheUnit", true);
                 this.coachManager.randomMovement();
                 this.evaluationManager.coachMovingDirection = this.coachManager.coachMovingDirection;
 
                 this.reactionTimer.StartTimer();
-
-                // [----] UI: Close Every UI (Initialize the UI), Start the unit
-                this.UIManager.closeReadyCanvas();
-                this.UIManager.closeResultCanvas();
             }
         }
 
@@ -149,7 +170,7 @@ public class TestingModeManager : MonoBehaviour
         this.readyTimer.timeLeft = this.mainManager.mySettingInfo.testingModeSetting.readyTime;
         this.readyTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.readyTime;
         this.reactionTimer.timeLeft = 0.0f;
-        this.reactionTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.timeLimit;
+        this.reactionTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.unitTimeLimit;
         this.curUnitNum = 1;
 
         this.myTestResult.reset();
@@ -164,7 +185,7 @@ public class TestingModeManager : MonoBehaviour
 
         // [----] UI: Welcome View
         this.UIManager.welcomToTestingMode(this.targetNumberOfTasks);
-        this.UIManager.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
+        // this.UIManager.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
     }
 
     public void unitOver() {
@@ -220,8 +241,9 @@ public class TestingModeManager : MonoBehaviour
         else {
             this.curState = TestingState.begin;
             this.curUnitNum++;
-            // [TEST] Whether the user won't hit user
-            // this.coachManager.invokeTargetMoveToInitial(0.5f);
+            if (this.coachManager.coachMovingDirection == MovingDirection.Forward) {
+                this.coachManager.invokeTargetMoveToInitial(0.5f);
+            }   
         }
     }
 
@@ -240,10 +262,11 @@ public class TestingModeManager : MonoBehaviour
     }
 
     public void callClearCoachColor() {
-        this.coachManager.coachStickman.GetComponent<CoachRenderManager>().clearCoachColor();
+        Debug.Log("Clear Coach Color");
+        // this.coachManager.coachAvatar.GetComponent<CoachRenderManager>().clearCoachColor();
     }
 
     private void callCloseCoachAvatar() {
-        this.coachManager.coachStickman.SetActive(false);
+        this.coachManager.coachAvatar.SetActive(false);
     }
 }
