@@ -4081,6 +4081,8 @@ MonoBehaviour:
   OVRControllerRight: {fileID: 1978710191}
   OVRBoxingLeft: {fileID: 1190238395}
   OVRBoxingRight: {fileID: 1190238393}
+  OVRControllerRayLeft: {fileID: 1384023903}
+  OVRControllerRayRight: {fileID: 1507969700}
   rightUpperArm_noitom: {fileID: 1757695978}
   rightLowerArm_noitom: {fileID: 1936571232}
   leftUpperArm_noitom: {fileID: 1474925389}
@@ -6765,6 +6767,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4733c5f009d26ad49b3685117b8d3eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1384023903 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4526630446865022760, guid: 44cf50d1a2e68b64791a3e3143ccda19, type: 3}
+  m_PrefabInstance: {fileID: 1384023899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194b7d1054b8fa64b9bdcea46d06c3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1441372025
 GameObject:
   m_ObjectHideFlags: 0
@@ -7331,6 +7344,17 @@ Transform:
   m_Father: {fileID: 2129942126}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1507969700 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4526630446865022760, guid: 44cf50d1a2e68b64791a3e3143ccda19, type: 3}
+  m_PrefabInstance: {fileID: 1509553904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194b7d1054b8fa64b9bdcea46d06c3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1509553904
 PrefabInstance:
   m_ObjectHideFlags: 0

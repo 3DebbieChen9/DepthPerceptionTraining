@@ -6,6 +6,7 @@ using System.IO;
 using DepthPerceptionSystem;
 using Newtonsoft.Json;
 using InstructionText;
+using Oculus.Interaction;
 
 public class MainManager : MonoBehaviour
 {
@@ -42,6 +43,10 @@ public class MainManager : MonoBehaviour
     public GameObject OVRBoxingLeft;
     [SerializeField]
     public GameObject OVRBoxingRight;
+    [SerializeField]
+    public ActiveStateTracker OVRControllerRayLeft;
+    [SerializeField]
+    public ActiveStateTracker OVRControllerRayRight;
 
     [SerializeField]
     public GameObject rightUpperArm_noitom;
@@ -102,6 +107,8 @@ public class MainManager : MonoBehaviour
 
         this.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = true;
         this.enableUserArmMeshRenderers(false);
+        this.OVRControllerRayLeft.RayInteractorSwitch(false);
+        this.OVRControllerRayRight.RayInteractorSwitch(false);
         // this.loadFromJSON_setting();
     }
 

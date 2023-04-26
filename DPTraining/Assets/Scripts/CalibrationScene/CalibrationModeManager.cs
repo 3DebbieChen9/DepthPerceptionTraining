@@ -182,6 +182,8 @@ public class CalibrationModeManager : MonoBehaviour
                 // Arm Straight Instruction - Right
                 this.calibrationUIManager.armLengthInstruction(this.curState);
                 this.heightModifyButton.SetActive(true);
+                this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(true);
+                this.mainManager.OVRControllerRayRight.RayInteractorSwitch(true);
                 this.mainManager.enableUserArmMeshRenderers(true);
                 this.mainManager.OVRControllerLeft.SetActive(false);
                 this.mainManager.OVRControllerRight.SetActive(false);
@@ -201,6 +203,8 @@ public class CalibrationModeManager : MonoBehaviour
         switch (this.curState) {
             case CalibrationState.ArmStraight_RHand:
                 this.heightModifyButton.SetActive(false);
+                this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(false);
+                this.mainManager.OVRControllerRayRight.RayInteractorSwitch(false);
                 this.armLength += Vector3.Distance(rightControllerPos, leftControllerPos);
                 this.mainManager.getHandStraightDefaultAngle(Hand.Right);
 

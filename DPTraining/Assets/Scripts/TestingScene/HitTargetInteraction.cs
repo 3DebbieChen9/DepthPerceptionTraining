@@ -36,7 +36,8 @@ public class HitTargetInteraction : MonoBehaviour
             }
             if (!this.evaluationManager.isHitTrigger) {
                 this.evaluationManager.isHitTrigger = true;
-                this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
+                // this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
+                Debug.Log("Hit Coach Shoulder: Add Ball here");
                 OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.LTouch);
                 Invoke("stopControllerVibration", 0.3f);
             }
@@ -49,7 +50,8 @@ public class HitTargetInteraction : MonoBehaviour
             }
             if (!this.evaluationManager.isHitTrigger) {
                 this.evaluationManager.isHitTrigger = true;
-                this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
+                // this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
+                Debug.Log("Hit Coach Shoulder: Add Ball here");
                 OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.RTouch);
                 Invoke("stopControllerVibration", 0.3f);
             }   

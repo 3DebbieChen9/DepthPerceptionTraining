@@ -123,7 +123,9 @@ public class TestingModeManager : MonoBehaviour
                 this.coachManager.coachAnimator.SetBool("isTentative", true);
                 this.tentativeTimer.StartTimer();
 
-                this.evaluationManager.setStartingPoint(this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position, this.mainManager.sceneOriginRotation);
+                Vector3 tmp = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
+                tmp.y = this.mainManager.sceneOriginPosition.y;
+                this.evaluationManager.setStartingPoint(tmp, this.mainManager.sceneOriginRotation);
                 
                 // [----] UI: Close Every UI (Initialize the UI), Start the unit
                 this.UIManager.closeReadyCanvas();
@@ -183,6 +185,9 @@ public class TestingModeManager : MonoBehaviour
 
         this.evaluationManager.evaluationStatusInitialize();
 
+        this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(false);
+        this.mainManager.OVRControllerRayRight.RayInteractorSwitch(false);
+
         // [----] UI: Welcome View
         this.UIManager.welcomToTestingMode(this.targetNumberOfTasks);
         // this.UIManager.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
@@ -235,6 +240,8 @@ public class TestingModeManager : MonoBehaviour
             Invoke("callCloseCoachAvatar", 2.0f);
             // [----] UI: Result View
             this.UIManager.finalResultView(this.myTestResult.totalScore, this.myTestResult.averageReactionTime, this.myTestResult.numberOfMovingCorrectly, this.myTestResult.numberOfReacting, this.myTestResult.numberOfSuccess, this.myTestResult.numberOfOverTime);
+            this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(true);
+            this.mainManager.OVRControllerRayRight.RayInteractorSwitch(true);
             // [----] JSON: Save Final Result
             this.mainManager.saveToJSON_testResult(this.myTestResult);
         }

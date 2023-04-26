@@ -25,6 +25,7 @@ public class CoachManager : MonoBehaviour
     private float moveDistanceForwardMax;
     private float moveDistanceBackwardMin;
     private float moveDistanceBackwardMax;
+    private bool isStart = false;
 
     void Awake() {
         if (this.mainManager == null) {
@@ -41,7 +42,10 @@ public class CoachManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!isStart) {
+            this.coachToInitialPositionWhenSceneStart();
+            this.isStart = true;
+        }
     }
 
     public void coachSettingInitial() {
@@ -62,7 +66,7 @@ public class CoachManager : MonoBehaviour
             coachScale = 2.0f / this.mainManager.mySettingInfo.coachDefaultValue.avtarDefaultHeight + this.mainManager.mySettingInfo.coachDefaultValue.heightDifferenceWithUser;
         }
         this.coachAvatar.transform.localScale = new Vector3(coachScale, coachScale, coachScale);
-        this.moveToInitialPosition();
+        // this.moveToInitialPosition(false);
         this.moveDistanceForwardMin = this.userArmLength * this.distanceToUserMultiple + this.avtarCenterToEdgeLength;
         this.moveDistanceForwardMax = Mathf.Max(this.mainManager.myUserInfo.movableRange.length / 2.0f - this.userArmLength * 2.0f + 
                                                         this.userArmLength * this.distanceToUserMultiple + this.avtarCenterToEdgeLength, 
@@ -73,6 +77,25 @@ public class CoachManager : MonoBehaviour
                                                         moveDistanceBackwardMin);
     }
 
+    public void coachToInitialPositionWhenSceneStart() {
+        if (!this.coachAvatar.activeSelf) {
+            this.coachAvatar.SetActive(true);
+        }
+        this.coachAvatar.transform.rotation = this.mainManager.sceneOriginRotation * Quaternion.Euler(0,180.0f,0);
+        Vector3 movingDirection = (this.coachInitialPosition - this.coachAvatar.transform.position).normalized;
+        Vector3 startForward = this.coachAvatar.transform.rotation * Vector3.forward;
+        float angle = Vector3.Angle(startForward, movingDirection);
+        float rad = angle * Mathf.Deg2Rad;
+        this.coachAnimator.SetBool("Moving", true);
+        this.coachAnimator.SetFloat("Direction", rad);
+        
+        Debug.Log("Coach Origin Position: " + this.coachAvatar.transform.position.ToString());
+        Debug.Log("Coach Initial Position: " + this.coachInitialPosition.ToString());
+        this.coachAvatar.transform.position = this.coachInitialPosition;
+        Debug.Log("Coach Current Position: " + this.coachAvatar.transform.position.ToString());
+        
+        Invoke("stopMoving", 0.11f);
+    }
     public void moveToInitialPosition() {
         if (!this.coachAvatar.activeSelf) {
             this.coachAvatar.SetActive(true);
@@ -85,7 +108,9 @@ public class CoachManager : MonoBehaviour
         float rad = angle * Mathf.Deg2Rad;
         this.coachAnimator.SetBool("Moving", true);
         this.coachAnimator.SetFloat("Direction", rad);
+
         this.coachAvatar.transform.DOMove(this.coachInitialPosition, 0.1f);
+        
         Invoke("stopMoving", 0.11f);
     }
 
