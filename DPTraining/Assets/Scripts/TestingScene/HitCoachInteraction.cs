@@ -10,7 +10,7 @@ public class HitCoachInteraction : MonoBehaviour
 
     void Awake() {
         if (this.evaluationManager == null) {
-            this.evaluationManager = GameObject.Find("TestingModeManager").GetComponent<EvaluationManager>();
+            this.evaluationManager = GameObject.Find("EvaluationManager").GetComponent<EvaluationManager>();
         }    
     }
     // Start is called before the first frame update
@@ -28,12 +28,12 @@ public class HitCoachInteraction : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         
         if (other.gameObject.tag == "Glove_L" || other.gameObject.tag == "Glove_R") {
-            this.evaluationManager.testingModeManager.coachManager.stopMoving();
+            // this.evaluationManager.testingModeManager.coachManager.stopMoving();
             if (this.evaluationManager.isDuringTheUnit) {
                 this.evaluationManager.userIsHitCoach(Hand.Left, false);   
             }
-            if (!this.evaluationManager.isHitTrigger) {
-                this.evaluationManager.isHitTrigger = true;
+            // if (!this.evaluationManager.isHitTrigger) {
+            //     this.evaluationManager.isHitTrigger = true;
                 if (this.gameObject.name != "Boxing_Gloves_L" && this.gameObject.name != "Boxing_Gloves_R") {
                     Debug.Log("Hit Coach: Add Ball here");
                     // if (this.gameObject.GetComponent<MeshRenderer>().materials.Length <= 1) {
@@ -58,7 +58,7 @@ public class HitCoachInteraction : MonoBehaviour
                     OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.RTouch);
                     Invoke("stopControllerVibration", 0.3f);
                 }
-            }
+            // }
         }
     }
 

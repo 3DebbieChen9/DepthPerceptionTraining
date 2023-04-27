@@ -17,10 +17,6 @@ public class EvaluationManager : MonoBehaviour
     public MovingDirection coachMovingDirection = MovingDirection.Forward;
     [SerializeField]
     public bool isDuringTheUnit = false;
-    // [SerializeField]
-    // public bool checkMoving = false;
-    // [SerializeField]
-    // public bool checkPunching = false;
     [SerializeField]
     public bool userStartMoving = false;
     [SerializeField]
@@ -29,11 +25,9 @@ public class EvaluationManager : MonoBehaviour
     [SerializeField]
     private DirectionModule directionModule;
     [SerializeField]
-    private StraightModule straightModule;
+    public StraightModule straightModule;
     [SerializeField]
     public ReachModule reachModule;
-    [SerializeField]
-    public bool isHitTrigger = false;
 
     void Awake() {
         if (this.mainManager == null) {
@@ -68,7 +62,6 @@ public class EvaluationManager : MonoBehaviour
         this.coachMovingDirection = MovingDirection.Forward;
         this.isDuringTheUnit = false;
         this.userStartMoving = false;
-        this.isHitTrigger = false;
     }
 
     public void setStartingPoint(Vector3 position, Quaternion rotation) {
@@ -77,13 +70,12 @@ public class EvaluationManager : MonoBehaviour
     }
 
     public void userIsPunching(Hand hand) {
-        // if (this.isDuringTheUnit || this.checkPunching) {
         if (this.isDuringTheUnit) {
             this.testingModeManager.curUnitResult.isPunching = true;
             this.testingModeManager.curUnitResult.isReacting = true;
-            this.testingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand); // 改成在 Reach 的時候判斷是否伸直
-            this.isDuringTheUnit = false;
-            this.testingModeManager.unitOver();
+            // this.testingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand); // 改成在 Reach 的時候判斷是否伸直
+            // this.isDuringTheUnit = false;
+            // this.testingModeManager.unitOver();
         }
         else {
             this.testingModeManager.curUnitResult.isPunching = false;
@@ -110,21 +102,16 @@ public class EvaluationManager : MonoBehaviour
         if (this.isDuringTheUnit) {
             if (isHitShoulder) {
                 this.testingModeManager.curUnitResult.isReach = true;
+                this.isDuringTheUnit = false;
+                this.testingModeManager.unitOver();
+                this.testingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
             }
             else {
                 this.testingModeManager.curUnitResult.isReach = false;
             }
-            // this.testingModeManager.curUnitResult.isReacting = true;
-            // this.testingModeManager.curUnitResult.isPunching = true;
-            // this.testingModeManager.curUnitResult.isReacting = true;
-            this.testingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
-            
-            this.isDuringTheUnit = false;
-            this.testingModeManager.unitOver();
         }
         else {
             this.testingModeManager.curUnitResult.isReach = false;
-            this.testingModeManager.curUnitResult.isReacting = false;
             this.testingModeManager.curUnitResult.isStraight = false;
         }
     }

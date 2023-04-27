@@ -42,7 +42,19 @@ public class HolderBagInteraction : MonoBehaviour
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode);
                     break;
                 case "Choice_Depth":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingHintMode);
+                    this.selectionModeManager.moveToCueSelect();
+                    break;
+                case "Choice_Line":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_LineCue);
+                    break;
+                case "Choice_Sphere_v1":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_SphereCue_v1);
+                    break;
+                case "Choice_Sphere_v2":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_SphereCue_v2);
+                    break;
+                case "Choice_Sphere_v3":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_SphereCue_v3);
                     break;
                 default:
                     break;

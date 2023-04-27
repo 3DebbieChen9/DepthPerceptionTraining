@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SettingScene_TC.unity
     guid: 0d7d4ed3573bea4459cd914f283eb54a
+  - enabled: 1
+    path: Assets/Scenes/TrainingScene_LineCue.unity
+    guid: 8ca4781e04584c04cab2b3dcf5e02504
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d28718cf987fffd4d9cbb96ae05ea633, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 544cc10a852abaf469d07f95ab19e37c, type: 2}

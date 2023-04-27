@@ -11,7 +11,11 @@ namespace DepthPerceptionSystem
         SettingMode,
         TestingMode,
         TrainingMode,
-        TrainingHintMode,
+        TrainingMode_LineCue,
+        TrainingMode_SphereCue_v1,
+        TrainingMode_SphereCue_v2,
+        TrainingMode_SphereCue_v3,
+        
     }
 
     public enum MovingDirection {
@@ -38,6 +42,7 @@ namespace DepthPerceptionSystem
         Place,
         Handedness,
         SelectMode,
+        SelectCue,
     }
 
     public enum TestingState {
@@ -48,10 +53,20 @@ namespace DepthPerceptionSystem
         reaction, // unit中，等待反應結束
         result // 每個 unit 結束後的最終結果
     }
-    public enum TestLevel {
-        Easy,
-        Medium,
-        Hard,
+
+    public enum TrainingState {
+        idle, // 剛進到 TestingMode Scene / 從頭開始
+        begin, // 按下按鈕開始測試
+        ready, // 準備階段(倒數計時)
+        tentative, // unit 一開始，coach 2~3秒內隨機原地晃動
+        reaction, // unit中，等待反應結束
+        result // 每個 unit 結束後的最終結果
+    }
+
+    public enum TrainingLevel {
+        easy, // Coach move with the slowest speed
+        medium, // Coach move with the highest speed
+        hard, // Coach move with random speed
     }
 
     public enum SettingState {

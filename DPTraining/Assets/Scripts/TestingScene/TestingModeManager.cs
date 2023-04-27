@@ -114,7 +114,7 @@ public class TestingModeManager : MonoBehaviour
                 // [----] UI: Unit x start!!!
                 this.UIManager.readyStartView(this.curUnitNum);
                 
-                this.evaluationManager.isHitTrigger = false;
+                // this.evaluationManager.isHitTrigger = false;
                 this.callClearCoachColor();
             } 
             if (this.readyTimer.timeLeft <= 0.0f) {
@@ -197,6 +197,8 @@ public class TestingModeManager : MonoBehaviour
         this.coachManager.coachAnimator.SetBool("isDuringTheUnit", false);
 
         this.reactionTimer.timerOn = false;
+        UnitResultComment unitResultComment = this.evaluationManager.getScoreComment();
+        this.curUnitResult.score = unitResultComment.score;
         if (this.reactionOverTime) {
             this.reactionOverTime = false;
             
@@ -206,15 +208,12 @@ public class TestingModeManager : MonoBehaviour
 
             this.myTestResult.numberOfOverTime++;
             // [----] UI: Reaction Over Time View
-            List<string> commentList = new List<string>();
-            this.UIManager.unitResultView(this.curUnitNum, this.curUnitResult.score, this.curUnitResult.reactionTime, commentList, this.curUnitResult.isOverTime);
+            this.UIManager.unitResultView(this.curUnitNum, this.curUnitResult.score, this.curUnitResult.reactionTime, unitResultComment.comments, this.curUnitResult.isOverTime);
         }
         else {
             this.curUnitResult.isOverTime = false;
             this.curUnitResult.reactionTime = this.reactionTimer.timeLeft;
-            UnitResultComment unitResultComment = this.evaluationManager.getScoreComment();
-            this.curUnitResult.score = unitResultComment.score;
-
+            
             this.myTestResult.totalReactionTime += this.curUnitResult.reactionTime;
             this.myTestResult.totalScore += this.curUnitResult.score;
             // [----] UI: Reaction Time View

@@ -18,6 +18,8 @@ public class SelectionModeManager : MonoBehaviour
     [SerializeField]
     private GameObject sceneChoices;
     [SerializeField]
+    private GameObject cueChoices;
+    [SerializeField]
     private SelectionState curState = SelectionState.Place;
 
     void Awake() {
@@ -38,19 +40,32 @@ public class SelectionModeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.curState != SelectionState.SelectMode) {
-            if (!this.selectionToggle.activeSelf) {
-                this.selectionToggle.SetActive(true);
-                this.UIManager.setSelectionToggleText(this.curState);
-            }
-        }
-        else {
-            if (this.selectionToggle.activeSelf) {
-                this.selectionToggle.SetActive(false);
-            }
-            if (!this.sceneChoices.activeSelf && !this.selectionToggle.activeSelf) {
-                this.sceneChoices.SetActive(true);
-            }
+        switch(this.curState) {
+            case SelectionState.Place:
+            case SelectionState.Handedness:
+                if (!this.selectionToggle.activeSelf) {
+                    this.selectionToggle.SetActive(true);
+                    this.UIManager.setSelectionToggleText(this.curState);
+                }
+                break;
+            case SelectionState.SelectMode:
+                if (this.selectionToggle.activeSelf) {
+                    this.selectionToggle.SetActive(false);
+                }
+                if (!this.sceneChoices.activeSelf && !this.selectionToggle.activeSelf) {
+                    this.sceneChoices.SetActive(true);
+                }
+                break;
+            case SelectionState.SelectCue:
+                if (this.sceneChoices.activeSelf) {
+                    this.sceneChoices.SetActive(false);
+                }
+                if (!this.cueChoices.activeSelf && !this.sceneChoices.activeSelf) {
+                    this.cueChoices.SetActive(true);
+                }
+                break;
+            default:
+                break;
         }
 
         if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
@@ -74,6 +89,7 @@ public class SelectionModeManager : MonoBehaviour
         this.UIManager.setSelectionToggleText(this.curState);
         this.selectionToggle.SetActive(true);
         this.sceneChoices.SetActive(false);
+        this.cueChoices.SetActive(false);
     }
 
     public void toggleSelect(bool selection) {
@@ -97,13 +113,17 @@ public class SelectionModeManager : MonoBehaviour
         }
     }
 
+    public void moveToCueSelect() {
+        this.curState = SelectionState.SelectCue;
+    }
+
     public void modeSelect(SystemMode mode) {
         this.mainManager.mySelectionInfo.selectedMode = mode;
         this.mainManager.curSystemMode = mode;
         switch (mode) {
             case SystemMode.TestingMode:
-                OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.LTouch);
-                OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.RTouch);
+                // OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.LTouch);
+                // OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.RTouch);
                 this.mainManager.saveToJSON_selection(this.mainManager.mySelectionInfo);
                 this.mainManager.changeScene("TestingScene");
                 break;
@@ -112,10 +132,24 @@ public class SelectionModeManager : MonoBehaviour
                 // [TODO] Change Scene to "Training Scene"
                 Debug.LogWarning("Training Scene is not implemented yet.");
                 break;
-            case SystemMode.TrainingHintMode:
+            case SystemMode.TrainingMode_LineCue:
                 this.mainManager.saveToJSON_selection(this.mainManager.mySelectionInfo);
-                // [TODO] Change Scene to "Training Hint Scene"
-                Debug.LogWarning("Training Hint Scene is not implemented yet.");
+                this.mainManager.changeScene("TrainingScene_LineCue");
+                break;
+            case SystemMode.TrainingMode_SphereCue_v1:
+                this.mainManager.saveToJSON_selection(this.mainManager.mySelectionInfo);
+                // [TODO] Change Scene to "Training SphereCue_v1 Scene"
+                Debug.LogWarning("Training SphereCue_v1 Scene is not implemented yet.");
+                break;
+            case SystemMode.TrainingMode_SphereCue_v2:
+                this.mainManager.saveToJSON_selection(this.mainManager.mySelectionInfo);
+                // [TODO] Change Scene to "Training SphereCue_v2 Scene"
+                Debug.LogWarning("Training SphereCue_v2 Scene is not implemented yet.");
+                break;
+            case SystemMode.TrainingMode_SphereCue_v3:
+                this.mainManager.saveToJSON_selection(this.mainManager.mySelectionInfo);
+                // [TODO] Change Scene to "Training SphereCue_v3 Scene"
+                Debug.LogWarning("Training SphereCue_v3 Scene is not implemented yet.");
                 break;
             default:
                 break;

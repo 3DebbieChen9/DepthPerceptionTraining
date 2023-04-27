@@ -10378,6 +10378,7 @@ GameObject:
   - component: {fileID: 2104329675}
   - component: {fileID: 2104329674}
   - component: {fileID: 2104329673}
+  - component: {fileID: 2104329676}
   m_Layer: 0
   m_Name: UserIK
   m_TagString: Player
@@ -10735,6 +10736,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2104329676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104329671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97abdeba2a7baf741b8ad2fe49315c53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftArm: {fileID: 1685670757}
+  leftForeArm: {fileID: 1046616231}
+  rightArm: {fileID: 1827170481}
+  rightForeArm: {fileID: 2043118566}
+  SM_leftArm: {fileID: 492512834}
+  SM_leftForeArm: {fileID: 1475475370}
+  SM_rightArm: {fileID: 2057149072}
+  SM_rightForeArm: {fileID: 782177068}
 --- !u!1 &2111779253
 GameObject:
   m_ObjectHideFlags: 0

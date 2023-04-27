@@ -15,11 +15,3 @@ sceneSetups:
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/SettingScene_TC.unity
-  isLoaded: 0
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Scenes/FunctionDeveloping/CoachMovement.unity
-  isLoaded: 0
-  isActive: 0
-  isSubScene: 0

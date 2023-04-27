@@ -14,7 +14,6 @@ public class CalibrationModeManager : MonoBehaviour
     private CalibrationState curState;
 
     private int markerPutCount = 0;
-
     private float armLength = 0.0f;
     private float centerEyeToControllerLength = 0.0f;
     private float centerEyeToFloor = 0.0f;
@@ -25,6 +24,8 @@ public class CalibrationModeManager : MonoBehaviour
     public GameObject heightModifyKeyPad;
     [SerializeField]
     public GameObject heightModifyButton;
+    [SerializeField]
+    public GameObject judgeStraightArmCollider;
 
     void Awake() {
         if (this.mainManager == null) {
@@ -184,6 +185,7 @@ public class CalibrationModeManager : MonoBehaviour
                 this.heightModifyButton.SetActive(true);
                 this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(true);
                 this.mainManager.OVRControllerRayRight.RayInteractorSwitch(true);
+
                 this.mainManager.enableUserArmMeshRenderers(true);
                 this.mainManager.OVRControllerLeft.SetActive(false);
                 this.mainManager.OVRControllerRight.SetActive(false);
@@ -195,9 +197,7 @@ public class CalibrationModeManager : MonoBehaviour
                 break;
         }
     }
-
     void getArmStraightData() {
-
         Vector3 rightControllerPos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
         Vector3 leftControllerPos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
         switch (this.curState) {
@@ -206,8 +206,14 @@ public class CalibrationModeManager : MonoBehaviour
                 this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(false);
                 this.mainManager.OVRControllerRayRight.RayInteractorSwitch(false);
                 this.armLength += Vector3.Distance(rightControllerPos, leftControllerPos);
-                this.mainManager.getHandStraightDefaultAngle(Hand.Right);
-
+                this.mainManager.getHandStraightDefaultAngle(Hand.Right); 
+                // 找右手的位置
+                Transform rightHand = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor;
+                // 在 Controller 的位置生成 Collider，並將 Parent 設為上臂
+                GameObject rightdest = Instantiate( judgeStraightArmCollider, 
+                                                    rightHand.position - rightHand.forward * 0.052f + rightHand.right * 0.054f, 
+                                                    Quaternion.identity,
+                                                    this.mainManager.rightUpperArm_IK.transform);
                 // [----] Call Calibration UI Function
                 // Arm Straight Result - Right (Length)
                 this.calibrationUIManager.armLengthResult(this.curState, this.armLength, 0.0f);
@@ -218,16 +224,22 @@ public class CalibrationModeManager : MonoBehaviour
             case CalibrationState.ArmStraight_LHand:
                 this.armLength += Vector3.Distance(rightControllerPos, leftControllerPos);
                 this.mainManager.getHandStraightDefaultAngle(Hand.Left);
+                // 找左手的位置
+                Transform leftHand = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor;
+                // 在 Controller 的位置生成 Collider，並將 Parent 設為上臂
+                GameObject leftdest = Instantiate( judgeStraightArmCollider, 
+                                                    leftHand.position - leftHand.forward * 0.052f + leftHand.right * 0.054f, 
+                                                    Quaternion.identity,
+                                                    this.mainManager.leftUpperArm_IK.transform);
+
 
                 this.mainManager.myUserInfo.userBodySize.armLength = this.armLength / 2.0f;
                 this.mainManager.myUserInfo.userBodySize.shoulderWidth = (this.mainManager.myUserInfo.userBodySize.centerEyeToControllerLength - this.mainManager.myUserInfo.userBodySize.armLength) * 2.0f;
-                
                 // [----] Call Calibration UI Function
                 // Arm Straight Result - Left (Length)
                 this.calibrationUIManager.armLengthResult(this.curState, this.mainManager.myUserInfo.userBodySize.armLength, this.mainManager.myUserInfo.userBodySize.shoulderWidth);
                 this.curState = CalibrationState.IdlePose;
                 // Idle Pose Instruction
-                // this.mainManager.enableUserArmMeshRenderers(true);
                 this.calibrationUIManager.idlePoseInstruction(this.curState);
                 break;
             default:

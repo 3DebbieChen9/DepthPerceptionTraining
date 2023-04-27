@@ -67,6 +67,7 @@ public class MainManager : MonoBehaviour
 
     [SerializeField]
     public GameObject userIK;
+
     [SerializeField]
     public MeshRenderer[] userArmMeshRenderers;
 
@@ -114,8 +115,12 @@ public class MainManager : MonoBehaviour
 
     public void resizeUserIK()
     {
-        float scale = this.myUserInfo.userBodySize.height / this.mySettingInfo.coachDefaultValue.avtarDefaultHeight;
+        // float userAvatarDefaultHeight = 1.82747f;
+        float userAvatarDefaultHeight = 1.82f;
+        float scale = this.myUserInfo.userBodySize.height / userAvatarDefaultHeight;
         this.userIK.GetComponent<RootMotion.Demos.VRIKCalibrationBasic>().scaleMlp = scale;
+        this.userIK.GetComponent<RootMotion.FinalIK.VRIK>().solver.scale = scale;
+        // this.userIK.transform.localScale = new Vector3(scale, scale, scale);
     }
     public void enableUserArmMeshRenderers (bool enable) 
     {

@@ -10,7 +10,7 @@ public class HitTargetInteraction : MonoBehaviour
 
     void Awake() {
         if (this.evaluationManager == null) {
-            this.evaluationManager = GameObject.Find("TestingModeManager").GetComponent<EvaluationManager>();
+            this.evaluationManager = GameObject.Find("EvaluationManager").GetComponent<EvaluationManager>();
         }    
     }
 
@@ -34,13 +34,13 @@ public class HitTargetInteraction : MonoBehaviour
             if (this.evaluationManager.isDuringTheUnit) {
                 this.evaluationManager.reachModule.reachTarget(Hand.Left);
             }
-            if (!this.evaluationManager.isHitTrigger) {
-                this.evaluationManager.isHitTrigger = true;
+            // if (!this.evaluationManager.isHitTrigger) {
+            //     this.evaluationManager.isHitTrigger = true;
                 // this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
                 Debug.Log("Hit Coach Shoulder: Add Ball here");
                 OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.LTouch);
                 Invoke("stopControllerVibration", 0.3f);
-            }
+            // }
             
         }
         else if (other.gameObject.tag == "Glove_R") {
@@ -48,13 +48,13 @@ public class HitTargetInteraction : MonoBehaviour
             if (this.evaluationManager.isDuringTheUnit) {
                 this.evaluationManager.reachModule.reachTarget(Hand.Left);
             }
-            if (!this.evaluationManager.isHitTrigger) {
-                this.evaluationManager.isHitTrigger = true;
+            // if (!this.evaluationManager.isHitTrigger) {
+            //     this.evaluationManager.isHitTrigger = true;
                 // this.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
                 Debug.Log("Hit Coach Shoulder: Add Ball here");
                 OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.RTouch);
                 Invoke("stopControllerVibration", 0.3f);
-            }   
+            // }   
         }
     }
 

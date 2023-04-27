@@ -6001,6 +6001,7 @@ MonoBehaviour:
   - {fileID: 1188528447}
   heightModifyKeyPad: {fileID: 1269836957}
   heightModifyButton: {fileID: 296945420}
+  judgeStraightArmCollider: {fileID: 8366020631861745644, guid: 6e8317f46f526754e8790e02aea01d41, type: 3}
 --- !u!4 &1761030667
 Transform:
   m_ObjectHideFlags: 0

@@ -134,6 +134,10 @@ public class TestingUIManager : MonoBehaviour
         if (isOverTime) {
             // this.unitResultText.text = "It's over time.";
             this.unitResultText.text = "超時了!";
+            foreach (string c in comment) {
+                this.unitResultText.text += "\n" + c;
+            }
+            Debug.Log(this.unitResultText.text);
         }
         else {
             // this.unitResultText.text = "Reaction Time: " + reactionTime.ToString("F3") + "s";
