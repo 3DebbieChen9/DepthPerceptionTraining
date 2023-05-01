@@ -795,7 +795,7 @@ PrefabInstance:
     - target: {fileID: 1217597656186925621, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 599999386}
+      objectReference: {fileID: 0}
     - target: {fileID: 1806074676155626938, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -955,7 +955,7 @@ PrefabInstance:
     - target: {fileID: 4993321332156831710, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 599999386}
+      objectReference: {fileID: 0}
     - target: {fileID: 5186224309335672915, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -987,11 +987,11 @@ PrefabInstance:
     - target: {fileID: 5897060618610765405, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 599999386}
+      objectReference: {fileID: 0}
     - target: {fileID: 5991805530821132537, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 599999386}
+      objectReference: {fileID: 0}
     - target: {fileID: 6216841364131343568, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1059,7 +1059,7 @@ PrefabInstance:
     - target: {fileID: 7113488084896542004, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 599999386}
+      objectReference: {fileID: 0}
     - target: {fileID: 9062925237535869828, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1124,17 +1124,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 116456935003464402, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
   m_PrefabInstance: {fileID: 436195930}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &436195933 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9172695483078845212, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
-  m_PrefabInstance: {fileID: 436195930}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &483081701 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 483081701, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
@@ -1155,12 +1144,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 599999384}
-  - component: {fileID: 599999388}
-  - component: {fileID: 599999386}
+  - component: {fileID: 599999390}
+  - component: {fileID: 599999391}
   - component: {fileID: 599999389}
   - component: {fileID: 599999385}
   m_Layer: 0
-  m_Name: TestingModeManager
+  m_Name: PlayingModeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1199,7 +1188,7 @@ MonoBehaviour:
   coachMovingDirection: 0
   coachInitialPosition: {x: 0, y: 10, z: 0}
   distanceToUserMultiple: 0
---- !u!114 &599999386
+--- !u!114 &599999389
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1208,7 +1197,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 599999382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbbe6c6f0bfc04c468e05d93c662ee30, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a5325cb62f65c44784d3810a3bd922b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playingModeManager: {fileID: 599999390}
+  gym: {fileID: 436195931}
+  boxingRing: {fileID: 436195932}
+  coachStickman: {fileID: 6817532097654728804}
+--- !u!114 &599999390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599999382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c68639a0dbb76342b1f2db51f740700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainManager: {fileID: 0}
+  UIManager: {fileID: 599999391}
+  evaluationManager: {fileID: 1196041879}
+  coachManager: {fileID: 599999385}
+  curState: 0
+  targetNumberOfTasks: 0
+  curUnitNum: 0
+  reactionOverTime: 0
+--- !u!114 &599999391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599999382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff948ce3c2f0f474ba0b74c84e28b05a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startCanvas: {fileID: 1970892988}
@@ -1227,44 +1252,6 @@ MonoBehaviour:
   finalResultTitle: {fileID: 1462037440}
   finalResultText: {fileID: 1375575481}
   finalButtonsCanvas: {fileID: 1301199049}
-  settingText: {fileID: 1434507772}
-  userText: {fileID: 436195933}
---- !u!114 &599999388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599999382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c146e7120adb7e84391e37509bfd0e88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainManager: {fileID: 0}
-  UIManager: {fileID: 599999386}
-  evaluationManager: {fileID: 1196041879}
-  coachManager: {fileID: 599999385}
-  curState: 0
-  targetNumberOfTasks: 0
-  curUnitNum: 0
-  reactionOverTime: 0
---- !u!114 &599999389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599999382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a5325cb62f65c44784d3810a3bd922b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  testingModeManager: {fileID: 599999388}
-  gym: {fileID: 436195931}
-  boxingRing: {fileID: 436195932}
-  coachStickman: {fileID: 6817532097654728804}
 --- !u!1 &608588260 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 608588260, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
@@ -1730,7 +1717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainManager: {fileID: 0}
-  testingModeManager: {fileID: 599999388}
+  playingModeManager: {fileID: 599999390}
   startingPoint: {fileID: 60547898}
   userMovingDirection: 0
   coachMovingDirection: 1
@@ -2223,17 +2210,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387714816}
   m_CullTransparentMesh: 1
---- !u!114 &1434507772 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5596614414669521538, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
-  m_PrefabInstance: {fileID: 436195930}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1438589891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3633,7 +3609,7 @@ BoxCollider:
   m_GameObject: {fileID: 6817532097654728804}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.10327285, z: 0.8683037}
   m_Center: {x: 0, y: 0.041126464, z: 0.035956163}

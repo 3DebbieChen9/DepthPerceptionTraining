@@ -1758,7 +1758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 328586508}
   - component: {fileID: 328586509}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HeroScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10748,14 +10748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97abdeba2a7baf741b8ad2fe49315c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftArm: {fileID: 1685670757}
-  leftForeArm: {fileID: 1046616231}
-  rightArm: {fileID: 1827170481}
-  rightForeArm: {fileID: 2043118566}
-  SM_leftArm: {fileID: 492512834}
-  SM_leftForeArm: {fileID: 1475475370}
-  SM_rightArm: {fileID: 2057149072}
-  SM_rightForeArm: {fileID: 782177068}
 --- !u!1 &2111779253
 GameObject:
   m_ObjectHideFlags: 0

@@ -89,10 +89,7 @@ public class CoachManager : MonoBehaviour
         this.coachAnimator.SetBool("Moving", true);
         this.coachAnimator.SetFloat("Direction", rad);
         
-        Debug.Log("Coach Origin Position: " + this.coachAvatar.transform.position.ToString());
-        Debug.Log("Coach Initial Position: " + this.coachInitialPosition.ToString());
         this.coachAvatar.transform.position = this.coachInitialPosition;
-        Debug.Log("Coach Current Position: " + this.coachAvatar.transform.position.ToString());
         
         Invoke("stopMoving", 0.11f);
     }
