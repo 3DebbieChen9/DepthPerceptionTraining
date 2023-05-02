@@ -27,11 +27,11 @@ public class LineDrawer : MonoBehaviour
         float distance;
         float hue;
         float threshold = 1.5f;
-        float zeroDistanceHue = 0.5f;// (0.0f to 1.0 f) maps to (0 degree to 360 degrees)
+        float zeroDistanceHue = 0.5f; // (0.0f to 1.0 f) maps to (0 degree to 360 degrees)
         distance  = Vector3.Distance( glovePos.position, currentEndingpoint.transform.position);
         
         if(distance>threshold){
-            hue = 0;//red
+            hue = 0; //red
         }else{
             hue = -( zeroDistanceHue / threshold ) * distance + zeroDistanceHue;//Calculate the right continuous hue when entering threshold zone
         }

@@ -38,11 +38,20 @@ public class HolderBagInteraction : MonoBehaviour
                 case "Choice_Testing":
                     this.selectionModeManager.modeSelect(SystemMode.TestingMode);
                     break;
+                case "Choice_TrainMethod":
+                    this.selectionModeManager.moveToLevelSelect();
+                    break;
                 case "Choice_Training":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode);
                     break;
-                case "Choice_Depth":
-                    this.selectionModeManager.moveToCueSelect();
+                case "Level_Easy":
+                    this.selectionModeManager.levelSelect(TrainingLevel.easy);
+                    break;
+                case "Level_Medium":
+                    this.selectionModeManager.levelSelect(TrainingLevel.medium);
+                    break;
+                case "Level_Hard":
+                    this.selectionModeManager.levelSelect(TrainingLevel.hard);
                     break;
                 case "Choice_Line":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_LineCue);

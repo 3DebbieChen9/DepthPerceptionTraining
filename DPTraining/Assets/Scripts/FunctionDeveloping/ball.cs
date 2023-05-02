@@ -28,6 +28,7 @@ public class ball : MonoBehaviour
         float currentDistance = Vector3.Distance(transform.position, target.position) * 0.5f;
         
         float radius = Mathf.Sin((float)Mathf.PI / (2 * initialDistance) * (currentDistance)); // 可以把公式放到desmos上看看半徑如何變化
+        
         setScale(radius);
     }
 

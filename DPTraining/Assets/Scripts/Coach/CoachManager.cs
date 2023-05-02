@@ -115,12 +115,12 @@ public class CoachManager : MonoBehaviour
         Invoke("moveToInitialPosition", delayTime);
     }
 
-    // [TODO] Modify Moving Speed According to Training Day
-    public void randomMovement() {
+    public void randomMovement(TrainingLevel level = TrainingLevel.hard) {
         float distanceMin = 0.0f;
         float distanceMax = 0.0f;
         float speedMin = 0.0f;
         float speedMax = 0.0f;
+        float coachMoveSpeed = 0.0f;
         
         float randomValue = UnityEngine.Random.Range(0.0f, 1.0f);
         MovingDirection movingDirection = MovingDirection.Forward;
@@ -138,9 +138,20 @@ public class CoachManager : MonoBehaviour
             speedMin = this.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.backwardMin;
             speedMax = this.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.backwardMax;   
         }
-        float speed = UnityEngine.Random.Range(speedMin, speedMax);
+
+        switch (level) {
+            case TrainingLevel.easy:
+                coachMoveSpeed = speedMin;
+                break;
+            case TrainingLevel.medium:
+                coachMoveSpeed = speedMax;
+                break;
+            case TrainingLevel.hard:
+                coachMoveSpeed = UnityEngine.Random.Range(speedMin, speedMax);
+                break;
+        }
         float distance = UnityEngine.Random.Range(distanceMin, distanceMax);
-        this.startMoving(movingDirection, speed, distance);
+        this.startMoving(movingDirection, coachMoveSpeed, distance);
     }
 
     public void startMoving(MovingDirection movingDirection, float speed, float distance) {

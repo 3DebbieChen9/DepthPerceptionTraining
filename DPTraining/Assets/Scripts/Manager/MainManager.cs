@@ -104,7 +104,7 @@ public class MainManager : MonoBehaviour
 
         this.sceneOriginPosition = new Vector3(0.0f, 0.0f, 0.0f);
         this.sceneOriginRotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
-        this.sceneOrigin.GetComponent<MeshRenderer>().enabled = true;
+        this.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
 
         this.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = true;
         this.enableUserArmMeshRenderers(false);

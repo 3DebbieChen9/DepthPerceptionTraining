@@ -6,9 +6,9 @@ using DepthPerceptionSystem;
 public class StraightCollider : MonoBehaviour
 {
     [SerializeField]
-    private MainManager mainManager;
+    private MainManager mainManager = null;
     [SerializeField]
-    private EvaluationManager evaluationManager;
+    private EvaluationManager evaluationManager = null;
 
 
     void Awake() {
@@ -26,15 +26,15 @@ public class StraightCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (this.evaluationManager == null 
-        //     && this.mainManager.curSystemMode != SystemMode.StartMode
-        //     && this.mainManager.curSystemMode != SystemMode.CalibrationMode
-        //     && this.mainManager.curSystemMode != SystemMode.SelectionMode) {
-        //     this.evaluationManager = GameObject.Find("EvaluationManager").GetComponent<EvaluationManager>();
-        // }
-        if (this.evaluationManager == null && this.mainManager.curSystemMode == SystemMode.TestingMode) {
+        if (this.evaluationManager == null 
+            && this.mainManager.curSystemMode != SystemMode.StartMode
+            && this.mainManager.curSystemMode != SystemMode.CalibrationMode
+            && this.mainManager.curSystemMode != SystemMode.SelectionMode) {
             this.evaluationManager = GameObject.Find("EvaluationManager").GetComponent<EvaluationManager>();
         }
+        // if (this.evaluationManager == null && this.mainManager.curSystemMode == SystemMode.TestingMode) {
+        //     this.evaluationManager = GameObject.Find("EvaluationManager").GetComponent<EvaluationManager>();
+        // }
     }
 
     void OnTriggerEnter(Collider other) {
@@ -48,6 +48,7 @@ public class StraightCollider : MonoBehaviour
             Debug.Log("Hit Straight Collider - Left");
             this.evaluationManager.playingModeManager.curUnitResult.isStraight = true;
             Debug.Log($"Left Arm Straight: {this.evaluationManager.straightModule.judgeArmStraight(Hand.Left)} \nAngle: {this.evaluationManager.straightModule.getArmAngle(Hand.Left)}");
+
             OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.LTouch);
             Invoke("stopControllerVibration", 0.3f);
         }
@@ -55,6 +56,7 @@ public class StraightCollider : MonoBehaviour
             Debug.Log("Hit Straight Collider - Right");
             this.evaluationManager.playingModeManager.curUnitResult.isStraight = true;
             Debug.Log($"Right Arm Straight: {this.evaluationManager.straightModule.judgeArmStraight(Hand.Right)} \nAngle: {this.evaluationManager.straightModule.getArmAngle(Hand.Right)}");
+            
             OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.RTouch);
             Invoke("stopControllerVibration", 0.3f);
         }

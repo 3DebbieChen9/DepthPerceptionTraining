@@ -42,7 +42,8 @@ namespace DepthPerceptionSystem
         Place,
         Handedness,
         SelectMode,
-        SelectCue,
+        SelectLevel,
+        SelectTrain,
     }
 
     public enum PlayingState  {
@@ -151,12 +152,14 @@ namespace DepthPerceptionSystem
         public bool isOnRing;
         public bool coachIsLeftHanded;
         public SystemMode selectedMode;
+        public TrainingLevel selectedLevel;
 
         public SelectionInfo() {
             this.isUsingNoitom = false;
             this.isOnRing = false;
             this.coachIsLeftHanded = true;
             this.selectedMode = SystemMode.CalibrationMode;
+            this.selectedLevel = TrainingLevel.hard;
         }
     }
 
@@ -191,33 +194,18 @@ namespace DepthPerceptionSystem
         }
     }
 
-    public class TestingModeSetting 
+    public class PlayingModeSetting 
     {
-        public float readyTime;
+        public float testingReadyTime;
+        public float trainingReadyTime;
         public float tentativeTimeMin;
         public float tentativeTimeMax;
         public float unitTimeLimit; // Over the time limit, means the task is fail
         public int targetNumberOfTasks; // User should do 'targetNumberOTasks' to complete the test 7
         
-        public TestingModeSetting() {
-            this.readyTime = 4.0f;
-            this.tentativeTimeMin = 2.0f;
-            this.tentativeTimeMax = 3.0f;
-            this.unitTimeLimit = 2.0f;
-            this.targetNumberOfTasks = 7;
-        }
-    }
-
-    public class TrainModeSetting 
-    {
-        public float readyTime;
-        public float tentativeTimeMin;
-        public float tentativeTimeMax;
-        public float unitTimeLimit; // Over the time limit, means the task is fail
-        public int targetNumberOfTasks; // User should do 'targetNumberOTasks' to complete the test 7
-        
-        public TrainModeSetting() {
-            this.readyTime = 6.0f;
+        public PlayingModeSetting() {
+            this.testingReadyTime = 4.0f;
+            this.trainingReadyTime = 6.0f;
             this.tentativeTimeMin = 2.0f;
             this.tentativeTimeMax = 3.0f;
             this.unitTimeLimit = 2.0f;
@@ -250,14 +238,14 @@ namespace DepthPerceptionSystem
         public ControllerVibration controllerVibration; // Ranger from 0.0f to 1.0f
         public CoachDefaultValue coachDefaultValue;
         public EvaluationThreshold evaluationThreshold;
-        public TestingModeSetting testingModeSetting;
+        public PlayingModeSetting playingModeSetting;
         
         public SettingInfo(int a = 0) {
             this.userAvgDistanceBetweenEyesAndTopHead = 0.11f;
             this.controllerVibration = new ControllerVibration();
             this.coachDefaultValue = new CoachDefaultValue();
             this.evaluationThreshold = new EvaluationThreshold();
-            this.testingModeSetting = new TestingModeSetting();
+            this.playingModeSetting = new PlayingModeSetting();
         }
     }
 

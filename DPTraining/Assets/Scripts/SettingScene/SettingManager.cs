@@ -221,8 +221,8 @@ public class SettingManager : MonoBehaviour
 
     void settingInitialize() {
         this.curState = SettingState.UserSize;
-        this.reactionTimer = new Timer(false, false, this.mainManager.mySettingInfo.testingModeSetting.unitTimeLimit, 0.0f);
-        this.readyTimer = new Timer(false, true, this.mainManager.mySettingInfo.testingModeSetting.readyTime, this.mainManager.mySettingInfo.testingModeSetting.readyTime);
+        this.reactionTimer = new Timer(false, false, this.mainManager.mySettingInfo.playingModeSetting.unitTimeLimit, 0.0f);
+        this.readyTimer = new Timer(false, true, this.mainManager.mySettingInfo.playingModeSetting.testingReadyTime, this.mainManager.mySettingInfo.playingModeSetting.testingReadyTime);
         this.punchTimer = new Timer(false, true, 3.0f, 3.0f);
         this.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
         this.userHeightText.text = this.mainManager.myUserInfo.userBodySize.height.ToString("F2");
@@ -233,9 +233,9 @@ public class SettingManager : MonoBehaviour
         // this.speedMinText.text = this.mainManager.mySettingInfo.coachDefaultValue.movingSpeedMin.ToString("F2");
         this.vibationAText.text = this.mainManager.mySettingInfo.controllerVibration.amplitude.ToString("F1");
         this.vibationFText.text = this.mainManager.mySettingInfo.controllerVibration.frequency.ToString("F1");
-        this.readyTimeText.text = this.mainManager.mySettingInfo.testingModeSetting.readyTime.ToString("F1");
-        this.limitTimeText.text = this.mainManager.mySettingInfo.testingModeSetting.unitTimeLimit.ToString("F1");
-        this.numTasksText.text = this.mainManager.mySettingInfo.testingModeSetting.targetNumberOfTasks.ToString();
+        this.readyTimeText.text = this.mainManager.mySettingInfo.playingModeSetting.testingReadyTime.ToString("F1");
+        this.limitTimeText.text = this.mainManager.mySettingInfo.playingModeSetting.unitTimeLimit.ToString("F1");
+        this.numTasksText.text = this.mainManager.mySettingInfo.playingModeSetting.targetNumberOfTasks.ToString();
 
         this.gym.transform.position = new Vector3(this.mainManager.sceneOriginPosition.x, this.mainManager.sceneOriginPosition.y, this.mainManager.sceneOriginPosition.z);
         this.gym.transform.rotation = this.mainManager.sceneOriginRotation;
@@ -475,8 +475,8 @@ public class SettingManager : MonoBehaviour
     }
     public void setTestingMode() {
         try {
-            this.mainManager.mySettingInfo.testingModeSetting.readyTime = float.Parse(this.readyTimeText.text);
-            this.readyTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.readyTime;
+            this.mainManager.mySettingInfo.playingModeSetting.testingReadyTime = float.Parse(this.readyTimeText.text);
+            this.readyTimer.timeTarget = this.mainManager.mySettingInfo.playingModeSetting.testingReadyTime;
         }
         catch (System.Exception e) {
             this.readyTimeText.text = e.ToString();
@@ -484,8 +484,8 @@ public class SettingManager : MonoBehaviour
         }
 
         try {
-            this.mainManager.mySettingInfo.testingModeSetting.unitTimeLimit = float.Parse(this.limitTimeText.text);
-            this.reactionTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.unitTimeLimit;
+            this.mainManager.mySettingInfo.playingModeSetting.unitTimeLimit = float.Parse(this.limitTimeText.text);
+            this.reactionTimer.timeTarget = this.mainManager.mySettingInfo.playingModeSetting.unitTimeLimit;
         }
         catch (System.Exception e) {
             this.limitTimeText.text = e.ToString();
@@ -493,7 +493,7 @@ public class SettingManager : MonoBehaviour
         }
 
         try {
-            this.mainManager.mySettingInfo.testingModeSetting.targetNumberOfTasks = int.Parse(this.numTasksText.text);
+            this.mainManager.mySettingInfo.playingModeSetting.targetNumberOfTasks = int.Parse(this.numTasksText.text);
         }
         catch (System.Exception e) {
             this.numTasksText.text = e.ToString();
@@ -667,8 +667,8 @@ public class SettingManager : MonoBehaviour
         //                         $"Moving Speed Max: {settingInfo.coachDefaultValue.movingSpeedMax:F2} (m/s) | Min: {settingInfo.coachDefaultValue.movingSpeedMin:F2} (m/s)\n" +
         //                         $"Controller Vibration Amplitude: {settingInfo.controllerVibration.amplitude:F1} | Frequency: {settingInfo.controllerVibration.frequency:F1}\n" +
         //                         $"Threshold of Straight: {settingInfo.evaluationThreshold.handStraightAngle:F2} (degree)\n" +
-        //                         $"Testing Mode Ready Time: {settingInfo.testingModeSetting.readyTime:F1} (s) | Time Limit: {settingInfo.testingModeSetting.timeLimit:F1} (s)\n" +
-        //                         $"Testing Mode Number of Tasks: {settingInfo.testingModeSetting.targetNumberOfTasks} units\n";
+        //                         $"Testing Mode Ready Time: {settingInfo.playingModeSetting.testingReadyTime:F1} (s) | Time Limit: {settingInfo.playingModeSetting.timeLimit:F1} (s)\n" +
+        //                         $"Testing Mode Number of Tasks: {settingInfo.playingModeSetting.targetNumberOfTasks} units\n";
         
         // this.userText.text = $"User Height: {userInfo.userBodySize.height:F2} (m) | Arm Length: {userInfo.userBodySize.armLength:F2} (m)\n";
         this.settingText.text = $"教練與使用者的身高差: {settingInfo.coachDefaultValue.heightDifferenceWithUser:F2}\n" + 
@@ -676,8 +676,8 @@ public class SettingManager : MonoBehaviour
                                 // $"移動速度最大值: {settingInfo.coachDefaultValue.movingSpeedMax:F2} (m/s) | 最小值: {settingInfo.coachDefaultValue.movingSpeedMin:F2} (m/s)\n" +
                                 $"遙控器震動振幅: {settingInfo.controllerVibration.amplitude:F1} | 頻率: {settingInfo.controllerVibration.frequency:F1}\n" +
                                 $"伸直的角度接受範圍: {settingInfo.evaluationThreshold.handStraightAngle:F2} (度)\n" +
-                                $"測試階段的預備時間: {settingInfo.testingModeSetting.readyTime:F1} (s) | 反應時間限制: {settingInfo.testingModeSetting.unitTimeLimit:F1} (s)\n" +
-                                $"測試階段要進行的回合數: {settingInfo.testingModeSetting.targetNumberOfTasks} units\n";
+                                $"測試階段的預備時間: {settingInfo.playingModeSetting.testingReadyTime:F1} (s) | 反應時間限制: {settingInfo.playingModeSetting.unitTimeLimit:F1} (s)\n" +
+                                $"測試階段要進行的回合數: {settingInfo.playingModeSetting.targetNumberOfTasks} units\n";
         
         this.userText.text = $"使用者身高: {userInfo.userBodySize.height:F2} (m) | 臂長: {userInfo.userBodySize.armLength:F2} (m)\n";
     }

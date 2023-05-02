@@ -32,9 +32,9 @@ public class HitCoachInteraction : MonoBehaviour
             //     this.evaluationManager.userIsHitCoach(Hand.Left, false);   
             // }
             this.evaluationManager.userIsHitCoach(Hand.Left, false);
-            if (this.gameObject.name != "Boxing_Gloves_L" && this.gameObject.name != "Boxing_Gloves_R") {
-                Debug.Log("Hit Coach: Add Ball here");
-            }
+            // if (this.gameObject.name != "Boxing_Gloves_L" && this.gameObject.name != "Boxing_Gloves_R") {
+            //     Debug.Log("Hit Coach: Add Ball here");
+            // }
             float vibrationAmplitude = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.amplitude;
             float vibrationFrequency = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.frequency;
             if (other.gameObject.tag == "Glove_L") {

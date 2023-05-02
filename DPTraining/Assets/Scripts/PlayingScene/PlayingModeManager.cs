@@ -35,6 +35,9 @@ public class PlayingModeManager : MonoBehaviour
     [SerializeField]
     private bool reactionOverTime = false;
 
+    [SerializeField]
+    private GameObject depthCueManager;
+
     void Awake() {
         if (this.mainManager == null) {
             this.mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
@@ -52,9 +55,25 @@ public class PlayingModeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.reactionTimer = new Timer(false, false, this.mainManager.mySettingInfo.testingModeSetting.unitTimeLimit, 0.0f);
-        this.readyTimer = new Timer(false, true, this.mainManager.mySettingInfo.testingModeSetting.readyTime, this.mainManager.mySettingInfo.testingModeSetting.readyTime);
-        float firstTentativeTime  = UnityEngine.Random.Range(this.mainManager.mySettingInfo.testingModeSetting.tentativeTimeMin, this.mainManager.mySettingInfo.testingModeSetting.tentativeTimeMax);
+        float readyTime;
+        switch (this.mainManager.curSystemMode) {
+            case SystemMode.TestingMode:
+                readyTime = this.mainManager.mySettingInfo.playingModeSetting.testingReadyTime;
+                break;
+            case SystemMode.TrainingMode:
+            case SystemMode.TrainingMode_LineCue:
+            case SystemMode.TrainingMode_SphereCue_v1:
+            case SystemMode.TrainingMode_SphereCue_v2:
+            case SystemMode.TrainingMode_SphereCue_v3:
+                readyTime = this.mainManager.mySettingInfo.playingModeSetting.trainingReadyTime;
+                break;
+            default:
+                readyTime = 0.0f;
+                break;
+        }
+        this.reactionTimer = new Timer(false, false, this.mainManager.mySettingInfo.playingModeSetting.unitTimeLimit, 0.0f);
+        this.readyTimer = new Timer(false, true, readyTime, readyTime);
+        float firstTentativeTime  = UnityEngine.Random.Range(this.mainManager.mySettingInfo.playingModeSetting.tentativeTimeMin, this.mainManager.mySettingInfo.playingModeSetting.tentativeTimeMax);
         this.tentativeTimer = new Timer(false, true, firstTentativeTime, firstTentativeTime);
         this.myTestResult = new TotalUnitResult();
         this.curUnitResult = new UnitResult();
@@ -64,6 +83,8 @@ public class PlayingModeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.depthCueRender();
+
         if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
             this.mainManager.changeScene("TestingScene");
         }
@@ -115,7 +136,7 @@ public class PlayingModeManager : MonoBehaviour
                 this.UIManager.readyStartView(this.curUnitNum);
                 
                 // this.evaluationManager.isHitTrigger = false;
-                this.callClearCoachColor();
+                this.callClearPunchMarker();
             } 
             if (this.readyTimer.timeLeft <= 0.0f) {
                 this.readyTimer.ResetTimer();
@@ -136,7 +157,7 @@ public class PlayingModeManager : MonoBehaviour
         if (this.tentativeTimer.timerOn) {
             this.tentativeTimer.timeLeft -= Time.deltaTime;
             if (this.tentativeTimer.timeLeft <= 0.0f) {
-                this.tentativeTimer.timeTarget = UnityEngine.Random.Range(this.mainManager.mySettingInfo.testingModeSetting.tentativeTimeMin, this.mainManager.mySettingInfo.testingModeSetting.tentativeTimeMax);
+                this.tentativeTimer.timeTarget = UnityEngine.Random.Range(this.mainManager.mySettingInfo.playingModeSetting.tentativeTimeMin, this.mainManager.mySettingInfo.playingModeSetting.tentativeTimeMax);
                 this.tentativeTimer.timeLeft = this.tentativeTimer.timeTarget;
                 this.tentativeTimer.ResetTimer();
 
@@ -145,10 +166,12 @@ public class PlayingModeManager : MonoBehaviour
                 // this.evaluationManager.setStartingPoint(this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position, this.mainManager.sceneOriginRotation);
                 this.coachManager.coachAnimator.SetBool("isTentative", false);
                 this.coachManager.coachAnimator.SetBool("isDuringTheUnit", true);
-                this.coachManager.randomMovement();
+                this.coachManager.randomMovement(this.mainManager.mySelectionInfo.selectedLevel);
                 this.evaluationManager.coachMovingDirection = this.coachManager.coachMovingDirection;
 
                 this.reactionTimer.StartTimer();
+
+                
             }
         }
 
@@ -158,6 +181,14 @@ public class PlayingModeManager : MonoBehaviour
             if (this.reactionTimer.timeLeft >= this.reactionTimer.timeTarget) {
                 this.evaluationManager.isDuringTheUnit = false;
                 this.coachManager.coachAnimator.SetBool("isDuringTheUnit", false);
+                Transform rightLightBall = this.mainManager.OVRBoxingRight.transform.Find("LightBallOnPlayer");
+                if (rightLightBall) {
+                    rightLightBall.gameObject.GetComponent<BallCueOnPlayer>().Pause(this.evaluationManager.gameObject);
+                }
+                Transform leftLightBall = this.mainManager.OVRBoxingLeft.transform.Find("LightBallOnPlayer");
+                if (leftLightBall) {
+                    leftLightBall.gameObject.GetComponent<BallCueOnPlayer>().Pause(this.evaluationManager.gameObject);
+                }
                 this.unitOver();
                 this.reactionOverTime = true;
                 this.reactionTimer.ResetTimer();
@@ -168,11 +199,11 @@ public class PlayingModeManager : MonoBehaviour
     void testingSceneInitialized() {
         this.curState = PlayingState.idle;
 
-        this.targetNumberOfTasks = this.mainManager.mySettingInfo.testingModeSetting.targetNumberOfTasks;
-        this.readyTimer.timeLeft = this.mainManager.mySettingInfo.testingModeSetting.readyTime;
-        this.readyTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.readyTime;
+        this.targetNumberOfTasks = this.mainManager.mySettingInfo.playingModeSetting.targetNumberOfTasks;
+        this.readyTimer.timeLeft = this.mainManager.mySettingInfo.playingModeSetting.testingReadyTime;
+        this.readyTimer.timeTarget = this.mainManager.mySettingInfo.playingModeSetting.testingReadyTime;
         this.reactionTimer.timeLeft = 0.0f;
-        this.reactionTimer.timeTarget = this.mainManager.mySettingInfo.testingModeSetting.unitTimeLimit;
+        this.reactionTimer.timeTarget = this.mainManager.mySettingInfo.playingModeSetting.unitTimeLimit;
         this.curUnitNum = 1;
 
         this.myTestResult.reset();
@@ -191,6 +222,21 @@ public class PlayingModeManager : MonoBehaviour
         // [----] UI: Welcome View
         this.UIManager.welcomToTestingMode(this.targetNumberOfTasks);
         // this.UIManager.settingInfoDisplay(this.mainManager.mySettingInfo, this.mainManager.myUserInfo);
+    }
+
+    void depthCueRender() {
+        switch (this.mainManager.curSystemMode) {
+            case SystemMode.TrainingMode_LineCue:
+                if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction) {
+                    this.depthCueManager.GetComponent<LineCue>().renderLineCue();
+                }
+                else {
+                    this.depthCueManager.GetComponent<LineCue>().eraseLineCue();
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     public void unitOver() {
@@ -254,7 +300,7 @@ public class PlayingModeManager : MonoBehaviour
     }
 
     public void readyStart() {
-        Invoke("callClearCoachColor", this.mainManager.mySettingInfo.testingModeSetting.readyTime / 3.0f);
+        Invoke("callClearPunchMarker", this.mainManager.mySettingInfo.playingModeSetting.testingReadyTime / 3.0f);
 
         if (this.curUnitNum <= this.targetNumberOfTasks && !this.reactionTimer.timerOn && !this.readyTimer.timerOn) {
             // this.curUnitNum++;
@@ -267,9 +313,12 @@ public class PlayingModeManager : MonoBehaviour
         }
     }
 
-    public void callClearCoachColor() {
-        Debug.Log("Clear Coach Color");
-        // this.coachManager.coachAvatar.GetComponent<CoachRenderManager>().clearCoachColor();
+    public void callClearPunchMarker() {
+        foreach (Transform child in this.evaluationManager.gameObject.transform) {
+            if (child.gameObject.tag == "LightBall") {
+                child.gameObject.GetComponent<BallCueOnPlayer>().destroy();
+            }
+        }
     }
 
     private void callCloseCoachAvatar() {

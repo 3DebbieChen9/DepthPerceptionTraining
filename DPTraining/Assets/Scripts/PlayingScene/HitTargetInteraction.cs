@@ -36,6 +36,12 @@ public class HitTargetInteraction : MonoBehaviour
             // }
             this.evaluationManager.reachModule.reachTarget(Hand.Left);
             Debug.Log("Hit Coach Shoulder: Add Ball here");
+
+            Transform lightBall = this.evaluationManager.mainManager.OVRBoxingLeft.transform.Find("LightBallOnPlayer(Clone)");
+            if (lightBall) {
+                lightBall.gameObject.GetComponent<BallCueOnPlayer>().Pause(this.evaluationManager.gameObject);
+            }
+
             OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.LTouch);
             Invoke("stopControllerVibration", 0.3f);
             
@@ -47,6 +53,12 @@ public class HitTargetInteraction : MonoBehaviour
             // }
             this.evaluationManager.reachModule.reachTarget(Hand.Right);
             Debug.Log("Hit Coach Shoulder: Add Ball here");
+
+            Transform lightBall = this.evaluationManager.mainManager.OVRBoxingRight.transform.Find("LightBallOnPlayer(Clone)");
+            if (lightBall) {
+                lightBall.gameObject.GetComponent<BallCueOnPlayer>().Pause(this.evaluationManager.gameObject);
+            }
+
             OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.RTouch);
             Invoke("stopControllerVibration", 0.3f); 
         }
