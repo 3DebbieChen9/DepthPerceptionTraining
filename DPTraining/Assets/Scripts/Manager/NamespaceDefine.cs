@@ -26,6 +26,8 @@ namespace DepthPerceptionSystem
     public enum Hand {
         Right,
         Left,
+        Both,
+        None,
     }
 
     public enum CalibrationState {

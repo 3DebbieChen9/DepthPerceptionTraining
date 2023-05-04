@@ -20,7 +20,7 @@ public class UserManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.userIdlePose.GetComponent<CapsuleCollider>().radius = this.mainManager.myUserInfo.userBodySize.idlePoseRadius;
+        this.userIdlePose.GetComponent<CapsuleCollider>().radius = this.mainManager.myUserInfo.userBodySize.idlePoseRadius - 0.1f;
         this.userIdlePose.GetComponent<CapsuleCollider>().height = this.mainManager.myUserInfo.userBodySize.height;
         this.userIdlePose.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.mainManager.myUserInfo.userBodySize.height / 2.0f, 0.0f);
 

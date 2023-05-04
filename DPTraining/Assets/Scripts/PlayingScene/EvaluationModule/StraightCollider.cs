@@ -45,7 +45,7 @@ public class StraightCollider : MonoBehaviour
         float vibrationAmplitude = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.amplitude;
         float vibrationFrequency = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.frequency;
         if (other.gameObject.tag == "Glove_L") {
-            Debug.Log("Hit Straight Collider - Left");
+            // Debug.Log("Hit Straight Collider - Left");
             this.evaluationManager.playingModeManager.curUnitResult.isStraight = true;
             Debug.Log($"Left Arm Straight: {this.evaluationManager.straightModule.judgeArmStraight(Hand.Left)} \nAngle: {this.evaluationManager.straightModule.getArmAngle(Hand.Left)}");
 
@@ -53,7 +53,7 @@ public class StraightCollider : MonoBehaviour
             Invoke("stopControllerVibration", 0.3f);
         }
         else if (other.gameObject.tag == "Glove_R") {
-            Debug.Log("Hit Straight Collider - Right");
+            // Debug.Log("Hit Straight Collider - Right");
             this.evaluationManager.playingModeManager.curUnitResult.isStraight = true;
             Debug.Log($"Right Arm Straight: {this.evaluationManager.straightModule.judgeArmStraight(Hand.Right)} \nAngle: {this.evaluationManager.straightModule.getArmAngle(Hand.Right)}");
             

@@ -46,8 +46,12 @@ public class LineCue : MonoBehaviour
     }
 
     public void eraseLineCue() {
-        rightLine.SetPosition(1, rightLine.GetPosition(0));
-        leftLine.SetPosition(1, leftLine.GetPosition(0));
+        if (rightLine.GetPosition(0) != rightLine.GetPosition(1)) {
+            rightLine.SetPosition(1, rightLine.GetPosition(0));
+        }
+        if (leftLine.GetPosition(0) != leftLine.GetPosition(1)) {
+            leftLine.SetPosition(1, leftLine.GetPosition(0));
+        }
     }
 
     void setEndpoints() {

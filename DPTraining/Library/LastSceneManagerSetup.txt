@@ -15,7 +15,7 @@ sceneSetups:
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/TrainingScene_LineCue.unity
+- path: Assets/Scenes/TrainingScene.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0

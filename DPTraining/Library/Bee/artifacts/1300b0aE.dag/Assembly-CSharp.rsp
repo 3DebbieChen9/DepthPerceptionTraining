@@ -548,6 +548,8 @@
 "Assets/Scripts/Manager/NamespaceDefine.cs"
 "Assets/Scripts/Manager/UserManager.cs"
 "Assets/Scripts/PlayingScene/DepthCue/BallCueOnPlayer.cs"
+"Assets/Scripts/PlayingScene/DepthCue/BallCueOnPlayerManager.cs"
+"Assets/Scripts/PlayingScene/DepthCue/BallCueOnTarget.cs"
 "Assets/Scripts/PlayingScene/DepthCue/LineCue.cs"
 "Assets/Scripts/PlayingScene/EvaluationManager.cs"
 "Assets/Scripts/PlayingScene/EvaluationModule/DirectionModule.cs"

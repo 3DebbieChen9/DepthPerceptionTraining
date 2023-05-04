@@ -793,8 +793,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
     - target: {fileID: 1217597656186925621, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217597656186925621, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 599999391}
+    - target: {fileID: 1217597656186925621, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: btnExit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217597656186925621, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayingUIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1806074676155626938, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_AnchorMax.y
@@ -953,8 +965,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
     - target: {fileID: 4993321332156831710, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993321332156831710, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 599999391}
+    - target: {fileID: 4993321332156831710, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: btnChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993321332156831710, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayingUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993321332156831710, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: CalibrationScene
       objectReference: {fileID: 0}
     - target: {fileID: 5186224309335672915, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_AnchorMax.y
@@ -985,8 +1013,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
     - target: {fileID: 5897060618610765405, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897060618610765405, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 599999391}
+    - target: {fileID: 5897060618610765405, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: btnChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897060618610765405, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayingUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897060618610765405, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: SelectionScene
       objectReference: {fileID: 0}
     - target: {fileID: 5991805530821132537, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1057,8 +1101,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
     - target: {fileID: 7113488084896542004, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113488084896542004, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 599999391}
+    - target: {fileID: 7113488084896542004, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: btnChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113488084896542004, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayingUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113488084896542004, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: TestingScene
       objectReference: {fileID: 0}
     - target: {fileID: 9062925237535869828, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_AnchorMax.y

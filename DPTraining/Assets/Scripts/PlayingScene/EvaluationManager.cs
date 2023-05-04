@@ -28,6 +28,7 @@ public class EvaluationManager : MonoBehaviour
     public StraightModule straightModule;
     [SerializeField]
     public ReachModule reachModule;
+    public Hand punchHand;
 
     void Awake() {
         if (this.mainManager == null) {
@@ -56,12 +57,11 @@ public class EvaluationManager : MonoBehaviour
     }
 
     public void evaluationStatusInitialize() {
-        // this.startingPoint.transform.position = this.mainManager.sceneOriginPosition;
-        // this.startingPoint.transform.rotation = this.mainManager.sceneOriginRotation;
         this.userMovingDirection = MovingDirection.Forward;
         this.coachMovingDirection = MovingDirection.Forward;
         this.isDuringTheUnit = false;
         this.userStartMoving = false;
+        this.punchHand = Hand.None;
     }
 
     public void setStartingPoint(Vector3 position, Quaternion rotation) {
@@ -72,6 +72,22 @@ public class EvaluationManager : MonoBehaviour
     public void userIsPunching(Hand hand) {
         this.playingModeManager.curUnitResult.isPunching = true;
         this.playingModeManager.curUnitResult.isReacting = true;
+        this.punchHand = hand;
+        switch (this.playingModeManager.mainManager.curSystemMode) {
+            case SystemMode.TrainingMode_SphereCue_v1: // On Player Only
+                this.playingModeManager.depthCueManager.GetComponent<BallCueOnPlayerManager>().instantiateBallCueOnPlayer(punchHand); 
+                break;
+            case SystemMode.TrainingMode_SphereCue_v2: // On Target Only
+                this.playingModeManager.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(punchHand);
+                break;
+            case SystemMode.TrainingMode_SphereCue_v3: // On Player and Target
+                this.playingModeManager.depthCueManager.GetComponent<BallCueOnPlayerManager>().instantiateBallCueOnPlayer(punchHand);
+                this.playingModeManager.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(punchHand);
+                break;
+            default:
+                break;
+        }
+
         // if (this.isDuringTheUnit) {
         //     this.playingModeManager.curUnitResult.isPunching = true;
         //     this.playingModeManager.curUnitResult.isReacting = true;

@@ -27,14 +27,14 @@ public class BallCueOnPlayer : MonoBehaviour
 
     void setRadius()
     {
-        float currentDistance = Vector3.Distance(transform.position, target.position) * 0.3f;
+        float currentDistance = Vector3.Distance(transform.position, target.position) * 0.1f;
         
         float radius = Mathf.Sin((float)Mathf.PI / (2 * initialDistance) * (currentDistance)); // 可以把公式放到desmos上看看半徑如何變化
         
         setScale(radius);
     }
 
-    void setScale(float r)
+    public void setScale(float r)
     {
         transform.localScale = r * Vector3.one;
     }
@@ -46,7 +46,7 @@ public class BallCueOnPlayer : MonoBehaviour
         this.transform.SetParent(parent.transform);
     }
 
-    void setColors() {
+    public void setColors() {
         // HUE: (0.0f to 1.0 f) maps to (0 degree to 360 degrees)
         // SATURATION: 1.0f is the most saturated (colorful) and 0.0f is the least saturated (grey)
         // VALUE: 1.0f is the brightest and 0.0f is the darkest
@@ -83,12 +83,12 @@ public class BallCueOnPlayer : MonoBehaviour
 
     public void ChangeColor(Color color)
     {
-        this.GetComponent<Renderer>().material.shader = Shader.Find("_MainColor");
-        this.GetComponent<Renderer>().material.SetColor("_Color", color);
+        // this.GetComponent<Renderer>().material.shader = Shader.Find("_MainColor");
+        this.GetComponent<Renderer>().material.SetColor("_MainColor", color);
     }
 
     public void destroy()
     {
-        this.destroy();
+        Destroy(this.gameObject);
     }
 }

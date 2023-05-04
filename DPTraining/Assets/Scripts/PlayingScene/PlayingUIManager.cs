@@ -125,21 +125,21 @@ public class PlayingUIManager : MonoBehaviour
         this.readyCoundownImage.fillAmount = 0;
         this.readyCountdownText.text = "!";
     }
-    public void unitResultView(int unitNumber, int unitScore, float reactionTime, List<string> comment, bool isOverTime) {
+    public void unitResultView(int unitNumber, int unitScore, float reactionTime, List<string> comment, bool isOverTime, bool training) {
         this.unitResultCanvas.SetActive(true);
         // this.unitResultTitle.text = "Unit " + unitNumber.ToString() + ": " + unitScore.ToString() + "/3";
         this.unitResultTitle.text = $"第 {unitNumber.ToString()} 回合: {unitScore.ToString()}/3";
         if (isOverTime) {
             // this.unitResultText.text = "It's over time.";
             this.unitResultText.text = "超時了!";
-            foreach (string c in comment) {
-                this.unitResultText.text += "\n" + c;
-            }
-            Debug.Log(this.unitResultText.text);
         }
         else {
             // this.unitResultText.text = "Reaction Time: " + reactionTime.ToString("F3") + "s";
             this.unitResultText.text = "反應時間" + reactionTime.ToString("F3") + "s";
+            
+        }
+        
+        if (training) {
             foreach (string c in comment) {
                 this.unitResultText.text += "\n" + c;
             }
@@ -231,20 +231,7 @@ public class PlayingUIManager : MonoBehaviour
         return "伸直打到肩膀, 得分 + 1";
     }
 
-    public void btnSelection() {
-        string sceneName = "SelectionScene";
-        Debug.Log("Change Scene to " + sceneName);
-        SceneManager.LoadScene(sceneName);
-    }
-
-    public void btnTesting() {
-        string sceneName = "TestingScene";
-        Debug.Log("Change Scene to " + sceneName);
-        SceneManager.LoadScene(sceneName);
-    }
-
-    public void btnCalibration() {
-        string sceneName = "CalibrationScene";
+    public void btnChangeScene(string sceneName) {
         Debug.Log("Change Scene to " + sceneName);
         SceneManager.LoadScene(sceneName);
     }
@@ -253,12 +240,12 @@ public class PlayingUIManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void btnSetting() {
-        // string sceneName = "SettingScene";
-        string sceneName = "SettingScene_TC";
-        Debug.Log("Change Scene to " + sceneName);
-        SceneManager.LoadScene(sceneName);
-    }
+    // public void btnSetting() {
+    //     // string sceneName = "SettingScene";
+    //     string sceneName = "SettingScene_TC";
+    //     Debug.Log("Change Scene to " + sceneName);
+    //     SceneManager.LoadScene(sceneName);
+    // }
 
     // public void settingInfoDisplay(SettingInfo settingInfo, UserInfo userInfo) {
     //     // this.settingText.text = $"Coach Height Difference w/ user: {settingInfo.coachDefaultValue.heightDifferenceWithUser:F2}\n" + 

@@ -35,7 +35,7 @@ public class HitTargetInteraction : MonoBehaviour
             //     this.evaluationManager.reachModule.reachTarget(Hand.Left);
             // }
             this.evaluationManager.reachModule.reachTarget(Hand.Left);
-            Debug.Log("Hit Coach Shoulder: Add Ball here");
+            // Debug.Log("Hit Coach Shoulder: Add Ball here");
 
             Transform lightBall = this.evaluationManager.mainManager.OVRBoxingLeft.transform.Find("LightBallOnPlayer(Clone)");
             if (lightBall) {
@@ -52,7 +52,7 @@ public class HitTargetInteraction : MonoBehaviour
             //     this.evaluationManager.reachModule.reachTarget(Hand.Right);
             // }
             this.evaluationManager.reachModule.reachTarget(Hand.Right);
-            Debug.Log("Hit Coach Shoulder: Add Ball here");
+            // Debug.Log("Hit Coach Shoulder: Add Ball here");
 
             Transform lightBall = this.evaluationManager.mainManager.OVRBoxingRight.transform.Find("LightBallOnPlayer(Clone)");
             if (lightBall) {
