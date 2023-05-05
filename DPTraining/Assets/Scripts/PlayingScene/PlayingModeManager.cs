@@ -278,6 +278,7 @@ public class PlayingModeManager : MonoBehaviour
             }
 
             Invoke("callCloseCoachAvatar", 2.0f);
+            Invoke("callClearPunchMarker", 1.9f);
             // [----] UI: Result View
             this.UIManager.finalResultView(this.myTestResult.totalScore, this.myTestResult.averageReactionTime, this.myTestResult.numberOfMovingCorrectly, this.myTestResult.numberOfReacting, this.myTestResult.numberOfSuccess, this.myTestResult.numberOfOverTime);
             this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(true);
@@ -341,7 +342,7 @@ public class PlayingModeManager : MonoBehaviour
         switch (this.mainManager.curSystemMode) {
             case SystemMode.TrainingMode_LineCue:
                 if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction) {
-                    this.depthCueManager.GetComponent<LineCue>().renderLineCue();
+                    this.depthCueManager.GetComponent<LineCue>().renderLineCue(this.evaluationManager.punchHand);
                 }
                 else {
                     this.depthCueManager.GetComponent<LineCue>().eraseLineCue();

@@ -72,8 +72,8 @@ Material:
     - _OcclusionStrength: 1
     - _OutLightPow: 5
     - _OutLightStrength: 15.1
-    - _OuterIntensity: 1.5
-    - _OuterRangeCoef: 0.2
+    - _OuterIntensity: 0.7
+    - _OuterRangeCoef: 1
     - _Parallax: 0.02
     - _Size: 0.1
     - _SmoothnessTextureChannel: 0
@@ -86,5 +86,5 @@ Material:
     - _AtmoColor: {r: 0, g: 0.39999998, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MainColor: {r: 0.47641504, g: 0.69524103, b: 1, a: 1}
+    - _MainColor: {r: 0, g: 0.22156863, b: 0.44313726, a: 1}
   m_BuildTextureStacks: []

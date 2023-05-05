@@ -542,6 +542,7 @@
 "Assets/Scripts/Coach/CoachRenderManager.cs"
 "Assets/Scripts/FunctionDeveloping/ball.cs"
 "Assets/Scripts/FunctionDeveloping/CoachAnimationDeveloping.cs"
+"Assets/Scripts/FunctionDeveloping/ColorSetting.cs"
 "Assets/Scripts/FunctionDeveloping/LineDrawer.cs"
 "Assets/Scripts/Manager/InstructionsText.cs"
 "Assets/Scripts/Manager/MainManager.cs"

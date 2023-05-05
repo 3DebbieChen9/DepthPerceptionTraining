@@ -79,32 +79,56 @@ public class BallCueOnTarget : MonoBehaviour
         // VALUE: 1.0f is the brightest and 0.0f is the darkest
 
         float hue = 0.0f;
-        float value = 0.0f; // value is the brightness
+        float saturation = 0.0f;
+        float value = 0.0f; 
+        
+        float currentDistance = 0.0f;
+        float furthestDistance = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength * 2.0f; // arm-length * 2.0f
+        float closestDistance = 0.2f;
+        float threshold = (furthestDistance - closestDistance) / 2.0f;
 
-        float zeroDistanceValue = 1.0f;
-        float threshold = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength * 3.0f;
-        float distance = 0.0f;
+        float saturationMin = 0.15f;
+        float saturationMax = 1.0f;
+        float valueMin = 0.2f;
+        float valueMax = 1.0f;
 
         switch (hand) {
             case Hand.Right:
-                hue = 240.0f / 360.0f; // blue
-                distance = Vector3.Distance(leftBall.transform.position, playingModeManager.mainManager.OVRControllerRight.transform.position);
+                // hue = 240.0f / 360.0f; // blue
+                hue = 220.0f / 360.0f; // blue
+                currentDistance = Vector3.Distance(leftBall.transform.position, playingModeManager.mainManager.OVRControllerRight.transform.position);
                 break;
             case Hand.Left:
-                hue = 0.0f; // red
-                distance = Vector3.Distance(rightBall.transform.position, playingModeManager.mainManager.OVRControllerLeft.transform.position);
+                // hue = 0.0f; // red
+                hue = 10.0f / 360.0f; // red
+                currentDistance = Vector3.Distance(rightBall.transform.position, playingModeManager.mainManager.OVRControllerLeft.transform.position);
                 break;
             default:
                 break;
         }
 
-        if (distance > threshold) {
-            value = 0.0f;
-        } else {
-            value = -(zeroDistanceValue / threshold) * distance + zeroDistanceValue;
+        if (currentDistance <= closestDistance) {
+            saturation = saturationMin;
+            value = valueMax;
         }
-        
-        return Color.HSVToRGB(hue, 1.0f, value);
+        else if (currentDistance < threshold) {
+            saturation = (saturationMax - saturationMin) * (currentDistance - closestDistance) / threshold + saturationMin;
+            value = valueMax;
+        }
+        else if (currentDistance == threshold) {
+            saturation = saturationMax;
+            value = valueMax;
+        }
+        else if (currentDistance >= furthestDistance) {
+            saturation = saturationMax;
+            value = valueMin;
+        }
+        else if (currentDistance > threshold) {
+            saturation = saturationMax;
+            value = (valueMax - valueMin) * (furthestDistance - currentDistance) / threshold + valueMin;
+        }
+
+        return Color.HSVToRGB(hue, saturation, value);
     }
 
     public void ChangeColor(GameObject ball, Color color)

@@ -150,7 +150,7 @@ Properties{
 //=====================================光暈渲染通道
 			Pass
 			{
-			Blend Srcalpha one    
+			Blend Srcalpha one  
 			Zwrite Off
 
 			CGPROGRAM
@@ -196,7 +196,9 @@ Properties{
 				Pass
 				{
 				Tags{"LightMode" = "ForwardBase"}
-				Blend one one
+				// Blend one one
+				Blend One OneMinusSrcAlpha
+				// Blend SrcAlpha OneMinusSrcAlpha
 				ZWrite Off
 				CGPROGRAM
 				#pragma vertex vert

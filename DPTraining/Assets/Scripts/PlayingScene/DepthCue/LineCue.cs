@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DepthPerceptionSystem;
 public class LineCue : MonoBehaviour
 {
     // private LineRenderer line;
@@ -24,8 +24,8 @@ public class LineCue : MonoBehaviour
     [SerializeField]
     private LineRenderer leftLine;
 
-    private float leftDistance;
-    private float rightDistance;
+    // private float leftDistance;
+    // private float rightDistance;
     
 
     // Start is called before the first frame update
@@ -40,9 +40,31 @@ public class LineCue : MonoBehaviour
         
     }
 
-    public void renderLineCue() {
-        setEndpoints();
-        setColors();
+    public void renderLineCue(Hand hand) {
+        switch (hand) {
+            case Hand.Right:
+                if (rightLine.GetPosition(0) == rightLine.GetPosition(1)) {
+                    setEndpoints(hand);
+                    setColors(hand);
+                }
+                if (leftLine.GetPosition(0) != leftLine.GetPosition(1)) {
+                    leftLine.SetPosition(1, leftLine.GetPosition(0));
+                }
+                break;
+            case Hand.Left:
+                if (leftLine.GetPosition(0) == leftLine.GetPosition(1)) {
+                    setEndpoints(hand);
+                    setColors(hand);
+                }
+                if (rightLine.GetPosition(0) != rightLine.GetPosition(1)) {
+                    rightLine.SetPosition(1, rightLine.GetPosition(0));
+                }
+                break;
+            default:
+                setEndpoints(hand);
+                setColors(hand);
+                break;
+        }
     }
 
     public void eraseLineCue() {
@@ -54,52 +76,106 @@ public class LineCue : MonoBehaviour
         }
     }
 
-    void setEndpoints() {
-        rightLine.SetPosition(0, playingModeManager.mainManager.OVRControllerRight.transform.position);
-        rightLine.SetPosition(1, leftShoulder.transform.position);
-        leftLine.SetPosition(0, playingModeManager.mainManager.OVRControllerLeft.transform.position);
-        leftLine.SetPosition(1, rightShoulder.transform.position);
-
-        rightDistance = Vector3.Distance(playingModeManager.mainManager.OVRControllerRight.transform.position, 
-                                            leftShoulder.transform.position);
-        leftDistance = Vector3.Distance(playingModeManager.mainManager.OVRControllerLeft.transform.position, 
-                                            rightShoulder.transform.position);
+    void setEndpoints(Hand hand) {
+        switch (hand) {
+            case Hand.Right:
+                rightLine.SetPosition(0, playingModeManager.mainManager.OVRControllerRight.transform.position);
+                rightLine.SetPosition(1, leftShoulder.transform.position);
+                break;
+            case Hand.Left:
+                leftLine.SetPosition(0, playingModeManager.mainManager.OVRControllerLeft.transform.position);
+                leftLine.SetPosition(1, rightShoulder.transform.position);
+                break;
+            default:
+                rightLine.SetPosition(0, playingModeManager.mainManager.OVRControllerRight.transform.position);
+                rightLine.SetPosition(1, leftShoulder.transform.position);
+                leftLine.SetPosition(0, playingModeManager.mainManager.OVRControllerLeft.transform.position);
+                leftLine.SetPosition(1, rightShoulder.transform.position);
+                break;
+        }
+        
     }
 
-    void setColors() {
+    void setColors(Hand hand) {
+        switch (hand) {
+            case Hand.Right:
+                Color rightColor = calculateColor(Hand.Right);
+                rightLine.startColor = rightColor;
+                rightLine.endColor = rightColor;
+                break;
+            case Hand.Left:
+                Color leftColor = calculateColor(Hand.Left);
+                leftLine.startColor = leftColor;
+                leftLine.endColor = leftColor;
+                break;
+            default:
+                rightColor = calculateColor(Hand.Right);
+                rightLine.startColor = rightColor;
+                rightLine.endColor = rightColor;
+                leftColor = calculateColor(Hand.Left);
+                leftLine.startColor = leftColor;
+                leftLine.endColor = leftColor;
+                break;
+        }
+    }
+
+    Color calculateColor(Hand hand) {
         // HUE: (0.0f to 1.0 f) maps to (0 degree to 360 degrees)
         // SATURATION: 1.0f is the most saturated (colorful) and 0.0f is the least saturated (grey)
         // VALUE: 1.0f is the brightest and 0.0f is the darkest
 
-        Color rightColor;
-        float rightHue = 240.0f / 360.0f; // blue 
-        float rightValue; // value is the brightness
-
-        Color leftColor;
-        float leftHue = 0.0f; // red
-        float leftValue; // value is the brightness
+        float hue = 0.0f;
+        float saturation = 0.0f;
+        float value = 0.0f; 
         
-        float zeroDistanceValue = 1.0f;
-        float threshold = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength * 3.0f;
-                        
-        if (rightDistance > threshold) {
-            rightValue = 0.0f;
-        } else {
-            rightValue = -(zeroDistanceValue / threshold) * rightDistance + zeroDistanceValue;
+        float currentDistance = 0.0f;
+        float furthestDistance = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength * 2.0f; // arm-length * 2.0f
+        float closestDistance = 0.2f;
+        float threshold = (furthestDistance - closestDistance) / 2.0f;
+
+        float saturationMin = 0.15f;
+        float saturationMax = 1.0f;
+        float valueMin = 0.2f;
+        float valueMax = 1.0f;
+
+        switch (hand) {
+            case Hand.Right:
+                // hue = 240.0f / 360.0f; // blue
+                hue = 240.0f / 360.0f; // blue
+                currentDistance = Vector3.Distance(playingModeManager.mainManager.OVRControllerRight.transform.position, 
+                                            leftShoulder.transform.position);
+                break;
+            case Hand.Left:
+                // hue = 0.0f; // red
+                hue = 0.0f / 360.0f; // red
+                currentDistance = Vector3.Distance(playingModeManager.mainManager.OVRControllerLeft.transform.position, 
+                                            rightShoulder.transform.position);
+                break;
+            default:
+                break;
         }
 
-        if (leftDistance > threshold) {
-            leftValue = 0.0f;
-        } else {
-            leftValue = -(zeroDistanceValue / threshold) * leftDistance + zeroDistanceValue;
+        if (currentDistance <= closestDistance) {
+            saturation = saturationMin;
+            value = valueMax;
+        }
+        else if (currentDistance < threshold) {
+            saturation = (saturationMax - saturationMin) * (currentDistance - closestDistance) / threshold + saturationMin;
+            value = valueMax;
+        }
+        else if (currentDistance == threshold) {
+            saturation = saturationMax;
+            value = valueMax;
+        }
+        else if (currentDistance >= furthestDistance) {
+            saturation = saturationMax;
+            value = valueMin;
+        }
+        else if (currentDistance > threshold) {
+            saturation = saturationMax;
+            value = (valueMax - valueMin) * (furthestDistance - currentDistance) / threshold + valueMin;
         }
 
-        rightColor = Color.HSVToRGB(rightHue, 1.0f, rightValue);
-        rightLine.startColor = rightColor;
-        rightLine.endColor = rightColor;
-
-        leftColor = Color.HSVToRGB(leftHue, 1.0f, leftValue);
-        leftLine.startColor = leftColor;
-        leftLine.endColor = leftColor;
+        return Color.HSVToRGB(hue, saturation, value);
     }
 }

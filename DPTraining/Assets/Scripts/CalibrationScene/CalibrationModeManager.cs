@@ -212,8 +212,10 @@ public class CalibrationModeManager : MonoBehaviour
                 // 在 Controller 的位置生成 Collider，並將 Parent 設為上臂
                 GameObject rightdest = Instantiate( judgeStraightArmCollider, 
                                                     rightHand.position - rightHand.forward * 0.052f + rightHand.right * 0.054f, 
-                                                    Quaternion.identity,
+                                                    new Quaternion(0.0f, 0.0f, 0.0f, 0.0f),
                                                     this.mainManager.rightUpperArm_IK.transform);
+                rightdest.transform.localPosition = new Vector3(0.57f, 0.0f, -0.02f);
+                
                 // [----] Call Calibration UI Function
                 // Arm Straight Result - Right (Length)
                 this.calibrationUIManager.armLengthResult(this.curState, this.armLength, 0.0f);
@@ -229,8 +231,9 @@ public class CalibrationModeManager : MonoBehaviour
                 // 在 Controller 的位置生成 Collider，並將 Parent 設為上臂
                 GameObject leftdest = Instantiate( judgeStraightArmCollider, 
                                                     leftHand.position - leftHand.forward * 0.052f + leftHand.right * 0.054f, 
-                                                    Quaternion.identity,
+                                                    new Quaternion(0.0f, 0.0f, 0.0f, 0.0f),
                                                     this.mainManager.leftUpperArm_IK.transform);
+                leftdest.transform.localPosition = new Vector3(-0.57f, 0.0f, -0.02f);
 
 
                 this.mainManager.myUserInfo.userBodySize.armLength = this.armLength / 2.0f;

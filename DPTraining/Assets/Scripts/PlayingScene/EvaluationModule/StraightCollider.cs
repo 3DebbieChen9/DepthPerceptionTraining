@@ -42,28 +42,13 @@ public class StraightCollider : MonoBehaviour
             return;
         }
 
-        float vibrationAmplitude = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.amplitude;
-        float vibrationFrequency = this.evaluationManager.mainManager.mySettingInfo.controllerVibration.frequency;
         if (other.gameObject.tag == "Glove_L") {
-            // Debug.Log("Hit Straight Collider - Left");
-            this.evaluationManager.playingModeManager.curUnitResult.isStraight = true;
+            this.evaluationManager.playingModeManager.curUnitResult.isStraight = this.evaluationManager.straightModule.judgeArmStraight(Hand.Left);
             Debug.Log($"Left Arm Straight: {this.evaluationManager.straightModule.judgeArmStraight(Hand.Left)} \nAngle: {this.evaluationManager.straightModule.getArmAngle(Hand.Left)}");
-
-            OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.LTouch);
-            Invoke("stopControllerVibration", 0.3f);
         }
         else if (other.gameObject.tag == "Glove_R") {
-            // Debug.Log("Hit Straight Collider - Right");
-            this.evaluationManager.playingModeManager.curUnitResult.isStraight = true;
+            this.evaluationManager.playingModeManager.curUnitResult.isStraight = this.evaluationManager.straightModule.judgeArmStraight(Hand.Right);
             Debug.Log($"Right Arm Straight: {this.evaluationManager.straightModule.judgeArmStraight(Hand.Right)} \nAngle: {this.evaluationManager.straightModule.getArmAngle(Hand.Right)}");
-            
-            OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.RTouch);
-            Invoke("stopControllerVibration", 0.3f);
         }
-    }
-
-    void stopControllerVibration() {
-        OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.LTouch);
-        OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.RTouch);
     }
 }
