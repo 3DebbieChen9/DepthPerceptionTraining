@@ -4739,7 +4739,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1269836957}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f18cc6f44f1bf4590e0fa1db134cc2, type: 3}
+  m_Script: {fileID: 11500000, guid: 81780ceb192a23645935879a75791fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputText: {fileID: 107698407}
@@ -6029,7 +6029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98f550ecfdf63148b8d2e658c690bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainManager: {fileID: 0}
+  calibrationModeManager: {fileID: 1761030666}
   UICylinder: {fileID: 585138531}
   OVRCameraRig: {fileID: 0}
   canvasHeight: 1.3

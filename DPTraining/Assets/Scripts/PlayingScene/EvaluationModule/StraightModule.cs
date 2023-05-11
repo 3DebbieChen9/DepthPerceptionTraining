@@ -8,8 +8,10 @@ public class StraightModule : MonoBehaviour
     [SerializeField]
     private MainManager mainManager;
 
-    void Awake() {
-        if (this.mainManager == null) {
+    void Awake()
+    {
+        if (this.mainManager == null)
+        {
             this.mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
         }
     }
@@ -17,66 +19,85 @@ public class StraightModule : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public bool judgeArmStraight(Hand hand) {
-        if (this.mainManager.mySelectionInfo.isUsingNoitom) {
-            if (hand == Hand.Right) {
+    public bool judgeArmStraight(Hand hand)
+    {
+        if (this.mainManager.mySelectionInfo.isUsingNoitom)
+        {
+            if (hand == Hand.Right)
+            {
                 return this.rightStraightJudgerNoitom();
             }
-            else if (hand == Hand.Left) {
+            else if (hand == Hand.Left)
+            {
                 return this.leftStraightJudgerNoitom();
             }
-            else {
+            else
+            {
                 return false;
-            }   
+            }
         }
-        else {
-            if (hand == Hand.Right) {
+        else
+        {
+            if (hand == Hand.Right)
+            {
                 return this.rightStraightJudgerIK();
             }
-            else if (hand == Hand.Left) {
+            else if (hand == Hand.Left)
+            {
                 return this.leftStraightJudgerIK();
             }
-            else {
+            else
+            {
                 return false;
             }
         }
     }
 
-    public ArmRotationAngle getArmAngle(Hand hand) {
-        if (this.mainManager.mySelectionInfo.isUsingNoitom) {
-            if (hand == Hand.Right) {
+    public ArmRotationAngle getArmAngle(Hand hand)
+    {
+        if (this.mainManager.mySelectionInfo.isUsingNoitom)
+        {
+            if (hand == Hand.Right)
+            {
                 return this.getRightAnglesNoitom();
             }
-            else if (hand == Hand.Left) {
+            else if (hand == Hand.Left)
+            {
                 return this.getLeftAnglesNoitom();
             }
-            else {
+            else
+            {
                 return new ArmRotationAngle(0, 0, 0);
             }
         }
-        else {
-            if (hand == Hand.Right) {
+        else
+        {
+            if (hand == Hand.Right)
+            {
                 return this.getRightAnglesIK();
             }
-            else if (hand == Hand.Left) {
+            else if (hand == Hand.Left)
+            {
                 return this.getLeftAnglesIK();
             }
-            else {
+            else
+            {
                 return new ArmRotationAngle(0, 0, 0);
             }
         }
     }
 
-    public ArmRotationAngle getRightAnglesNoitom() {
+    public ArmRotationAngle getRightAnglesNoitom()
+    {
         Vector3 upArmToLowArmNormalized = (this.mainManager.rightLowerArm_noitom.transform.position - this.mainManager.rightUpperArm_noitom.transform.position).normalized;
         Vector3 lowArmForward = this.mainManager.rightLowerArm_noitom.transform.forward;
         Vector3 lowArmUp = this.mainManager.rightLowerArm_noitom.transform.up;
@@ -89,7 +110,8 @@ public class StraightModule : MonoBehaviour
         return new ArmRotationAngle(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right);
     }
 
-    public ArmRotationAngle getLeftAnglesNoitom() {
+    public ArmRotationAngle getLeftAnglesNoitom()
+    {
         Vector3 upArmToLowArmNormalized = (this.mainManager.leftLowerArm_noitom.transform.position - this.mainManager.leftUpperArm_noitom.transform.position).normalized;
         Vector3 lowArmForward = this.mainManager.leftLowerArm_noitom.transform.forward;
         Vector3 lowArmUp = this.mainManager.leftLowerArm_noitom.transform.up;
@@ -102,7 +124,8 @@ public class StraightModule : MonoBehaviour
         return new ArmRotationAngle(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right);
     }
 
-    public bool rightStraightJudgerNoitom() {
+    public bool rightStraightJudgerNoitom()
+    {
         Vector3 upArmToLowArmNormalized = (this.mainManager.rightLowerArm_noitom.transform.position - this.mainManager.rightUpperArm_noitom.transform.position).normalized;
         Vector3 lowArmForward = this.mainManager.rightLowerArm_noitom.transform.forward;
         Vector3 lowArmUp = this.mainManager.rightLowerArm_noitom.transform.up;
@@ -118,11 +141,12 @@ public class StraightModule : MonoBehaviour
         float lowArmToUpArm_up_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.rightNoitom.up;
         float lowArmToUpArm_right_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.rightNoitom.right;
 
-        return this.straightAngleJudger(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right, 
+        return this.straightAngleJudger(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right,
                                         tolerateAngleThreshold, lowArmToUpArm_forward_straightAngle, lowArmToUpArm_up_straightAngle, lowArmToUpArm_right_straightAngle);
     }
 
-    public bool leftStraightJudgerNoitom() {
+    public bool leftStraightJudgerNoitom()
+    {
         Vector3 upArmToLowArmNormalized = (this.mainManager.leftLowerArm_noitom.transform.position - this.mainManager.leftUpperArm_noitom.transform.position).normalized;
         Vector3 lowArmForward = this.mainManager.leftLowerArm_noitom.transform.forward;
         Vector3 lowArmUp = this.mainManager.leftLowerArm_noitom.transform.up;
@@ -138,11 +162,12 @@ public class StraightModule : MonoBehaviour
         float lowArmToUpArm_up_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.leftNoitom.up;
         float lowArmToUpArm_right_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.leftNoitom.right;
 
-        return this.straightAngleJudger(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right, 
+        return this.straightAngleJudger(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right,
                                         tolerateAngleThreshold, lowArmToUpArm_forward_straightAngle, lowArmToUpArm_up_straightAngle, lowArmToUpArm_right_straightAngle);
     }
 
-    public ArmRotationAngle getRightAnglesIK() {
+    public ArmRotationAngle getRightAnglesIK()
+    {
         Vector3 upArmToLowArmNormalized = (this.mainManager.rightLowerArm_IK.transform.position - this.mainManager.rightUpperArm_IK.transform.position).normalized;
         Vector3 lowArmForward = this.mainManager.rightLowerArm_IK.transform.forward;
         Vector3 lowArmUp = this.mainManager.rightLowerArm_IK.transform.up;
@@ -155,7 +180,8 @@ public class StraightModule : MonoBehaviour
         return new ArmRotationAngle(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right);
     }
 
-    public ArmRotationAngle getLeftAnglesIK() {
+    public ArmRotationAngle getLeftAnglesIK()
+    {
         Vector3 upArmToLowArmNormalized = (this.mainManager.leftLowerArm_IK.transform.position - this.mainManager.leftUpperArm_IK.transform.position).normalized;
         Vector3 lowArmForward = this.mainManager.leftLowerArm_IK.transform.forward;
         Vector3 lowArmUp = this.mainManager.leftLowerArm_IK.transform.up;
@@ -168,7 +194,8 @@ public class StraightModule : MonoBehaviour
         return new ArmRotationAngle(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right);
     }
 
-    public bool rightStraightJudgerIK() {
+    public bool rightStraightJudgerIK()
+    {
         Vector3 upArmToLowArmNormalized = (this.mainManager.rightLowerArm_IK.transform.position - this.mainManager.rightUpperArm_IK.transform.position).normalized;
         Vector3 lowArmForward = this.mainManager.rightLowerArm_IK.transform.forward;
         Vector3 lowArmUp = this.mainManager.rightLowerArm_IK.transform.up;
@@ -184,11 +211,12 @@ public class StraightModule : MonoBehaviour
         float lowArmToUpArm_up_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.rightIK.up;
         float lowArmToUpArm_right_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.rightIK.right;
 
-        return this.straightAngleJudger(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right, 
+        return this.straightAngleJudger(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right,
                                         tolerateAngleThreshold, lowArmToUpArm_forward_straightAngle, lowArmToUpArm_up_straightAngle, lowArmToUpArm_right_straightAngle);
     }
 
-    public bool leftStraightJudgerIK() {
+    public bool leftStraightJudgerIK()
+    {
         Vector3 upArmToLowArmNormalized = (this.mainManager.leftLowerArm_IK.transform.position - this.mainManager.leftUpperArm_IK.transform.position).normalized;
         Vector3 lowArmForward = this.mainManager.leftLowerArm_IK.transform.forward;
         Vector3 lowArmUp = this.mainManager.leftLowerArm_IK.transform.up;
@@ -204,25 +232,32 @@ public class StraightModule : MonoBehaviour
         float lowArmToUpArm_up_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.leftIK.up;
         float lowArmToUpArm_right_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.leftIK.right;
 
-        return this.straightAngleJudger(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right, 
+        return this.straightAngleJudger(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right,
                                         tolerateAngleThreshold, lowArmToUpArm_forward_straightAngle, lowArmToUpArm_up_straightAngle, lowArmToUpArm_right_straightAngle);
     }
 
-    public bool straightAngleJudger (float forward, float up, float right, float threshold, float straightForward, float straightUp, float straightRight) {
-        if (forward <= straightForward + threshold && forward >= straightForward - threshold) {
-            if (up <= straightUp + threshold && up >= straightUp - threshold) {
-                if (right <= straightRight + threshold && right >= straightRight - threshold) {
+    public bool straightAngleJudger(float forward, float up, float right, float threshold, float straightForward, float straightUp, float straightRight)
+    {
+        if (forward <= straightForward + threshold && forward >= straightForward - threshold)
+        {
+            if (up <= straightUp + threshold && up >= straightUp - threshold)
+            {
+                if (right <= straightRight + threshold && right >= straightRight - threshold)
+                {
                     return true;
                 }
-                else {
+                else
+                {
                     return false;
                 }
             }
-            else {
+            else
+            {
                 return false;
             }
         }
-        else {
+        else
+        {
             return false;
         }
     }

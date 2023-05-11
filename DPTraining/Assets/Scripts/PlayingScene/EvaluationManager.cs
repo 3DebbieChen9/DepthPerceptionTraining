@@ -5,36 +5,34 @@ using DepthPerceptionSystem;
 
 public class EvaluationManager : MonoBehaviour
 {
-    [SerializeField]
-    public MainManager mainManager;
-    [SerializeField]
     public PlayingModeManager playingModeManager;
-    [SerializeField]
     public GameObject startingPoint;
-    [SerializeField]
     public MovingDirection userMovingDirection = MovingDirection.Forward;
-    [SerializeField]
     public MovingDirection coachMovingDirection = MovingDirection.Forward;
-    [SerializeField]
     public bool isDuringTheUnit = false;
-    [SerializeField]
     public bool userStartMoving = false;
-    [SerializeField]
     public bool userIsAtOrigin = false;
 
     [SerializeField]
     private DirectionModule directionModule;
-    [SerializeField]
     public StraightModule straightModule;
-    [SerializeField]
     public ReachModule reachModule;
     public Hand punchHand;
+    [SerializeField]
+    private GameObject ballWhenHitPrefab;
+    [SerializeField]
+    private GameObject leftUpperArmPrefab;
+    [SerializeField]
+    private GameObject rightUpperArmPrefab;
+    [SerializeField]
+    private GameObject leftLowerArmPrefab;
+    [SerializeField]
+    private GameObject rightLowerArmPrefab;
 
-    void Awake() {
-        if (this.mainManager == null) {
-            this.mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
-        }  
-        if (this.playingModeManager == null) {
+    void Awake()
+    {
+        if (this.playingModeManager == null)
+        {
             this.playingModeManager = this.gameObject.GetComponent<PlayingModeManager>();
         }
     }
@@ -42,21 +40,22 @@ public class EvaluationManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.startingPoint.transform.position = this.mainManager.sceneOriginPosition;
-        this.startingPoint.transform.rotation = this.mainManager.sceneOriginRotation;
-        this.startingPoint.GetComponent<CapsuleCollider>().radius = this.mainManager.mySettingInfo.evaluationThreshold.radiusBetweenOriginAndUser;
-        this.startingPoint.GetComponent<CapsuleCollider>().height = this.mainManager.myUserInfo.userBodySize.height;
-        this.startingPoint.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.mainManager.myUserInfo.userBodySize.height / 2.0f, 0.0f);
+        this.startingPoint.transform.position = this.playingModeManager.mainManager.sceneOriginPosition;
+        this.startingPoint.transform.rotation = this.playingModeManager.mainManager.sceneOriginRotation;
+        this.startingPoint.GetComponent<CapsuleCollider>().radius = this.playingModeManager.mainManager.mySettingInfo.evaluationThreshold.radiusBetweenOriginAndUser;
+        this.startingPoint.GetComponent<CapsuleCollider>().height = this.playingModeManager.mainManager.myUserInfo.userBodySize.height;
+        this.startingPoint.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, this.playingModeManager.mainManager.myUserInfo.userBodySize.height / 2.0f, 0.0f);
         this.evaluationStatusInitialize();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void evaluationStatusInitialize() {
+    public void evaluationStatusInitialize()
+    {
         this.userMovingDirection = MovingDirection.Forward;
         this.coachMovingDirection = MovingDirection.Forward;
         this.isDuringTheUnit = false;
@@ -64,24 +63,28 @@ public class EvaluationManager : MonoBehaviour
         this.punchHand = Hand.None;
     }
 
-    public void setStartingPoint(Vector3 position, Quaternion rotation) {
+    public void setStartingPoint(Vector3 position, Quaternion rotation)
+    {
         this.startingPoint.transform.position = position;
         this.startingPoint.transform.rotation = rotation;
     }
 
-    public void userIsPunching(Hand hand) {
+    public void userIsPunching(Hand hand)
+    {
         this.playingModeManager.curUnitResult.isPunching = true;
         this.playingModeManager.curUnitResult.isReacting = true;
         this.punchHand = hand;
-        switch (this.playingModeManager.mainManager.curSystemMode) {
-            case SystemMode.TrainingMode_SphereCue_v1: // On Player Only
-                this.playingModeManager.depthCueManager.GetComponent<BallCueOnPlayerManager>().instantiateBallCueOnPlayer(punchHand); 
+        switch (this.playingModeManager.mainManager.curSystemMode)
+        {
+            case SystemMode.TrainingMode_BallCue_onPlayer: // On Player Only
+                this.playingModeManager.depthCueManager.GetComponent<BallCueOnPlayerManager>().destroyBallCueOnPlayer(punchHand);
                 break;
-            case SystemMode.TrainingMode_SphereCue_v2: // On Target Only
+            case SystemMode.TrainingMode_BallCue_onTarget: // On Target Only
                 this.playingModeManager.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(punchHand);
                 break;
-            case SystemMode.TrainingMode_SphereCue_v3: // On Player and Target
-                this.playingModeManager.depthCueManager.GetComponent<BallCueOnPlayerManager>().instantiateBallCueOnPlayer(punchHand);
+            case SystemMode.TrainingMode_BallCue_onBoth: // On Player and Target
+            case SystemMode.TrainingMode_LineCuePlusBallCue: // Line Cue Plus Ball Cue
+                this.playingModeManager.depthCueManager.GetComponent<BallCueOnPlayerManager>().destroyBallCueOnPlayer(punchHand);
                 this.playingModeManager.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(punchHand);
                 break;
             default:
@@ -102,10 +105,11 @@ public class EvaluationManager : MonoBehaviour
         // }
     }
 
-    public void userIsMoving() {
+    public void userIsMoving()
+    {
         this.playingModeManager.curUnitResult.isMoving = true;
         this.playingModeManager.curUnitResult.isReacting = true;
-        this.playingModeManager.curUnitResult.isMovingCorrectly =  this.directionModule.judgeMovingDirection();
+        this.playingModeManager.curUnitResult.isMovingCorrectly = this.directionModule.judgeMovingDirection();
         // if (this.isDuringTheUnit) {
         //     this.playingModeManager.curUnitResult.isMoving = true;
         //     this.playingModeManager.curUnitResult.isReacting = true;
@@ -118,79 +122,169 @@ public class EvaluationManager : MonoBehaviour
         // }
     }
 
-    public void userIsHitCoach(Hand hand, bool isHitShoulder) {
-        if (isHitShoulder) {
-            this.playingModeManager.curUnitResult.isReach = true;
-            this.isDuringTheUnit = false;
-            this.playingModeManager.unitOver();
-            this.playingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
+    public void userIsHitCoach(Hand hand, bool isHitShoulder)
+    {
+        this.playingModeManager.curUnitResult.isReach = isHitShoulder ? true : false;
+        this.playingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
+        this.isDuringTheUnit = false;
+        this.playingModeManager.unitOver();
+
+        switch (this.playingModeManager.curState)
+        {
+            case PlayingState.reaction:
+            case PlayingState.comment:
+                switch (this.playingModeManager.mainManager.curSystemMode)
+                {
+                    case SystemMode.TrainingMode:
+                    case SystemMode.TrainingMode_LineCue:
+                    case SystemMode.TrainingMode_BallCue_onPlayer:
+                    case SystemMode.TrainingMode_BallCue_onTarget:
+                    case SystemMode.TrainingMode_BallCue_onBoth:
+                    case SystemMode.TrainingMode_LineCuePlusBallCue:
+                        if (this.playingModeManager.curUnitResult.isReach)
+                        {
+                            if (this.playingModeManager.curUnitResult.isStraight)
+                            {
+                                AudioManager.instance.PlaySFX("Success");
+                            }
+                            else
+                            {
+                                AudioManager.instance.PlaySFX("ShoulderButNotStraight");
+                            }
+                        }
+                        else
+                        {
+                            AudioManager.instance.PlaySFX("WrongPlace");
+                        }
+                        break;
+                }
+                break;
         }
-        else {
-            this.playingModeManager.curUnitResult.isReach = false;
+
+        // [DEMO ONLY]
+        // if (this.playingModeManager.mainManager.curSystemMode == SystemMode.TrainingMode)
+        // {
+        //     instantiateBallWhenHit(hand, this.playingModeManager.curUnitResult.isReach, this.playingModeManager.curUnitResult.isStraight);
+        // }
+
+        if (this.playingModeManager.curUnitResult.isStraight)
+        {
+            this.playingModeManager.curUnitResult.isReacting = true;
+            this.playingModeManager.curUnitResult.isPunching = true;
         }
-        // if (this.isDuringTheUnit) {
-        //     if (isHitShoulder) {
-        //         this.playingModeManager.curUnitResult.isReach = true;
-        //         this.isDuringTheUnit = false;
-        //         this.playingModeManager.unitOver();
-        //         this.playingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
-        //     }
-        //     else {
-        //         this.playingModeManager.curUnitResult.isReach = false;
-        //     }
-        // }
-        // else {
-        //     this.playingModeManager.curUnitResult.isReach = false;
-        //     this.playingModeManager.curUnitResult.isStraight = false;
-        // }
+
     }
 
-    public UnitResultComment getScoreComment() {
+    void instantiateBallWhenHit(Hand hand, bool isHitShoulder, bool isStraight)
+    {
+        foreach (Transform child in this.playingModeManager.coachManager.coachAvatar.transform)
+        {
+            if (child.gameObject.tag == "BallWhenHit")
+            {
+                // Destroy(child.gameObject);
+                return;
+            }
+        }
+
+        GameObject ball = null;
+        switch (hand)
+        {
+            case Hand.Right:
+                ball = Instantiate(this.ballWhenHitPrefab,
+                                    this.playingModeManager.mainManager.BoxingGloveEdgeRight.position,
+                                    this.playingModeManager.mainManager.BoxingGloveEdgeRight.rotation,
+                                    this.playingModeManager.coachManager.coachAvatar.transform);
+                ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+                break;
+            case Hand.Left:
+                ball = Instantiate(this.ballWhenHitPrefab,
+                                    this.playingModeManager.mainManager.BoxingGloveEdgeLeft.position,
+                                    this.playingModeManager.mainManager.BoxingGloveEdgeLeft.rotation,
+                                    this.playingModeManager.coachManager.coachAvatar.transform);
+                ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+                break;
+        }
+
+        if (isStraight && isHitShoulder)
+        {
+            ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.green);
+        }
+        else if (isStraight && !isHitShoulder)
+        {
+            ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.yellow);
+        }
+        else if (!isStraight && isHitShoulder)
+        {
+            ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.magenta);
+        }
+        else if (!isStraight && !isHitShoulder)
+        {
+            ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.red);
+        }
+    }
+
+    void instatiateArmAfterimage(Hand hand)
+    {
+
+    }
+
+    public UnitResultComment getScoreComment(bool isOverTime)
+    {
         UnitResultComment comment = new UnitResultComment();
-        if (this.playingModeManager.curUnitResult.isMoving) {
+        if (this.playingModeManager.curUnitResult.isMoving)
+        {
             this.playingModeManager.myTestResult.numberOfMoving += 1;
-            if (this.playingModeManager.curUnitResult.isMovingCorrectly) {
+            if (this.playingModeManager.curUnitResult.isMovingCorrectly)
+            {
                 comment.score += 1;
                 this.playingModeManager.myTestResult.numberOfMovingCorrectly += 1;
-                comment.comments.Add(this.playingModeManager.UIManager.movingCorretlyScore());
+                comment.comments.Add(this.playingModeManager.UIManager.movingCorretlyScore(isOverTime));
             }
-            else {
+            else
+            {
                 comment.comments.Add(this.playingModeManager.UIManager.movingWrong());
             }
         }
-        else {
+        else
+        {
             comment.comments.Add(this.playingModeManager.UIManager.userNotMoving());
         }
 
-        if (this.playingModeManager.curUnitResult.isPunching) {
+        if (this.playingModeManager.curUnitResult.isPunching)
+        {
             this.playingModeManager.myTestResult.numberOfPunching += 1;
             comment.comments.Add(this.playingModeManager.UIManager.userIsPunching());
         }
-        else {
+        else
+        {
             comment.comments.Add(this.playingModeManager.UIManager.userNotPunching());
         }
 
-        if (this.playingModeManager.curUnitResult.isReach && !this.playingModeManager.curUnitResult.isStraight) {
+        if (this.playingModeManager.curUnitResult.isReach && !this.playingModeManager.curUnitResult.isStraight)
+        {
             this.playingModeManager.myTestResult.numberOfReachNotStraight += 1;
             comment.comments.Add(this.playingModeManager.UIManager.userReachNotStraight());
         }
 
-        if (!this.playingModeManager.curUnitResult.isReach && this.playingModeManager.curUnitResult.isStraight) {
+        if (!this.playingModeManager.curUnitResult.isReach && this.playingModeManager.curUnitResult.isStraight)
+        {
             this.playingModeManager.myTestResult.numberOfStraightNotReach += 1;
             comment.comments.Add(this.playingModeManager.UIManager.userStraightNotReach());
         }
-        
-        if (this.playingModeManager.curUnitResult.isReacting) {
+
+        if (this.playingModeManager.curUnitResult.isReacting)
+        {
             comment.score += 1;
             this.playingModeManager.myTestResult.numberOfReacting += 1;
-            comment.comments.Add(this.playingModeManager.UIManager.reactionScore());
+            comment.comments.Add(this.playingModeManager.UIManager.reactionScore(isOverTime));
         }
 
-        if (this.playingModeManager.curUnitResult.isReach && this.playingModeManager.curUnitResult.isStraight) {
+        if (this.playingModeManager.curUnitResult.isReach && this.playingModeManager.curUnitResult.isStraight)
+        {
             comment.score += 1;
             this.playingModeManager.curUnitResult.isSuccess = true;
             this.playingModeManager.myTestResult.numberOfSuccess += 1;
-            comment.comments.Add(this.playingModeManager.UIManager.reachAndStraightScore());
+            comment.comments.Add(this.playingModeManager.UIManager.reachAndStraightScore(isOverTime));
         }
 
         return comment;

@@ -18,18 +18,24 @@ public class PunchModule : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerExit(Collider other)
     {
-        switch (other.gameObject.tag) {
+        if (this.evaluationManager.playingModeManager.curState == PlayingState.idle || this.evaluationManager.playingModeManager.curState == PlayingState.result)
+        {
+            return;
+        }
+
+        switch (other.gameObject.tag)
+        {
             case "Glove_R":
                 this.evaluationManager.userIsPunching(Hand.Right);
                 break;
@@ -38,7 +44,7 @@ public class PunchModule : MonoBehaviour
                 break;
             default:
                 break;
-        } 
+        }
         // if (this.evaluationManager.isDuringTheUnit) {
         //     if (other.gameObject.tag == "Glove_R") {
         //         this.evaluationManager.userIsPunching(Hand.Right);

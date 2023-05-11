@@ -10,25 +10,30 @@ public class HolderBagInteraction : MonoBehaviour
 
     void Awake()
     {
-        if (this.selectionModeManager == null) {
+        if (this.selectionModeManager == null)
+        {
             this.selectionModeManager = GameObject.Find("SelectionModeManager").GetComponent<SelectionModeManager>();
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Glove_R" || other.gameObject.tag == "Glove_L") {
-            switch (this.gameObject.name) {
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Glove_R" || other.gameObject.tag == "Glove_L")
+        {
+            AudioManager.instance.PlaySFX("HitObject");
+            switch (this.gameObject.name)
+            {
                 case "Choice_L":
                     this.selectionModeManager.toggleSelect(false);
                     break;
@@ -56,14 +61,20 @@ public class HolderBagInteraction : MonoBehaviour
                 case "Choice_Line":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_LineCue);
                     break;
-                case "Choice_Sphere_v1":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_SphereCue_v1);
+                case "Choice_BallOnTarget":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onTarget);
                     break;
-                case "Choice_Sphere_v2":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_SphereCue_v2);
+                case "Choice_BallOnPlayer":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onPlayer);
                     break;
-                case "Choice_Sphere_v3":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_SphereCue_v3);
+                case "Choice_BallOnBoth":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onBoth);
+                    break;
+                case "Choice_LinePlusBall":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_LineCuePlusBallCue);
+                    break;
+                case "Choice_PunchCollecting":
+                    this.selectionModeManager.mainManager.changeScene("PunchCollectingScene");
                     break;
                 default:
                     break;
@@ -81,7 +92,8 @@ public class HolderBagInteraction : MonoBehaviour
         // }   
     }
 
-    void stopControllerVibration() {
+    void stopControllerVibration()
+    {
         OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.LTouch);
         OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.RTouch);
     }

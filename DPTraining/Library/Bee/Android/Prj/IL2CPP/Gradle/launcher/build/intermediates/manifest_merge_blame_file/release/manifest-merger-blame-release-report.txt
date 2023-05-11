@@ -3,229 +3,229 @@
 3    package="com.Debbie.DepthPerceptionTC"
 4    android:installLocation="auto"
 5    android:versionCode="1"
-6    android:versionName="2.1.0" >
+6    android:versionName="4.0.0" >
 7
 8    <uses-sdk
 9        android:minSdkVersion="29"
-9-->D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml
+9-->C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml
 10        android:targetSdkVersion="30" />
-10-->D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml
+10-->C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml
 11
 12    <supports-screens
-12-->D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:3-163
+12-->C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:3-163
 13        android:anyDensity="true"
-13-->D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:135-160
+13-->C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:135-160
 14        android:largeScreens="true"
-14-->D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:78-105
+14-->C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:78-105
 15        android:normalScreens="true"
-15-->D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:49-77
+15-->C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:49-77
 16        android:smallScreens="true"
-16-->D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:21-48
+16-->C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:21-48
 17        android:xlargeScreens="true" />
-17-->D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:106-134
+17-->C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:3:106-134
 18
 19    <uses-feature android:glEsVersion="0x00030000" />
-19-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:13:5-54
-19-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:13:19-51
+19-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:13:5-54
+19-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:13:19-51
 20    <uses-feature
-20-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:14:5-16:36
+20-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:14:5-16:36
 21        android:name="android.hardware.vulkan.version"
-21-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:15:9-55
+21-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:15:9-55
 22        android:required="false" />
-22-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:16:9-33
+22-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:16:9-33
 23
 24    <supports-gl-texture android:name="GL_KHR_texture_compression_astc_ldr" />
-24-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:18:5-79
-24-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:18:26-76
+24-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:18:5-79
+24-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:18:26-76
 25
 26    <uses-permission android:name="android.permission.INTERNET" />
-26-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:20:5-67
-26-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:20:22-64
+26-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:20:5-67
+26-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:20:22-64
 27    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-27-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:21:5-71
-27-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:21:22-68
+27-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:21:5-71
+27-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:21:22-68
 28    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-28-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:22:5-80
-28-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:22:22-77
+28-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:22:5-80
+28-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:22:22-77
 29
 30    <uses-feature
-30-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:24:5-26:36
+30-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:24:5-26:36
 31        android:name="android.hardware.microphone"
-31-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:25:9-51
+31-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:25:9-51
 32        android:required="false" />
-32-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:26:9-33
+32-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:26:9-33
 33    <uses-feature
-33-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:27:5-29:36
+33-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:27:5-29:36
 34        android:name="android.hardware.touchscreen"
-34-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:28:9-52
+34-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:28:9-52
 35        android:required="false" />
-35-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:29:9-33
+35-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:29:9-33
 36    <uses-feature
-36-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:30:5-32:36
+36-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:30:5-32:36
 37        android:name="android.hardware.touchscreen.multitouch"
-37-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:31:9-63
+37-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:31:9-63
 38        android:required="false" />
-38-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:32:9-33
+38-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:32:9-33
 39    <uses-feature
-39-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:33:5-35:36
+39-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:33:5-35:36
 40        android:name="android.hardware.touchscreen.multitouch.distinct"
-40-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:34:9-72
+40-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:34:9-72
 41        android:required="false" />
-41-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:35:9-33
+41-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:35:9-33
 42    <uses-feature
-42-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:36:5-39:31
+42-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:36:5-39:31
 43        android:name="android.hardware.vr.headtracking"
-43-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:37:9-56
+43-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:37:9-56
 44        android:required="true"
-44-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:38:9-32
+44-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:38:9-32
 45        android:version="1" />
-45-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:39:9-28
+45-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:39:9-28
 46    <uses-feature
-46-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:40:5-42:36
+46-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:40:5-42:36
 47        android:name="oculus.software.handtracking"
-47-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:41:9-52
+47-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:41:9-52
 48        android:required="false" />
-48-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:42:9-33
+48-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:42:9-33
 49
 50    <uses-permission android:name="com.oculus.permission.HAND_TRACKING" />
-50-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:44:5-75
-50-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:44:22-72
+50-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:44:5-75
+50-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:44:22-72
 51
 52    <uses-feature
-52-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:46:5-48:35
+52-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:46:5-48:35
 53        android:name="com.oculus.feature.PASSTHROUGH"
-53-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:47:9-54
+53-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:47:9-54
 54        android:required="true" />
-54-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:48:9-32
+54-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:48:9-32
 55
 56    <application
-56-->D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:4:3-83
+56-->C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:4:3-83
 57        android:allowBackup="false"
-57-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:51:9-36
+57-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:51:9-36
 58        android:extractNativeLibs="true"
-58-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:52:9-41
+58-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:52:9-41
 59        android:icon="@mipmap/app_icon"
-59-->D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:4:49-80
+59-->C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:4:49-80
 60        android:label="@string/app_name"
-60-->D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:4:16-48
+60-->C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\launcher\src\main\AndroidManifest.xml:4:16-48
 61        android:networkSecurityConfig="@xml/network_sec_config" >
-61-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:55:9-64
+61-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:55:9-64
 62        <activity
-62-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:56:9-80:20
+62-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:56:9-80:20
 63            android:name="com.unity3d.player.UnityPlayerActivity"
-63-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:57:13-66
+63-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:57:13-66
 64            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode|density"
-64-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:58:13-122
+64-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:58:13-122
 65            android:hardwareAccelerated="false"
-65-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:59:13-48
+65-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:59:13-48
 66            android:launchMode="singleTask"
-66-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:60:13-44
+66-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:60:13-44
 67            android:resizeableActivity="false"
-67-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:61:13-47
+67-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:61:13-47
 68            android:screenOrientation="landscape"
-68-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:62:13-50
+68-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:62:13-50
 69            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
-69-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:63:13-77
+69-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:63:13-77
 70            <intent-filter>
-70-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:64:13-69:29
+70-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:64:13-69:29
 71                <action android:name="android.intent.action.MAIN" />
-71-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:65:17-69
-71-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:65:25-66
+71-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:65:17-69
+71-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:65:25-66
 72
 73                <category android:name="android.intent.category.LAUNCHER" />
-73-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:67:17-77
-73-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:67:27-74
+73-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:67:17-77
+73-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:67:27-74
 74                <category android:name="com.oculus.intent.category.VR" />
-74-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:68:17-74
-74-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:68:27-71
+74-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:68:17-74
+74-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:68:27-71
 75            </intent-filter>
 76
 77            <meta-data
-77-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:71:13-73:40
+77-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:71:13-73:40
 78                android:name="unityplayer.UnityActivity"
-78-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:72:17-57
+78-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:72:17-57
 79                android:value="true" />
-79-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:73:17-37
+79-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:73:17-37
 80            <meta-data
-80-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:74:13-76:40
+80-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:74:13-76:40
 81                android:name="android.notch_support"
-81-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:75:17-53
+81-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:75:17-53
 82                android:value="true" />
-82-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:76:17-37
+82-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:76:17-37
 83            <meta-data
-83-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:77:13-79:40
+83-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:77:13-79:40
 84                android:name="com.oculus.vr.focusaware"
-84-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:78:17-56
+84-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:78:17-56
 85                android:value="true" />
-85-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:79:17-37
+85-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:79:17-37
 86        </activity>
 87
 88        <meta-data
-88-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:82:9-84:33
+88-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:82:9-84:33
 89            android:name="unity.splash-mode"
-89-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:83:13-45
+89-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:83:13-45
 90            android:value="0" />
-90-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:84:13-30
+90-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:84:13-30
 91        <meta-data
-91-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:85:9-87:36
+91-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:85:9-87:36
 92            android:name="unity.splash-enable"
-92-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:86:13-47
+92-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:86:13-47
 93            android:value="True" />
-93-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:87:13-33
+93-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:87:13-33
 94        <meta-data
-94-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:88:9-90:36
+94-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:88:9-90:36
 95            android:name="unity.launch-fullscreen"
-95-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:89:13-51
+95-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:89:13-51
 96            android:value="True" />
-96-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:90:13-33
+96-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:90:13-33
 97        <meta-data
-97-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:91:9-93:37
+97-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:91:9-93:37
 98            android:name="unity.allow-resizable-window"
-98-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:92:13-56
+98-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:92:13-56
 99            android:value="False" />
-99-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:93:13-34
+99-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:93:13-34
 100        <meta-data
-100-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:94:9-96:50
+100-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:94:9-96:50
 101            android:name="notch.config"
-101-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:95:13-40
+101-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:95:13-40
 102            android:value="portrait|landscape" />
-102-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:96:13-47
+102-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:96:13-47
 103        <meta-data
-103-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:97:9-99:35
+103-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:97:9-99:35
 104            android:name="com.oculus.handtracking.frequency"
-104-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:98:13-61
+104-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:98:13-61
 105            android:value="LOW" />
-105-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:99:13-32
+105-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:99:13-32
 106        <meta-data
-106-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:100:9-102:39
+106-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:100:9-102:39
 107            android:name="com.samsung.android.vr.application.mode"
-107-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:101:13-67
+107-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:101:13-67
 108            android:value="vr_only" />
-108-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:102:13-36
+108-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:102:13-36
 109        <meta-data
-109-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:103:9-105:37
+109-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:103:9-105:37
 110            android:name="com.unity.xr.oculus.LowOverheadMode"
-110-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:104:13-63
+110-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:104:13-63
 111            android:value="false" />
-111-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:105:13-34
+111-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:105:13-34
 112        <meta-data
-112-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:106:9-108:37
+112-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:106:9-108:37
 113            android:name="com.unity.xr.oculus.LateLatching"
-113-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:107:13-60
+113-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:107:13-60
 114            android:value="false" />
-114-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:108:13-34
+114-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:108:13-34
 115        <meta-data
-115-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:109:9-111:37
+115-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:109:9-111:37
 116            android:name="com.unity.xr.oculus.LateLatchingDebug"
-116-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:110:13-65
+116-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:110:13-65
 117            android:value="false" />
-117-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:111:13-34
+117-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:111:13-34
 118        <meta-data
-118-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:112:9-114:44
+118-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:112:9-114:44
 119            android:name="com.oculus.supportedDevices"
-119-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:113:13-55
+119-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:113:13-55
 120            android:value="quest|quest2" />
-120-->[:unityLibrary] D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:114:13-41
+120-->[:unityLibrary] C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:114:13-41
 121    </application>
 122
 123</manifest>

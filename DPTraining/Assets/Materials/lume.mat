@@ -72,7 +72,7 @@ Material:
     - _OcclusionStrength: 1
     - _OutLightPow: 5
     - _OutLightStrength: 15.1
-    - _OuterIntensity: 0.7
+    - _OuterIntensity: 1.22
     - _OuterRangeCoef: 1
     - _Parallax: 0.02
     - _Size: 0.1

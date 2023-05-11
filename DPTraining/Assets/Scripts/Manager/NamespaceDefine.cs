@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace DepthPerceptionSystem
 {
-    public enum SystemMode {
+    public enum SystemMode
+    {
         StartMode,
         CalibrationMode,
         SelectionMode,
@@ -12,25 +13,29 @@ namespace DepthPerceptionSystem
         TestingMode,
         TrainingMode,
         TrainingMode_LineCue,
-        TrainingMode_SphereCue_v1,
-        TrainingMode_SphereCue_v2,
-        TrainingMode_SphereCue_v3,
-        
+        TrainingMode_BallCue_onPlayer,
+        TrainingMode_BallCue_onTarget,
+        TrainingMode_BallCue_onBoth,
+        TrainingMode_LineCuePlusBallCue,
+
     }
 
-    public enum MovingDirection {
+    public enum MovingDirection
+    {
         Forward,
         Backward,
     }
 
-    public enum Hand {
+    public enum Hand
+    {
         Right,
         Left,
         Both,
         None,
     }
 
-    public enum CalibrationState {
+    public enum CalibrationState
+    {
         MovableRange,
         TPose_RHand,
         TPose_LHand,
@@ -39,7 +44,8 @@ namespace DepthPerceptionSystem
         IdlePose,
     }
 
-    public enum SelectionState {
+    public enum SelectionState
+    {
         // Noitom,
         Place,
         Handedness,
@@ -48,22 +54,26 @@ namespace DepthPerceptionSystem
         SelectTrain,
     }
 
-    public enum PlayingState  {
+    public enum PlayingState
+    {
         idle, // 剛進到 Scene / 從頭開始
         begin, // 按下按鈕開始測試
         ready, // 準備階段(倒數計時)
         tentative, // unit 一開始，coach 2~3秒內隨機原地晃動
         reaction, // unit中，等待反應結束
+        comment, // Training 中，播放評語的階段 (評語播完才回到 ready or result)
         result // 每個 unit 結束後的最終結果
     }
 
-    public enum TrainingLevel {
+    public enum TrainingLevel
+    {
         easy, // Coach move with the slowest speed
         medium, // Coach move with the highest speed
         hard, // Coach move with random speed
     }
 
-    public enum SettingState {
+    public enum SettingState
+    {
         UserSize,
         CoachSize,
         MovingSpeed,
@@ -79,7 +89,8 @@ namespace DepthPerceptionSystem
         public float detectedLengthInVR;
         public float length; // Use to set the target movement range
 
-        public MovableRange(int a = 0) {
+        public MovableRange(int a = 0)
+        {
             this.minRequiredLengthInVR = 4.0f;
             this.detectedLengthInVR = 0.0f;
             this.length = 4.0f;
@@ -94,7 +105,8 @@ namespace DepthPerceptionSystem
         public float height; // CenterEye.Y + SettingInfo.avgDistanceBetweenEyesAndTopHead
         public float idlePoseRadius; // Use to determine whether the user is punching
 
-        public UserBodySize(int a = 0) {
+        public UserBodySize()
+        {
             this.armLength = 0.5f;
             this.centerEyeToControllerLength = 0.66f;
             this.shoulderWidth = 0.26f;
@@ -103,22 +115,29 @@ namespace DepthPerceptionSystem
         }
 
     }
-    public class ArmRotationAngle 
+    public class ArmRotationAngle
     {
         public float forward;
         public float up;
         public float right;
 
-        public ArmRotationAngle(float _forward, float _up, float _right) {
+        public ArmRotationAngle(float _forward, float _up, float _right)
+        {
             this.forward = _forward;
             this.up = _up;
             this.right = _right;
         }
 
-        public void initial() {
+        public void initial()
+        {
             this.forward = 0.0f;
             this.up = 0.0f;
             this.right = 0.0f;
+        }
+
+        public string angleToString()
+        {
+            return $"F: {this.forward:F2}, U: {this.up:F2}, R: {this.right:F2}";
         }
     }
     public class UserArmStraightAngle
@@ -128,7 +147,8 @@ namespace DepthPerceptionSystem
         public ArmRotationAngle rightIK;
         public ArmRotationAngle leftIK;
 
-        public UserArmStraightAngle() {
+        public UserArmStraightAngle()
+        {
             this.rightNoitom = new ArmRotationAngle(90.0f, 90.0f, 180.0f);
             this.leftNoitom = new ArmRotationAngle(90.0f, 90.0f, 0.0f);
             this.rightIK = new ArmRotationAngle(90.0f, 90.0f, 180.0f);
@@ -141,7 +161,8 @@ namespace DepthPerceptionSystem
         public UserBodySize userBodySize;
         public UserArmStraightAngle userArmStraightAngle;
 
-        public UserInfo(int a = 0) { 
+        public UserInfo(int a = 0)
+        {
             this.movableRange = new MovableRange();
             this.userBodySize = new UserBodySize();
             this.userArmStraightAngle = new UserArmStraightAngle();
@@ -156,7 +177,8 @@ namespace DepthPerceptionSystem
         public SystemMode selectedMode;
         public TrainingLevel selectedLevel;
 
-        public SelectionInfo() {
+        public SelectionInfo()
+        {
             this.isUsingNoitom = false;
             this.isOnRing = false;
             this.coachIsLeftHanded = true;
@@ -165,14 +187,15 @@ namespace DepthPerceptionSystem
         }
     }
 
-    public class CoachMovingSpeed 
+    public class CoachMovingSpeed
     {
         public float forwardMax;
         public float forwardMin;
         public float backwardMax;
         public float backwardMin;
 
-        public CoachMovingSpeed() {
+        public CoachMovingSpeed()
+        {
             this.forwardMax = 0.6f;
             this.forwardMin = 0.4f;
             this.backwardMax = 0.8f;
@@ -187,7 +210,8 @@ namespace DepthPerceptionSystem
         public float distanceToUserMultiple;
         public CoachMovingSpeed movingSpeed;
 
-        public CoachDefaultValue() {
+        public CoachDefaultValue()
+        {
             this.avtarCenterToEdgeLength = 0.43f;
             this.avtarDefaultHeight = 1.90f;
             this.heightDifferenceWithUser = 0.05f;
@@ -196,7 +220,7 @@ namespace DepthPerceptionSystem
         }
     }
 
-    public class PlayingModeSetting 
+    public class PlayingModeSetting
     {
         public float testingReadyTime;
         public float trainingReadyTime;
@@ -204,12 +228,13 @@ namespace DepthPerceptionSystem
         public float tentativeTimeMax;
         public float unitTimeLimit; // Over the time limit, means the task is fail
         public int targetNumberOfTasks; // User should do 'targetNumberOTasks' to complete the test 7
-        
-        public PlayingModeSetting() {
+
+        public PlayingModeSetting()
+        {
             this.testingReadyTime = 4.0f;
             this.trainingReadyTime = 6.0f;
-            this.tentativeTimeMin = 2.0f;
-            this.tentativeTimeMax = 3.0f;
+            this.tentativeTimeMin = 1.0f;
+            this.tentativeTimeMax = 2.0f;
             this.unitTimeLimit = 2.0f;
             this.targetNumberOfTasks = 7;
         }
@@ -220,29 +245,33 @@ namespace DepthPerceptionSystem
         public float radiusBetweenOriginAndUser;
         public float handStraightAngle;
 
-        public EvaluationThreshold(int a = 0) {
-            this.radiusBetweenOriginAndUser = 0.15f;
+        public EvaluationThreshold(int a = 0)
+        {
+            this.radiusBetweenOriginAndUser = 0.2f;
             this.handStraightAngle = 20.0f;
         }
     }
-    public class ControllerVibration {
+    public class ControllerVibration
+    {
         public float amplitude;
         public float frequency;
 
-        public ControllerVibration(int a = 0) { 
+        public ControllerVibration(int a = 0)
+        {
             this.amplitude = 1.0f;
             this.frequency = 1.0f;
         }
     }
-    public class SettingInfo 
+    public class SettingInfo
     {
         public float userAvgDistanceBetweenEyesAndTopHead;
         public ControllerVibration controllerVibration; // Ranger from 0.0f to 1.0f
         public CoachDefaultValue coachDefaultValue;
         public EvaluationThreshold evaluationThreshold;
         public PlayingModeSetting playingModeSetting;
-        
-        public SettingInfo(int a = 0) {
+
+        public SettingInfo(int a = 0)
+        {
             this.userAvgDistanceBetweenEyesAndTopHead = 0.11f;
             this.controllerVibration = new ControllerVibration();
             this.coachDefaultValue = new CoachDefaultValue();
@@ -254,7 +283,7 @@ namespace DepthPerceptionSystem
     public class TotalUnitResult
     {
         public int numberOfTasks;
-        
+
         public int numberOfMoving;
         public int numberOfPunching;
         public int numberOfReachNotStraight;
@@ -263,7 +292,7 @@ namespace DepthPerceptionSystem
         public int numberOfReacting;
         public int numberOfMovingCorrectly;
         public int numberOfSuccess; // Reach + Arm Straight
-        
+
         public int numberOfOverTime;
         public float totalReactionTime;
         public float averageReactionTime;
@@ -271,9 +300,10 @@ namespace DepthPerceptionSystem
 
         public List<UnitResult> unitResultList;
 
-        public TotalUnitResult(int a = 0) {
+        public TotalUnitResult(int a = 0)
+        {
             this.numberOfTasks = 0;
-            
+
             this.numberOfMoving = 0;
             this.numberOfPunching = 0;
             this.numberOfReachNotStraight = 0;
@@ -282,7 +312,7 @@ namespace DepthPerceptionSystem
             this.numberOfReacting = 0;
             this.numberOfMovingCorrectly = 0;
             this.numberOfSuccess = 0;
-            
+
             this.numberOfOverTime = 0;
             this.totalReactionTime = 0.0f;
             this.averageReactionTime = 0.0f;
@@ -290,14 +320,16 @@ namespace DepthPerceptionSystem
             this.unitResultList = new List<UnitResult>();
         }
 
-        public void addUnitResult(UnitResult unitResult) {
+        public void addUnitResult(UnitResult unitResult)
+        {
             UnitResult tmp = new UnitResult(unitResult.unitNum, unitResult.isMoving, unitResult.isPunching, unitResult.isReach, unitResult.isStraight, unitResult.isReacting, unitResult.isMovingCorrectly, unitResult.isSuccess, unitResult.isOverTime, unitResult.reactionTime, unitResult.score);
             this.unitResultList.Add(tmp);
         }
 
-        public void reset() {
+        public void reset()
+        {
             this.numberOfTasks = 0;
-            
+
             this.numberOfMoving = 0;
             this.numberOfPunching = 0;
             this.numberOfReachNotStraight = 0;
@@ -306,7 +338,7 @@ namespace DepthPerceptionSystem
             this.numberOfReacting = 0;
             this.numberOfMovingCorrectly = 0;
             this.numberOfSuccess = 0;
-            
+
             this.numberOfOverTime = 0;
             this.totalReactionTime = 0.0f;
             this.averageReactionTime = 0.0f;
@@ -322,7 +354,7 @@ namespace DepthPerceptionSystem
         public bool isPunching;
         public bool isReach;
         public bool isStraight;
-        
+
         public bool isReacting;
         public bool isMovingCorrectly;
         public bool isSuccess;
@@ -330,8 +362,9 @@ namespace DepthPerceptionSystem
         public bool isOverTime;
         public float reactionTime;
         public int score;
-        
-        public UnitResult() {
+
+        public UnitResult()
+        {
             this.unitNum = 0;
             this.isMoving = false;
             this.isPunching = false;
@@ -347,7 +380,8 @@ namespace DepthPerceptionSystem
             this.score = 0;
         }
 
-        public UnitResult(int _unitNum, bool _isMoving, bool _isPunching, bool _isReach, bool _isStraight, bool _isReacting, bool _isMovingCorrectly, bool _isSuccess, bool _isOverTime, float _reactionTime, int _score) {
+        public UnitResult(int _unitNum, bool _isMoving, bool _isPunching, bool _isReach, bool _isStraight, bool _isReacting, bool _isMovingCorrectly, bool _isSuccess, bool _isOverTime, float _reactionTime, int _score)
+        {
             this.unitNum = _unitNum;
             this.isMoving = _isMoving;
             this.isPunching = _isPunching;
@@ -363,7 +397,8 @@ namespace DepthPerceptionSystem
             this.score = _score;
         }
 
-        public void reset() {
+        public void reset()
+        {
             this.unitNum = 0;
             this.isMoving = false;
             this.isPunching = false;
@@ -373,65 +408,76 @@ namespace DepthPerceptionSystem
             this.isReacting = false;
             this.isMovingCorrectly = false;
             this.isSuccess = false;
-            
+
             this.isOverTime = false;
             this.reactionTime = 0.0f;
             this.score = 0;
         }
     }
 
-    public class UnitResultComment {
+    public class UnitResultComment
+    {
         public int score;
         public List<string> comments;
 
-        public UnitResultComment(int a = 0) {
+        public UnitResultComment(int a = 0)
+        {
             this.score = 0;
             this.comments = new List<string>();
         }
     }
-    public class Timer {
+    public class Timer
+    {
         public bool timerOn;
         public float timeTarget; // in seconds // count-up: timeTarget = over-time
         public float timeLeft; // in seconds // count-up: timeLeft = 0.0
         public bool countDown;
 
-        public Timer (bool _timerOn, bool _countDown, float _timeTarget, float _timeLeft) {
+        public Timer(bool _timerOn, bool _countDown, float _timeTarget, float _timeLeft)
+        {
             this.timerOn = _timerOn;
             this.countDown = _countDown;
             this.timeTarget = _timeTarget;
             this.timeLeft = _timeLeft;
         }
 
-        public void ResetTimer() {
+        public void ResetTimer()
+        {
             this.timerOn = false;
-            if (this.countDown) {
+            if (this.countDown)
+            {
                 this.timeLeft = this.timeTarget;
             }
-            else {
+            else
+            {
                 this.timeLeft = 0.0f;
             }
         }
 
-        public void StartTimer() {
+        public void StartTimer()
+        {
             this.timerOn = true;
         }
     }
 
-    public class PunchStraightUnit {
+    public class PunchStraightUnit
+    {
         public float handStraightAngleThreshold;
         public bool systemJudgeAsStraight;
         public bool coachJudgeAsStraight;
         public Hand hand;
         public ArmRotationAngle armRotationAngle;
 
-        public PunchStraightUnit() {
+        public PunchStraightUnit()
+        {
             this.handStraightAngleThreshold = 0.0f;
             this.systemJudgeAsStraight = false;
             this.coachJudgeAsStraight = false;
             this.hand = new Hand();
             this.armRotationAngle = new ArmRotationAngle(0.0f, 0.0f, 0.0f);
         }
-        public PunchStraightUnit(float _angleThreshold, bool _systemJudgeAsStraight, bool _coachJudgeAsStraight, Hand _hand, ArmRotationAngle _armRotationAngle) {
+        public PunchStraightUnit(float _angleThreshold, bool _systemJudgeAsStraight, bool _coachJudgeAsStraight, Hand _hand, ArmRotationAngle _armRotationAngle)
+        {
             this.handStraightAngleThreshold = _angleThreshold;
             this.systemJudgeAsStraight = _systemJudgeAsStraight;
             this.coachJudgeAsStraight = _coachJudgeAsStraight;
@@ -439,41 +485,54 @@ namespace DepthPerceptionSystem
             this.armRotationAngle = _armRotationAngle;
         }
     }
-    public class PunchStraightUnitTest {
+    public class PunchStraightUnitTest
+    {
         public float userHeight;
         public float userArmLength;
-        public UserArmStraightAngle userArmStraightAngle;
+        public UserArmStraightAngle initialUserArmStraightAngle;
+        public UserArmStraightAngle updatedUserArmStraightAngle;
         public List<PunchStraightUnit> punchStraightUnitList;
 
-        public PunchStraightUnitTest() {
+        public PunchStraightUnitTest()
+        {
             this.userHeight = 0.0f;
             this.userArmLength = 0.0f;
-            this.userArmStraightAngle = new UserArmStraightAngle();
+            this.initialUserArmStraightAngle = new UserArmStraightAngle();
+            this.updatedUserArmStraightAngle = new UserArmStraightAngle();
             this.punchStraightUnitList = new List<PunchStraightUnit>();
         }
-        public void addUnitResult(PunchStraightUnit unit) {
+        public void addUnitResult(PunchStraightUnit unit)
+        {
             PunchStraightUnit tmp = new PunchStraightUnit(unit.handStraightAngleThreshold, unit.systemJudgeAsStraight, unit.coachJudgeAsStraight, unit.hand, unit.armRotationAngle);
             this.punchStraightUnitList.Add(tmp);
         }
 
-        public void reset() {
+        public void reset()
+        {
             this.userHeight = 0.0f;
             this.userArmLength = 0.0f;
             this.punchStraightUnitList.Clear();
         }
+    }
+
+    [System.Serializable]
+    public class Sound
+    {
+        public string name;
+        public AudioClip clip;
     }
     // public class NamespaceDefine : MonoBehaviour
     // {
     //     // Start is called before the first frame update
     //     void Start()
     //     {
-            
+
     //     }
 
     //     // Update is called once per frame
     //     void Update()
     //     {
-            
+
     //     }
     // }
 

@@ -31,7 +31,7 @@ public class ColorSetting : MonoBehaviour
         float saturation = 0.0f;
         float value = 0.0f;
 
-        float furthestDistance = 0.55f * 2.0f; // arm-length * 2.0f
+        float furthestDistance = 0.55f * 5.0f; // arm-length * 2.0f
         float closestDistance = 0.2f;
         float currentDistance = Vector3.Distance(transform.position, target.position);
         float threshold = (furthestDistance - closestDistance) / 2.0f;
@@ -87,6 +87,8 @@ public class ColorSetting : MonoBehaviour
     public void ChangeColor(Color color)
     {
         // this.GetComponent<Renderer>().material.shader = Shader.Find("_MainColor");
-        this.GetComponent<Renderer>().material.SetColor("_MainColor", color);
+        // this.GetComponent<Renderer>().material.SetColor("_MainColor", color);
+        color.a = 0.7f;
+        this.GetComponent<Renderer>().material.SetColor("_Color", color);
     }
 }

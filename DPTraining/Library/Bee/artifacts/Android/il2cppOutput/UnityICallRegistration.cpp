@@ -3554,6 +3554,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_LineRenderer_get_startWidth();
 		Register_UnityEngine_LineRenderer_get_startWidth();
 
+		//System.Void UnityEngine.LineRenderer::GetPosition_Injected(System.Int32,UnityEngine.Vector3&)
+		void Register_UnityEngine_LineRenderer_GetPosition_Injected();
+		Register_UnityEngine_LineRenderer_GetPosition_Injected();
+
 		//System.Void UnityEngine.LineRenderer::SetColorGradient(UnityEngine.Gradient)
 		void Register_UnityEngine_LineRenderer_SetColorGradient();
 		Register_UnityEngine_LineRenderer_SetColorGradient();
@@ -4273,6 +4277,10 @@ void RegisterAllStrippedInternalCalls()
 		//UnityEngine.Object UnityEngine.Object::Internal_CloneSingleWithParent(UnityEngine.Object,UnityEngine.Transform,System.Boolean)
 		void Register_UnityEngine_Object_Internal_CloneSingleWithParent();
 		Register_UnityEngine_Object_Internal_CloneSingleWithParent();
+
+		//UnityEngine.Object UnityEngine.Object::Internal_InstantiateSingleWithParent_Injected(UnityEngine.Object,UnityEngine.Transform,UnityEngine.Vector3&,UnityEngine.Quaternion&)
+		void Register_UnityEngine_Object_Internal_InstantiateSingleWithParent_Injected();
+		Register_UnityEngine_Object_Internal_InstantiateSingleWithParent_Injected();
 
 		//UnityEngine.Object UnityEngine.Object::Internal_InstantiateSingle_Injected(UnityEngine.Object,UnityEngine.Vector3&,UnityEngine.Quaternion&)
 		void Register_UnityEngine_Object_Internal_InstantiateSingle_Injected();
@@ -6173,6 +6181,10 @@ void RegisterAllStrippedInternalCalls()
 		//UnityEngine.Transform UnityEngine.Transform::GetParent()
 		void Register_UnityEngine_Transform_GetParent();
 		Register_UnityEngine_Transform_GetParent();
+
+		//UnityEngine.Transform UnityEngine.Transform::GetRoot()
+		void Register_UnityEngine_Transform_GetRoot();
+		Register_UnityEngine_Transform_GetRoot();
 
 	//End Registrations for type : UnityEngine.Transform
 

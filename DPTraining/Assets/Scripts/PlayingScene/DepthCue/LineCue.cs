@@ -4,17 +4,9 @@ using UnityEngine;
 using DepthPerceptionSystem;
 public class LineCue : MonoBehaviour
 {
-    // private LineRenderer line;
-    // private GameObject currentEndingpoint;
-
     [SerializeField]
     private PlayingModeManager playingModeManager;
 
-    // [SerializeField]
-    // private Transform rightGlovePos;
-    // [SerializeField]
-    // private Transform leftGlovePos;
-    
     [SerializeField]
     private GameObject leftShoulder;
     [SerializeField]
@@ -24,41 +16,31 @@ public class LineCue : MonoBehaviour
     [SerializeField]
     private LineRenderer leftLine;
 
-    // private float leftDistance;
-    // private float rightDistance;
-    
-
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void renderLineCue(Hand hand) {
-        switch (hand) {
+    public void renderLineCue(Hand hand)
+    {
+        switch (hand)
+        {
             case Hand.Right:
-                if (rightLine.GetPosition(0) == rightLine.GetPosition(1)) {
-                    setEndpoints(hand);
-                    setColors(hand);
-                }
-                if (leftLine.GetPosition(0) != leftLine.GetPosition(1)) {
-                    leftLine.SetPosition(1, leftLine.GetPosition(0));
-                }
+                setEndpoints(hand);
+                setColors(hand);
+                leftLine.SetPosition(1, leftLine.GetPosition(0));
                 break;
             case Hand.Left:
-                if (leftLine.GetPosition(0) == leftLine.GetPosition(1)) {
-                    setEndpoints(hand);
-                    setColors(hand);
-                }
-                if (rightLine.GetPosition(0) != rightLine.GetPosition(1)) {
-                    rightLine.SetPosition(1, rightLine.GetPosition(0));
-                }
+                setEndpoints(hand);
+                setColors(hand);
+                rightLine.SetPosition(1, rightLine.GetPosition(0));
                 break;
             default:
                 setEndpoints(hand);
@@ -67,17 +49,16 @@ public class LineCue : MonoBehaviour
         }
     }
 
-    public void eraseLineCue() {
-        if (rightLine.GetPosition(0) != rightLine.GetPosition(1)) {
-            rightLine.SetPosition(1, rightLine.GetPosition(0));
-        }
-        if (leftLine.GetPosition(0) != leftLine.GetPosition(1)) {
-            leftLine.SetPosition(1, leftLine.GetPosition(0));
-        }
+    public void eraseLineCue()
+    {
+        rightLine.SetPosition(1, rightLine.GetPosition(0));
+        leftLine.SetPosition(1, leftLine.GetPosition(0));
     }
 
-    void setEndpoints(Hand hand) {
-        switch (hand) {
+    void setEndpoints(Hand hand)
+    {
+        switch (hand)
+        {
             case Hand.Right:
                 rightLine.SetPosition(0, playingModeManager.mainManager.OVRControllerRight.transform.position);
                 rightLine.SetPosition(1, leftShoulder.transform.position);
@@ -93,11 +74,13 @@ public class LineCue : MonoBehaviour
                 leftLine.SetPosition(1, rightShoulder.transform.position);
                 break;
         }
-        
+
     }
 
-    void setColors(Hand hand) {
-        switch (hand) {
+    void setColors(Hand hand)
+    {
+        switch (hand)
+        {
             case Hand.Right:
                 Color rightColor = calculateColor(Hand.Right);
                 rightLine.startColor = rightColor;
@@ -119,15 +102,16 @@ public class LineCue : MonoBehaviour
         }
     }
 
-    Color calculateColor(Hand hand) {
+    Color calculateColor(Hand hand)
+    {
         // HUE: (0.0f to 1.0 f) maps to (0 degree to 360 degrees)
         // SATURATION: 1.0f is the most saturated (colorful) and 0.0f is the least saturated (grey)
         // VALUE: 1.0f is the brightest and 0.0f is the darkest
 
         float hue = 0.0f;
         float saturation = 0.0f;
-        float value = 0.0f; 
-        
+        float value = 0.0f;
+
         float currentDistance = 0.0f;
         float furthestDistance = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength * 2.0f; // arm-length * 2.0f
         float closestDistance = 0.2f;
@@ -138,40 +122,46 @@ public class LineCue : MonoBehaviour
         float valueMin = 0.2f;
         float valueMax = 1.0f;
 
-        switch (hand) {
+        switch (hand)
+        {
             case Hand.Right:
                 // hue = 240.0f / 360.0f; // blue
                 hue = 240.0f / 360.0f; // blue
-                currentDistance = Vector3.Distance(playingModeManager.mainManager.OVRControllerRight.transform.position, 
+                currentDistance = Vector3.Distance(playingModeManager.mainManager.OVRControllerRight.transform.position,
                                             leftShoulder.transform.position);
                 break;
             case Hand.Left:
                 // hue = 0.0f; // red
                 hue = 0.0f / 360.0f; // red
-                currentDistance = Vector3.Distance(playingModeManager.mainManager.OVRControllerLeft.transform.position, 
+                currentDistance = Vector3.Distance(playingModeManager.mainManager.OVRControllerLeft.transform.position,
                                             rightShoulder.transform.position);
                 break;
             default:
                 break;
         }
 
-        if (currentDistance <= closestDistance) {
+        if (currentDistance <= closestDistance)
+        {
             saturation = saturationMin;
             value = valueMax;
         }
-        else if (currentDistance < threshold) {
+        else if (currentDistance < threshold)
+        {
             saturation = (saturationMax - saturationMin) * (currentDistance - closestDistance) / threshold + saturationMin;
             value = valueMax;
         }
-        else if (currentDistance == threshold) {
+        else if (currentDistance == threshold)
+        {
             saturation = saturationMax;
             value = valueMax;
         }
-        else if (currentDistance >= furthestDistance) {
+        else if (currentDistance >= furthestDistance)
+        {
             saturation = saturationMax;
             value = valueMin;
         }
-        else if (currentDistance > threshold) {
+        else if (currentDistance > threshold)
+        {
             saturation = saturationMax;
             value = (valueMax - valueMin) * (furthestDistance - currentDistance) / threshold + valueMin;
         }
