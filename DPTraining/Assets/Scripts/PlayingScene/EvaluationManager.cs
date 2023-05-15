@@ -129,6 +129,12 @@ public class EvaluationManager : MonoBehaviour
         this.isDuringTheUnit = false;
         this.playingModeManager.unitOver();
 
+        if (this.playingModeManager.curUnitResult.isStraight)
+        {
+            this.playingModeManager.curUnitResult.isReacting = true;
+            this.playingModeManager.curUnitResult.isPunching = true;
+        }
+
         switch (this.playingModeManager.curState)
         {
             case PlayingState.reaction:
@@ -160,19 +166,6 @@ public class EvaluationManager : MonoBehaviour
                 }
                 break;
         }
-
-        // [DEMO ONLY]
-        // if (this.playingModeManager.mainManager.curSystemMode == SystemMode.TrainingMode)
-        // {
-        //     instantiateBallWhenHit(hand, this.playingModeManager.curUnitResult.isReach, this.playingModeManager.curUnitResult.isStraight);
-        // }
-
-        if (this.playingModeManager.curUnitResult.isStraight)
-        {
-            this.playingModeManager.curUnitResult.isReacting = true;
-            this.playingModeManager.curUnitResult.isPunching = true;
-        }
-
     }
 
     void instantiateBallWhenHit(Hand hand, bool isHitShoulder, bool isStraight)
