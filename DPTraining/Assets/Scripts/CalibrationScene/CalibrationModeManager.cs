@@ -236,7 +236,7 @@ public class CalibrationModeManager : MonoBehaviour
                                                     rightHand.position - rightHand.forward * 0.052f + rightHand.right * 0.054f,
                                                     new Quaternion(0.0f, 0.0f, 0.0f, 0.0f),
                                                     this.mainManager.rightUpperArm_IK.transform);
-                rightdest.transform.localPosition = new Vector3(0.57f, 0.0f, -0.02f);
+                rightdest.transform.localPosition = new Vector3(0.9f, 0.0f, 0.0f);
 
                 // [----] Call Calibration UI Function
                 // Arm Straight Result - Right (Length)
@@ -255,11 +255,15 @@ public class CalibrationModeManager : MonoBehaviour
                                                     leftHand.position - leftHand.forward * 0.052f + leftHand.right * 0.054f,
                                                     new Quaternion(0.0f, 0.0f, 0.0f, 0.0f),
                                                     this.mainManager.leftUpperArm_IK.transform);
-                leftdest.transform.localPosition = new Vector3(-0.57f, 0.0f, -0.02f);
+                leftdest.transform.localPosition = new Vector3(-0.9f, 0.0f, 0.0f);
 
 
                 this.mainManager.myUserInfo.userBodySize.armLength = this.armLength / 2.0f;
                 this.mainManager.myUserInfo.userBodySize.shoulderWidth = (this.mainManager.myUserInfo.userBodySize.centerEyeToControllerLength - this.mainManager.myUserInfo.userBodySize.armLength) * 2.0f;
+                if (this.mainManager.myUserInfo.userBodySize.shoulderWidth < 0.1f)
+                {
+                    this.mainManager.myUserInfo.userBodySize.shoulderWidth = 0.20f;
+                }
                 // [----] Call Calibration UI Function
                 // Arm Straight Result - Left (Length)
                 this.calibrationUIManager.armLengthResult(this.curState, this.mainManager.myUserInfo.userBodySize.armLength, this.mainManager.myUserInfo.userBodySize.shoulderWidth);

@@ -14,7 +14,7 @@ public class BarCue : MonoBehaviour
     private Transform leftShoulder;
     [SerializeField]
     private Transform userCenter;
-    
+
     [SerializeField]
     private Slider bar;
     [SerializeField]
@@ -25,7 +25,7 @@ public class BarCue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -40,7 +40,8 @@ public class BarCue : MonoBehaviour
         return Mathf.Sqrt(Mathf.Pow(p1.x - p2.x, 2) + Mathf.Pow(p1.z - p2.z, 2));
     }
 
-    float setDistance() {
+    float setDistance()
+    {
         float distanceToRightShoulder = calculateHorizatonalDistance(userCenter.position, rightShoulder.position);
         float distanceToLeftShoulder = calculateHorizatonalDistance(userCenter.position, leftShoulder.position);
 
@@ -54,13 +55,15 @@ public class BarCue : MonoBehaviour
         }
     }
 
-    public void barAidUpdate() {
+    public void barAidUpdate()
+    {
         this.barCanvas.SetActive(true);
 
         float distance = setDistance();
-        float furthestDistance = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength * 2.5f; 
+        float furthestMultiplier = 2.4f;
+        float furthestDistance = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength * furthestMultiplier;
         this.bar.maxValue = furthestDistance;
-        
+
         if (distance > furthestDistance)
         {
             this.bar.value = furthestDistance;
@@ -71,7 +74,8 @@ public class BarCue : MonoBehaviour
         }
     }
 
-    public void closeBarAid() {
+    public void closeBarAid()
+    {
         this.barCanvas.SetActive(false);
     }
 }

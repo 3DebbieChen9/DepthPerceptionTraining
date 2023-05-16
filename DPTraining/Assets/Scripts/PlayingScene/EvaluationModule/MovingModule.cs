@@ -16,38 +16,36 @@ public class MovingModule : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == "UserCenter") {
-            // if (this.evaluationManager.isDuringTheUnit && !this.evaluationManager.userStartMoving) {
-            if (!this.evaluationManager.userStartMoving) {
+        if (other.gameObject.name == "UserCenter")
+        {
+            if (!this.evaluationManager.userStartMoving)
+            {
                 this.evaluationManager.userIsMoving();
                 this.evaluationManager.userStartMoving = true;
             }
-            
+
             this.evaluationManager.userIsAtOrigin = false;
         }
-        
+
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "UserCenter") {
+        if (other.gameObject.name == "UserCenter")
+        {
             this.evaluationManager.userIsAtOrigin = true;
         }
     }
-    void OnTriggerStay (Collider other) 
+    void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.name == "UserCenter") {
+        if (other.gameObject.name == "UserCenter")
+        {
             this.evaluationManager.userIsAtOrigin = true;
         }
-        // if (!this.evaluationManager.isDuringTheUnit) {
-        //     if (other.gameObject.name == "UserCenter") {
-        //         this.evaluationManager.userIsAtOrigin = true;
-        //     }
-        // }    
     }
 }

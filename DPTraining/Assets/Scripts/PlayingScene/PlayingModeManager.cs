@@ -342,6 +342,7 @@ public class PlayingModeManager : MonoBehaviour
     {
         if (this.mainManager.curSystemMode == SystemMode.TestingMode)
         {
+            this.voiceCommentList.Clear();
             return;
         }
 
@@ -420,6 +421,8 @@ public class PlayingModeManager : MonoBehaviour
     }
     private void playVoiceCommentCompleted()
     {
+        this.evaluationManager.startingPointSizeChange(false);
+
         AudioManager.instance.PlayVoiceComment("BackToCenter");
         this.curUnitResult.reset();
         this.voiceCommentList.Clear();
@@ -581,14 +584,24 @@ public class PlayingModeManager : MonoBehaviour
                 }
                 break;
             case SystemMode.TrainingMode_BarCue:
-                if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction)
+                if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
                 {
                     this.depthCueManager.GetComponent<BarCue>().barAidUpdate();
                 }
                 else
                 {
                     this.depthCueManager.GetComponent<BarCue>().closeBarAid();
-                    // this.depthCueManager.GetComponent<BarCue>().barAidUpdate();
+                }
+                break;
+            case SystemMode.TrainingMode_CutoutCue:
+                if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
+                {
+                    this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate();
+                }
+                else
+                {
+                    this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate();
+                    // this.depthCueManager.GetComponent<CutoutCue>().closeCutoutAid();
                 }
                 break;
             default:

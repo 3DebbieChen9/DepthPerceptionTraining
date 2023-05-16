@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.6f1 (7da38d85baf6) revision 8233869'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'en' Physical Memory: 32645 MB
+OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'zh' Physical Memory: 32609 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2021.3.6f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-D:/CGVLab(D)/DepthPerceptionTraining/DPTraining
+C:/Users/cgvlab/Documents/Debbie/DepthPerceptionTraining/DPTraining
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64815
-Successfully changed project path to: D:/CGVLab(D)/DepthPerceptionTraining/DPTraining
-D:/CGVLab(D)/DepthPerceptionTraining/DPTraining
+4185
+Successfully changed project path to: C:/Users/cgvlab/Documents/Debbie/DepthPerceptionTraining/DPTraining
+C:/Users/cgvlab/Documents/Debbie/DepthPerceptionTraining/DPTraining
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,446 +47,65 @@ D:/CGVLab(D)/DepthPerceptionTraining/DPTraining
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 114.01 ms, found 9 plugins.
-Preloading 1 native plugins for Editor in 0.52 ms.
+Refreshing native plugins compatible for Editor in 308.66 ms, found 9 plugins.
+Preloading 1 native plugins for Editor in 0.85 ms.
 Initialize engine version: 2021.3.6f1 (7da38d85baf6)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/CGVLab(D)/DepthPerceptionTraining/DPTraining/Assets
+[Subsystems] Discovering subsystems at path C:/Users/cgvlab/Documents/Debbie/DepthPerceptionTraining/DPTraining/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3060 (ID=0x2504)
+    Renderer: NVIDIA GeForce RTX 2080 with Max-Q Design (ID=0x1e90)
     Vendor:   NVIDIA
-    VRAM:     12129 MB
-    Driver:   31.0.15.3161
+    VRAM:     8002 MB
+    Driver:   31.0.15.2849
 Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56880
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56528
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006334 seconds.
+Registered in 0.390619 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 109.28 ms, found 9 plugins.
-Preloading 1 native plugins for Editor in 0.03 ms.
+Refreshing native plugins compatible for Editor in 203.50 ms, found 9 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.568 seconds
+- Completed reload, in  7.546 seconds
 Domain Reload Profiling:
-	ReloadAssembly (568ms)
-		BeginReloadAssembly (58ms)
+	ReloadAssembly (7546ms)
+		BeginReloadAssembly (5514ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (420ms)
-			LoadAssemblies (56ms)
+		EndReloadAssembly (1369ms)
+			LoadAssemblies (5514ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (90ms)
+			SetupTypeCache (765ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (23ms)
-			SetupLoadedEditorAssemblies (267ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (498ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (44ms)
+				InitializePlatformSupportModulesInManaged (71ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (109ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (77ms)
-				ProcessInitializeOnLoadMethodAttributes (34ms)
+				RefreshPlugins (204ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (153ms)
+				ProcessInitializeOnLoadMethodAttributes (68ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006776 seconds.
-Android Extension - Scanning For ADB Devices 667 ms
+Registered in 0.018085 seconds.
+Android Extension - Scanning For ADB Devices 5403 ms
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Symbol file LoadedFromMemory doesn't match image D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 1.10 ms, found 9 plugins.
-Preloading 1 native plugins for Editor in 0.05 ms.
-Package Manager log level set to [2]
-[XR] OculusXRPlugin: registering subsystems
-[XR] Unable to register display lifecyle provider: [1]
-[XR] Oculus Input lifecycle provider registered.
-[XR] Unable to register input lifecyle provider: [1]
-[XR] OVRP version 1.74.0
-Mono: successfully reloaded assembly
-- Completed reload, in  0.950 seconds
-Domain Reload Profiling:
-	ReloadAssembly (950ms)
-		BeginReloadAssembly (86ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (15ms)
-		EndReloadAssembly (754ms)
-			LoadAssemblies (79ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (227ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (68ms)
-			SetupLoadedEditorAssemblies (348ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (12ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (83ms)
-				ProcessInitializeOnLoadAttributes (218ms)
-				ProcessInitializeOnLoadMethodAttributes (27ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 1.43 ms, found 9 plugins.
-Preloading 1 native plugins for Editor in 0.04 ms.
-Unloading 5025 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 63 unused Assets / (190.5 KB). Loaded Objects now: 5489.
-Memory consumption went from 185.6 MB to 185.4 MB.
-Total: 2.769600 ms (FindLiveObjects: 0.300600 ms CreateObjectMapping: 0.169200 ms MarkObjects: 2.127600 ms  DeleteObjects: 0.171200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 12403.346758 seconds.
-  path: Assets/Animation/AnimationClips/Mixamo_Step Backward.anim
-  artifactKey: Guid(141025f9297563346b94e3668cf61b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/AnimationClips/Mixamo_Step Backward.anim using Guid(141025f9297563346b94e3668cf61b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b81895d2d1c85addf3bfef4d29ae9b5c') in 0.037274 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.539657 seconds.
-  path: Assets/Animation/AnimationClips/Mixamo_Walking.anim
-  artifactKey: Guid(a3c92de93fdc79349a77bdc695093076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/AnimationClips/Mixamo_Walking.anim using Guid(a3c92de93fdc79349a77bdc695093076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ac6f2dd1d6ab0ac40b658bbc4978afe') in 0.015673 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 117.325759 seconds.
-  path: Assets/Animation/AnimationClips/Mixamo_Idle.anim
-  artifactKey: Guid(268e18d87053dca44bd85082c7d8a998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/AnimationClips/Mixamo_Idle.anim using Guid(268e18d87053dca44bd85082c7d8a998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0df744f35aabc43968a561e561073b1') in 0.019058 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 41.587152 seconds.
-  path: Assets/Mixamo/Materials
-  artifactKey: Guid(27ee24a6579bf3b45adc7b0e53e97fe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Mixamo/Materials using Guid(27ee24a6579bf3b45adc7b0e53e97fe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab7acc35d03cc7336ef1077c3352a6ce') in 0.007291 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 22.761813 seconds.
-  path: Assets/Animation/AnimationClips/Idle.anim
-  artifactKey: Guid(68be4d6c65073cf48adaa30260a8564c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/AnimationClips/Idle.anim using Guid(68be4d6c65073cf48adaa30260a8564c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a180b81ab6866e34413052cad4dcb66') in 0.018609 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 60.958181 seconds.
-  path: Assets/Animation/AnimationClips/Mixamo_Walking.anim
-  artifactKey: Guid(a3c92de93fdc79349a77bdc695093076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/AnimationClips/Mixamo_Walking.anim using Guid(a3c92de93fdc79349a77bdc695093076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e62f5e31061473069edce39c63787b9') in 0.011278 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 124.699543 seconds.
-  path: Assets/Mixamo/WB_t-pose.FBX
-  artifactKey: Guid(ec2bd69dcc3c4f04e97b859d2f8a5494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Mixamo/WB_t-pose.FBX using Guid(ec2bd69dcc3c4f04e97b859d2f8a5494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a743cc425af92d7c62f6939b62edc057') in 0.247766 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005126 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Symbol file LoadedFromMemory doesn't match image D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 1.09 ms, found 9 plugins.
-Preloading 1 native plugins for Editor in 0.03 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.821 seconds
-Domain Reload Profiling:
-	ReloadAssembly (822ms)
-		BeginReloadAssembly (105ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (3ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (32ms)
-		EndReloadAssembly (640ms)
-			LoadAssemblies (75ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (222ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (274ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (58ms)
-				ProcessInitializeOnLoadAttributes (168ms)
-				ProcessInitializeOnLoadMethodAttributes (22ms)
-				AfterProcessingInitializeOnLoad (6ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
-Platform modules already initialized, skipping
-Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
-Refreshing native plugins compatible for Editor in 4.17 ms, found 9 plugins.
-Preloading 1 native plugins for Editor in 0.03 ms.
-Unloading 4921 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 55 unused Assets / (168.0 KB). Loaded Objects now: 5503.
-Memory consumption went from 193.5 MB to 193.3 MB.
-Total: 2.805900 ms (FindLiveObjects: 0.313400 ms CreateObjectMapping: 0.187400 ms MarkObjects: 2.143600 ms  DeleteObjects: 0.160200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005571 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Symbol file LoadedFromMemory doesn't match image D:\CGVLab(D)\DepthPerceptionTraining\DPTraining\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 1.03 ms, found 9 plugins.
-Preloading 1 native plugins for Editor in 0.04 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.806 seconds
-Domain Reload Profiling:
-	ReloadAssembly (807ms)
-		BeginReloadAssembly (107ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (3ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (34ms)
-		EndReloadAssembly (630ms)
-			LoadAssemblies (72ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (219ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (35ms)
-			SetupLoadedEditorAssemblies (273ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (56ms)
-				ProcessInitializeOnLoadAttributes (166ms)
-				ProcessInitializeOnLoadMethodAttributes (26ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
-Refreshing native plugins compatible for Editor in 5.11 ms, found 9 plugins.
-Preloading 1 native plugins for Editor in 0.03 ms.
-Unloading 4921 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 55 unused Assets / (160.5 KB). Loaded Objects now: 5507.
-Memory consumption went from 193.5 MB to 193.3 MB.
-Total: 3.080500 ms (FindLiveObjects: 0.316600 ms CreateObjectMapping: 0.175800 ms MarkObjects: 2.416000 ms  DeleteObjects: 0.170800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 437.860469 seconds.
-  path: Assets/WB/Models/separated/WB_bobbing.FBX
-  artifactKey: Guid(2ad7d45f2e3776f41aad765ca0dfd7ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_bobbing.FBX using Guid(2ad7d45f2e3776f41aad765ca0dfd7ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49d6d6998e09c9731f5d4c2587102aaa') in 0.019201 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.012001 seconds.
-  path: Assets/WB/Models/separated/WB_body_guard_right.FBX
-  artifactKey: Guid(1e96f0531a1108e408119efe885f962b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_body_guard_right.FBX using Guid(1e96f0531a1108e408119efe885f962b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4db959a1195c1cf89aa67aaf68d217e') in 0.009151 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/WB/Models/separated/WB_head_guard_left.FBX
-  artifactKey: Guid(d66854d385691564c8d507052b62ec5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_head_guard_left.FBX using Guid(d66854d385691564c8d507052b62ec5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11ce874af98f7b3b2b856aea2b593c53') in 0.007521 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_03.fbx
-  artifactKey: Guid(8823ae067ac574ccfab0170ff515df31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_03.fbx using Guid(8823ae067ac574ccfab0170ff515df31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8880d85bde599b1a10f2b556563d69d') in 0.022904 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Noitom/AliceMocapExamples/AliceHybridMocap/Models/SM_WhiteRabbit.obj
-  artifactKey: Guid(8826539f43e9483489ef9c784975add2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Noitom/AliceMocapExamples/AliceHybridMocap/Models/SM_WhiteRabbit.obj using Guid(8826539f43e9483489ef9c784975add2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5dd984a978099c4e09e33f3278be189') in 0.127927 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/WB/Models/separated/WB_get_punched_left.FBX
-  artifactKey: Guid(6a0eb5edc00f4094f9b7ffcdc7b7cd1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_get_punched_left.FBX using Guid(6a0eb5edc00f4094f9b7ffcdc7b7cd1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc313672c7e490015e165c13f39f6a7a') in 0.006698 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/WB/Models/separated/WB_uppercut_right.FBX
-  artifactKey: Guid(8aa7b84f9a08a2e4ca39fd132d41acd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_uppercut_right.FBX using Guid(8aa7b84f9a08a2e4ca39fd132d41acd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '724628b7fffa11d93f153b4e9c4b9c03') in 0.006793 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/WB/Models/separated/WB_idle_2.FBX
-  artifactKey: Guid(fd12d8f7835ae284aa87271e20d847e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_idle_2.FBX using Guid(fd12d8f7835ae284aa87271e20d847e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d2444b4d2275420bed01ddb5b4688f6') in 0.006621 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeCeiling_05.fbx
-  artifactKey: Guid(0db44a75a6ba3476584b15903acffef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeCeiling_05.fbx using Guid(0db44a75a6ba3476584b15903acffef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0fcbc72ead4c0fc99c9aa1776336f84') in 0.007068 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/WB/Models/separated/WB_get_punched_front.FBX
-  artifactKey: Guid(7e9bc6c6b3a577a43a59e8a62e52bb97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_get_punched_front.FBX using Guid(7e9bc6c6b3a577a43a59e8a62e52bb97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d884dbedb554666cc1043980f92b2e1') in 0.008744 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_09.fbx
-  artifactKey: Guid(74ec681953144457584b58109d62cba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_09.fbx using Guid(74ec681953144457584b58109d62cba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cd29bd9b18be8f4f6b4b0d8e26cbebc') in 0.007741 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/WB/Models/separated/WB_knockout.FBX
-  artifactKey: Guid(e2b63bf579b6b024780cc188a06b298e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_knockout.FBX using Guid(e2b63bf579b6b024780cc188a06b298e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49acfaed4c71ea7ebe054eaa2adaed0f') in 0.009824 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/WB/Models/separated/WB_dodge_right.FBX
-  artifactKey: Guid(89027c507e3e2b94b98e1e91c5e65f8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_dodge_right.FBX using Guid(89027c507e3e2b94b98e1e91c5e65f8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a77dcb6163b69436649aa1adc0b017d9') in 0.009895 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/WB/Models/separated/WB_go_to_idle.FBX
-  artifactKey: Guid(f0ef17a6fee1cb94283bf2d41dd15b68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_go_to_idle.FBX using Guid(f0ef17a6fee1cb94283bf2d41dd15b68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a099a1f49eeb776d95bc3e568b6dd8ac') in 0.009834 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_01.fbx
-  artifactKey: Guid(21910c3378b59465aae1effa11412932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_01.fbx using Guid(21910c3378b59465aae1effa11412932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5939d4f19dd83b45f2b290c917ae57f') in 0.009187 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000056 seconds.
-  path: Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_05.fbx
-  artifactKey: Guid(f9c914816e5534c829508b3f78a4e547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_05.fbx using Guid(f9c914816e5534c829508b3f78a4e547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca22c643ba68f55d919d92f9b1017970') in 0.007585 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/WB/Models/separated/WB_combo_3.FBX
-  artifactKey: Guid(1470254d4d2cb3a4a851498a599a0016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_combo_3.FBX using Guid(1470254d4d2cb3a4a851498a599a0016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '608dcccf2164492a4224636c2a12ac9d') in 0.007396 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/WB/Models/separated/WB_go_to_guard.FBX
-  artifactKey: Guid(07300e4cea5ebc54194991c90cbd6999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_go_to_guard.FBX using Guid(07300e4cea5ebc54194991c90cbd6999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '725db6d51d9bc32e6498789e49f818e4') in 0.007408 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/WB/Models/separated/WB_guard.FBX
-  artifactKey: Guid(e5576329bfe625b468c5acdb7a708ec9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_guard.FBX using Guid(e5576329bfe625b468c5acdb7a708ec9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c65502f7e94a66d0c4c2a60be9fa24c7') in 0.006273 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/WB/Models/separated/WB_idle_3.FBX
-  artifactKey: Guid(6044e16e5af2d1845be30704b2bd3881) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_idle_3.FBX using Guid(6044e16e5af2d1845be30704b2bd3881) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29209531bc2c34316bb6d2cc97f69a67') in 0.006924 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Animation/WB_idle_2.FBX
-  artifactKey: Guid(2d9338d0f3006ea45932ecb4f533073c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/WB_idle_2.FBX using Guid(2d9338d0f3006ea45932ecb4f533073c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f5dbe0667317731245d4f9da349232f') in 0.098133 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_08.fbx
-  artifactKey: Guid(9b2d906e356b541488fc78ab4a17243b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_08.fbx using Guid(9b2d906e356b541488fc78ab4a17243b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d1f6c4300cf88ec5df913e15fca6fc3') in 0.008267 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Animation/WB_walk_forward.FBX
-  artifactKey: Guid(2196bb6850093c94092f47f59395ead7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/WB_walk_forward.FBX using Guid(2196bb6850093c94092f47f59395ead7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c3c7e1c54554376fa65b27cfc689304') in 0.121086 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_02.fbx
-  artifactKey: Guid(b68f495516d5445c98c860bb0add8c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeFloor_02.fbx using Guid(b68f495516d5445c98c860bb0add8c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d721145a3fc353bc40ac0d55c60220c') in 0.012465 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeCeiling_15.fbx
-  artifactKey: Guid(9b9a865d8bbaa4aba869373566746a86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Oculus/SampleFramework/Usage/Locomotion/Models/WedgeCeiling_15.fbx using Guid(9b9a865d8bbaa4aba869373566746a86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e4a10987dd2457eb5d79819c331f3a1') in 0.010242 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/WB/Models/separated/WB_dodge_left.FBX
-  artifactKey: Guid(df461275041e15a4e812051f512dcdc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/WB/Models/separated/WB_dodge_left.FBX using Guid(df461275041e15a4e812051f512dcdc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '801ebaea29056b75ad0a9e6fb7054419') in 0.010260 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+Symbol file LoadedFromMemory doesn't match image C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll

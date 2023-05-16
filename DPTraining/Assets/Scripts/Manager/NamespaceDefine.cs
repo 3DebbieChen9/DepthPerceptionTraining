@@ -18,6 +18,7 @@ namespace DepthPerceptionSystem
         TrainingMode_BallCue_onBoth,
         TrainingMode_LineCuePlusBallCue,
         TrainingMode_BarCue,
+        TrainingMode_CutoutCue,
 
     }
 

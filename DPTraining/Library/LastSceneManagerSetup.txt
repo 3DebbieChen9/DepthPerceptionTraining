@@ -12,14 +12,10 @@ sceneSetups:
   isActive: 0
   isSubScene: 0
 - path: Assets/Scenes/TestingScene.unity
-  isLoaded: 1
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Scenes/TrainingScene.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/FunctionDeveloping/ColorSetting.unity
+- path: Assets/Scenes/TrainingScene.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0

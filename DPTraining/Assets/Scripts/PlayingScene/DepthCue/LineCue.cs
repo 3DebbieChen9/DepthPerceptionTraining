@@ -8,10 +8,10 @@ public class LineCue : MonoBehaviour
     private PlayingModeManager playingModeManager;
 
     [SerializeField]
-    private GameObject rightShoulder;
+    private Transform rightShoulder;
     [SerializeField]
-    private GameObject leftShoulder;
-    
+    private Transform leftShoulder;
+
     [SerializeField]
     private LineRenderer rightLine;
     [SerializeField]
@@ -62,17 +62,17 @@ public class LineCue : MonoBehaviour
         {
             case Hand.Right:
                 rightLine.SetPosition(0, playingModeManager.mainManager.OVRControllerRight.transform.position);
-                rightLine.SetPosition(1, leftShoulder.transform.position);
+                rightLine.SetPosition(1, leftShoulder.position);
                 break;
             case Hand.Left:
                 leftLine.SetPosition(0, playingModeManager.mainManager.OVRControllerLeft.transform.position);
-                leftLine.SetPosition(1, rightShoulder.transform.position);
+                leftLine.SetPosition(1, rightShoulder.position);
                 break;
             default:
                 rightLine.SetPosition(0, playingModeManager.mainManager.OVRControllerRight.transform.position);
-                rightLine.SetPosition(1, leftShoulder.transform.position);
+                rightLine.SetPosition(1, leftShoulder.position);
                 leftLine.SetPosition(0, playingModeManager.mainManager.OVRControllerLeft.transform.position);
-                leftLine.SetPosition(1, rightShoulder.transform.position);
+                leftLine.SetPosition(1, rightShoulder.position);
                 break;
         }
 
@@ -129,13 +129,13 @@ public class LineCue : MonoBehaviour
                 // hue = 240.0f / 360.0f; // blue
                 hue = 240.0f / 360.0f; // blue
                 currentDistance = Vector3.Distance(playingModeManager.mainManager.OVRControllerRight.transform.position,
-                                            leftShoulder.transform.position);
+                                            leftShoulder.position);
                 break;
             case Hand.Left:
                 // hue = 0.0f; // red
                 hue = 0.0f / 360.0f; // red
                 currentDistance = Vector3.Distance(playingModeManager.mainManager.OVRControllerLeft.transform.position,
-                                            rightShoulder.transform.position);
+                                            rightShoulder.position);
                 break;
             default:
                 break;

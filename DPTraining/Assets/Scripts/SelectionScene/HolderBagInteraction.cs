@@ -76,6 +76,9 @@ public class HolderBagInteraction : MonoBehaviour
                 case "Choice_Bar":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BarCue);
                     break;
+                case "Choice_CutoutCue":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_CutoutCue);
+                    break;
                 case "Choice_PunchCollecting":
                     this.selectionModeManager.mainManager.changeScene("PunchCollectingScene");
                     break;

@@ -7,24 +7,23 @@ public class PunchModule : MonoBehaviour
 {
     [SerializeField]
     private EvaluationManager evaluationManager;
-    // [SerializeField]
-    // private GameObject lightBallPrefab;
-
-    // [SerializeField]
-    // private Transform rightShoulder;
-    // [SerializeField]
-    // private Transform leftShoulder;
+    private bool rightStayInTrigger;
+    private bool leftStayInTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        this.rightStayInTrigger = false;
+        this.leftStayInTrigger = false;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        if (this.rightStayInTrigger && this.leftStayInTrigger)
+        {
+            this.evaluationManager.userIsNotPunching();
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -38,20 +37,29 @@ public class PunchModule : MonoBehaviour
         {
             case "Glove_R":
                 this.evaluationManager.userIsPunching(Hand.Right);
+                this.rightStayInTrigger = false;
                 break;
             case "Glove_L":
                 this.evaluationManager.userIsPunching(Hand.Left);
+                this.leftStayInTrigger = false;
                 break;
             default:
                 break;
         }
-        // if (this.evaluationManager.isDuringTheUnit) {
-        //     if (other.gameObject.tag == "Glove_R") {
-        //         this.evaluationManager.userIsPunching(Hand.Right);
-        //     }
-        //     else if (other.gameObject.tag == "Glove_L") {
-        //         this.evaluationManager.userIsPunching(Hand.Left);
-        //     }
-        // }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Glove_R":
+                this.rightStayInTrigger = true;
+                break;
+            case "Glove_L":
+                this.leftStayInTrigger = true;
+                break;
+            default:
+                break;
+        }
     }
 }

@@ -132,9 +132,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 14744712}
+  - component: {fileID: 14744713}
   m_Layer: 0
   m_Name: GloveEdge
-  m_TagString: Untagged
+  m_TagString: Glove_L
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +155,20 @@ Transform:
   m_Father: {fileID: 810192314}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &14744713
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14744711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.06772195
+  m_Height: 0.14990468
+  m_Direction: 0
+  m_Center: {x: -0.058122423, y: -0.045734107, z: 0.015139758}
 --- !u!1 &19513071
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,9 +242,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 48120938}
+  - component: {fileID: 48120939}
   m_Layer: 0
   m_Name: GloveEdge
-  m_TagString: Untagged
+  m_TagString: Glove_R
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,6 +265,20 @@ Transform:
   m_Father: {fileID: 810192313}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &48120939
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48120937}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.07032896
+  m_Height: 0.15197049
+  m_Direction: 0
+  m_Center: {x: -0.050436, y: -0.04573404, z: -0.009541668}
 --- !u!1 &53239204
 GameObject:
   m_ObjectHideFlags: 0
@@ -5862,7 +5892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1172822390825300058, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
       propertyPath: m_TagString
-      value: Glove_R
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1414370820945757225, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
       propertyPath: m_LocalRotation.z
@@ -5901,8 +5931,48 @@ PrefabInstance:
       value: 0.0013891249
       objectReference: {fileID: 0}
     - target: {fileID: 1679712405682136690, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
+      propertyPath: m_Height
+      value: 0.24180749
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679712405682136690, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
+      propertyPath: m_Radius
+      value: 0.073023416
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679712405682136690, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
+      propertyPath: m_Center.x
+      value: 0.07859948
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679712405682136690, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
+      propertyPath: m_Center.y
+      value: 0.003764196
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679712405682136690, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
+      propertyPath: m_Center.z
+      value: 0.02650697
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679712405682136690, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839783661468055048, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
+      propertyPath: m_Height
+      value: 0.24180749
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839783661468055048, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
+      propertyPath: m_Radius
+      value: 0.073023416
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839783661468055048, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
+      propertyPath: m_Center.x
+      value: 0.07859948
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839783661468055048, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
+      propertyPath: m_Center.y
+      value: 0.003764196
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839783661468055048, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
+      propertyPath: m_Center.z
+      value: -0.026506968
       objectReference: {fileID: 0}
     - target: {fileID: 1839783661468055048, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
       propertyPath: m_IsTrigger
@@ -5966,7 +6036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3051509760153178598, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
       propertyPath: m_TagString
-      value: Glove_L
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3256162501733948506, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
       propertyPath: m_IsActive
@@ -7434,6 +7504,7 @@ MonoBehaviour:
   OVRCameraRig: {fileID: 1190238386}
   canvasHeight: 0
   moveTime: 0
+  tmpCylinder: {fileID: 0}
 --- !u!1 &1468175324
 GameObject:
   m_ObjectHideFlags: 0

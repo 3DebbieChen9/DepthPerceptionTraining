@@ -78,11 +78,13 @@ public class StraightCollider : MonoBehaviour
             if (other.gameObject.tag == "Glove_L")
             {
                 this.evaluationManager.playingModeManager.curUnitResult.isStraight = this.evaluationManager.straightModule.judgeArmStraight(Hand.Left);
+                // this.evaluationManager.playingModeManager.curUnitResult.isPunching = true;
                 Debug.Log($"Left Arm Straight: {this.evaluationManager.straightModule.judgeArmStraight(Hand.Left)} \nAngle: {this.evaluationManager.straightModule.getArmAngle(Hand.Left)}");
             }
             else if (other.gameObject.tag == "Glove_R")
             {
                 this.evaluationManager.playingModeManager.curUnitResult.isStraight = this.evaluationManager.straightModule.judgeArmStraight(Hand.Right);
+                // this.evaluationManager.playingModeManager.curUnitResult.isPunching = true;
                 Debug.Log($"Right Arm Straight: {this.evaluationManager.straightModule.judgeArmStraight(Hand.Right)} \nAngle: {this.evaluationManager.straightModule.getArmAngle(Hand.Right)}");
             }
         }

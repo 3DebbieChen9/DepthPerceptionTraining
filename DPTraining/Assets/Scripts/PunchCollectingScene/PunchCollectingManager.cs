@@ -49,6 +49,9 @@ public class PunchCollectingManager : MonoBehaviour
     [SerializeField]
     private TMP_Text straightResultText;
 
+    private Transform rightStraightCollider = null;
+    private Transform leftStraightCollider = null;
+
     void Awake()
     {
         if (this.mainManager == null)
@@ -92,6 +95,16 @@ public class PunchCollectingManager : MonoBehaviour
         this.straightResultPanel.SetActive(false);
         this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(true);
         this.mainManager.OVRControllerRayRight.RayInteractorSwitch(true);
+        this.rightStraightCollider = this.mainManager.rightUpperArm_IK.transform.Find("StraightCollider(Clone)");
+        if (this.rightStraightCollider)
+        {
+            this.rightStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = true;
+        }
+        this.leftStraightCollider = this.mainManager.leftUpperArm_IK.transform.Find("StraightCollider(Clone)");
+        if (this.leftStraightCollider)
+        {
+            this.leftStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = true;
+        }
     }
 
     public void saveToJSON_punchResult()
@@ -125,6 +138,17 @@ public class PunchCollectingManager : MonoBehaviour
     }
     public void displayPunchResult()
     {
+        this.rightStraightCollider = this.mainManager.rightUpperArm_IK.transform.Find("StraightCollider(Clone)");
+        if (this.rightStraightCollider)
+        {
+            this.rightStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        }
+        this.leftStraightCollider = this.mainManager.leftUpperArm_IK.transform.Find("StraightCollider(Clone)");
+        if (this.leftStraightCollider)
+        {
+            this.leftStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        }
+
         this.straightResultText.text = $"第幾次 | 哪隻手 | 系統判定 | 教練判定 | 角度\n";
         this.straightResultText.text += $"左手標準角度: {this.mainManager.myUserInfo.userArmStraightAngle.leftIK.angleToString()}\n";
         this.straightResultText.text += $"右手標準角度: {this.mainManager.myUserInfo.userArmStraightAngle.rightIK.angleToString()}\n";

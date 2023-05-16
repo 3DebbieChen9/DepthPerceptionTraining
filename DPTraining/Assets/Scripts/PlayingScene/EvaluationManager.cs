@@ -70,6 +70,31 @@ public class EvaluationManager : MonoBehaviour
     {
         this.startingPoint.transform.position = position;
         this.startingPoint.transform.rotation = rotation;
+        this.startingPointSizeChange(true);
+    }
+
+    public void startingPointSizeChange(bool smaller = true)
+    {
+        float radius = this.playingModeManager.mainManager.mySettingInfo.evaluationThreshold.radiusBetweenOriginAndUser;
+        if (smaller)
+        {
+            radius = radius / 2.0f;
+
+        }
+
+        this.startingPoint.GetComponent<CapsuleCollider>().radius = radius;
+        this.playingModeManager.mainManager.sceneOrigin.transform.localScale = new Vector3(
+            radius * 2.0f,
+            0.02f,
+            radius * 2.0f
+        );
+    }
+
+    public void userIsNotPunching()
+    {
+        this.playingModeManager.curUnitResult.isPunching = false;
+        this.playingModeManager.curUnitResult.isReacting = false;
+        this.playingModeManager.curUnitResult.isStraight = false;
     }
 
     public void userIsPunching(Hand hand)
@@ -151,6 +176,7 @@ public class EvaluationManager : MonoBehaviour
                     case SystemMode.TrainingMode_BallCue_onBoth:
                     case SystemMode.TrainingMode_LineCuePlusBallCue:
                     case SystemMode.TrainingMode_BarCue:
+                    case SystemMode.TrainingMode_CutoutCue:
                         if (this.playingModeManager.curUnitResult.isReach)
                         {
                             if (this.playingModeManager.curUnitResult.isStraight)

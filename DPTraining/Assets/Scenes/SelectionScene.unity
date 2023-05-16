@@ -2296,15 +2296,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248532635}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.34, y: 1.096, z: -5}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalPosition: {x: 1.95, y: 1.8, z: -2.647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1510785191}
   m_Father: {fileID: 1414569752}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!54 &248532637
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4918,7 +4918,7 @@ GameObject:
   - component: {fileID: 629058234}
   - component: {fileID: 629058233}
   m_Layer: 0
-  m_Name: Text_Choice_BallOnBoth
+  m_Name: Text_Choice_CutoutCue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4964,7 +4964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ball on Both
+  m_text: Cutout Aid
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
   m_sharedMaterial: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
@@ -6176,7 +6176,7 @@ GameObject:
   - component: {fileID: 859223491}
   - component: {fileID: 859223490}
   m_Layer: 0
-  m_Name: Canvas_Choice_BallOnBoth
+  m_Name: Canvas_Choice_CutoutCue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7833,7 +7833,7 @@ GameObject:
   - component: {fileID: 1228734124}
   - component: {fileID: 1228734123}
   m_Layer: 0
-  m_Name: Choice_BallOnBoth
+  m_Name: Choice_CutoutCue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9437,10 +9437,10 @@ Transform:
   - {fileID: 1289371936}
   - {fileID: 256440985}
   - {fileID: 1813922668}
-  - {fileID: 1966251968}
   - {fileID: 248532636}
   - {fileID: 2238649001932948621}
   - {fileID: 1415444107}
+  - {fileID: 1966251968}
   m_Father: {fileID: 3272868545125874042}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9471,15 +9471,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415444106}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 1.95, y: 1.8, z: -2.647}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.34, y: 1.8, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 624814687}
   m_Father: {fileID: 1414569752}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!54 &1415444108
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12309,7 +12309,7 @@ GameObject:
   - component: {fileID: 1966251969}
   - component: {fileID: 1966251970}
   m_Layer: 0
-  m_Name: HolderBag_BallOnBoth
+  m_Name: HolderBag_CutoutCue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12323,13 +12323,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966251967}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.34, y: 1.8, z: -5}
+  m_LocalPosition: {x: 0.34, y: 1.096, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1228734122}
   m_Father: {fileID: 1414569752}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!54 &1966251969
 Rigidbody:
@@ -13251,7 +13251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bar
+  m_text: Bar Aid
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
   m_sharedMaterial: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
@@ -13908,7 +13908,7 @@ Transform:
   m_Children:
   - {fileID: 2182534866367174777}
   m_Father: {fileID: 1414569752}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &2935956618857155368
 MeshFilter:
