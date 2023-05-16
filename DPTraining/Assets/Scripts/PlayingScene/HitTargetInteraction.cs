@@ -30,6 +30,10 @@ public class HitTargetInteraction : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (this.evaluationManager.isHitTrigger) {
+            return;
+        }
+
         if (this.evaluationManager.playingModeManager.curState == PlayingState.idle || this.evaluationManager.playingModeManager.curState == PlayingState.result)
         {
             return;
@@ -40,6 +44,7 @@ public class HitTargetInteraction : MonoBehaviour
         if (other.gameObject.tag == "Glove_L")
         {
             this.evaluationManager.playingModeManager.coachManager.stopMoving();
+            this.evaluationManager.isHitTrigger = true;
             this.evaluationManager.reachModule.reachTarget(Hand.Left);
 
             Transform lightBall = this.evaluationManager.playingModeManager.mainManager.OVRBoxingLeft.transform.Find("LightBallOnPlayer(Clone)");
@@ -55,6 +60,7 @@ public class HitTargetInteraction : MonoBehaviour
         else if (other.gameObject.tag == "Glove_R")
         {
             this.evaluationManager.playingModeManager.coachManager.stopMoving();
+            this.evaluationManager.isHitTrigger = true;
             this.evaluationManager.reachModule.reachTarget(Hand.Right);
             Transform lightBall = this.evaluationManager.playingModeManager.mainManager.OVRBoxingRight.transform.Find("LightBallOnPlayer(Clone)");
             if (lightBall)

@@ -133,6 +133,7 @@ public class SelectionModeManager : MonoBehaviour
             case SystemMode.TrainingMode_BallCue_onTarget:
             case SystemMode.TrainingMode_BallCue_onBoth:
             case SystemMode.TrainingMode_LineCuePlusBallCue:
+            case SystemMode.TrainingMode_BarCue:
                 this.mainManager.changeScene("TrainingScene");
                 break;
             default:

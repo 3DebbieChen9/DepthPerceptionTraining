@@ -8,9 +8,10 @@ public class LineCue : MonoBehaviour
     private PlayingModeManager playingModeManager;
 
     [SerializeField]
-    private GameObject leftShoulder;
-    [SerializeField]
     private GameObject rightShoulder;
+    [SerializeField]
+    private GameObject leftShoulder;
+    
     [SerializeField]
     private LineRenderer rightLine;
     [SerializeField]

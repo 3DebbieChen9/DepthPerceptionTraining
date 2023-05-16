@@ -29,6 +29,8 @@ public class EvaluationManager : MonoBehaviour
     [SerializeField]
     private GameObject rightLowerArmPrefab;
 
+    public bool isHitTrigger;
+
     void Awake()
     {
         if (this.playingModeManager == null)
@@ -61,6 +63,7 @@ public class EvaluationManager : MonoBehaviour
         this.isDuringTheUnit = false;
         this.userStartMoving = false;
         this.punchHand = Hand.None;
+        this.isHitTrigger = false;
     }
 
     public void setStartingPoint(Vector3 position, Quaternion rotation)
@@ -147,6 +150,7 @@ public class EvaluationManager : MonoBehaviour
                     case SystemMode.TrainingMode_BallCue_onTarget:
                     case SystemMode.TrainingMode_BallCue_onBoth:
                     case SystemMode.TrainingMode_LineCuePlusBallCue:
+                    case SystemMode.TrainingMode_BarCue:
                         if (this.playingModeManager.curUnitResult.isReach)
                         {
                             if (this.playingModeManager.curUnitResult.isStraight)

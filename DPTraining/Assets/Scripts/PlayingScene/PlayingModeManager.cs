@@ -580,6 +580,17 @@ public class PlayingModeManager : MonoBehaviour
                     this.depthCueManager.GetComponent<BallCueOnTarget>().eraseBallCueOnTarget();
                 }
                 break;
+            case SystemMode.TrainingMode_BarCue:
+                if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction)
+                {
+                    this.depthCueManager.GetComponent<BarCue>().barAidUpdate();
+                }
+                else
+                {
+                    this.depthCueManager.GetComponent<BarCue>().closeBarAid();
+                    // this.depthCueManager.GetComponent<BarCue>().barAidUpdate();
+                }
+                break;
             default:
                 break;
         }

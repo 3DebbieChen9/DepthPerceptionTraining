@@ -29,6 +29,10 @@ public class HitCoachInteraction : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (this.evaluationManager.isHitTrigger) {
+            return;
+        }
+
         if (this.evaluationManager.playingModeManager.curState == PlayingState.idle || this.evaluationManager.playingModeManager.curState == PlayingState.result)
         {
             return;
@@ -39,6 +43,7 @@ public class HitCoachInteraction : MonoBehaviour
         if (other.gameObject.tag == "Glove_L" || other.gameObject.tag == "Glove_R")
         {
             this.evaluationManager.playingModeManager.coachManager.stopMoving();
+            this.evaluationManager.isHitTrigger = true;
             if (other.gameObject.tag == "Glove_L")
             {
                 this.evaluationManager.userIsHitCoach(Hand.Left, false);

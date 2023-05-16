@@ -1712,6 +1712,7 @@ MonoBehaviour:
   rightUpperArmPrefab: {fileID: 1830166613252009574, guid: 99e81673a016906428be8a205a0ba1a5, type: 3}
   leftLowerArmPrefab: {fileID: 4502259707068207756, guid: b425a8aa7e8231c43bedd836ba428c1a, type: 3}
   rightLowerArmPrefab: {fileID: 3348453718829318151, guid: 60f0006ebfcb658449537cf7021233fd, type: 3}
+  isHitTrigger: 0
 --- !u!4 &1196041880
 Transform:
   m_ObjectHideFlags: 0
@@ -2354,18 +2355,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4022481752761820481, guid: fd6802ce030979b46886f8e5553405c8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4022481753907441097, guid: fd6802ce030979b46886f8e5553405c8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4256372091383960355, guid: fd6802ce030979b46886f8e5553405c8, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
     - target: {fileID: 4256372092449839377, guid: fd6802ce030979b46886f8e5553405c8, type: 3}
       propertyPath: evaluationManager
       value: 
@@ -2454,6 +2443,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4256372092449839481, guid: fd6802ce030979b46886f8e5553405c8, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4256372092449867096, guid: fd6802ce030979b46886f8e5553405c8, type: 3}
       propertyPath: m_Name
       value: WB_withCollider
@@ -2482,6 +2475,14 @@ PrefabInstance:
       propertyPath: evaluationManager
       value: 
       objectReference: {fileID: 1196041879}
+    - target: {fileID: 7513201097593806906, guid: fd6802ce030979b46886f8e5553405c8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 4274543d41170b143a47298c78d7f0f7, type: 3}
+    - target: {fileID: 7513201097593806906, guid: fd6802ce030979b46886f8e5553405c8, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd6802ce030979b46886f8e5553405c8, type: 3}
 --- !u!95 &1463684433 stripped
