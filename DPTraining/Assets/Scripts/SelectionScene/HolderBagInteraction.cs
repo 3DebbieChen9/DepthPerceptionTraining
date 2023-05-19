@@ -10,39 +10,83 @@ public class HolderBagInteraction : MonoBehaviour
 
     void Awake()
     {
-        if (this.selectionModeManager == null) {
+        if (this.selectionModeManager == null)
+        {
             this.selectionModeManager = GameObject.Find("SelectionModeManager").GetComponent<SelectionModeManager>();
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Glove_R" || other.gameObject.tag == "Glove_L") {
-            switch (this.gameObject.name) {
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Glove_R" || other.gameObject.tag == "Glove_L")
+        {
+            AudioManager.instance.PlaySFX("HitObject");
+            switch (this.gameObject.name)
+            {
                 case "Choice_L":
                     this.selectionModeManager.toggleSelect(false);
                     break;
                 case "Choice_R":
                     this.selectionModeManager.toggleSelect(true);
                     break;
-                case "Choice_Testing":
+                case "Speed_Slowest":
+                    this.selectionModeManager.moveToDirectionSelect(MovingSpeed.Slowest);
+                    break;
+                case "Speed_Fastest":
+                    this.selectionModeManager.moveToDirectionSelect(MovingSpeed.Fastest);
+                    break;
+                case "Speed_Random":
+                    this.selectionModeManager.moveToDirectionSelect(MovingSpeed.Random);
+                    break;
+                case "Direction_Forward":
+                    this.selectionModeManager.moveToModeSelect(MovingDirection.Forward);
+                    break;
+                case "Direction_Backward":
+                    this.selectionModeManager.moveToModeSelect(MovingDirection.Backward);
+                    break;
+                case "Direction_Random":
+                    this.selectionModeManager.moveToModeSelect(MovingDirection.Random);
+                    break;
+                case "Mode_Testing":
                     this.selectionModeManager.modeSelect(SystemMode.TestingMode);
                     break;
-                case "Choice_Training":
+                case "Mode_Training":
+                    this.selectionModeManager.moveToTrainMethodSelect();
+                    break;
+                case "Training_Tradition":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode);
                     break;
-                case "Choice_Depth":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingHintMode);
+                case "Training_Line":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_LineCue);
+                    break;
+                case "Training_BallOnTarget":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onTarget);
+                    break;
+                case "Training_BallOnPlayer":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onPlayer);
+                    break;
+                case "Training_BallOnBoth":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onBoth);
+                    break;
+                case "Training_LinePlusBall":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_LineCuePlusBallCue);
+                    break;
+                case "Training_Bar":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BarCue);
+                    break;
+                case "Training_CutoutCue":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_CutoutCue);
                     break;
                 default:
                     break;
@@ -60,7 +104,8 @@ public class HolderBagInteraction : MonoBehaviour
         // }   
     }
 
-    void stopControllerVibration() {
+    void stopControllerVibration()
+    {
         OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.LTouch);
         OVRInput.SetControllerVibration(0.0f, 0.0f, OVRInput.Controller.RTouch);
     }

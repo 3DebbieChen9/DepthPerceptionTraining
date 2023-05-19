@@ -353,6 +353,8 @@ struct Predicate_1_t7804C803763E50CB5C7D9D9BD9C1967C07EAD01E;
 struct Predicate_1_tFCAE1ADCF7E7DC7DDC6392F30706D16ADEEAF3F9;
 // System.Collections.Generic.Queue`1<System.Boolean>
 struct Queue_1_t803CA034D040E531D06237F0C5EB6DFE225B3B77;
+// UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene>
+struct UnityAction_2_t3E619780AA870611658EC8B01DA6EA2EC42B13CE;
 // System.Collections.Generic.Dictionary`2/ValueCollection<Oculus.Interaction.IInteractorView,System.Collections.Generic.List`1<Oculus.Interaction.IInteractorView>>
 struct ValueCollection_tFDD7A7F2D1EAC5592B0F1FF544CCB03B9752A26D;
 // System.Collections.Generic.Dictionary`2/ValueCollection<Oculus.Interaction.PokeInteractable,UnityEngine.Pose>
@@ -748,6 +750,7 @@ IL2CPP_EXTERN_C RuntimeClass* ProgressCurve_t4240A915DEBE2CD7C1D414683EB5A89A064
 IL2CPP_EXTERN_C RuntimeClass* Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* RayCandidate_tC6C562B55A4784E4C195F301299D114CFA78E816_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* TweenCurve_tD89AADCAEB4963F1DDB38EA222635649105B263C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Tween_t31BD626A4786A5E37E6B138C3ACB5021A477D967_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_t122ED9C2DBA920ADC4906A83F80D26E34D4FB0BD_il2cpp_TypeInfo_var;
@@ -759,6 +762,7 @@ IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_tDFB0ECACFA74E4AA84DC988A55C2CC3B0CD7642A_
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_tE533F274649C60081A8368DD9388F1EEED6C62AF_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CU3Ec_tFDFE2B192EE05CEE762338F789BD90BFB3108052_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* UniqueIdentifier_t2CFA79939EF9F08A544BAA867445202C60871342_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* UnityAction_2_t3E619780AA870611658EC8B01DA6EA2EC42B13CE_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Vector3U5BU5D_tFF1859CCE176131B909E2044F76443064254679C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral16F73650BBB5875DA5D500D978B6F3656092BA7A;
@@ -774,9 +778,11 @@ IL2CPP_EXTERN_C String_t* _stringLiteralB640526A7CE121B54D1E33F5643B3B41C0F7D54D
 IL2CPP_EXTERN_C String_t* _stringLiteralC161013FB3AFC19A8CDDB62295E22E007C172C25;
 IL2CPP_EXTERN_C String_t* _stringLiteralD1418B66EFD4F2E84F8EE977170F5ACBF35CE35C;
 IL2CPP_EXTERN_C String_t* _stringLiteralD5A0522C6CE8AFBC4CE5B4AAE19C59411096053B;
+IL2CPP_EXTERN_C String_t* _stringLiteralD94055491BE7B23AD2B6F85621F11D33CB68DA5F;
 IL2CPP_EXTERN_C String_t* _stringLiteralE1995802ABE6A3EC346C8751E74E33799D0F46B4;
 IL2CPP_EXTERN_C String_t* _stringLiteralEFBA083E7AB0B56B4DD6388A95698ED98E18E7F7;
 IL2CPP_EXTERN_C String_t* _stringLiteralF9649B433E6B24B922E8637C16AD5D29342C651B;
+IL2CPP_EXTERN_C const RuntimeMethod* ActiveStateTracker_ChangedActiveScene_mD5EA2B3F8DD5A1D7C1C058CCBDDC1F69465B7800_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* CandidateComparer_1__ctor_m3434B0FE86AAE072573847BDD21FEC75C2AD6A28_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* CollisionInteractionRegistry_2__ctor_m89D21FE5ECEB135905989706C4AFEF328DB0B3E0_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponentInParent_TisPhysicsGrabbable_tD148E9FA4004FE544C31B83B6435EDAE852C61BF_m96A8869477BC7A71D53EEDC521516FAAAD4D9A5B_RuntimeMethod_var;
@@ -2265,6 +2271,13 @@ struct Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974_StaticFields
 	Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___identityQuaternion_4;
 };
 
+// UnityEngine.SceneManagement.Scene
+struct Scene_tA1DC762B79745EB5140F054C884855B922318356 
+{
+	// System.Int32 UnityEngine.SceneManagement.Scene::m_Handle
+	int32_t ___m_Handle_0;
+};
+
 // System.Single
 struct Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C 
 {
@@ -2890,6 +2903,11 @@ struct Predicate_1_t7804C803763E50CB5C7D9D9BD9C1967C07EAD01E  : public Multicast
 
 // System.Predicate`1<Oculus.Interaction.Tween/TweenCurve>
 struct Predicate_1_tFCAE1ADCF7E7DC7DDC6392F30706D16ADEEAF3F9  : public MulticastDelegate_t
+{
+};
+
+// UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene>
+struct UnityAction_2_t3E619780AA870611658EC8B01DA6EA2EC42B13CE  : public MulticastDelegate_t
 {
 };
 
@@ -4667,6 +4685,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerator_get_Cur
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerator_MoveNext_mE921CC8F29FBBDE7CC3209A0ED0D921D58D00BCB_gshared (Enumerator_t9473BAB568A27E2339D48C1F91319E0F6D244D7A* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Object>::Add(T)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
+// System.Void UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene>::.ctor(System.Object,System.IntPtr)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnityAction_2__ctor_m0C555E922D7495D9C81347C4CC01080514601692_gshared (UnityAction_2_t3E619780AA870611658EC8B01DA6EA2EC42B13CE* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) ;
 // T System.Collections.Generic.List`1<System.Object>::get_Item(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* List_1_get_Item_m33561245D64798C2AB07584C0EC4F240E4839A38_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, int32_t ___index0, const RuntimeMethod* method) ;
 // System.Int32 System.Collections.Generic.List`1<System.Object>::get_Count()
@@ -5049,6 +5069,13 @@ inline void List_1_Add_m43FBF207375C6E06B8C45ECE614F9B8008FB686E_inline (List_1_
 }
 // System.Int32 UnityEngine.Transform::get_childCount()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Transform_get_childCount_mE9C29C702AB662CC540CA053EDE48BDAFA35B4B0 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
+// System.Void UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene>::.ctor(System.Object,System.IntPtr)
+inline void UnityAction_2__ctor_m0C555E922D7495D9C81347C4CC01080514601692 (UnityAction_2_t3E619780AA870611658EC8B01DA6EA2EC42B13CE* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method)
+{
+	((  void (*) (UnityAction_2_t3E619780AA870611658EC8B01DA6EA2EC42B13CE*, RuntimeObject*, intptr_t, const RuntimeMethod*))UnityAction_2__ctor_m0C555E922D7495D9C81347C4CC01080514601692_gshared)(__this, ___object0, ___method1, method);
+}
+// System.Void UnityEngine.SceneManagement.SceneManager::add_activeSceneChanged(UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene>)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SceneManager_add_activeSceneChanged_mC9236EE99263057E56736C4D044401A8F238155B (UnityAction_2_t3E619780AA870611658EC8B01DA6EA2EC42B13CE* ___value0, const RuntimeMethod* method) ;
 // System.Void Oculus.Interaction.ActiveStateTracker::SetDependentsActive(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActiveStateTracker_SetDependentsActive_m807A758D9992312CBB05BC865B6C786BEF9AC69F (ActiveStateTracker_tD408DDBDA5FEFF9D6260857B1A47466DB73DF9DE* __this, bool ___active0, const RuntimeMethod* method) ;
 // T System.Collections.Generic.List`1<UnityEngine.GameObject>::get_Item(System.Int32)
@@ -5073,6 +5100,12 @@ inline int32_t List_1_get_Count_mF0AD9998323AA1F28F1709B28FB7A089A373221B_inline
 {
 	return ((  int32_t (*) (List_1_tCB9190A56C65FD59CE07C6A0EA71F30067A43D81*, const RuntimeMethod*))List_1_get_Count_m4407E4C389F22B8CEC282C15D56516658746C383_gshared_inline)(__this, method);
 }
+// System.String UnityEngine.Object::get_name()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* __this, const RuntimeMethod* method) ;
+// System.Boolean System.String::op_Equality(System.String,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0 (String_t* ___a0, String_t* ___b1, const RuntimeMethod* method) ;
+// System.Void Oculus.Interaction.ActiveStateTracker::RayInteractorSwitch(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActiveStateTracker_RayInteractorSwitch_m6FF1555D9BC6991B472DEF070AB0DCE485FA06B2 (ActiveStateTracker_tD408DDBDA5FEFF9D6260857B1A47466DB73DF9DE* __this, bool ___open0, const RuntimeMethod* method) ;
 // System.Void Oculus.Interaction.ActiveStateTracker::InjectActiveState(Oculus.Interaction.IActiveState)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActiveStateTracker_InjectActiveState_m0AF5867B0F98C7580D36635295473EC4017091E2 (ActiveStateTracker_tD408DDBDA5FEFF9D6260857B1A47466DB73DF9DE* __this, RuntimeObject* ___activeState0, const RuntimeMethod* method) ;
 // System.Void Oculus.Interaction.CandidateComparer`1<Oculus.Interaction.ICandidatePosition>::.ctor()
@@ -9521,7 +9554,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActiveStateTracker_Start_m34563090DDAD5D
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ActiveStateTracker_ChangedActiveScene_mD5EA2B3F8DD5A1D7C1C058CCBDDC1F69465B7800_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_Add_m43FBF207375C6E06B8C45ECE614F9B8008FB686E_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UnityAction_2_t3E619780AA870611658EC8B01DA6EA2EC42B13CE_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
@@ -9576,6 +9612,12 @@ IL_002c:
 
 IL_003a:
 	{
+		// SceneManager.activeSceneChanged += ChangedActiveScene;
+		UnityAction_2_t3E619780AA870611658EC8B01DA6EA2EC42B13CE* L_10 = (UnityAction_2_t3E619780AA870611658EC8B01DA6EA2EC42B13CE*)il2cpp_codegen_object_new(UnityAction_2_t3E619780AA870611658EC8B01DA6EA2EC42B13CE_il2cpp_TypeInfo_var);
+		NullCheck(L_10);
+		UnityAction_2__ctor_m0C555E922D7495D9C81347C4CC01080514601692(L_10, __this, (intptr_t)((void*)ActiveStateTracker_ChangedActiveScene_mD5EA2B3F8DD5A1D7C1C058CCBDDC1F69465B7800_RuntimeMethod_var), NULL);
+		il2cpp_codegen_runtime_class_init_inline(SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
+		SceneManager_add_activeSceneChanged_mC9236EE99263057E56736C4D044401A8F238155B(L_10, NULL);
 		// SetDependentsActive(false);
 		ActiveStateTracker_SetDependentsActive_m807A758D9992312CBB05BC865B6C786BEF9AC69F(__this, (bool)0, NULL);
 		// }
@@ -9711,6 +9753,148 @@ IL_0042:
 		}
 	}
 	{
+		// }
+		return;
+	}
+}
+// System.Void Oculus.Interaction.ActiveStateTracker::RayInteractorSwitch(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActiveStateTracker_RayInteractorSwitch_m6FF1555D9BC6991B472DEF070AB0DCE485FA06B2 (ActiveStateTracker_tD408DDBDA5FEFF9D6260857B1A47466DB73DF9DE* __this, bool ___open0, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IActiveState_tE0F401037570483F58CD8CD4ED2A862D494517EB_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Count_m4C37ED2D928D63B80F55AF434730C2D64EEB9F22_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Count_mF0AD9998323AA1F28F1709B28FB7A089A373221B_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Item_mDE631DC12D8BD36A6249E2954C709BA794EF52F1_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Item_mE8DBE527F24D9CFED839C34216C475B716169979_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD94055491BE7B23AD2B6F85621F11D33CB68DA5F);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	int32_t V_1 = 0;
+	{
+		// for (int i = 0; i < _gameObjects.Count; ++i)
+		V_0 = 0;
+		goto IL_0055;
+	}
+
+IL_0004:
+	{
+		// if (_gameObjects[i].name == "Visuals") {
+		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_0 = __this->____gameObjects_7;
+		int32_t L_1 = V_0;
+		NullCheck(L_0);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2;
+		L_2 = List_1_get_Item_mE8DBE527F24D9CFED839C34216C475B716169979(L_0, L_1, List_1_get_Item_mE8DBE527F24D9CFED839C34216C475B716169979_RuntimeMethod_var);
+		NullCheck(L_2);
+		String_t* L_3;
+		L_3 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(L_2, NULL);
+		bool L_4;
+		L_4 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_3, _stringLiteralD94055491BE7B23AD2B6F85621F11D33CB68DA5F, NULL);
+		if (!L_4)
+		{
+			goto IL_0035;
+		}
+	}
+	{
+		// _gameObjects[i].SetActive(open);
+		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_5 = __this->____gameObjects_7;
+		int32_t L_6 = V_0;
+		NullCheck(L_5);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_7;
+		L_7 = List_1_get_Item_mE8DBE527F24D9CFED839C34216C475B716169979(L_5, L_6, List_1_get_Item_mE8DBE527F24D9CFED839C34216C475B716169979_RuntimeMethod_var);
+		bool L_8 = ___open0;
+		NullCheck(L_7);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_7, L_8, NULL);
+		goto IL_0051;
+	}
+
+IL_0035:
+	{
+		// _gameObjects[i].SetActive(ActiveState.Active);
+		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_9 = __this->____gameObjects_7;
+		int32_t L_10 = V_0;
+		NullCheck(L_9);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11;
+		L_11 = List_1_get_Item_mE8DBE527F24D9CFED839C34216C475B716169979(L_9, L_10, List_1_get_Item_mE8DBE527F24D9CFED839C34216C475B716169979_RuntimeMethod_var);
+		RuntimeObject* L_12 = __this->___ActiveState_5;
+		NullCheck(L_12);
+		bool L_13;
+		L_13 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean Oculus.Interaction.IActiveState::get_Active() */, IActiveState_tE0F401037570483F58CD8CD4ED2A862D494517EB_il2cpp_TypeInfo_var, L_12);
+		NullCheck(L_11);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_11, L_13, NULL);
+	}
+
+IL_0051:
+	{
+		// for (int i = 0; i < _gameObjects.Count; ++i)
+		int32_t L_14 = V_0;
+		V_0 = ((int32_t)il2cpp_codegen_add(L_14, 1));
+	}
+
+IL_0055:
+	{
+		// for (int i = 0; i < _gameObjects.Count; ++i)
+		int32_t L_15 = V_0;
+		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_16 = __this->____gameObjects_7;
+		NullCheck(L_16);
+		int32_t L_17;
+		L_17 = List_1_get_Count_m4C37ED2D928D63B80F55AF434730C2D64EEB9F22_inline(L_16, List_1_get_Count_m4C37ED2D928D63B80F55AF434730C2D64EEB9F22_RuntimeMethod_var);
+		if ((((int32_t)L_15) < ((int32_t)L_17)))
+		{
+			goto IL_0004;
+		}
+	}
+	{
+		// for (int i = 0; i < _monoBehaviours.Count; ++i)
+		V_1 = 0;
+		goto IL_0087;
+	}
+
+IL_0067:
+	{
+		// _monoBehaviours[i].enabled = ActiveState.Active;
+		List_1_tCB9190A56C65FD59CE07C6A0EA71F30067A43D81* L_18 = __this->____monoBehaviours_8;
+		int32_t L_19 = V_1;
+		NullCheck(L_18);
+		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_20;
+		L_20 = List_1_get_Item_mDE631DC12D8BD36A6249E2954C709BA794EF52F1(L_18, L_19, List_1_get_Item_mDE631DC12D8BD36A6249E2954C709BA794EF52F1_RuntimeMethod_var);
+		RuntimeObject* L_21 = __this->___ActiveState_5;
+		NullCheck(L_21);
+		bool L_22;
+		L_22 = InterfaceFuncInvoker0< bool >::Invoke(0 /* System.Boolean Oculus.Interaction.IActiveState::get_Active() */, IActiveState_tE0F401037570483F58CD8CD4ED2A862D494517EB_il2cpp_TypeInfo_var, L_21);
+		NullCheck(L_20);
+		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_20, L_22, NULL);
+		// for (int i = 0; i < _monoBehaviours.Count; ++i)
+		int32_t L_23 = V_1;
+		V_1 = ((int32_t)il2cpp_codegen_add(L_23, 1));
+	}
+
+IL_0087:
+	{
+		// for (int i = 0; i < _monoBehaviours.Count; ++i)
+		int32_t L_24 = V_1;
+		List_1_tCB9190A56C65FD59CE07C6A0EA71F30067A43D81* L_25 = __this->____monoBehaviours_8;
+		NullCheck(L_25);
+		int32_t L_26;
+		L_26 = List_1_get_Count_mF0AD9998323AA1F28F1709B28FB7A089A373221B_inline(L_25, List_1_get_Count_mF0AD9998323AA1F28F1709B28FB7A089A373221B_RuntimeMethod_var);
+		if ((((int32_t)L_24) < ((int32_t)L_26)))
+		{
+			goto IL_0067;
+		}
+	}
+	{
+		// }
+		return;
+	}
+}
+// System.Void Oculus.Interaction.ActiveStateTracker::ChangedActiveScene(UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActiveStateTracker_ChangedActiveScene_mD5EA2B3F8DD5A1D7C1C058CCBDDC1F69465B7800 (ActiveStateTracker_tD408DDBDA5FEFF9D6260857B1A47466DB73DF9DE* __this, Scene_tA1DC762B79745EB5140F054C884855B922318356 ___current0, Scene_tA1DC762B79745EB5140F054C884855B922318356 ___next1, const RuntimeMethod* method) 
+{
+	{
+		// RayInteractorSwitch(false);
+		ActiveStateTracker_RayInteractorSwitch_m6FF1555D9BC6991B472DEF070AB0DCE485FA06B2(__this, (bool)0, NULL);
 		// }
 		return;
 	}

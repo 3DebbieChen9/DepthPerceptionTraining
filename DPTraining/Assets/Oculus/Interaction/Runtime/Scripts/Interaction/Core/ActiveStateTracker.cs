@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Serialization;
+using UnityEngine.SceneManagement;
 
 namespace Oculus.Interaction
 {
@@ -72,6 +73,8 @@ namespace Oculus.Interaction
                 }
             }
 
+            SceneManager.activeSceneChanged += ChangedActiveScene;
+
             SetDependentsActive(false);
         }
 
@@ -94,6 +97,29 @@ namespace Oculus.Interaction
             {
                 _monoBehaviours[i].enabled = active;
             }
+        }
+
+        public void RayInteractorSwitch(bool open)
+        {
+            for (int i = 0; i < _gameObjects.Count; ++i)
+            {
+                if (_gameObjects[i].name == "Visuals") {
+                    _gameObjects[i].SetActive(open);
+                }
+                else {
+                    _gameObjects[i].SetActive(ActiveState.Active);
+                }
+            }
+
+            for (int i = 0; i < _monoBehaviours.Count; ++i)
+            {
+                _monoBehaviours[i].enabled = ActiveState.Active;
+            }
+        }
+
+        public void ChangedActiveScene(Scene current, Scene next) // Force setting gameObjects' activation states when change scene
+        {
+            RayInteractorSwitch(false);
         }
 
         #region Inject

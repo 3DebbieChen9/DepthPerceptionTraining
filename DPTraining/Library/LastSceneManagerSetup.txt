@@ -1,9 +1,13 @@
 sceneSetups:
 - path: Assets/Scenes/StartScene.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
+- path: Assets/Scenes/CalibrationScene.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/CalibrationScene.unity
+- path: Assets/Scenes/PunchSettingScene.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
@@ -15,11 +19,11 @@ sceneSetups:
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/SettingScene_TC.unity
+- path: Assets/Scenes/TrainingScene.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
 - path: Assets/Scenes/FunctionDeveloping/CoachMovement.unity
-  isLoaded: 1
-  isActive: 1
+  isLoaded: 0
+  isActive: 0
   isSubScene: 0

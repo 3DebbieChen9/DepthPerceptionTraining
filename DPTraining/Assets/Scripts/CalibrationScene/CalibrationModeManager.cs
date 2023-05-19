@@ -7,26 +7,34 @@ using DepthPerceptionSystem;
 public class CalibrationModeManager : MonoBehaviour
 {
     [SerializeField]
-    private MainManager mainManager;
+    public MainManager mainManager;
     [SerializeField]
     private CalibrationUIManager calibrationUIManager;
     [SerializeField]
     private CalibrationState curState;
 
     private int markerPutCount = 0;
-
     private float armLength = 0.0f;
     private float centerEyeToControllerLength = 0.0f;
     private float centerEyeToFloor = 0.0f;
 
     [SerializeField]
     public GameObject[] movableRangeMarkers;
+    [SerializeField]
+    public GameObject heightModifyKeyPad;
+    [SerializeField]
+    public GameObject heightModifyButton;
+    [SerializeField]
+    public GameObject judgeStraightArmCollider;
 
-    void Awake() {
-        if (this.mainManager == null) {
+    void Awake()
+    {
+        if (this.mainManager == null)
+        {
             this.mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
         }
-        if (this.calibrationUIManager == null) {
+        if (this.calibrationUIManager == null)
+        {
             this.calibrationUIManager = this.gameObject.GetComponent<CalibrationUIManager>();
         }
     }
@@ -40,8 +48,10 @@ public class CalibrationModeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch)) {
-            switch (this.curState) {
+        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
+        {
+            switch (this.curState)
+            {
                 case CalibrationState.MovableRange:
                     this.putRangeMarker();
                     break;
@@ -62,8 +72,10 @@ public class CalibrationModeManager : MonoBehaviour
             }
         }
 
-        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)) {
-            switch (this.curState) {
+        if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch))
+        {
+            switch (this.curState)
+            {
                 case CalibrationState.MovableRange:
                     this.calibrationSceneInitialized();
                     break;
@@ -80,7 +92,8 @@ public class CalibrationModeManager : MonoBehaviour
         }
     }
 
-    public void calibrationSceneInitialized() {
+    public void calibrationSceneInitialized()
+    {
         this.mainManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = true;
         this.mainManager.curSystemMode = SystemMode.CalibrationMode;
         this.mainManager.OVRControllerLeft.SetActive(true);
@@ -95,12 +108,15 @@ public class CalibrationModeManager : MonoBehaviour
         this.centerEyeToFloor = 0.0f;
         this.clearMarkers();
         this.mainManager.enableUserArmMeshRenderers(false);
+        this.heightModifyKeyPad.SetActive(false);
+        this.heightModifyButton.SetActive(false);
         // [----] Call Calibration UI Function
         // Movable Range Instruction
         this.calibrationUIManager.movableRangeInstruction(this.curState);
     }
 
-    public void armLengthInitialized() {
+    public void armLengthInitialized()
+    {
         this.curState = CalibrationState.TPose_RHand;
         this.armLength = 0.0f;
         this.centerEyeToControllerLength = 0.0f;
@@ -111,20 +127,28 @@ public class CalibrationModeManager : MonoBehaviour
         this.calibrationUIManager.movableRangeResult(false, this.mainManager.myUserInfo.movableRange.length);
         // T-Pose Instruction - Right
         this.calibrationUIManager.tPoseInstruction(this.curState);
+
+        this.mainManager.OVRControllerLeft.SetActive(true);
+        this.mainManager.OVRControllerRight.SetActive(true);
+        this.mainManager.OVRBoxingLeft.SetActive(false);
+        this.mainManager.OVRBoxingRight.SetActive(false);
     }
 
-    void calibrateIdlePose() {
+    void calibrateIdlePose()
+    {
         this.getIdlePoseData();
         this.mainManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
         // [----] Save User Info to JSON
         this.mainManager.saveToJSON_user(this.mainManager.myUserInfo);
-        this.mainManager.curSystemMode = SystemMode.SelectionMode;
-        this.mainManager.changeScene("SelectionScene");
+        this.mainManager.curSystemMode = SystemMode.PunchSettingMode;
+        this.mainManager.changeScene("PunchSettingScene");
     }
 
-    void putRangeMarker() {
-        if (this.markerPutCount < this.movableRangeMarkers.Length) {
-            this.movableRangeMarkers[this.markerPutCount].transform.position = new Vector3 (
+    void putRangeMarker()
+    {
+        if (this.markerPutCount < this.movableRangeMarkers.Length)
+        {
+            this.movableRangeMarkers[this.markerPutCount].transform.position = new Vector3(
                 this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position.x,
                 this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().trackerAnchor.position.y,
                 this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position.z
@@ -133,7 +157,8 @@ public class CalibrationModeManager : MonoBehaviour
 
             this.markerPutCount++;
 
-            if (this.markerPutCount == this.movableRangeMarkers.Length) {
+            if (this.markerPutCount == this.movableRangeMarkers.Length)
+            {
                 this.setSceneOrigin();
                 this.getMovableRangeLength();
                 this.curState = CalibrationState.TPose_RHand;
@@ -144,11 +169,13 @@ public class CalibrationModeManager : MonoBehaviour
         }
     }
 
-    void getTPoseData() {
+    void getTPoseData()
+    {
         Vector3 centerEyePos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
         Vector3 rightControllerPos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
         Vector3 leftControllerPos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
-        switch (this.curState) {
+        switch (this.curState)
+        {
             case CalibrationState.TPose_RHand:
                 this.centerEyeToControllerLength += this.calculateHorizatonalDistance(centerEyePos, rightControllerPos);
                 this.centerEyeToFloor += centerEyePos.y;
@@ -166,7 +193,7 @@ public class CalibrationModeManager : MonoBehaviour
 
                 this.mainManager.myUserInfo.userBodySize.centerEyeToControllerLength = this.centerEyeToControllerLength / 2.0f;
                 this.mainManager.myUserInfo.userBodySize.height = this.centerEyeToFloor / 2.0f + this.mainManager.mySettingInfo.userAvgDistanceBetweenEyesAndTopHead;
-                
+
                 this.mainManager.resizeUserIK();
 
                 // [----] Call Calibration UI Function
@@ -175,20 +202,41 @@ public class CalibrationModeManager : MonoBehaviour
                 this.curState = CalibrationState.ArmStraight_RHand;
                 // Arm Straight Instruction - Right
                 this.calibrationUIManager.armLengthInstruction(this.curState);
+                this.heightModifyButton.SetActive(true);
+                this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(true);
+                this.mainManager.OVRControllerRayRight.RayInteractorSwitch(true);
+
+                this.mainManager.enableUserArmMeshRenderers(true);
+                this.mainManager.OVRControllerLeft.SetActive(false);
+                this.mainManager.OVRControllerRight.SetActive(false);
+                this.mainManager.OVRBoxingLeft.SetActive(true);
+                this.mainManager.OVRBoxingRight.SetActive(true);
                 break;
             default:
                 Debug.LogError("Error: Something Wrong while getting T-Pose Data");
                 break;
         }
     }
-
-    void getArmStraightData() {
+    void getArmStraightData()
+    {
         Vector3 rightControllerPos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
         Vector3 leftControllerPos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
-        switch (this.curState) {
+        switch (this.curState)
+        {
             case CalibrationState.ArmStraight_RHand:
+                this.heightModifyButton.SetActive(false);
+                this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(false);
+                this.mainManager.OVRControllerRayRight.RayInteractorSwitch(false);
                 this.armLength += Vector3.Distance(rightControllerPos, leftControllerPos);
                 this.mainManager.getHandStraightDefaultAngle(Hand.Right);
+                // 找右手的位置
+                Transform rightHand = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor;
+                // 在 Controller 的位置生成 Collider，並將 Parent 設為上臂
+                GameObject rightdest = Instantiate(judgeStraightArmCollider,
+                                                    rightHand.position - rightHand.forward * 0.052f + rightHand.right * 0.054f,
+                                                    new Quaternion(0.0f, 0.0f, 0.0f, 0.0f),
+                                                    this.mainManager.rightUpperArm_IK.transform);
+                rightdest.transform.localPosition = new Vector3(0.9f, 0.0f, 0.0f);
 
                 // [----] Call Calibration UI Function
                 // Arm Straight Result - Right (Length)
@@ -200,10 +248,22 @@ public class CalibrationModeManager : MonoBehaviour
             case CalibrationState.ArmStraight_LHand:
                 this.armLength += Vector3.Distance(rightControllerPos, leftControllerPos);
                 this.mainManager.getHandStraightDefaultAngle(Hand.Left);
+                // 找左手的位置
+                Transform leftHand = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor;
+                // 在 Controller 的位置生成 Collider，並將 Parent 設為上臂
+                GameObject leftdest = Instantiate(judgeStraightArmCollider,
+                                                    leftHand.position - leftHand.forward * 0.052f + leftHand.right * 0.054f,
+                                                    new Quaternion(0.0f, 0.0f, 0.0f, 0.0f),
+                                                    this.mainManager.leftUpperArm_IK.transform);
+                leftdest.transform.localPosition = new Vector3(-0.9f, 0.0f, 0.0f);
+
 
                 this.mainManager.myUserInfo.userBodySize.armLength = this.armLength / 2.0f;
                 this.mainManager.myUserInfo.userBodySize.shoulderWidth = (this.mainManager.myUserInfo.userBodySize.centerEyeToControllerLength - this.mainManager.myUserInfo.userBodySize.armLength) * 2.0f;
-                
+                if (this.mainManager.myUserInfo.userBodySize.shoulderWidth < 0.1f)
+                {
+                    this.mainManager.myUserInfo.userBodySize.shoulderWidth = 0.20f;
+                }
                 // [----] Call Calibration UI Function
                 // Arm Straight Result - Left (Length)
                 this.calibrationUIManager.armLengthResult(this.curState, this.mainManager.myUserInfo.userBodySize.armLength, this.mainManager.myUserInfo.userBodySize.shoulderWidth);
@@ -216,9 +276,8 @@ public class CalibrationModeManager : MonoBehaviour
         }
     }
 
-    void getIdlePoseData() {
-        this.mainManager.enableUserArmMeshRenderers(true);
-
+    void getIdlePoseData()
+    {
         Vector3 centerEyePos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
         Vector3 rightControllerPos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor.position;
         Vector3 leftControllerPos = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor.position;
@@ -229,18 +288,22 @@ public class CalibrationModeManager : MonoBehaviour
         this.mainManager.myUserInfo.userBodySize.idlePoseRadius = radius + 0.20f;
     }
 
-    void clearMarkers() {
+    void clearMarkers()
+    {
         this.mainManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
-        foreach (GameObject marker in this.movableRangeMarkers) {
+        foreach (GameObject marker in this.movableRangeMarkers)
+        {
             marker.SetActive(false);
         }
     }
 
-    float calculateHorizatonalDistance (Vector3 p1,  Vector3 p2) {
+    float calculateHorizatonalDistance(Vector3 p1, Vector3 p2)
+    {
         return Mathf.Sqrt(Mathf.Pow(p1.x - p2.x, 2) + Mathf.Pow(p1.z - p2.z, 2));
     }
 
-    void getMovableRangeLength() {
+    void getMovableRangeLength()
+    {
         List<float> lengthList = new List<float>();
         lengthList.Add(this.calculateHorizatonalDistance(this.movableRangeMarkers[0].transform.position, this.movableRangeMarkers[1].transform.position));
         lengthList.Add(this.calculateHorizatonalDistance(this.movableRangeMarkers[1].transform.position, this.movableRangeMarkers[2].transform.position));
@@ -251,13 +314,15 @@ public class CalibrationModeManager : MonoBehaviour
         float detectedResult = (lengthList[2] + lengthList[3]) / 2.0f;
         this.mainManager.myUserInfo.movableRange.detectedLengthInVR = detectedResult;
 
-        if (detectedResult < this.mainManager.myUserInfo.movableRange.minRequiredLengthInVR) {
+        if (detectedResult < this.mainManager.myUserInfo.movableRange.minRequiredLengthInVR)
+        {
             this.mainManager.myUserInfo.movableRange.length = this.mainManager.myUserInfo.movableRange.minRequiredLengthInVR;
             // [----] Call Calibration UI Function
             // Movable Range Result - Too Short
             this.calibrationUIManager.movableRangeResult(true, this.mainManager.myUserInfo.movableRange.length);
         }
-        else {
+        else
+        {
             this.mainManager.myUserInfo.movableRange.length = detectedResult;
             // [----] Call Calibration UI Function
             // Movable Range Result - Success
@@ -265,9 +330,11 @@ public class CalibrationModeManager : MonoBehaviour
         }
     }
 
-    public void setSceneOrigin() {
+    public void setSceneOrigin()
+    {
         Vector3 centroid = new Vector3(0.0f, 0.0f, 0.0f);
-        foreach (GameObject marker in this.movableRangeMarkers) {
+        foreach (GameObject marker in this.movableRangeMarkers)
+        {
             centroid += marker.transform.position;
         }
         centroid /= this.movableRangeMarkers.Length;
@@ -277,7 +344,7 @@ public class CalibrationModeManager : MonoBehaviour
         lookAtPoint += this.movableRangeMarkers[1].transform.position;
         lookAtPoint /= 2.0f;
 
-        this.mainManager.sceneOrigin.transform.localScale = new Vector3 (
+        this.mainManager.sceneOrigin.transform.localScale = new Vector3(
             this.mainManager.mySettingInfo.evaluationThreshold.radiusBetweenOriginAndUser * 2.0f,
             0.02f,
             this.mainManager.mySettingInfo.evaluationThreshold.radiusBetweenOriginAndUser * 2.0f
@@ -288,5 +355,27 @@ public class CalibrationModeManager : MonoBehaviour
         this.mainManager.sceneOriginRotation = this.mainManager.sceneOrigin.transform.rotation;
 
         this.mainManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = true;
+    }
+
+    public void modifyHeightBtnClick()
+    {
+        this.heightModifyKeyPad.GetComponent<KeypadInput>().inputText.text = this.mainManager.myUserInfo.userBodySize.height.ToString("F2");
+        this.heightModifyKeyPad.SetActive(true);
+    }
+
+    public void saveHeightBtnClick()
+    {
+        try
+        {
+            this.mainManager.myUserInfo.userBodySize.height = float.Parse(this.heightModifyKeyPad.GetComponent<KeypadInput>().inputText.text);
+            this.heightModifyKeyPad.SetActive(false);
+            this.mainManager.resizeUserIK();
+            this.calibrationUIManager.tPoseResult(this.curState, this.mainManager.myUserInfo.userBodySize.centerEyeToControllerLength, this.mainManager.myUserInfo.userBodySize.height);
+        }
+        catch (System.Exception e)
+        {
+            this.heightModifyKeyPad.GetComponent<KeypadInput>().inputText.text = this.mainManager.myUserInfo.userBodySize.height.ToString("F2");
+            Debug.Log(e);
+        }
     }
 }

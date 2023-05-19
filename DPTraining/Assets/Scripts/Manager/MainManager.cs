@@ -6,6 +6,7 @@ using System.IO;
 using DepthPerceptionSystem;
 using Newtonsoft.Json;
 using InstructionText;
+using Oculus.Interaction;
 
 public class MainManager : MonoBehaviour
 {
@@ -31,8 +32,8 @@ public class MainManager : MonoBehaviour
 
     [SerializeField]
     public GameObject sceneOrigin;
-    
-    [SerializeField] 
+
+    [SerializeField]
     public GameObject OVRCameraRig;
     [SerializeField]
     public GameObject OVRControllerLeft;
@@ -42,6 +43,15 @@ public class MainManager : MonoBehaviour
     public GameObject OVRBoxingLeft;
     [SerializeField]
     public GameObject OVRBoxingRight;
+    [SerializeField]
+    public Transform BoxingGloveEdgeLeft;
+    [SerializeField]
+    public Transform BoxingGloveEdgeRight;
+
+    [SerializeField]
+    public ActiveStateTracker OVRControllerRayLeft;
+    [SerializeField]
+    public ActiveStateTracker OVRControllerRayRight;
 
     [SerializeField]
     public GameObject rightUpperArm_noitom;
@@ -58,20 +68,23 @@ public class MainManager : MonoBehaviour
     [SerializeField]
     public GameObject leftUpperArm_IK;
     [SerializeField]
-    public GameObject leftLowerArm_IK; 
+    public GameObject leftLowerArm_IK;
 
     [SerializeField]
     public GameObject userIK;
+
     [SerializeField]
     public MeshRenderer[] userArmMeshRenderers;
 
-    private void Awake() 
+    private void Awake()
     {
-        if (Instance == null) {
+        if (Instance == null)
+        {
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-        else {
+        else
+        {
             Destroy(this.gameObject);
         }
     }
@@ -85,10 +98,10 @@ public class MainManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void mainManagerInitialize() 
+    void mainManagerInitialize()
     {
         this.curLanguage = Lanaguage.English;
         this.myUserInfo = new UserInfo();
@@ -98,37 +111,47 @@ public class MainManager : MonoBehaviour
 
         this.sceneOriginPosition = new Vector3(0.0f, 0.0f, 0.0f);
         this.sceneOriginRotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
-        this.sceneOrigin.GetComponent<MeshRenderer>().enabled = true;
+        this.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
 
         this.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = true;
         this.enableUserArmMeshRenderers(false);
+        this.OVRControllerRayLeft.RayInteractorSwitch(false);
+        this.OVRControllerRayRight.RayInteractorSwitch(false);
         // this.loadFromJSON_setting();
     }
 
     public void resizeUserIK()
     {
-        float scale = this.myUserInfo.userBodySize.height / this.mySettingInfo.coachDefaultValue.avtarDefaultHeight;
+        // float userAvatarDefaultHeight = 1.82747f;
+        float userAvatarDefaultHeight = 1.82f;
+        float scale = this.myUserInfo.userBodySize.height / userAvatarDefaultHeight;
         this.userIK.GetComponent<RootMotion.Demos.VRIKCalibrationBasic>().scaleMlp = scale;
+        this.userIK.GetComponent<RootMotion.FinalIK.VRIK>().solver.scale = scale;
+        // this.userIK.transform.localScale = new Vector3(scale, scale, scale);
     }
-    public void enableUserArmMeshRenderers (bool enable) 
+    public void enableUserArmMeshRenderers(bool enable)
     {
-        foreach (MeshRenderer meshRenderer in userArmMeshRenderers) {
+        foreach (MeshRenderer meshRenderer in userArmMeshRenderers)
+        {
             meshRenderer.enabled = enable;
         }
     }
 
-    public float[] calculateLowArmToUpArmAngle(Transform upArm, Transform lowArm) {        
+    public float[] calculateLowArmToUpArmAngle(Transform upArm, Transform lowArm)
+    {
         Vector3 upArmToLowArmNormalized = (lowArm.position - upArm.position).normalized;
-        
+
         float angle_forward = Vector3.Angle(lowArm.forward, -upArmToLowArmNormalized);
         float angle_up = Vector3.Angle(lowArm.up, -upArmToLowArmNormalized);
         float angle_right = Vector3.Angle(lowArm.right, -upArmToLowArmNormalized);
 
-        return new float[] {angle_forward, angle_up, angle_right};
+        return new float[] { angle_forward, angle_up, angle_right };
     }
 
-    public void getHandStraightDefaultAngle(Hand hand) {
-        if (hand == Hand.Right) {
+    public void getHandStraightDefaultAngle(Hand hand)
+    {
+        if (hand == Hand.Right)
+        {
             float[] anglesNoitom = this.calculateLowArmToUpArmAngle(this.rightUpperArm_noitom.transform, this.rightLowerArm_noitom.transform);
             this.myUserInfo.userArmStraightAngle.rightNoitom.forward = anglesNoitom[0];
             this.myUserInfo.userArmStraightAngle.rightNoitom.up = anglesNoitom[1];
@@ -139,7 +162,8 @@ public class MainManager : MonoBehaviour
             this.myUserInfo.userArmStraightAngle.rightIK.up = anglesIK[1];
             this.myUserInfo.userArmStraightAngle.rightIK.right = anglesIK[2];
         }
-        else {
+        else
+        {
             float[] anglesNoitom = this.calculateLowArmToUpArmAngle(this.leftUpperArm_noitom.transform, this.leftLowerArm_noitom.transform);
             this.myUserInfo.userArmStraightAngle.leftNoitom.forward = anglesNoitom[0];
             this.myUserInfo.userArmStraightAngle.leftNoitom.up = anglesNoitom[1];
@@ -150,17 +174,33 @@ public class MainManager : MonoBehaviour
             this.myUserInfo.userArmStraightAngle.leftIK.up = anglesIK[1];
             this.myUserInfo.userArmStraightAngle.leftIK.right = anglesIK[2];
         }
-        
+
     }
 
 
-    public void changeScene(string sceneName) 
+    public void changeScene(string sceneName)
     {
+        foreach (Transform child in this.OVRBoxingLeft.transform)
+        {
+            if (child.gameObject.tag == "LightBall")
+            {
+                child.gameObject.GetComponent<BallCueOnPlayer>().destroy();
+            }
+        }
+
+        foreach (Transform child in this.OVRBoxingRight.transform)
+        {
+            if (child.gameObject.tag == "LightBall")
+            {
+                child.gameObject.GetComponent<BallCueOnPlayer>().destroy();
+            }
+        }
+
         Debug.Log("Change Scene to " + sceneName);
         SceneManager.LoadScene(sceneName);
     }
 
-    public void saveToJSON_user (UserInfo userInfo) 
+    public void saveToJSON_user(UserInfo userInfo)
     {
         string jsonString = JsonConvert.SerializeObject(userInfo);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
@@ -169,7 +209,7 @@ public class MainManager : MonoBehaviour
 
         Debug.Log($"UserInfo saved to {filePath}");
     }
-    public void saveToJSON_selection (SelectionInfo selectionInfo) 
+    public void saveToJSON_selection(SelectionInfo selectionInfo)
     {
         string jsonString = JsonConvert.SerializeObject(selectionInfo);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
@@ -178,7 +218,7 @@ public class MainManager : MonoBehaviour
 
         Debug.Log($"SelectionInfo saved to {filePath}");
     }
-    public void saveToJSON_setting (SettingInfo settingInfo) 
+    public void saveToJSON_setting(SettingInfo settingInfo)
     {
         string jsonString = JsonConvert.SerializeObject(settingInfo);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
@@ -187,16 +227,16 @@ public class MainManager : MonoBehaviour
 
         Debug.Log($"SettingInfo saved to {filePath}");
     }
-    public void saveToJSON_testResult (TestResult testResult) 
+    public void saveToJSON_testResult(TotalUnitResult testResult)
     {
         string jsonString = JsonConvert.SerializeObject(testResult);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-        string filePath = $"{Application.persistentDataPath}/{dateTime}_TestResult.json";
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_TestTotalResult.json";
         File.WriteAllText(filePath, jsonString);
 
         Debug.Log($"TestResult saved to {filePath}");
     }
-    public void saveToJSON_unitResult (UnitResult unitResult, int unitNum) 
+    public void saveToJSON_unitResult(UnitResult unitResult, int unitNum)
     {
         string jsonString = JsonConvert.SerializeObject(unitResult);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
@@ -205,7 +245,7 @@ public class MainManager : MonoBehaviour
 
         Debug.Log($"UnitResult_{unitNum} saved to {filePath}");
     }
-    public void loadFromJSON_setting ()
+    public void loadFromJSON_setting()
     {
         string fileName = "SettingInfo_2020-11-18 15_00_00"; // TODO: get file name
         TextAsset jsonFile = Resources.Load<TextAsset>(fileName);
