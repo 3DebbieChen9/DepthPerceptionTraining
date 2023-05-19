@@ -1581,8 +1581,8 @@ extern void CoachManager_coachToInitialPositionWhenSceneStart_m937E61D3277AD97B7
 extern void CoachManager_moveToInitialPosition_mD21F0BC3579053E19C1375E2D0CC11FA2EB9983E (void);
 // 0x00000318 System.Void CoachManager::invokeTargetMoveToInitial(System.Single)
 extern void CoachManager_invokeTargetMoveToInitial_m733D5B42642D9BF0AEBBEAF2F641EBC17041AF71 (void);
-// 0x00000319 System.Void CoachManager::randomMovement(DepthPerceptionSystem.TrainingLevel)
-extern void CoachManager_randomMovement_m9D9D8652E7AF3A8C92A27617FC52107C6BFD7810 (void);
+// 0x00000319 System.Void CoachManager::movement(DepthPerceptionSystem.MovingSpeed,DepthPerceptionSystem.MovingDirection)
+extern void CoachManager_movement_mF3FD7451257E430CCEC5E6834FFDF1465CB022F8 (void);
 // 0x0000031A System.Void CoachManager::startMoving(DepthPerceptionSystem.MovingDirection,System.Single,System.Single)
 extern void CoachManager_startMoving_m32986CB52DF8AE8FE9691FEDB4A9236EBC4DD017 (void);
 // 0x0000031B System.Void CoachManager::stopMoving()
@@ -1599,3335 +1599,3427 @@ extern void CoachRenderManager_Update_m123208D4EFC93C5D4398B53720460774F32F3E92 
 extern void CoachRenderManager_clearCoachColor_m7A92B886CDC5B45353C7A46E94E092B8C557D711 (void);
 // 0x00000321 System.Void CoachRenderManager::.ctor()
 extern void CoachRenderManager__ctor_m058FEEFFE190372024AD5558B870058B618FAA4F (void);
-// 0x00000322 System.Void ball::Start()
+// 0x00000322 UnityEngine.Material CutoutMaskUI::get_materialForRendering()
+extern void CutoutMaskUI_get_materialForRendering_m018A9FAB498A5055F3C95F89547B2409E83324BA (void);
+// 0x00000323 System.Void CutoutMaskUI::.ctor()
+extern void CutoutMaskUI__ctor_mF4C26F02B53AB98565098737BD23D27646870C44 (void);
+// 0x00000324 System.Void ball::Start()
 extern void ball_Start_m1CD24200BCAB6E776C7B49D8A61BD558396C2D09 (void);
-// 0x00000323 System.Void ball::Update()
+// 0x00000325 System.Void ball::Update()
 extern void ball_Update_m63087F3133C02AD7502C1F52B6BC8A38E3C95516 (void);
-// 0x00000324 System.Void ball::setRadius()
+// 0x00000326 System.Void ball::setRadius()
 extern void ball_setRadius_m3811E39BC926804D54DEB721D67141FF6D291B3A (void);
-// 0x00000325 System.Void ball::setScale(System.Single)
+// 0x00000327 System.Void ball::setScale(System.Single)
 extern void ball_setScale_mC4D31EC26B08863B8F8B3B3A93F649256C7027E1 (void);
-// 0x00000326 System.Void ball::Pause()
+// 0x00000328 System.Void ball::Pause()
 extern void ball_Pause_mDDB1F87D9F4E170821C86265867E4204E9C662BA (void);
-// 0x00000327 System.Void ball::ChangeColor(UnityEngine.Color)
+// 0x00000329 System.Void ball::ChangeColor(UnityEngine.Color)
 extern void ball_ChangeColor_m338C1FFB758646F8549EF649203592A3DFCF68D9 (void);
-// 0x00000328 System.Void ball::destroy()
+// 0x0000032A System.Void ball::destroy()
 extern void ball_destroy_m453F1E3B909E64E6D4337A01C2EFD15722B30705 (void);
-// 0x00000329 System.Void ball::.ctor()
+// 0x0000032B System.Void ball::.ctor()
 extern void ball__ctor_m596394A37522CF45E95FC7561A8D3BED786A7E09 (void);
-// 0x0000032A System.Void CoachAnimationDeveloping::Start()
+// 0x0000032C System.Void BarUpdating::Start()
+extern void BarUpdating_Start_m2878230C4E30FC133EC99C9D625C08F38C674AF5 (void);
+// 0x0000032D System.Void BarUpdating::Update()
+extern void BarUpdating_Update_mC073A2812B84EB54112DFDF59E994BDF1116EECF (void);
+// 0x0000032E System.Single BarUpdating::calculateHorizatonalDistance(UnityEngine.Vector3,UnityEngine.Vector3)
+extern void BarUpdating_calculateHorizatonalDistance_mF0B997E02D95B5B195697A6855F13AC16395983A (void);
+// 0x0000032F System.Single BarUpdating::setDistance()
+extern void BarUpdating_setDistance_mA24980922246D96364CD4FCB8DB7876947092680 (void);
+// 0x00000330 System.Void BarUpdating::setBarLength()
+extern void BarUpdating_setBarLength_mBBE85CDBF388D4D7F5D6AC3401C159A00217A5B2 (void);
+// 0x00000331 System.Void BarUpdating::.ctor()
+extern void BarUpdating__ctor_m7B16AE9EE45C0EF69677C500F882DC0640E0942F (void);
+// 0x00000332 System.Void CoachAnimationDeveloping::Start()
 extern void CoachAnimationDeveloping_Start_m16D9F9142932801A7A8CE2E4FCA2219F9980585F (void);
-// 0x0000032B System.Void CoachAnimationDeveloping::Update()
+// 0x00000333 System.Void CoachAnimationDeveloping::Update()
 extern void CoachAnimationDeveloping_Update_m6639ED4E826AEE37F5E1B4666994860E8F531F2D (void);
-// 0x0000032C System.Void CoachAnimationDeveloping::moveForward()
+// 0x00000334 System.Void CoachAnimationDeveloping::moveForward()
 extern void CoachAnimationDeveloping_moveForward_m2A298D96903E23397302203FDF1F70F931A7CB92 (void);
-// 0x0000032D System.Void CoachAnimationDeveloping::moveBackward()
+// 0x00000335 System.Void CoachAnimationDeveloping::moveBackward()
 extern void CoachAnimationDeveloping_moveBackward_m7EB53E0DBD541A0788E17269AA205156D4E8E0F2 (void);
-// 0x0000032E System.Void CoachAnimationDeveloping::stopMoving()
+// 0x00000336 System.Void CoachAnimationDeveloping::stopMoving()
 extern void CoachAnimationDeveloping_stopMoving_mCC33B01583076FE1E022309A791872A8B00C374B (void);
-// 0x0000032F System.Void CoachAnimationDeveloping::animationIdle()
+// 0x00000337 System.Void CoachAnimationDeveloping::animationIdle()
 extern void CoachAnimationDeveloping_animationIdle_mBAAD147CC989984303BDEF90387911519C78EFC2 (void);
-// 0x00000330 System.Void CoachAnimationDeveloping::.ctor()
+// 0x00000338 System.Void CoachAnimationDeveloping::.ctor()
 extern void CoachAnimationDeveloping__ctor_mC004753E5F600FF9670145CA796C2CC2F2D2DA61 (void);
-// 0x00000331 System.Void ColorSetting::Start()
+// 0x00000339 System.Void ColliderInteractionTesting::Start()
+extern void ColliderInteractionTesting_Start_m556295ABBD1C7AE2B0AADFA07A9871E950E08728 (void);
+// 0x0000033A System.Void ColliderInteractionTesting::Update()
+extern void ColliderInteractionTesting_Update_mC6BBA1568A37AF457F56BB941B50508838AFCEF2 (void);
+// 0x0000033B System.Void ColliderInteractionTesting::OnTriggerEnter(UnityEngine.Collider)
+extern void ColliderInteractionTesting_OnTriggerEnter_m6379D07F4DA61038099B5AEC10788B008EC555C2 (void);
+// 0x0000033C System.Void ColliderInteractionTesting::OnTriggerExit(UnityEngine.Collider)
+extern void ColliderInteractionTesting_OnTriggerExit_m2EB70417C1803FD90826534250B9BE8C235CA4E7 (void);
+// 0x0000033D System.Void ColliderInteractionTesting::OnTriggerStay(UnityEngine.Collider)
+extern void ColliderInteractionTesting_OnTriggerStay_m4BB647CD85F178926C3390E272BE9A4FA7A719FC (void);
+// 0x0000033E System.Void ColliderInteractionTesting::.ctor()
+extern void ColliderInteractionTesting__ctor_mA5CCD0DFE4EDEF2856B02A87E4BF2E8CC9549F12 (void);
+// 0x0000033F System.Void ColorSetting::Start()
 extern void ColorSetting_Start_m0C2C845C524C6639889A7D322B27DD1D0ACF13C5 (void);
-// 0x00000332 System.Void ColorSetting::Update()
+// 0x00000340 System.Void ColorSetting::Update()
 extern void ColorSetting_Update_m96D3D9FA880E525E0BF06F16CB816CD4DA612265 (void);
-// 0x00000333 System.Void ColorSetting::setColors()
+// 0x00000341 System.Void ColorSetting::setColors()
 extern void ColorSetting_setColors_mA488034192D1857B9658340C36A375F21E21795D (void);
-// 0x00000334 System.Void ColorSetting::ChangeColor(UnityEngine.Color)
+// 0x00000342 System.Void ColorSetting::ChangeColor(UnityEngine.Color)
 extern void ColorSetting_ChangeColor_m12DEBC3803FE237BE4FBCB2D7B4FFF5BFF35BED7 (void);
-// 0x00000335 System.Void ColorSetting::.ctor()
+// 0x00000343 System.Void ColorSetting::.ctor()
 extern void ColorSetting__ctor_m469228B4EE7D080F6DF30FC126A447AF8F922555 (void);
-// 0x00000336 System.Void LineDrawer::setEndpoints()
+// 0x00000344 System.Void CutoutUpdating::Start()
+extern void CutoutUpdating_Start_m07CD69A0C14EBBEAFA058EDEADCA3FBFC5705D35 (void);
+// 0x00000345 System.Void CutoutUpdating::Update()
+extern void CutoutUpdating_Update_m8AE2BB508B477D11CB4DEB0A2C3C1B198557FBDB (void);
+// 0x00000346 System.Single CutoutUpdating::calculateHorizatonalDistance(UnityEngine.Vector3,UnityEngine.Vector3)
+extern void CutoutUpdating_calculateHorizatonalDistance_mEFAAC3E0CDC191C0356BE3B7AD3BF75B8C3A286E (void);
+// 0x00000347 System.Single CutoutUpdating::setDistance()
+extern void CutoutUpdating_setDistance_mF60B0736697848B6DAAE1695B18DB7B2699DE087 (void);
+// 0x00000348 System.Void CutoutUpdating::setCutoutSize()
+extern void CutoutUpdating_setCutoutSize_mAFAF8B889474F1819EA2F5DCF0C848BBB6BC0AEC (void);
+// 0x00000349 System.Void CutoutUpdating::.ctor()
+extern void CutoutUpdating__ctor_m2B38CE3AC91CA4D0B558D9E4095E340E3195FFC6 (void);
+// 0x0000034A System.Void LineDrawer::setEndpoints()
 extern void LineDrawer_setEndpoints_mE84CA529FF06AEC8ECE1FAEC86B884981C9BF008 (void);
-// 0x00000337 System.Void LineDrawer::setColor()
+// 0x0000034B System.Void LineDrawer::setColor()
 extern void LineDrawer_setColor_mF53CFB5E06CE59A14A4A4A4DAABBA5576CAB9DE6 (void);
-// 0x00000338 System.Void LineDrawer::Start()
+// 0x0000034C System.Void LineDrawer::Start()
 extern void LineDrawer_Start_m5F870315D258E986AEC87DDCCBE4AB029C719007 (void);
-// 0x00000339 System.Void LineDrawer::Update()
+// 0x0000034D System.Void LineDrawer::Update()
 extern void LineDrawer_Update_mA5CFE77799CABE99A4E5D681F1323EF81C7AD663 (void);
-// 0x0000033A System.Void LineDrawer::.ctor()
+// 0x0000034E System.Void LineDrawer::.ctor()
 extern void LineDrawer__ctor_m8D5D0C9068850AC55BB690004E951D6D8BD2C6C4 (void);
-// 0x0000033B System.Void KeypadInput::Start()
+// 0x0000034F System.Void KeypadInput::Start()
 extern void KeypadInput_Start_mD835EA434DD4A2D196AD95491DD2F73A2D51B717 (void);
-// 0x0000033C System.Void KeypadInput::Update()
+// 0x00000350 System.Void KeypadInput::Update()
 extern void KeypadInput_Update_mE33FB8173484B2CB3BDB251E9DD862EA3EAFBF83 (void);
-// 0x0000033D System.Void KeypadInput::inputNumber(System.String)
+// 0x00000351 System.Void KeypadInput::inputNumber(System.String)
 extern void KeypadInput_inputNumber_m8EE2C82B6E9386D81B51782F308D2D2C7E039214 (void);
-// 0x0000033E System.Void KeypadInput::clearInput()
+// 0x00000352 System.Void KeypadInput::clearInput()
 extern void KeypadInput_clearInput_m05BDAEAB1F2A5C5D6D485C6F2DE9A007031A7074 (void);
-// 0x0000033F System.Void KeypadInput::backspaceInput()
+// 0x00000353 System.Void KeypadInput::backspaceInput()
 extern void KeypadInput_backspaceInput_mF7EB175B606E1734088F392592B64852C813E5A7 (void);
-// 0x00000340 System.Void KeypadInput::pushable(System.Boolean)
+// 0x00000354 System.Void KeypadInput::pushable(System.Boolean)
 extern void KeypadInput_pushable_m4135200D2D6EFA9907422051C2CD6EE31414E749 (void);
-// 0x00000341 System.Void KeypadInput::.ctor()
+// 0x00000355 System.Void KeypadInput::.ctor()
 extern void KeypadInput__ctor_mB1004E0494798722F904210D2BCE54179EA4F582 (void);
-// 0x00000342 System.Void AudioManager::Awake()
+// 0x00000356 System.Void AudioManager::Awake()
 extern void AudioManager_Awake_m8138BCED4D692C83C95626A1A09AB46EA5205569 (void);
-// 0x00000343 System.Void AudioManager::PlayMusic(System.String)
+// 0x00000357 System.Void AudioManager::PlayMusic(System.String)
 extern void AudioManager_PlayMusic_mA28CF928082CB3F84F97371150609CB3B0BF1DA0 (void);
-// 0x00000344 System.Void AudioManager::PlaySFX(System.String)
+// 0x00000358 System.Void AudioManager::PlaySFX(System.String)
 extern void AudioManager_PlaySFX_m828B51360D3E40D1FD4BEF9E8F22FB9B343F96B1 (void);
-// 0x00000345 System.Void AudioManager::PlayVoiceComment(System.String)
+// 0x00000359 System.Void AudioManager::PlayVoiceComment(System.String)
 extern void AudioManager_PlayVoiceComment_mF956A561CE924A9F7DB0F74123946DA42A51A9D9 (void);
-// 0x00000346 System.Void AudioManager::.ctor()
+// 0x0000035A System.Void AudioManager::.ctor()
 extern void AudioManager__ctor_mA793A9DF6B975D03690B7C953972EFE41AE4D5E6 (void);
-// 0x00000347 System.Void AudioManager/<>c__DisplayClass8_0::.ctor()
+// 0x0000035B System.Void AudioManager/<>c__DisplayClass8_0::.ctor()
 extern void U3CU3Ec__DisplayClass8_0__ctor_mF503CFACCD7AA867202A2083F9FEC5781F387E70 (void);
-// 0x00000348 System.Boolean AudioManager/<>c__DisplayClass8_0::<PlayMusic>b__0(DepthPerceptionSystem.Sound)
+// 0x0000035C System.Boolean AudioManager/<>c__DisplayClass8_0::<PlayMusic>b__0(DepthPerceptionSystem.Sound)
 extern void U3CU3Ec__DisplayClass8_0_U3CPlayMusicU3Eb__0_mADE78E8747006C6DAF27EA66877C29A66DCDBA2F (void);
-// 0x00000349 System.Void AudioManager/<>c__DisplayClass9_0::.ctor()
+// 0x0000035D System.Void AudioManager/<>c__DisplayClass9_0::.ctor()
 extern void U3CU3Ec__DisplayClass9_0__ctor_m0B880A0615F44CBD1EC73DF4BC4C118BA15AE31D (void);
-// 0x0000034A System.Boolean AudioManager/<>c__DisplayClass9_0::<PlaySFX>b__0(DepthPerceptionSystem.Sound)
+// 0x0000035E System.Boolean AudioManager/<>c__DisplayClass9_0::<PlaySFX>b__0(DepthPerceptionSystem.Sound)
 extern void U3CU3Ec__DisplayClass9_0_U3CPlaySFXU3Eb__0_m70E70D4FD4B7EBF8252891F90518A864AEFCB179 (void);
-// 0x0000034B System.Void AudioManager/<>c__DisplayClass10_0::.ctor()
+// 0x0000035F System.Void AudioManager/<>c__DisplayClass10_0::.ctor()
 extern void U3CU3Ec__DisplayClass10_0__ctor_m92D66522F24859DE832C8C1842D19D9DD86973B0 (void);
-// 0x0000034C System.Boolean AudioManager/<>c__DisplayClass10_0::<PlayVoiceComment>b__0(DepthPerceptionSystem.Sound)
+// 0x00000360 System.Boolean AudioManager/<>c__DisplayClass10_0::<PlayVoiceComment>b__0(DepthPerceptionSystem.Sound)
 extern void U3CU3Ec__DisplayClass10_0_U3CPlayVoiceCommentU3Eb__0_m76BD6494AB852412C35216E35641573C556E1C60 (void);
-// 0x0000034D System.Void MainManager::Awake()
+// 0x00000361 System.Void MainManager::Awake()
 extern void MainManager_Awake_m8E45557F0C0188FEBE8E55D08AFDC23E5ED7E150 (void);
-// 0x0000034E System.Void MainManager::Start()
+// 0x00000362 System.Void MainManager::Start()
 extern void MainManager_Start_mF399FDB1D658B00151781710D94ABB10A990B586 (void);
-// 0x0000034F System.Void MainManager::Update()
+// 0x00000363 System.Void MainManager::Update()
 extern void MainManager_Update_mA2F88304321FA59B7ADF2DAADDA6D25D824378E3 (void);
-// 0x00000350 System.Void MainManager::mainManagerInitialize()
+// 0x00000364 System.Void MainManager::mainManagerInitialize()
 extern void MainManager_mainManagerInitialize_m249866645767E1FF20B3FAFE0D8D2F7AFED2B69D (void);
-// 0x00000351 System.Void MainManager::resizeUserIK()
+// 0x00000365 System.Void MainManager::resizeUserIK()
 extern void MainManager_resizeUserIK_m35D3DF33F1ADE053D0FDC984536591D9C5890D87 (void);
-// 0x00000352 System.Void MainManager::enableUserArmMeshRenderers(System.Boolean)
+// 0x00000366 System.Void MainManager::enableUserArmMeshRenderers(System.Boolean)
 extern void MainManager_enableUserArmMeshRenderers_mB4F474D7015D15F7D9EC67302712C4268C943FDC (void);
-// 0x00000353 System.Single[] MainManager::calculateLowArmToUpArmAngle(UnityEngine.Transform,UnityEngine.Transform)
+// 0x00000367 System.Single[] MainManager::calculateLowArmToUpArmAngle(UnityEngine.Transform,UnityEngine.Transform)
 extern void MainManager_calculateLowArmToUpArmAngle_m2E00CE20AB31FF3FDD4EDC14ADA0EB6D558759AF (void);
-// 0x00000354 System.Void MainManager::getHandStraightDefaultAngle(DepthPerceptionSystem.Hand)
+// 0x00000368 System.Void MainManager::getHandStraightDefaultAngle(DepthPerceptionSystem.Hand)
 extern void MainManager_getHandStraightDefaultAngle_m8D27782F6013CDAD61355857A76641F4CBD7DF3E (void);
-// 0x00000355 System.Void MainManager::changeScene(System.String)
+// 0x00000369 System.Void MainManager::changeScene(System.String)
 extern void MainManager_changeScene_m3A6417B11ED0F462976987DB11EBA27C70A0826E (void);
-// 0x00000356 System.Void MainManager::saveToJSON_user(DepthPerceptionSystem.UserInfo)
+// 0x0000036A System.Void MainManager::saveToJSON_user(DepthPerceptionSystem.UserInfo)
 extern void MainManager_saveToJSON_user_m13B8878507F27A3C111CA476AB911ACD708017E0 (void);
-// 0x00000357 System.Void MainManager::saveToJSON_selection(DepthPerceptionSystem.SelectionInfo)
+// 0x0000036B System.Void MainManager::saveToJSON_selection(DepthPerceptionSystem.SelectionInfo)
 extern void MainManager_saveToJSON_selection_m5875BC2635D8452C04911456F4C464FAC2095DDF (void);
-// 0x00000358 System.Void MainManager::saveToJSON_setting(DepthPerceptionSystem.SettingInfo)
+// 0x0000036C System.Void MainManager::saveToJSON_setting(DepthPerceptionSystem.SettingInfo)
 extern void MainManager_saveToJSON_setting_m57B5292D7F7BB9D9512E39A1B7E710F46CAB3D0F (void);
-// 0x00000359 System.Void MainManager::saveToJSON_testResult(DepthPerceptionSystem.TotalUnitResult)
+// 0x0000036D System.Void MainManager::saveToJSON_testResult(DepthPerceptionSystem.TotalUnitResult)
 extern void MainManager_saveToJSON_testResult_mF587CD1BE3BCE8132BDD0CAF15F8C8FA7144ED56 (void);
-// 0x0000035A System.Void MainManager::saveToJSON_unitResult(DepthPerceptionSystem.UnitResult,System.Int32)
+// 0x0000036E System.Void MainManager::saveToJSON_unitResult(DepthPerceptionSystem.UnitResult,System.Int32)
 extern void MainManager_saveToJSON_unitResult_mE3DF3A5CF285374545A4175D22DAFAEF8D43EB4C (void);
-// 0x0000035B System.Void MainManager::loadFromJSON_setting()
+// 0x0000036F System.Void MainManager::loadFromJSON_setting()
 extern void MainManager_loadFromJSON_setting_m17D0D889BBC899AF64BC4C9680376802BEE891B2 (void);
-// 0x0000035C System.Void MainManager::.ctor()
+// 0x00000370 System.Void MainManager::.ctor()
 extern void MainManager__ctor_m31069775694F3161D61EAAADF571D1D71653DC3E (void);
-// 0x0000035D System.Void UserManager::Start()
+// 0x00000371 System.Void UserManager::Start()
 extern void UserManager_Start_m7DE888B12CEFA1B0BEE82C6FAF59597295013CE4 (void);
-// 0x0000035E System.Void UserManager::Update()
+// 0x00000372 System.Void UserManager::Update()
 extern void UserManager_Update_mC69B4B02D1334DEF2B3781DA05C3A90677DAD446 (void);
-// 0x0000035F System.Void UserManager::.ctor()
+// 0x00000373 System.Void UserManager::.ctor()
 extern void UserManager__ctor_m50FAB3E5339CB07D00FD24E560AE4189A4C8B7E8 (void);
-// 0x00000360 System.Void BallCueOnPlayer::Start()
+// 0x00000374 System.Void BallCueOnPlayer::Start()
 extern void BallCueOnPlayer_Start_m39734B6786FFC41EAE02F0D7D4107EC7CCC31CCA (void);
-// 0x00000361 System.Void BallCueOnPlayer::Update()
+// 0x00000375 System.Void BallCueOnPlayer::Update()
 extern void BallCueOnPlayer_Update_m821D5F62CEAB58CC75FA11D35A53D440C43513A7 (void);
-// 0x00000362 System.Void BallCueOnPlayer::setRadius()
+// 0x00000376 System.Void BallCueOnPlayer::setRadius()
 extern void BallCueOnPlayer_setRadius_mA886DA556BD5FDCCE1E57857DDBD7CDC9FE60E3C (void);
-// 0x00000363 System.Void BallCueOnPlayer::setScale(System.Single)
+// 0x00000377 System.Void BallCueOnPlayer::setScale(System.Single)
 extern void BallCueOnPlayer_setScale_m08E3AD28A3CC819C19FB415EAB0BCCD1F105811D (void);
-// 0x00000364 System.Void BallCueOnPlayer::Pause(UnityEngine.GameObject)
+// 0x00000378 System.Void BallCueOnPlayer::Pause(UnityEngine.GameObject)
 extern void BallCueOnPlayer_Pause_m29E8CB40312F16658A052E6511534088D6EC82F5 (void);
-// 0x00000365 System.Void BallCueOnPlayer::setColors()
+// 0x00000379 System.Void BallCueOnPlayer::setColors()
 extern void BallCueOnPlayer_setColors_m3CE8D6AD31F3E092528C7B09A89A05389AD3D361 (void);
-// 0x00000366 UnityEngine.Color BallCueOnPlayer::calculateColor(DepthPerceptionSystem.Hand)
+// 0x0000037A UnityEngine.Color BallCueOnPlayer::calculateColor(DepthPerceptionSystem.Hand)
 extern void BallCueOnPlayer_calculateColor_mCA1F1F169BAB74AE90FB27CF80D159F3AB547398 (void);
-// 0x00000367 System.Void BallCueOnPlayer::ChangeColor(UnityEngine.Color)
+// 0x0000037B System.Void BallCueOnPlayer::ChangeColor(UnityEngine.Color)
 extern void BallCueOnPlayer_ChangeColor_m7A37992D75CBACE6964C6722E4E439E7C4EC324C (void);
-// 0x00000368 System.Void BallCueOnPlayer::destroy()
+// 0x0000037C System.Void BallCueOnPlayer::destroy()
 extern void BallCueOnPlayer_destroy_m27A75CEF98BEA9897F57527E5BD3DB8FEC55D22B (void);
-// 0x00000369 System.Void BallCueOnPlayer::.ctor()
+// 0x0000037D System.Void BallCueOnPlayer::.ctor()
 extern void BallCueOnPlayer__ctor_m461B0F6DC13FF428636C7A71476BD53546771CFB (void);
-// 0x0000036A System.Void BallCueOnPlayerManager::Start()
+// 0x0000037E System.Void BallCueOnPlayerManager::Start()
 extern void BallCueOnPlayerManager_Start_m33598D3CE81026FEDCE2F13DE87980914BB56FBB (void);
-// 0x0000036B System.Void BallCueOnPlayerManager::Update()
+// 0x0000037F System.Void BallCueOnPlayerManager::Update()
 extern void BallCueOnPlayerManager_Update_m777B61E577475E741FAB074280128486BAFAFFE7 (void);
-// 0x0000036C System.Void BallCueOnPlayerManager::instantiateBallCueOnPlayer(DepthPerceptionSystem.Hand)
+// 0x00000380 System.Void BallCueOnPlayerManager::instantiateBallCueOnPlayer(DepthPerceptionSystem.Hand)
 extern void BallCueOnPlayerManager_instantiateBallCueOnPlayer_m102413A31F0F742E62DA225C8A1D91FD6B45412F (void);
-// 0x0000036D System.Void BallCueOnPlayerManager::destroyBallCueOnPlayer(DepthPerceptionSystem.Hand)
+// 0x00000381 System.Void BallCueOnPlayerManager::destroyBallCueOnPlayer(DepthPerceptionSystem.Hand)
 extern void BallCueOnPlayerManager_destroyBallCueOnPlayer_m6BDD73DCE6E6774DF1ADD05802F5C87E8295BFFC (void);
-// 0x0000036E UnityEngine.GameObject BallCueOnPlayerManager::FindGameObjectInChildWithTag(UnityEngine.GameObject,System.String)
+// 0x00000382 UnityEngine.GameObject BallCueOnPlayerManager::FindGameObjectInChildWithTag(UnityEngine.GameObject,System.String)
 extern void BallCueOnPlayerManager_FindGameObjectInChildWithTag_m485C458EA5752C11C0A754C6FED5C244F15C9D12 (void);
-// 0x0000036F System.Void BallCueOnPlayerManager::.ctor()
+// 0x00000383 System.Void BallCueOnPlayerManager::.ctor()
 extern void BallCueOnPlayerManager__ctor_m63802AC31A83E36C048B2F72D49153D0EB150827 (void);
-// 0x00000370 System.Void BallCueOnTarget::Start()
+// 0x00000384 System.Void BallCueOnTarget::Start()
 extern void BallCueOnTarget_Start_mE953CF870FD6613B3F2331EA6403460F8CECDF44 (void);
-// 0x00000371 System.Void BallCueOnTarget::renderBallCueOnTarget(DepthPerceptionSystem.Hand)
+// 0x00000385 System.Void BallCueOnTarget::renderBallCueOnTarget(DepthPerceptionSystem.Hand)
 extern void BallCueOnTarget_renderBallCueOnTarget_mCF20DD3DC6DA24F0C7B84BCD41F2C67C7AFA4D5E (void);
-// 0x00000372 System.Void BallCueOnTarget::eraseBallCueOnTarget()
+// 0x00000386 System.Void BallCueOnTarget::eraseBallCueOnTarget()
 extern void BallCueOnTarget_eraseBallCueOnTarget_mD59EB0F577C486408E85BABE440F7DD6AE85DBA2 (void);
-// 0x00000373 System.Void BallCueOnTarget::setColors(DepthPerceptionSystem.Hand)
+// 0x00000387 System.Void BallCueOnTarget::setColors(DepthPerceptionSystem.Hand)
 extern void BallCueOnTarget_setColors_m3574085A1966FF6714FCC2B57232F26679199E14 (void);
-// 0x00000374 UnityEngine.Color BallCueOnTarget::calculateColor(DepthPerceptionSystem.Hand)
+// 0x00000388 UnityEngine.Color BallCueOnTarget::calculateColor(DepthPerceptionSystem.Hand)
 extern void BallCueOnTarget_calculateColor_m50E320E8D89C3B15BC4BA6747E4ECF3A4D6E55F2 (void);
-// 0x00000375 System.Void BallCueOnTarget::ChangeColor(UnityEngine.GameObject,UnityEngine.Color)
+// 0x00000389 System.Void BallCueOnTarget::ChangeColor(UnityEngine.GameObject,UnityEngine.Color)
 extern void BallCueOnTarget_ChangeColor_mF3A9F875BEACD0F988F501E275091F42C30B9DCF (void);
-// 0x00000376 System.Void BallCueOnTarget::destroy(UnityEngine.GameObject)
+// 0x0000038A System.Void BallCueOnTarget::destroy(UnityEngine.GameObject)
 extern void BallCueOnTarget_destroy_m026FF9DFB912FAB519A6A7399E85E5A60018D908 (void);
-// 0x00000377 System.Void BallCueOnTarget::.ctor()
+// 0x0000038B System.Void BallCueOnTarget::.ctor()
 extern void BallCueOnTarget__ctor_m6AD9E56B442C3BEA3452889EFC221F7BF181396F (void);
-// 0x00000378 System.Void LineCue::Start()
+// 0x0000038C System.Void BarCue::Start()
+extern void BarCue_Start_m08950E2F227E50B377EAAB409E3F6989647A6B6E (void);
+// 0x0000038D System.Void BarCue::Update()
+extern void BarCue_Update_m891C26C40A82BF5427FCB569522E2AE5B13C5296 (void);
+// 0x0000038E System.Single BarCue::calculateHorizatonalDistance(UnityEngine.Vector3,UnityEngine.Vector3)
+extern void BarCue_calculateHorizatonalDistance_m571E856B68972F9AC2CAA1306A3A2AAA84047A69 (void);
+// 0x0000038F System.Single BarCue::setDistance()
+extern void BarCue_setDistance_m4EDE9ACA7689E5D0E3DEDB78406A3AF9A0C09633 (void);
+// 0x00000390 System.Void BarCue::barAidUpdate()
+extern void BarCue_barAidUpdate_mB98B27631D426489974790BBC8A0647B300435A3 (void);
+// 0x00000391 System.Void BarCue::closeBarAid()
+extern void BarCue_closeBarAid_m448703B6E6AE3F3EB7EBDE7F4F63E094CCDE6F2F (void);
+// 0x00000392 System.Void BarCue::.ctor()
+extern void BarCue__ctor_mBEDC07BE11673304E2F58536FC9E89B82906ABE4 (void);
+// 0x00000393 System.Void CutoutCue::Start()
+extern void CutoutCue_Start_m01691A1334CCA67E40C5F80859448C4FA4B8DB09 (void);
+// 0x00000394 System.Void CutoutCue::Update()
+extern void CutoutCue_Update_mFF3DFDB5359B3E820DFA66C2FFB60B268DD55672 (void);
+// 0x00000395 System.Void CutoutCue::recenterUICanvas()
+extern void CutoutCue_recenterUICanvas_m65B9275A644A6F545D6FF873F305B83262F6EE99 (void);
+// 0x00000396 System.Single CutoutCue::calculateHorizatonalDistance(UnityEngine.Vector3,UnityEngine.Vector3)
+extern void CutoutCue_calculateHorizatonalDistance_m671C185F30DD6C308151D20739BABC41CDC6DB8E (void);
+// 0x00000397 System.Single CutoutCue::setDistance()
+extern void CutoutCue_setDistance_mD49D2C34A6CECF7268CC899CDEA8F4B6EDBB09B5 (void);
+// 0x00000398 System.Void CutoutCue::cutoutAidUpdate()
+extern void CutoutCue_cutoutAidUpdate_mFA2CD725D703902EE572C081CCECC9AEBA0DDB32 (void);
+// 0x00000399 System.Void CutoutCue::closeCutoutAid()
+extern void CutoutCue_closeCutoutAid_m324015D3F4D8D3E1CFA2DFDD760592F0D47E5D9E (void);
+// 0x0000039A System.Void CutoutCue::.ctor()
+extern void CutoutCue__ctor_m2067ECEC7713CFF4B81E76E5DBCB4DD1A8FFCA14 (void);
+// 0x0000039B System.Void LineCue::Start()
 extern void LineCue_Start_m60691208D3DE8E8896F72308F0DB86204E3553C1 (void);
-// 0x00000379 System.Void LineCue::Update()
+// 0x0000039C System.Void LineCue::Update()
 extern void LineCue_Update_mDB2BE6BED597A9CC36C99FFD1D3AB2B4556B4138 (void);
-// 0x0000037A System.Void LineCue::renderLineCue(DepthPerceptionSystem.Hand)
+// 0x0000039D System.Void LineCue::renderLineCue(DepthPerceptionSystem.Hand)
 extern void LineCue_renderLineCue_mC13BF128990459DB73D6061D972DFA76FA4761D4 (void);
-// 0x0000037B System.Void LineCue::eraseLineCue()
+// 0x0000039E System.Void LineCue::eraseLineCue()
 extern void LineCue_eraseLineCue_m1F81E545ACE4D6ED8C30D2ED59A2F58B33A5A0BA (void);
-// 0x0000037C System.Void LineCue::setEndpoints(DepthPerceptionSystem.Hand)
+// 0x0000039F System.Void LineCue::setEndpoints(DepthPerceptionSystem.Hand)
 extern void LineCue_setEndpoints_m79337B94E64B0B5B2E0D2B7A7DD4534D62BB4CEC (void);
-// 0x0000037D System.Void LineCue::setColors(DepthPerceptionSystem.Hand)
+// 0x000003A0 System.Void LineCue::setColors(DepthPerceptionSystem.Hand)
 extern void LineCue_setColors_m8670141131D7A5D286E7729AE35CC00E21360928 (void);
-// 0x0000037E UnityEngine.Color LineCue::calculateColor(DepthPerceptionSystem.Hand)
+// 0x000003A1 UnityEngine.Color LineCue::calculateColor(DepthPerceptionSystem.Hand)
 extern void LineCue_calculateColor_mBF5440A84705ABC003E6197652198C4EF955F554 (void);
-// 0x0000037F System.Void LineCue::.ctor()
+// 0x000003A2 System.Void LineCue::.ctor()
 extern void LineCue__ctor_mB61FD786195BCEF46EA6407312427CBB66AAB494 (void);
-// 0x00000380 System.Void EvaluationManager::Awake()
+// 0x000003A3 System.Void EvaluationManager::Awake()
 extern void EvaluationManager_Awake_mB3FE9D4291F7955C18985791EAACAAA5E8D78A4B (void);
-// 0x00000381 System.Void EvaluationManager::Start()
+// 0x000003A4 System.Void EvaluationManager::Start()
 extern void EvaluationManager_Start_m78659BCA90C28E8C24B3D7F42A1C8490252922CD (void);
-// 0x00000382 System.Void EvaluationManager::Update()
+// 0x000003A5 System.Void EvaluationManager::Update()
 extern void EvaluationManager_Update_m96D466F69FAB42044007FC5D9EE8085E79B95D4B (void);
-// 0x00000383 System.Void EvaluationManager::evaluationStatusInitialize()
+// 0x000003A6 System.Void EvaluationManager::evaluationStatusInitialize()
 extern void EvaluationManager_evaluationStatusInitialize_m833D6F9C43085D78015E5020A292B295BD91660D (void);
-// 0x00000384 System.Void EvaluationManager::setStartingPoint(UnityEngine.Vector3,UnityEngine.Quaternion)
+// 0x000003A7 System.Void EvaluationManager::setStartingPoint(UnityEngine.Vector3,UnityEngine.Quaternion)
 extern void EvaluationManager_setStartingPoint_m460BF1983FB131D6B706896005612A9AE324D960 (void);
-// 0x00000385 System.Void EvaluationManager::userIsPunching(DepthPerceptionSystem.Hand)
+// 0x000003A8 System.Void EvaluationManager::startingPointSizeChange(System.Boolean)
+extern void EvaluationManager_startingPointSizeChange_mB68C2F5425C79959EC1E52386EDB3863F8EC0245 (void);
+// 0x000003A9 System.Void EvaluationManager::userIsNotPunching()
+extern void EvaluationManager_userIsNotPunching_mF00C0B5A9E8DC1ED3E89B9F1D4320C10462EE57A (void);
+// 0x000003AA System.Void EvaluationManager::userIsPunching(DepthPerceptionSystem.Hand)
 extern void EvaluationManager_userIsPunching_m0472A45DB9728EE919920AC8A22BAA026C637256 (void);
-// 0x00000386 System.Void EvaluationManager::userIsMoving()
+// 0x000003AB System.Void EvaluationManager::userIsMoving()
 extern void EvaluationManager_userIsMoving_m7C0B7EA305CEAB253BD0B09F041FF2BA2AB683AC (void);
-// 0x00000387 System.Void EvaluationManager::userIsHitCoach(DepthPerceptionSystem.Hand,System.Boolean)
+// 0x000003AC System.Void EvaluationManager::userIsHitCoach(DepthPerceptionSystem.Hand,System.Boolean)
 extern void EvaluationManager_userIsHitCoach_m4F872DBF71E8E08CF8505AA4540E02352B4C1023 (void);
-// 0x00000388 System.Void EvaluationManager::instantiateBallWhenHit(DepthPerceptionSystem.Hand,System.Boolean,System.Boolean)
+// 0x000003AD System.Void EvaluationManager::instantiateBallWhenHit(DepthPerceptionSystem.Hand,System.Boolean,System.Boolean)
 extern void EvaluationManager_instantiateBallWhenHit_mB0ED8DFEE084365EB3B187003DE3E368E6531F24 (void);
-// 0x00000389 System.Void EvaluationManager::instatiateArmAfterimage(DepthPerceptionSystem.Hand)
-extern void EvaluationManager_instatiateArmAfterimage_m08B345E601972FA5749C977396C4072C07C8F82B (void);
-// 0x0000038A DepthPerceptionSystem.UnitResultComment EvaluationManager::getScoreComment(System.Boolean)
+// 0x000003AE DepthPerceptionSystem.UnitResultComment EvaluationManager::getScoreComment(System.Boolean)
 extern void EvaluationManager_getScoreComment_m5F9A3D0D6D5A1E4B1B1A19875BDE65F0034A3A1C (void);
-// 0x0000038B System.Void EvaluationManager::.ctor()
+// 0x000003AF System.Void EvaluationManager::.ctor()
 extern void EvaluationManager__ctor_mDAAA2EE902189B6ED0D74FF4406FF0816DCBA373 (void);
-// 0x0000038C System.Void DirectionModule::Start()
+// 0x000003B0 System.Void DirectionModule::Start()
 extern void DirectionModule_Start_mBBAE84CD1B9AE34F827EE7587A09EF1C09A0EFC6 (void);
-// 0x0000038D System.Void DirectionModule::Update()
+// 0x000003B1 System.Void DirectionModule::Update()
 extern void DirectionModule_Update_mFCBF6DFB27B89C52D10B78611875677D1DB9A4C8 (void);
-// 0x0000038E System.Boolean DirectionModule::judgeMovingDirection()
+// 0x000003B2 System.Boolean DirectionModule::judgeMovingDirection()
 extern void DirectionModule_judgeMovingDirection_mECFF143030156F13E545F23C2F5DE792F05A1A16 (void);
-// 0x0000038F System.Void DirectionModule::.ctor()
+// 0x000003B3 System.Void DirectionModule::.ctor()
 extern void DirectionModule__ctor_m763B42E36E50E37D79C74B760C4418CE2DA901F2 (void);
-// 0x00000390 System.Void MovingModule::Start()
+// 0x000003B4 System.Void MovingModule::Start()
 extern void MovingModule_Start_mC8785298838B67E25133E9A83001ED528246A288 (void);
-// 0x00000391 System.Void MovingModule::Update()
+// 0x000003B5 System.Void MovingModule::Update()
 extern void MovingModule_Update_mC48F2B01A97A66570680D2FA21E6CD75A55482E2 (void);
-// 0x00000392 System.Void MovingModule::OnTriggerExit(UnityEngine.Collider)
+// 0x000003B6 System.Void MovingModule::OnTriggerExit(UnityEngine.Collider)
 extern void MovingModule_OnTriggerExit_mC6FA37CDDA6A7871AEB032F74CDF596160C70A79 (void);
-// 0x00000393 System.Void MovingModule::OnTriggerEnter(UnityEngine.Collider)
+// 0x000003B7 System.Void MovingModule::OnTriggerEnter(UnityEngine.Collider)
 extern void MovingModule_OnTriggerEnter_m2B05A25F909933D07F085C5E37166C5710D8A0F5 (void);
-// 0x00000394 System.Void MovingModule::OnTriggerStay(UnityEngine.Collider)
+// 0x000003B8 System.Void MovingModule::OnTriggerStay(UnityEngine.Collider)
 extern void MovingModule_OnTriggerStay_mFC18D590AD97C2C08780CF0BB2FA4561074C63D3 (void);
-// 0x00000395 System.Void MovingModule::.ctor()
+// 0x000003B9 System.Void MovingModule::.ctor()
 extern void MovingModule__ctor_m7030C7DBCC65D8C7E69450F4C1686DA763C8F4DB (void);
-// 0x00000396 System.Void PunchModule::Start()
+// 0x000003BA System.Void PunchModule::Start()
 extern void PunchModule_Start_mDD52230C0B466B6279F0FBF92AF6D3B9D0240107 (void);
-// 0x00000397 System.Void PunchModule::Update()
-extern void PunchModule_Update_mD22C0CAEC4CF93F1A54F6EF22CAE164CA4C93EC8 (void);
-// 0x00000398 System.Void PunchModule::OnTriggerExit(UnityEngine.Collider)
+// 0x000003BB System.Void PunchModule::FixedUpdate()
+extern void PunchModule_FixedUpdate_mD76906089E2DB85E1204E8D84F22868D381D84A9 (void);
+// 0x000003BC System.Void PunchModule::OnTriggerExit(UnityEngine.Collider)
 extern void PunchModule_OnTriggerExit_m53FA0EFD7CC5C59C299B13B9ED39422A5A3DEEC5 (void);
-// 0x00000399 System.Void PunchModule::.ctor()
+// 0x000003BD System.Void PunchModule::OnTriggerStay(UnityEngine.Collider)
+extern void PunchModule_OnTriggerStay_m9AB0B0D8569A7033605B5FD1BB6595BAB0468D78 (void);
+// 0x000003BE System.Void PunchModule::.ctor()
 extern void PunchModule__ctor_m790242F2B70DDAD73475CE3BBF9ADD30BED6969C (void);
-// 0x0000039A System.Void ReachModule::Start()
+// 0x000003BF System.Void ReachModule::Start()
 extern void ReachModule_Start_mABDA356481036CE1CE475CFB995BAC6CABC53F29 (void);
-// 0x0000039B System.Void ReachModule::Update()
+// 0x000003C0 System.Void ReachModule::Update()
 extern void ReachModule_Update_m31CFA6B8D35FD4FDA93D7393842CC8579BB3A005 (void);
-// 0x0000039C System.Void ReachModule::reachTarget(DepthPerceptionSystem.Hand)
+// 0x000003C1 System.Void ReachModule::reachTarget(DepthPerceptionSystem.Hand)
 extern void ReachModule_reachTarget_m6067398E7F7EF62B92459A4AED9F5FCFF009DACF (void);
-// 0x0000039D System.Void ReachModule::.ctor()
+// 0x000003C2 System.Void ReachModule::.ctor()
 extern void ReachModule__ctor_m9681E547D7D81D1C31BEE8EFAEDEDF3CFF3674C8 (void);
-// 0x0000039E System.Void StraightCollider::Awake()
+// 0x000003C3 System.Void StraightCollider::Awake()
 extern void StraightCollider_Awake_m477510C9C040F6427A843A7FB0080E8E4683E7AE (void);
-// 0x0000039F System.Void StraightCollider::Start()
+// 0x000003C4 System.Void StraightCollider::Start()
 extern void StraightCollider_Start_mC0F6CD3CEC03CA8EB7653E548AF570DF3CBADC34 (void);
-// 0x000003A0 System.Void StraightCollider::Update()
+// 0x000003C5 System.Void StraightCollider::Update()
 extern void StraightCollider_Update_mC6AE9FCC0EAEC59BAC8933CE072C535E362AE20B (void);
-// 0x000003A1 System.Void StraightCollider::OnTriggerEnter(UnityEngine.Collider)
+// 0x000003C6 System.Void StraightCollider::OnTriggerEnter(UnityEngine.Collider)
 extern void StraightCollider_OnTriggerEnter_m51CEF1822B3D332D044F83FE9D8AD8949CFD6597 (void);
-// 0x000003A2 System.Void StraightCollider::.ctor()
+// 0x000003C7 System.Void StraightCollider::.ctor()
 extern void StraightCollider__ctor_m0C60E32C5F5E008EF289D655788FA4BA954BD3FD (void);
-// 0x000003A3 System.Void StraightModule::Awake()
+// 0x000003C8 System.Void StraightModule::Awake()
 extern void StraightModule_Awake_mDD34BE1F302BCBEF55A1A0D3C225EB7FAF2D350C (void);
-// 0x000003A4 System.Void StraightModule::Start()
+// 0x000003C9 System.Void StraightModule::Start()
 extern void StraightModule_Start_m3A9C02377AFD1CB63C09B804B58D15DAA243C3E3 (void);
-// 0x000003A5 System.Void StraightModule::Update()
+// 0x000003CA System.Void StraightModule::Update()
 extern void StraightModule_Update_mF7A370E63D50B0ECADAF6CA24C0AA0749177659C (void);
-// 0x000003A6 System.Boolean StraightModule::judgeArmStraight(DepthPerceptionSystem.Hand)
+// 0x000003CB System.Boolean StraightModule::judgeArmStraight(DepthPerceptionSystem.Hand)
 extern void StraightModule_judgeArmStraight_m554C7DF1E4EAB7BE171EA7F976C522AF1F6125A8 (void);
-// 0x000003A7 DepthPerceptionSystem.ArmRotationAngle StraightModule::getArmAngle(DepthPerceptionSystem.Hand)
+// 0x000003CC DepthPerceptionSystem.ArmRotationAngle StraightModule::getArmAngle(DepthPerceptionSystem.Hand)
 extern void StraightModule_getArmAngle_mC8A279B88798965C899FAEDB7ED17E536B6C0587 (void);
-// 0x000003A8 DepthPerceptionSystem.ArmRotationAngle StraightModule::getRightAnglesNoitom()
+// 0x000003CD DepthPerceptionSystem.ArmRotationAngle StraightModule::getRightAnglesNoitom()
 extern void StraightModule_getRightAnglesNoitom_m73978418048D7A321D9D5514738B7D3E0A748998 (void);
-// 0x000003A9 DepthPerceptionSystem.ArmRotationAngle StraightModule::getLeftAnglesNoitom()
+// 0x000003CE DepthPerceptionSystem.ArmRotationAngle StraightModule::getLeftAnglesNoitom()
 extern void StraightModule_getLeftAnglesNoitom_m581853E23247936847FA596B850C814C68472A34 (void);
-// 0x000003AA System.Boolean StraightModule::rightStraightJudgerNoitom()
+// 0x000003CF System.Boolean StraightModule::rightStraightJudgerNoitom()
 extern void StraightModule_rightStraightJudgerNoitom_mF4609CCDE9A59E67595A450CB3C7B51136E0DB8A (void);
-// 0x000003AB System.Boolean StraightModule::leftStraightJudgerNoitom()
+// 0x000003D0 System.Boolean StraightModule::leftStraightJudgerNoitom()
 extern void StraightModule_leftStraightJudgerNoitom_mEA1C711FA74F7F248386ACC94CA1C2F7383879ED (void);
-// 0x000003AC DepthPerceptionSystem.ArmRotationAngle StraightModule::getRightAnglesIK()
+// 0x000003D1 DepthPerceptionSystem.ArmRotationAngle StraightModule::getRightAnglesIK()
 extern void StraightModule_getRightAnglesIK_mDE09A5CE43D053DE4176F88C7ABC3F18580CD3C1 (void);
-// 0x000003AD DepthPerceptionSystem.ArmRotationAngle StraightModule::getLeftAnglesIK()
+// 0x000003D2 DepthPerceptionSystem.ArmRotationAngle StraightModule::getLeftAnglesIK()
 extern void StraightModule_getLeftAnglesIK_m88358E9D57C030458DEA48E3C1CEFEDCA27DA2C5 (void);
-// 0x000003AE System.Boolean StraightModule::rightStraightJudgerIK()
+// 0x000003D3 System.Boolean StraightModule::rightStraightJudgerIK()
 extern void StraightModule_rightStraightJudgerIK_m5C8865A28C796F0F6B58E9E68DD32955D9275640 (void);
-// 0x000003AF System.Boolean StraightModule::leftStraightJudgerIK()
+// 0x000003D4 System.Boolean StraightModule::leftStraightJudgerIK()
 extern void StraightModule_leftStraightJudgerIK_m6EB5E8BD8826276A1D85F9DFD6D7B9DA7C0B85FE (void);
-// 0x000003B0 System.Boolean StraightModule::straightAngleJudger(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
+// 0x000003D5 System.Boolean StraightModule::straightAngleJudger(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
 extern void StraightModule_straightAngleJudger_m1D5606D88D5ECDB11F64D20C2294C9D0B66F76EE (void);
-// 0x000003B1 System.Void StraightModule::.ctor()
+// 0x000003D6 System.Void StraightModule::.ctor()
 extern void StraightModule__ctor_m0F018C568982BCBD50F86FF326E8C003742ED482 (void);
-// 0x000003B2 System.Void HitCoachInteraction::Awake()
+// 0x000003D7 System.Void HitCoachInteraction::Awake()
 extern void HitCoachInteraction_Awake_mC224A19E801B0D1DB554F7FB38AB4E5AB9FE8B34 (void);
-// 0x000003B3 System.Void HitCoachInteraction::Start()
+// 0x000003D8 System.Void HitCoachInteraction::Start()
 extern void HitCoachInteraction_Start_mC4E6536768720C06D865286E35CD8AE30F116D69 (void);
-// 0x000003B4 System.Void HitCoachInteraction::Update()
+// 0x000003D9 System.Void HitCoachInteraction::Update()
 extern void HitCoachInteraction_Update_m8AF2A6B474B53802569DA04AF09FC061D4577705 (void);
-// 0x000003B5 System.Void HitCoachInteraction::OnTriggerEnter(UnityEngine.Collider)
+// 0x000003DA System.Void HitCoachInteraction::OnTriggerEnter(UnityEngine.Collider)
 extern void HitCoachInteraction_OnTriggerEnter_mCBBE0896A43BC9A6CE9EBC0BE4B862A42A454C10 (void);
-// 0x000003B6 System.Void HitCoachInteraction::stopControllerVibration()
+// 0x000003DB System.Void HitCoachInteraction::stopControllerVibration()
 extern void HitCoachInteraction_stopControllerVibration_m741CE0B01A5265DB6AFF3161AC511F18BAD58BE3 (void);
-// 0x000003B7 System.Void HitCoachInteraction::.ctor()
+// 0x000003DC System.Void HitCoachInteraction::.ctor()
 extern void HitCoachInteraction__ctor_mA3776E2413EE31F7A94881C29135A4B2D6306CB3 (void);
-// 0x000003B8 System.Void HitTargetInteraction::Awake()
+// 0x000003DD System.Void HitTargetInteraction::Awake()
 extern void HitTargetInteraction_Awake_m51AB6C74750FB1D3BE906BAD59B456ED9A77D1F9 (void);
-// 0x000003B9 System.Void HitTargetInteraction::Start()
+// 0x000003DE System.Void HitTargetInteraction::Start()
 extern void HitTargetInteraction_Start_mF8CB4F87B1A553FB8DFAF9C770146F4DCB94B201 (void);
-// 0x000003BA System.Void HitTargetInteraction::Update()
+// 0x000003DF System.Void HitTargetInteraction::Update()
 extern void HitTargetInteraction_Update_m12352016CF2C62034A0BA71F3E5938D0AB7E3563 (void);
-// 0x000003BB System.Void HitTargetInteraction::OnTriggerEnter(UnityEngine.Collider)
+// 0x000003E0 System.Void HitTargetInteraction::OnTriggerEnter(UnityEngine.Collider)
 extern void HitTargetInteraction_OnTriggerEnter_m89601A31526AC94940549A1CA3E36F0D270B2D94 (void);
-// 0x000003BC System.Void HitTargetInteraction::stopControllerVibration()
+// 0x000003E1 System.Void HitTargetInteraction::stopControllerVibration()
 extern void HitTargetInteraction_stopControllerVibration_m3D49ECB243B93AE6BC631FF9392CB728AF758135 (void);
-// 0x000003BD System.Void HitTargetInteraction::.ctor()
+// 0x000003E2 System.Void HitTargetInteraction::.ctor()
 extern void HitTargetInteraction__ctor_m8E622E2239618AA89EA139D878497C2FB4480477 (void);
-// 0x000003BE System.Void PlayingModeManager::Awake()
+// 0x000003E3 System.Void PlayingModeManager::Awake()
 extern void PlayingModeManager_Awake_m8CD801A512DFF23AFC3DC66E7FCDD00EE46A625C (void);
-// 0x000003BF System.Void PlayingModeManager::Start()
+// 0x000003E4 System.Void PlayingModeManager::Start()
 extern void PlayingModeManager_Start_mA51FABDFA477598A6F3E2C7CB8B83333610B6EE8 (void);
-// 0x000003C0 System.Void PlayingModeManager::Update()
+// 0x000003E5 System.Void PlayingModeManager::Update()
 extern void PlayingModeManager_Update_mC02F8FF3D7ED6F42018AFA3D99922B0E3A58ACA5 (void);
-// 0x000003C1 System.Void PlayingModeManager::testingSceneInitialized()
+// 0x000003E6 System.Void PlayingModeManager::testingSceneInitialized()
 extern void PlayingModeManager_testingSceneInitialized_m293371F0F132BCAFB51357C7AC62181BD1FAC4E6 (void);
-// 0x000003C2 System.Void PlayingModeManager::unitOver()
+// 0x000003E7 System.Void PlayingModeManager::unitOver()
 extern void PlayingModeManager_unitOver_mD90EB7E237696FC3BC385AF9955266A0DB4EE182 (void);
-// 0x000003C3 System.Void PlayingModeManager::determineTheVoiceComment()
+// 0x000003E8 System.Void PlayingModeManager::determineTheVoiceComment()
 extern void PlayingModeManager_determineTheVoiceComment_m63616E777299D1FE5B221CD23F4A92B4BE479DE1 (void);
-// 0x000003C4 System.Void PlayingModeManager::playVoiceCommentCompleted()
+// 0x000003E9 System.Void PlayingModeManager::playVoiceCommentCompleted()
 extern void PlayingModeManager_playVoiceCommentCompleted_m5BB2EFCC194D34612473248AB349945126674497 (void);
-// 0x000003C5 System.Void PlayingModeManager::readyStart()
+// 0x000003EA System.Void PlayingModeManager::readyStart()
 extern void PlayingModeManager_readyStart_m3A0C95E11A2A67510AE5F24499F1C6322C257748 (void);
-// 0x000003C6 System.Void PlayingModeManager::callClearPunchMarker()
+// 0x000003EB System.Void PlayingModeManager::callClearPunchMarker()
 extern void PlayingModeManager_callClearPunchMarker_m84CAF62B892ED4433479BF62125D2A0FF9DC5D99 (void);
-// 0x000003C7 System.Void PlayingModeManager::clearPunchMarker()
+// 0x000003EC System.Void PlayingModeManager::clearPunchMarker()
 extern void PlayingModeManager_clearPunchMarker_m5D6AD2468A5F2243D42F608533CB90093AD4CB69 (void);
-// 0x000003C8 System.Void PlayingModeManager::callCloseCoachAvatar()
+// 0x000003ED System.Void PlayingModeManager::callCloseCoachAvatar()
 extern void PlayingModeManager_callCloseCoachAvatar_mAA4229403FCC47950CF51964E5ABF5FD78C2E0BD (void);
-// 0x000003C9 System.Void PlayingModeManager::setPunchMarker()
+// 0x000003EE System.Void PlayingModeManager::setPunchMarker()
 extern void PlayingModeManager_setPunchMarker_m019FBD89E4FAF0EB1F7B6746946A906F6AE43602 (void);
-// 0x000003CA System.Void PlayingModeManager::depthCueRender()
+// 0x000003EF System.Void PlayingModeManager::depthCueRender()
 extern void PlayingModeManager_depthCueRender_m45AEA9C89EC77A2DD9D4AF8350875658D66CD3B2 (void);
-// 0x000003CB System.Void PlayingModeManager::skipToFinalButton()
+// 0x000003F0 System.Void PlayingModeManager::skipToFinalButton()
 extern void PlayingModeManager_skipToFinalButton_m3FEF1DB457029AD3306D6BA88DF4F07241F68F7B (void);
-// 0x000003CC System.Void PlayingModeManager::.ctor()
+// 0x000003F1 System.Void PlayingModeManager::.ctor()
 extern void PlayingModeManager__ctor_mABDC3C746AD399E22D0EF8B14B082831BCC69122 (void);
-// 0x000003CD System.Void PlayingUIManager::Awake()
+// 0x000003F2 System.Void PlayingModeManager/<>c::.cctor()
+extern void U3CU3Ec__cctor_m60B328721C033495170C5AAEF872ED41496B075A (void);
+// 0x000003F3 System.Void PlayingModeManager/<>c::.ctor()
+extern void U3CU3Ec__ctor_m222D14CF21EF097397EBE2671C865CDAF9196771 (void);
+// 0x000003F4 System.Single PlayingModeManager/<>c::<testingSceneInitialized>b__20_0(DepthPerceptionSystem.MovingDirection)
+extern void U3CU3Ec_U3CtestingSceneInitializedU3Eb__20_0_mA3D74A19571B07A992647F8BC25A107FFD303B7B (void);
+// 0x000003F5 System.Void PlayingUIManager::Awake()
 extern void PlayingUIManager_Awake_mEE448E534078B94E4295220666F3881C9E5DC123 (void);
-// 0x000003CE System.Void PlayingUIManager::Start()
+// 0x000003F6 System.Void PlayingUIManager::Start()
 extern void PlayingUIManager_Start_m827153C584ED071AE61C8979C5C16F9ADDBF581B (void);
-// 0x000003CF System.Void PlayingUIManager::Update()
+// 0x000003F7 System.Void PlayingUIManager::Update()
 extern void PlayingUIManager_Update_m1DE54C31E00AEC98A44C71B5CB327F1C894A65A7 (void);
-// 0x000003D0 System.Void PlayingUIManager::welcomToTestingMode(System.Int32)
+// 0x000003F8 System.Void PlayingUIManager::welcomToTestingMode(System.Int32)
 extern void PlayingUIManager_welcomToTestingMode_m75D5A1D4C9D7C3E8E9271CC278A02DDF070B5552 (void);
-// 0x000003D1 System.Void PlayingUIManager::closeStartCanvas()
+// 0x000003F9 System.Void PlayingUIManager::closeStartCanvas()
 extern void PlayingUIManager_closeStartCanvas_m0B0B5B97FC7A7E5548E063712CC9FC9221597038 (void);
-// 0x000003D2 System.Void PlayingUIManager::openReadyCanvas()
+// 0x000003FA System.Void PlayingUIManager::openReadyCanvas()
 extern void PlayingUIManager_openReadyCanvas_mBC51F57D90D23E863C823B7F79046353DA141DCA (void);
-// 0x000003D3 System.Void PlayingUIManager::closeReadyCanvas()
+// 0x000003FB System.Void PlayingUIManager::closeReadyCanvas()
 extern void PlayingUIManager_closeReadyCanvas_m171AA02C282F65CE750A6779D4F728A560818715 (void);
-// 0x000003D4 System.Void PlayingUIManager::closeResultCanvas()
+// 0x000003FC System.Void PlayingUIManager::closeResultCanvas()
 extern void PlayingUIManager_closeResultCanvas_m28A7EED18FD5265B64906A6358F1A9EF3A3F5584 (void);
-// 0x000003D5 System.Void PlayingUIManager::showMoveToCenter()
+// 0x000003FD System.Void PlayingUIManager::showMoveToCenter()
 extern void PlayingUIManager_showMoveToCenter_mBAF7FDC98761F211B55871505B84EE849DAA4367 (void);
-// 0x000003D6 System.Void PlayingUIManager::unitResultView(System.Int32,System.Int32,System.Single,System.Collections.Generic.List`1<System.String>,System.Boolean,System.Boolean)
+// 0x000003FE System.Void PlayingUIManager::unitResultView(System.Int32,System.Int32,System.Single,System.Collections.Generic.List`1<System.String>,System.Boolean,System.Boolean)
 extern void PlayingUIManager_unitResultView_mCC016CC2BC3FC86ABF6E5DD7531A7D15A9C801E0 (void);
-// 0x000003D7 System.Void PlayingUIManager::finalResultView(System.Int32,System.Single,System.Int32,System.Int32,System.Int32,System.Int32)
-extern void PlayingUIManager_finalResultView_m4D32FAB472689517D5D0928DBB62B796749164C8 (void);
-// 0x000003D8 System.Void PlayingUIManager::readyTitleView(System.Int32)
+// 0x000003FF System.Void PlayingUIManager::finalResultView(System.Int32,System.Single,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+extern void PlayingUIManager_finalResultView_m60EB13FEAA4B845068A9841EB765FFBDD1A6B9BD (void);
+// 0x00000400 System.Void PlayingUIManager::readyTitleView(System.Int32)
 extern void PlayingUIManager_readyTitleView_mCB1E82B4AFCE62C0C457F07C981714BD3C415D7A (void);
-// 0x000003D9 System.Void PlayingUIManager::readyCountdownView(System.Single,System.Single)
+// 0x00000401 System.Void PlayingUIManager::readyCountdownView(System.Single,System.Single)
 extern void PlayingUIManager_readyCountdownView_m670C546111DECDE3339FE98B0F6C7918A7640AB7 (void);
-// 0x000003DA System.Void PlayingUIManager::readyStartView(System.Int32)
+// 0x00000402 System.Void PlayingUIManager::readyStartView(System.Int32)
 extern void PlayingUIManager_readyStartView_mCCDF71D45344A0EA53492C597D0E27863B3B8B55 (void);
-// 0x000003DB System.String PlayingUIManager::userIsMoving()
-extern void PlayingUIManager_userIsMoving_mDA26012C3A9B01D42065A27EE7CEAA2DB72424DE (void);
-// 0x000003DC System.String PlayingUIManager::userNotMoving()
+// 0x00000403 System.String PlayingUIManager::userIsMovingScore(System.Boolean)
+extern void PlayingUIManager_userIsMovingScore_m5D1D1422F4C103B311B4F56BB7FEA45DDF0BCDC2 (void);
+// 0x00000404 System.String PlayingUIManager::userNotMoving()
 extern void PlayingUIManager_userNotMoving_m78D5BFC924FF3DB2890EC4B0CD5049DDEE1C2A1B (void);
-// 0x000003DD System.String PlayingUIManager::userIsPunching()
-extern void PlayingUIManager_userIsPunching_m9E4D30F2ACCA65E1EA598765956B764432490286 (void);
-// 0x000003DE System.String PlayingUIManager::userNotPunching()
-extern void PlayingUIManager_userNotPunching_m1BA0182935EB655065D4799EE27DE5DB7800E3A2 (void);
-// 0x000003DF System.String PlayingUIManager::userReachNotStraight()
-extern void PlayingUIManager_userReachNotStraight_mC272E9134479C996ECE662D0331B1A243E40D509 (void);
-// 0x000003E0 System.String PlayingUIManager::userStraightNotReach()
-extern void PlayingUIManager_userStraightNotReach_mA806983D9B204C283E6206B3EE612790B3644BAA (void);
-// 0x000003E1 System.String PlayingUIManager::reactionScore(System.Boolean)
-extern void PlayingUIManager_reactionScore_m75F94D8B4235A9DA53AED4C4222E0D15E8897FB3 (void);
-// 0x000003E2 System.String PlayingUIManager::movingWrong()
-extern void PlayingUIManager_movingWrong_mE2E5DABB1EF4973970D8612F089FEC14A59207C4 (void);
-// 0x000003E3 System.String PlayingUIManager::movingCorretlyScore(System.Boolean)
+// 0x00000405 System.String PlayingUIManager::movingWrongDirection()
+extern void PlayingUIManager_movingWrongDirection_m212EBB754FD1D3D7C9B47384E3E54F2B6705CDE5 (void);
+// 0x00000406 System.String PlayingUIManager::movingCorretlyScore(System.Boolean)
 extern void PlayingUIManager_movingCorretlyScore_m9F5489C84CEBB2BBE991A4A39DFE8F7A8D9EB2D4 (void);
-// 0x000003E4 System.String PlayingUIManager::reachAndStraightScore(System.Boolean)
+// 0x00000407 System.String PlayingUIManager::userIsPunchingScore(System.Boolean)
+extern void PlayingUIManager_userIsPunchingScore_m2FBBBBDB99EC6EE2506421A51911545FD987CD94 (void);
+// 0x00000408 System.String PlayingUIManager::userNotPunching()
+extern void PlayingUIManager_userNotPunching_m1BA0182935EB655065D4799EE27DE5DB7800E3A2 (void);
+// 0x00000409 System.String PlayingUIManager::userReachScore(System.Boolean)
+extern void PlayingUIManager_userReachScore_mACF91C696879B0DF888B4C2761DF85D0C41E74AF (void);
+// 0x0000040A System.String PlayingUIManager::userNotReach()
+extern void PlayingUIManager_userNotReach_m3489A13509C0313A7EE4AB81A0FDEC199110D7DB (void);
+// 0x0000040B System.String PlayingUIManager::reachAndStraightScore(System.Boolean)
 extern void PlayingUIManager_reachAndStraightScore_m0DE72BB7914F49F86E96A38F22D605F469A6CACD (void);
-// 0x000003E5 System.Void PlayingUIManager::btnChangeScene(System.String)
+// 0x0000040C System.String PlayingUIManager::reachButNotStraight()
+extern void PlayingUIManager_reachButNotStraight_m138EA4BA3BA41C4025B07E19FE0776DE465574C0 (void);
+// 0x0000040D System.Void PlayingUIManager::btnChangeScene(System.String)
 extern void PlayingUIManager_btnChangeScene_mC43D380AE933A8E4C6A5D397901F8060EB909AAF (void);
-// 0x000003E6 System.Void PlayingUIManager::btnExit()
+// 0x0000040E System.Void PlayingUIManager::btnExit()
 extern void PlayingUIManager_btnExit_mFE6E203A032F6EAAEC3012912040CCDA01B705FC (void);
-// 0x000003E7 System.Void PlayingUIManager::.ctor()
+// 0x0000040F System.Void PlayingUIManager::.ctor()
 extern void PlayingUIManager__ctor_m970985973A454513D37C0757C7E2CF40A209CD79 (void);
-// 0x000003E8 System.Void VRBoxBuildingManager::Awake()
+// 0x00000410 System.Void VRBoxBuildingManager::Awake()
 extern void VRBoxBuildingManager_Awake_m96F363E0AD76058EE46D65D0F9D32F95DFE70248 (void);
-// 0x000003E9 System.Void VRBoxBuildingManager::Start()
+// 0x00000411 System.Void VRBoxBuildingManager::Start()
 extern void VRBoxBuildingManager_Start_m51EE1A01125F99E0C47A9F2D9699508490112969 (void);
-// 0x000003EA System.Void VRBoxBuildingManager::Update()
+// 0x00000412 System.Void VRBoxBuildingManager::Update()
 extern void VRBoxBuildingManager_Update_m99626265F1D48D1847B01A87D12F4F6ADB4E6764 (void);
-// 0x000003EB System.Void VRBoxBuildingManager::vrBoxBuildingInitialize()
+// 0x00000413 System.Void VRBoxBuildingManager::vrBoxBuildingInitialize()
 extern void VRBoxBuildingManager_vrBoxBuildingInitialize_m9ACFBB4B441DDE306BF7E0E3AB6268D763CDF107 (void);
-// 0x000003EC System.Void VRBoxBuildingManager::.ctor()
+// 0x00000414 System.Void VRBoxBuildingManager::.ctor()
 extern void VRBoxBuildingManager__ctor_mAE7D2C1B65D3FD1318EA297DE3B0254FCCCCF7D6 (void);
-// 0x000003ED System.Void PunchCollectingManager::Awake()
-extern void PunchCollectingManager_Awake_mC156A430B7F1C23AF71458523CAE1DE2C2377974 (void);
-// 0x000003EE System.Void PunchCollectingManager::Start()
-extern void PunchCollectingManager_Start_m863BEFFE16554F4F1772C723327CCD39BADA925D (void);
-// 0x000003EF System.Void PunchCollectingManager::Update()
-extern void PunchCollectingManager_Update_mEB0325D1C3157CDD84B23C4550B52E4A76C2C365 (void);
-// 0x000003F0 System.Void PunchCollectingManager::sceneInitialized()
-extern void PunchCollectingManager_sceneInitialized_mD2057C06989398727605A2C10E8589F008E5E799 (void);
-// 0x000003F1 System.Void PunchCollectingManager::saveToJSON_punchResult()
-extern void PunchCollectingManager_saveToJSON_punchResult_mCEF22F846BC2A0B141AD10C810F852958AD78AE1 (void);
-// 0x000003F2 System.Void PunchCollectingManager::displayPunchUnitResult(DepthPerceptionSystem.Hand,System.Boolean,DepthPerceptionSystem.ArmRotationAngle)
-extern void PunchCollectingManager_displayPunchUnitResult_mBEF0348329253B1929A3B1485208718D50D39CD1 (void);
-// 0x000003F3 System.Void PunchCollectingManager::displayPunchResult()
-extern void PunchCollectingManager_displayPunchResult_m20E7671D241C8F2CA3EDD6C0BED0D436DE165DF7 (void);
-// 0x000003F4 System.Void PunchCollectingManager::savePunchUnitResult()
-extern void PunchCollectingManager_savePunchUnitResult_m5C83BEB859146527687BBF1A7710FA2D4E33A50E (void);
-// 0x000003F5 System.Void PunchCollectingManager::punchUnitTestInitial()
-extern void PunchCollectingManager_punchUnitTestInitial_m21A42C8EBCD907D158A317DF714750596008B32D (void);
-// 0x000003F6 System.Void PunchCollectingManager::modifyCoachJudegement()
-extern void PunchCollectingManager_modifyCoachJudegement_m92CACB13B0FA56B65DB329D181261A71EDD8F8CE (void);
-// 0x000003F7 System.Void PunchCollectingManager::btnSelectionSceneClick()
-extern void PunchCollectingManager_btnSelectionSceneClick_m88B80210F9D4E54B424A5E973080CD61241D9029 (void);
-// 0x000003F8 System.Void PunchCollectingManager::reloadPunchCollectingScene()
-extern void PunchCollectingManager_reloadPunchCollectingScene_m8A984285E4144E6B850050B94B3EC93DE54D3A22 (void);
-// 0x000003F9 DepthPerceptionSystem.UserArmStraightAngle PunchCollectingManager::calculateNewStraightStandardAngle()
-extern void PunchCollectingManager_calculateNewStraightStandardAngle_m18652125CB6517007F7E853AFF1206CE3C673846 (void);
-// 0x000003FA System.Void PunchCollectingManager::.ctor()
-extern void PunchCollectingManager__ctor_m46D819CDAC281812C86FFEC1550E78F711CCE7A8 (void);
-// 0x000003FB System.Void HolderBagInteraction::Awake()
+// 0x00000415 System.Void PunchSettingManager::Awake()
+extern void PunchSettingManager_Awake_m6A3820B562EE56EFB2AD4E4AB8E80DBF518B4FDE (void);
+// 0x00000416 System.Void PunchSettingManager::Start()
+extern void PunchSettingManager_Start_mEB307FCF84CAFB30FD886BA6C4774E333CB93751 (void);
+// 0x00000417 System.Void PunchSettingManager::Update()
+extern void PunchSettingManager_Update_mF8603E873FF0B349164C5D9EFA92574A5C022D0D (void);
+// 0x00000418 System.Void PunchSettingManager::sceneInitialized()
+extern void PunchSettingManager_sceneInitialized_m1758F4DF9D5C87233CAC6369BE85C5619160C915 (void);
+// 0x00000419 System.Void PunchSettingManager::saveToJSON_punchResult()
+extern void PunchSettingManager_saveToJSON_punchResult_m428E1C97E49131FFAA6A8C16D22E835F21FA7CB1 (void);
+// 0x0000041A System.Void PunchSettingManager::displayPunchUnitResult(DepthPerceptionSystem.Hand,System.Boolean,DepthPerceptionSystem.ArmRotationAngle)
+extern void PunchSettingManager_displayPunchUnitResult_m464EC59C1AD8A6E9B151B092EC5C665D25C04B4A (void);
+// 0x0000041B System.Void PunchSettingManager::displayPunchResult()
+extern void PunchSettingManager_displayPunchResult_mAC853C68A7D0BFE0DAB32C176A5880A7B8C122FF (void);
+// 0x0000041C System.Void PunchSettingManager::savePunchUnitResult()
+extern void PunchSettingManager_savePunchUnitResult_m37705B0A13D07C07CC696D6B7B235BD5FDDAED4A (void);
+// 0x0000041D System.Void PunchSettingManager::punchUnitTestInitial()
+extern void PunchSettingManager_punchUnitTestInitial_m7A8EC4D9D1F517F377E0C60499AC108ED7E76BDA (void);
+// 0x0000041E System.Void PunchSettingManager::modifyCoachJudegement()
+extern void PunchSettingManager_modifyCoachJudegement_mBB26C6725BC5244CD49ACCFD0C0BA861C592C49D (void);
+// 0x0000041F System.Void PunchSettingManager::btnSelectionSceneClick()
+extern void PunchSettingManager_btnSelectionSceneClick_mD59AC8BABF6C8CF9DB551050F33BD74EC2535B1E (void);
+// 0x00000420 System.Void PunchSettingManager::reloadPunchSettingScene()
+extern void PunchSettingManager_reloadPunchSettingScene_m335C83519EF83804769E7DFEAC45751F4AF62474 (void);
+// 0x00000421 DepthPerceptionSystem.UserArmStraightAngle PunchSettingManager::calculateNewStraightStandardAngle()
+extern void PunchSettingManager_calculateNewStraightStandardAngle_m7BB1824CDFB6E3B3BAA27ACD2A5165E9CA7F839A (void);
+// 0x00000422 System.Void PunchSettingManager::.ctor()
+extern void PunchSettingManager__ctor_m9265C51901B2AA0D6D1BA26D567F2FD3500AC963 (void);
+// 0x00000423 System.Void HolderBagInteraction::Awake()
 extern void HolderBagInteraction_Awake_mFC2F6FE8A6872F6DE7BCF9996C60850616F0B5E4 (void);
-// 0x000003FC System.Void HolderBagInteraction::Start()
+// 0x00000424 System.Void HolderBagInteraction::Start()
 extern void HolderBagInteraction_Start_m7BC48DCC4EBA2E3328E90E6883E7ADD1DC2EF73A (void);
-// 0x000003FD System.Void HolderBagInteraction::Update()
+// 0x00000425 System.Void HolderBagInteraction::Update()
 extern void HolderBagInteraction_Update_m57DD84C1CE61E9822D62E51EA9E70DCEAC53DF6D (void);
-// 0x000003FE System.Void HolderBagInteraction::OnTriggerEnter(UnityEngine.Collider)
+// 0x00000426 System.Void HolderBagInteraction::OnTriggerEnter(UnityEngine.Collider)
 extern void HolderBagInteraction_OnTriggerEnter_mD2CE15CD68541DCC37DE6D7FBCC1FC155CC517A1 (void);
-// 0x000003FF System.Void HolderBagInteraction::stopControllerVibration()
+// 0x00000427 System.Void HolderBagInteraction::stopControllerVibration()
 extern void HolderBagInteraction_stopControllerVibration_m31CE3805F30B2FF4421F6C04D19327C3925C512F (void);
-// 0x00000400 System.Void HolderBagInteraction::.ctor()
+// 0x00000428 System.Void HolderBagInteraction::.ctor()
 extern void HolderBagInteraction__ctor_mC045C398FCD4182763C8324F468A3FC73E5AD057 (void);
-// 0x00000401 System.Void SelectionModeManager::Awake()
+// 0x00000429 System.Void SelectionModeManager::Awake()
 extern void SelectionModeManager_Awake_m834C8DB85F7994AC9E108F1119B476E431972898 (void);
-// 0x00000402 System.Void SelectionModeManager::Start()
+// 0x0000042A System.Void SelectionModeManager::Start()
 extern void SelectionModeManager_Start_mFC4E4C6BA5AA1229FC8865C1C3766F12BFE5123D (void);
-// 0x00000403 System.Void SelectionModeManager::Update()
+// 0x0000042B System.Void SelectionModeManager::Update()
 extern void SelectionModeManager_Update_m61423B5B918B7C6BAB35D0F10967219C4C0DEAFB (void);
-// 0x00000404 System.Void SelectionModeManager::selectionSceneInitialized()
+// 0x0000042C System.Void SelectionModeManager::selectionSceneInitialized()
 extern void SelectionModeManager_selectionSceneInitialized_mEFCCBE82AC708FE00A5D0EB2425CADCC074D8A22 (void);
-// 0x00000405 System.Void SelectionModeManager::toggleSelect(System.Boolean)
+// 0x0000042D System.Void SelectionModeManager::btnCalibrationScene()
+extern void SelectionModeManager_btnCalibrationScene_m0042069253DFDD24A91B46D8FCF0CE80C311AB8B (void);
+// 0x0000042E System.Void SelectionModeManager::btnSelectionScene()
+extern void SelectionModeManager_btnSelectionScene_mF7B787A7113805274FBCE9F9AF809A91D7CFBA71 (void);
+// 0x0000042F System.Void SelectionModeManager::toggleSelect(System.Boolean)
 extern void SelectionModeManager_toggleSelect_m29C82ED87B37169C4CDC12922281B7BDE7C4A23F (void);
-// 0x00000406 System.Void SelectionModeManager::moveToLevelSelect()
-extern void SelectionModeManager_moveToLevelSelect_mFAA0B636E4DB16C50BBD462B9AC683D99F78CA68 (void);
-// 0x00000407 System.Void SelectionModeManager::levelSelect(DepthPerceptionSystem.TrainingLevel)
-extern void SelectionModeManager_levelSelect_m1270EF34529FEE005712D1813E253D77021D7A47 (void);
-// 0x00000408 System.Void SelectionModeManager::moveToTrainSelect()
-extern void SelectionModeManager_moveToTrainSelect_m6DB8BBC405CC28FE3F98F25DA7DA1D774C4C3C4B (void);
-// 0x00000409 System.Void SelectionModeManager::modeSelect(DepthPerceptionSystem.SystemMode)
+// 0x00000430 System.Void SelectionModeManager::moveToHandednessSelect(System.Boolean)
+extern void SelectionModeManager_moveToHandednessSelect_m62FA7385281BA462B833901E016169763D0C7BAB (void);
+// 0x00000431 System.Void SelectionModeManager::moveToSpeedSelect(System.Boolean)
+extern void SelectionModeManager_moveToSpeedSelect_mB2698E929D4BDE09D26DFA51D1F92A8AE96C1BD8 (void);
+// 0x00000432 System.Void SelectionModeManager::moveToDirectionSelect(DepthPerceptionSystem.MovingSpeed)
+extern void SelectionModeManager_moveToDirectionSelect_m0B466436A5B5C7F0D956D6B8DF295EFBEDC00B63 (void);
+// 0x00000433 System.Void SelectionModeManager::moveToModeSelect(DepthPerceptionSystem.MovingDirection)
+extern void SelectionModeManager_moveToModeSelect_mC190CCF2F904F0125C03C0CA2385CA6201249C34 (void);
+// 0x00000434 System.Void SelectionModeManager::moveToTrainMethodSelect()
+extern void SelectionModeManager_moveToTrainMethodSelect_mF90738A7608705AFF9B9F3BB0160F337534070F6 (void);
+// 0x00000435 System.Void SelectionModeManager::modeSelect(DepthPerceptionSystem.SystemMode)
 extern void SelectionModeManager_modeSelect_mAE0782E7FFFC3CB7E5DE8557FB4F9F76C8FA0857 (void);
-// 0x0000040A System.Void SelectionModeManager::placeChoicesAway()
+// 0x00000436 System.Void SelectionModeManager::placeChoicesAway()
 extern void SelectionModeManager_placeChoicesAway_m71B536CBBAEA140A336E50D847C636923FB1D33A (void);
-// 0x0000040B System.Void SelectionModeManager::handednessChoicesAway()
+// 0x00000437 System.Void SelectionModeManager::handednessChoicesToWall()
+extern void SelectionModeManager_handednessChoicesToWall_m6EE38B7EF03442C4DC263C065781735C3EA442E5 (void);
+// 0x00000438 System.Void SelectionModeManager::handednessChoicesAway()
 extern void SelectionModeManager_handednessChoicesAway_m92D5715E7E3D7FF06CCC61A2BA64C6FF78FF3F0B (void);
-// 0x0000040C System.Void SelectionModeManager::handednessChoiceToWall()
-extern void SelectionModeManager_handednessChoiceToWall_mEE1EF70EC7D573F8147C1F570900F6EAB090DADA (void);
-// 0x0000040D System.Void SelectionModeManager::sceneChoicesAway()
-extern void SelectionModeManager_sceneChoicesAway_m17CE651B6C5CCBF1D42C331A7EDD4EBD9126369E (void);
-// 0x0000040E System.Void SelectionModeManager::sceneChoicesToWall()
-extern void SelectionModeManager_sceneChoicesToWall_mAC4E4D4B5D70493AAD417885034DCF01E6DE0834 (void);
-// 0x0000040F System.Void SelectionModeManager::trainLevelToWall()
-extern void SelectionModeManager_trainLevelToWall_mACC1A95FECBB995753A54A61593BC392FAD052D3 (void);
-// 0x00000410 System.Void SelectionModeManager::levelChoicesAway()
-extern void SelectionModeManager_levelChoicesAway_mDB9484879EC52AF0F42DFC5A9D79FBE4183968E6 (void);
-// 0x00000411 System.Void SelectionModeManager::trainModeToWall()
-extern void SelectionModeManager_trainModeToWall_mA232116D9ACF14EB7396010E53699EE8ED5626DD (void);
-// 0x00000412 System.Void SelectionModeManager::.ctor()
+// 0x00000439 System.Void SelectionModeManager::speedChoicesToWall()
+extern void SelectionModeManager_speedChoicesToWall_mA3435D91DF3C36B6988CEB13F77948FD753E78C5 (void);
+// 0x0000043A System.Void SelectionModeManager::speedChoicesAway()
+extern void SelectionModeManager_speedChoicesAway_m95FC728E918ADD8C8541A7AE5C3CC6E5DFA593F1 (void);
+// 0x0000043B System.Void SelectionModeManager::directionChoicesToWall()
+extern void SelectionModeManager_directionChoicesToWall_m68B0CE64B9962F9CC787DB52C28BFC869CFD1EB8 (void);
+// 0x0000043C System.Void SelectionModeManager::directionChoicesAway()
+extern void SelectionModeManager_directionChoicesAway_mBB6DAA43C991F84E73FAE680B35F69C38C04BB0A (void);
+// 0x0000043D System.Void SelectionModeManager::modeChoicesToWall()
+extern void SelectionModeManager_modeChoicesToWall_mCCA17D81189A68B007009680E17E7340518E8AB8 (void);
+// 0x0000043E System.Void SelectionModeManager::modeChoicesAway()
+extern void SelectionModeManager_modeChoicesAway_m05172EA149F0EEA9F2FFA64A4F4A2D1DFEF14CB9 (void);
+// 0x0000043F System.Void SelectionModeManager::trainMethodChoicesToWall()
+extern void SelectionModeManager_trainMethodChoicesToWall_mF7ADCEE7886F1863BE6B7F4AAE7B3FB5A7E53C6F (void);
+// 0x00000440 System.Void SelectionModeManager::.ctor()
 extern void SelectionModeManager__ctor_mC8F9F20EED67247E65D02EE15114CE596156FD87 (void);
-// 0x00000413 System.Void SelectionUIManager::Start()
+// 0x00000441 System.Void SelectionUIManager::Start()
 extern void SelectionUIManager_Start_mE56D5085AF3E7DFA39638DA5AACEECD76B7EF8FA (void);
-// 0x00000414 System.Void SelectionUIManager::Update()
+// 0x00000442 System.Void SelectionUIManager::Update()
 extern void SelectionUIManager_Update_m7F4ED50AC8EB6A3EF08B8F62953165F1EC0945EC (void);
-// 0x00000415 System.Void SelectionUIManager::setSelectionToggleText(DepthPerceptionSystem.SelectionState)
+// 0x00000443 System.Void SelectionUIManager::setSelectionToggleText(DepthPerceptionSystem.SelectionState)
 extern void SelectionUIManager_setSelectionToggleText_mE3E6063CDAD945AFE586196138A0F251C25378D7 (void);
-// 0x00000416 System.Void SelectionUIManager::.ctor()
+// 0x00000444 System.Void SelectionUIManager::.ctor()
 extern void SelectionUIManager__ctor_m759EA0F48748DE878087F53CBAA56376043E5D07 (void);
-// 0x00000417 System.Void StartModeScene::Start()
+// 0x00000445 System.Void StartModeScene::Start()
 extern void StartModeScene_Start_m537B91AC759D7084A92D7FF8AFF3C0041C966BCD (void);
-// 0x00000418 System.Void StartModeScene::Update()
+// 0x00000446 System.Void StartModeScene::Update()
 extern void StartModeScene_Update_m3798382ACA3ED1DD3FA7E14E7A7A2CBBE8FE65A2 (void);
-// 0x00000419 System.Void StartModeScene::FixedUpdate()
+// 0x00000447 System.Void StartModeScene::FixedUpdate()
 extern void StartModeScene_FixedUpdate_m70AB9FADFCDE7270F8D9A7327ADBA30BC1A57399 (void);
-// 0x0000041A System.Void StartModeScene::.ctor()
+// 0x00000448 System.Void StartModeScene::.ctor()
 extern void StartModeScene__ctor_mE798ED5D4B2A1B7CF48D1599F8970B2D219F1E1B (void);
-// 0x0000041B System.Void UIFollowHead::Awake()
+// 0x00000449 System.Void UIFollowHead::Awake()
 extern void UIFollowHead_Awake_m10C08FE367025EBA99A76BB80E7D53CF538FC6BA (void);
-// 0x0000041C System.Void UIFollowHead::Start()
+// 0x0000044A System.Void UIFollowHead::Start()
 extern void UIFollowHead_Start_mB9A91CBF86BACF26FAFFFAF3249DBC531589B986 (void);
-// 0x0000041D System.Void UIFollowHead::Update()
+// 0x0000044B System.Void UIFollowHead::Update()
 extern void UIFollowHead_Update_m651527B67711B1B9C6594FCFD954D1895EE0D58E (void);
-// 0x0000041E System.Void UIFollowHead::recenterUICanvas()
+// 0x0000044C System.Void UIFollowHead::recenterUICanvas()
 extern void UIFollowHead_recenterUICanvas_m2B413D4293C173783F3C496F35BEE0C4742CD1A3 (void);
-// 0x0000041F System.Void UIFollowHead::.ctor()
+// 0x0000044D System.Void UIFollowHead::.ctor()
 extern void UIFollowHead__ctor_m3C2DAE9C5129FFFE1F526D2F6D97D1812D46F813 (void);
-// 0x00000420 System.Void ChatController::OnEnable()
+// 0x0000044E System.Void ChatController::OnEnable()
 extern void ChatController_OnEnable_m025CE203564D82A1CDCE5E5719DB07E29811D0B7 (void);
-// 0x00000421 System.Void ChatController::OnDisable()
+// 0x0000044F System.Void ChatController::OnDisable()
 extern void ChatController_OnDisable_mD49D03719CAEBB3F59F24A7FA8F4FD30C8B54E46 (void);
-// 0x00000422 System.Void ChatController::AddToChatOutput(System.String)
+// 0x00000450 System.Void ChatController::AddToChatOutput(System.String)
 extern void ChatController_AddToChatOutput_m9AB8FA8A32EA23F2E55795D8301ED0BF6A59F722 (void);
-// 0x00000423 System.Void ChatController::.ctor()
+// 0x00000451 System.Void ChatController::.ctor()
 extern void ChatController__ctor_m39C05E9EB8C8C40664D5655BCAB9EEBCB31F9719 (void);
-// 0x00000424 System.Void DropdownSample::OnButtonClick()
+// 0x00000452 System.Void DropdownSample::OnButtonClick()
 extern void DropdownSample_OnButtonClick_mF83641F913F3455A3AE6ADCEA5DEB2A323FCB58F (void);
-// 0x00000425 System.Void DropdownSample::.ctor()
+// 0x00000453 System.Void DropdownSample::.ctor()
 extern void DropdownSample__ctor_m0F0C6DD803E99B2C15F3369ABD94EC273FADC75B (void);
-// 0x00000426 System.Void EnvMapAnimator::Awake()
+// 0x00000454 System.Void EnvMapAnimator::Awake()
 extern void EnvMapAnimator_Awake_m1D86ECDDD4A7A6DF98748B11BAC74D2D3B2F9435 (void);
-// 0x00000427 System.Collections.IEnumerator EnvMapAnimator::Start()
+// 0x00000455 System.Collections.IEnumerator EnvMapAnimator::Start()
 extern void EnvMapAnimator_Start_mB8A6567BB58BDFD0FC70980AFA952748DF1E80E9 (void);
-// 0x00000428 System.Void EnvMapAnimator::.ctor()
+// 0x00000456 System.Void EnvMapAnimator::.ctor()
 extern void EnvMapAnimator__ctor_m465E8527E49D1AA672A9A8A3B96FE78C24D11138 (void);
-// 0x00000429 System.Void EnvMapAnimator/<Start>d__4::.ctor(System.Int32)
+// 0x00000457 System.Void EnvMapAnimator/<Start>d__4::.ctor(System.Int32)
 extern void U3CStartU3Ed__4__ctor_m432062D94FDEF42B01FAB69EBC06A4D137C525C2 (void);
-// 0x0000042A System.Void EnvMapAnimator/<Start>d__4::System.IDisposable.Dispose()
+// 0x00000458 System.Void EnvMapAnimator/<Start>d__4::System.IDisposable.Dispose()
 extern void U3CStartU3Ed__4_System_IDisposable_Dispose_m8088B5A404D1CB754E73D37137F9A288E47E7E9C (void);
-// 0x0000042B System.Boolean EnvMapAnimator/<Start>d__4::MoveNext()
+// 0x00000459 System.Boolean EnvMapAnimator/<Start>d__4::MoveNext()
 extern void U3CStartU3Ed__4_MoveNext_mF689BF83350416D2071533C92042BF12AC52F0C0 (void);
-// 0x0000042C System.Object EnvMapAnimator/<Start>d__4::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x0000045A System.Object EnvMapAnimator/<Start>d__4::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CStartU3Ed__4_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA3CCB9B113B234F43186B26439E10AD6609DD565 (void);
-// 0x0000042D System.Void EnvMapAnimator/<Start>d__4::System.Collections.IEnumerator.Reset()
+// 0x0000045B System.Void EnvMapAnimator/<Start>d__4::System.Collections.IEnumerator.Reset()
 extern void U3CStartU3Ed__4_System_Collections_IEnumerator_Reset_m3EF23BF40634D4262D8A2AE3DB14140FEFB4BF52 (void);
-// 0x0000042E System.Object EnvMapAnimator/<Start>d__4::System.Collections.IEnumerator.get_Current()
+// 0x0000045C System.Object EnvMapAnimator/<Start>d__4::System.Collections.IEnumerator.get_Current()
 extern void U3CStartU3Ed__4_System_Collections_IEnumerator_get_Current_mB1C119A46A09AD8F0D4DE964F6B335BE2A460FAA (void);
-// 0x0000042F System.Void UnityTemplateProject.SimpleCameraController::OnEnable()
+// 0x0000045D System.Void UnityTemplateProject.SimpleCameraController::OnEnable()
 extern void SimpleCameraController_OnEnable_mE82248046F093F6C5640BDCC8FF4B9996C6D2381 (void);
-// 0x00000430 UnityEngine.Vector3 UnityTemplateProject.SimpleCameraController::GetInputTranslationDirection()
+// 0x0000045E UnityEngine.Vector3 UnityTemplateProject.SimpleCameraController::GetInputTranslationDirection()
 extern void SimpleCameraController_GetInputTranslationDirection_mB7EE1B0B3331A6CC8F52D5671A504D15A4ECB558 (void);
-// 0x00000431 System.Void UnityTemplateProject.SimpleCameraController::Update()
+// 0x0000045F System.Void UnityTemplateProject.SimpleCameraController::Update()
 extern void SimpleCameraController_Update_mA30F5F5EC736E8A3B298CF87F9A786F6D7E2CB1D (void);
-// 0x00000432 System.Void UnityTemplateProject.SimpleCameraController::.ctor()
+// 0x00000460 System.Void UnityTemplateProject.SimpleCameraController::.ctor()
 extern void SimpleCameraController__ctor_m094201165462FC27919DE9E98C4D53A061197148 (void);
-// 0x00000433 System.Void UnityTemplateProject.SimpleCameraController/CameraState::SetFromTransform(UnityEngine.Transform)
+// 0x00000461 System.Void UnityTemplateProject.SimpleCameraController/CameraState::SetFromTransform(UnityEngine.Transform)
 extern void CameraState_SetFromTransform_mCC26B175D14198A00A2121289F2B3504FEDAC157 (void);
-// 0x00000434 System.Void UnityTemplateProject.SimpleCameraController/CameraState::Translate(UnityEngine.Vector3)
+// 0x00000462 System.Void UnityTemplateProject.SimpleCameraController/CameraState::Translate(UnityEngine.Vector3)
 extern void CameraState_Translate_m0EF16D858AC07E47E11EAA3AD0D856DEB282B02E (void);
-// 0x00000435 System.Void UnityTemplateProject.SimpleCameraController/CameraState::LerpTowards(UnityTemplateProject.SimpleCameraController/CameraState,System.Single,System.Single)
+// 0x00000463 System.Void UnityTemplateProject.SimpleCameraController/CameraState::LerpTowards(UnityTemplateProject.SimpleCameraController/CameraState,System.Single,System.Single)
 extern void CameraState_LerpTowards_m59D846E2B246B06ACE4CF5F0AB68C3A2B3AF6213 (void);
-// 0x00000436 System.Void UnityTemplateProject.SimpleCameraController/CameraState::UpdateTransform(UnityEngine.Transform)
+// 0x00000464 System.Void UnityTemplateProject.SimpleCameraController/CameraState::UpdateTransform(UnityEngine.Transform)
 extern void CameraState_UpdateTransform_m8174E7238F01C8A72D7793F7A850C8E904190084 (void);
-// 0x00000437 System.Void UnityTemplateProject.SimpleCameraController/CameraState::.ctor()
+// 0x00000465 System.Void UnityTemplateProject.SimpleCameraController/CameraState::.ctor()
 extern void CameraState__ctor_m93055CACFEBEBA19E2BD9AF02AF66C66CF56D98F (void);
-// 0x00000438 System.Char TMPro.TMP_DigitValidator::Validate(System.String&,System.Int32&,System.Char)
+// 0x00000466 System.Char TMPro.TMP_DigitValidator::Validate(System.String&,System.Int32&,System.Char)
 extern void TMP_DigitValidator_Validate_m786CF8A4D85EB9E1BE8785A58007F8796991BDB9 (void);
-// 0x00000439 System.Void TMPro.TMP_DigitValidator::.ctor()
+// 0x00000467 System.Void TMPro.TMP_DigitValidator::.ctor()
 extern void TMP_DigitValidator__ctor_m9DC5F1168E5F4963C063C88384ADEBA8980BBFE0 (void);
-// 0x0000043A System.Char TMPro.TMP_PhoneNumberValidator::Validate(System.String&,System.Int32&,System.Char)
+// 0x00000468 System.Char TMPro.TMP_PhoneNumberValidator::Validate(System.String&,System.Int32&,System.Char)
 extern void TMP_PhoneNumberValidator_Validate_mE50FE1DE042CE58055C824840D77FCDA6A2AF4D3 (void);
-// 0x0000043B System.Void TMPro.TMP_PhoneNumberValidator::.ctor()
+// 0x00000469 System.Void TMPro.TMP_PhoneNumberValidator::.ctor()
 extern void TMP_PhoneNumberValidator__ctor_m70833F265A016119F88136746B4C59F45B5E067D (void);
-// 0x0000043C TMPro.TMP_TextEventHandler/CharacterSelectionEvent TMPro.TMP_TextEventHandler::get_onCharacterSelection()
+// 0x0000046A TMPro.TMP_TextEventHandler/CharacterSelectionEvent TMPro.TMP_TextEventHandler::get_onCharacterSelection()
 extern void TMP_TextEventHandler_get_onCharacterSelection_mA62049738125E3C48405E6DFF09E2D42300BE8C3 (void);
-// 0x0000043D System.Void TMPro.TMP_TextEventHandler::set_onCharacterSelection(TMPro.TMP_TextEventHandler/CharacterSelectionEvent)
+// 0x0000046B System.Void TMPro.TMP_TextEventHandler::set_onCharacterSelection(TMPro.TMP_TextEventHandler/CharacterSelectionEvent)
 extern void TMP_TextEventHandler_set_onCharacterSelection_m6B85C54F4E751BF080324D94FB8DA6286CD5A43C (void);
-// 0x0000043E TMPro.TMP_TextEventHandler/SpriteSelectionEvent TMPro.TMP_TextEventHandler::get_onSpriteSelection()
+// 0x0000046C TMPro.TMP_TextEventHandler/SpriteSelectionEvent TMPro.TMP_TextEventHandler::get_onSpriteSelection()
 extern void TMP_TextEventHandler_get_onSpriteSelection_m95CDEB7394FFF38F310717EEEFDCD481D96A5E82 (void);
-// 0x0000043F System.Void TMPro.TMP_TextEventHandler::set_onSpriteSelection(TMPro.TMP_TextEventHandler/SpriteSelectionEvent)
+// 0x0000046D System.Void TMPro.TMP_TextEventHandler::set_onSpriteSelection(TMPro.TMP_TextEventHandler/SpriteSelectionEvent)
 extern void TMP_TextEventHandler_set_onSpriteSelection_mFFBD9D70A791A3F2065C1063F258465EDA8AC2C5 (void);
-// 0x00000440 TMPro.TMP_TextEventHandler/WordSelectionEvent TMPro.TMP_TextEventHandler::get_onWordSelection()
+// 0x0000046E TMPro.TMP_TextEventHandler/WordSelectionEvent TMPro.TMP_TextEventHandler::get_onWordSelection()
 extern void TMP_TextEventHandler_get_onWordSelection_mF22771B4213EEB3AEFCDA390A4FF28FED5D9184C (void);
-// 0x00000441 System.Void TMPro.TMP_TextEventHandler::set_onWordSelection(TMPro.TMP_TextEventHandler/WordSelectionEvent)
+// 0x0000046F System.Void TMPro.TMP_TextEventHandler::set_onWordSelection(TMPro.TMP_TextEventHandler/WordSelectionEvent)
 extern void TMP_TextEventHandler_set_onWordSelection_mA7EB31AF14EAADD968857DDAC994F7728B7B02E3 (void);
-// 0x00000442 TMPro.TMP_TextEventHandler/LineSelectionEvent TMPro.TMP_TextEventHandler::get_onLineSelection()
+// 0x00000470 TMPro.TMP_TextEventHandler/LineSelectionEvent TMPro.TMP_TextEventHandler::get_onLineSelection()
 extern void TMP_TextEventHandler_get_onLineSelection_mDDF07E7000993FCD6EAF2FBD2D2226EB66273908 (void);
-// 0x00000443 System.Void TMPro.TMP_TextEventHandler::set_onLineSelection(TMPro.TMP_TextEventHandler/LineSelectionEvent)
+// 0x00000471 System.Void TMPro.TMP_TextEventHandler::set_onLineSelection(TMPro.TMP_TextEventHandler/LineSelectionEvent)
 extern void TMP_TextEventHandler_set_onLineSelection_m098580AA8098939290113692072E18F9A293B427 (void);
-// 0x00000444 TMPro.TMP_TextEventHandler/LinkSelectionEvent TMPro.TMP_TextEventHandler::get_onLinkSelection()
+// 0x00000472 TMPro.TMP_TextEventHandler/LinkSelectionEvent TMPro.TMP_TextEventHandler::get_onLinkSelection()
 extern void TMP_TextEventHandler_get_onLinkSelection_m87FB9EABE7F917B2F910A18A3B5F1AE3020D976D (void);
-// 0x00000445 System.Void TMPro.TMP_TextEventHandler::set_onLinkSelection(TMPro.TMP_TextEventHandler/LinkSelectionEvent)
+// 0x00000473 System.Void TMPro.TMP_TextEventHandler::set_onLinkSelection(TMPro.TMP_TextEventHandler/LinkSelectionEvent)
 extern void TMP_TextEventHandler_set_onLinkSelection_m6741C71F7E218C744CD7AA18B7456382E4B703FF (void);
-// 0x00000446 System.Void TMPro.TMP_TextEventHandler::Awake()
+// 0x00000474 System.Void TMPro.TMP_TextEventHandler::Awake()
 extern void TMP_TextEventHandler_Awake_mE2D7EB8218B248F11BE54C507396B9B6B12E0052 (void);
-// 0x00000447 System.Void TMPro.TMP_TextEventHandler::LateUpdate()
+// 0x00000475 System.Void TMPro.TMP_TextEventHandler::LateUpdate()
 extern void TMP_TextEventHandler_LateUpdate_mBF0056A3C00834477F7D221BEE17C26784559DE1 (void);
-// 0x00000448 System.Void TMPro.TMP_TextEventHandler::OnPointerEnter(UnityEngine.EventSystems.PointerEventData)
+// 0x00000476 System.Void TMPro.TMP_TextEventHandler::OnPointerEnter(UnityEngine.EventSystems.PointerEventData)
 extern void TMP_TextEventHandler_OnPointerEnter_mF5B4CCF0C9F2EFE24B6D4C7B31C620C91ABBC07A (void);
-// 0x00000449 System.Void TMPro.TMP_TextEventHandler::OnPointerExit(UnityEngine.EventSystems.PointerEventData)
+// 0x00000477 System.Void TMPro.TMP_TextEventHandler::OnPointerExit(UnityEngine.EventSystems.PointerEventData)
 extern void TMP_TextEventHandler_OnPointerExit_mC0561024D04FED2D026BEB3EC183550092823AE6 (void);
-// 0x0000044A System.Void TMPro.TMP_TextEventHandler::SendOnCharacterSelection(System.Char,System.Int32)
+// 0x00000478 System.Void TMPro.TMP_TextEventHandler::SendOnCharacterSelection(System.Char,System.Int32)
 extern void TMP_TextEventHandler_SendOnCharacterSelection_m5A891393BC3211CFEF2390B5E9899129CBDAC189 (void);
-// 0x0000044B System.Void TMPro.TMP_TextEventHandler::SendOnSpriteSelection(System.Char,System.Int32)
+// 0x00000479 System.Void TMPro.TMP_TextEventHandler::SendOnSpriteSelection(System.Char,System.Int32)
 extern void TMP_TextEventHandler_SendOnSpriteSelection_m8242C5F9626A3C1330927FEACF3ECAD287500475 (void);
-// 0x0000044C System.Void TMPro.TMP_TextEventHandler::SendOnWordSelection(System.String,System.Int32,System.Int32)
+// 0x0000047A System.Void TMPro.TMP_TextEventHandler::SendOnWordSelection(System.String,System.Int32,System.Int32)
 extern void TMP_TextEventHandler_SendOnWordSelection_mCB9E9ACB06AC524273C163743C9191CAF9C1FD33 (void);
-// 0x0000044D System.Void TMPro.TMP_TextEventHandler::SendOnLineSelection(System.String,System.Int32,System.Int32)
+// 0x0000047B System.Void TMPro.TMP_TextEventHandler::SendOnLineSelection(System.String,System.Int32,System.Int32)
 extern void TMP_TextEventHandler_SendOnLineSelection_mF0691C407CA44C2E8F2D7CD6C9C2099693CBE7A6 (void);
-// 0x0000044E System.Void TMPro.TMP_TextEventHandler::SendOnLinkSelection(System.String,System.String,System.Int32)
+// 0x0000047C System.Void TMPro.TMP_TextEventHandler::SendOnLinkSelection(System.String,System.String,System.Int32)
 extern void TMP_TextEventHandler_SendOnLinkSelection_m2809D6FFF57FAE45DC5BB4DD579328535E255A02 (void);
-// 0x0000044F System.Void TMPro.TMP_TextEventHandler::.ctor()
+// 0x0000047D System.Void TMPro.TMP_TextEventHandler::.ctor()
 extern void TMP_TextEventHandler__ctor_mADE4C28CAE14991CF0B1CC1A9D0EBAF0CF1107AB (void);
-// 0x00000450 System.Void TMPro.TMP_TextEventHandler/CharacterSelectionEvent::.ctor()
+// 0x0000047E System.Void TMPro.TMP_TextEventHandler/CharacterSelectionEvent::.ctor()
 extern void CharacterSelectionEvent__ctor_m054FE9253D3C4478F57DE900A15AC9A61EC3C11E (void);
-// 0x00000451 System.Void TMPro.TMP_TextEventHandler/SpriteSelectionEvent::.ctor()
+// 0x0000047F System.Void TMPro.TMP_TextEventHandler/SpriteSelectionEvent::.ctor()
 extern void SpriteSelectionEvent__ctor_m89C1D1F720F140491B28D9B32B0C7202EE8C4963 (void);
-// 0x00000452 System.Void TMPro.TMP_TextEventHandler/WordSelectionEvent::.ctor()
+// 0x00000480 System.Void TMPro.TMP_TextEventHandler/WordSelectionEvent::.ctor()
 extern void WordSelectionEvent__ctor_m3F52F327A9627042EDB065C1080CEB764F1154F2 (void);
-// 0x00000453 System.Void TMPro.TMP_TextEventHandler/LineSelectionEvent::.ctor()
+// 0x00000481 System.Void TMPro.TMP_TextEventHandler/LineSelectionEvent::.ctor()
 extern void LineSelectionEvent__ctor_m419828B3E32BC3F6F5AAC88D7B90CF50A74C80B2 (void);
-// 0x00000454 System.Void TMPro.TMP_TextEventHandler/LinkSelectionEvent::.ctor()
+// 0x00000482 System.Void TMPro.TMP_TextEventHandler/LinkSelectionEvent::.ctor()
 extern void LinkSelectionEvent__ctor_m4083D6FF46F61AAF956F77FFE849B5166E2579BC (void);
-// 0x00000455 System.Collections.IEnumerator TMPro.Examples.Benchmark01::Start()
+// 0x00000483 System.Collections.IEnumerator TMPro.Examples.Benchmark01::Start()
 extern void Benchmark01_Start_m6CF91B0D99B3AC9317731D0C08B2EDA6AA56B9E9 (void);
-// 0x00000456 System.Void TMPro.Examples.Benchmark01::.ctor()
+// 0x00000484 System.Void TMPro.Examples.Benchmark01::.ctor()
 extern void Benchmark01__ctor_m9E12F5F809E8FF4A6EEFCDB016C1F884716347C4 (void);
-// 0x00000457 System.Void TMPro.Examples.Benchmark01/<Start>d__10::.ctor(System.Int32)
+// 0x00000485 System.Void TMPro.Examples.Benchmark01/<Start>d__10::.ctor(System.Int32)
 extern void U3CStartU3Ed__10__ctor_m242187966C9D563957FB0F76C467B25C25D91D69 (void);
-// 0x00000458 System.Void TMPro.Examples.Benchmark01/<Start>d__10::System.IDisposable.Dispose()
+// 0x00000486 System.Void TMPro.Examples.Benchmark01/<Start>d__10::System.IDisposable.Dispose()
 extern void U3CStartU3Ed__10_System_IDisposable_Dispose_m7AD303D116E090426086312CD69BFA256CD28B0D (void);
-// 0x00000459 System.Boolean TMPro.Examples.Benchmark01/<Start>d__10::MoveNext()
+// 0x00000487 System.Boolean TMPro.Examples.Benchmark01/<Start>d__10::MoveNext()
 extern void U3CStartU3Ed__10_MoveNext_m5F93878ED8166F8F4507EE8353856FAEABBBF1C9 (void);
-// 0x0000045A System.Object TMPro.Examples.Benchmark01/<Start>d__10::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000488 System.Object TMPro.Examples.Benchmark01/<Start>d__10::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CStartU3Ed__10_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m8F5CE0A24226CB5F890D4C2A9FAD81A2696CE6F6 (void);
-// 0x0000045B System.Void TMPro.Examples.Benchmark01/<Start>d__10::System.Collections.IEnumerator.Reset()
+// 0x00000489 System.Void TMPro.Examples.Benchmark01/<Start>d__10::System.Collections.IEnumerator.Reset()
 extern void U3CStartU3Ed__10_System_Collections_IEnumerator_Reset_m553F892690ED74A33F57B1359743D31F8BB93C2A (void);
-// 0x0000045C System.Object TMPro.Examples.Benchmark01/<Start>d__10::System.Collections.IEnumerator.get_Current()
+// 0x0000048A System.Object TMPro.Examples.Benchmark01/<Start>d__10::System.Collections.IEnumerator.get_Current()
 extern void U3CStartU3Ed__10_System_Collections_IEnumerator_get_Current_m50D65AEFE4D08E48AC72E017E00CD43273E1BDBD (void);
-// 0x0000045D System.Collections.IEnumerator TMPro.Examples.Benchmark01_UGUI::Start()
+// 0x0000048B System.Collections.IEnumerator TMPro.Examples.Benchmark01_UGUI::Start()
 extern void Benchmark01_UGUI_Start_m565A619941AAFFC17BB16A4A73DF63F7E54E3AFA (void);
-// 0x0000045E System.Void TMPro.Examples.Benchmark01_UGUI::.ctor()
+// 0x0000048C System.Void TMPro.Examples.Benchmark01_UGUI::.ctor()
 extern void Benchmark01_UGUI__ctor_m9DCE74210552C6961BF7460C1F812E484771F8EB (void);
-// 0x0000045F System.Void TMPro.Examples.Benchmark01_UGUI/<Start>d__10::.ctor(System.Int32)
+// 0x0000048D System.Void TMPro.Examples.Benchmark01_UGUI/<Start>d__10::.ctor(System.Int32)
 extern void U3CStartU3Ed__10__ctor_m515F107569D5BDE7C81F5DFDAB4A298A5399EB5A (void);
-// 0x00000460 System.Void TMPro.Examples.Benchmark01_UGUI/<Start>d__10::System.IDisposable.Dispose()
+// 0x0000048E System.Void TMPro.Examples.Benchmark01_UGUI/<Start>d__10::System.IDisposable.Dispose()
 extern void U3CStartU3Ed__10_System_IDisposable_Dispose_mFFD5DC6FCF8EC489FF249BE7F91D4336F2AD76AC (void);
-// 0x00000461 System.Boolean TMPro.Examples.Benchmark01_UGUI/<Start>d__10::MoveNext()
+// 0x0000048F System.Boolean TMPro.Examples.Benchmark01_UGUI/<Start>d__10::MoveNext()
 extern void U3CStartU3Ed__10_MoveNext_mDCA96D0D1226C44C15F1FD85518F0711E6B395D9 (void);
-// 0x00000462 System.Object TMPro.Examples.Benchmark01_UGUI/<Start>d__10::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000490 System.Object TMPro.Examples.Benchmark01_UGUI/<Start>d__10::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CStartU3Ed__10_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m109B5747CD8D1CF40DAC526C54BFB07223E1FB46 (void);
-// 0x00000463 System.Void TMPro.Examples.Benchmark01_UGUI/<Start>d__10::System.Collections.IEnumerator.Reset()
+// 0x00000491 System.Void TMPro.Examples.Benchmark01_UGUI/<Start>d__10::System.Collections.IEnumerator.Reset()
 extern void U3CStartU3Ed__10_System_Collections_IEnumerator_Reset_mC9F90586F057E3728D9F93BB0E12197C9B994EEA (void);
-// 0x00000464 System.Object TMPro.Examples.Benchmark01_UGUI/<Start>d__10::System.Collections.IEnumerator.get_Current()
+// 0x00000492 System.Object TMPro.Examples.Benchmark01_UGUI/<Start>d__10::System.Collections.IEnumerator.get_Current()
 extern void U3CStartU3Ed__10_System_Collections_IEnumerator_get_Current_mA4DCEFD742C012A03C20EF42A873B5BFF07AF87A (void);
-// 0x00000465 System.Void TMPro.Examples.Benchmark02::Start()
+// 0x00000493 System.Void TMPro.Examples.Benchmark02::Start()
 extern void Benchmark02_Start_mB56F21A9861A3DAF9F4E7F1DD4A023E05B379E29 (void);
-// 0x00000466 System.Void TMPro.Examples.Benchmark02::.ctor()
+// 0x00000494 System.Void TMPro.Examples.Benchmark02::.ctor()
 extern void Benchmark02__ctor_mE5DCB1CF4C1FDBA742B51B11427B9DE209630BF1 (void);
-// 0x00000467 System.Void TMPro.Examples.Benchmark03::Awake()
+// 0x00000495 System.Void TMPro.Examples.Benchmark03::Awake()
 extern void Benchmark03_Awake_mDEE8E96AE811C5A84CB2C04440CD4662E2F918D3 (void);
-// 0x00000468 System.Void TMPro.Examples.Benchmark03::Start()
+// 0x00000496 System.Void TMPro.Examples.Benchmark03::Start()
 extern void Benchmark03_Start_mCCFD9402E218265F6D34A1EA7ACCD3AD3D80380D (void);
-// 0x00000469 System.Void TMPro.Examples.Benchmark03::.ctor()
+// 0x00000497 System.Void TMPro.Examples.Benchmark03::.ctor()
 extern void Benchmark03__ctor_m8A29BB2CC6375B2D3D57B5A90D18F2435352E5F6 (void);
-// 0x0000046A System.Void TMPro.Examples.Benchmark04::Start()
+// 0x00000498 System.Void TMPro.Examples.Benchmark04::Start()
 extern void Benchmark04_Start_mD2F5056019DD08B3DB897F6D194E86AB66E92F90 (void);
-// 0x0000046B System.Void TMPro.Examples.Benchmark04::.ctor()
+// 0x00000499 System.Void TMPro.Examples.Benchmark04::.ctor()
 extern void Benchmark04__ctor_m282E4E495D8D1921A87481729549B68BEDAD2D27 (void);
-// 0x0000046C System.Void TMPro.Examples.CameraController::Awake()
+// 0x0000049A System.Void TMPro.Examples.CameraController::Awake()
 extern void CameraController_Awake_m2D75756734457ADE0F15F191B63521A47C426788 (void);
-// 0x0000046D System.Void TMPro.Examples.CameraController::Start()
+// 0x0000049B System.Void TMPro.Examples.CameraController::Start()
 extern void CameraController_Start_m749E20374F32FF190EC51D70C717A8117934F2A5 (void);
-// 0x0000046E System.Void TMPro.Examples.CameraController::LateUpdate()
+// 0x0000049C System.Void TMPro.Examples.CameraController::LateUpdate()
 extern void CameraController_LateUpdate_m07E7F5C7D91713F8BB489480304D130570D7858F (void);
-// 0x0000046F System.Void TMPro.Examples.CameraController::GetPlayerInput()
+// 0x0000049D System.Void TMPro.Examples.CameraController::GetPlayerInput()
 extern void CameraController_GetPlayerInput_m31AE86C54785402EB078A40F37D83FEA9216388F (void);
-// 0x00000470 System.Void TMPro.Examples.CameraController::.ctor()
+// 0x0000049E System.Void TMPro.Examples.CameraController::.ctor()
 extern void CameraController__ctor_mE37608FBFBF61F76A1E0EEACF79B040321476878 (void);
-// 0x00000471 System.Void TMPro.Examples.ObjectSpin::Awake()
+// 0x0000049F System.Void TMPro.Examples.ObjectSpin::Awake()
 extern void ObjectSpin_Awake_mC05FEB5A72FED289171C58787FE09DBD9356FC72 (void);
-// 0x00000472 System.Void TMPro.Examples.ObjectSpin::Update()
+// 0x000004A0 System.Void TMPro.Examples.ObjectSpin::Update()
 extern void ObjectSpin_Update_m7FB0886C3E6D76C0020E4D38DC1C44AB70BF3695 (void);
-// 0x00000473 System.Void TMPro.Examples.ObjectSpin::.ctor()
+// 0x000004A1 System.Void TMPro.Examples.ObjectSpin::.ctor()
 extern void ObjectSpin__ctor_mA786C14AE887FF4012A35FAB3DF59ECF6A77835A (void);
-// 0x00000474 System.Void TMPro.Examples.ShaderPropAnimator::Awake()
+// 0x000004A2 System.Void TMPro.Examples.ShaderPropAnimator::Awake()
 extern void ShaderPropAnimator_Awake_m3D158D58F1840CBDA3B887326275893121E31371 (void);
-// 0x00000475 System.Void TMPro.Examples.ShaderPropAnimator::Start()
+// 0x000004A3 System.Void TMPro.Examples.ShaderPropAnimator::Start()
 extern void ShaderPropAnimator_Start_mEF0B5D3EE00206199ABB80CE893AA85DF3FE5C88 (void);
-// 0x00000476 System.Collections.IEnumerator TMPro.Examples.ShaderPropAnimator::AnimateProperties()
+// 0x000004A4 System.Collections.IEnumerator TMPro.Examples.ShaderPropAnimator::AnimateProperties()
 extern void ShaderPropAnimator_AnimateProperties_m9F466F9C9554AA7488F4607E7FAC9A5C61F46D56 (void);
-// 0x00000477 System.Void TMPro.Examples.ShaderPropAnimator::.ctor()
+// 0x000004A5 System.Void TMPro.Examples.ShaderPropAnimator::.ctor()
 extern void ShaderPropAnimator__ctor_m51C29C66EFD7FCA3AE68CDEFD38A4A89BF48220B (void);
-// 0x00000478 System.Void TMPro.Examples.ShaderPropAnimator/<AnimateProperties>d__6::.ctor(System.Int32)
+// 0x000004A6 System.Void TMPro.Examples.ShaderPropAnimator/<AnimateProperties>d__6::.ctor(System.Int32)
 extern void U3CAnimatePropertiesU3Ed__6__ctor_m2B0F8A634812D7FE998DD35188C5F07797E4FB0D (void);
-// 0x00000479 System.Void TMPro.Examples.ShaderPropAnimator/<AnimateProperties>d__6::System.IDisposable.Dispose()
+// 0x000004A7 System.Void TMPro.Examples.ShaderPropAnimator/<AnimateProperties>d__6::System.IDisposable.Dispose()
 extern void U3CAnimatePropertiesU3Ed__6_System_IDisposable_Dispose_mCF53541AABFDC14249868837689AC287470F4E71 (void);
-// 0x0000047A System.Boolean TMPro.Examples.ShaderPropAnimator/<AnimateProperties>d__6::MoveNext()
+// 0x000004A8 System.Boolean TMPro.Examples.ShaderPropAnimator/<AnimateProperties>d__6::MoveNext()
 extern void U3CAnimatePropertiesU3Ed__6_MoveNext_mB9586A9B61959C3BC38EFB8FC83109785F93F6AC (void);
-// 0x0000047B System.Object TMPro.Examples.ShaderPropAnimator/<AnimateProperties>d__6::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000004A9 System.Object TMPro.Examples.ShaderPropAnimator/<AnimateProperties>d__6::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CAnimatePropertiesU3Ed__6_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m7A34F7423FA726A91524CBA0CDD2A25E4AF8EE95 (void);
-// 0x0000047C System.Void TMPro.Examples.ShaderPropAnimator/<AnimateProperties>d__6::System.Collections.IEnumerator.Reset()
+// 0x000004AA System.Void TMPro.Examples.ShaderPropAnimator/<AnimateProperties>d__6::System.Collections.IEnumerator.Reset()
 extern void U3CAnimatePropertiesU3Ed__6_System_Collections_IEnumerator_Reset_m1C76BF8EAC2CDC2BAC58755622763B9318DA51CA (void);
-// 0x0000047D System.Object TMPro.Examples.ShaderPropAnimator/<AnimateProperties>d__6::System.Collections.IEnumerator.get_Current()
+// 0x000004AB System.Object TMPro.Examples.ShaderPropAnimator/<AnimateProperties>d__6::System.Collections.IEnumerator.get_Current()
 extern void U3CAnimatePropertiesU3Ed__6_System_Collections_IEnumerator_get_Current_m289720A67EB6696F350EAC41DAAE3B917031B7EA (void);
-// 0x0000047E System.Void TMPro.Examples.SimpleScript::Start()
+// 0x000004AC System.Void TMPro.Examples.SimpleScript::Start()
 extern void SimpleScript_Start_mC4159EF79F863FBD86AEA2B81D86FDF04834A6F8 (void);
-// 0x0000047F System.Void TMPro.Examples.SimpleScript::Update()
+// 0x000004AD System.Void TMPro.Examples.SimpleScript::Update()
 extern void SimpleScript_Update_mBD8A31D53D01FEBB9B432077599239AC6A5DEAFE (void);
-// 0x00000480 System.Void TMPro.Examples.SimpleScript::.ctor()
+// 0x000004AE System.Void TMPro.Examples.SimpleScript::.ctor()
 extern void SimpleScript__ctor_mC91E912195EEE18292A8FCA7650739E3DDB81807 (void);
-// 0x00000481 System.Void TMPro.Examples.SkewTextExample::Awake()
+// 0x000004AF System.Void TMPro.Examples.SkewTextExample::Awake()
 extern void SkewTextExample_Awake_m2D48E0903620C2D870D5176FCFD12A8989801C93 (void);
-// 0x00000482 System.Void TMPro.Examples.SkewTextExample::Start()
+// 0x000004B0 System.Void TMPro.Examples.SkewTextExample::Start()
 extern void SkewTextExample_Start_m7577B96B07C4EB0666BF6F028074176258009690 (void);
-// 0x00000483 UnityEngine.AnimationCurve TMPro.Examples.SkewTextExample::CopyAnimationCurve(UnityEngine.AnimationCurve)
+// 0x000004B1 UnityEngine.AnimationCurve TMPro.Examples.SkewTextExample::CopyAnimationCurve(UnityEngine.AnimationCurve)
 extern void SkewTextExample_CopyAnimationCurve_mD2C2C4CA7AFBAAC9F4B04CB2896DB9B32B015ACB (void);
-// 0x00000484 System.Collections.IEnumerator TMPro.Examples.SkewTextExample::WarpText()
+// 0x000004B2 System.Collections.IEnumerator TMPro.Examples.SkewTextExample::WarpText()
 extern void SkewTextExample_WarpText_m462DE1568957770D72704E93D2461D8371C0D362 (void);
-// 0x00000485 System.Void TMPro.Examples.SkewTextExample::.ctor()
+// 0x000004B3 System.Void TMPro.Examples.SkewTextExample::.ctor()
 extern void SkewTextExample__ctor_m711325FB390A6DFA994B6ADF746C9EBF846A0A22 (void);
-// 0x00000486 System.Void TMPro.Examples.SkewTextExample/<WarpText>d__7::.ctor(System.Int32)
+// 0x000004B4 System.Void TMPro.Examples.SkewTextExample/<WarpText>d__7::.ctor(System.Int32)
 extern void U3CWarpTextU3Ed__7__ctor_m39944C7E44F317ACDEC971C8FF2DEC8EA1CCC1C2 (void);
-// 0x00000487 System.Void TMPro.Examples.SkewTextExample/<WarpText>d__7::System.IDisposable.Dispose()
+// 0x000004B5 System.Void TMPro.Examples.SkewTextExample/<WarpText>d__7::System.IDisposable.Dispose()
 extern void U3CWarpTextU3Ed__7_System_IDisposable_Dispose_m54C900BFB8433103FA97A4E50B2C941D431B5A51 (void);
-// 0x00000488 System.Boolean TMPro.Examples.SkewTextExample/<WarpText>d__7::MoveNext()
+// 0x000004B6 System.Boolean TMPro.Examples.SkewTextExample/<WarpText>d__7::MoveNext()
 extern void U3CWarpTextU3Ed__7_MoveNext_m50CEEC92FE0C83768B366E9F9B5B1C9DEF85928E (void);
-// 0x00000489 System.Object TMPro.Examples.SkewTextExample/<WarpText>d__7::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000004B7 System.Object TMPro.Examples.SkewTextExample/<WarpText>d__7::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CWarpTextU3Ed__7_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m79CB1783D2DD0399E051969089A36819EDC66FCB (void);
-// 0x0000048A System.Void TMPro.Examples.SkewTextExample/<WarpText>d__7::System.Collections.IEnumerator.Reset()
+// 0x000004B8 System.Void TMPro.Examples.SkewTextExample/<WarpText>d__7::System.Collections.IEnumerator.Reset()
 extern void U3CWarpTextU3Ed__7_System_Collections_IEnumerator_Reset_mB6C5974E8F57160AE544E1D2FD44621EEF3ACAB5 (void);
-// 0x0000048B System.Object TMPro.Examples.SkewTextExample/<WarpText>d__7::System.Collections.IEnumerator.get_Current()
+// 0x000004B9 System.Object TMPro.Examples.SkewTextExample/<WarpText>d__7::System.Collections.IEnumerator.get_Current()
 extern void U3CWarpTextU3Ed__7_System_Collections_IEnumerator_get_Current_m5BDAFBB20F42A6E9EC65B6A2365F5AD98F42A1C5 (void);
-// 0x0000048C System.Void TMPro.Examples.TeleType::Awake()
+// 0x000004BA System.Void TMPro.Examples.TeleType::Awake()
 extern void TeleType_Awake_m8D56A3C1E06AD96B35B88C3AA8C61FB2A03E627D (void);
-// 0x0000048D System.Collections.IEnumerator TMPro.Examples.TeleType::Start()
+// 0x000004BB System.Collections.IEnumerator TMPro.Examples.TeleType::Start()
 extern void TeleType_Start_m3BFE1E2B1BB5ED247DED9DBEF293FCCBD63760C6 (void);
-// 0x0000048E System.Void TMPro.Examples.TeleType::.ctor()
+// 0x000004BC System.Void TMPro.Examples.TeleType::.ctor()
 extern void TeleType__ctor_m824BBE09CC217EB037FFB36756726A9C946526D0 (void);
-// 0x0000048F System.Void TMPro.Examples.TeleType/<Start>d__4::.ctor(System.Int32)
+// 0x000004BD System.Void TMPro.Examples.TeleType/<Start>d__4::.ctor(System.Int32)
 extern void U3CStartU3Ed__4__ctor_m7CB9C7DF4657B7B70F6ED6EEB00C0F422D8B0CAA (void);
-// 0x00000490 System.Void TMPro.Examples.TeleType/<Start>d__4::System.IDisposable.Dispose()
+// 0x000004BE System.Void TMPro.Examples.TeleType/<Start>d__4::System.IDisposable.Dispose()
 extern void U3CStartU3Ed__4_System_IDisposable_Dispose_mA57DA4D469190B581B5DCB406E9FB70DD33511F2 (void);
-// 0x00000491 System.Boolean TMPro.Examples.TeleType/<Start>d__4::MoveNext()
+// 0x000004BF System.Boolean TMPro.Examples.TeleType/<Start>d__4::MoveNext()
 extern void U3CStartU3Ed__4_MoveNext_mE1C3343B7258BAADC74C1A060E71C28951D39D45 (void);
-// 0x00000492 System.Object TMPro.Examples.TeleType/<Start>d__4::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000004C0 System.Object TMPro.Examples.TeleType/<Start>d__4::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CStartU3Ed__4_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1819CF068B92E7EA9EEFD7F93CA316F38DF644BA (void);
-// 0x00000493 System.Void TMPro.Examples.TeleType/<Start>d__4::System.Collections.IEnumerator.Reset()
+// 0x000004C1 System.Void TMPro.Examples.TeleType/<Start>d__4::System.Collections.IEnumerator.Reset()
 extern void U3CStartU3Ed__4_System_Collections_IEnumerator_Reset_m9B7AEE80C1E70D2D2FF5811A54AFD6189CD7F5A9 (void);
-// 0x00000494 System.Object TMPro.Examples.TeleType/<Start>d__4::System.Collections.IEnumerator.get_Current()
+// 0x000004C2 System.Object TMPro.Examples.TeleType/<Start>d__4::System.Collections.IEnumerator.get_Current()
 extern void U3CStartU3Ed__4_System_Collections_IEnumerator_get_Current_m5C22C5D235424F0613697F05E72ADB4D1A3420C8 (void);
-// 0x00000495 System.Void TMPro.Examples.TextConsoleSimulator::Awake()
+// 0x000004C3 System.Void TMPro.Examples.TextConsoleSimulator::Awake()
 extern void TextConsoleSimulator_Awake_m55D28DC1F590D98621B0284B53C8A22D07CD3F7C (void);
-// 0x00000496 System.Void TMPro.Examples.TextConsoleSimulator::Start()
+// 0x000004C4 System.Void TMPro.Examples.TextConsoleSimulator::Start()
 extern void TextConsoleSimulator_Start_m5667F64AE1F48EBA2FF1B3D2D53E2AFCAB738B39 (void);
-// 0x00000497 System.Void TMPro.Examples.TextConsoleSimulator::OnEnable()
+// 0x000004C5 System.Void TMPro.Examples.TextConsoleSimulator::OnEnable()
 extern void TextConsoleSimulator_OnEnable_mDF58D349E4D62866410AAA376BE5BBAE4153FF95 (void);
-// 0x00000498 System.Void TMPro.Examples.TextConsoleSimulator::OnDisable()
+// 0x000004C6 System.Void TMPro.Examples.TextConsoleSimulator::OnDisable()
 extern void TextConsoleSimulator_OnDisable_m4B3A741D6C5279590453148419B422E8D7314689 (void);
-// 0x00000499 System.Void TMPro.Examples.TextConsoleSimulator::ON_TEXT_CHANGED(UnityEngine.Object)
+// 0x000004C7 System.Void TMPro.Examples.TextConsoleSimulator::ON_TEXT_CHANGED(UnityEngine.Object)
 extern void TextConsoleSimulator_ON_TEXT_CHANGED_m050ECF4852B6A82000133662D6502577DFD57C3A (void);
-// 0x0000049A System.Collections.IEnumerator TMPro.Examples.TextConsoleSimulator::RevealCharacters(TMPro.TMP_Text)
+// 0x000004C8 System.Collections.IEnumerator TMPro.Examples.TextConsoleSimulator::RevealCharacters(TMPro.TMP_Text)
 extern void TextConsoleSimulator_RevealCharacters_mAA4D3653F05692839313CE180250A44378024E52 (void);
-// 0x0000049B System.Collections.IEnumerator TMPro.Examples.TextConsoleSimulator::RevealWords(TMPro.TMP_Text)
+// 0x000004C9 System.Collections.IEnumerator TMPro.Examples.TextConsoleSimulator::RevealWords(TMPro.TMP_Text)
 extern void TextConsoleSimulator_RevealWords_m0E52802FD4239665709F086E6E0B235CDE67E9B1 (void);
-// 0x0000049C System.Void TMPro.Examples.TextConsoleSimulator::.ctor()
+// 0x000004CA System.Void TMPro.Examples.TextConsoleSimulator::.ctor()
 extern void TextConsoleSimulator__ctor_mBDDE8A2DCED8B140D78D5FE560897665753AB025 (void);
-// 0x0000049D System.Void TMPro.Examples.TextConsoleSimulator/<RevealCharacters>d__7::.ctor(System.Int32)
+// 0x000004CB System.Void TMPro.Examples.TextConsoleSimulator/<RevealCharacters>d__7::.ctor(System.Int32)
 extern void U3CRevealCharactersU3Ed__7__ctor_m40A144070AB46560F2B3919EA5CB8BD51F8DDF45 (void);
-// 0x0000049E System.Void TMPro.Examples.TextConsoleSimulator/<RevealCharacters>d__7::System.IDisposable.Dispose()
+// 0x000004CC System.Void TMPro.Examples.TextConsoleSimulator/<RevealCharacters>d__7::System.IDisposable.Dispose()
 extern void U3CRevealCharactersU3Ed__7_System_IDisposable_Dispose_m7942532282ACF3B429FAD926284352907FFE087B (void);
-// 0x0000049F System.Boolean TMPro.Examples.TextConsoleSimulator/<RevealCharacters>d__7::MoveNext()
+// 0x000004CD System.Boolean TMPro.Examples.TextConsoleSimulator/<RevealCharacters>d__7::MoveNext()
 extern void U3CRevealCharactersU3Ed__7_MoveNext_m2D07AF9391894BCE39624FA2DCFA87AC6F8119AE (void);
-// 0x000004A0 System.Object TMPro.Examples.TextConsoleSimulator/<RevealCharacters>d__7::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000004CE System.Object TMPro.Examples.TextConsoleSimulator/<RevealCharacters>d__7::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CRevealCharactersU3Ed__7_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m754C680B2751A9F05DBF253431A3CB42885F7854 (void);
-// 0x000004A1 System.Void TMPro.Examples.TextConsoleSimulator/<RevealCharacters>d__7::System.Collections.IEnumerator.Reset()
+// 0x000004CF System.Void TMPro.Examples.TextConsoleSimulator/<RevealCharacters>d__7::System.Collections.IEnumerator.Reset()
 extern void U3CRevealCharactersU3Ed__7_System_Collections_IEnumerator_Reset_mD12057609EFCBCA8E7B61B0421D4A7C5A206C8C3 (void);
-// 0x000004A2 System.Object TMPro.Examples.TextConsoleSimulator/<RevealCharacters>d__7::System.Collections.IEnumerator.get_Current()
+// 0x000004D0 System.Object TMPro.Examples.TextConsoleSimulator/<RevealCharacters>d__7::System.Collections.IEnumerator.get_Current()
 extern void U3CRevealCharactersU3Ed__7_System_Collections_IEnumerator_get_Current_m9FD7DAB922AE6A58166112C295ABFF6E19E1D186 (void);
-// 0x000004A3 System.Void TMPro.Examples.TextConsoleSimulator/<RevealWords>d__8::.ctor(System.Int32)
+// 0x000004D1 System.Void TMPro.Examples.TextConsoleSimulator/<RevealWords>d__8::.ctor(System.Int32)
 extern void U3CRevealWordsU3Ed__8__ctor_mDF8D4C69F022D088AFC0E109FC0DBE0C9B938CAC (void);
-// 0x000004A4 System.Void TMPro.Examples.TextConsoleSimulator/<RevealWords>d__8::System.IDisposable.Dispose()
+// 0x000004D2 System.Void TMPro.Examples.TextConsoleSimulator/<RevealWords>d__8::System.IDisposable.Dispose()
 extern void U3CRevealWordsU3Ed__8_System_IDisposable_Dispose_m2F2F21F38D2DD8AE3D066E64850D404497A131C5 (void);
-// 0x000004A5 System.Boolean TMPro.Examples.TextConsoleSimulator/<RevealWords>d__8::MoveNext()
+// 0x000004D3 System.Boolean TMPro.Examples.TextConsoleSimulator/<RevealWords>d__8::MoveNext()
 extern void U3CRevealWordsU3Ed__8_MoveNext_mC5102728A86DCB2171E54CFEDFA7BE6F29AB355C (void);
-// 0x000004A6 System.Object TMPro.Examples.TextConsoleSimulator/<RevealWords>d__8::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000004D4 System.Object TMPro.Examples.TextConsoleSimulator/<RevealWords>d__8::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CRevealWordsU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m4D9A6269831C00345D245D0EED2E5FC20BBF4683 (void);
-// 0x000004A7 System.Void TMPro.Examples.TextConsoleSimulator/<RevealWords>d__8::System.Collections.IEnumerator.Reset()
+// 0x000004D5 System.Void TMPro.Examples.TextConsoleSimulator/<RevealWords>d__8::System.Collections.IEnumerator.Reset()
 extern void U3CRevealWordsU3Ed__8_System_Collections_IEnumerator_Reset_mE5E0678716735BDF0D632FE43E392981E75A1C4D (void);
-// 0x000004A8 System.Object TMPro.Examples.TextConsoleSimulator/<RevealWords>d__8::System.Collections.IEnumerator.get_Current()
+// 0x000004D6 System.Object TMPro.Examples.TextConsoleSimulator/<RevealWords>d__8::System.Collections.IEnumerator.get_Current()
 extern void U3CRevealWordsU3Ed__8_System_Collections_IEnumerator_get_Current_m3E9D4960A972BD7601F6454E6F9A614AA21D553E (void);
-// 0x000004A9 System.Void TMPro.Examples.TextMeshProFloatingText::Awake()
+// 0x000004D7 System.Void TMPro.Examples.TextMeshProFloatingText::Awake()
 extern void TextMeshProFloatingText_Awake_m600F1825C26BB683047156FD815AE4376D2672F2 (void);
-// 0x000004AA System.Void TMPro.Examples.TextMeshProFloatingText::Start()
+// 0x000004D8 System.Void TMPro.Examples.TextMeshProFloatingText::Start()
 extern void TextMeshProFloatingText_Start_m8121246A4310A0014ECA36144B9DCE093FE8AE49 (void);
-// 0x000004AB System.Collections.IEnumerator TMPro.Examples.TextMeshProFloatingText::DisplayTextMeshProFloatingText()
+// 0x000004D9 System.Collections.IEnumerator TMPro.Examples.TextMeshProFloatingText::DisplayTextMeshProFloatingText()
 extern void TextMeshProFloatingText_DisplayTextMeshProFloatingText_mA1E370089458CD380E9BA7740C2BC2032F084148 (void);
-// 0x000004AC System.Collections.IEnumerator TMPro.Examples.TextMeshProFloatingText::DisplayTextMeshFloatingText()
+// 0x000004DA System.Collections.IEnumerator TMPro.Examples.TextMeshProFloatingText::DisplayTextMeshFloatingText()
 extern void TextMeshProFloatingText_DisplayTextMeshFloatingText_mA02B20CF33E43FE99FD5F1B90F7F350262F0BEBE (void);
-// 0x000004AD System.Void TMPro.Examples.TextMeshProFloatingText::.ctor()
+// 0x000004DB System.Void TMPro.Examples.TextMeshProFloatingText::.ctor()
 extern void TextMeshProFloatingText__ctor_mD08AF0FB6944A51BC6EA15D6BE4E33AA4A916E3E (void);
-// 0x000004AE System.Void TMPro.Examples.TextMeshProFloatingText::.cctor()
+// 0x000004DC System.Void TMPro.Examples.TextMeshProFloatingText::.cctor()
 extern void TextMeshProFloatingText__cctor_m352D68463FC9600F9139AD78F0176368562F63C6 (void);
-// 0x000004AF System.Void TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshProFloatingText>d__15::.ctor(System.Int32)
+// 0x000004DD System.Void TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshProFloatingText>d__15::.ctor(System.Int32)
 extern void U3CDisplayTextMeshProFloatingTextU3Ed__15__ctor_mD3C24C6814482113FD231827E550FBBCC91424A0 (void);
-// 0x000004B0 System.Void TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshProFloatingText>d__15::System.IDisposable.Dispose()
+// 0x000004DE System.Void TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshProFloatingText>d__15::System.IDisposable.Dispose()
 extern void U3CDisplayTextMeshProFloatingTextU3Ed__15_System_IDisposable_Dispose_m83285E807FA4462B99B68D1EB12B2360238C53EB (void);
-// 0x000004B1 System.Boolean TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshProFloatingText>d__15::MoveNext()
+// 0x000004DF System.Boolean TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshProFloatingText>d__15::MoveNext()
 extern void U3CDisplayTextMeshProFloatingTextU3Ed__15_MoveNext_m588E025C05E03684A11ABC91B50734A349D28CC8 (void);
-// 0x000004B2 System.Object TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshProFloatingText>d__15::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000004E0 System.Object TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshProFloatingText>d__15::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CDisplayTextMeshProFloatingTextU3Ed__15_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m2412DC176F8CA3096658EB0E27AC28218DAEC03A (void);
-// 0x000004B3 System.Void TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshProFloatingText>d__15::System.Collections.IEnumerator.Reset()
+// 0x000004E1 System.Void TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshProFloatingText>d__15::System.Collections.IEnumerator.Reset()
 extern void U3CDisplayTextMeshProFloatingTextU3Ed__15_System_Collections_IEnumerator_Reset_mCCE19093B7355F3E23834E27A8517661DF833797 (void);
-// 0x000004B4 System.Object TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshProFloatingText>d__15::System.Collections.IEnumerator.get_Current()
+// 0x000004E2 System.Object TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshProFloatingText>d__15::System.Collections.IEnumerator.get_Current()
 extern void U3CDisplayTextMeshProFloatingTextU3Ed__15_System_Collections_IEnumerator_get_Current_mE53E0B4DBE6AF5DAC110C3F626B34C5965845E54 (void);
-// 0x000004B5 System.Void TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshFloatingText>d__16::.ctor(System.Int32)
+// 0x000004E3 System.Void TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshFloatingText>d__16::.ctor(System.Int32)
 extern void U3CDisplayTextMeshFloatingTextU3Ed__16__ctor_m1ECB51A93EE3B236301948784A3260FD72814923 (void);
-// 0x000004B6 System.Void TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshFloatingText>d__16::System.IDisposable.Dispose()
+// 0x000004E4 System.Void TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshFloatingText>d__16::System.IDisposable.Dispose()
 extern void U3CDisplayTextMeshFloatingTextU3Ed__16_System_IDisposable_Dispose_m461761745A9C5FF4F7995C3DB33DB43848AEB05B (void);
-// 0x000004B7 System.Boolean TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshFloatingText>d__16::MoveNext()
+// 0x000004E5 System.Boolean TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshFloatingText>d__16::MoveNext()
 extern void U3CDisplayTextMeshFloatingTextU3Ed__16_MoveNext_m1FC162511DF31A9CDBD0101083FBCB11380554C4 (void);
-// 0x000004B8 System.Object TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshFloatingText>d__16::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000004E6 System.Object TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshFloatingText>d__16::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CDisplayTextMeshFloatingTextU3Ed__16_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m6A5E330ACDAD25422A7D642301F58E6C1EE1B041 (void);
-// 0x000004B9 System.Void TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshFloatingText>d__16::System.Collections.IEnumerator.Reset()
+// 0x000004E7 System.Void TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshFloatingText>d__16::System.Collections.IEnumerator.Reset()
 extern void U3CDisplayTextMeshFloatingTextU3Ed__16_System_Collections_IEnumerator_Reset_m5A7148435B35A0A84329416FF765D45F6AA0F4E1 (void);
-// 0x000004BA System.Object TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshFloatingText>d__16::System.Collections.IEnumerator.get_Current()
+// 0x000004E8 System.Object TMPro.Examples.TextMeshProFloatingText/<DisplayTextMeshFloatingText>d__16::System.Collections.IEnumerator.get_Current()
 extern void U3CDisplayTextMeshFloatingTextU3Ed__16_System_Collections_IEnumerator_get_Current_m066140B8D4CD5DE3527A3A05183AE89B487B5D55 (void);
-// 0x000004BB System.Void TMPro.Examples.TextMeshSpawner::Awake()
+// 0x000004E9 System.Void TMPro.Examples.TextMeshSpawner::Awake()
 extern void TextMeshSpawner_Awake_m9A84A570D2582918A6B1287139527E9AB2CF088D (void);
-// 0x000004BC System.Void TMPro.Examples.TextMeshSpawner::Start()
+// 0x000004EA System.Void TMPro.Examples.TextMeshSpawner::Start()
 extern void TextMeshSpawner_Start_m3EE98071CA27A18904B859A0A6B215BDFEB50A66 (void);
-// 0x000004BD System.Void TMPro.Examples.TextMeshSpawner::.ctor()
+// 0x000004EB System.Void TMPro.Examples.TextMeshSpawner::.ctor()
 extern void TextMeshSpawner__ctor_m8409A62C31C4A6B6CEC2F48F1DC9777460C28233 (void);
-// 0x000004BE System.Void TMPro.Examples.TMPro_InstructionOverlay::Awake()
+// 0x000004EC System.Void TMPro.Examples.TMPro_InstructionOverlay::Awake()
 extern void TMPro_InstructionOverlay_Awake_m0F92D44F62A9AC086DE3DF1E4C7BFAF645EE7084 (void);
-// 0x000004BF System.Void TMPro.Examples.TMPro_InstructionOverlay::Set_FrameCounter_Position(TMPro.Examples.TMPro_InstructionOverlay/FpsCounterAnchorPositions)
+// 0x000004ED System.Void TMPro.Examples.TMPro_InstructionOverlay::Set_FrameCounter_Position(TMPro.Examples.TMPro_InstructionOverlay/FpsCounterAnchorPositions)
 extern void TMPro_InstructionOverlay_Set_FrameCounter_Position_m3CC1B812C740BAE87C6B5CA94DC64E6131F42A7C (void);
-// 0x000004C0 System.Void TMPro.Examples.TMPro_InstructionOverlay::.ctor()
+// 0x000004EE System.Void TMPro.Examples.TMPro_InstructionOverlay::.ctor()
 extern void TMPro_InstructionOverlay__ctor_m247258528E488171765F77A9A3C6B7E079E64839 (void);
-// 0x000004C1 System.Void TMPro.Examples.TMP_ExampleScript_01::Awake()
+// 0x000004EF System.Void TMPro.Examples.TMP_ExampleScript_01::Awake()
 extern void TMP_ExampleScript_01_Awake_m6E620605AE9CCC3789A2D5CFD841E5DAB8592063 (void);
-// 0x000004C2 System.Void TMPro.Examples.TMP_ExampleScript_01::Update()
+// 0x000004F0 System.Void TMPro.Examples.TMP_ExampleScript_01::Update()
 extern void TMP_ExampleScript_01_Update_m3D4A9AB04728F0ABD4C7C8A462E2C811308D97A1 (void);
-// 0x000004C3 System.Void TMPro.Examples.TMP_ExampleScript_01::.ctor()
+// 0x000004F1 System.Void TMPro.Examples.TMP_ExampleScript_01::.ctor()
 extern void TMP_ExampleScript_01__ctor_m43F9206FDB1606CD28F1A441188E777546CFEA2A (void);
-// 0x000004C4 System.Void TMPro.Examples.TMP_FrameRateCounter::Awake()
+// 0x000004F2 System.Void TMPro.Examples.TMP_FrameRateCounter::Awake()
 extern void TMP_FrameRateCounter_Awake_m99156EF53E5848DE83107BFAC803C33DC964265C (void);
-// 0x000004C5 System.Void TMPro.Examples.TMP_FrameRateCounter::Start()
+// 0x000004F3 System.Void TMPro.Examples.TMP_FrameRateCounter::Start()
 extern void TMP_FrameRateCounter_Start_m9B5D0A86D174DA019F3EB5C6E9BD54634B2F909A (void);
-// 0x000004C6 System.Void TMPro.Examples.TMP_FrameRateCounter::Update()
+// 0x000004F4 System.Void TMPro.Examples.TMP_FrameRateCounter::Update()
 extern void TMP_FrameRateCounter_Update_m5251EE9AC9DCB99D0871EE83624C8A9012E6A079 (void);
-// 0x000004C7 System.Void TMPro.Examples.TMP_FrameRateCounter::Set_FrameCounter_Position(TMPro.Examples.TMP_FrameRateCounter/FpsCounterAnchorPositions)
+// 0x000004F5 System.Void TMPro.Examples.TMP_FrameRateCounter::Set_FrameCounter_Position(TMPro.Examples.TMP_FrameRateCounter/FpsCounterAnchorPositions)
 extern void TMP_FrameRateCounter_Set_FrameCounter_Position_m1CC40A8236B2161050D19C4B2EBFF34B96645723 (void);
-// 0x000004C8 System.Void TMPro.Examples.TMP_FrameRateCounter::.ctor()
+// 0x000004F6 System.Void TMPro.Examples.TMP_FrameRateCounter::.ctor()
 extern void TMP_FrameRateCounter__ctor_mD8804AE37CED37A01DF943624D3C2C48FBC9AE43 (void);
-// 0x000004C9 System.Void TMPro.Examples.TMP_TextEventCheck::OnEnable()
+// 0x000004F7 System.Void TMPro.Examples.TMP_TextEventCheck::OnEnable()
 extern void TMP_TextEventCheck_OnEnable_mABF0C00DDBB37230534C49AD9CA342D96757AA3E (void);
-// 0x000004CA System.Void TMPro.Examples.TMP_TextEventCheck::OnDisable()
+// 0x000004F8 System.Void TMPro.Examples.TMP_TextEventCheck::OnDisable()
 extern void TMP_TextEventCheck_OnDisable_m4AE76C19CBF131CB80B73A7C71378CA063CFC4C6 (void);
-// 0x000004CB System.Void TMPro.Examples.TMP_TextEventCheck::OnCharacterSelection(System.Char,System.Int32)
+// 0x000004F9 System.Void TMPro.Examples.TMP_TextEventCheck::OnCharacterSelection(System.Char,System.Int32)
 extern void TMP_TextEventCheck_OnCharacterSelection_mB421E2CFB617397137CF1AE9CC2F49E46EB3F0AE (void);
-// 0x000004CC System.Void TMPro.Examples.TMP_TextEventCheck::OnSpriteSelection(System.Char,System.Int32)
+// 0x000004FA System.Void TMPro.Examples.TMP_TextEventCheck::OnSpriteSelection(System.Char,System.Int32)
 extern void TMP_TextEventCheck_OnSpriteSelection_mD88D899DE3321CC15502BB1174709BE290AB6215 (void);
-// 0x000004CD System.Void TMPro.Examples.TMP_TextEventCheck::OnWordSelection(System.String,System.Int32,System.Int32)
+// 0x000004FB System.Void TMPro.Examples.TMP_TextEventCheck::OnWordSelection(System.String,System.Int32,System.Int32)
 extern void TMP_TextEventCheck_OnWordSelection_m180B102DAED1F3313F2F4BB6CF588FF96C8CAB79 (void);
-// 0x000004CE System.Void TMPro.Examples.TMP_TextEventCheck::OnLineSelection(System.String,System.Int32,System.Int32)
+// 0x000004FC System.Void TMPro.Examples.TMP_TextEventCheck::OnLineSelection(System.String,System.Int32,System.Int32)
 extern void TMP_TextEventCheck_OnLineSelection_mE0538FFAFE04A286F937907D0E4664338DCF1559 (void);
-// 0x000004CF System.Void TMPro.Examples.TMP_TextEventCheck::OnLinkSelection(System.String,System.String,System.Int32)
+// 0x000004FD System.Void TMPro.Examples.TMP_TextEventCheck::OnLinkSelection(System.String,System.String,System.Int32)
 extern void TMP_TextEventCheck_OnLinkSelection_m72BF9241651D44805590F1DBADF2FD864D209779 (void);
-// 0x000004D0 System.Void TMPro.Examples.TMP_TextEventCheck::.ctor()
+// 0x000004FE System.Void TMPro.Examples.TMP_TextEventCheck::.ctor()
 extern void TMP_TextEventCheck__ctor_m8F6CDB8774BDF6C6B909919393AC0290BA2BB0AF (void);
-// 0x000004D1 System.Void TMPro.Examples.TMP_TextInfoDebugTool::.ctor()
+// 0x000004FF System.Void TMPro.Examples.TMP_TextInfoDebugTool::.ctor()
 extern void TMP_TextInfoDebugTool__ctor_m54C6EE99B1DC2B4DE1F8E870974B3B41B970C37E (void);
-// 0x000004D2 System.Void TMPro.Examples.TMP_TextSelector_A::Awake()
+// 0x00000500 System.Void TMPro.Examples.TMP_TextSelector_A::Awake()
 extern void TMP_TextSelector_A_Awake_m662ED2E3CDB7AE16174109344A01A50AF3C44797 (void);
-// 0x000004D3 System.Void TMPro.Examples.TMP_TextSelector_A::LateUpdate()
+// 0x00000501 System.Void TMPro.Examples.TMP_TextSelector_A::LateUpdate()
 extern void TMP_TextSelector_A_LateUpdate_m1A711EC87962C6C5A7157414CD059D984D3BD55B (void);
-// 0x000004D4 System.Void TMPro.Examples.TMP_TextSelector_A::OnPointerEnter(UnityEngine.EventSystems.PointerEventData)
+// 0x00000502 System.Void TMPro.Examples.TMP_TextSelector_A::OnPointerEnter(UnityEngine.EventSystems.PointerEventData)
 extern void TMP_TextSelector_A_OnPointerEnter_m747F05CBEF90BF713BF726E47CA37DC86D9B439A (void);
-// 0x000004D5 System.Void TMPro.Examples.TMP_TextSelector_A::OnPointerExit(UnityEngine.EventSystems.PointerEventData)
+// 0x00000503 System.Void TMPro.Examples.TMP_TextSelector_A::OnPointerExit(UnityEngine.EventSystems.PointerEventData)
 extern void TMP_TextSelector_A_OnPointerExit_m5D7D8A07591506FB7291E84A951AB5C43DAA5503 (void);
-// 0x000004D6 System.Void TMPro.Examples.TMP_TextSelector_A::.ctor()
+// 0x00000504 System.Void TMPro.Examples.TMP_TextSelector_A::.ctor()
 extern void TMP_TextSelector_A__ctor_m4C56A438A3140D5CF9C7AFB8466E11142F4FA3BE (void);
-// 0x000004D7 System.Void TMPro.Examples.TMP_TextSelector_B::Awake()
+// 0x00000505 System.Void TMPro.Examples.TMP_TextSelector_B::Awake()
 extern void TMP_TextSelector_B_Awake_m773D4C87E67823272DBF597B9CADE82DD3BFFD87 (void);
-// 0x000004D8 System.Void TMPro.Examples.TMP_TextSelector_B::OnEnable()
+// 0x00000506 System.Void TMPro.Examples.TMP_TextSelector_B::OnEnable()
 extern void TMP_TextSelector_B_OnEnable_m8DA695DB0913F7123C4ADAFD5BEAB4424FA5861B (void);
-// 0x000004D9 System.Void TMPro.Examples.TMP_TextSelector_B::OnDisable()
+// 0x00000507 System.Void TMPro.Examples.TMP_TextSelector_B::OnDisable()
 extern void TMP_TextSelector_B_OnDisable_mF2EF7AE0E015218AB77936BD5FD6863F7788F11D (void);
-// 0x000004DA System.Void TMPro.Examples.TMP_TextSelector_B::ON_TEXT_CHANGED(UnityEngine.Object)
+// 0x00000508 System.Void TMPro.Examples.TMP_TextSelector_B::ON_TEXT_CHANGED(UnityEngine.Object)
 extern void TMP_TextSelector_B_ON_TEXT_CHANGED_m5B53EF1608E98B6A56AAA386085A3216B35A51EE (void);
-// 0x000004DB System.Void TMPro.Examples.TMP_TextSelector_B::LateUpdate()
+// 0x00000509 System.Void TMPro.Examples.TMP_TextSelector_B::LateUpdate()
 extern void TMP_TextSelector_B_LateUpdate_mE1B3969D788695E37240927FC6B1827CC6DD5EFF (void);
-// 0x000004DC System.Void TMPro.Examples.TMP_TextSelector_B::OnPointerEnter(UnityEngine.EventSystems.PointerEventData)
+// 0x0000050A System.Void TMPro.Examples.TMP_TextSelector_B::OnPointerEnter(UnityEngine.EventSystems.PointerEventData)
 extern void TMP_TextSelector_B_OnPointerEnter_mBAF5711E20E579D21258BD4040454A64E1134D98 (void);
-// 0x000004DD System.Void TMPro.Examples.TMP_TextSelector_B::OnPointerExit(UnityEngine.EventSystems.PointerEventData)
+// 0x0000050B System.Void TMPro.Examples.TMP_TextSelector_B::OnPointerExit(UnityEngine.EventSystems.PointerEventData)
 extern void TMP_TextSelector_B_OnPointerExit_m40ED8F7E47FF6FD8B38BE96B2216267F61509D65 (void);
-// 0x000004DE System.Void TMPro.Examples.TMP_TextSelector_B::OnPointerClick(UnityEngine.EventSystems.PointerEventData)
+// 0x0000050C System.Void TMPro.Examples.TMP_TextSelector_B::OnPointerClick(UnityEngine.EventSystems.PointerEventData)
 extern void TMP_TextSelector_B_OnPointerClick_m773B56D918B1D0F73C5ABC0EB22FD34D39AFBB97 (void);
-// 0x000004DF System.Void TMPro.Examples.TMP_TextSelector_B::OnPointerUp(UnityEngine.EventSystems.PointerEventData)
+// 0x0000050D System.Void TMPro.Examples.TMP_TextSelector_B::OnPointerUp(UnityEngine.EventSystems.PointerEventData)
 extern void TMP_TextSelector_B_OnPointerUp_mF409D728900872CC323B18DDA7F91265058BE772 (void);
-// 0x000004E0 System.Void TMPro.Examples.TMP_TextSelector_B::RestoreCachedVertexAttributes(System.Int32)
+// 0x0000050E System.Void TMPro.Examples.TMP_TextSelector_B::RestoreCachedVertexAttributes(System.Int32)
 extern void TMP_TextSelector_B_RestoreCachedVertexAttributes_m1FD258EC7A53C8E1ECB18EB6FFEFC6239780C398 (void);
-// 0x000004E1 System.Void TMPro.Examples.TMP_TextSelector_B::.ctor()
+// 0x0000050F System.Void TMPro.Examples.TMP_TextSelector_B::.ctor()
 extern void TMP_TextSelector_B__ctor_mB45DD6360094ADBEF5E8020E8C62404B7E45E301 (void);
-// 0x000004E2 System.Void TMPro.Examples.TMP_UiFrameRateCounter::Awake()
+// 0x00000510 System.Void TMPro.Examples.TMP_UiFrameRateCounter::Awake()
 extern void TMP_UiFrameRateCounter_Awake_m3E0ECAD08FA25B61DD75F4D36EC3F1DE5A22A491 (void);
-// 0x000004E3 System.Void TMPro.Examples.TMP_UiFrameRateCounter::Start()
+// 0x00000511 System.Void TMPro.Examples.TMP_UiFrameRateCounter::Start()
 extern void TMP_UiFrameRateCounter_Start_m11EF02C330E5D834C41F009CF088A3150352567F (void);
-// 0x000004E4 System.Void TMPro.Examples.TMP_UiFrameRateCounter::Update()
+// 0x00000512 System.Void TMPro.Examples.TMP_UiFrameRateCounter::Update()
 extern void TMP_UiFrameRateCounter_Update_m568E467033B0FF7C67251895A0772CFA197789A3 (void);
-// 0x000004E5 System.Void TMPro.Examples.TMP_UiFrameRateCounter::Set_FrameCounter_Position(TMPro.Examples.TMP_UiFrameRateCounter/FpsCounterAnchorPositions)
+// 0x00000513 System.Void TMPro.Examples.TMP_UiFrameRateCounter::Set_FrameCounter_Position(TMPro.Examples.TMP_UiFrameRateCounter/FpsCounterAnchorPositions)
 extern void TMP_UiFrameRateCounter_Set_FrameCounter_Position_mAF25D6E90A6CB17EE041885B32579A2AEDBFCC36 (void);
-// 0x000004E6 System.Void TMPro.Examples.TMP_UiFrameRateCounter::.ctor()
+// 0x00000514 System.Void TMPro.Examples.TMP_UiFrameRateCounter::.ctor()
 extern void TMP_UiFrameRateCounter__ctor_mBF5305427799EBC515580C2747FE604A6DFEC848 (void);
-// 0x000004E7 System.Void TMPro.Examples.VertexColorCycler::Awake()
+// 0x00000515 System.Void TMPro.Examples.VertexColorCycler::Awake()
 extern void VertexColorCycler_Awake_m8895A9C06DB3EC4379334601DC726F1AFAF543C1 (void);
-// 0x000004E8 System.Void TMPro.Examples.VertexColorCycler::Start()
+// 0x00000516 System.Void TMPro.Examples.VertexColorCycler::Start()
 extern void VertexColorCycler_Start_m36846DA72BFC7FDFA944A368C9DB62D17A15917B (void);
-// 0x000004E9 System.Collections.IEnumerator TMPro.Examples.VertexColorCycler::AnimateVertexColors()
+// 0x00000517 System.Collections.IEnumerator TMPro.Examples.VertexColorCycler::AnimateVertexColors()
 extern void VertexColorCycler_AnimateVertexColors_m16733B3DFF4C0F625AA66B5DF9D3B04D723E49CC (void);
-// 0x000004EA System.Void TMPro.Examples.VertexColorCycler::.ctor()
+// 0x00000518 System.Void TMPro.Examples.VertexColorCycler::.ctor()
 extern void VertexColorCycler__ctor_m673CA077DC5E935BABCEA79E5E70116E9934F4C1 (void);
-// 0x000004EB System.Void TMPro.Examples.VertexColorCycler/<AnimateVertexColors>d__3::.ctor(System.Int32)
+// 0x00000519 System.Void TMPro.Examples.VertexColorCycler/<AnimateVertexColors>d__3::.ctor(System.Int32)
 extern void U3CAnimateVertexColorsU3Ed__3__ctor_m0245999D5FAAF8855583609DB16CAF48E9450262 (void);
-// 0x000004EC System.Void TMPro.Examples.VertexColorCycler/<AnimateVertexColors>d__3::System.IDisposable.Dispose()
+// 0x0000051A System.Void TMPro.Examples.VertexColorCycler/<AnimateVertexColors>d__3::System.IDisposable.Dispose()
 extern void U3CAnimateVertexColorsU3Ed__3_System_IDisposable_Dispose_mF965F484C619EFA1359F7DB6495C1C79A89001BF (void);
-// 0x000004ED System.Boolean TMPro.Examples.VertexColorCycler/<AnimateVertexColors>d__3::MoveNext()
+// 0x0000051B System.Boolean TMPro.Examples.VertexColorCycler/<AnimateVertexColors>d__3::MoveNext()
 extern void U3CAnimateVertexColorsU3Ed__3_MoveNext_m5C44B8CC0AB09A205BB1649931D2AC7C6F016E60 (void);
-// 0x000004EE System.Object TMPro.Examples.VertexColorCycler/<AnimateVertexColors>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x0000051C System.Object TMPro.Examples.VertexColorCycler/<AnimateVertexColors>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CAnimateVertexColorsU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mF9600944C968C16121129C479F8B25D8E8B7FDD1 (void);
-// 0x000004EF System.Void TMPro.Examples.VertexColorCycler/<AnimateVertexColors>d__3::System.Collections.IEnumerator.Reset()
+// 0x0000051D System.Void TMPro.Examples.VertexColorCycler/<AnimateVertexColors>d__3::System.Collections.IEnumerator.Reset()
 extern void U3CAnimateVertexColorsU3Ed__3_System_Collections_IEnumerator_Reset_m319AC50F2DE1572FB7D7AF4F5F65958D01477899 (void);
-// 0x000004F0 System.Object TMPro.Examples.VertexColorCycler/<AnimateVertexColors>d__3::System.Collections.IEnumerator.get_Current()
+// 0x0000051E System.Object TMPro.Examples.VertexColorCycler/<AnimateVertexColors>d__3::System.Collections.IEnumerator.get_Current()
 extern void U3CAnimateVertexColorsU3Ed__3_System_Collections_IEnumerator_get_Current_mC19EC9CE0C245B49D987C18357571FF3462F1D2C (void);
-// 0x000004F1 System.Void TMPro.Examples.VertexJitter::Awake()
+// 0x0000051F System.Void TMPro.Examples.VertexJitter::Awake()
 extern void VertexJitter_Awake_m0DF2AC9C728A15EEB427F1FE2426E3C31FBA544C (void);
-// 0x000004F2 System.Void TMPro.Examples.VertexJitter::OnEnable()
+// 0x00000520 System.Void TMPro.Examples.VertexJitter::OnEnable()
 extern void VertexJitter_OnEnable_mCD5C1FDDBA809B04AC6F6CB00562D0AA45BC4354 (void);
-// 0x000004F3 System.Void TMPro.Examples.VertexJitter::OnDisable()
+// 0x00000521 System.Void TMPro.Examples.VertexJitter::OnDisable()
 extern void VertexJitter_OnDisable_mB670406B3982BFC44CB6BB05A73F1BE877FDFAF2 (void);
-// 0x000004F4 System.Void TMPro.Examples.VertexJitter::Start()
+// 0x00000522 System.Void TMPro.Examples.VertexJitter::Start()
 extern void VertexJitter_Start_mDE6155803CF2B1E6CE0EBAE8DF7DB93601E1DD76 (void);
-// 0x000004F5 System.Void TMPro.Examples.VertexJitter::ON_TEXT_CHANGED(UnityEngine.Object)
+// 0x00000523 System.Void TMPro.Examples.VertexJitter::ON_TEXT_CHANGED(UnityEngine.Object)
 extern void VertexJitter_ON_TEXT_CHANGED_m0CF9C49A1033B4475C04A417440F39490FED64A8 (void);
-// 0x000004F6 System.Collections.IEnumerator TMPro.Examples.VertexJitter::AnimateVertexColors()
+// 0x00000524 System.Collections.IEnumerator TMPro.Examples.VertexJitter::AnimateVertexColors()
 extern void VertexJitter_AnimateVertexColors_m2A69F06CF58FA46B689BD4166DEF5AD15FA2FA88 (void);
-// 0x000004F7 System.Void TMPro.Examples.VertexJitter::.ctor()
+// 0x00000525 System.Void TMPro.Examples.VertexJitter::.ctor()
 extern void VertexJitter__ctor_m41E4682405B3C0B19779BA8CB77156D65D64716D (void);
-// 0x000004F8 System.Void TMPro.Examples.VertexJitter/<AnimateVertexColors>d__11::.ctor(System.Int32)
+// 0x00000526 System.Void TMPro.Examples.VertexJitter/<AnimateVertexColors>d__11::.ctor(System.Int32)
 extern void U3CAnimateVertexColorsU3Ed__11__ctor_m10C4D98A634474BAA883419ED308835B7D91C01A (void);
-// 0x000004F9 System.Void TMPro.Examples.VertexJitter/<AnimateVertexColors>d__11::System.IDisposable.Dispose()
+// 0x00000527 System.Void TMPro.Examples.VertexJitter/<AnimateVertexColors>d__11::System.IDisposable.Dispose()
 extern void U3CAnimateVertexColorsU3Ed__11_System_IDisposable_Dispose_mB3756FBFDD731F3CC1EFF9AB132FF5075C8411F8 (void);
-// 0x000004FA System.Boolean TMPro.Examples.VertexJitter/<AnimateVertexColors>d__11::MoveNext()
+// 0x00000528 System.Boolean TMPro.Examples.VertexJitter/<AnimateVertexColors>d__11::MoveNext()
 extern void U3CAnimateVertexColorsU3Ed__11_MoveNext_mD694A3145B54B9C5EB351853752B9292DBFF0273 (void);
-// 0x000004FB System.Object TMPro.Examples.VertexJitter/<AnimateVertexColors>d__11::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000529 System.Object TMPro.Examples.VertexJitter/<AnimateVertexColors>d__11::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CAnimateVertexColorsU3Ed__11_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m79C3A529011A51B9A994106D3C1271548B02D405 (void);
-// 0x000004FC System.Void TMPro.Examples.VertexJitter/<AnimateVertexColors>d__11::System.Collections.IEnumerator.Reset()
+// 0x0000052A System.Void TMPro.Examples.VertexJitter/<AnimateVertexColors>d__11::System.Collections.IEnumerator.Reset()
 extern void U3CAnimateVertexColorsU3Ed__11_System_Collections_IEnumerator_Reset_m15291DCCCEC264095634B26DD6F24D52360BDAF0 (void);
-// 0x000004FD System.Object TMPro.Examples.VertexJitter/<AnimateVertexColors>d__11::System.Collections.IEnumerator.get_Current()
+// 0x0000052B System.Object TMPro.Examples.VertexJitter/<AnimateVertexColors>d__11::System.Collections.IEnumerator.get_Current()
 extern void U3CAnimateVertexColorsU3Ed__11_System_Collections_IEnumerator_get_Current_m0B8F21A4589C68BA16A8340938BB44C980260CC9 (void);
-// 0x000004FE System.Void TMPro.Examples.VertexShakeA::Awake()
+// 0x0000052C System.Void TMPro.Examples.VertexShakeA::Awake()
 extern void VertexShakeA_Awake_m092957B0A67A153E7CD56A75A438087DE4806867 (void);
-// 0x000004FF System.Void TMPro.Examples.VertexShakeA::OnEnable()
+// 0x0000052D System.Void TMPro.Examples.VertexShakeA::OnEnable()
 extern void VertexShakeA_OnEnable_m52E2A036C9EB2C1D633BA7F43E31C36983972304 (void);
-// 0x00000500 System.Void TMPro.Examples.VertexShakeA::OnDisable()
+// 0x0000052E System.Void TMPro.Examples.VertexShakeA::OnDisable()
 extern void VertexShakeA_OnDisable_m52F58AF9438377D222543AA67CFF7B30FCCB0F23 (void);
-// 0x00000501 System.Void TMPro.Examples.VertexShakeA::Start()
+// 0x0000052F System.Void TMPro.Examples.VertexShakeA::Start()
 extern void VertexShakeA_Start_mDD8B5538BDFBC2BA242B997B879E7ED64ACAFC5E (void);
-// 0x00000502 System.Void TMPro.Examples.VertexShakeA::ON_TEXT_CHANGED(UnityEngine.Object)
+// 0x00000530 System.Void TMPro.Examples.VertexShakeA::ON_TEXT_CHANGED(UnityEngine.Object)
 extern void VertexShakeA_ON_TEXT_CHANGED_mE7A41CEFDB0008A1CD15F156EFEE1C895A92EE77 (void);
-// 0x00000503 System.Collections.IEnumerator TMPro.Examples.VertexShakeA::AnimateVertexColors()
+// 0x00000531 System.Collections.IEnumerator TMPro.Examples.VertexShakeA::AnimateVertexColors()
 extern void VertexShakeA_AnimateVertexColors_m5FD933D6BF976B64FC0B80614DE5112377D1DC38 (void);
-// 0x00000504 System.Void TMPro.Examples.VertexShakeA::.ctor()
+// 0x00000532 System.Void TMPro.Examples.VertexShakeA::.ctor()
 extern void VertexShakeA__ctor_m63ED483A292CA310B90144E0779C0472AAC22CBB (void);
-// 0x00000505 System.Void TMPro.Examples.VertexShakeA/<AnimateVertexColors>d__11::.ctor(System.Int32)
+// 0x00000533 System.Void TMPro.Examples.VertexShakeA/<AnimateVertexColors>d__11::.ctor(System.Int32)
 extern void U3CAnimateVertexColorsU3Ed__11__ctor_m440985E6DF2F1B461E2964101EA242FFD472A25A (void);
-// 0x00000506 System.Void TMPro.Examples.VertexShakeA/<AnimateVertexColors>d__11::System.IDisposable.Dispose()
+// 0x00000534 System.Void TMPro.Examples.VertexShakeA/<AnimateVertexColors>d__11::System.IDisposable.Dispose()
 extern void U3CAnimateVertexColorsU3Ed__11_System_IDisposable_Dispose_m74112773E1FD645722BC221FA5256331C068EAE7 (void);
-// 0x00000507 System.Boolean TMPro.Examples.VertexShakeA/<AnimateVertexColors>d__11::MoveNext()
+// 0x00000535 System.Boolean TMPro.Examples.VertexShakeA/<AnimateVertexColors>d__11::MoveNext()
 extern void U3CAnimateVertexColorsU3Ed__11_MoveNext_mA6858F6CA14AAE3DFB7EA13748E10E063BBAB934 (void);
-// 0x00000508 System.Object TMPro.Examples.VertexShakeA/<AnimateVertexColors>d__11::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000536 System.Object TMPro.Examples.VertexShakeA/<AnimateVertexColors>d__11::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CAnimateVertexColorsU3Ed__11_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m8DD4F3768C9025EFAC0BFDBB942FEF7953FB20BE (void);
-// 0x00000509 System.Void TMPro.Examples.VertexShakeA/<AnimateVertexColors>d__11::System.Collections.IEnumerator.Reset()
+// 0x00000537 System.Void TMPro.Examples.VertexShakeA/<AnimateVertexColors>d__11::System.Collections.IEnumerator.Reset()
 extern void U3CAnimateVertexColorsU3Ed__11_System_Collections_IEnumerator_Reset_m2F84864A089CBA0B878B7AC1EA39A49B82682A90 (void);
-// 0x0000050A System.Object TMPro.Examples.VertexShakeA/<AnimateVertexColors>d__11::System.Collections.IEnumerator.get_Current()
+// 0x00000538 System.Object TMPro.Examples.VertexShakeA/<AnimateVertexColors>d__11::System.Collections.IEnumerator.get_Current()
 extern void U3CAnimateVertexColorsU3Ed__11_System_Collections_IEnumerator_get_Current_m3106DAC17EF56701CBC9812DD031932B04BB730B (void);
-// 0x0000050B System.Void TMPro.Examples.VertexShakeB::Awake()
+// 0x00000539 System.Void TMPro.Examples.VertexShakeB::Awake()
 extern void VertexShakeB_Awake_mFA9A180BD1769CC79E6325314B5652D605ABE58E (void);
-// 0x0000050C System.Void TMPro.Examples.VertexShakeB::OnEnable()
+// 0x0000053A System.Void TMPro.Examples.VertexShakeB::OnEnable()
 extern void VertexShakeB_OnEnable_m4999DF4598174EDA2A47F4F667B5CE061DF97C21 (void);
-// 0x0000050D System.Void TMPro.Examples.VertexShakeB::OnDisable()
+// 0x0000053B System.Void TMPro.Examples.VertexShakeB::OnDisable()
 extern void VertexShakeB_OnDisable_m2FB32CBD277A271400BF8AF2A35294C09FE9B8E5 (void);
-// 0x0000050E System.Void TMPro.Examples.VertexShakeB::Start()
+// 0x0000053C System.Void TMPro.Examples.VertexShakeB::Start()
 extern void VertexShakeB_Start_m58786A0944340EF16E024ADB596C9AB5686C2AF1 (void);
-// 0x0000050F System.Void TMPro.Examples.VertexShakeB::ON_TEXT_CHANGED(UnityEngine.Object)
+// 0x0000053D System.Void TMPro.Examples.VertexShakeB::ON_TEXT_CHANGED(UnityEngine.Object)
 extern void VertexShakeB_ON_TEXT_CHANGED_mF8641640C828A9664AE03AF01CB4832E14EF436D (void);
-// 0x00000510 System.Collections.IEnumerator TMPro.Examples.VertexShakeB::AnimateVertexColors()
+// 0x0000053E System.Collections.IEnumerator TMPro.Examples.VertexShakeB::AnimateVertexColors()
 extern void VertexShakeB_AnimateVertexColors_m06D25FE7F9F3EFF693DDC889BF725F01D0CF2A6F (void);
-// 0x00000511 System.Void TMPro.Examples.VertexShakeB::.ctor()
+// 0x0000053F System.Void TMPro.Examples.VertexShakeB::.ctor()
 extern void VertexShakeB__ctor_m9D068774503CF8642CC0BAC0E909ECE91E4E2198 (void);
-// 0x00000512 System.Void TMPro.Examples.VertexShakeB/<AnimateVertexColors>d__10::.ctor(System.Int32)
+// 0x00000540 System.Void TMPro.Examples.VertexShakeB/<AnimateVertexColors>d__10::.ctor(System.Int32)
 extern void U3CAnimateVertexColorsU3Ed__10__ctor_mBE5C0E4A0F65F07A7510D171683AD319F76E6C6D (void);
-// 0x00000513 System.Void TMPro.Examples.VertexShakeB/<AnimateVertexColors>d__10::System.IDisposable.Dispose()
+// 0x00000541 System.Void TMPro.Examples.VertexShakeB/<AnimateVertexColors>d__10::System.IDisposable.Dispose()
 extern void U3CAnimateVertexColorsU3Ed__10_System_IDisposable_Dispose_m4DD41FA568ABBC327FA38C0E345EFB6F1A71C2C8 (void);
-// 0x00000514 System.Boolean TMPro.Examples.VertexShakeB/<AnimateVertexColors>d__10::MoveNext()
+// 0x00000542 System.Boolean TMPro.Examples.VertexShakeB/<AnimateVertexColors>d__10::MoveNext()
 extern void U3CAnimateVertexColorsU3Ed__10_MoveNext_mDD84A4116FCAAF920F86BA72F890CE0BE76AF348 (void);
-// 0x00000515 System.Object TMPro.Examples.VertexShakeB/<AnimateVertexColors>d__10::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000543 System.Object TMPro.Examples.VertexShakeB/<AnimateVertexColors>d__10::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CAnimateVertexColorsU3Ed__10_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m250CC96EC17E74D79536FDA4EB6F5B5F985C0845 (void);
-// 0x00000516 System.Void TMPro.Examples.VertexShakeB/<AnimateVertexColors>d__10::System.Collections.IEnumerator.Reset()
+// 0x00000544 System.Void TMPro.Examples.VertexShakeB/<AnimateVertexColors>d__10::System.Collections.IEnumerator.Reset()
 extern void U3CAnimateVertexColorsU3Ed__10_System_Collections_IEnumerator_Reset_m5A5869FEFA67D5E9659F1145B83581D954550C1A (void);
-// 0x00000517 System.Object TMPro.Examples.VertexShakeB/<AnimateVertexColors>d__10::System.Collections.IEnumerator.get_Current()
+// 0x00000545 System.Object TMPro.Examples.VertexShakeB/<AnimateVertexColors>d__10::System.Collections.IEnumerator.get_Current()
 extern void U3CAnimateVertexColorsU3Ed__10_System_Collections_IEnumerator_get_Current_m496F1BFEADA21FFB684F8C1996EAB707CFA1C5F0 (void);
-// 0x00000518 System.Void TMPro.Examples.VertexZoom::Awake()
+// 0x00000546 System.Void TMPro.Examples.VertexZoom::Awake()
 extern void VertexZoom_Awake_m29C1DE789B968D726EDD69F605321A223D47C1A0 (void);
-// 0x00000519 System.Void TMPro.Examples.VertexZoom::OnEnable()
+// 0x00000547 System.Void TMPro.Examples.VertexZoom::OnEnable()
 extern void VertexZoom_OnEnable_mE3719F01B6A8590066988F425F8A63103B5A7B47 (void);
-// 0x0000051A System.Void TMPro.Examples.VertexZoom::OnDisable()
+// 0x00000548 System.Void TMPro.Examples.VertexZoom::OnDisable()
 extern void VertexZoom_OnDisable_mBB91C9EFA049395743D27358A427BB2B05850B47 (void);
-// 0x0000051B System.Void TMPro.Examples.VertexZoom::Start()
+// 0x00000549 System.Void TMPro.Examples.VertexZoom::Start()
 extern void VertexZoom_Start_mB03D03148C98EBC9117D69510D24F21978546FCB (void);
-// 0x0000051C System.Void TMPro.Examples.VertexZoom::ON_TEXT_CHANGED(UnityEngine.Object)
+// 0x0000054A System.Void TMPro.Examples.VertexZoom::ON_TEXT_CHANGED(UnityEngine.Object)
 extern void VertexZoom_ON_TEXT_CHANGED_mFF049D0455A7DD19D6BDACBEEB737B4AAE32DDA7 (void);
-// 0x0000051D System.Collections.IEnumerator TMPro.Examples.VertexZoom::AnimateVertexColors()
+// 0x0000054B System.Collections.IEnumerator TMPro.Examples.VertexZoom::AnimateVertexColors()
 extern void VertexZoom_AnimateVertexColors_m632BD9DC8FB193AF2D5B540524B11AF139FDF5F0 (void);
-// 0x0000051E System.Void TMPro.Examples.VertexZoom::.ctor()
+// 0x0000054C System.Void TMPro.Examples.VertexZoom::.ctor()
 extern void VertexZoom__ctor_m454AF80ACB5C555BCB4B5E658A22B5A4FCC39422 (void);
-// 0x0000051F System.Void TMPro.Examples.VertexZoom/<>c__DisplayClass10_0::.ctor()
+// 0x0000054D System.Void TMPro.Examples.VertexZoom/<>c__DisplayClass10_0::.ctor()
 extern void U3CU3Ec__DisplayClass10_0__ctor_m8C69A89B34AA3D16243E69F1E0015856C791CC8A (void);
-// 0x00000520 System.Int32 TMPro.Examples.VertexZoom/<>c__DisplayClass10_0::<AnimateVertexColors>b__0(System.Int32,System.Int32)
+// 0x0000054E System.Int32 TMPro.Examples.VertexZoom/<>c__DisplayClass10_0::<AnimateVertexColors>b__0(System.Int32,System.Int32)
 extern void U3CU3Ec__DisplayClass10_0_U3CAnimateVertexColorsU3Eb__0_m8E51A05E012CCFA439DCF10A8B5C4FA196E4344A (void);
-// 0x00000521 System.Void TMPro.Examples.VertexZoom/<AnimateVertexColors>d__10::.ctor(System.Int32)
+// 0x0000054F System.Void TMPro.Examples.VertexZoom/<AnimateVertexColors>d__10::.ctor(System.Int32)
 extern void U3CAnimateVertexColorsU3Ed__10__ctor_m7A5B8E07B89E628DB7119F7F61311165A2DBC4D6 (void);
-// 0x00000522 System.Void TMPro.Examples.VertexZoom/<AnimateVertexColors>d__10::System.IDisposable.Dispose()
+// 0x00000550 System.Void TMPro.Examples.VertexZoom/<AnimateVertexColors>d__10::System.IDisposable.Dispose()
 extern void U3CAnimateVertexColorsU3Ed__10_System_IDisposable_Dispose_m974E92A444C6343E94C76BB6CC6508F7AE4FD36E (void);
-// 0x00000523 System.Boolean TMPro.Examples.VertexZoom/<AnimateVertexColors>d__10::MoveNext()
+// 0x00000551 System.Boolean TMPro.Examples.VertexZoom/<AnimateVertexColors>d__10::MoveNext()
 extern void U3CAnimateVertexColorsU3Ed__10_MoveNext_m6DBC52A95A92A54A1801DC4CEE548FA568251D5E (void);
-// 0x00000524 System.Object TMPro.Examples.VertexZoom/<AnimateVertexColors>d__10::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000552 System.Object TMPro.Examples.VertexZoom/<AnimateVertexColors>d__10::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CAnimateVertexColorsU3Ed__10_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m110CD16E89E725B1484D24FFB1753768F78A988B (void);
-// 0x00000525 System.Void TMPro.Examples.VertexZoom/<AnimateVertexColors>d__10::System.Collections.IEnumerator.Reset()
+// 0x00000553 System.Void TMPro.Examples.VertexZoom/<AnimateVertexColors>d__10::System.Collections.IEnumerator.Reset()
 extern void U3CAnimateVertexColorsU3Ed__10_System_Collections_IEnumerator_Reset_mDE5E71C88F5096FD70EB061287ADF0B847732821 (void);
-// 0x00000526 System.Object TMPro.Examples.VertexZoom/<AnimateVertexColors>d__10::System.Collections.IEnumerator.get_Current()
+// 0x00000554 System.Object TMPro.Examples.VertexZoom/<AnimateVertexColors>d__10::System.Collections.IEnumerator.get_Current()
 extern void U3CAnimateVertexColorsU3Ed__10_System_Collections_IEnumerator_get_Current_m14B89756695EE73AEBB6F3A613F65E1343A8CC2C (void);
-// 0x00000527 System.Void TMPro.Examples.WarpTextExample::Awake()
+// 0x00000555 System.Void TMPro.Examples.WarpTextExample::Awake()
 extern void WarpTextExample_Awake_m92842E51B4DBB2E4341ACB179468049FAB23949F (void);
-// 0x00000528 System.Void TMPro.Examples.WarpTextExample::Start()
+// 0x00000556 System.Void TMPro.Examples.WarpTextExample::Start()
 extern void WarpTextExample_Start_m3339EDC03B6FC498916520CBCCDB5F9FA090F809 (void);
-// 0x00000529 UnityEngine.AnimationCurve TMPro.Examples.WarpTextExample::CopyAnimationCurve(UnityEngine.AnimationCurve)
+// 0x00000557 UnityEngine.AnimationCurve TMPro.Examples.WarpTextExample::CopyAnimationCurve(UnityEngine.AnimationCurve)
 extern void WarpTextExample_CopyAnimationCurve_m65A93388CC2CF58CD2E08CC8EF682A2C97C558FF (void);
-// 0x0000052A System.Collections.IEnumerator TMPro.Examples.WarpTextExample::WarpText()
+// 0x00000558 System.Collections.IEnumerator TMPro.Examples.WarpTextExample::WarpText()
 extern void WarpTextExample_WarpText_mBE4B6E5B6D8AAE9340CD59B1FA9DFE9A34665E98 (void);
-// 0x0000052B System.Void TMPro.Examples.WarpTextExample::.ctor()
+// 0x00000559 System.Void TMPro.Examples.WarpTextExample::.ctor()
 extern void WarpTextExample__ctor_mBD48A5403123F25C45B5E60C19E1EA397FBA1795 (void);
-// 0x0000052C System.Void TMPro.Examples.WarpTextExample/<WarpText>d__8::.ctor(System.Int32)
+// 0x0000055A System.Void TMPro.Examples.WarpTextExample/<WarpText>d__8::.ctor(System.Int32)
 extern void U3CWarpTextU3Ed__8__ctor_m1943C34BBEAF121203BA8C5D725E991283A4A3BB (void);
-// 0x0000052D System.Void TMPro.Examples.WarpTextExample/<WarpText>d__8::System.IDisposable.Dispose()
+// 0x0000055B System.Void TMPro.Examples.WarpTextExample/<WarpText>d__8::System.IDisposable.Dispose()
 extern void U3CWarpTextU3Ed__8_System_IDisposable_Dispose_m145D2DA1026419984AD79D5D62FBC38C9441AB53 (void);
-// 0x0000052E System.Boolean TMPro.Examples.WarpTextExample/<WarpText>d__8::MoveNext()
+// 0x0000055C System.Boolean TMPro.Examples.WarpTextExample/<WarpText>d__8::MoveNext()
 extern void U3CWarpTextU3Ed__8_MoveNext_mCE7A826C5E4854C2C509C77BD18F5A9B6D691B02 (void);
-// 0x0000052F System.Object TMPro.Examples.WarpTextExample/<WarpText>d__8::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x0000055D System.Object TMPro.Examples.WarpTextExample/<WarpText>d__8::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CWarpTextU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD80368E9B7E259311C03E406B75161ED6F7618E3 (void);
-// 0x00000530 System.Void TMPro.Examples.WarpTextExample/<WarpText>d__8::System.Collections.IEnumerator.Reset()
+// 0x0000055E System.Void TMPro.Examples.WarpTextExample/<WarpText>d__8::System.Collections.IEnumerator.Reset()
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42 (void);
-// 0x00000531 System.Object TMPro.Examples.WarpTextExample/<WarpText>d__8::System.Collections.IEnumerator.get_Current()
+// 0x0000055F System.Object TMPro.Examples.WarpTextExample/<WarpText>d__8::System.Collections.IEnumerator.get_Current()
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19 (void);
-// 0x00000532 System.Void DepthPerceptionSystem.MovableRange::.ctor(System.Int32)
+// 0x00000560 System.Void DepthPerceptionSystem.MovableRange::.ctor(System.Int32)
 extern void MovableRange__ctor_mD71A6F482DF8A83908B6D09997F8829C79B0E2E4 (void);
-// 0x00000533 System.Void DepthPerceptionSystem.UserBodySize::.ctor()
+// 0x00000561 System.Void DepthPerceptionSystem.UserBodySize::.ctor()
 extern void UserBodySize__ctor_m017DA60558FB205155A77D15A3BCE535875BB4EB (void);
-// 0x00000534 System.Void DepthPerceptionSystem.ArmRotationAngle::.ctor(System.Single,System.Single,System.Single)
+// 0x00000562 System.Void DepthPerceptionSystem.ArmRotationAngle::.ctor(System.Single,System.Single,System.Single)
 extern void ArmRotationAngle__ctor_mC993FE62104AC191530CD60E32C1D31477109068 (void);
-// 0x00000535 System.Void DepthPerceptionSystem.ArmRotationAngle::initial()
+// 0x00000563 System.Void DepthPerceptionSystem.ArmRotationAngle::initial()
 extern void ArmRotationAngle_initial_m4E91C863067A7471A6665D2A4BE731668A1C0A15 (void);
-// 0x00000536 System.String DepthPerceptionSystem.ArmRotationAngle::angleToString()
+// 0x00000564 System.String DepthPerceptionSystem.ArmRotationAngle::angleToString()
 extern void ArmRotationAngle_angleToString_m72FF2EFCFFAB0F254A7E6F16AEE6D4A81339812E (void);
-// 0x00000537 System.Void DepthPerceptionSystem.UserArmStraightAngle::.ctor()
+// 0x00000565 System.Void DepthPerceptionSystem.UserArmStraightAngle::.ctor()
 extern void UserArmStraightAngle__ctor_mF0442CEE024285CA5EF8704492F1E4C937BF41D9 (void);
-// 0x00000538 System.Void DepthPerceptionSystem.UserInfo::.ctor(System.Int32)
+// 0x00000566 System.Void DepthPerceptionSystem.UserInfo::.ctor(System.Int32)
 extern void UserInfo__ctor_mB9DE573449C78426C51BDA801237AC53E8FB4900 (void);
-// 0x00000539 System.Void DepthPerceptionSystem.SelectionInfo::.ctor()
+// 0x00000567 System.Void DepthPerceptionSystem.SelectionInfo::.ctor()
 extern void SelectionInfo__ctor_m73BEDCC74FE5E203B7B270D2787A4265153FC7AD (void);
-// 0x0000053A System.Void DepthPerceptionSystem.CoachMovingSpeed::.ctor()
+// 0x00000568 System.Void DepthPerceptionSystem.CoachMovingSpeed::.ctor()
 extern void CoachMovingSpeed__ctor_mD35F3222B75CB1D16D9E643F100736A8265D0D26 (void);
-// 0x0000053B System.Void DepthPerceptionSystem.CoachDefaultValue::.ctor()
+// 0x00000569 System.Void DepthPerceptionSystem.CoachDefaultValue::.ctor()
 extern void CoachDefaultValue__ctor_mEFCFBE2CE744A7B91F3E935F6F1CB74DF8A39CC8 (void);
-// 0x0000053C System.Void DepthPerceptionSystem.PlayingModeSetting::.ctor()
+// 0x0000056A System.Void DepthPerceptionSystem.PlayingModeSetting::.ctor()
 extern void PlayingModeSetting__ctor_m48215555B19FCB0434FDDC0827A7F2FAB045F3A3 (void);
-// 0x0000053D System.Void DepthPerceptionSystem.EvaluationThreshold::.ctor(System.Int32)
+// 0x0000056B System.Void DepthPerceptionSystem.EvaluationThreshold::.ctor(System.Int32)
 extern void EvaluationThreshold__ctor_m4584A25C1B09CC4F145ACAF06C792B3598B2577C (void);
-// 0x0000053E System.Void DepthPerceptionSystem.ControllerVibration::.ctor(System.Int32)
+// 0x0000056C System.Void DepthPerceptionSystem.ControllerVibration::.ctor(System.Int32)
 extern void ControllerVibration__ctor_mCD796324DF688D904FBABD636A169F5A18C96EA5 (void);
-// 0x0000053F System.Void DepthPerceptionSystem.SettingInfo::.ctor(System.Int32)
+// 0x0000056D System.Void DepthPerceptionSystem.SettingInfo::.ctor(System.Int32)
 extern void SettingInfo__ctor_m4FED3A9FB5209CE2FD78BC1B084E9F365424F370 (void);
-// 0x00000540 System.Void DepthPerceptionSystem.TotalUnitResult::.ctor(System.Int32)
+// 0x0000056E System.Void DepthPerceptionSystem.TotalUnitResult::.ctor(System.Int32)
 extern void TotalUnitResult__ctor_m3680CDD900F55167B8F53A0EF7FAC007E1D29417 (void);
-// 0x00000541 System.Void DepthPerceptionSystem.TotalUnitResult::addUnitResult(DepthPerceptionSystem.UnitResult)
+// 0x0000056F System.Void DepthPerceptionSystem.TotalUnitResult::addUnitResult(DepthPerceptionSystem.UnitResult)
 extern void TotalUnitResult_addUnitResult_mB74A11BCA260F107B8A25FF9B61E5C1332A921CC (void);
-// 0x00000542 System.Void DepthPerceptionSystem.TotalUnitResult::reset()
+// 0x00000570 System.Void DepthPerceptionSystem.TotalUnitResult::reset()
 extern void TotalUnitResult_reset_m730EB9C13113891491E1C45317BDFF90E22E8F0E (void);
-// 0x00000543 System.Void DepthPerceptionSystem.UnitResult::.ctor()
+// 0x00000571 System.Void DepthPerceptionSystem.UnitResult::.ctor()
 extern void UnitResult__ctor_mAA8215332B6CE9174141FBDE757AD033343B8CEE (void);
-// 0x00000544 System.Void DepthPerceptionSystem.UnitResult::.ctor(System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Single,System.Int32)
+// 0x00000572 System.Void DepthPerceptionSystem.UnitResult::.ctor(System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Single,System.Int32)
 extern void UnitResult__ctor_mB51921C155404D5CF278B1E469EA6067A1814C75 (void);
-// 0x00000545 System.Void DepthPerceptionSystem.UnitResult::reset()
+// 0x00000573 System.Void DepthPerceptionSystem.UnitResult::reset()
 extern void UnitResult_reset_m9D0E07417A6D4742492742DFB7ED9FD162DB2463 (void);
-// 0x00000546 System.Void DepthPerceptionSystem.UnitResultComment::.ctor(System.Int32)
+// 0x00000574 System.Void DepthPerceptionSystem.UnitResultComment::.ctor(System.Int32)
 extern void UnitResultComment__ctor_mDEBE5ED10EF0E0A55A7C1AE8A631832C3D313A66 (void);
-// 0x00000547 System.Void DepthPerceptionSystem.Timer::.ctor(System.Boolean,System.Boolean,System.Single,System.Single)
+// 0x00000575 System.Void DepthPerceptionSystem.Timer::.ctor(System.Boolean,System.Boolean,System.Single,System.Single)
 extern void Timer__ctor_m08A87C1253E84A6AEF5ED22FB7F64D473893D0C8 (void);
-// 0x00000548 System.Void DepthPerceptionSystem.Timer::ResetTimer()
+// 0x00000576 System.Void DepthPerceptionSystem.Timer::ResetTimer()
 extern void Timer_ResetTimer_mC20AA35C960B9FE9EE3AFC15EF3119261EAA4366 (void);
-// 0x00000549 System.Void DepthPerceptionSystem.Timer::StartTimer()
+// 0x00000577 System.Void DepthPerceptionSystem.Timer::StartTimer()
 extern void Timer_StartTimer_mBCF8FFF971095028246079C8B4CFF1B993B83D59 (void);
-// 0x0000054A System.Void DepthPerceptionSystem.PunchStraightUnit::.ctor()
+// 0x00000578 System.Void DepthPerceptionSystem.PunchStraightUnit::.ctor()
 extern void PunchStraightUnit__ctor_mAFDBC111C7B51B7A8ABA6BE5D4672619ACC039AD (void);
-// 0x0000054B System.Void DepthPerceptionSystem.PunchStraightUnit::.ctor(System.Single,System.Boolean,System.Boolean,DepthPerceptionSystem.Hand,DepthPerceptionSystem.ArmRotationAngle)
+// 0x00000579 System.Void DepthPerceptionSystem.PunchStraightUnit::.ctor(System.Single,System.Boolean,System.Boolean,DepthPerceptionSystem.Hand,DepthPerceptionSystem.ArmRotationAngle)
 extern void PunchStraightUnit__ctor_mC2176D8C35051B675D6454C738C9C8FFE9393FB9 (void);
-// 0x0000054C System.Void DepthPerceptionSystem.PunchStraightUnitTest::.ctor()
+// 0x0000057A System.Void DepthPerceptionSystem.PunchStraightUnitTest::.ctor()
 extern void PunchStraightUnitTest__ctor_mBEAE0BAA39A4719CDDA4B44EB8F6A7B063B16C99 (void);
-// 0x0000054D System.Void DepthPerceptionSystem.PunchStraightUnitTest::addUnitResult(DepthPerceptionSystem.PunchStraightUnit)
+// 0x0000057B System.Void DepthPerceptionSystem.PunchStraightUnitTest::addUnitResult(DepthPerceptionSystem.PunchStraightUnit)
 extern void PunchStraightUnitTest_addUnitResult_mEC32C25CE3A285882B46EEEA415A5D94E43C714E (void);
-// 0x0000054E System.Void DepthPerceptionSystem.PunchStraightUnitTest::reset()
+// 0x0000057C System.Void DepthPerceptionSystem.PunchStraightUnitTest::reset()
 extern void PunchStraightUnitTest_reset_mBD22E121D9DFEA2CC549628FD7FA43B2878B2D86 (void);
-// 0x0000054F System.Void DepthPerceptionSystem.Sound::.ctor()
+// 0x0000057D System.Void DepthPerceptionSystem.Sound::.ctor()
 extern void Sound__ctor_m07A45CED5F0F70DCB2FE3935DE53D9CD1BA0EAB8 (void);
-// 0x00000550 System.Void InstructionText.CalibrationInstruction::.ctor()
+// 0x0000057E System.Void InstructionText.CalibrationInstruction::.ctor()
 extern void CalibrationInstruction__ctor_m0FC958D40105E8FF54BD67E7FE8E56C328BA0D96 (void);
-// 0x00000551 System.Void InstructionText.MovableRangeInstruction::.ctor()
+// 0x0000057F System.Void InstructionText.MovableRangeInstruction::.ctor()
 extern void MovableRangeInstruction__ctor_m7B5D8BD8726D015650CD5A8C35261EEB848039A9 (void);
-// 0x00000552 System.Void InstructionText.TPoseInstruction::.ctor()
+// 0x00000580 System.Void InstructionText.TPoseInstruction::.ctor()
 extern void TPoseInstruction__ctor_mE978B4BDDEF82C31E34EEA62F234317B1A2A3872 (void);
-// 0x00000553 System.Void InstructionText.ArmLengthInstruction::.ctor()
+// 0x00000581 System.Void InstructionText.ArmLengthInstruction::.ctor()
 extern void ArmLengthInstruction__ctor_mCB91BC9EB9EF3229A27F6C06F9DB9009B593A2CB (void);
-// 0x00000554 System.Boolean OculusSampleFramework.ColorGrabbable::get_Highlight()
+// 0x00000582 System.Boolean OculusSampleFramework.ColorGrabbable::get_Highlight()
 extern void ColorGrabbable_get_Highlight_m4F58065C790D757D19E29FBFBE43E5CD777C87E0 (void);
-// 0x00000555 System.Void OculusSampleFramework.ColorGrabbable::set_Highlight(System.Boolean)
+// 0x00000583 System.Void OculusSampleFramework.ColorGrabbable::set_Highlight(System.Boolean)
 extern void ColorGrabbable_set_Highlight_m8B7FE88DF23A163B4B49CEF2969F883E477498E7 (void);
-// 0x00000556 System.Void OculusSampleFramework.ColorGrabbable::UpdateColor()
+// 0x00000584 System.Void OculusSampleFramework.ColorGrabbable::UpdateColor()
 extern void ColorGrabbable_UpdateColor_mCE9D7D0D07EFD5755541BA9DAB7E6CB8AA29DE2F (void);
-// 0x00000557 System.Void OculusSampleFramework.ColorGrabbable::GrabBegin(OVRGrabber,UnityEngine.Collider)
+// 0x00000585 System.Void OculusSampleFramework.ColorGrabbable::GrabBegin(OVRGrabber,UnityEngine.Collider)
 extern void ColorGrabbable_GrabBegin_m8100AD8EC2790B53524A0A8D07EA0EEBBB2E9EBF (void);
-// 0x00000558 System.Void OculusSampleFramework.ColorGrabbable::GrabEnd(UnityEngine.Vector3,UnityEngine.Vector3)
+// 0x00000586 System.Void OculusSampleFramework.ColorGrabbable::GrabEnd(UnityEngine.Vector3,UnityEngine.Vector3)
 extern void ColorGrabbable_GrabEnd_m7B4D5817A330AAAC17E1E532A28F345A99C0EA74 (void);
-// 0x00000559 System.Void OculusSampleFramework.ColorGrabbable::Awake()
+// 0x00000587 System.Void OculusSampleFramework.ColorGrabbable::Awake()
 extern void ColorGrabbable_Awake_m499FFE6B282F2166276527A9A9FA97CCA9C83755 (void);
-// 0x0000055A System.Void OculusSampleFramework.ColorGrabbable::SetColor(UnityEngine.Color)
+// 0x00000588 System.Void OculusSampleFramework.ColorGrabbable::SetColor(UnityEngine.Color)
 extern void ColorGrabbable_SetColor_m4FE1CE9EDB8359175A841A193A211E6FEF332091 (void);
-// 0x0000055B System.Void OculusSampleFramework.ColorGrabbable::.ctor()
+// 0x00000589 System.Void OculusSampleFramework.ColorGrabbable::.ctor()
 extern void ColorGrabbable__ctor_mF5EA461B024E2AEB9D327F7B58037CA40DA15BD4 (void);
-// 0x0000055C System.Void OculusSampleFramework.ColorGrabbable::.cctor()
+// 0x0000058A System.Void OculusSampleFramework.ColorGrabbable::.cctor()
 extern void ColorGrabbable__cctor_mD0F80155795EBA9B18F3C5A5B2D5D8774FDC3C62 (void);
-// 0x0000055D System.Boolean OculusSampleFramework.DistanceGrabbable::get_InRange()
+// 0x0000058B System.Boolean OculusSampleFramework.DistanceGrabbable::get_InRange()
 extern void DistanceGrabbable_get_InRange_m1C602DC30903EEB324954B2EEA9E1323CE2ADAF6 (void);
-// 0x0000055E System.Void OculusSampleFramework.DistanceGrabbable::set_InRange(System.Boolean)
+// 0x0000058C System.Void OculusSampleFramework.DistanceGrabbable::set_InRange(System.Boolean)
 extern void DistanceGrabbable_set_InRange_mF508DF5AB76210B275BA8C859F30801FF17164C7 (void);
-// 0x0000055F System.Boolean OculusSampleFramework.DistanceGrabbable::get_Targeted()
+// 0x0000058D System.Boolean OculusSampleFramework.DistanceGrabbable::get_Targeted()
 extern void DistanceGrabbable_get_Targeted_mD20A182E382F3C849A3C47B93E646486FACFE344 (void);
-// 0x00000560 System.Void OculusSampleFramework.DistanceGrabbable::set_Targeted(System.Boolean)
+// 0x0000058E System.Void OculusSampleFramework.DistanceGrabbable::set_Targeted(System.Boolean)
 extern void DistanceGrabbable_set_Targeted_mF70E19578D90CC200C6AA7FF0DD4BE48804AB648 (void);
-// 0x00000561 System.Void OculusSampleFramework.DistanceGrabbable::Start()
+// 0x0000058F System.Void OculusSampleFramework.DistanceGrabbable::Start()
 extern void DistanceGrabbable_Start_m695A06358CC6A359965EA3A94F239FA74BA38891 (void);
-// 0x00000562 System.Void OculusSampleFramework.DistanceGrabbable::RefreshCrosshair()
+// 0x00000590 System.Void OculusSampleFramework.DistanceGrabbable::RefreshCrosshair()
 extern void DistanceGrabbable_RefreshCrosshair_m10E6DE982F509332FD0BD7F7B34C3D80BA907E7E (void);
-// 0x00000563 System.Void OculusSampleFramework.DistanceGrabbable::.ctor()
+// 0x00000591 System.Void OculusSampleFramework.DistanceGrabbable::.ctor()
 extern void DistanceGrabbable__ctor_mEA40333BD5C6C6A5576A66AFE86D5034C9BD6BF0 (void);
-// 0x00000564 System.Boolean OculusSampleFramework.DistanceGrabber::get_UseSpherecast()
+// 0x00000592 System.Boolean OculusSampleFramework.DistanceGrabber::get_UseSpherecast()
 extern void DistanceGrabber_get_UseSpherecast_m95D3408BB0E77942706B26B41E6C7C60668A5F23 (void);
-// 0x00000565 System.Void OculusSampleFramework.DistanceGrabber::set_UseSpherecast(System.Boolean)
+// 0x00000593 System.Void OculusSampleFramework.DistanceGrabber::set_UseSpherecast(System.Boolean)
 extern void DistanceGrabber_set_UseSpherecast_m1FB74B1697EFD726E81766B45DD4ABD0D52BA702 (void);
-// 0x00000566 System.Void OculusSampleFramework.DistanceGrabber::Start()
+// 0x00000594 System.Void OculusSampleFramework.DistanceGrabber::Start()
 extern void DistanceGrabber_Start_m2672C82CFEC3693E42A31DB0673392014245F2D3 (void);
-// 0x00000567 System.Void OculusSampleFramework.DistanceGrabber::Update()
+// 0x00000595 System.Void OculusSampleFramework.DistanceGrabber::Update()
 extern void DistanceGrabber_Update_m736F3E4B368F71CFED3891FF4D3235C0C013C6AC (void);
-// 0x00000568 System.Void OculusSampleFramework.DistanceGrabber::GrabBegin()
+// 0x00000596 System.Void OculusSampleFramework.DistanceGrabber::GrabBegin()
 extern void DistanceGrabber_GrabBegin_mF7DE35061F15B9451FBF72A64FB9FE465628F6A3 (void);
-// 0x00000569 System.Void OculusSampleFramework.DistanceGrabber::MoveGrabbedObject(UnityEngine.Vector3,UnityEngine.Quaternion,System.Boolean)
+// 0x00000597 System.Void OculusSampleFramework.DistanceGrabber::MoveGrabbedObject(UnityEngine.Vector3,UnityEngine.Quaternion,System.Boolean)
 extern void DistanceGrabber_MoveGrabbedObject_mD12177AA6D5C816017DADB5667D38A2093433314 (void);
-// 0x0000056A OculusSampleFramework.DistanceGrabbable OculusSampleFramework.DistanceGrabber::HitInfoToGrabbable(UnityEngine.RaycastHit)
+// 0x00000598 OculusSampleFramework.DistanceGrabbable OculusSampleFramework.DistanceGrabber::HitInfoToGrabbable(UnityEngine.RaycastHit)
 extern void DistanceGrabber_HitInfoToGrabbable_mBEB3BEDE7AAC4E5637256AACCCBF8046839D02B2 (void);
-// 0x0000056B System.Boolean OculusSampleFramework.DistanceGrabber::FindTarget(OculusSampleFramework.DistanceGrabbable&,UnityEngine.Collider&)
+// 0x00000599 System.Boolean OculusSampleFramework.DistanceGrabber::FindTarget(OculusSampleFramework.DistanceGrabbable&,UnityEngine.Collider&)
 extern void DistanceGrabber_FindTarget_m30DE150B74B15E6EB1C6F87EF55F2761146E8A5E (void);
-// 0x0000056C System.Boolean OculusSampleFramework.DistanceGrabber::FindTargetWithSpherecast(OculusSampleFramework.DistanceGrabbable&,UnityEngine.Collider&)
+// 0x0000059A System.Boolean OculusSampleFramework.DistanceGrabber::FindTargetWithSpherecast(OculusSampleFramework.DistanceGrabbable&,UnityEngine.Collider&)
 extern void DistanceGrabber_FindTargetWithSpherecast_m455C2BFECFA0043C1F6FA3AC82AFBA7595305A72 (void);
-// 0x0000056D System.Void OculusSampleFramework.DistanceGrabber::GrabVolumeEnable(System.Boolean)
+// 0x0000059B System.Void OculusSampleFramework.DistanceGrabber::GrabVolumeEnable(System.Boolean)
 extern void DistanceGrabber_GrabVolumeEnable_mC8A1632F031F75B436F72B5AB8B57840A65B3511 (void);
-// 0x0000056E System.Void OculusSampleFramework.DistanceGrabber::OffhandGrabbed(OVRGrabbable)
+// 0x0000059C System.Void OculusSampleFramework.DistanceGrabber::OffhandGrabbed(OVRGrabbable)
 extern void DistanceGrabber_OffhandGrabbed_m42ADB13662E66BB1A3029016E3F8C99DA29D283C (void);
-// 0x0000056F System.Void OculusSampleFramework.DistanceGrabber::.ctor()
+// 0x0000059D System.Void OculusSampleFramework.DistanceGrabber::.ctor()
 extern void DistanceGrabber__ctor_m88619531E7CC5EF3AFE9A45645ADE407C19DD5C0 (void);
-// 0x00000570 System.Void OculusSampleFramework.GrabbableCrosshair::Start()
+// 0x0000059E System.Void OculusSampleFramework.GrabbableCrosshair::Start()
 extern void GrabbableCrosshair_Start_mB87C8BA03CF383213FB84BCC2FC039D219491F78 (void);
-// 0x00000571 System.Void OculusSampleFramework.GrabbableCrosshair::SetState(OculusSampleFramework.GrabbableCrosshair/CrosshairState)
+// 0x0000059F System.Void OculusSampleFramework.GrabbableCrosshair::SetState(OculusSampleFramework.GrabbableCrosshair/CrosshairState)
 extern void GrabbableCrosshair_SetState_m047487541FB7FC979C4AFBEAED900C7D398202AE (void);
-// 0x00000572 System.Void OculusSampleFramework.GrabbableCrosshair::Update()
+// 0x000005A0 System.Void OculusSampleFramework.GrabbableCrosshair::Update()
 extern void GrabbableCrosshair_Update_m4EB8F24BEAC9A34BEA562464E7173FEA6BD405BA (void);
-// 0x00000573 System.Void OculusSampleFramework.GrabbableCrosshair::.ctor()
+// 0x000005A1 System.Void OculusSampleFramework.GrabbableCrosshair::.ctor()
 extern void GrabbableCrosshair__ctor_m57951BE13DF0C3EE461F77FF73219E8737B01639 (void);
-// 0x00000574 System.Void OculusSampleFramework.GrabManager::OnTriggerEnter(UnityEngine.Collider)
+// 0x000005A2 System.Void OculusSampleFramework.GrabManager::OnTriggerEnter(UnityEngine.Collider)
 extern void GrabManager_OnTriggerEnter_m53F7EA2FEF31C34FABD18665B0E911FDFC870E69 (void);
-// 0x00000575 System.Void OculusSampleFramework.GrabManager::OnTriggerExit(UnityEngine.Collider)
+// 0x000005A3 System.Void OculusSampleFramework.GrabManager::OnTriggerExit(UnityEngine.Collider)
 extern void GrabManager_OnTriggerExit_mC8509154A0F03FE31EF143E470DEA227C4E13E6B (void);
-// 0x00000576 System.Void OculusSampleFramework.GrabManager::.ctor()
+// 0x000005A4 System.Void OculusSampleFramework.GrabManager::.ctor()
 extern void GrabManager__ctor_m42D60651D349A5AFF921BE53349422F9C28F5088 (void);
-// 0x00000577 System.Void OculusSampleFramework.PauseOnInputLoss::Start()
+// 0x000005A5 System.Void OculusSampleFramework.PauseOnInputLoss::Start()
 extern void PauseOnInputLoss_Start_mB744569A8C2FE6684F4D6E165010CA402B5EE676 (void);
-// 0x00000578 System.Void OculusSampleFramework.PauseOnInputLoss::OnInputFocusLost()
+// 0x000005A6 System.Void OculusSampleFramework.PauseOnInputLoss::OnInputFocusLost()
 extern void PauseOnInputLoss_OnInputFocusLost_mE8067E6E37CF47C80D2BE53C6C9D91DEE2547673 (void);
-// 0x00000579 System.Void OculusSampleFramework.PauseOnInputLoss::OnInputFocusAcquired()
+// 0x000005A7 System.Void OculusSampleFramework.PauseOnInputLoss::OnInputFocusAcquired()
 extern void PauseOnInputLoss_OnInputFocusAcquired_mF5705B07693DFA909251F9642D291650D520EA1C (void);
-// 0x0000057A System.Void OculusSampleFramework.PauseOnInputLoss::.ctor()
+// 0x000005A8 System.Void OculusSampleFramework.PauseOnInputLoss::.ctor()
 extern void PauseOnInputLoss__ctor_m3DF777DD1FF1ED53489756B6C155241F1184D44A (void);
-// 0x0000057B System.Void OculusSampleFramework.BoneCapsuleTriggerLogic::OnDisable()
+// 0x000005A9 System.Void OculusSampleFramework.BoneCapsuleTriggerLogic::OnDisable()
 extern void BoneCapsuleTriggerLogic_OnDisable_mCA47C4F84A413EFFCACF6A1C3A5AA493379DD123 (void);
-// 0x0000057C System.Void OculusSampleFramework.BoneCapsuleTriggerLogic::Update()
+// 0x000005AA System.Void OculusSampleFramework.BoneCapsuleTriggerLogic::Update()
 extern void BoneCapsuleTriggerLogic_Update_m6947EE2A9D5ABE9204E96E53A6AA94C0590A7E31 (void);
-// 0x0000057D System.Void OculusSampleFramework.BoneCapsuleTriggerLogic::OnTriggerEnter(UnityEngine.Collider)
+// 0x000005AB System.Void OculusSampleFramework.BoneCapsuleTriggerLogic::OnTriggerEnter(UnityEngine.Collider)
 extern void BoneCapsuleTriggerLogic_OnTriggerEnter_m7505BB5BA2B430878DE998314AA5691BE2263780 (void);
-// 0x0000057E System.Void OculusSampleFramework.BoneCapsuleTriggerLogic::OnTriggerExit(UnityEngine.Collider)
+// 0x000005AC System.Void OculusSampleFramework.BoneCapsuleTriggerLogic::OnTriggerExit(UnityEngine.Collider)
 extern void BoneCapsuleTriggerLogic_OnTriggerExit_mA0CFC790F991CD1F0C12277FD595B57A00FA7792 (void);
-// 0x0000057F System.Void OculusSampleFramework.BoneCapsuleTriggerLogic::CleanUpDeadColliders()
+// 0x000005AD System.Void OculusSampleFramework.BoneCapsuleTriggerLogic::CleanUpDeadColliders()
 extern void BoneCapsuleTriggerLogic_CleanUpDeadColliders_m18BC093ABB7ABA3EE088D8D8580EDEF9287055B6 (void);
-// 0x00000580 System.Void OculusSampleFramework.BoneCapsuleTriggerLogic::.ctor()
+// 0x000005AE System.Void OculusSampleFramework.BoneCapsuleTriggerLogic::.ctor()
 extern void BoneCapsuleTriggerLogic__ctor_mE342ED7CF02A078C00562B36287B44DDE972CAF9 (void);
-// 0x00000581 System.Int32 OculusSampleFramework.ButtonController::get_ValidToolTagsMask()
+// 0x000005AF System.Int32 OculusSampleFramework.ButtonController::get_ValidToolTagsMask()
 extern void ButtonController_get_ValidToolTagsMask_m03500B3C3C46721EF6373ADBAE687D769DBCE662 (void);
-// 0x00000582 UnityEngine.Vector3 OculusSampleFramework.ButtonController::get_LocalButtonDirection()
+// 0x000005B0 UnityEngine.Vector3 OculusSampleFramework.ButtonController::get_LocalButtonDirection()
 extern void ButtonController_get_LocalButtonDirection_mD2B03F0736631D9183D629702AB8AB50F0D85EE9 (void);
-// 0x00000583 OculusSampleFramework.InteractableState OculusSampleFramework.ButtonController::get_CurrentButtonState()
+// 0x000005B1 OculusSampleFramework.InteractableState OculusSampleFramework.ButtonController::get_CurrentButtonState()
 extern void ButtonController_get_CurrentButtonState_mDF7E6387DACA80D58058CD5B6FA0EAC09F4E6198 (void);
-// 0x00000584 System.Void OculusSampleFramework.ButtonController::set_CurrentButtonState(OculusSampleFramework.InteractableState)
+// 0x000005B2 System.Void OculusSampleFramework.ButtonController::set_CurrentButtonState(OculusSampleFramework.InteractableState)
 extern void ButtonController_set_CurrentButtonState_m8ED1621CE1D4B1ACC491CF89ADDB4338E69FB4BC (void);
-// 0x00000585 System.Void OculusSampleFramework.ButtonController::Awake()
+// 0x000005B3 System.Void OculusSampleFramework.ButtonController::Awake()
 extern void ButtonController_Awake_m94D73C282D24625FA03FC75962E51B289D8AEBA3 (void);
-// 0x00000586 System.Void OculusSampleFramework.ButtonController::FireInteractionEventsOnDepth(OculusSampleFramework.InteractableCollisionDepth,OculusSampleFramework.InteractableTool,OculusSampleFramework.InteractionType)
+// 0x000005B4 System.Void OculusSampleFramework.ButtonController::FireInteractionEventsOnDepth(OculusSampleFramework.InteractableCollisionDepth,OculusSampleFramework.InteractableTool,OculusSampleFramework.InteractionType)
 extern void ButtonController_FireInteractionEventsOnDepth_m55654012C48FE3078B57F81492688EBE43F6BC6A (void);
-// 0x00000587 System.Void OculusSampleFramework.ButtonController::UpdateCollisionDepth(OculusSampleFramework.InteractableTool,OculusSampleFramework.InteractableCollisionDepth,OculusSampleFramework.InteractableCollisionDepth)
+// 0x000005B5 System.Void OculusSampleFramework.ButtonController::UpdateCollisionDepth(OculusSampleFramework.InteractableTool,OculusSampleFramework.InteractableCollisionDepth,OculusSampleFramework.InteractableCollisionDepth)
 extern void ButtonController_UpdateCollisionDepth_mB30DFB6BC7EB8C421C73A35FA8FEAD1A36245977 (void);
-// 0x00000588 OculusSampleFramework.InteractableState OculusSampleFramework.ButtonController::GetUpcomingStateNearField(OculusSampleFramework.InteractableState,OculusSampleFramework.InteractableCollisionDepth,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+// 0x000005B6 OculusSampleFramework.InteractableState OculusSampleFramework.ButtonController::GetUpcomingStateNearField(OculusSampleFramework.InteractableState,OculusSampleFramework.InteractableCollisionDepth,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
 extern void ButtonController_GetUpcomingStateNearField_m1B77D095FF2074D30CCA1134A279319613066000 (void);
-// 0x00000589 System.Void OculusSampleFramework.ButtonController::ForceResetButton()
+// 0x000005B7 System.Void OculusSampleFramework.ButtonController::ForceResetButton()
 extern void ButtonController_ForceResetButton_m6FAC9CEB2ED831047830BDAA18296A28E2B78B5F (void);
-// 0x0000058A System.Boolean OculusSampleFramework.ButtonController::IsValidContact(OculusSampleFramework.InteractableTool,UnityEngine.Vector3)
+// 0x000005B8 System.Boolean OculusSampleFramework.ButtonController::IsValidContact(OculusSampleFramework.InteractableTool,UnityEngine.Vector3)
 extern void ButtonController_IsValidContact_m0F68D929F825581EBF6E7DF66B8D892ED36C9858 (void);
-// 0x0000058B System.Boolean OculusSampleFramework.ButtonController::PassEntryTest(OculusSampleFramework.InteractableTool,UnityEngine.Vector3)
+// 0x000005B9 System.Boolean OculusSampleFramework.ButtonController::PassEntryTest(OculusSampleFramework.InteractableTool,UnityEngine.Vector3)
 extern void ButtonController_PassEntryTest_m1E9A6A7AD5D52E0FC7D6CAEAE38BF97A135C8CB5 (void);
-// 0x0000058C System.Boolean OculusSampleFramework.ButtonController::PassPerpTest(OculusSampleFramework.InteractableTool,UnityEngine.Vector3)
+// 0x000005BA System.Boolean OculusSampleFramework.ButtonController::PassPerpTest(OculusSampleFramework.InteractableTool,UnityEngine.Vector3)
 extern void ButtonController_PassPerpTest_m387FC13041AAA2F0393C23794BC5DA4AEE189215 (void);
-// 0x0000058D System.Void OculusSampleFramework.ButtonController::.ctor()
+// 0x000005BB System.Void OculusSampleFramework.ButtonController::.ctor()
 extern void ButtonController__ctor_m3F2A03E5FA5456EB499FA112B09C893C1E356517 (void);
-// 0x0000058E UnityEngine.Collider OculusSampleFramework.ButtonTriggerZone::get_Collider()
+// 0x000005BC UnityEngine.Collider OculusSampleFramework.ButtonTriggerZone::get_Collider()
 extern void ButtonTriggerZone_get_Collider_m3DBB47BD906E03D175F1A77576DBF5D73887EA0A (void);
-// 0x0000058F System.Void OculusSampleFramework.ButtonTriggerZone::set_Collider(UnityEngine.Collider)
+// 0x000005BD System.Void OculusSampleFramework.ButtonTriggerZone::set_Collider(UnityEngine.Collider)
 extern void ButtonTriggerZone_set_Collider_mB6F33AD4B83C40B1E02B35731B85A050F6D84B02 (void);
-// 0x00000590 OculusSampleFramework.Interactable OculusSampleFramework.ButtonTriggerZone::get_ParentInteractable()
+// 0x000005BE OculusSampleFramework.Interactable OculusSampleFramework.ButtonTriggerZone::get_ParentInteractable()
 extern void ButtonTriggerZone_get_ParentInteractable_m858A42F1ADA99AA5725EAD8F31815C589D059CDD (void);
-// 0x00000591 System.Void OculusSampleFramework.ButtonTriggerZone::set_ParentInteractable(OculusSampleFramework.Interactable)
+// 0x000005BF System.Void OculusSampleFramework.ButtonTriggerZone::set_ParentInteractable(OculusSampleFramework.Interactable)
 extern void ButtonTriggerZone_set_ParentInteractable_mFBB938C6EE2C4D5B46CB3BA8F29345D37407B162 (void);
-// 0x00000592 OculusSampleFramework.InteractableCollisionDepth OculusSampleFramework.ButtonTriggerZone::get_CollisionDepth()
+// 0x000005C0 OculusSampleFramework.InteractableCollisionDepth OculusSampleFramework.ButtonTriggerZone::get_CollisionDepth()
 extern void ButtonTriggerZone_get_CollisionDepth_mD74D45532DEE5C75E82C89BC9BF0D52C49B65883 (void);
-// 0x00000593 System.Void OculusSampleFramework.ButtonTriggerZone::Awake()
+// 0x000005C1 System.Void OculusSampleFramework.ButtonTriggerZone::Awake()
 extern void ButtonTriggerZone_Awake_m7E99166AD2FD240C3E5202D4D4CE3DB9DBC1F4DF (void);
-// 0x00000594 System.Void OculusSampleFramework.ButtonTriggerZone::.ctor()
+// 0x000005C2 System.Void OculusSampleFramework.ButtonTriggerZone::.ctor()
 extern void ButtonTriggerZone__ctor_mD1D732EE47325239A2C27DA8D08CDDA5484C02B5 (void);
-// 0x00000595 UnityEngine.Collider OculusSampleFramework.ColliderZone::get_Collider()
-// 0x00000596 OculusSampleFramework.Interactable OculusSampleFramework.ColliderZone::get_ParentInteractable()
-// 0x00000597 OculusSampleFramework.InteractableCollisionDepth OculusSampleFramework.ColliderZone::get_CollisionDepth()
-// 0x00000598 System.Void OculusSampleFramework.ColliderZoneArgs::.ctor(OculusSampleFramework.ColliderZone,System.Single,OculusSampleFramework.InteractableTool,OculusSampleFramework.InteractionType)
+// 0x000005C3 UnityEngine.Collider OculusSampleFramework.ColliderZone::get_Collider()
+// 0x000005C4 OculusSampleFramework.Interactable OculusSampleFramework.ColliderZone::get_ParentInteractable()
+// 0x000005C5 OculusSampleFramework.InteractableCollisionDepth OculusSampleFramework.ColliderZone::get_CollisionDepth()
+// 0x000005C6 System.Void OculusSampleFramework.ColliderZoneArgs::.ctor(OculusSampleFramework.ColliderZone,System.Single,OculusSampleFramework.InteractableTool,OculusSampleFramework.InteractionType)
 extern void ColliderZoneArgs__ctor_m9E8C4EEBBA0CC76E9321F2B4A4EA225146E87BF2 (void);
-// 0x00000599 OVRHand OculusSampleFramework.HandsManager::get_RightHand()
+// 0x000005C7 OVRHand OculusSampleFramework.HandsManager::get_RightHand()
 extern void HandsManager_get_RightHand_m2665862A46B12189D49D72814C79347B6CEDC069 (void);
-// 0x0000059A System.Void OculusSampleFramework.HandsManager::set_RightHand(OVRHand)
+// 0x000005C8 System.Void OculusSampleFramework.HandsManager::set_RightHand(OVRHand)
 extern void HandsManager_set_RightHand_m2C4C7FCF22A32142DAB67757F7AD34E1D45B3615 (void);
-// 0x0000059B OVRSkeleton OculusSampleFramework.HandsManager::get_RightHandSkeleton()
+// 0x000005C9 OVRSkeleton OculusSampleFramework.HandsManager::get_RightHandSkeleton()
 extern void HandsManager_get_RightHandSkeleton_mAF92A2CE5E952FB3542AC054B2E4FEAD82B06390 (void);
-// 0x0000059C System.Void OculusSampleFramework.HandsManager::set_RightHandSkeleton(OVRSkeleton)
+// 0x000005CA System.Void OculusSampleFramework.HandsManager::set_RightHandSkeleton(OVRSkeleton)
 extern void HandsManager_set_RightHandSkeleton_m54AF534C9A26FB6F15FD54BB5B3ED27878E5ED18 (void);
-// 0x0000059D OVRSkeletonRenderer OculusSampleFramework.HandsManager::get_RightHandSkeletonRenderer()
+// 0x000005CB OVRSkeletonRenderer OculusSampleFramework.HandsManager::get_RightHandSkeletonRenderer()
 extern void HandsManager_get_RightHandSkeletonRenderer_mAA4F979FDE992D6E86B97E5FC40F339FAEFDBC4E (void);
-// 0x0000059E System.Void OculusSampleFramework.HandsManager::set_RightHandSkeletonRenderer(OVRSkeletonRenderer)
+// 0x000005CC System.Void OculusSampleFramework.HandsManager::set_RightHandSkeletonRenderer(OVRSkeletonRenderer)
 extern void HandsManager_set_RightHandSkeletonRenderer_mECE8585086703FFA6D779B2AEC262AA631B012B4 (void);
-// 0x0000059F OVRMesh OculusSampleFramework.HandsManager::get_RightHandMesh()
+// 0x000005CD OVRMesh OculusSampleFramework.HandsManager::get_RightHandMesh()
 extern void HandsManager_get_RightHandMesh_m6E03E29FF199A688B15D2219AB94A5E4169F18DF (void);
-// 0x000005A0 System.Void OculusSampleFramework.HandsManager::set_RightHandMesh(OVRMesh)
+// 0x000005CE System.Void OculusSampleFramework.HandsManager::set_RightHandMesh(OVRMesh)
 extern void HandsManager_set_RightHandMesh_mCBCEB9C3DDC96FA4B3BDD3EE735298403439F8A9 (void);
-// 0x000005A1 OVRMeshRenderer OculusSampleFramework.HandsManager::get_RightHandMeshRenderer()
+// 0x000005CF OVRMeshRenderer OculusSampleFramework.HandsManager::get_RightHandMeshRenderer()
 extern void HandsManager_get_RightHandMeshRenderer_mF55137AE5259E3CBC730E0F8051FDA17FBB57A87 (void);
-// 0x000005A2 System.Void OculusSampleFramework.HandsManager::set_RightHandMeshRenderer(OVRMeshRenderer)
+// 0x000005D0 System.Void OculusSampleFramework.HandsManager::set_RightHandMeshRenderer(OVRMeshRenderer)
 extern void HandsManager_set_RightHandMeshRenderer_mFED74F4A643271B04B41A9B97E1FE9D7E4CCCDE6 (void);
-// 0x000005A3 OVRHand OculusSampleFramework.HandsManager::get_LeftHand()
+// 0x000005D1 OVRHand OculusSampleFramework.HandsManager::get_LeftHand()
 extern void HandsManager_get_LeftHand_mEA5732CCB39AA6CF833546AE2C486B02C7B508A2 (void);
-// 0x000005A4 System.Void OculusSampleFramework.HandsManager::set_LeftHand(OVRHand)
+// 0x000005D2 System.Void OculusSampleFramework.HandsManager::set_LeftHand(OVRHand)
 extern void HandsManager_set_LeftHand_mD32BFC028EB5FD6DC967521EDB758E3C734561BB (void);
-// 0x000005A5 OVRSkeleton OculusSampleFramework.HandsManager::get_LeftHandSkeleton()
+// 0x000005D3 OVRSkeleton OculusSampleFramework.HandsManager::get_LeftHandSkeleton()
 extern void HandsManager_get_LeftHandSkeleton_m34819E7DB54F70E7D2FDF67D1CCF9B91686245A7 (void);
-// 0x000005A6 System.Void OculusSampleFramework.HandsManager::set_LeftHandSkeleton(OVRSkeleton)
+// 0x000005D4 System.Void OculusSampleFramework.HandsManager::set_LeftHandSkeleton(OVRSkeleton)
 extern void HandsManager_set_LeftHandSkeleton_mED9B9B3DCD84279329ED7DFF7F5B4A6E9DC84A63 (void);
-// 0x000005A7 OVRSkeletonRenderer OculusSampleFramework.HandsManager::get_LeftHandSkeletonRenderer()
+// 0x000005D5 OVRSkeletonRenderer OculusSampleFramework.HandsManager::get_LeftHandSkeletonRenderer()
 extern void HandsManager_get_LeftHandSkeletonRenderer_mA8907602C369A76F8CFE54761B47C91F9A3DA6DD (void);
-// 0x000005A8 System.Void OculusSampleFramework.HandsManager::set_LeftHandSkeletonRenderer(OVRSkeletonRenderer)
+// 0x000005D6 System.Void OculusSampleFramework.HandsManager::set_LeftHandSkeletonRenderer(OVRSkeletonRenderer)
 extern void HandsManager_set_LeftHandSkeletonRenderer_m4F8E2EFE531C0D165D6A840A7A514D62D86EB65C (void);
-// 0x000005A9 OVRMesh OculusSampleFramework.HandsManager::get_LeftHandMesh()
+// 0x000005D7 OVRMesh OculusSampleFramework.HandsManager::get_LeftHandMesh()
 extern void HandsManager_get_LeftHandMesh_m24786B5ED8580FF07E17996746EEA9584980197D (void);
-// 0x000005AA System.Void OculusSampleFramework.HandsManager::set_LeftHandMesh(OVRMesh)
+// 0x000005D8 System.Void OculusSampleFramework.HandsManager::set_LeftHandMesh(OVRMesh)
 extern void HandsManager_set_LeftHandMesh_m9EB510A1D9760C828DEAF3A426124AC5AE4F3186 (void);
-// 0x000005AB OVRMeshRenderer OculusSampleFramework.HandsManager::get_LeftHandMeshRenderer()
+// 0x000005D9 OVRMeshRenderer OculusSampleFramework.HandsManager::get_LeftHandMeshRenderer()
 extern void HandsManager_get_LeftHandMeshRenderer_m3BF9B260147488D31205CC36CF8AE9E3D6F71820 (void);
-// 0x000005AC System.Void OculusSampleFramework.HandsManager::set_LeftHandMeshRenderer(OVRMeshRenderer)
+// 0x000005DA System.Void OculusSampleFramework.HandsManager::set_LeftHandMeshRenderer(OVRMeshRenderer)
 extern void HandsManager_set_LeftHandMeshRenderer_mBF65B3EB2E59EF05F90B4646914560D12539E49F (void);
-// 0x000005AD OculusSampleFramework.HandsManager OculusSampleFramework.HandsManager::get_Instance()
+// 0x000005DB OculusSampleFramework.HandsManager OculusSampleFramework.HandsManager::get_Instance()
 extern void HandsManager_get_Instance_mBC534FBD7327FFD72F5B8B8835EC917F5B785932 (void);
-// 0x000005AE System.Void OculusSampleFramework.HandsManager::set_Instance(OculusSampleFramework.HandsManager)
+// 0x000005DC System.Void OculusSampleFramework.HandsManager::set_Instance(OculusSampleFramework.HandsManager)
 extern void HandsManager_set_Instance_m04ED1BC73191C741F786C55BC1C7A1E3C59A5EC7 (void);
-// 0x000005AF System.Void OculusSampleFramework.HandsManager::Awake()
+// 0x000005DD System.Void OculusSampleFramework.HandsManager::Awake()
 extern void HandsManager_Awake_mF0F9AFCB732018E463DD143AF84D0FCB6EB009E1 (void);
-// 0x000005B0 System.Void OculusSampleFramework.HandsManager::Update()
+// 0x000005DE System.Void OculusSampleFramework.HandsManager::Update()
 extern void HandsManager_Update_m44234214F27CA798AFA88BEDA4CDA087C32722AE (void);
-// 0x000005B1 System.Collections.IEnumerator OculusSampleFramework.HandsManager::FindSkeletonVisualGameObjects()
+// 0x000005DF System.Collections.IEnumerator OculusSampleFramework.HandsManager::FindSkeletonVisualGameObjects()
 extern void HandsManager_FindSkeletonVisualGameObjects_m52C4E421ED05D360FA466E35821C3622B7C6A382 (void);
-// 0x000005B2 System.Void OculusSampleFramework.HandsManager::SwitchVisualization()
+// 0x000005E0 System.Void OculusSampleFramework.HandsManager::SwitchVisualization()
 extern void HandsManager_SwitchVisualization_m172E234A4DF618280C6096D31916BF82DC885AA5 (void);
-// 0x000005B3 System.Void OculusSampleFramework.HandsManager::SetToCurrentVisualMode()
+// 0x000005E1 System.Void OculusSampleFramework.HandsManager::SetToCurrentVisualMode()
 extern void HandsManager_SetToCurrentVisualMode_mCEDD0F7920B7E38F3F6DCB9AE69DF7FDA54BF5A3 (void);
-// 0x000005B4 System.Collections.Generic.List`1<OVRBoneCapsule> OculusSampleFramework.HandsManager::GetCapsulesPerBone(OVRSkeleton,OVRSkeleton/BoneId)
+// 0x000005E2 System.Collections.Generic.List`1<OVRBoneCapsule> OculusSampleFramework.HandsManager::GetCapsulesPerBone(OVRSkeleton,OVRSkeleton/BoneId)
 extern void HandsManager_GetCapsulesPerBone_mE3E032DEFD03DCD1FA796ECFBBFEF57A05E61819 (void);
-// 0x000005B5 System.Boolean OculusSampleFramework.HandsManager::IsInitialized()
+// 0x000005E3 System.Boolean OculusSampleFramework.HandsManager::IsInitialized()
 extern void HandsManager_IsInitialized_m0DB811AC655C76E25374950343C1580C9B8823A3 (void);
-// 0x000005B6 System.Void OculusSampleFramework.HandsManager::.ctor()
+// 0x000005E4 System.Void OculusSampleFramework.HandsManager::.ctor()
 extern void HandsManager__ctor_mF7DC91B09D2888093B4C0333D98EA922C3AFC382 (void);
-// 0x000005B7 System.Void OculusSampleFramework.HandsManager/<FindSkeletonVisualGameObjects>d__52::.ctor(System.Int32)
+// 0x000005E5 System.Void OculusSampleFramework.HandsManager/<FindSkeletonVisualGameObjects>d__52::.ctor(System.Int32)
 extern void U3CFindSkeletonVisualGameObjectsU3Ed__52__ctor_m0D71DB13E8911F39BF00FEE30083E9F603125D68 (void);
-// 0x000005B8 System.Void OculusSampleFramework.HandsManager/<FindSkeletonVisualGameObjects>d__52::System.IDisposable.Dispose()
+// 0x000005E6 System.Void OculusSampleFramework.HandsManager/<FindSkeletonVisualGameObjects>d__52::System.IDisposable.Dispose()
 extern void U3CFindSkeletonVisualGameObjectsU3Ed__52_System_IDisposable_Dispose_m247777E06698BB04CF4C203A3C5AA193A70EA59C (void);
-// 0x000005B9 System.Boolean OculusSampleFramework.HandsManager/<FindSkeletonVisualGameObjects>d__52::MoveNext()
+// 0x000005E7 System.Boolean OculusSampleFramework.HandsManager/<FindSkeletonVisualGameObjects>d__52::MoveNext()
 extern void U3CFindSkeletonVisualGameObjectsU3Ed__52_MoveNext_mF726EE353782BA6853912D0E63EC7ACDDCA69217 (void);
-// 0x000005BA System.Object OculusSampleFramework.HandsManager/<FindSkeletonVisualGameObjects>d__52::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000005E8 System.Object OculusSampleFramework.HandsManager/<FindSkeletonVisualGameObjects>d__52::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CFindSkeletonVisualGameObjectsU3Ed__52_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m3E65C807225BF8647BC61F839769031CDFAA31E0 (void);
-// 0x000005BB System.Void OculusSampleFramework.HandsManager/<FindSkeletonVisualGameObjects>d__52::System.Collections.IEnumerator.Reset()
+// 0x000005E9 System.Void OculusSampleFramework.HandsManager/<FindSkeletonVisualGameObjects>d__52::System.Collections.IEnumerator.Reset()
 extern void U3CFindSkeletonVisualGameObjectsU3Ed__52_System_Collections_IEnumerator_Reset_m5F0436E23FD31F035CC5B11BDE4F85105A73E0E9 (void);
-// 0x000005BC System.Object OculusSampleFramework.HandsManager/<FindSkeletonVisualGameObjects>d__52::System.Collections.IEnumerator.get_Current()
+// 0x000005EA System.Object OculusSampleFramework.HandsManager/<FindSkeletonVisualGameObjects>d__52::System.Collections.IEnumerator.get_Current()
 extern void U3CFindSkeletonVisualGameObjectsU3Ed__52_System_Collections_IEnumerator_get_Current_m964520F4081E8745325AAB74936391AAE080D26F (void);
-// 0x000005BD OculusSampleFramework.ColliderZone OculusSampleFramework.Interactable::get_ProximityCollider()
+// 0x000005EB OculusSampleFramework.ColliderZone OculusSampleFramework.Interactable::get_ProximityCollider()
 extern void Interactable_get_ProximityCollider_m9294FAD5E89AD172E0E79FE7F2377372F253E5C5 (void);
-// 0x000005BE OculusSampleFramework.ColliderZone OculusSampleFramework.Interactable::get_ContactCollider()
+// 0x000005EC OculusSampleFramework.ColliderZone OculusSampleFramework.Interactable::get_ContactCollider()
 extern void Interactable_get_ContactCollider_m187C64AE846A7EEEE77770867DE43B9C66765A21 (void);
-// 0x000005BF OculusSampleFramework.ColliderZone OculusSampleFramework.Interactable::get_ActionCollider()
+// 0x000005ED OculusSampleFramework.ColliderZone OculusSampleFramework.Interactable::get_ActionCollider()
 extern void Interactable_get_ActionCollider_m8ADADA886C2AA8E7BA9BC7E2AE63E41326B3F3C0 (void);
-// 0x000005C0 System.Int32 OculusSampleFramework.Interactable::get_ValidToolTagsMask()
+// 0x000005EE System.Int32 OculusSampleFramework.Interactable::get_ValidToolTagsMask()
 extern void Interactable_get_ValidToolTagsMask_mAEA105C1389DC1646196435EE0FD2C583A210F64 (void);
-// 0x000005C1 System.Void OculusSampleFramework.Interactable::add_ProximityZoneEvent(System.Action`1<OculusSampleFramework.ColliderZoneArgs>)
+// 0x000005EF System.Void OculusSampleFramework.Interactable::add_ProximityZoneEvent(System.Action`1<OculusSampleFramework.ColliderZoneArgs>)
 extern void Interactable_add_ProximityZoneEvent_mECF0B3DF7425DED543E72387CF3A1A492621EBC0 (void);
-// 0x000005C2 System.Void OculusSampleFramework.Interactable::remove_ProximityZoneEvent(System.Action`1<OculusSampleFramework.ColliderZoneArgs>)
+// 0x000005F0 System.Void OculusSampleFramework.Interactable::remove_ProximityZoneEvent(System.Action`1<OculusSampleFramework.ColliderZoneArgs>)
 extern void Interactable_remove_ProximityZoneEvent_mA668F571945D76ABC21C37B7B2062F81980B7849 (void);
-// 0x000005C3 System.Void OculusSampleFramework.Interactable::OnProximityZoneEvent(OculusSampleFramework.ColliderZoneArgs)
+// 0x000005F1 System.Void OculusSampleFramework.Interactable::OnProximityZoneEvent(OculusSampleFramework.ColliderZoneArgs)
 extern void Interactable_OnProximityZoneEvent_m7A72894DF09189317C93949FB8671F099F3F2AAE (void);
-// 0x000005C4 System.Void OculusSampleFramework.Interactable::add_ContactZoneEvent(System.Action`1<OculusSampleFramework.ColliderZoneArgs>)
+// 0x000005F2 System.Void OculusSampleFramework.Interactable::add_ContactZoneEvent(System.Action`1<OculusSampleFramework.ColliderZoneArgs>)
 extern void Interactable_add_ContactZoneEvent_mE1B7F2EC545AE71A04149BB48F3839F373F3D4D7 (void);
-// 0x000005C5 System.Void OculusSampleFramework.Interactable::remove_ContactZoneEvent(System.Action`1<OculusSampleFramework.ColliderZoneArgs>)
+// 0x000005F3 System.Void OculusSampleFramework.Interactable::remove_ContactZoneEvent(System.Action`1<OculusSampleFramework.ColliderZoneArgs>)
 extern void Interactable_remove_ContactZoneEvent_mF584E4870C793B02154572F6156115BE0E538069 (void);
-// 0x000005C6 System.Void OculusSampleFramework.Interactable::OnContactZoneEvent(OculusSampleFramework.ColliderZoneArgs)
+// 0x000005F4 System.Void OculusSampleFramework.Interactable::OnContactZoneEvent(OculusSampleFramework.ColliderZoneArgs)
 extern void Interactable_OnContactZoneEvent_m8500AEEF261811CA97F38B51EE7EB01E9A793C2A (void);
-// 0x000005C7 System.Void OculusSampleFramework.Interactable::add_ActionZoneEvent(System.Action`1<OculusSampleFramework.ColliderZoneArgs>)
+// 0x000005F5 System.Void OculusSampleFramework.Interactable::add_ActionZoneEvent(System.Action`1<OculusSampleFramework.ColliderZoneArgs>)
 extern void Interactable_add_ActionZoneEvent_m2364153CBD99352B595B98883173ABC905FE2C2B (void);
-// 0x000005C8 System.Void OculusSampleFramework.Interactable::remove_ActionZoneEvent(System.Action`1<OculusSampleFramework.ColliderZoneArgs>)
+// 0x000005F6 System.Void OculusSampleFramework.Interactable::remove_ActionZoneEvent(System.Action`1<OculusSampleFramework.ColliderZoneArgs>)
 extern void Interactable_remove_ActionZoneEvent_m204374D16F0C4D305CD0EB6A965488C517E09A67 (void);
-// 0x000005C9 System.Void OculusSampleFramework.Interactable::OnActionZoneEvent(OculusSampleFramework.ColliderZoneArgs)
+// 0x000005F7 System.Void OculusSampleFramework.Interactable::OnActionZoneEvent(OculusSampleFramework.ColliderZoneArgs)
 extern void Interactable_OnActionZoneEvent_mE54926E30A662B9B8A3D2011F3E73457F65358A0 (void);
-// 0x000005CA System.Void OculusSampleFramework.Interactable::UpdateCollisionDepth(OculusSampleFramework.InteractableTool,OculusSampleFramework.InteractableCollisionDepth,OculusSampleFramework.InteractableCollisionDepth)
-// 0x000005CB System.Void OculusSampleFramework.Interactable::Awake()
+// 0x000005F8 System.Void OculusSampleFramework.Interactable::UpdateCollisionDepth(OculusSampleFramework.InteractableTool,OculusSampleFramework.InteractableCollisionDepth,OculusSampleFramework.InteractableCollisionDepth)
+// 0x000005F9 System.Void OculusSampleFramework.Interactable::Awake()
 extern void Interactable_Awake_m5163CFE8D318BD3B370971338C4F11A15AA3A291 (void);
-// 0x000005CC System.Void OculusSampleFramework.Interactable::OnDestroy()
+// 0x000005FA System.Void OculusSampleFramework.Interactable::OnDestroy()
 extern void Interactable_OnDestroy_m9E4D7441523D955619A047E07DA263E3A14E66A5 (void);
-// 0x000005CD System.Void OculusSampleFramework.Interactable::.ctor()
+// 0x000005FB System.Void OculusSampleFramework.Interactable::.ctor()
 extern void Interactable__ctor_mEFFE0DCDE6ADA1AF22A7F89BE95DBFFE9E0A24CE (void);
-// 0x000005CE System.Void OculusSampleFramework.Interactable/InteractableStateArgsEvent::.ctor()
+// 0x000005FC System.Void OculusSampleFramework.Interactable/InteractableStateArgsEvent::.ctor()
 extern void InteractableStateArgsEvent__ctor_mF858097C22E3E1988C6EA96548471F54A69A0E12 (void);
-// 0x000005CF System.Void OculusSampleFramework.InteractableStateArgs::.ctor(OculusSampleFramework.Interactable,OculusSampleFramework.InteractableTool,OculusSampleFramework.InteractableState,OculusSampleFramework.InteractableState,OculusSampleFramework.ColliderZoneArgs)
+// 0x000005FD System.Void OculusSampleFramework.InteractableStateArgs::.ctor(OculusSampleFramework.Interactable,OculusSampleFramework.InteractableTool,OculusSampleFramework.InteractableState,OculusSampleFramework.InteractableState,OculusSampleFramework.ColliderZoneArgs)
 extern void InteractableStateArgs__ctor_m926B583CC2B1917A0216DE4A3CC4DB2186110987 (void);
-// 0x000005D0 System.Collections.Generic.HashSet`1<OculusSampleFramework.Interactable> OculusSampleFramework.InteractableRegistry::get_Interactables()
+// 0x000005FE System.Collections.Generic.HashSet`1<OculusSampleFramework.Interactable> OculusSampleFramework.InteractableRegistry::get_Interactables()
 extern void InteractableRegistry_get_Interactables_m16C97759BA18BDE245402281099DF793C542B1FB (void);
-// 0x000005D1 System.Void OculusSampleFramework.InteractableRegistry::RegisterInteractable(OculusSampleFramework.Interactable)
+// 0x000005FF System.Void OculusSampleFramework.InteractableRegistry::RegisterInteractable(OculusSampleFramework.Interactable)
 extern void InteractableRegistry_RegisterInteractable_m3EBA605AD546268E75A80AA76CC6C783BFE599BA (void);
-// 0x000005D2 System.Void OculusSampleFramework.InteractableRegistry::UnregisterInteractable(OculusSampleFramework.Interactable)
+// 0x00000600 System.Void OculusSampleFramework.InteractableRegistry::UnregisterInteractable(OculusSampleFramework.Interactable)
 extern void InteractableRegistry_UnregisterInteractable_mFF33F87BA095410549E4E2B40D566BB483E6D425 (void);
-// 0x000005D3 System.Void OculusSampleFramework.InteractableRegistry::.ctor()
+// 0x00000601 System.Void OculusSampleFramework.InteractableRegistry::.ctor()
 extern void InteractableRegistry__ctor_mB41B7F6AFCBEFE4853EED96933FC145A0D75FE20 (void);
-// 0x000005D4 System.Void OculusSampleFramework.InteractableRegistry::.cctor()
+// 0x00000602 System.Void OculusSampleFramework.InteractableRegistry::.cctor()
 extern void InteractableRegistry__cctor_m0F87EED1831EF93B17A4517CB3C2D5BB33FA780A (void);
-// 0x000005D5 System.Void OculusSampleFramework.InteractableToolsCreator::Awake()
+// 0x00000603 System.Void OculusSampleFramework.InteractableToolsCreator::Awake()
 extern void InteractableToolsCreator_Awake_m70C9427812E198E907DDD7996304EC49E3B93CDC (void);
-// 0x000005D6 System.Collections.IEnumerator OculusSampleFramework.InteractableToolsCreator::AttachToolsToHands(UnityEngine.Transform[],System.Boolean)
+// 0x00000604 System.Collections.IEnumerator OculusSampleFramework.InteractableToolsCreator::AttachToolsToHands(UnityEngine.Transform[],System.Boolean)
 extern void InteractableToolsCreator_AttachToolsToHands_mB5C4BF0D23AE6109D1FFADABADC4715F2D4F5F1C (void);
-// 0x000005D7 System.Void OculusSampleFramework.InteractableToolsCreator::AttachToolToHandTransform(UnityEngine.Transform,System.Boolean)
+// 0x00000605 System.Void OculusSampleFramework.InteractableToolsCreator::AttachToolToHandTransform(UnityEngine.Transform,System.Boolean)
 extern void InteractableToolsCreator_AttachToolToHandTransform_m5492E706E4E9C466094C4A85D80FC8952BE404E2 (void);
-// 0x000005D8 System.Void OculusSampleFramework.InteractableToolsCreator::.ctor()
+// 0x00000606 System.Void OculusSampleFramework.InteractableToolsCreator::.ctor()
 extern void InteractableToolsCreator__ctor_mF912AD1E880CFC8A5BFFC0E58FA746D25FAD3576 (void);
-// 0x000005D9 System.Void OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::.ctor(System.Int32)
+// 0x00000607 System.Void OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::.ctor(System.Int32)
 extern void U3CAttachToolsToHandsU3Ed__3__ctor_m462139D1DB6FF3D00A17048F9DAAC0722029B51A (void);
-// 0x000005DA System.Void OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::System.IDisposable.Dispose()
+// 0x00000608 System.Void OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::System.IDisposable.Dispose()
 extern void U3CAttachToolsToHandsU3Ed__3_System_IDisposable_Dispose_m262B2C3A9DF1E00795EE90E029761535CBA783D1 (void);
-// 0x000005DB System.Boolean OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::MoveNext()
+// 0x00000609 System.Boolean OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::MoveNext()
 extern void U3CAttachToolsToHandsU3Ed__3_MoveNext_mB895B2C61C09557587C9194FC4917C945EF74AD2 (void);
-// 0x000005DC System.Void OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::<>m__Finally1()
+// 0x0000060A System.Void OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::<>m__Finally1()
 extern void U3CAttachToolsToHandsU3Ed__3_U3CU3Em__Finally1_m227DF989D11AAAB651B83B457CCAD8AAA4B4B4EA (void);
-// 0x000005DD System.Object OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x0000060B System.Object OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CAttachToolsToHandsU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m61FF1D3922643E0C676DC1D4E7CDD17087CB9F98 (void);
-// 0x000005DE System.Void OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::System.Collections.IEnumerator.Reset()
+// 0x0000060C System.Void OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::System.Collections.IEnumerator.Reset()
 extern void U3CAttachToolsToHandsU3Ed__3_System_Collections_IEnumerator_Reset_m6B9394FCF4F2FCC0BAC725C4036E6840F32E29A9 (void);
-// 0x000005DF System.Object OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::System.Collections.IEnumerator.get_Current()
+// 0x0000060D System.Object OculusSampleFramework.InteractableToolsCreator/<AttachToolsToHands>d__3::System.Collections.IEnumerator.get_Current()
 extern void U3CAttachToolsToHandsU3Ed__3_System_Collections_IEnumerator_get_Current_m6061F40A9D2CDFF2B978332EF7F434F36A2C4DEF (void);
-// 0x000005E0 OculusSampleFramework.InteractableToolsInputRouter OculusSampleFramework.InteractableToolsInputRouter::get_Instance()
+// 0x0000060E OculusSampleFramework.InteractableToolsInputRouter OculusSampleFramework.InteractableToolsInputRouter::get_Instance()
 extern void InteractableToolsInputRouter_get_Instance_mC9049EBA3767E3BC43BF0A7314559093E1A472E4 (void);
-// 0x000005E1 System.Void OculusSampleFramework.InteractableToolsInputRouter::RegisterInteractableTool(OculusSampleFramework.InteractableTool)
+// 0x0000060F System.Void OculusSampleFramework.InteractableToolsInputRouter::RegisterInteractableTool(OculusSampleFramework.InteractableTool)
 extern void InteractableToolsInputRouter_RegisterInteractableTool_m884F4D317030DB7D3E0C46C762E9ED100FDF2228 (void);
-// 0x000005E2 System.Void OculusSampleFramework.InteractableToolsInputRouter::UnregisterInteractableTool(OculusSampleFramework.InteractableTool)
+// 0x00000610 System.Void OculusSampleFramework.InteractableToolsInputRouter::UnregisterInteractableTool(OculusSampleFramework.InteractableTool)
 extern void InteractableToolsInputRouter_UnregisterInteractableTool_mBA318F772B5CE62F412F620AF88CB05CA3C0C2AA (void);
-// 0x000005E3 System.Void OculusSampleFramework.InteractableToolsInputRouter::Update()
+// 0x00000611 System.Void OculusSampleFramework.InteractableToolsInputRouter::Update()
 extern void InteractableToolsInputRouter_Update_mE0022009CE16EDCCCADA38F8D596B3E1B09EFD51 (void);
-// 0x000005E4 System.Boolean OculusSampleFramework.InteractableToolsInputRouter::UpdateToolsAndEnableState(System.Collections.Generic.HashSet`1<OculusSampleFramework.InteractableTool>,System.Boolean)
+// 0x00000612 System.Boolean OculusSampleFramework.InteractableToolsInputRouter::UpdateToolsAndEnableState(System.Collections.Generic.HashSet`1<OculusSampleFramework.InteractableTool>,System.Boolean)
 extern void InteractableToolsInputRouter_UpdateToolsAndEnableState_mD124C2C4D3A70AFAB31938A43C8FD85D2922634A (void);
-// 0x000005E5 System.Boolean OculusSampleFramework.InteractableToolsInputRouter::UpdateTools(System.Collections.Generic.HashSet`1<OculusSampleFramework.InteractableTool>,System.Boolean)
+// 0x00000613 System.Boolean OculusSampleFramework.InteractableToolsInputRouter::UpdateTools(System.Collections.Generic.HashSet`1<OculusSampleFramework.InteractableTool>,System.Boolean)
 extern void InteractableToolsInputRouter_UpdateTools_mA87BC74E2F876624039145047943DEAB309E0BE2 (void);
-// 0x000005E6 System.Void OculusSampleFramework.InteractableToolsInputRouter::ToggleToolsEnableState(System.Collections.Generic.HashSet`1<OculusSampleFramework.InteractableTool>,System.Boolean)
+// 0x00000614 System.Void OculusSampleFramework.InteractableToolsInputRouter::ToggleToolsEnableState(System.Collections.Generic.HashSet`1<OculusSampleFramework.InteractableTool>,System.Boolean)
 extern void InteractableToolsInputRouter_ToggleToolsEnableState_m58E4E398B8C62E2848F87CF38CC9A567BB3EFB4B (void);
-// 0x000005E7 System.Void OculusSampleFramework.InteractableToolsInputRouter::.ctor()
+// 0x00000615 System.Void OculusSampleFramework.InteractableToolsInputRouter::.ctor()
 extern void InteractableToolsInputRouter__ctor_m962A2A6E8F17FB9DB01ED945E35AB0EB713C64B3 (void);
-// 0x000005E8 OculusSampleFramework.InteractableToolTags OculusSampleFramework.FingerTipPokeTool::get_ToolTags()
+// 0x00000616 OculusSampleFramework.InteractableToolTags OculusSampleFramework.FingerTipPokeTool::get_ToolTags()
 extern void FingerTipPokeTool_get_ToolTags_m3B6BD532E80F15B2A694A6F7BA097FCF2E2023B3 (void);
-// 0x000005E9 OculusSampleFramework.ToolInputState OculusSampleFramework.FingerTipPokeTool::get_ToolInputState()
+// 0x00000617 OculusSampleFramework.ToolInputState OculusSampleFramework.FingerTipPokeTool::get_ToolInputState()
 extern void FingerTipPokeTool_get_ToolInputState_mD1A737BEB9A5EA7CF6B276CE3508A78F0F107315 (void);
-// 0x000005EA System.Boolean OculusSampleFramework.FingerTipPokeTool::get_IsFarFieldTool()
+// 0x00000618 System.Boolean OculusSampleFramework.FingerTipPokeTool::get_IsFarFieldTool()
 extern void FingerTipPokeTool_get_IsFarFieldTool_m76EBA76BCA8D0588AC06B6E0A7C52579A904F599 (void);
-// 0x000005EB System.Boolean OculusSampleFramework.FingerTipPokeTool::get_EnableState()
+// 0x00000619 System.Boolean OculusSampleFramework.FingerTipPokeTool::get_EnableState()
 extern void FingerTipPokeTool_get_EnableState_m989876854D6C0F7733CDD6C521B653216FBDE2F1 (void);
-// 0x000005EC System.Void OculusSampleFramework.FingerTipPokeTool::set_EnableState(System.Boolean)
+// 0x0000061A System.Void OculusSampleFramework.FingerTipPokeTool::set_EnableState(System.Boolean)
 extern void FingerTipPokeTool_set_EnableState_mD6EDCC7CBB331DFD9A95AAF2B235911D2D4D9C1B (void);
-// 0x000005ED System.Void OculusSampleFramework.FingerTipPokeTool::Initialize()
+// 0x0000061B System.Void OculusSampleFramework.FingerTipPokeTool::Initialize()
 extern void FingerTipPokeTool_Initialize_m44044A02B6FD03C7804E8C20DC90DEBE05E1DE93 (void);
-// 0x000005EE System.Collections.IEnumerator OculusSampleFramework.FingerTipPokeTool::AttachTriggerLogic()
+// 0x0000061C System.Collections.IEnumerator OculusSampleFramework.FingerTipPokeTool::AttachTriggerLogic()
 extern void FingerTipPokeTool_AttachTriggerLogic_m560FC6A9FB1A791F593FABB17377445C698EA7E7 (void);
-// 0x000005EF System.Void OculusSampleFramework.FingerTipPokeTool::Update()
+// 0x0000061D System.Void OculusSampleFramework.FingerTipPokeTool::Update()
 extern void FingerTipPokeTool_Update_mD1B595A218835FC4661CF0277A19DC88A97F88D3 (void);
-// 0x000005F0 System.Void OculusSampleFramework.FingerTipPokeTool::UpdateAverageVelocity()
+// 0x0000061E System.Void OculusSampleFramework.FingerTipPokeTool::UpdateAverageVelocity()
 extern void FingerTipPokeTool_UpdateAverageVelocity_m4ECD9C7BCF2028E6B1BDEBB9F2A70EE38E40EFBB (void);
-// 0x000005F1 System.Void OculusSampleFramework.FingerTipPokeTool::CheckAndUpdateScale()
+// 0x0000061F System.Void OculusSampleFramework.FingerTipPokeTool::CheckAndUpdateScale()
 extern void FingerTipPokeTool_CheckAndUpdateScale_m8C0FA50048767507495F7B5A5C933E64A858819F (void);
-// 0x000005F2 System.Collections.Generic.List`1<OculusSampleFramework.InteractableCollisionInfo> OculusSampleFramework.FingerTipPokeTool::GetNextIntersectingObjects()
+// 0x00000620 System.Collections.Generic.List`1<OculusSampleFramework.InteractableCollisionInfo> OculusSampleFramework.FingerTipPokeTool::GetNextIntersectingObjects()
 extern void FingerTipPokeTool_GetNextIntersectingObjects_m498C13781A48D8E7A4B3863BBB460AE64CE1E312 (void);
-// 0x000005F3 System.Void OculusSampleFramework.FingerTipPokeTool::FocusOnInteractable(OculusSampleFramework.Interactable,OculusSampleFramework.ColliderZone)
+// 0x00000621 System.Void OculusSampleFramework.FingerTipPokeTool::FocusOnInteractable(OculusSampleFramework.Interactable,OculusSampleFramework.ColliderZone)
 extern void FingerTipPokeTool_FocusOnInteractable_m3AE169458DE1248F8D5A5F54416A761014B87BA4 (void);
-// 0x000005F4 System.Void OculusSampleFramework.FingerTipPokeTool::DeFocus()
+// 0x00000622 System.Void OculusSampleFramework.FingerTipPokeTool::DeFocus()
 extern void FingerTipPokeTool_DeFocus_mC983E962E492DDBA32F9905A0775F21EC3343C6C (void);
-// 0x000005F5 System.Void OculusSampleFramework.FingerTipPokeTool::.ctor()
+// 0x00000623 System.Void OculusSampleFramework.FingerTipPokeTool::.ctor()
 extern void FingerTipPokeTool__ctor_mE741F03034EE639AA7D9AE78B8791062E66EF17D (void);
-// 0x000005F6 System.Void OculusSampleFramework.FingerTipPokeTool/<AttachTriggerLogic>d__21::.ctor(System.Int32)
+// 0x00000624 System.Void OculusSampleFramework.FingerTipPokeTool/<AttachTriggerLogic>d__21::.ctor(System.Int32)
 extern void U3CAttachTriggerLogicU3Ed__21__ctor_m8D5A513F37967116B41D3ED0398CF2FE213B7B34 (void);
-// 0x000005F7 System.Void OculusSampleFramework.FingerTipPokeTool/<AttachTriggerLogic>d__21::System.IDisposable.Dispose()
+// 0x00000625 System.Void OculusSampleFramework.FingerTipPokeTool/<AttachTriggerLogic>d__21::System.IDisposable.Dispose()
 extern void U3CAttachTriggerLogicU3Ed__21_System_IDisposable_Dispose_m7B35AA3E3AAE112B04AFA525C36C071BCF55E320 (void);
-// 0x000005F8 System.Boolean OculusSampleFramework.FingerTipPokeTool/<AttachTriggerLogic>d__21::MoveNext()
+// 0x00000626 System.Boolean OculusSampleFramework.FingerTipPokeTool/<AttachTriggerLogic>d__21::MoveNext()
 extern void U3CAttachTriggerLogicU3Ed__21_MoveNext_m93F8518CADFF3804F06415AF7D4DE91123658A78 (void);
-// 0x000005F9 System.Object OculusSampleFramework.FingerTipPokeTool/<AttachTriggerLogic>d__21::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000627 System.Object OculusSampleFramework.FingerTipPokeTool/<AttachTriggerLogic>d__21::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CAttachTriggerLogicU3Ed__21_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m44C75E4759CEF290D1B5BD1B6ED8EF6B2ACE4384 (void);
-// 0x000005FA System.Void OculusSampleFramework.FingerTipPokeTool/<AttachTriggerLogic>d__21::System.Collections.IEnumerator.Reset()
+// 0x00000628 System.Void OculusSampleFramework.FingerTipPokeTool/<AttachTriggerLogic>d__21::System.Collections.IEnumerator.Reset()
 extern void U3CAttachTriggerLogicU3Ed__21_System_Collections_IEnumerator_Reset_m3A5A2E88EA7D11DC1FBD0136E7B57F123F992F2E (void);
-// 0x000005FB System.Object OculusSampleFramework.FingerTipPokeTool/<AttachTriggerLogic>d__21::System.Collections.IEnumerator.get_Current()
+// 0x00000629 System.Object OculusSampleFramework.FingerTipPokeTool/<AttachTriggerLogic>d__21::System.Collections.IEnumerator.get_Current()
 extern void U3CAttachTriggerLogicU3Ed__21_System_Collections_IEnumerator_get_Current_mAB81D3F34A40B142C5A0129647F98D6CACDD5CF2 (void);
-// 0x000005FC OculusSampleFramework.InteractableTool OculusSampleFramework.FingerTipPokeToolView::get_InteractableTool()
+// 0x0000062A OculusSampleFramework.InteractableTool OculusSampleFramework.FingerTipPokeToolView::get_InteractableTool()
 extern void FingerTipPokeToolView_get_InteractableTool_m5C12D10DA7E280705E65F09725218E0420B0FC58 (void);
-// 0x000005FD System.Void OculusSampleFramework.FingerTipPokeToolView::set_InteractableTool(OculusSampleFramework.InteractableTool)
+// 0x0000062B System.Void OculusSampleFramework.FingerTipPokeToolView::set_InteractableTool(OculusSampleFramework.InteractableTool)
 extern void FingerTipPokeToolView_set_InteractableTool_m3A41FF79AA75EB9A6E26B533FBAB3804E7045AD1 (void);
-// 0x000005FE System.Boolean OculusSampleFramework.FingerTipPokeToolView::get_EnableState()
+// 0x0000062C System.Boolean OculusSampleFramework.FingerTipPokeToolView::get_EnableState()
 extern void FingerTipPokeToolView_get_EnableState_m70A0F0DC2232C7F1435AB7102C55837D9E3A367B (void);
-// 0x000005FF System.Void OculusSampleFramework.FingerTipPokeToolView::set_EnableState(System.Boolean)
+// 0x0000062D System.Void OculusSampleFramework.FingerTipPokeToolView::set_EnableState(System.Boolean)
 extern void FingerTipPokeToolView_set_EnableState_m62EE6926FC1A895D8DC1ECD7C4638035232045A5 (void);
-// 0x00000600 System.Boolean OculusSampleFramework.FingerTipPokeToolView::get_ToolActivateState()
+// 0x0000062E System.Boolean OculusSampleFramework.FingerTipPokeToolView::get_ToolActivateState()
 extern void FingerTipPokeToolView_get_ToolActivateState_mEF393D2ADAEF5921665D7C43F66255DFF09CDF36 (void);
-// 0x00000601 System.Void OculusSampleFramework.FingerTipPokeToolView::set_ToolActivateState(System.Boolean)
+// 0x0000062F System.Void OculusSampleFramework.FingerTipPokeToolView::set_ToolActivateState(System.Boolean)
 extern void FingerTipPokeToolView_set_ToolActivateState_mC5B7C35E415D24B93AF3FA84420624908CE5F34E (void);
-// 0x00000602 System.Single OculusSampleFramework.FingerTipPokeToolView::get_SphereRadius()
+// 0x00000630 System.Single OculusSampleFramework.FingerTipPokeToolView::get_SphereRadius()
 extern void FingerTipPokeToolView_get_SphereRadius_mEE5D33C3B57D1064607E6CAB8827F6EF7E8BEB26 (void);
-// 0x00000603 System.Void OculusSampleFramework.FingerTipPokeToolView::set_SphereRadius(System.Single)
+// 0x00000631 System.Void OculusSampleFramework.FingerTipPokeToolView::set_SphereRadius(System.Single)
 extern void FingerTipPokeToolView_set_SphereRadius_m14F90949F823F1C5F599DE694E9758579D64C22C (void);
-// 0x00000604 System.Void OculusSampleFramework.FingerTipPokeToolView::Awake()
+// 0x00000632 System.Void OculusSampleFramework.FingerTipPokeToolView::Awake()
 extern void FingerTipPokeToolView_Awake_m7B21C17ED92D6F0E6E966602F9C4E71B43D1FE9D (void);
-// 0x00000605 System.Void OculusSampleFramework.FingerTipPokeToolView::SetFocusedInteractable(OculusSampleFramework.Interactable)
+// 0x00000633 System.Void OculusSampleFramework.FingerTipPokeToolView::SetFocusedInteractable(OculusSampleFramework.Interactable)
 extern void FingerTipPokeToolView_SetFocusedInteractable_m7C2AB1DF934104AB6BBC32F4FE1C3D5903FC3E52 (void);
-// 0x00000606 System.Void OculusSampleFramework.FingerTipPokeToolView::.ctor()
+// 0x00000634 System.Void OculusSampleFramework.FingerTipPokeToolView::.ctor()
 extern void FingerTipPokeToolView__ctor_m7B5CA4CCC5C4E82DDFA3C550D980C60B85D149D0 (void);
-// 0x00000607 System.Void OculusSampleFramework.InteractableCollisionInfo::.ctor(OculusSampleFramework.ColliderZone,OculusSampleFramework.InteractableCollisionDepth,OculusSampleFramework.InteractableTool)
+// 0x00000635 System.Void OculusSampleFramework.InteractableCollisionInfo::.ctor(OculusSampleFramework.ColliderZone,OculusSampleFramework.InteractableCollisionDepth,OculusSampleFramework.InteractableTool)
 extern void InteractableCollisionInfo__ctor_mF048A8CAC8CED3F12917993E39C3DF9B2C459DBD (void);
-// 0x00000608 UnityEngine.Transform OculusSampleFramework.InteractableTool::get_ToolTransform()
+// 0x00000636 UnityEngine.Transform OculusSampleFramework.InteractableTool::get_ToolTransform()
 extern void InteractableTool_get_ToolTransform_m5A0374895ACCEB2155CE101679EDF538808CBE18 (void);
-// 0x00000609 System.Boolean OculusSampleFramework.InteractableTool::get_IsRightHandedTool()
+// 0x00000637 System.Boolean OculusSampleFramework.InteractableTool::get_IsRightHandedTool()
 extern void InteractableTool_get_IsRightHandedTool_m7A3D91A89574DBCF908090A93C9F414CC2E6F6F7 (void);
-// 0x0000060A System.Void OculusSampleFramework.InteractableTool::set_IsRightHandedTool(System.Boolean)
+// 0x00000638 System.Void OculusSampleFramework.InteractableTool::set_IsRightHandedTool(System.Boolean)
 extern void InteractableTool_set_IsRightHandedTool_m9BF19EC16722F3D487554344966440A3E2669183 (void);
-// 0x0000060B OculusSampleFramework.InteractableToolTags OculusSampleFramework.InteractableTool::get_ToolTags()
-// 0x0000060C OculusSampleFramework.ToolInputState OculusSampleFramework.InteractableTool::get_ToolInputState()
-// 0x0000060D System.Boolean OculusSampleFramework.InteractableTool::get_IsFarFieldTool()
-// 0x0000060E UnityEngine.Vector3 OculusSampleFramework.InteractableTool::get_Velocity()
+// 0x00000639 OculusSampleFramework.InteractableToolTags OculusSampleFramework.InteractableTool::get_ToolTags()
+// 0x0000063A OculusSampleFramework.ToolInputState OculusSampleFramework.InteractableTool::get_ToolInputState()
+// 0x0000063B System.Boolean OculusSampleFramework.InteractableTool::get_IsFarFieldTool()
+// 0x0000063C UnityEngine.Vector3 OculusSampleFramework.InteractableTool::get_Velocity()
 extern void InteractableTool_get_Velocity_m35FD5ACBC89F2F2BBDCE874D30F08568C907CFA2 (void);
-// 0x0000060F System.Void OculusSampleFramework.InteractableTool::set_Velocity(UnityEngine.Vector3)
+// 0x0000063D System.Void OculusSampleFramework.InteractableTool::set_Velocity(UnityEngine.Vector3)
 extern void InteractableTool_set_Velocity_mF2499FB94A164C0B943311E4E8497C40156944CB (void);
-// 0x00000610 UnityEngine.Vector3 OculusSampleFramework.InteractableTool::get_InteractionPosition()
+// 0x0000063E UnityEngine.Vector3 OculusSampleFramework.InteractableTool::get_InteractionPosition()
 extern void InteractableTool_get_InteractionPosition_m4C6080B3DE436A408EAFF657E7A81C7D6E07ACC9 (void);
-// 0x00000611 System.Void OculusSampleFramework.InteractableTool::set_InteractionPosition(UnityEngine.Vector3)
+// 0x0000063F System.Void OculusSampleFramework.InteractableTool::set_InteractionPosition(UnityEngine.Vector3)
 extern void InteractableTool_set_InteractionPosition_mB2F141E510A93A92394C91F33810DE2CF9124D0B (void);
-// 0x00000612 System.Collections.Generic.List`1<OculusSampleFramework.InteractableCollisionInfo> OculusSampleFramework.InteractableTool::GetCurrentIntersectingObjects()
+// 0x00000640 System.Collections.Generic.List`1<OculusSampleFramework.InteractableCollisionInfo> OculusSampleFramework.InteractableTool::GetCurrentIntersectingObjects()
 extern void InteractableTool_GetCurrentIntersectingObjects_m81AEDD13D2C62F1DDA877F5D9A4021F4792C855C (void);
-// 0x00000613 System.Collections.Generic.List`1<OculusSampleFramework.InteractableCollisionInfo> OculusSampleFramework.InteractableTool::GetNextIntersectingObjects()
-// 0x00000614 System.Void OculusSampleFramework.InteractableTool::FocusOnInteractable(OculusSampleFramework.Interactable,OculusSampleFramework.ColliderZone)
-// 0x00000615 System.Void OculusSampleFramework.InteractableTool::DeFocus()
-// 0x00000616 System.Boolean OculusSampleFramework.InteractableTool::get_EnableState()
-// 0x00000617 System.Void OculusSampleFramework.InteractableTool::set_EnableState(System.Boolean)
-// 0x00000618 System.Void OculusSampleFramework.InteractableTool::Initialize()
-// 0x00000619 System.Collections.Generic.KeyValuePair`2<OculusSampleFramework.Interactable,OculusSampleFramework.InteractableCollisionInfo> OculusSampleFramework.InteractableTool::GetFirstCurrentCollisionInfo()
+// 0x00000641 System.Collections.Generic.List`1<OculusSampleFramework.InteractableCollisionInfo> OculusSampleFramework.InteractableTool::GetNextIntersectingObjects()
+// 0x00000642 System.Void OculusSampleFramework.InteractableTool::FocusOnInteractable(OculusSampleFramework.Interactable,OculusSampleFramework.ColliderZone)
+// 0x00000643 System.Void OculusSampleFramework.InteractableTool::DeFocus()
+// 0x00000644 System.Boolean OculusSampleFramework.InteractableTool::get_EnableState()
+// 0x00000645 System.Void OculusSampleFramework.InteractableTool::set_EnableState(System.Boolean)
+// 0x00000646 System.Void OculusSampleFramework.InteractableTool::Initialize()
+// 0x00000647 System.Collections.Generic.KeyValuePair`2<OculusSampleFramework.Interactable,OculusSampleFramework.InteractableCollisionInfo> OculusSampleFramework.InteractableTool::GetFirstCurrentCollisionInfo()
 extern void InteractableTool_GetFirstCurrentCollisionInfo_m414B33C232165FB5630AF0A3B6847B61057AADBB (void);
-// 0x0000061A System.Void OculusSampleFramework.InteractableTool::ClearAllCurrentCollisionInfos()
+// 0x00000648 System.Void OculusSampleFramework.InteractableTool::ClearAllCurrentCollisionInfos()
 extern void InteractableTool_ClearAllCurrentCollisionInfos_m40F945534629095531D0E410F3829D6B309A29C4 (void);
-// 0x0000061B System.Void OculusSampleFramework.InteractableTool::UpdateCurrentCollisionsBasedOnDepth()
+// 0x00000649 System.Void OculusSampleFramework.InteractableTool::UpdateCurrentCollisionsBasedOnDepth()
 extern void InteractableTool_UpdateCurrentCollisionsBasedOnDepth_m838855A0A408B62A871F42F72321436AC2CE2A1B (void);
-// 0x0000061C System.Void OculusSampleFramework.InteractableTool::UpdateLatestCollisionData()
+// 0x0000064A System.Void OculusSampleFramework.InteractableTool::UpdateLatestCollisionData()
 extern void InteractableTool_UpdateLatestCollisionData_mD8E756280980C1E8E78DDE34E1CD4519CEDA845C (void);
-// 0x0000061D System.Void OculusSampleFramework.InteractableTool::.ctor()
+// 0x0000064B System.Void OculusSampleFramework.InteractableTool::.ctor()
 extern void InteractableTool__ctor_mDF66696D77FB8E563F383CE8E6FF8D5F0DFE1F3C (void);
-// 0x0000061E OculusSampleFramework.InteractableTool OculusSampleFramework.InteractableToolView::get_InteractableTool()
-// 0x0000061F System.Void OculusSampleFramework.InteractableToolView::SetFocusedInteractable(OculusSampleFramework.Interactable)
-// 0x00000620 System.Boolean OculusSampleFramework.InteractableToolView::get_EnableState()
-// 0x00000621 System.Void OculusSampleFramework.InteractableToolView::set_EnableState(System.Boolean)
-// 0x00000622 System.Boolean OculusSampleFramework.InteractableToolView::get_ToolActivateState()
-// 0x00000623 System.Void OculusSampleFramework.InteractableToolView::set_ToolActivateState(System.Boolean)
-// 0x00000624 System.Boolean OculusSampleFramework.PinchStateModule::get_PinchUpAndDownOnFocusedObject()
+// 0x0000064C OculusSampleFramework.InteractableTool OculusSampleFramework.InteractableToolView::get_InteractableTool()
+// 0x0000064D System.Void OculusSampleFramework.InteractableToolView::SetFocusedInteractable(OculusSampleFramework.Interactable)
+// 0x0000064E System.Boolean OculusSampleFramework.InteractableToolView::get_EnableState()
+// 0x0000064F System.Void OculusSampleFramework.InteractableToolView::set_EnableState(System.Boolean)
+// 0x00000650 System.Boolean OculusSampleFramework.InteractableToolView::get_ToolActivateState()
+// 0x00000651 System.Void OculusSampleFramework.InteractableToolView::set_ToolActivateState(System.Boolean)
+// 0x00000652 System.Boolean OculusSampleFramework.PinchStateModule::get_PinchUpAndDownOnFocusedObject()
 extern void PinchStateModule_get_PinchUpAndDownOnFocusedObject_mFEB0915193DA4C19508F3506CE57122EA20B0706 (void);
-// 0x00000625 System.Boolean OculusSampleFramework.PinchStateModule::get_PinchSteadyOnFocusedObject()
+// 0x00000653 System.Boolean OculusSampleFramework.PinchStateModule::get_PinchSteadyOnFocusedObject()
 extern void PinchStateModule_get_PinchSteadyOnFocusedObject_mBB2966521F6937D97D01B7CCF2AF71C1661465D8 (void);
-// 0x00000626 System.Boolean OculusSampleFramework.PinchStateModule::get_PinchDownOnFocusedObject()
+// 0x00000654 System.Boolean OculusSampleFramework.PinchStateModule::get_PinchDownOnFocusedObject()
 extern void PinchStateModule_get_PinchDownOnFocusedObject_mD30456931675EA0916FBDA6A570B61949FDF0CC1 (void);
-// 0x00000627 System.Void OculusSampleFramework.PinchStateModule::.ctor()
+// 0x00000655 System.Void OculusSampleFramework.PinchStateModule::.ctor()
 extern void PinchStateModule__ctor_mF9B142768F7DEC5E9D4668C284FFE849B334A6B8 (void);
-// 0x00000628 System.Void OculusSampleFramework.PinchStateModule::UpdateState(OVRHand,OculusSampleFramework.Interactable)
+// 0x00000656 System.Void OculusSampleFramework.PinchStateModule::UpdateState(OVRHand,OculusSampleFramework.Interactable)
 extern void PinchStateModule_UpdateState_m852B6CFCDA02E46D32D989305F63616085584A58 (void);
-// 0x00000629 OculusSampleFramework.InteractableToolTags OculusSampleFramework.RayTool::get_ToolTags()
+// 0x00000657 OculusSampleFramework.InteractableToolTags OculusSampleFramework.RayTool::get_ToolTags()
 extern void RayTool_get_ToolTags_mF9F33EA8C7FB62842DB9CFD089B57F27F56385BB (void);
-// 0x0000062A OculusSampleFramework.ToolInputState OculusSampleFramework.RayTool::get_ToolInputState()
+// 0x00000658 OculusSampleFramework.ToolInputState OculusSampleFramework.RayTool::get_ToolInputState()
 extern void RayTool_get_ToolInputState_m8006CE0C7B9B440FA17CEF5A75392ED8E90A99F1 (void);
-// 0x0000062B System.Boolean OculusSampleFramework.RayTool::get_IsFarFieldTool()
+// 0x00000659 System.Boolean OculusSampleFramework.RayTool::get_IsFarFieldTool()
 extern void RayTool_get_IsFarFieldTool_m84C955E8C08B6D06912B1351845D8D5A95805FE3 (void);
-// 0x0000062C System.Boolean OculusSampleFramework.RayTool::get_EnableState()
+// 0x0000065A System.Boolean OculusSampleFramework.RayTool::get_EnableState()
 extern void RayTool_get_EnableState_mD38D8DB4FA6A243BB2CE6B46D097E3842D826EB2 (void);
-// 0x0000062D System.Void OculusSampleFramework.RayTool::set_EnableState(System.Boolean)
+// 0x0000065B System.Void OculusSampleFramework.RayTool::set_EnableState(System.Boolean)
 extern void RayTool_set_EnableState_m88EBF7E9F76269310D5D00A4D857205EAE8CC973 (void);
-// 0x0000062E System.Void OculusSampleFramework.RayTool::Initialize()
+// 0x0000065C System.Void OculusSampleFramework.RayTool::Initialize()
 extern void RayTool_Initialize_m8178479145F6B9D7ED3DE556C37FEE20EE9EAA63 (void);
-// 0x0000062F System.Void OculusSampleFramework.RayTool::OnDestroy()
+// 0x0000065D System.Void OculusSampleFramework.RayTool::OnDestroy()
 extern void RayTool_OnDestroy_m3B5FDE6F6F7BD897790F2B9712617DD407580044 (void);
-// 0x00000630 System.Void OculusSampleFramework.RayTool::Update()
+// 0x0000065E System.Void OculusSampleFramework.RayTool::Update()
 extern void RayTool_Update_mC6111F1E6FEE028056A69E3EA31DA34643A1A30A (void);
-// 0x00000631 UnityEngine.Vector3 OculusSampleFramework.RayTool::GetRayCastOrigin()
+// 0x0000065F UnityEngine.Vector3 OculusSampleFramework.RayTool::GetRayCastOrigin()
 extern void RayTool_GetRayCastOrigin_mC024DEE0E5677EC72070FC18F5C0A75F2FF734FB (void);
-// 0x00000632 System.Collections.Generic.List`1<OculusSampleFramework.InteractableCollisionInfo> OculusSampleFramework.RayTool::GetNextIntersectingObjects()
+// 0x00000660 System.Collections.Generic.List`1<OculusSampleFramework.InteractableCollisionInfo> OculusSampleFramework.RayTool::GetNextIntersectingObjects()
 extern void RayTool_GetNextIntersectingObjects_m603644B4DEDA1D576DCFA79720229B690343D961 (void);
-// 0x00000633 System.Boolean OculusSampleFramework.RayTool::HasRayReleasedInteractable(OculusSampleFramework.Interactable)
+// 0x00000661 System.Boolean OculusSampleFramework.RayTool::HasRayReleasedInteractable(OculusSampleFramework.Interactable)
 extern void RayTool_HasRayReleasedInteractable_m40D1943C1390F761380064D8EEFE724DB9EB2A26 (void);
-// 0x00000634 OculusSampleFramework.Interactable OculusSampleFramework.RayTool::FindTargetInteractable()
+// 0x00000662 OculusSampleFramework.Interactable OculusSampleFramework.RayTool::FindTargetInteractable()
 extern void RayTool_FindTargetInteractable_mE568809119993380E85D1B5F3516B712A2DB3164 (void);
-// 0x00000635 OculusSampleFramework.Interactable OculusSampleFramework.RayTool::FindPrimaryRaycastHit(UnityEngine.Vector3,UnityEngine.Vector3)
+// 0x00000663 OculusSampleFramework.Interactable OculusSampleFramework.RayTool::FindPrimaryRaycastHit(UnityEngine.Vector3,UnityEngine.Vector3)
 extern void RayTool_FindPrimaryRaycastHit_mBFA656DC5D7977157F758A0FC2E5B45C318464F5 (void);
-// 0x00000636 OculusSampleFramework.Interactable OculusSampleFramework.RayTool::FindInteractableViaConeTest(UnityEngine.Vector3,UnityEngine.Vector3)
+// 0x00000664 OculusSampleFramework.Interactable OculusSampleFramework.RayTool::FindInteractableViaConeTest(UnityEngine.Vector3,UnityEngine.Vector3)
 extern void RayTool_FindInteractableViaConeTest_mF925BF3509A5157474D9012964E02C900E1A5A2C (void);
-// 0x00000637 System.Void OculusSampleFramework.RayTool::FocusOnInteractable(OculusSampleFramework.Interactable,OculusSampleFramework.ColliderZone)
+// 0x00000665 System.Void OculusSampleFramework.RayTool::FocusOnInteractable(OculusSampleFramework.Interactable,OculusSampleFramework.ColliderZone)
 extern void RayTool_FocusOnInteractable_mCB2E0CC419E9CD76CF08C1B218CEF292E8956561 (void);
-// 0x00000638 System.Void OculusSampleFramework.RayTool::DeFocus()
+// 0x00000666 System.Void OculusSampleFramework.RayTool::DeFocus()
 extern void RayTool_DeFocus_m151E2128C383EBAB0471B8FE4F18126589B57DA9 (void);
-// 0x00000639 System.Void OculusSampleFramework.RayTool::.ctor()
+// 0x00000667 System.Void OculusSampleFramework.RayTool::.ctor()
 extern void RayTool__ctor_m2BC9BBBD530DD77151F83CCC574418F89AB9D6E4 (void);
-// 0x0000063A System.Boolean OculusSampleFramework.RayToolView::get_EnableState()
+// 0x00000668 System.Boolean OculusSampleFramework.RayToolView::get_EnableState()
 extern void RayToolView_get_EnableState_m8B16E326EEE0BD738CC89476FC0F5602AF84FA4B (void);
-// 0x0000063B System.Void OculusSampleFramework.RayToolView::set_EnableState(System.Boolean)
+// 0x00000669 System.Void OculusSampleFramework.RayToolView::set_EnableState(System.Boolean)
 extern void RayToolView_set_EnableState_mA97AE962FFDDF54FC900BBE74950B821398B6879 (void);
-// 0x0000063C System.Boolean OculusSampleFramework.RayToolView::get_ToolActivateState()
+// 0x0000066A System.Boolean OculusSampleFramework.RayToolView::get_ToolActivateState()
 extern void RayToolView_get_ToolActivateState_m0BB4E9D85D0E459B510AB8C5B1E7149236C23B37 (void);
-// 0x0000063D System.Void OculusSampleFramework.RayToolView::set_ToolActivateState(System.Boolean)
+// 0x0000066B System.Void OculusSampleFramework.RayToolView::set_ToolActivateState(System.Boolean)
 extern void RayToolView_set_ToolActivateState_m0A8B716FFE57E196D4AE3FA8C002BEA6464C1FF1 (void);
-// 0x0000063E System.Void OculusSampleFramework.RayToolView::Awake()
+// 0x0000066C System.Void OculusSampleFramework.RayToolView::Awake()
 extern void RayToolView_Awake_mBDDEE64B64801E803CB951630EF39D3C8C5DB09C (void);
-// 0x0000063F OculusSampleFramework.InteractableTool OculusSampleFramework.RayToolView::get_InteractableTool()
+// 0x0000066D OculusSampleFramework.InteractableTool OculusSampleFramework.RayToolView::get_InteractableTool()
 extern void RayToolView_get_InteractableTool_m238B7B52995150EFDF5956727F44C9CBDCBDB4DB (void);
-// 0x00000640 System.Void OculusSampleFramework.RayToolView::set_InteractableTool(OculusSampleFramework.InteractableTool)
+// 0x0000066E System.Void OculusSampleFramework.RayToolView::set_InteractableTool(OculusSampleFramework.InteractableTool)
 extern void RayToolView_set_InteractableTool_m593CEE5988E9468696CBFEFE098F33AA4FF8AC4D (void);
-// 0x00000641 System.Void OculusSampleFramework.RayToolView::SetFocusedInteractable(OculusSampleFramework.Interactable)
+// 0x0000066F System.Void OculusSampleFramework.RayToolView::SetFocusedInteractable(OculusSampleFramework.Interactable)
 extern void RayToolView_SetFocusedInteractable_m4055BE0B969017B4A8D04528117815384F389087 (void);
-// 0x00000642 System.Void OculusSampleFramework.RayToolView::Update()
+// 0x00000670 System.Void OculusSampleFramework.RayToolView::Update()
 extern void RayToolView_Update_m840BC087DA75F9D1A5E7DC3D76048AF7599E7ACA (void);
-// 0x00000643 UnityEngine.Vector3 OculusSampleFramework.RayToolView::GetPointOnBezierCurve(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
+// 0x00000671 UnityEngine.Vector3 OculusSampleFramework.RayToolView::GetPointOnBezierCurve(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
 extern void RayToolView_GetPointOnBezierCurve_mBA6DAF4BFB3703BFB293AE73ACD544428F7C260A (void);
-// 0x00000644 System.Void OculusSampleFramework.RayToolView::.ctor()
+// 0x00000672 System.Void OculusSampleFramework.RayToolView::.ctor()
 extern void RayToolView__ctor_m1A2B389BFA2DF08CAC6B5DF6098D6951D7443BC6 (void);
-// 0x00000645 System.Boolean OculusSampleFramework.DistanceGrabberSample::get_UseSpherecast()
+// 0x00000673 System.Boolean OculusSampleFramework.DistanceGrabberSample::get_UseSpherecast()
 extern void DistanceGrabberSample_get_UseSpherecast_m3C95EFAC917F01739CA9A04AB6D219D1D23C0F36 (void);
-// 0x00000646 System.Void OculusSampleFramework.DistanceGrabberSample::set_UseSpherecast(System.Boolean)
+// 0x00000674 System.Void OculusSampleFramework.DistanceGrabberSample::set_UseSpherecast(System.Boolean)
 extern void DistanceGrabberSample_set_UseSpherecast_mD53080255D9BA15DFBC5BBF0CD2306302C5C2B94 (void);
-// 0x00000647 System.Boolean OculusSampleFramework.DistanceGrabberSample::get_AllowGrabThroughWalls()
+// 0x00000675 System.Boolean OculusSampleFramework.DistanceGrabberSample::get_AllowGrabThroughWalls()
 extern void DistanceGrabberSample_get_AllowGrabThroughWalls_m9375E0677DE44B40ABEEEBB74A788AE134733C88 (void);
-// 0x00000648 System.Void OculusSampleFramework.DistanceGrabberSample::set_AllowGrabThroughWalls(System.Boolean)
+// 0x00000676 System.Void OculusSampleFramework.DistanceGrabberSample::set_AllowGrabThroughWalls(System.Boolean)
 extern void DistanceGrabberSample_set_AllowGrabThroughWalls_m1519E7A718ECB07094E102AE8E619C0C0840EA70 (void);
-// 0x00000649 System.Void OculusSampleFramework.DistanceGrabberSample::Start()
+// 0x00000677 System.Void OculusSampleFramework.DistanceGrabberSample::Start()
 extern void DistanceGrabberSample_Start_m7555CDBC2FD74D232FC02630E8084E7EDFD250E0 (void);
-// 0x0000064A System.Void OculusSampleFramework.DistanceGrabberSample::ToggleSphereCasting(UnityEngine.UI.Toggle)
+// 0x00000678 System.Void OculusSampleFramework.DistanceGrabberSample::ToggleSphereCasting(UnityEngine.UI.Toggle)
 extern void DistanceGrabberSample_ToggleSphereCasting_m09365D26298FBD3D07C0E32FEF7B74516751B12F (void);
-// 0x0000064B System.Void OculusSampleFramework.DistanceGrabberSample::ToggleGrabThroughWalls(UnityEngine.UI.Toggle)
+// 0x00000679 System.Void OculusSampleFramework.DistanceGrabberSample::ToggleGrabThroughWalls(UnityEngine.UI.Toggle)
 extern void DistanceGrabberSample_ToggleGrabThroughWalls_mC791A5365642A7594D531F99E01BFB3F6636FDC1 (void);
-// 0x0000064C System.Void OculusSampleFramework.DistanceGrabberSample::.ctor()
+// 0x0000067A System.Void OculusSampleFramework.DistanceGrabberSample::.ctor()
 extern void DistanceGrabberSample__ctor_mD9F959078DDF591B307F07ECA15A3368AFB4827F (void);
-// 0x0000064D System.Void OculusSampleFramework.ControllerBoxController::Awake()
+// 0x0000067B System.Void OculusSampleFramework.ControllerBoxController::Awake()
 extern void ControllerBoxController_Awake_m38E645C800C9E2168815468D1BD0BA7039866943 (void);
-// 0x0000064E System.Void OculusSampleFramework.ControllerBoxController::StartStopStateChanged(OculusSampleFramework.InteractableStateArgs)
+// 0x0000067C System.Void OculusSampleFramework.ControllerBoxController::StartStopStateChanged(OculusSampleFramework.InteractableStateArgs)
 extern void ControllerBoxController_StartStopStateChanged_mB3778CB07ADD4235D3F0B676FB92746104785510 (void);
-// 0x0000064F System.Void OculusSampleFramework.ControllerBoxController::DecreaseSpeedStateChanged(OculusSampleFramework.InteractableStateArgs)
+// 0x0000067D System.Void OculusSampleFramework.ControllerBoxController::DecreaseSpeedStateChanged(OculusSampleFramework.InteractableStateArgs)
 extern void ControllerBoxController_DecreaseSpeedStateChanged_mCCCC05DDFEAC88D674D50EEE0CCAA9457C50D868 (void);
-// 0x00000650 System.Void OculusSampleFramework.ControllerBoxController::IncreaseSpeedStateChanged(OculusSampleFramework.InteractableStateArgs)
+// 0x0000067E System.Void OculusSampleFramework.ControllerBoxController::IncreaseSpeedStateChanged(OculusSampleFramework.InteractableStateArgs)
 extern void ControllerBoxController_IncreaseSpeedStateChanged_m7048DDA279846DFD728B9D776159A6088654B555 (void);
-// 0x00000651 System.Void OculusSampleFramework.ControllerBoxController::SmokeButtonStateChanged(OculusSampleFramework.InteractableStateArgs)
+// 0x0000067F System.Void OculusSampleFramework.ControllerBoxController::SmokeButtonStateChanged(OculusSampleFramework.InteractableStateArgs)
 extern void ControllerBoxController_SmokeButtonStateChanged_m1321ECF679CF6ED50711BD29D6615B18437F0782 (void);
-// 0x00000652 System.Void OculusSampleFramework.ControllerBoxController::WhistleButtonStateChanged(OculusSampleFramework.InteractableStateArgs)
+// 0x00000680 System.Void OculusSampleFramework.ControllerBoxController::WhistleButtonStateChanged(OculusSampleFramework.InteractableStateArgs)
 extern void ControllerBoxController_WhistleButtonStateChanged_mFE9967E7C2DC937975723DC11F6BC54F96A8FC4D (void);
-// 0x00000653 System.Void OculusSampleFramework.ControllerBoxController::ReverseButtonStateChanged(OculusSampleFramework.InteractableStateArgs)
+// 0x00000681 System.Void OculusSampleFramework.ControllerBoxController::ReverseButtonStateChanged(OculusSampleFramework.InteractableStateArgs)
 extern void ControllerBoxController_ReverseButtonStateChanged_m4F6BE8E6200D7FCF1B2F06D46BDFF953686B79AA (void);
-// 0x00000654 System.Void OculusSampleFramework.ControllerBoxController::SwitchVisualization(OculusSampleFramework.InteractableStateArgs)
+// 0x00000682 System.Void OculusSampleFramework.ControllerBoxController::SwitchVisualization(OculusSampleFramework.InteractableStateArgs)
 extern void ControllerBoxController_SwitchVisualization_m78C17FFC24CE18F1AB056700B01255FE866ECEEC (void);
-// 0x00000655 System.Void OculusSampleFramework.ControllerBoxController::GoMoo(OculusSampleFramework.InteractableStateArgs)
+// 0x00000683 System.Void OculusSampleFramework.ControllerBoxController::GoMoo(OculusSampleFramework.InteractableStateArgs)
 extern void ControllerBoxController_GoMoo_m9EF4E1A50EC27132D96E77419226655A33A412A5 (void);
-// 0x00000656 System.Void OculusSampleFramework.ControllerBoxController::.ctor()
+// 0x00000684 System.Void OculusSampleFramework.ControllerBoxController::.ctor()
 extern void ControllerBoxController__ctor_mD53ADDA5919AA04AF1BC48BF2C2971836BFA1896 (void);
-// 0x00000657 System.Void OculusSampleFramework.CowController::Start()
+// 0x00000685 System.Void OculusSampleFramework.CowController::Start()
 extern void CowController_Start_mE1D6BCE0F55C40173D7043D2BC0C7630BFC9E656 (void);
-// 0x00000658 System.Void OculusSampleFramework.CowController::PlayMooSound()
+// 0x00000686 System.Void OculusSampleFramework.CowController::PlayMooSound()
 extern void CowController_PlayMooSound_mC0D62F21712DB48C61884E8D899FEFD05769DFD5 (void);
-// 0x00000659 System.Void OculusSampleFramework.CowController::GoMooCowGo()
+// 0x00000687 System.Void OculusSampleFramework.CowController::GoMooCowGo()
 extern void CowController_GoMooCowGo_m3F36BF00ABA175A40DD535719ED46AC0FB4B49E2 (void);
-// 0x0000065A System.Void OculusSampleFramework.CowController::.ctor()
+// 0x00000688 System.Void OculusSampleFramework.CowController::.ctor()
 extern void CowController__ctor_m1AA9BFBA29AF6306F1648E84B4E6C67B62D02594 (void);
-// 0x0000065B System.Void OculusSampleFramework.PanelHMDFollower::Awake()
+// 0x00000689 System.Void OculusSampleFramework.PanelHMDFollower::Awake()
 extern void PanelHMDFollower_Awake_mBDE26E8A04D9E08DC3BB7A7B2A35CD80ED1029A7 (void);
-// 0x0000065C System.Void OculusSampleFramework.PanelHMDFollower::Update()
+// 0x0000068A System.Void OculusSampleFramework.PanelHMDFollower::Update()
 extern void PanelHMDFollower_Update_m9DFE9CF54CA9D220E0259C90B38D15CEEEC0BBA8 (void);
-// 0x0000065D UnityEngine.Vector3 OculusSampleFramework.PanelHMDFollower::CalculateIdealAnchorPosition()
+// 0x0000068B UnityEngine.Vector3 OculusSampleFramework.PanelHMDFollower::CalculateIdealAnchorPosition()
 extern void PanelHMDFollower_CalculateIdealAnchorPosition_mDFDA2CBCE1544E2BF3FC767E6C71138964740642 (void);
-// 0x0000065E System.Collections.IEnumerator OculusSampleFramework.PanelHMDFollower::LerpToHMD()
+// 0x0000068C System.Collections.IEnumerator OculusSampleFramework.PanelHMDFollower::LerpToHMD()
 extern void PanelHMDFollower_LerpToHMD_mA841AB3AD451F6E1DD1E348E5681A3DA98ECE4DA (void);
-// 0x0000065F System.Void OculusSampleFramework.PanelHMDFollower::.ctor()
+// 0x0000068D System.Void OculusSampleFramework.PanelHMDFollower::.ctor()
 extern void PanelHMDFollower__ctor_mD9831428B6EC96B1A179CF6DB9A922913AF97EBF (void);
-// 0x00000660 System.Void OculusSampleFramework.PanelHMDFollower/<LerpToHMD>d__13::.ctor(System.Int32)
+// 0x0000068E System.Void OculusSampleFramework.PanelHMDFollower/<LerpToHMD>d__13::.ctor(System.Int32)
 extern void U3CLerpToHMDU3Ed__13__ctor_m5610AFD7CAF01BCF8920AF22D4B8EA759B8FDA51 (void);
-// 0x00000661 System.Void OculusSampleFramework.PanelHMDFollower/<LerpToHMD>d__13::System.IDisposable.Dispose()
+// 0x0000068F System.Void OculusSampleFramework.PanelHMDFollower/<LerpToHMD>d__13::System.IDisposable.Dispose()
 extern void U3CLerpToHMDU3Ed__13_System_IDisposable_Dispose_m20C2C17838FE7C5D5F78297D6108D273E84E12DA (void);
-// 0x00000662 System.Boolean OculusSampleFramework.PanelHMDFollower/<LerpToHMD>d__13::MoveNext()
+// 0x00000690 System.Boolean OculusSampleFramework.PanelHMDFollower/<LerpToHMD>d__13::MoveNext()
 extern void U3CLerpToHMDU3Ed__13_MoveNext_m2A770553B159C709A0FA8203BDA44FB4FE9FD204 (void);
-// 0x00000663 System.Object OculusSampleFramework.PanelHMDFollower/<LerpToHMD>d__13::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000691 System.Object OculusSampleFramework.PanelHMDFollower/<LerpToHMD>d__13::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CLerpToHMDU3Ed__13_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA01FABD2DAAB9891669FE4B50095DCC78090F1BD (void);
-// 0x00000664 System.Void OculusSampleFramework.PanelHMDFollower/<LerpToHMD>d__13::System.Collections.IEnumerator.Reset()
+// 0x00000692 System.Void OculusSampleFramework.PanelHMDFollower/<LerpToHMD>d__13::System.Collections.IEnumerator.Reset()
 extern void U3CLerpToHMDU3Ed__13_System_Collections_IEnumerator_Reset_m9A6EE068410681404FCDA35074CE3306D1AB9036 (void);
-// 0x00000665 System.Object OculusSampleFramework.PanelHMDFollower/<LerpToHMD>d__13::System.Collections.IEnumerator.get_Current()
+// 0x00000693 System.Object OculusSampleFramework.PanelHMDFollower/<LerpToHMD>d__13::System.Collections.IEnumerator.get_Current()
 extern void U3CLerpToHMDU3Ed__13_System_Collections_IEnumerator_get_Current_m8DFABC12858A32C530FCF0E828B3EA4EE2EAD728 (void);
-// 0x00000666 OculusSampleFramework.SelectionCylinder/SelectionState OculusSampleFramework.SelectionCylinder::get_CurrSelectionState()
+// 0x00000694 OculusSampleFramework.SelectionCylinder/SelectionState OculusSampleFramework.SelectionCylinder::get_CurrSelectionState()
 extern void SelectionCylinder_get_CurrSelectionState_mE81E0361B828901C38429AB41185A000F22F6ADD (void);
-// 0x00000667 System.Void OculusSampleFramework.SelectionCylinder::set_CurrSelectionState(OculusSampleFramework.SelectionCylinder/SelectionState)
+// 0x00000695 System.Void OculusSampleFramework.SelectionCylinder::set_CurrSelectionState(OculusSampleFramework.SelectionCylinder/SelectionState)
 extern void SelectionCylinder_set_CurrSelectionState_m6A22A6076B7C0F359A67BB3F92C5F44891F88546 (void);
-// 0x00000668 System.Void OculusSampleFramework.SelectionCylinder::Awake()
+// 0x00000696 System.Void OculusSampleFramework.SelectionCylinder::Awake()
 extern void SelectionCylinder_Awake_m339EAF9099234AD7D494A4214836C92B6417424A (void);
-// 0x00000669 System.Void OculusSampleFramework.SelectionCylinder::OnDestroy()
+// 0x00000697 System.Void OculusSampleFramework.SelectionCylinder::OnDestroy()
 extern void SelectionCylinder_OnDestroy_m5E2BEFB57D2AD511FF3973F001C152A0DDA5AE1B (void);
-// 0x0000066A System.Void OculusSampleFramework.SelectionCylinder::AffectSelectionColor(UnityEngine.Color[])
+// 0x00000698 System.Void OculusSampleFramework.SelectionCylinder::AffectSelectionColor(UnityEngine.Color[])
 extern void SelectionCylinder_AffectSelectionColor_mDED2AE42053C5435AA9FAD283FFFCB777B61A80E (void);
-// 0x0000066B System.Void OculusSampleFramework.SelectionCylinder::.ctor()
+// 0x00000699 System.Void OculusSampleFramework.SelectionCylinder::.ctor()
 extern void SelectionCylinder__ctor_mF4D8B5559A400231701AD1D8973AD2DB203261E6 (void);
-// 0x0000066C System.Void OculusSampleFramework.SelectionCylinder::.cctor()
+// 0x0000069A System.Void OculusSampleFramework.SelectionCylinder::.cctor()
 extern void SelectionCylinder__cctor_mC140734D99CC7598B987BC58FDF3C8D29628D7DE (void);
-// 0x0000066D System.Single OculusSampleFramework.TrackSegment::get_StartDistance()
+// 0x0000069B System.Single OculusSampleFramework.TrackSegment::get_StartDistance()
 extern void TrackSegment_get_StartDistance_mBC42F0134B39A7E31F1278FB09717ABB946E97BF (void);
-// 0x0000066E System.Void OculusSampleFramework.TrackSegment::set_StartDistance(System.Single)
+// 0x0000069C System.Void OculusSampleFramework.TrackSegment::set_StartDistance(System.Single)
 extern void TrackSegment_set_StartDistance_mF619D4B1E344E9677DB748117EB3FF4043BB6408 (void);
-// 0x0000066F System.Single OculusSampleFramework.TrackSegment::get_GridSize()
+// 0x0000069D System.Single OculusSampleFramework.TrackSegment::get_GridSize()
 extern void TrackSegment_get_GridSize_m7672E0DF84226172527BA5675967B49D3334BA7D (void);
-// 0x00000670 System.Void OculusSampleFramework.TrackSegment::set_GridSize(System.Single)
+// 0x0000069E System.Void OculusSampleFramework.TrackSegment::set_GridSize(System.Single)
 extern void TrackSegment_set_GridSize_m095BC0365E73459DD03EC29FB02D4F6B3D7C6E4B (void);
-// 0x00000671 System.Int32 OculusSampleFramework.TrackSegment::get_SubDivCount()
+// 0x0000069F System.Int32 OculusSampleFramework.TrackSegment::get_SubDivCount()
 extern void TrackSegment_get_SubDivCount_mB3C2A7266C903122395EE7E38E35A5728BCE97B4 (void);
-// 0x00000672 System.Void OculusSampleFramework.TrackSegment::set_SubDivCount(System.Int32)
+// 0x000006A0 System.Void OculusSampleFramework.TrackSegment::set_SubDivCount(System.Int32)
 extern void TrackSegment_set_SubDivCount_mAEB68B90E1330424ADEBF83CDE32D99F267DDE7C (void);
-// 0x00000673 OculusSampleFramework.TrackSegment/SegmentType OculusSampleFramework.TrackSegment::get_Type()
+// 0x000006A1 OculusSampleFramework.TrackSegment/SegmentType OculusSampleFramework.TrackSegment::get_Type()
 extern void TrackSegment_get_Type_m55686DFBDE1717F5562DF93FC9F5D1DAED47A7BF (void);
-// 0x00000674 OculusSampleFramework.Pose OculusSampleFramework.TrackSegment::get_EndPose()
+// 0x000006A2 OculusSampleFramework.Pose OculusSampleFramework.TrackSegment::get_EndPose()
 extern void TrackSegment_get_EndPose_m56C4F14D6358D2B3AD9AD4CAB7A932C707A6A71E (void);
-// 0x00000675 System.Single OculusSampleFramework.TrackSegment::get_Radius()
+// 0x000006A3 System.Single OculusSampleFramework.TrackSegment::get_Radius()
 extern void TrackSegment_get_Radius_mA39D7F5ABBEB05849B8B71CA487EFE43B00F25F0 (void);
-// 0x00000676 System.Single OculusSampleFramework.TrackSegment::setGridSize(System.Single)
+// 0x000006A4 System.Single OculusSampleFramework.TrackSegment::setGridSize(System.Single)
 extern void TrackSegment_setGridSize_mEECA9D39E76EEB2C6E1470BA3C2CCFFD7536434B (void);
-// 0x00000677 System.Single OculusSampleFramework.TrackSegment::get_SegmentLength()
+// 0x000006A5 System.Single OculusSampleFramework.TrackSegment::get_SegmentLength()
 extern void TrackSegment_get_SegmentLength_m4DC97686445AB361249093727801A0A7BCCE4C65 (void);
-// 0x00000678 System.Void OculusSampleFramework.TrackSegment::Awake()
+// 0x000006A6 System.Void OculusSampleFramework.TrackSegment::Awake()
 extern void TrackSegment_Awake_m758449C9CCBA333AD412E949CE6358FD0628ACA6 (void);
-// 0x00000679 System.Void OculusSampleFramework.TrackSegment::UpdatePose(System.Single,OculusSampleFramework.Pose)
+// 0x000006A7 System.Void OculusSampleFramework.TrackSegment::UpdatePose(System.Single,OculusSampleFramework.Pose)
 extern void TrackSegment_UpdatePose_m9A235DC90FC16A7B9FDA09106B3E8C19B2CFDCC0 (void);
-// 0x0000067A System.Void OculusSampleFramework.TrackSegment::Update()
+// 0x000006A8 System.Void OculusSampleFramework.TrackSegment::Update()
 extern void TrackSegment_Update_m4B9FFC348592E3B9BCA32D1F909777EFF52A65A0 (void);
-// 0x0000067B System.Void OculusSampleFramework.TrackSegment::OnDisable()
+// 0x000006A9 System.Void OculusSampleFramework.TrackSegment::OnDisable()
 extern void TrackSegment_OnDisable_m2280BB6E345382EBF5F5BC2F40773EFECB92E8E6 (void);
-// 0x0000067C System.Void OculusSampleFramework.TrackSegment::DrawDebugLines()
+// 0x000006AA System.Void OculusSampleFramework.TrackSegment::DrawDebugLines()
 extern void TrackSegment_DrawDebugLines_m1544D12626A45DC2E44C66C2CEB9255FB13F7BB3 (void);
-// 0x0000067D System.Void OculusSampleFramework.TrackSegment::RegenerateTrackAndMesh()
+// 0x000006AB System.Void OculusSampleFramework.TrackSegment::RegenerateTrackAndMesh()
 extern void TrackSegment_RegenerateTrackAndMesh_m210279986500F48ABC2C0D0F511A219220D96D1A (void);
-// 0x0000067E System.Void OculusSampleFramework.TrackSegment::.ctor()
+// 0x000006AC System.Void OculusSampleFramework.TrackSegment::.ctor()
 extern void TrackSegment__ctor_mD8D00445885995386F6B4BD1995F9663E8202B49 (void);
-// 0x0000067F System.Void OculusSampleFramework.TrainButtonVisualController::Awake()
+// 0x000006AD System.Void OculusSampleFramework.TrainButtonVisualController::Awake()
 extern void TrainButtonVisualController_Awake_mE92ED7539E2D2821A6A30B66774961450EF527F9 (void);
-// 0x00000680 System.Void OculusSampleFramework.TrainButtonVisualController::OnDestroy()
+// 0x000006AE System.Void OculusSampleFramework.TrainButtonVisualController::OnDestroy()
 extern void TrainButtonVisualController_OnDestroy_mD4D84B9C6E2A89CBDC1C875318336C63DAB4CB46 (void);
-// 0x00000681 System.Void OculusSampleFramework.TrainButtonVisualController::OnEnable()
+// 0x000006AF System.Void OculusSampleFramework.TrainButtonVisualController::OnEnable()
 extern void TrainButtonVisualController_OnEnable_m63F021C61A020D5F00968CDA52FE59134ADD2DB2 (void);
-// 0x00000682 System.Void OculusSampleFramework.TrainButtonVisualController::OnDisable()
+// 0x000006B0 System.Void OculusSampleFramework.TrainButtonVisualController::OnDisable()
 extern void TrainButtonVisualController_OnDisable_mF5E0B350CB4BE643C394D057C6F155EEBE804170 (void);
-// 0x00000683 System.Void OculusSampleFramework.TrainButtonVisualController::ActionOrInContactZoneStayEvent(OculusSampleFramework.ColliderZoneArgs)
+// 0x000006B1 System.Void OculusSampleFramework.TrainButtonVisualController::ActionOrInContactZoneStayEvent(OculusSampleFramework.ColliderZoneArgs)
 extern void TrainButtonVisualController_ActionOrInContactZoneStayEvent_mB6E112F529B4126AA7E87585AE4ABE137169ADA4 (void);
-// 0x00000684 System.Void OculusSampleFramework.TrainButtonVisualController::InteractableStateChanged(OculusSampleFramework.InteractableStateArgs)
+// 0x000006B2 System.Void OculusSampleFramework.TrainButtonVisualController::InteractableStateChanged(OculusSampleFramework.InteractableStateArgs)
 extern void TrainButtonVisualController_InteractableStateChanged_m23BB632AE2418F68E0687C8083D862AA2B15A80B (void);
-// 0x00000685 System.Void OculusSampleFramework.TrainButtonVisualController::PlaySound(UnityEngine.AudioClip)
+// 0x000006B3 System.Void OculusSampleFramework.TrainButtonVisualController::PlaySound(UnityEngine.AudioClip)
 extern void TrainButtonVisualController_PlaySound_m9E8698A2E54FC3A1319C6849743A88F5FD51B1E2 (void);
-// 0x00000686 System.Void OculusSampleFramework.TrainButtonVisualController::StopResetLerping()
+// 0x000006B4 System.Void OculusSampleFramework.TrainButtonVisualController::StopResetLerping()
 extern void TrainButtonVisualController_StopResetLerping_mCC3B2DD8D9D58010CF9C05360D78E1E7C8ADCF87 (void);
-// 0x00000687 System.Void OculusSampleFramework.TrainButtonVisualController::LerpToOldPosition()
+// 0x000006B5 System.Void OculusSampleFramework.TrainButtonVisualController::LerpToOldPosition()
 extern void TrainButtonVisualController_LerpToOldPosition_mD6156EDEB5C372932958987A39AF1F46C033031E (void);
-// 0x00000688 System.Collections.IEnumerator OculusSampleFramework.TrainButtonVisualController::ResetPosition()
+// 0x000006B6 System.Collections.IEnumerator OculusSampleFramework.TrainButtonVisualController::ResetPosition()
 extern void TrainButtonVisualController_ResetPosition_m72919AAA39F47E6B347B5EDFE5AC278A15B138A7 (void);
-// 0x00000689 System.Void OculusSampleFramework.TrainButtonVisualController::.ctor()
+// 0x000006B7 System.Void OculusSampleFramework.TrainButtonVisualController::.ctor()
 extern void TrainButtonVisualController__ctor_m9AE05055AFF9B105B7A75313CF2E7D6C464A45B7 (void);
-// 0x0000068A System.Void OculusSampleFramework.TrainButtonVisualController/<ResetPosition>d__26::.ctor(System.Int32)
+// 0x000006B8 System.Void OculusSampleFramework.TrainButtonVisualController/<ResetPosition>d__26::.ctor(System.Int32)
 extern void U3CResetPositionU3Ed__26__ctor_m0133720F31CDB06A7E52088A73C0D83204AC9AE8 (void);
-// 0x0000068B System.Void OculusSampleFramework.TrainButtonVisualController/<ResetPosition>d__26::System.IDisposable.Dispose()
+// 0x000006B9 System.Void OculusSampleFramework.TrainButtonVisualController/<ResetPosition>d__26::System.IDisposable.Dispose()
 extern void U3CResetPositionU3Ed__26_System_IDisposable_Dispose_m1D7DE4BCE81F6703A0FE039F6471B5CB48E73325 (void);
-// 0x0000068C System.Boolean OculusSampleFramework.TrainButtonVisualController/<ResetPosition>d__26::MoveNext()
+// 0x000006BA System.Boolean OculusSampleFramework.TrainButtonVisualController/<ResetPosition>d__26::MoveNext()
 extern void U3CResetPositionU3Ed__26_MoveNext_mB7E5215EE130FB92918FB845F4905BF635A1693A (void);
-// 0x0000068D System.Object OculusSampleFramework.TrainButtonVisualController/<ResetPosition>d__26::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000006BB System.Object OculusSampleFramework.TrainButtonVisualController/<ResetPosition>d__26::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CResetPositionU3Ed__26_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m7A834EED7BA1271D08038394CB79EAAF9D87F0B1 (void);
-// 0x0000068E System.Void OculusSampleFramework.TrainButtonVisualController/<ResetPosition>d__26::System.Collections.IEnumerator.Reset()
+// 0x000006BC System.Void OculusSampleFramework.TrainButtonVisualController/<ResetPosition>d__26::System.Collections.IEnumerator.Reset()
 extern void U3CResetPositionU3Ed__26_System_Collections_IEnumerator_Reset_m693B2830178792F2B02E328558109D63ACDB67B8 (void);
-// 0x0000068F System.Object OculusSampleFramework.TrainButtonVisualController/<ResetPosition>d__26::System.Collections.IEnumerator.get_Current()
+// 0x000006BD System.Object OculusSampleFramework.TrainButtonVisualController/<ResetPosition>d__26::System.Collections.IEnumerator.get_Current()
 extern void U3CResetPositionU3Ed__26_System_Collections_IEnumerator_get_Current_mFABE5F3F59935313FFC34ECDAEB685F4E646ABE2 (void);
-// 0x00000690 System.Single OculusSampleFramework.TrainCar::get_DistanceBehindParentScaled()
+// 0x000006BE System.Single OculusSampleFramework.TrainCar::get_DistanceBehindParentScaled()
 extern void TrainCar_get_DistanceBehindParentScaled_mFEE16D2E68DF136E196620E3E4AB6FA93E18D333 (void);
-// 0x00000691 System.Void OculusSampleFramework.TrainCar::Awake()
+// 0x000006BF System.Void OculusSampleFramework.TrainCar::Awake()
 extern void TrainCar_Awake_m18C04F5B4021FA0DA3B4ED96922722F109AC1F5F (void);
-// 0x00000692 System.Void OculusSampleFramework.TrainCar::UpdatePosition()
+// 0x000006C0 System.Void OculusSampleFramework.TrainCar::UpdatePosition()
 extern void TrainCar_UpdatePosition_mAA7D1ACEB4CA52113AC379AC47EAD4D27DE2BD49 (void);
-// 0x00000693 System.Void OculusSampleFramework.TrainCar::.ctor()
+// 0x000006C1 System.Void OculusSampleFramework.TrainCar::.ctor()
 extern void TrainCar__ctor_mEECD1E3253D05AD75974AB495694903252A73B71 (void);
-// 0x00000694 System.Single OculusSampleFramework.TrainCarBase::get_Distance()
+// 0x000006C2 System.Single OculusSampleFramework.TrainCarBase::get_Distance()
 extern void TrainCarBase_get_Distance_m6B93FAF6496C152333743CEA7AAB979B5456A044 (void);
-// 0x00000695 System.Void OculusSampleFramework.TrainCarBase::set_Distance(System.Single)
+// 0x000006C3 System.Void OculusSampleFramework.TrainCarBase::set_Distance(System.Single)
 extern void TrainCarBase_set_Distance_mF9D78037A307E9060BC95667FA44CF820A0F13DD (void);
-// 0x00000696 System.Single OculusSampleFramework.TrainCarBase::get_Scale()
+// 0x000006C4 System.Single OculusSampleFramework.TrainCarBase::get_Scale()
 extern void TrainCarBase_get_Scale_m8049E0B92A110B1F1027ED926A7BCE9742DF3CEF (void);
-// 0x00000697 System.Void OculusSampleFramework.TrainCarBase::set_Scale(System.Single)
+// 0x000006C5 System.Void OculusSampleFramework.TrainCarBase::set_Scale(System.Single)
 extern void TrainCarBase_set_Scale_m79E7EF54132ABFF88F00D49ED9C11D7E611D7626 (void);
-// 0x00000698 System.Void OculusSampleFramework.TrainCarBase::Awake()
+// 0x000006C6 System.Void OculusSampleFramework.TrainCarBase::Awake()
 extern void TrainCarBase_Awake_mC68B7251E7AA8D2AC3574B546B257EBBD080A55A (void);
-// 0x00000699 System.Void OculusSampleFramework.TrainCarBase::UpdatePose(System.Single,OculusSampleFramework.TrainCarBase,OculusSampleFramework.Pose)
+// 0x000006C7 System.Void OculusSampleFramework.TrainCarBase::UpdatePose(System.Single,OculusSampleFramework.TrainCarBase,OculusSampleFramework.Pose)
 extern void TrainCarBase_UpdatePose_m7B5E48663084D97D3227F7C3AC028406E214312D (void);
-// 0x0000069A System.Void OculusSampleFramework.TrainCarBase::UpdateCarPosition()
+// 0x000006C8 System.Void OculusSampleFramework.TrainCarBase::UpdateCarPosition()
 extern void TrainCarBase_UpdateCarPosition_mA4D577CE3C64E1AA19FD8EBF89536A588A473F50 (void);
-// 0x0000069B System.Void OculusSampleFramework.TrainCarBase::RotateCarWheels()
+// 0x000006C9 System.Void OculusSampleFramework.TrainCarBase::RotateCarWheels()
 extern void TrainCarBase_RotateCarWheels_m1B3BCB04D6F4E79C3BF098AF4C6582C2D76A000D (void);
-// 0x0000069C System.Void OculusSampleFramework.TrainCarBase::UpdatePosition()
-// 0x0000069D System.Void OculusSampleFramework.TrainCarBase::.ctor()
+// 0x000006CA System.Void OculusSampleFramework.TrainCarBase::UpdatePosition()
+// 0x000006CB System.Void OculusSampleFramework.TrainCarBase::.ctor()
 extern void TrainCarBase__ctor_mAB1702EA386CA6F2156F8E03595B2D0E4C57FC4E (void);
-// 0x0000069E System.Void OculusSampleFramework.TrainCarBase::.cctor()
+// 0x000006CC System.Void OculusSampleFramework.TrainCarBase::.cctor()
 extern void TrainCarBase__cctor_m9DD5C9D722425BF6168A25AAAA5F03019AD74970 (void);
-// 0x0000069F System.Void OculusSampleFramework.TrainCrossingController::Awake()
+// 0x000006CD System.Void OculusSampleFramework.TrainCrossingController::Awake()
 extern void TrainCrossingController_Awake_mF917BDC1F1D946CB23DBBF2CD77EF849C900FC96 (void);
-// 0x000006A0 System.Void OculusSampleFramework.TrainCrossingController::OnDestroy()
+// 0x000006CE System.Void OculusSampleFramework.TrainCrossingController::OnDestroy()
 extern void TrainCrossingController_OnDestroy_m0BE982D5F8A1C1C213EA359E2BC6B62C036C18A7 (void);
-// 0x000006A1 System.Void OculusSampleFramework.TrainCrossingController::CrossingButtonStateChanged(OculusSampleFramework.InteractableStateArgs)
+// 0x000006CF System.Void OculusSampleFramework.TrainCrossingController::CrossingButtonStateChanged(OculusSampleFramework.InteractableStateArgs)
 extern void TrainCrossingController_CrossingButtonStateChanged_mF034D143D7838A40AD298882F4C2CB2306219577 (void);
-// 0x000006A2 System.Void OculusSampleFramework.TrainCrossingController::Update()
+// 0x000006D0 System.Void OculusSampleFramework.TrainCrossingController::Update()
 extern void TrainCrossingController_Update_m5FB8377ABE009C199E0AA34D9DC954C2712F6E18 (void);
-// 0x000006A3 System.Void OculusSampleFramework.TrainCrossingController::ActivateTrainCrossing()
+// 0x000006D1 System.Void OculusSampleFramework.TrainCrossingController::ActivateTrainCrossing()
 extern void TrainCrossingController_ActivateTrainCrossing_mD577E824ECE26ACE5CF2D775AA75948973C2ADA5 (void);
-// 0x000006A4 System.Collections.IEnumerator OculusSampleFramework.TrainCrossingController::AnimateCrossing(System.Single)
+// 0x000006D2 System.Collections.IEnumerator OculusSampleFramework.TrainCrossingController::AnimateCrossing(System.Single)
 extern void TrainCrossingController_AnimateCrossing_m1EBE094532926C6F7B089C92DDE575C011DA3DAA (void);
-// 0x000006A5 System.Void OculusSampleFramework.TrainCrossingController::AffectMaterials(UnityEngine.Material[],UnityEngine.Color)
+// 0x000006D3 System.Void OculusSampleFramework.TrainCrossingController::AffectMaterials(UnityEngine.Material[],UnityEngine.Color)
 extern void TrainCrossingController_AffectMaterials_m4B9B2DE1D17D0CFE589271E7F168C0DC1C453604 (void);
-// 0x000006A6 System.Void OculusSampleFramework.TrainCrossingController::ToggleLightObjects(System.Boolean)
+// 0x000006D4 System.Void OculusSampleFramework.TrainCrossingController::ToggleLightObjects(System.Boolean)
 extern void TrainCrossingController_ToggleLightObjects_mAFC81037C7641441E6375A6558FCF8FEFD33D574 (void);
-// 0x000006A7 System.Void OculusSampleFramework.TrainCrossingController::.ctor()
+// 0x000006D5 System.Void OculusSampleFramework.TrainCrossingController::.ctor()
 extern void TrainCrossingController__ctor_mBD522C91E57118DF979F6FA1C27F85BEEFBB1535 (void);
-// 0x000006A8 System.Void OculusSampleFramework.TrainCrossingController/<AnimateCrossing>d__15::.ctor(System.Int32)
+// 0x000006D6 System.Void OculusSampleFramework.TrainCrossingController/<AnimateCrossing>d__15::.ctor(System.Int32)
 extern void U3CAnimateCrossingU3Ed__15__ctor_m663FB6CE1AADE77FC6FF0BBCE339F7D0D01496C3 (void);
-// 0x000006A9 System.Void OculusSampleFramework.TrainCrossingController/<AnimateCrossing>d__15::System.IDisposable.Dispose()
+// 0x000006D7 System.Void OculusSampleFramework.TrainCrossingController/<AnimateCrossing>d__15::System.IDisposable.Dispose()
 extern void U3CAnimateCrossingU3Ed__15_System_IDisposable_Dispose_mCC3A087461B7951EF48617743BAA241902FE9B37 (void);
-// 0x000006AA System.Boolean OculusSampleFramework.TrainCrossingController/<AnimateCrossing>d__15::MoveNext()
+// 0x000006D8 System.Boolean OculusSampleFramework.TrainCrossingController/<AnimateCrossing>d__15::MoveNext()
 extern void U3CAnimateCrossingU3Ed__15_MoveNext_m8D2DAAD03D77C6DFF61643A28BE1F0A47F0D9D89 (void);
-// 0x000006AB System.Object OculusSampleFramework.TrainCrossingController/<AnimateCrossing>d__15::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000006D9 System.Object OculusSampleFramework.TrainCrossingController/<AnimateCrossing>d__15::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CAnimateCrossingU3Ed__15_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA37F1E0AEB7639C9D4100D1C99B657A398CEA879 (void);
-// 0x000006AC System.Void OculusSampleFramework.TrainCrossingController/<AnimateCrossing>d__15::System.Collections.IEnumerator.Reset()
+// 0x000006DA System.Void OculusSampleFramework.TrainCrossingController/<AnimateCrossing>d__15::System.Collections.IEnumerator.Reset()
 extern void U3CAnimateCrossingU3Ed__15_System_Collections_IEnumerator_Reset_mBCD5E96BE8CE94DD20BE98DF247524CD06FECCCA (void);
-// 0x000006AD System.Object OculusSampleFramework.TrainCrossingController/<AnimateCrossing>d__15::System.Collections.IEnumerator.get_Current()
+// 0x000006DB System.Object OculusSampleFramework.TrainCrossingController/<AnimateCrossing>d__15::System.Collections.IEnumerator.get_Current()
 extern void U3CAnimateCrossingU3Ed__15_System_Collections_IEnumerator_get_Current_m17A72D7597BA7E484D44BD2CF2FDAF15E727116F (void);
-// 0x000006AE System.Void OculusSampleFramework.TrainLocomotive::Start()
+// 0x000006DC System.Void OculusSampleFramework.TrainLocomotive::Start()
 extern void TrainLocomotive_Start_mA8035D4E851A65EA28F6615E3D2515FEFF4D8B7D (void);
-// 0x000006AF System.Void OculusSampleFramework.TrainLocomotive::Update()
+// 0x000006DD System.Void OculusSampleFramework.TrainLocomotive::Update()
 extern void TrainLocomotive_Update_m541AD2FB35342FC3572EFF41A0BCBD92D803D864 (void);
-// 0x000006B0 System.Void OculusSampleFramework.TrainLocomotive::UpdatePosition()
+// 0x000006DE System.Void OculusSampleFramework.TrainLocomotive::UpdatePosition()
 extern void TrainLocomotive_UpdatePosition_m56DEEF49488DC3A7B463D2F5E6E2A114AD5BF72F (void);
-// 0x000006B1 System.Void OculusSampleFramework.TrainLocomotive::StartStopStateChanged()
+// 0x000006DF System.Void OculusSampleFramework.TrainLocomotive::StartStopStateChanged()
 extern void TrainLocomotive_StartStopStateChanged_m1E6002A368988D15708B7B830F139BB129214C41 (void);
-// 0x000006B2 System.Collections.IEnumerator OculusSampleFramework.TrainLocomotive::StartStopTrain(System.Boolean)
+// 0x000006E0 System.Collections.IEnumerator OculusSampleFramework.TrainLocomotive::StartStopTrain(System.Boolean)
 extern void TrainLocomotive_StartStopTrain_m923C25578C7E5C83CA661CAD2745DA6F4F6D627C (void);
-// 0x000006B3 System.Single OculusSampleFramework.TrainLocomotive::PlayEngineSound(OculusSampleFramework.TrainLocomotive/EngineSoundState)
+// 0x000006E1 System.Single OculusSampleFramework.TrainLocomotive::PlayEngineSound(OculusSampleFramework.TrainLocomotive/EngineSoundState)
 extern void TrainLocomotive_PlayEngineSound_mD69FE8AAA9D99F0F9A25D6F5A76CFFEF51B17A45 (void);
-// 0x000006B4 System.Void OculusSampleFramework.TrainLocomotive::UpdateDistance()
+// 0x000006E2 System.Void OculusSampleFramework.TrainLocomotive::UpdateDistance()
 extern void TrainLocomotive_UpdateDistance_m351865CC93F07988D15D8761D395D428C8E7D3C9 (void);
-// 0x000006B5 System.Void OculusSampleFramework.TrainLocomotive::DecreaseSpeedStateChanged()
+// 0x000006E3 System.Void OculusSampleFramework.TrainLocomotive::DecreaseSpeedStateChanged()
 extern void TrainLocomotive_DecreaseSpeedStateChanged_m45757A992DE495AC07B1F6D57DAE8CCC3E5C4FE1 (void);
-// 0x000006B6 System.Void OculusSampleFramework.TrainLocomotive::IncreaseSpeedStateChanged()
+// 0x000006E4 System.Void OculusSampleFramework.TrainLocomotive::IncreaseSpeedStateChanged()
 extern void TrainLocomotive_IncreaseSpeedStateChanged_m9DCB8688B1A116909A6C7843EECFCB16E739ECBD (void);
-// 0x000006B7 System.Void OculusSampleFramework.TrainLocomotive::UpdateSmokeEmissionBasedOnSpeed()
+// 0x000006E5 System.Void OculusSampleFramework.TrainLocomotive::UpdateSmokeEmissionBasedOnSpeed()
 extern void TrainLocomotive_UpdateSmokeEmissionBasedOnSpeed_m7BB7210DD00DC5FAAFBC5C8C6ABB2AAED02ADBF6 (void);
-// 0x000006B8 System.Single OculusSampleFramework.TrainLocomotive::GetCurrentSmokeEmission()
+// 0x000006E6 System.Single OculusSampleFramework.TrainLocomotive::GetCurrentSmokeEmission()
 extern void TrainLocomotive_GetCurrentSmokeEmission_m9594D49C603189779E03F66211972D864E28633C (void);
-// 0x000006B9 System.Void OculusSampleFramework.TrainLocomotive::SmokeButtonStateChanged()
+// 0x000006E7 System.Void OculusSampleFramework.TrainLocomotive::SmokeButtonStateChanged()
 extern void TrainLocomotive_SmokeButtonStateChanged_m2DD09F55E1ECD386BCA6B4F540D895A1A784DC43 (void);
-// 0x000006BA System.Void OculusSampleFramework.TrainLocomotive::WhistleButtonStateChanged()
+// 0x000006E8 System.Void OculusSampleFramework.TrainLocomotive::WhistleButtonStateChanged()
 extern void TrainLocomotive_WhistleButtonStateChanged_mC99652993E8BA12B0C7EDC45FAF800C7D1326A06 (void);
-// 0x000006BB System.Void OculusSampleFramework.TrainLocomotive::ReverseButtonStateChanged()
+// 0x000006E9 System.Void OculusSampleFramework.TrainLocomotive::ReverseButtonStateChanged()
 extern void TrainLocomotive_ReverseButtonStateChanged_mC8649648374AB835DC725DBDCB07617B38323223 (void);
-// 0x000006BC System.Void OculusSampleFramework.TrainLocomotive::.ctor()
+// 0x000006EA System.Void OculusSampleFramework.TrainLocomotive::.ctor()
 extern void TrainLocomotive__ctor_m77DA3442C2569D954CBE2879FE8CD740C52E1117 (void);
-// 0x000006BD System.Void OculusSampleFramework.TrainLocomotive/<StartStopTrain>d__34::.ctor(System.Int32)
+// 0x000006EB System.Void OculusSampleFramework.TrainLocomotive/<StartStopTrain>d__34::.ctor(System.Int32)
 extern void U3CStartStopTrainU3Ed__34__ctor_m6C4C1E9485DE26EBB56AECA7A016C2D7C963E0BE (void);
-// 0x000006BE System.Void OculusSampleFramework.TrainLocomotive/<StartStopTrain>d__34::System.IDisposable.Dispose()
+// 0x000006EC System.Void OculusSampleFramework.TrainLocomotive/<StartStopTrain>d__34::System.IDisposable.Dispose()
 extern void U3CStartStopTrainU3Ed__34_System_IDisposable_Dispose_m3580381D4D339CE8223C55021DAEB59890FFD9FC (void);
-// 0x000006BF System.Boolean OculusSampleFramework.TrainLocomotive/<StartStopTrain>d__34::MoveNext()
+// 0x000006ED System.Boolean OculusSampleFramework.TrainLocomotive/<StartStopTrain>d__34::MoveNext()
 extern void U3CStartStopTrainU3Ed__34_MoveNext_m9B84B28ADB4791B089DE7C23058EE5E4C520EC8F (void);
-// 0x000006C0 System.Object OculusSampleFramework.TrainLocomotive/<StartStopTrain>d__34::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000006EE System.Object OculusSampleFramework.TrainLocomotive/<StartStopTrain>d__34::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CStartStopTrainU3Ed__34_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mAD4B4037EF047CE63802DDB6977D938E596DB389 (void);
-// 0x000006C1 System.Void OculusSampleFramework.TrainLocomotive/<StartStopTrain>d__34::System.Collections.IEnumerator.Reset()
+// 0x000006EF System.Void OculusSampleFramework.TrainLocomotive/<StartStopTrain>d__34::System.Collections.IEnumerator.Reset()
 extern void U3CStartStopTrainU3Ed__34_System_Collections_IEnumerator_Reset_mEBAF005BA8E10A1EF29605BE77EDE739EB2EF984 (void);
-// 0x000006C2 System.Object OculusSampleFramework.TrainLocomotive/<StartStopTrain>d__34::System.Collections.IEnumerator.get_Current()
+// 0x000006F0 System.Object OculusSampleFramework.TrainLocomotive/<StartStopTrain>d__34::System.Collections.IEnumerator.get_Current()
 extern void U3CStartStopTrainU3Ed__34_System_Collections_IEnumerator_get_Current_mEF5C740BFDAACB01D587A4F269E43CD1791A96B2 (void);
-// 0x000006C3 System.Single OculusSampleFramework.TrainTrack::get_TrackLength()
+// 0x000006F1 System.Single OculusSampleFramework.TrainTrack::get_TrackLength()
 extern void TrainTrack_get_TrackLength_m007CB823F48E12E88CCC143F734431A3148B99AE (void);
-// 0x000006C4 System.Void OculusSampleFramework.TrainTrack::set_TrackLength(System.Single)
+// 0x000006F2 System.Void OculusSampleFramework.TrainTrack::set_TrackLength(System.Single)
 extern void TrainTrack_set_TrackLength_mBD68D6F4FD33127524693DA99B9FD30A0577B7C4 (void);
-// 0x000006C5 System.Void OculusSampleFramework.TrainTrack::Awake()
+// 0x000006F3 System.Void OculusSampleFramework.TrainTrack::Awake()
 extern void TrainTrack_Awake_mE59D0C468F6D6E2CBCEFC0C5DD7848C6EF403A98 (void);
-// 0x000006C6 OculusSampleFramework.TrackSegment OculusSampleFramework.TrainTrack::GetSegment(System.Single)
+// 0x000006F4 OculusSampleFramework.TrackSegment OculusSampleFramework.TrainTrack::GetSegment(System.Single)
 extern void TrainTrack_GetSegment_mCD8849640D747C216ABBD0C2417FB3C0AE7C19F7 (void);
-// 0x000006C7 System.Void OculusSampleFramework.TrainTrack::Regenerate()
+// 0x000006F5 System.Void OculusSampleFramework.TrainTrack::Regenerate()
 extern void TrainTrack_Regenerate_mF5741B178A8DA4D1C8C5F327028D4E146EFF37F6 (void);
-// 0x000006C8 System.Void OculusSampleFramework.TrainTrack::SetScale(System.Single)
+// 0x000006F6 System.Void OculusSampleFramework.TrainTrack::SetScale(System.Single)
 extern void TrainTrack_SetScale_mD3CAB2E3C6842CAB864DD896209C2257E701E0A2 (void);
-// 0x000006C9 System.Void OculusSampleFramework.TrainTrack::.ctor()
+// 0x000006F7 System.Void OculusSampleFramework.TrainTrack::.ctor()
 extern void TrainTrack__ctor_m79E797C46BDFF5FF40E3D703AE38324A00B4E401 (void);
-// 0x000006CA System.Void OculusSampleFramework.Pose::.ctor()
+// 0x000006F8 System.Void OculusSampleFramework.Pose::.ctor()
 extern void Pose__ctor_m64168E925BDA4409B159DE34F1E287CACB5C9C6D (void);
-// 0x000006CB System.Void OculusSampleFramework.Pose::.ctor(UnityEngine.Vector3,UnityEngine.Quaternion)
+// 0x000006F9 System.Void OculusSampleFramework.Pose::.ctor(UnityEngine.Vector3,UnityEngine.Quaternion)
 extern void Pose__ctor_mDDD5B447084E07F33B3F9A2C27DA1EEA03950C87 (void);
-// 0x000006CC System.Boolean OculusSampleFramework.WindmillBladesController::get_IsMoving()
+// 0x000006FA System.Boolean OculusSampleFramework.WindmillBladesController::get_IsMoving()
 extern void WindmillBladesController_get_IsMoving_mD9B1B60A86AAD2EA43A7F88C45ECD4256D024540 (void);
-// 0x000006CD System.Void OculusSampleFramework.WindmillBladesController::set_IsMoving(System.Boolean)
+// 0x000006FB System.Void OculusSampleFramework.WindmillBladesController::set_IsMoving(System.Boolean)
 extern void WindmillBladesController_set_IsMoving_m35BF95FD16ABE573A75F2EC033A2D7068A02B1A2 (void);
-// 0x000006CE System.Void OculusSampleFramework.WindmillBladesController::Start()
+// 0x000006FC System.Void OculusSampleFramework.WindmillBladesController::Start()
 extern void WindmillBladesController_Start_m499CF78121E16F84BEA07E52A1362AA139599FA4 (void);
-// 0x000006CF System.Void OculusSampleFramework.WindmillBladesController::Update()
+// 0x000006FD System.Void OculusSampleFramework.WindmillBladesController::Update()
 extern void WindmillBladesController_Update_mF8B087076289DCB176D8687CC19DC3222CDB82C5 (void);
-// 0x000006D0 System.Void OculusSampleFramework.WindmillBladesController::SetMoveState(System.Boolean,System.Single)
+// 0x000006FE System.Void OculusSampleFramework.WindmillBladesController::SetMoveState(System.Boolean,System.Single)
 extern void WindmillBladesController_SetMoveState_mDD25E6E8190A0584599E3B3E7B44DF5ED1204BCE (void);
-// 0x000006D1 System.Collections.IEnumerator OculusSampleFramework.WindmillBladesController::LerpToSpeed(System.Single)
+// 0x000006FF System.Collections.IEnumerator OculusSampleFramework.WindmillBladesController::LerpToSpeed(System.Single)
 extern void WindmillBladesController_LerpToSpeed_mBC880C7530D09D0E982942CAF3BB246B5FE1BB30 (void);
-// 0x000006D2 System.Collections.IEnumerator OculusSampleFramework.WindmillBladesController::PlaySoundDelayed(UnityEngine.AudioClip,UnityEngine.AudioClip,System.Single)
+// 0x00000700 System.Collections.IEnumerator OculusSampleFramework.WindmillBladesController::PlaySoundDelayed(UnityEngine.AudioClip,UnityEngine.AudioClip,System.Single)
 extern void WindmillBladesController_PlaySoundDelayed_m2F25974FC738C03CBAB13838C100CC4616A28272 (void);
-// 0x000006D3 System.Void OculusSampleFramework.WindmillBladesController::PlaySound(UnityEngine.AudioClip,System.Boolean)
+// 0x00000701 System.Void OculusSampleFramework.WindmillBladesController::PlaySound(UnityEngine.AudioClip,System.Boolean)
 extern void WindmillBladesController_PlaySound_m18ED2161A9FB0F7F84AA0A42BC5B0FCF3E4B2B89 (void);
-// 0x000006D4 System.Void OculusSampleFramework.WindmillBladesController::.ctor()
+// 0x00000702 System.Void OculusSampleFramework.WindmillBladesController::.ctor()
 extern void WindmillBladesController__ctor_mD8749A515B4E54A5941D9482E905262F7C29C0E8 (void);
-// 0x000006D5 System.Void OculusSampleFramework.WindmillBladesController/<LerpToSpeed>d__17::.ctor(System.Int32)
+// 0x00000703 System.Void OculusSampleFramework.WindmillBladesController/<LerpToSpeed>d__17::.ctor(System.Int32)
 extern void U3CLerpToSpeedU3Ed__17__ctor_mB0644DFE449B8E167768389988830FD1FBC2B821 (void);
-// 0x000006D6 System.Void OculusSampleFramework.WindmillBladesController/<LerpToSpeed>d__17::System.IDisposable.Dispose()
+// 0x00000704 System.Void OculusSampleFramework.WindmillBladesController/<LerpToSpeed>d__17::System.IDisposable.Dispose()
 extern void U3CLerpToSpeedU3Ed__17_System_IDisposable_Dispose_mA1BA58911F6872F07E9D7E89BC473072D366F4C6 (void);
-// 0x000006D7 System.Boolean OculusSampleFramework.WindmillBladesController/<LerpToSpeed>d__17::MoveNext()
+// 0x00000705 System.Boolean OculusSampleFramework.WindmillBladesController/<LerpToSpeed>d__17::MoveNext()
 extern void U3CLerpToSpeedU3Ed__17_MoveNext_mB46512E32F3D74D7BC66EAEDA128948660250003 (void);
-// 0x000006D8 System.Object OculusSampleFramework.WindmillBladesController/<LerpToSpeed>d__17::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000706 System.Object OculusSampleFramework.WindmillBladesController/<LerpToSpeed>d__17::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CLerpToSpeedU3Ed__17_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mE04418CACED10038CC1F2DF0E9810983E2215DB9 (void);
-// 0x000006D9 System.Void OculusSampleFramework.WindmillBladesController/<LerpToSpeed>d__17::System.Collections.IEnumerator.Reset()
+// 0x00000707 System.Void OculusSampleFramework.WindmillBladesController/<LerpToSpeed>d__17::System.Collections.IEnumerator.Reset()
 extern void U3CLerpToSpeedU3Ed__17_System_Collections_IEnumerator_Reset_mE335D544A3E213AA1C592DD7794424E3787FA2BE (void);
-// 0x000006DA System.Object OculusSampleFramework.WindmillBladesController/<LerpToSpeed>d__17::System.Collections.IEnumerator.get_Current()
+// 0x00000708 System.Object OculusSampleFramework.WindmillBladesController/<LerpToSpeed>d__17::System.Collections.IEnumerator.get_Current()
 extern void U3CLerpToSpeedU3Ed__17_System_Collections_IEnumerator_get_Current_m520A472FF79A101F69C0C2E37158581DFE34ADE7 (void);
-// 0x000006DB System.Void OculusSampleFramework.WindmillBladesController/<PlaySoundDelayed>d__18::.ctor(System.Int32)
+// 0x00000709 System.Void OculusSampleFramework.WindmillBladesController/<PlaySoundDelayed>d__18::.ctor(System.Int32)
 extern void U3CPlaySoundDelayedU3Ed__18__ctor_mA399B2FD06607BD5B6C8EAA9A1B97B164B27E033 (void);
-// 0x000006DC System.Void OculusSampleFramework.WindmillBladesController/<PlaySoundDelayed>d__18::System.IDisposable.Dispose()
+// 0x0000070A System.Void OculusSampleFramework.WindmillBladesController/<PlaySoundDelayed>d__18::System.IDisposable.Dispose()
 extern void U3CPlaySoundDelayedU3Ed__18_System_IDisposable_Dispose_mB7EDAFD404A39D0F4479FF96C636C0D3DE427D4F (void);
-// 0x000006DD System.Boolean OculusSampleFramework.WindmillBladesController/<PlaySoundDelayed>d__18::MoveNext()
+// 0x0000070B System.Boolean OculusSampleFramework.WindmillBladesController/<PlaySoundDelayed>d__18::MoveNext()
 extern void U3CPlaySoundDelayedU3Ed__18_MoveNext_m3DEC57B570F5AFD8C19255D1BC14D8B871CAB792 (void);
-// 0x000006DE System.Object OculusSampleFramework.WindmillBladesController/<PlaySoundDelayed>d__18::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x0000070C System.Object OculusSampleFramework.WindmillBladesController/<PlaySoundDelayed>d__18::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CPlaySoundDelayedU3Ed__18_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mAA13BE8436B3C557546B7EFE5A20B43D67EC737A (void);
-// 0x000006DF System.Void OculusSampleFramework.WindmillBladesController/<PlaySoundDelayed>d__18::System.Collections.IEnumerator.Reset()
+// 0x0000070D System.Void OculusSampleFramework.WindmillBladesController/<PlaySoundDelayed>d__18::System.Collections.IEnumerator.Reset()
 extern void U3CPlaySoundDelayedU3Ed__18_System_Collections_IEnumerator_Reset_m8DAD6960C34AAE47BB8F758A3739AFCA20B79F8C (void);
-// 0x000006E0 System.Object OculusSampleFramework.WindmillBladesController/<PlaySoundDelayed>d__18::System.Collections.IEnumerator.get_Current()
+// 0x0000070E System.Object OculusSampleFramework.WindmillBladesController/<PlaySoundDelayed>d__18::System.Collections.IEnumerator.get_Current()
 extern void U3CPlaySoundDelayedU3Ed__18_System_Collections_IEnumerator_get_Current_mDA08F30D2D7014FA02490EA5566C3E06CA24460C (void);
-// 0x000006E1 System.Void OculusSampleFramework.WindmillController::Awake()
+// 0x0000070F System.Void OculusSampleFramework.WindmillController::Awake()
 extern void WindmillController_Awake_mB36486AE1BE5B22F034052A6094DFADE12367918 (void);
-// 0x000006E2 System.Void OculusSampleFramework.WindmillController::OnEnable()
+// 0x00000710 System.Void OculusSampleFramework.WindmillController::OnEnable()
 extern void WindmillController_OnEnable_m4C79FE499AD7BB5F894AA99E4EECD73CF83CC9E1 (void);
-// 0x000006E3 System.Void OculusSampleFramework.WindmillController::OnDisable()
+// 0x00000711 System.Void OculusSampleFramework.WindmillController::OnDisable()
 extern void WindmillController_OnDisable_mBF4689DDF616CD9C2705ACC0B007244995BFE239 (void);
-// 0x000006E4 System.Void OculusSampleFramework.WindmillController::StartStopStateChanged(OculusSampleFramework.InteractableStateArgs)
+// 0x00000712 System.Void OculusSampleFramework.WindmillController::StartStopStateChanged(OculusSampleFramework.InteractableStateArgs)
 extern void WindmillController_StartStopStateChanged_m4F5830906DDB74D0F1DC45D689478F869163446B (void);
-// 0x000006E5 System.Void OculusSampleFramework.WindmillController::Update()
+// 0x00000713 System.Void OculusSampleFramework.WindmillController::Update()
 extern void WindmillController_Update_m7936B43435F6796D8C99E444B10C6309B701986E (void);
-// 0x000006E6 System.Void OculusSampleFramework.WindmillController::.ctor()
+// 0x00000714 System.Void OculusSampleFramework.WindmillController::.ctor()
 extern void WindmillController__ctor_mA7C3B30A878710289E9A967EEBB2DE87CEB53174 (void);
-// 0x000006E7 System.Void OculusSampleFramework.OVROverlaySample::Start()
+// 0x00000715 System.Void OculusSampleFramework.OVROverlaySample::Start()
 extern void OVROverlaySample_Start_mFD7DBA6452D912CBE50E6FAE191D1E255E5E3473 (void);
-// 0x000006E8 System.Void OculusSampleFramework.OVROverlaySample::Update()
+// 0x00000716 System.Void OculusSampleFramework.OVROverlaySample::Update()
 extern void OVROverlaySample_Update_m00DF9462DB8DA2377B84FA17EF68D6B82368E902 (void);
-// 0x000006E9 System.Void OculusSampleFramework.OVROverlaySample::ActivateWorldGeo()
+// 0x00000717 System.Void OculusSampleFramework.OVROverlaySample::ActivateWorldGeo()
 extern void OVROverlaySample_ActivateWorldGeo_m74C9008C097DBA62BE342D8AF7E46F84ED5F6EDF (void);
-// 0x000006EA System.Void OculusSampleFramework.OVROverlaySample::ActivateOVROverlay()
+// 0x00000718 System.Void OculusSampleFramework.OVROverlaySample::ActivateOVROverlay()
 extern void OVROverlaySample_ActivateOVROverlay_m7FCA427103D87A7C638BEF78FB7AF8948500D5FE (void);
-// 0x000006EB System.Void OculusSampleFramework.OVROverlaySample::ActivateNone()
+// 0x00000719 System.Void OculusSampleFramework.OVROverlaySample::ActivateNone()
 extern void OVROverlaySample_ActivateNone_mDD9A990EF43A0880841D0C54EDA214B3D8CA19D7 (void);
-// 0x000006EC System.Void OculusSampleFramework.OVROverlaySample::TriggerLoad()
+// 0x0000071A System.Void OculusSampleFramework.OVROverlaySample::TriggerLoad()
 extern void OVROverlaySample_TriggerLoad_m700D3A873346D40C61B4E35D6222810766FB7C1D (void);
-// 0x000006ED System.Collections.IEnumerator OculusSampleFramework.OVROverlaySample::WaitforOVROverlay()
+// 0x0000071B System.Collections.IEnumerator OculusSampleFramework.OVROverlaySample::WaitforOVROverlay()
 extern void OVROverlaySample_WaitforOVROverlay_m95BB31F1A213D15CF49403AE039AF22020A247D4 (void);
-// 0x000006EE System.Void OculusSampleFramework.OVROverlaySample::TriggerUnload()
+// 0x0000071C System.Void OculusSampleFramework.OVROverlaySample::TriggerUnload()
 extern void OVROverlaySample_TriggerUnload_mC2BCD58945AE57A99E5C988C844126C2CC74706E (void);
-// 0x000006EF System.Void OculusSampleFramework.OVROverlaySample::CameraAndRenderTargetSetup()
+// 0x0000071D System.Void OculusSampleFramework.OVROverlaySample::CameraAndRenderTargetSetup()
 extern void OVROverlaySample_CameraAndRenderTargetSetup_m11F17E86B063E668865D6609C34F35CD7B2971D4 (void);
-// 0x000006F0 System.Void OculusSampleFramework.OVROverlaySample::SimulateLevelLoad()
+// 0x0000071E System.Void OculusSampleFramework.OVROverlaySample::SimulateLevelLoad()
 extern void OVROverlaySample_SimulateLevelLoad_m05A45D3B3318612EE2234AC0CF95357BC58446BB (void);
-// 0x000006F1 System.Void OculusSampleFramework.OVROverlaySample::ClearObjects()
+// 0x0000071F System.Void OculusSampleFramework.OVROverlaySample::ClearObjects()
 extern void OVROverlaySample_ClearObjects_mBA47743D458D9E9D10AB68E7BE3A0D48544AB196 (void);
-// 0x000006F2 System.Void OculusSampleFramework.OVROverlaySample::RadioPressed(System.String,System.String,UnityEngine.UI.Toggle)
+// 0x00000720 System.Void OculusSampleFramework.OVROverlaySample::RadioPressed(System.String,System.String,UnityEngine.UI.Toggle)
 extern void OVROverlaySample_RadioPressed_m6068363BDF1AFFEE1B74DAFD7080B7ADC1393D06 (void);
-// 0x000006F3 System.Void OculusSampleFramework.OVROverlaySample::.ctor()
+// 0x00000721 System.Void OculusSampleFramework.OVROverlaySample::.ctor()
 extern void OVROverlaySample__ctor_m2E713616D5B08A0269EFCC729EBEC80D39A72CF5 (void);
-// 0x000006F4 System.Void OculusSampleFramework.OVROverlaySample::<Start>b__24_0(UnityEngine.UI.Toggle)
+// 0x00000722 System.Void OculusSampleFramework.OVROverlaySample::<Start>b__24_0(UnityEngine.UI.Toggle)
 extern void OVROverlaySample_U3CStartU3Eb__24_0_mBF39A5A801A25E8938E5E0163A22FD1DB4BD45E9 (void);
-// 0x000006F5 System.Void OculusSampleFramework.OVROverlaySample::<Start>b__24_1(UnityEngine.UI.Toggle)
+// 0x00000723 System.Void OculusSampleFramework.OVROverlaySample::<Start>b__24_1(UnityEngine.UI.Toggle)
 extern void OVROverlaySample_U3CStartU3Eb__24_1_m1970159E2C8C7043DBC6797017C840EA7A9429FE (void);
-// 0x000006F6 System.Void OculusSampleFramework.OVROverlaySample::<Start>b__24_2(UnityEngine.UI.Toggle)
+// 0x00000724 System.Void OculusSampleFramework.OVROverlaySample::<Start>b__24_2(UnityEngine.UI.Toggle)
 extern void OVROverlaySample_U3CStartU3Eb__24_2_m9DCDFEF1326B4909B69D2FE1E754D18C7C289EB4 (void);
-// 0x000006F7 System.Void OculusSampleFramework.OVROverlaySample/<WaitforOVROverlay>d__30::.ctor(System.Int32)
+// 0x00000725 System.Void OculusSampleFramework.OVROverlaySample/<WaitforOVROverlay>d__30::.ctor(System.Int32)
 extern void U3CWaitforOVROverlayU3Ed__30__ctor_m0E99904CB71976828C93D3272159FFCA84910576 (void);
-// 0x000006F8 System.Void OculusSampleFramework.OVROverlaySample/<WaitforOVROverlay>d__30::System.IDisposable.Dispose()
+// 0x00000726 System.Void OculusSampleFramework.OVROverlaySample/<WaitforOVROverlay>d__30::System.IDisposable.Dispose()
 extern void U3CWaitforOVROverlayU3Ed__30_System_IDisposable_Dispose_m14C13ECD3FFEBA3DB1FF48E1DB6ACF6E34C08310 (void);
-// 0x000006F9 System.Boolean OculusSampleFramework.OVROverlaySample/<WaitforOVROverlay>d__30::MoveNext()
+// 0x00000727 System.Boolean OculusSampleFramework.OVROverlaySample/<WaitforOVROverlay>d__30::MoveNext()
 extern void U3CWaitforOVROverlayU3Ed__30_MoveNext_m8238E55519F93CF054F69EBB64C69579BD63FCD8 (void);
-// 0x000006FA System.Object OculusSampleFramework.OVROverlaySample/<WaitforOVROverlay>d__30::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000728 System.Object OculusSampleFramework.OVROverlaySample/<WaitforOVROverlay>d__30::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CWaitforOVROverlayU3Ed__30_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD760971ACA07042689C1EF1AA4A5965EC3AD3976 (void);
-// 0x000006FB System.Void OculusSampleFramework.OVROverlaySample/<WaitforOVROverlay>d__30::System.Collections.IEnumerator.Reset()
+// 0x00000729 System.Void OculusSampleFramework.OVROverlaySample/<WaitforOVROverlay>d__30::System.Collections.IEnumerator.Reset()
 extern void U3CWaitforOVROverlayU3Ed__30_System_Collections_IEnumerator_Reset_m04457336FACD8889D9212E217FA15CD1C9CB91A5 (void);
-// 0x000006FC System.Object OculusSampleFramework.OVROverlaySample/<WaitforOVROverlay>d__30::System.Collections.IEnumerator.get_Current()
+// 0x0000072A System.Object OculusSampleFramework.OVROverlaySample/<WaitforOVROverlay>d__30::System.Collections.IEnumerator.get_Current()
 extern void U3CWaitforOVROverlayU3Ed__30_System_Collections_IEnumerator_get_Current_m7CB1015C385FE2077A1B4529EBA7BB70ACD07732 (void);
-// 0x000006FD System.Void OVRTouchSample.Hand::Awake()
+// 0x0000072B System.Void OVRTouchSample.Hand::Awake()
 extern void Hand_Awake_mD44EDE243771D5E573B74F481D448C80D89B667C (void);
-// 0x000006FE System.Void OVRTouchSample.Hand::Start()
+// 0x0000072C System.Void OVRTouchSample.Hand::Start()
 extern void Hand_Start_mB0A5FC5F8F424556F4F8273A8399630E4D4BF94F (void);
-// 0x000006FF System.Void OVRTouchSample.Hand::OnDestroy()
+// 0x0000072D System.Void OVRTouchSample.Hand::OnDestroy()
 extern void Hand_OnDestroy_m26A4CF0B05FFF8AA55A0B2209770A653E2E51CBC (void);
-// 0x00000700 System.Void OVRTouchSample.Hand::Update()
+// 0x0000072E System.Void OVRTouchSample.Hand::Update()
 extern void Hand_Update_m5B07EF567BA65B05F9FB7577E06A1CCD9F18DE17 (void);
-// 0x00000701 System.Void OVRTouchSample.Hand::UpdateCapTouchStates()
+// 0x0000072F System.Void OVRTouchSample.Hand::UpdateCapTouchStates()
 extern void Hand_UpdateCapTouchStates_m00F26FB54506C7C13EA8F4280A7A733E87267272 (void);
-// 0x00000702 System.Void OVRTouchSample.Hand::LateUpdate()
+// 0x00000730 System.Void OVRTouchSample.Hand::LateUpdate()
 extern void Hand_LateUpdate_mF00DEEA6A69173F447B896D9A341CC5D9CD084D9 (void);
-// 0x00000703 System.Void OVRTouchSample.Hand::OnInputFocusLost()
+// 0x00000731 System.Void OVRTouchSample.Hand::OnInputFocusLost()
 extern void Hand_OnInputFocusLost_mD3FFDE39026F3EEFDFE8212B6E1FE3B064EB8C52 (void);
-// 0x00000704 System.Void OVRTouchSample.Hand::OnInputFocusAcquired()
+// 0x00000732 System.Void OVRTouchSample.Hand::OnInputFocusAcquired()
 extern void Hand_OnInputFocusAcquired_m0812ABDFE30CE9348919181D77BB8F5E4F5A3490 (void);
-// 0x00000705 System.Single OVRTouchSample.Hand::InputValueRateChange(System.Boolean,System.Single)
+// 0x00000733 System.Single OVRTouchSample.Hand::InputValueRateChange(System.Boolean,System.Single)
 extern void Hand_InputValueRateChange_m8EE04E1A0BEB06E82FAED24CC0CEE299EA4EA060 (void);
-// 0x00000706 System.Void OVRTouchSample.Hand::UpdateAnimStates()
+// 0x00000734 System.Void OVRTouchSample.Hand::UpdateAnimStates()
 extern void Hand_UpdateAnimStates_mDD57A9E1B68086129F50F12BC2ED46FA26C1D996 (void);
-// 0x00000707 System.Void OVRTouchSample.Hand::CollisionEnable(System.Boolean)
+// 0x00000735 System.Void OVRTouchSample.Hand::CollisionEnable(System.Boolean)
 extern void Hand_CollisionEnable_mE84E4E5CDE7F8D524DD175035E51B336E09871A4 (void);
-// 0x00000708 System.Void OVRTouchSample.Hand::.ctor()
+// 0x00000736 System.Void OVRTouchSample.Hand::.ctor()
 extern void Hand__ctor_mC9E9A5AF18238609A8B74564BFF2D74AC60D7B29 (void);
-// 0x00000709 System.Void OVRTouchSample.Hand/<>c::.cctor()
+// 0x00000737 System.Void OVRTouchSample.Hand/<>c::.cctor()
 extern void U3CU3Ec__cctor_mB5ACFA7333435A0C6320A9CDBDA74C3AD379BB84 (void);
-// 0x0000070A System.Void OVRTouchSample.Hand/<>c::.ctor()
+// 0x00000738 System.Void OVRTouchSample.Hand/<>c::.ctor()
 extern void U3CU3Ec__ctor_m5B6A45FE68FE591E166EC9969E2356BE51CA2E4F (void);
-// 0x0000070B System.Boolean OVRTouchSample.Hand/<>c::<Start>b__28_0(UnityEngine.Collider)
+// 0x00000739 System.Boolean OVRTouchSample.Hand/<>c::<Start>b__28_0(UnityEngine.Collider)
 extern void U3CU3Ec_U3CStartU3Eb__28_0_m69657F26B241AA6A749CAFAF9534605A3FAC3480 (void);
-// 0x0000070C System.Boolean OVRTouchSample.HandPose::get_AllowPointing()
+// 0x0000073A System.Boolean OVRTouchSample.HandPose::get_AllowPointing()
 extern void HandPose_get_AllowPointing_m19E1786901712E84FD7D2CC113471FF7B2167731 (void);
-// 0x0000070D System.Boolean OVRTouchSample.HandPose::get_AllowThumbsUp()
+// 0x0000073B System.Boolean OVRTouchSample.HandPose::get_AllowThumbsUp()
 extern void HandPose_get_AllowThumbsUp_m5B0BCD38FCEEB5512FE9FA49DFDDFB61FA5D5EAF (void);
-// 0x0000070E OVRTouchSample.HandPoseId OVRTouchSample.HandPose::get_PoseId()
+// 0x0000073C OVRTouchSample.HandPoseId OVRTouchSample.HandPose::get_PoseId()
 extern void HandPose_get_PoseId_m399F7DCB42FE2A60FFF096C1865DFF5B347F7BDB (void);
-// 0x0000070F System.Void OVRTouchSample.HandPose::.ctor()
+// 0x0000073D System.Void OVRTouchSample.HandPose::.ctor()
 extern void HandPose__ctor_m021CDC27F6532FDED971F9972D5ECE85C3FF1162 (void);
-// 0x00000710 System.Void OVRTouchSample.TouchController::Update()
+// 0x0000073E System.Void OVRTouchSample.TouchController::Update()
 extern void TouchController_Update_m2FCE5F2BEC38B9B1448FAD8E8DFF64AF1E3E0A32 (void);
-// 0x00000711 System.Void OVRTouchSample.TouchController::OnInputFocusLost()
+// 0x0000073F System.Void OVRTouchSample.TouchController::OnInputFocusLost()
 extern void TouchController_OnInputFocusLost_m6317EA5E49BEFAB15C37741C92DE17CC0056DE15 (void);
-// 0x00000712 System.Void OVRTouchSample.TouchController::OnInputFocusAcquired()
+// 0x00000740 System.Void OVRTouchSample.TouchController::OnInputFocusAcquired()
 extern void TouchController_OnInputFocusAcquired_m4CE35E8F9CA5C7E611193F2859EF5D72E4C6A106 (void);
-// 0x00000713 System.Void OVRTouchSample.TouchController::.ctor()
+// 0x00000741 System.Void OVRTouchSample.TouchController::.ctor()
 extern void TouchController__ctor_mFEC6542E29C9A706269D2381487265DC207D4B25 (void);
-// 0x00000714 System.String Neuron.NeuronActor::get_AvatarName()
+// 0x00000742 System.String Neuron.NeuronActor::get_AvatarName()
 extern void NeuronActor_get_AvatarName_mB92672ECA0440A03258087899FA2E9D23E55E1DC (void);
-// 0x00000715 System.Int32 Neuron.NeuronActor::get_AvatarIndex()
+// 0x00000743 System.Int32 Neuron.NeuronActor::get_AvatarIndex()
 extern void NeuronActor_get_AvatarIndex_mEC26AB7D7F374F5353DE26EB9A462979B0769A73 (void);
-// 0x00000716 UnityEngine.Vector3[] Neuron.NeuronActor::get_SourceLocalPositions()
+// 0x00000744 UnityEngine.Vector3[] Neuron.NeuronActor::get_SourceLocalPositions()
 extern void NeuronActor_get_SourceLocalPositions_m6446DE6A2AE283AB3AFC2AAB152B8300E62B2A03 (void);
-// 0x00000717 UnityEngine.Quaternion[] Neuron.NeuronActor::get_SourceLocalRotations()
+// 0x00000745 UnityEngine.Quaternion[] Neuron.NeuronActor::get_SourceLocalRotations()
 extern void NeuronActor_get_SourceLocalRotations_m5391A243CD289D773C7FE5D11D0ADDEE05F73A88 (void);
-// 0x00000718 System.Boolean[] Neuron.NeuronActor::get_SourceHasLocalPositions()
+// 0x00000746 System.Boolean[] Neuron.NeuronActor::get_SourceHasLocalPositions()
 extern void NeuronActor_get_SourceHasLocalPositions_mED5570765AA788ACA511294625B84CF266980AAD (void);
-// 0x00000719 System.Void Neuron.NeuronActor::RegisterNoFrameDataCallback(Neuron.NeuronActor/NoFrameDataDelegate)
+// 0x00000747 System.Void Neuron.NeuronActor::RegisterNoFrameDataCallback(Neuron.NeuronActor/NoFrameDataDelegate)
 extern void NeuronActor_RegisterNoFrameDataCallback_m1DC9CBA01FB34A389A793F7DD1D26006DC9423D6 (void);
-// 0x0000071A System.Void Neuron.NeuronActor::UnregisterNoFrameDataCallback(Neuron.NeuronActor/NoFrameDataDelegate)
+// 0x00000748 System.Void Neuron.NeuronActor::UnregisterNoFrameDataCallback(Neuron.NeuronActor/NoFrameDataDelegate)
 extern void NeuronActor_UnregisterNoFrameDataCallback_m45B28EE3E4A459B9CFAA6CE46CC2CA95A5EBBDC5 (void);
-// 0x0000071B System.Void Neuron.NeuronActor::RegisterResumeFrameDataCallback(Neuron.NeuronActor/ResumeFrameDataDelegate)
+// 0x00000749 System.Void Neuron.NeuronActor::RegisterResumeFrameDataCallback(Neuron.NeuronActor/ResumeFrameDataDelegate)
 extern void NeuronActor_RegisterResumeFrameDataCallback_mA26243C198CC46323A94C8F47C4FAD4B5D64C5F9 (void);
-// 0x0000071C System.Void Neuron.NeuronActor::UnregisterResumeFrameDataCallback(Neuron.NeuronActor/ResumeFrameDataDelegate)
+// 0x0000074A System.Void Neuron.NeuronActor::UnregisterResumeFrameDataCallback(Neuron.NeuronActor/ResumeFrameDataDelegate)
 extern void NeuronActor_UnregisterResumeFrameDataCallback_m3CC5018BFA65C597273F9C39F0E9ECE1C2E005E0 (void);
-// 0x0000071D System.Void Neuron.NeuronActor::.ctor(Neuron.NeuronSource,System.Int32)
+// 0x0000074B System.Void Neuron.NeuronActor::.ctor(Neuron.NeuronSource,System.Int32)
 extern void NeuronActor__ctor_m31B57E6404254E0327087A2E01B8112156160A2A (void);
-// 0x0000071E System.Void Neuron.NeuronActor::Finalize()
+// 0x0000074C System.Void Neuron.NeuronActor::Finalize()
 extern void NeuronActor_Finalize_mC0D7C7C31D166991A282AAF20EDEEE6F60EC2650 (void);
-// 0x0000071F System.Void Neuron.NeuronActor::OnNoFrameData(Neuron.NeuronActor)
+// 0x0000074D System.Void Neuron.NeuronActor::OnNoFrameData(Neuron.NeuronActor)
 extern void NeuronActor_OnNoFrameData_mE088311B50D3A5E4DDFC7FC254C7485F3D460F83 (void);
-// 0x00000720 System.Void Neuron.NeuronActor::OnResumeFrameData(Neuron.NeuronActor)
+// 0x0000074E System.Void Neuron.NeuronActor::OnResumeFrameData(Neuron.NeuronActor)
 extern void NeuronActor_OnResumeFrameData_mC8025CE6EA880F4C07B9AF27CF011647B40CA0B6 (void);
-// 0x00000721 UnityEngine.Vector3 Neuron.NeuronActor::GetReceivedPosition(Neuron.NeuronBones)
+// 0x0000074F UnityEngine.Vector3 Neuron.NeuronActor::GetReceivedPosition(Neuron.NeuronBones)
 extern void NeuronActor_GetReceivedPosition_m16048E99C145219F588D2061013044629C5F764B (void);
-// 0x00000722 UnityEngine.Vector3 Neuron.NeuronActor::GetReceivedPosition(Neuron.NeuronBones,UnityEngine.Vector3)
+// 0x00000750 UnityEngine.Vector3 Neuron.NeuronActor::GetReceivedPosition(Neuron.NeuronBones,UnityEngine.Vector3)
 extern void NeuronActor_GetReceivedPosition_mA3A9EA8D370F9CFD915D3B0FF97B5070E02F108F (void);
-// 0x00000723 System.Boolean Neuron.NeuronActor::GetHasPosition(Neuron.NeuronBones)
+// 0x00000751 System.Boolean Neuron.NeuronActor::GetHasPosition(Neuron.NeuronBones)
 extern void NeuronActor_GetHasPosition_mF55B1C4A7E17C90C445DEDD4EECF5DB7608A8405 (void);
-// 0x00000724 UnityEngine.Vector3 Neuron.NeuronActor::GetReceivedRotation(Neuron.NeuronBones)
+// 0x00000752 UnityEngine.Vector3 Neuron.NeuronActor::GetReceivedRotation(Neuron.NeuronBones)
 extern void NeuronActor_GetReceivedRotation_m4E690C209349734D65011A01A9B085C085F948D2 (void);
-// 0x00000725 System.Void Neuron.NeuronActor::SetAvatarName(System.String)
+// 0x00000753 System.Void Neuron.NeuronActor::SetAvatarName(System.String)
 extern void NeuronActor_SetAvatarName_mF7246C8DA8B76914031725A8E9D10AF331B41411 (void);
-// 0x00000726 System.Void Neuron.NeuronActor::.cctor()
+// 0x00000754 System.Void Neuron.NeuronActor::.cctor()
 extern void NeuronActor__cctor_m0BB3AE60FB7182F628EA643047667FFFED706163 (void);
-// 0x00000727 System.Void Neuron.NeuronActor/NoFrameDataDelegate::.ctor(System.Object,System.IntPtr)
+// 0x00000755 System.Void Neuron.NeuronActor/NoFrameDataDelegate::.ctor(System.Object,System.IntPtr)
 extern void NoFrameDataDelegate__ctor_m9B62E48D6FC1F41462E29F0EEB612A05B32DBDD6 (void);
-// 0x00000728 System.Boolean Neuron.NeuronActor/NoFrameDataDelegate::Invoke()
+// 0x00000756 System.Boolean Neuron.NeuronActor/NoFrameDataDelegate::Invoke()
 extern void NoFrameDataDelegate_Invoke_m1516D3E5E84D633D15AC6D29CC55C20D18BBEEA1 (void);
-// 0x00000729 System.IAsyncResult Neuron.NeuronActor/NoFrameDataDelegate::BeginInvoke(System.AsyncCallback,System.Object)
+// 0x00000757 System.IAsyncResult Neuron.NeuronActor/NoFrameDataDelegate::BeginInvoke(System.AsyncCallback,System.Object)
 extern void NoFrameDataDelegate_BeginInvoke_mBD86B5040E7BE6C0055EE6055D19345D090C9C4A (void);
-// 0x0000072A System.Boolean Neuron.NeuronActor/NoFrameDataDelegate::EndInvoke(System.IAsyncResult)
+// 0x00000758 System.Boolean Neuron.NeuronActor/NoFrameDataDelegate::EndInvoke(System.IAsyncResult)
 extern void NoFrameDataDelegate_EndInvoke_mA3397C5BC68BF078359449E29CC33455B71184B1 (void);
-// 0x0000072B System.Void Neuron.NeuronActor/ResumeFrameDataDelegate::.ctor(System.Object,System.IntPtr)
+// 0x00000759 System.Void Neuron.NeuronActor/ResumeFrameDataDelegate::.ctor(System.Object,System.IntPtr)
 extern void ResumeFrameDataDelegate__ctor_mF99E01882A5D44CEF9C3FA9A1A5196E52A21C67B (void);
-// 0x0000072C System.Boolean Neuron.NeuronActor/ResumeFrameDataDelegate::Invoke()
+// 0x0000075A System.Boolean Neuron.NeuronActor/ResumeFrameDataDelegate::Invoke()
 extern void ResumeFrameDataDelegate_Invoke_mA292BDC4120E9118D3A9ABF28299455E17739548 (void);
-// 0x0000072D System.IAsyncResult Neuron.NeuronActor/ResumeFrameDataDelegate::BeginInvoke(System.AsyncCallback,System.Object)
+// 0x0000075B System.IAsyncResult Neuron.NeuronActor/ResumeFrameDataDelegate::BeginInvoke(System.AsyncCallback,System.Object)
 extern void ResumeFrameDataDelegate_BeginInvoke_mD5228ACE5160908ED8BD96C6D576A966C11229D8 (void);
-// 0x0000072E System.Boolean Neuron.NeuronActor/ResumeFrameDataDelegate::EndInvoke(System.IAsyncResult)
+// 0x0000075C System.Boolean Neuron.NeuronActor/ResumeFrameDataDelegate::EndInvoke(System.IAsyncResult)
 extern void ResumeFrameDataDelegate_EndInvoke_mBCD6AA4B2762C53C2EA076672CE2B96D5D20AD54 (void);
-// 0x0000072F System.Boolean Neuron.NeuronAnimatorPhysicalReference::Init(UnityEngine.Animator,UnityEngine.Animator)
+// 0x0000075D System.Boolean Neuron.NeuronAnimatorPhysicalReference::Init(UnityEngine.Animator,UnityEngine.Animator)
 extern void NeuronAnimatorPhysicalReference_Init_mBB2F5F0C28647CF4B5462C312BE07A2639534EB5 (void);
-// 0x00000730 System.Void Neuron.NeuronAnimatorPhysicalReference::Release()
+// 0x0000075E System.Void Neuron.NeuronAnimatorPhysicalReference::Release()
 extern void NeuronAnimatorPhysicalReference_Release_m99CCBDA9BC2AE0D455D31AA7C4CEA6885A90C2A7 (void);
-// 0x00000731 System.Boolean Neuron.NeuronAnimatorPhysicalReference::Initiated()
+// 0x0000075F System.Boolean Neuron.NeuronAnimatorPhysicalReference::Initiated()
 extern void NeuronAnimatorPhysicalReference_Initiated_m31C4A5D5EC19E2B3A0EA24C31781BB550C8CE591 (void);
-// 0x00000732 UnityEngine.GameObject Neuron.NeuronAnimatorPhysicalReference::GetReferenceObject()
+// 0x00000760 UnityEngine.GameObject Neuron.NeuronAnimatorPhysicalReference::GetReferenceObject()
 extern void NeuronAnimatorPhysicalReference_GetReferenceObject_mFC8349813140ACD580DB6311CBCF111945B9CE24 (void);
-// 0x00000733 UnityEngine.Animator Neuron.NeuronAnimatorPhysicalReference::GetReferenceAnimator()
+// 0x00000761 UnityEngine.Animator Neuron.NeuronAnimatorPhysicalReference::GetReferenceAnimator()
 extern void NeuronAnimatorPhysicalReference_GetReferenceAnimator_m595AE96D2DD7A96DFBAF3D3F185AAB3709DA5BC0 (void);
-// 0x00000734 System.Boolean Neuron.NeuronAnimatorPhysicalReference::CheckRigidbodies(UnityEngine.Animator)
+// 0x00000762 System.Boolean Neuron.NeuronAnimatorPhysicalReference::CheckRigidbodies(UnityEngine.Animator)
 extern void NeuronAnimatorPhysicalReference_CheckRigidbodies_m2EDD6B669495092AAF799A7BF9FB4163420C6772 (void);
-// 0x00000735 System.Void Neuron.NeuronAnimatorPhysicalReference::.ctor()
+// 0x00000763 System.Void Neuron.NeuronAnimatorPhysicalReference::.ctor()
 extern void NeuronAnimatorPhysicalReference__ctor_m537A2C90E8B7F1BBC3ED87AD98AF24363F12BCB2 (void);
-// 0x00000736 System.Int32 Neuron.NeuronHelper::Bind(UnityEngine.Transform,UnityEngine.Transform[],System.String,System.Boolean,Neuron.NeuronBoneVersion)
+// 0x00000764 System.Int32 Neuron.NeuronHelper::Bind(UnityEngine.Transform,UnityEngine.Transform[],System.String,System.Boolean,Neuron.NeuronBoneVersion)
 extern void NeuronHelper_Bind_m314636895A7649A9FAD423B1609FA45F8F07BAAC (void);
-// 0x00000737 System.Int32 Neuron.NeuronHelper::AddBonesComponents(UnityEngine.Animator,Neuron.NeuronHelper/OnAddBoneComponent`1<T>,System.Object[])
-// 0x00000738 System.Int32 Neuron.NeuronHelper::AddBonesComponentsTransform(UnityEngine.Transform,System.String,Neuron.NeuronHelper/OnAddBoneComponentTransform`1<T>,System.Object[])
-// 0x00000739 System.Int32 Neuron.NeuronHelper::RemoveBonesComponents(UnityEngine.Animator,Neuron.NeuronHelper/OnRemoveBoneComponent`1<T>,System.Object[])
-// 0x0000073A System.Int32 Neuron.NeuronHelper::RemoveBonesComponentsTransform(UnityEngine.Transform,System.String,Neuron.NeuronHelper/OnRemoveBoneComponentTransform`1<T>,System.Object[])
-// 0x0000073B System.Void Neuron.NeuronHelper::BreakHierarchy(UnityEngine.Animator)
+// 0x00000765 System.Int32 Neuron.NeuronHelper::AddBonesComponents(UnityEngine.Animator,Neuron.NeuronHelper/OnAddBoneComponent`1<T>,System.Object[])
+// 0x00000766 System.Int32 Neuron.NeuronHelper::AddBonesComponentsTransform(UnityEngine.Transform,System.String,Neuron.NeuronHelper/OnAddBoneComponentTransform`1<T>,System.Object[])
+// 0x00000767 System.Int32 Neuron.NeuronHelper::RemoveBonesComponents(UnityEngine.Animator,Neuron.NeuronHelper/OnRemoveBoneComponent`1<T>,System.Object[])
+// 0x00000768 System.Int32 Neuron.NeuronHelper::RemoveBonesComponentsTransform(UnityEngine.Transform,System.String,Neuron.NeuronHelper/OnRemoveBoneComponentTransform`1<T>,System.Object[])
+// 0x00000769 System.Void Neuron.NeuronHelper::BreakHierarchy(UnityEngine.Animator)
 extern void NeuronHelper_BreakHierarchy_mAE3D028D56920B476D497508EC330E7372925D44 (void);
-// 0x0000073C System.Void Neuron.NeuronHelper::BreakHierarchy(UnityEngine.Transform[])
+// 0x0000076A System.Void Neuron.NeuronHelper::BreakHierarchy(UnityEngine.Transform[])
 extern void NeuronHelper_BreakHierarchy_mEADBCA8FEAA50E4BF954E1DA82415AD69EF3D6AB (void);
-// 0x0000073D System.Void Neuron.NeuronHelper/OnAddBoneComponent`1::.ctor(System.Object,System.IntPtr)
-// 0x0000073E System.Void Neuron.NeuronHelper/OnAddBoneComponent`1::Invoke(UnityEngine.HumanBodyBones,T,System.Object[])
-// 0x0000073F System.IAsyncResult Neuron.NeuronHelper/OnAddBoneComponent`1::BeginInvoke(UnityEngine.HumanBodyBones,T,System.Object[],System.AsyncCallback,System.Object)
-// 0x00000740 System.Void Neuron.NeuronHelper/OnAddBoneComponent`1::EndInvoke(System.IAsyncResult)
-// 0x00000741 System.Void Neuron.NeuronHelper/OnAddBoneComponentTransform`1::.ctor(System.Object,System.IntPtr)
-// 0x00000742 System.Void Neuron.NeuronHelper/OnAddBoneComponentTransform`1::Invoke(Neuron.NeuronBones,T,System.Object[])
-// 0x00000743 System.IAsyncResult Neuron.NeuronHelper/OnAddBoneComponentTransform`1::BeginInvoke(Neuron.NeuronBones,T,System.Object[],System.AsyncCallback,System.Object)
-// 0x00000744 System.Void Neuron.NeuronHelper/OnAddBoneComponentTransform`1::EndInvoke(System.IAsyncResult)
-// 0x00000745 System.Void Neuron.NeuronHelper/OnRemoveBoneComponent`1::.ctor(System.Object,System.IntPtr)
-// 0x00000746 System.Void Neuron.NeuronHelper/OnRemoveBoneComponent`1::Invoke(UnityEngine.HumanBodyBones,T,System.Object[])
-// 0x00000747 System.IAsyncResult Neuron.NeuronHelper/OnRemoveBoneComponent`1::BeginInvoke(UnityEngine.HumanBodyBones,T,System.Object[],System.AsyncCallback,System.Object)
-// 0x00000748 System.Void Neuron.NeuronHelper/OnRemoveBoneComponent`1::EndInvoke(System.IAsyncResult)
-// 0x00000749 System.Void Neuron.NeuronHelper/OnRemoveBoneComponentTransform`1::.ctor(System.Object,System.IntPtr)
-// 0x0000074A System.Void Neuron.NeuronHelper/OnRemoveBoneComponentTransform`1::Invoke(Neuron.NeuronBones,T,System.Object[])
-// 0x0000074B System.IAsyncResult Neuron.NeuronHelper/OnRemoveBoneComponentTransform`1::BeginInvoke(Neuron.NeuronBones,T,System.Object[],System.AsyncCallback,System.Object)
-// 0x0000074C System.Void Neuron.NeuronHelper/OnRemoveBoneComponentTransform`1::EndInvoke(System.IAsyncResult)
-// 0x0000074D System.Boolean Neuron.NeuronInstance::get_noFrameData()
+// 0x0000076B System.Void Neuron.NeuronHelper/OnAddBoneComponent`1::.ctor(System.Object,System.IntPtr)
+// 0x0000076C System.Void Neuron.NeuronHelper/OnAddBoneComponent`1::Invoke(UnityEngine.HumanBodyBones,T,System.Object[])
+// 0x0000076D System.IAsyncResult Neuron.NeuronHelper/OnAddBoneComponent`1::BeginInvoke(UnityEngine.HumanBodyBones,T,System.Object[],System.AsyncCallback,System.Object)
+// 0x0000076E System.Void Neuron.NeuronHelper/OnAddBoneComponent`1::EndInvoke(System.IAsyncResult)
+// 0x0000076F System.Void Neuron.NeuronHelper/OnAddBoneComponentTransform`1::.ctor(System.Object,System.IntPtr)
+// 0x00000770 System.Void Neuron.NeuronHelper/OnAddBoneComponentTransform`1::Invoke(Neuron.NeuronBones,T,System.Object[])
+// 0x00000771 System.IAsyncResult Neuron.NeuronHelper/OnAddBoneComponentTransform`1::BeginInvoke(Neuron.NeuronBones,T,System.Object[],System.AsyncCallback,System.Object)
+// 0x00000772 System.Void Neuron.NeuronHelper/OnAddBoneComponentTransform`1::EndInvoke(System.IAsyncResult)
+// 0x00000773 System.Void Neuron.NeuronHelper/OnRemoveBoneComponent`1::.ctor(System.Object,System.IntPtr)
+// 0x00000774 System.Void Neuron.NeuronHelper/OnRemoveBoneComponent`1::Invoke(UnityEngine.HumanBodyBones,T,System.Object[])
+// 0x00000775 System.IAsyncResult Neuron.NeuronHelper/OnRemoveBoneComponent`1::BeginInvoke(UnityEngine.HumanBodyBones,T,System.Object[],System.AsyncCallback,System.Object)
+// 0x00000776 System.Void Neuron.NeuronHelper/OnRemoveBoneComponent`1::EndInvoke(System.IAsyncResult)
+// 0x00000777 System.Void Neuron.NeuronHelper/OnRemoveBoneComponentTransform`1::.ctor(System.Object,System.IntPtr)
+// 0x00000778 System.Void Neuron.NeuronHelper/OnRemoveBoneComponentTransform`1::Invoke(Neuron.NeuronBones,T,System.Object[])
+// 0x00000779 System.IAsyncResult Neuron.NeuronHelper/OnRemoveBoneComponentTransform`1::BeginInvoke(Neuron.NeuronBones,T,System.Object[],System.AsyncCallback,System.Object)
+// 0x0000077A System.Void Neuron.NeuronHelper/OnRemoveBoneComponentTransform`1::EndInvoke(System.IAsyncResult)
+// 0x0000077B System.Boolean Neuron.NeuronInstance::get_noFrameData()
 extern void NeuronInstance_get_noFrameData_mBA55AB96C97F6FAC2E411AD101CB1C039E7217D7 (void);
-// 0x0000074E System.Void Neuron.NeuronInstance::set_noFrameData(System.Boolean)
+// 0x0000077C System.Void Neuron.NeuronInstance::set_noFrameData(System.Boolean)
 extern void NeuronInstance_set_noFrameData_m12911A1C917D994F09B43C4B37305C249871F6E5 (void);
-// 0x0000074F System.Void Neuron.NeuronInstance::Init(Neuron.NeuronSource,Neuron.NeuronEnums/SkeletonType)
+// 0x0000077D System.Void Neuron.NeuronInstance::Init(Neuron.NeuronSource,Neuron.NeuronEnums/SkeletonType)
 extern void NeuronInstance_Init_m4745800D29589DAC625392C98B1C1DAC21DD4405 (void);
-// 0x00000750 System.Void Neuron.NeuronInstance::Showdown()
+// 0x0000077E System.Void Neuron.NeuronInstance::Showdown()
 extern void NeuronInstance_Showdown_mB613D5041E0515B64C0354761E7572C5DEF84819 (void);
-// 0x00000751 System.Void Neuron.NeuronInstance::RegisterCallbacks()
+// 0x0000077F System.Void Neuron.NeuronInstance::RegisterCallbacks()
 extern void NeuronInstance_RegisterCallbacks_mE234F92256BAB03C01EE8D9FEE5461CA1547DD98 (void);
-// 0x00000752 System.Void Neuron.NeuronInstance::UnregisterCallbacks()
+// 0x00000780 System.Void Neuron.NeuronInstance::UnregisterCallbacks()
 extern void NeuronInstance_UnregisterCallbacks_m921C6FA50ED1E27C729A448BED3949BC6371705E (void);
-// 0x00000753 System.Void Neuron.NeuronInstance::Update()
+// 0x00000781 System.Void Neuron.NeuronInstance::Update()
 extern void NeuronInstance_Update_m153C5D8615DB11478AB4330CA410BFD2F852616E (void);
-// 0x00000754 System.Boolean Neuron.NeuronInstance::OnNoFrameData()
+// 0x00000782 System.Boolean Neuron.NeuronInstance::OnNoFrameData()
 extern void NeuronInstance_OnNoFrameData_m511B9B1F30C8829F9A5314CC4560ECD01820E4CA (void);
-// 0x00000755 System.Boolean Neuron.NeuronInstance::OnResumeFrameData()
+// 0x00000783 System.Boolean Neuron.NeuronInstance::OnResumeFrameData()
 extern void NeuronInstance_OnResumeFrameData_m0769FA70625F468720D4BFDFEEA7F7E4C9263653 (void);
-// 0x00000756 Neuron.NeuronActor Neuron.NeuronInstance::GetActor()
+// 0x00000784 Neuron.NeuronActor Neuron.NeuronInstance::GetActor()
 extern void NeuronInstance_GetActor_m5B50F445FF10F2872A03809A81A558F500BF65E4 (void);
-// 0x00000757 System.Void Neuron.NeuronInstance::OnApplicationQuit()
+// 0x00000785 System.Void Neuron.NeuronInstance::OnApplicationQuit()
 extern void NeuronInstance_OnApplicationQuit_m54B66000B2CF88070969669D30549792419F0245 (void);
-// 0x00000758 System.Void Neuron.NeuronInstance::.ctor()
+// 0x00000786 System.Void Neuron.NeuronInstance::.ctor()
 extern void NeuronInstance__ctor_m497812867E5DC304CAEF868A8DEED6EA598D9773 (void);
-// 0x00000759 System.Void Neuron.NeuronRigidbody::OnEnable()
+// 0x00000787 System.Void Neuron.NeuronRigidbody::OnEnable()
 extern void NeuronRigidbody_OnEnable_mAA04B71BD1C62D27B2C559F033FDB719ED4E9131 (void);
-// 0x0000075A System.Void Neuron.NeuronRigidbody::Update()
+// 0x00000788 System.Void Neuron.NeuronRigidbody::Update()
 extern void NeuronRigidbody_Update_mFCC3A41E9169F688F7C2E51403162F45307720ED (void);
-// 0x0000075B System.Void Neuron.NeuronRigidbody::ApplyMotion(UnityEngine.Transform,System.Int32)
+// 0x00000789 System.Void Neuron.NeuronRigidbody::ApplyMotion(UnityEngine.Transform,System.Int32)
 extern void NeuronRigidbody_ApplyMotion_m54B3B315CCEB9DE6A73C677EB0E9DC45A5C8417F (void);
-// 0x0000075C System.Void Neuron.NeuronRigidbody::.ctor()
+// 0x0000078A System.Void Neuron.NeuronRigidbody::.ctor()
 extern void NeuronRigidbody__ctor_mC099C6A07D817AD9892EA3FD81A7497095093883 (void);
-// 0x0000075D System.String Neuron.NeuronSource::get_address()
+// 0x0000078B System.String Neuron.NeuronSource::get_address()
 extern void NeuronSource_get_address_mDCBB231151E3C88D9AD229BC6834F254C2F87CCD (void);
-// 0x0000075E System.Void Neuron.NeuronSource::set_address(System.String)
+// 0x0000078C System.Void Neuron.NeuronSource::set_address(System.String)
 extern void NeuronSource_set_address_mB0B15560BBE1FAD559A060CC0BD5231CCFBE91BA (void);
-// 0x0000075F System.Int32 Neuron.NeuronSource::get_port()
+// 0x0000078D System.Int32 Neuron.NeuronSource::get_port()
 extern void NeuronSource_get_port_mF1B3F3C519A188218D968D43FF7BD10F2E65B494 (void);
-// 0x00000760 System.Void Neuron.NeuronSource::set_port(System.Int32)
+// 0x0000078E System.Void Neuron.NeuronSource::set_port(System.Int32)
 extern void NeuronSource_set_port_mE8E229A7C691670949388A990A02E15F8437F228 (void);
-// 0x00000761 Neuron.NeuronEnums/SocketType Neuron.NeuronSource::get_socketType()
+// 0x0000078F Neuron.NeuronEnums/SocketType Neuron.NeuronSource::get_socketType()
 extern void NeuronSource_get_socketType_mA6FC01FA12133A5C134BCC186A5673E482735E6C (void);
-// 0x00000762 System.Void Neuron.NeuronSource::set_socketType(Neuron.NeuronEnums/SocketType)
+// 0x00000790 System.Void Neuron.NeuronSource::set_socketType(Neuron.NeuronEnums/SocketType)
 extern void NeuronSource_set_socketType_m184C475F0F0E6343621F477DCF5D60B4A377688A (void);
-// 0x00000763 System.Int32 Neuron.NeuronSource::get_numOfAllActors()
+// 0x00000791 System.Int32 Neuron.NeuronSource::get_numOfAllActors()
 extern void NeuronSource_get_numOfAllActors_m21845AA463FCA6AC651926A2E5ADAD813952E1C8 (void);
-// 0x00000764 System.Int32 Neuron.NeuronSource::get_referenceCounter()
+// 0x00000792 System.Int32 Neuron.NeuronSource::get_referenceCounter()
 extern void NeuronSource_get_referenceCounter_m6204753BA0AD9DFDB588BB98E01CF9F5582914FF (void);
-// 0x00000765 System.Void Neuron.NeuronSource::set_referenceCounter(System.Int32)
+// 0x00000793 System.Void Neuron.NeuronSource::set_referenceCounter(System.Int32)
 extern void NeuronSource_set_referenceCounter_m6C736E7CFB735BC38FDBAB642ADF115DD3A4F5B2 (void);
-// 0x00000766 System.Boolean Neuron.NeuronSource::get_HasActorReference()
+// 0x00000794 System.Boolean Neuron.NeuronSource::get_HasActorReference()
 extern void NeuronSource_get_HasActorReference_mB66C6DA010DBF7B213650B0EE2ADD64D711A93D1 (void);
-// 0x00000767 System.Void Neuron.NeuronSource::.ctor(System.String,System.Int32,Neuron.NeuronEnums/SocketType)
+// 0x00000795 System.Void Neuron.NeuronSource::.ctor(System.String,System.Int32,Neuron.NeuronEnums/SocketType)
 extern void NeuronSource__ctor_m4479D4E8D4A8DFE346737138F343D23F0BD4A2E3 (void);
-// 0x00000768 System.Void Neuron.NeuronSource::RegisterResumeActorCallback(Neuron.NeuronSource/ResumeActorDelegate)
+// 0x00000796 System.Void Neuron.NeuronSource::RegisterResumeActorCallback(Neuron.NeuronSource/ResumeActorDelegate)
 extern void NeuronSource_RegisterResumeActorCallback_m18F082A7B17FD263630B433F46657FED22143AAA (void);
-// 0x00000769 System.Void Neuron.NeuronSource::UnregisterResumeActorCallback(Neuron.NeuronSource/ResumeActorDelegate)
+// 0x00000797 System.Void Neuron.NeuronSource::UnregisterResumeActorCallback(Neuron.NeuronSource/ResumeActorDelegate)
 extern void NeuronSource_UnregisterResumeActorCallback_mD72CD769DECE78DC72FD36C323FC4B6F325A26E1 (void);
-// 0x0000076A System.Void Neuron.NeuronSource::RegisterSuspendActorCallback(Neuron.NeuronSource/SuspendActorDelegate)
+// 0x00000798 System.Void Neuron.NeuronSource::RegisterSuspendActorCallback(Neuron.NeuronSource/SuspendActorDelegate)
 extern void NeuronSource_RegisterSuspendActorCallback_mBC04957C3EDFAFBECE555E777649B3D0B7002375 (void);
-// 0x0000076B System.Void Neuron.NeuronSource::UnregisterSuspendActorCallback(Neuron.NeuronSource/SuspendActorDelegate)
+// 0x00000799 System.Void Neuron.NeuronSource::UnregisterSuspendActorCallback(Neuron.NeuronSource/SuspendActorDelegate)
 extern void NeuronSource_UnregisterSuspendActorCallback_mF0BB2A73B1A25F69949B0AC624F99CC3F0026FD2 (void);
-// 0x0000076C System.Void Neuron.NeuronSource::Grab()
+// 0x0000079A System.Void Neuron.NeuronSource::Grab()
 extern void NeuronSource_Grab_m6DAD16868CB04349A8A2E31BC1419D34915ECBFD (void);
-// 0x0000076D System.Void Neuron.NeuronSource::Release()
+// 0x0000079B System.Void Neuron.NeuronSource::Release()
 extern void NeuronSource_Release_mDD263F74A0DD9EF97CE733258CAE1EB425701235 (void);
-// 0x0000076E System.Void Neuron.NeuronSource::OnUpdate()
+// 0x0000079C System.Void Neuron.NeuronSource::OnUpdate()
 extern void NeuronSource_OnUpdate_m1A8715756BF7148A5A813AD090407C45E00C329B (void);
-// 0x0000076F Neuron.NeuronActor Neuron.NeuronSource::AcquireActor(System.Int32)
+// 0x0000079D Neuron.NeuronActor Neuron.NeuronSource::AcquireActor(System.Int32)
 extern void NeuronSource_AcquireActor_mC689C19A42531E1DC0E5114A5CBB7CAD2956FD82 (void);
-// 0x00000770 Neuron.NeuronActor[] Neuron.NeuronSource::GetActors()
+// 0x0000079E Neuron.NeuronActor[] Neuron.NeuronSource::GetActors()
 extern void NeuronSource_GetActors_mDE6F7DC5B81DF30F071658F8999D442DBFD3FF1A (void);
-// 0x00000771 Neuron.NeuronActor Neuron.NeuronSource::CreateActor(System.Int32)
+// 0x0000079F Neuron.NeuronActor Neuron.NeuronSource::CreateActor(System.Int32)
 extern void NeuronSource_CreateActor_m434A0B15DC826E5B9B1F5C97C12EA3DE6E456271 (void);
-// 0x00000772 System.Void Neuron.NeuronSource::DestroyActor(System.Int32)
+// 0x000007A0 System.Void Neuron.NeuronSource::DestroyActor(System.Int32)
 extern void NeuronSource_DestroyActor_mDDA99B4E6B71BCFAE9ECD6B7D5665C09D71F0039 (void);
-// 0x00000773 Neuron.NeuronActor Neuron.NeuronSource::FindActorById(System.Int32)
+// 0x000007A1 Neuron.NeuronActor Neuron.NeuronSource::FindActorById(System.Int32)
 extern void NeuronSource_FindActorById_mEADB763606A27CD8EEF6187DE5DEF6D6103BAC95 (void);
-// 0x00000774 Neuron.NeuronActor Neuron.NeuronSource::FindTrackingMotionByAvatarName(System.String)
+// 0x000007A2 Neuron.NeuronActor Neuron.NeuronSource::FindTrackingMotionByAvatarName(System.String)
 extern void NeuronSource_FindTrackingMotionByAvatarName_mC5BB18E8A146D061358668F7F1D90829D80CE552 (void);
-// 0x00000775 System.Void Neuron.NeuronSource::.cctor()
+// 0x000007A3 System.Void Neuron.NeuronSource::.cctor()
 extern void NeuronSource__cctor_mAF9782F393BF0932DAFD167A9C2F50F94FD504F0 (void);
-// 0x00000776 System.Void Neuron.NeuronSource/ResumeActorDelegate::.ctor(System.Object,System.IntPtr)
+// 0x000007A4 System.Void Neuron.NeuronSource/ResumeActorDelegate::.ctor(System.Object,System.IntPtr)
 extern void ResumeActorDelegate__ctor_m477E3AF401FA619B1D579397E528958CD0E6EEB3 (void);
-// 0x00000777 System.Void Neuron.NeuronSource/ResumeActorDelegate::Invoke(Neuron.NeuronActor)
+// 0x000007A5 System.Void Neuron.NeuronSource/ResumeActorDelegate::Invoke(Neuron.NeuronActor)
 extern void ResumeActorDelegate_Invoke_mBEF3334086491947FA31D4080A27F52765058ACF (void);
-// 0x00000778 System.IAsyncResult Neuron.NeuronSource/ResumeActorDelegate::BeginInvoke(Neuron.NeuronActor,System.AsyncCallback,System.Object)
+// 0x000007A6 System.IAsyncResult Neuron.NeuronSource/ResumeActorDelegate::BeginInvoke(Neuron.NeuronActor,System.AsyncCallback,System.Object)
 extern void ResumeActorDelegate_BeginInvoke_m9F62B72D0B286A2CFEF7316202F351D82F030E8B (void);
-// 0x00000779 System.Void Neuron.NeuronSource/ResumeActorDelegate::EndInvoke(System.IAsyncResult)
+// 0x000007A7 System.Void Neuron.NeuronSource/ResumeActorDelegate::EndInvoke(System.IAsyncResult)
 extern void ResumeActorDelegate_EndInvoke_m11CD0009F1EC0C4E9BD3F972A98CB3D88A81EBA0 (void);
-// 0x0000077A System.Void Neuron.NeuronSource/SuspendActorDelegate::.ctor(System.Object,System.IntPtr)
+// 0x000007A8 System.Void Neuron.NeuronSource/SuspendActorDelegate::.ctor(System.Object,System.IntPtr)
 extern void SuspendActorDelegate__ctor_m74800390F796CB4DA0BDCD9BBD916CF6379CD492 (void);
-// 0x0000077B System.Void Neuron.NeuronSource/SuspendActorDelegate::Invoke(Neuron.NeuronActor)
+// 0x000007A9 System.Void Neuron.NeuronSource/SuspendActorDelegate::Invoke(Neuron.NeuronActor)
 extern void SuspendActorDelegate_Invoke_mBA67447BA28BA2E73A4C1AB400F537246FA10E2A (void);
-// 0x0000077C System.IAsyncResult Neuron.NeuronSource/SuspendActorDelegate::BeginInvoke(Neuron.NeuronActor,System.AsyncCallback,System.Object)
+// 0x000007AA System.IAsyncResult Neuron.NeuronSource/SuspendActorDelegate::BeginInvoke(Neuron.NeuronActor,System.AsyncCallback,System.Object)
 extern void SuspendActorDelegate_BeginInvoke_m2D78A6200BB581CB7EE30CDEF4970623A2C177D7 (void);
-// 0x0000077D System.Void Neuron.NeuronSource/SuspendActorDelegate::EndInvoke(System.IAsyncResult)
+// 0x000007AB System.Void Neuron.NeuronSource/SuspendActorDelegate::EndInvoke(System.IAsyncResult)
 extern void SuspendActorDelegate_EndInvoke_mBD113041D7A1F618C18C0D99526CC9F6D7CDD3B1 (void);
-// 0x0000077E System.Void Neuron.NeuronSourceManager::ToggleConnect()
+// 0x000007AC System.Void Neuron.NeuronSourceManager::ToggleConnect()
 extern void NeuronSourceManager_ToggleConnect_m3C83BBC7D22C48184B3EDD275366961CA81A21DC (void);
-// 0x0000077F System.Int32 Neuron.NeuronSourceManager::GetPortByConnectionType()
+// 0x000007AD System.Int32 Neuron.NeuronSourceManager::GetPortByConnectionType()
 extern void NeuronSourceManager_GetPortByConnectionType_mE0610F721B96BA6D56345A6FD6CCE8F62E5A1386 (void);
-// 0x00000780 System.Boolean Neuron.NeuronSourceManager::Connect()
+// 0x000007AE System.Boolean Neuron.NeuronSourceManager::Connect()
 extern void NeuronSourceManager_Connect_mBB8690DE29671FC728B24782C6415E573115A242 (void);
-// 0x00000781 System.Void Neuron.NeuronSourceManager::Disconnect()
+// 0x000007AF System.Void Neuron.NeuronSourceManager::Disconnect()
 extern void NeuronSourceManager_Disconnect_mC90BFADBD6824D2C8EC714E193519945DC40010F (void);
-// 0x00000782 System.Void Neuron.NeuronSourceManager::Start()
+// 0x000007B0 System.Void Neuron.NeuronSourceManager::Start()
 extern void NeuronSourceManager_Start_m3103AA9616D8CC6C5883B55331A03233B6D12A6E (void);
-// 0x00000783 System.Void Neuron.NeuronSourceManager::OnDestroy()
+// 0x000007B1 System.Void Neuron.NeuronSourceManager::OnDestroy()
 extern void NeuronSourceManager_OnDestroy_mF43E8EF85C7C424C36E6BA63EF2B310F43FB56B6 (void);
-// 0x00000784 System.Void Neuron.NeuronSourceManager::Update()
+// 0x000007B2 System.Void Neuron.NeuronSourceManager::Update()
 extern void NeuronSourceManager_Update_mB649FDE3752156222B7E0868EC67765F88EB5550 (void);
-// 0x00000785 System.Void Neuron.NeuronSourceManager::.ctor()
+// 0x000007B3 System.Void Neuron.NeuronSourceManager::.ctor()
 extern void NeuronSourceManager__ctor_mC571F3DD73428FAA3B19BCBAD647134F501C3F64 (void);
-// 0x00000786 System.Void Neuron.NeuronTracker::OnEnable()
+// 0x000007B4 System.Void Neuron.NeuronTracker::OnEnable()
 extern void NeuronTracker_OnEnable_mF0CC2B9B5B61E2DAB486C15F1B464755BC826B91 (void);
-// 0x00000787 System.Void Neuron.NeuronTracker::Update()
+// 0x000007B5 System.Void Neuron.NeuronTracker::Update()
 extern void NeuronTracker_Update_mEE1689C2943B3BD11C1E099BBAA03B5C8D1B9163 (void);
-// 0x00000788 System.Void Neuron.NeuronTracker::ApplyMotion(UnityEngine.Transform,System.String)
+// 0x000007B6 System.Void Neuron.NeuronTracker::ApplyMotion(UnityEngine.Transform,System.String)
 extern void NeuronTracker_ApplyMotion_mB725714B7DC73E5B02FE484C41F2BB93587E08BB (void);
-// 0x00000789 System.Void Neuron.NeuronTracker::.ctor()
+// 0x000007B7 System.Void Neuron.NeuronTracker::.ctor()
 extern void NeuronTracker__ctor_mE1B3D7B9EC05658F9725E0816CD0ECA52073554A (void);
-// 0x0000078A System.Boolean Neuron.NeuronTransformsInstance::get_boundTransforms()
+// 0x000007B8 System.Boolean Neuron.NeuronTransformsInstance::get_boundTransforms()
 extern void NeuronTransformsInstance_get_boundTransforms_m17127DF9A79CAF16E143B95976E79866D3C86FC1 (void);
-// 0x0000078B System.Void Neuron.NeuronTransformsInstance::set_boundTransforms(System.Boolean)
+// 0x000007B9 System.Void Neuron.NeuronTransformsInstance::set_boundTransforms(System.Boolean)
 extern void NeuronTransformsInstance_set_boundTransforms_mA29D56D21C4A3D8224AA17366BC66B7A08B3F053 (void);
-// 0x0000078C System.Void Neuron.NeuronTransformsInstance::OnEnable()
+// 0x000007BA System.Void Neuron.NeuronTransformsInstance::OnEnable()
 extern void NeuronTransformsInstance_OnEnable_mB6E2CE9AB9A751A275ADBD889FF5D94281E0EC76 (void);
-// 0x0000078D System.Void Neuron.NeuronTransformsInstance::Update()
+// 0x000007BB System.Void Neuron.NeuronTransformsInstance::Update()
 extern void NeuronTransformsInstance_Update_m8E9C16FE0DCEACAFC02BF5287C9CAD81CE35D994 (void);
-// 0x0000078E System.Void Neuron.NeuronTransformsInstance::FixedUpdate()
+// 0x000007BC System.Void Neuron.NeuronTransformsInstance::FixedUpdate()
 extern void NeuronTransformsInstance_FixedUpdate_m2851A11995CC2A5B11EFD4B94B5F885B91935D8B (void);
-// 0x0000078F UnityEngine.Transform[] Neuron.NeuronTransformsInstance::GetTransforms()
+// 0x000007BD UnityEngine.Transform[] Neuron.NeuronTransformsInstance::GetTransforms()
 extern void NeuronTransformsInstance_GetTransforms_m0CA9DA1E0AAD0B3FF0966143AD1463A8DD6A7EBC (void);
-// 0x00000790 System.Boolean Neuron.NeuronTransformsInstance::ValidateVector3(UnityEngine.Vector3)
+// 0x000007BE System.Boolean Neuron.NeuronTransformsInstance::ValidateVector3(UnityEngine.Vector3)
 extern void NeuronTransformsInstance_ValidateVector3_mF2B284716BB0D34C51F8C71E4FE5FA24D816E4E6 (void);
-// 0x00000791 System.Void Neuron.NeuronTransformsInstance::SetPosition(UnityEngine.Transform[],Neuron.NeuronBones,UnityEngine.Vector3,System.Boolean)
+// 0x000007BF System.Void Neuron.NeuronTransformsInstance::SetPosition(UnityEngine.Transform[],Neuron.NeuronBones,UnityEngine.Vector3,System.Boolean)
 extern void NeuronTransformsInstance_SetPosition_m180989D116D99DA083AAE8CC15F1E81BEC44DA15 (void);
-// 0x00000792 System.Void Neuron.NeuronTransformsInstance::SetRotation(UnityEngine.Transform[],Neuron.NeuronBones,UnityEngine.Vector3)
+// 0x000007C0 System.Void Neuron.NeuronTransformsInstance::SetRotation(UnityEngine.Transform[],Neuron.NeuronBones,UnityEngine.Vector3)
 extern void NeuronTransformsInstance_SetRotation_m74F216FF9FEC323A35059A6E08C6412EB8A52256 (void);
-// 0x00000793 System.Void Neuron.NeuronTransformsInstance::ApplyMotion(Neuron.NeuronActor,UnityEngine.Transform[],UnityEngine.Vector3[],UnityEngine.Vector3[],System.Boolean,UnityEngine.Quaternion[],UnityEngine.Quaternion[],UnityEngine.Vector3[])
+// 0x000007C1 System.Void Neuron.NeuronTransformsInstance::ApplyMotion(Neuron.NeuronActor,UnityEngine.Transform[],UnityEngine.Vector3[],UnityEngine.Vector3[],System.Boolean,UnityEngine.Quaternion[],UnityEngine.Quaternion[],UnityEngine.Vector3[])
 extern void NeuronTransformsInstance_ApplyMotion_m875D44FCE2362017BC6E648A18C1C518EECD736B (void);
-// 0x00000794 System.Void Neuron.NeuronTransformsInstance::ApplyMotionPhysically(UnityEngine.Transform[],UnityEngine.Transform[])
+// 0x000007C2 System.Void Neuron.NeuronTransformsInstance::ApplyMotionPhysically(UnityEngine.Transform[],UnityEngine.Transform[])
 extern void NeuronTransformsInstance_ApplyMotionPhysically_mE2C949675E5577CD994A7019198CB159E5AFB837 (void);
-// 0x00000795 System.Void Neuron.NeuronTransformsInstance::ApplyVelocity(UnityEngine.Rigidbody,UnityEngine.Vector3,UnityEngine.Vector3)
+// 0x000007C3 System.Void Neuron.NeuronTransformsInstance::ApplyVelocity(UnityEngine.Rigidbody,UnityEngine.Vector3,UnityEngine.Vector3)
 extern void NeuronTransformsInstance_ApplyVelocity_mA9CAB365E09D4E1BB2B3D5BE4BD1CD3EECB98A38 (void);
-// 0x00000796 System.Boolean Neuron.NeuronTransformsInstance::Bind(UnityEngine.Transform,System.String)
+// 0x000007C4 System.Boolean Neuron.NeuronTransformsInstance::Bind(UnityEngine.Transform,System.String)
 extern void NeuronTransformsInstance_Bind_mAF35546AA60C9F94541954A363235F456D98455D (void);
-// 0x00000797 System.Void Neuron.NeuronTransformsInstance::InitPhysicalContext()
+// 0x000007C5 System.Void Neuron.NeuronTransformsInstance::InitPhysicalContext()
 extern void NeuronTransformsInstance_InitPhysicalContext_m84D900A1711DFEF0C0DC9C80DF80B9263DF1B1BA (void);
-// 0x00000798 System.Void Neuron.NeuronTransformsInstance::ReleasePhysicalContext()
+// 0x000007C6 System.Void Neuron.NeuronTransformsInstance::ReleasePhysicalContext()
 extern void NeuronTransformsInstance_ReleasePhysicalContext_mA1DD733BF464DB3553A50E937A07F56F0F87EE7B (void);
-// 0x00000799 System.Void Neuron.NeuronTransformsInstance::UpdateOffset()
+// 0x000007C7 System.Void Neuron.NeuronTransformsInstance::UpdateOffset()
 extern void NeuronTransformsInstance_UpdateOffset_m8672A62878638BF24AD268AEAA4C3B210A9E67BC (void);
-// 0x0000079A System.Void Neuron.NeuronTransformsInstance::CaluateOrignalRot()
+// 0x000007C8 System.Void Neuron.NeuronTransformsInstance::CaluateOrignalRot()
 extern void NeuronTransformsInstance_CaluateOrignalRot_m4FFDF0654ADAC8FA994125CA7A849C52F0D5B800 (void);
-// 0x0000079B System.Void Neuron.NeuronTransformsInstance::CheckRigidbodySettings()
+// 0x000007C9 System.Void Neuron.NeuronTransformsInstance::CheckRigidbodySettings()
 extern void NeuronTransformsInstance_CheckRigidbodySettings_m6EBE22E59DE8F14C4B60F9A7690F7B8B83408D27 (void);
-// 0x0000079C System.Void Neuron.NeuronTransformsInstance::.ctor()
+// 0x000007CA System.Void Neuron.NeuronTransformsInstance::.ctor()
 extern void NeuronTransformsInstance__ctor_mBF888813CC9FBB44A2F54F9CBBB9C434CEDA1F7F (void);
-// 0x0000079D System.Boolean Neuron.NeuronTransformsPhysicalReference::Init(UnityEngine.Transform,System.String,UnityEngine.Transform[],UnityEngine.Transform)
+// 0x000007CB System.Boolean Neuron.NeuronTransformsPhysicalReference::Init(UnityEngine.Transform,System.String,UnityEngine.Transform[],UnityEngine.Transform)
 extern void NeuronTransformsPhysicalReference_Init_mF3FDDD27EC72B4DC9ADF2D0DECFCC82906F6325E (void);
-// 0x0000079E System.Void Neuron.NeuronTransformsPhysicalReference::Release()
+// 0x000007CC System.Void Neuron.NeuronTransformsPhysicalReference::Release()
 extern void NeuronTransformsPhysicalReference_Release_m1775E37C3778A67EE002C12A758990BC468773FC (void);
-// 0x0000079F System.Boolean Neuron.NeuronTransformsPhysicalReference::Initiated()
+// 0x000007CD System.Boolean Neuron.NeuronTransformsPhysicalReference::Initiated()
 extern void NeuronTransformsPhysicalReference_Initiated_m0A7D90D414867109FFC1D452702FB588FBBBA4BD (void);
-// 0x000007A0 UnityEngine.GameObject Neuron.NeuronTransformsPhysicalReference::GetReferenceObject()
+// 0x000007CE UnityEngine.GameObject Neuron.NeuronTransformsPhysicalReference::GetReferenceObject()
 extern void NeuronTransformsPhysicalReference_GetReferenceObject_m1AA04A65762BE146916832EFBD8D474E7497C71C (void);
-// 0x000007A1 UnityEngine.Transform[] Neuron.NeuronTransformsPhysicalReference::GetReferenceTransforms()
+// 0x000007CF UnityEngine.Transform[] Neuron.NeuronTransformsPhysicalReference::GetReferenceTransforms()
 extern void NeuronTransformsPhysicalReference_GetReferenceTransforms_mE835C63D86638A9A072C5CCC1FA54B081EAFFFDB (void);
-// 0x000007A2 System.Boolean Neuron.NeuronTransformsPhysicalReference::CheckRigidbodies(UnityEngine.Transform[])
+// 0x000007D0 System.Boolean Neuron.NeuronTransformsPhysicalReference::CheckRigidbodies(UnityEngine.Transform[])
 extern void NeuronTransformsPhysicalReference_CheckRigidbodies_mB106E796E0B86AE4E778190A9BF60D34ECD8E773 (void);
-// 0x000007A3 System.Void Neuron.NeuronTransformsPhysicalReference::.ctor()
+// 0x000007D1 System.Void Neuron.NeuronTransformsPhysicalReference::.ctor()
 extern void NeuronTransformsPhysicalReference__ctor_m176CF45E7E5E5A31A40A021972422790899AAA2D (void);
-// 0x000007A4 System.String Neuron.AliceMotionBindHelper::GetEnumBoneName(System.Int32,System.Boolean)
+// 0x000007D2 System.String Neuron.AliceMotionBindHelper::GetEnumBoneName(System.Int32,System.Boolean)
 extern void AliceMotionBindHelper_GetEnumBoneName_m8A546E6D8CB7AEAD23B1C0332CEB09E540DE7FFF (void);
-// 0x000007A5 System.Int32 Neuron.AliceMotionBindHelper::Bind(UnityEngine.Transform,UnityEngine.Transform[],System.String,Neuron.NeuronBoneVersion)
+// 0x000007D3 System.Int32 Neuron.AliceMotionBindHelper::Bind(UnityEngine.Transform,UnityEngine.Transform[],System.String,Neuron.NeuronBoneVersion)
 extern void AliceMotionBindHelper_Bind_mA5035605C87C39CE1A85A2BC53550570631C34C3 (void);
-// 0x000007A6 UnityEngine.Transform Neuron.AliceMotionBindHelper::FindChild(UnityEngine.Transform,System.String,System.Boolean)
+// 0x000007D4 UnityEngine.Transform Neuron.AliceMotionBindHelper::FindChild(UnityEngine.Transform,System.String,System.Boolean)
 extern void AliceMotionBindHelper_FindChild_m7C5C486FC6217F11FCACF7161ECF161331D81992 (void);
-// 0x000007A7 System.Void Neuron.BoneColliders::RemoveSkeletonColliders(UnityEngine.Animator)
+// 0x000007D5 System.Void Neuron.BoneColliders::RemoveSkeletonColliders(UnityEngine.Animator)
 extern void BoneColliders_RemoveSkeletonColliders_mA30817738D6D7439DF9B0036338A89AA8F6C036C (void);
-// 0x000007A8 System.Void Neuron.BoneColliders::RemoveSkeletonColliders(UnityEngine.Transform,System.String)
+// 0x000007D6 System.Void Neuron.BoneColliders::RemoveSkeletonColliders(UnityEngine.Transform,System.String)
 extern void BoneColliders_RemoveSkeletonColliders_m0EE212E9123D04F73FAAF35AC70DD83516FEA378 (void);
-// 0x000007A9 System.Void Neuron.BoneColliders::RemoveSkeletonColliderRenderers(UnityEngine.Animator)
+// 0x000007D7 System.Void Neuron.BoneColliders::RemoveSkeletonColliderRenderers(UnityEngine.Animator)
 extern void BoneColliders_RemoveSkeletonColliderRenderers_mB526294A1720F3F18BAE213B65D2296305C1F847 (void);
-// 0x000007AA System.Void Neuron.BoneColliders::RemoveSkeletonColliderRenderers(UnityEngine.Transform,System.String)
+// 0x000007D8 System.Void Neuron.BoneColliders::RemoveSkeletonColliderRenderers(UnityEngine.Transform,System.String)
 extern void BoneColliders_RemoveSkeletonColliderRenderers_mAA9D87940BF6F2466745991255EE3F8A3E947B55 (void);
-// 0x000007AB System.Boolean Neuron.BoneLine::get_Enabled()
+// 0x000007D9 System.Boolean Neuron.BoneLine::get_Enabled()
 extern void BoneLine_get_Enabled_mA1521DC01BA4A6F9496604C1BF9A70A9BF96F153 (void);
-// 0x000007AC System.Void Neuron.BoneLine::set_Enabled(System.Boolean)
+// 0x000007DA System.Void Neuron.BoneLine::set_Enabled(System.Boolean)
 extern void BoneLine_set_Enabled_mD1523FEFA0C167FCDBFA68F5904358C51EC33AEC (void);
-// 0x000007AD System.Void Neuron.BoneLine::AddRenderer(UnityEngine.Material,System.Single,System.Single,UnityEngine.Transform,UnityEngine.Transform)
+// 0x000007DB System.Void Neuron.BoneLine::AddRenderer(UnityEngine.Material,System.Single,System.Single,UnityEngine.Transform,UnityEngine.Transform)
 extern void BoneLine_AddRenderer_m3F55FEA19F104337E8732B5DD5C772DD98A6D7DE (void);
-// 0x000007AE System.Void Neuron.BoneLine::RemoveRenderer()
+// 0x000007DC System.Void Neuron.BoneLine::RemoveRenderer()
 extern void BoneLine_RemoveRenderer_mE2E1476DE4756367938C578B21EB2EDFC145BBFA (void);
-// 0x000007AF System.Void Neuron.BoneLine::Update()
+// 0x000007DD System.Void Neuron.BoneLine::Update()
 extern void BoneLine_Update_m84D4BC7F1E24E4502C474C21805FED91A93EDB5E (void);
-// 0x000007B0 System.Void Neuron.BoneLine::.ctor()
+// 0x000007DE System.Void Neuron.BoneLine::.ctor()
 extern void BoneLine__ctor_m66222BE62C9A4DC90CBF10248589B3AEC01B08F3 (void);
-// 0x000007B1 System.Void Neuron.BoneLines::RemoveBoneLine(UnityEngine.HumanBodyBones,Neuron.BoneLine,System.Object[])
+// 0x000007DF System.Void Neuron.BoneLines::RemoveBoneLine(UnityEngine.HumanBodyBones,Neuron.BoneLine,System.Object[])
 extern void BoneLines_RemoveBoneLine_m17E64590DDE2E407859CBC3243EDBFDB3C28E2F6 (void);
-// 0x000007B2 System.Void Neuron.BoneLines::RemoveSkeletonBoneLines(UnityEngine.Animator)
+// 0x000007E0 System.Void Neuron.BoneLines::RemoveSkeletonBoneLines(UnityEngine.Animator)
 extern void BoneLines_RemoveSkeletonBoneLines_m5B932560BFCE7E6B53064B9F46B82F647D0850A5 (void);
-// 0x000007B3 System.Void Neuron.BoneLines::RemoveBoneLineTransform(Neuron.NeuronBones,Neuron.BoneLine,System.Object[])
+// 0x000007E1 System.Void Neuron.BoneLines::RemoveBoneLineTransform(Neuron.NeuronBones,Neuron.BoneLine,System.Object[])
 extern void BoneLines_RemoveBoneLineTransform_mF8BD7B243B8506FE15CBBC06E1EAC83AC009EA86 (void);
-// 0x000007B4 System.Void Neuron.BoneLines::RemoveSkeletonBoneLines(UnityEngine.Transform,System.String)
+// 0x000007E2 System.Void Neuron.BoneLines::RemoveSkeletonBoneLines(UnityEngine.Transform,System.String)
 extern void BoneLines_RemoveSkeletonBoneLines_m54DB4881DA24D2D36BD0C58AB616422790F09E1E (void);
-// 0x000007B5 System.Void Neuron.BoneRigidbodies::AddRigidBody(UnityEngine.HumanBodyBones,UnityEngine.Rigidbody,System.Object[])
+// 0x000007E3 System.Void Neuron.BoneRigidbodies::AddRigidBody(UnityEngine.HumanBodyBones,UnityEngine.Rigidbody,System.Object[])
 extern void BoneRigidbodies_AddRigidBody_m85FB1AD306666617F3E2550FFE2E33E3F6FCCE9C (void);
-// 0x000007B6 System.Void Neuron.BoneRigidbodies::AddSkeletonRigidBodies(UnityEngine.Animator)
+// 0x000007E4 System.Void Neuron.BoneRigidbodies::AddSkeletonRigidBodies(UnityEngine.Animator)
 extern void BoneRigidbodies_AddSkeletonRigidBodies_m6CFE79872E53713D69ADC917CA638E21C6FCE484 (void);
-// 0x000007B7 System.Void Neuron.BoneRigidbodies::AddRigidBodyTransform(Neuron.NeuronBones,UnityEngine.Rigidbody,System.Object[])
+// 0x000007E5 System.Void Neuron.BoneRigidbodies::AddRigidBodyTransform(Neuron.NeuronBones,UnityEngine.Rigidbody,System.Object[])
 extern void BoneRigidbodies_AddRigidBodyTransform_mD8AFFD4ADF01972FC24375465501C4AF7A51B81E (void);
-// 0x000007B8 System.Void Neuron.BoneRigidbodies::AddSkeletonRigidBodies(UnityEngine.Transform,System.String)
+// 0x000007E6 System.Void Neuron.BoneRigidbodies::AddSkeletonRigidBodies(UnityEngine.Transform,System.String)
 extern void BoneRigidbodies_AddSkeletonRigidBodies_mE65805775291F46B66EA86AB6568B6FD5DCC97F8 (void);
-// 0x000007B9 System.Void Neuron.BoneRigidbodies::RemoveSkeletonRigidBodies(UnityEngine.Animator)
+// 0x000007E7 System.Void Neuron.BoneRigidbodies::RemoveSkeletonRigidBodies(UnityEngine.Animator)
 extern void BoneRigidbodies_RemoveSkeletonRigidBodies_m23B7A83B48346377FF376CD74BAEF55DE563EE52 (void);
-// 0x000007BA System.Void Neuron.BoneRigidbodies::RemoveSkeletonRigidBodies(UnityEngine.Transform,System.String)
+// 0x000007E8 System.Void Neuron.BoneRigidbodies::RemoveSkeletonRigidBodies(UnityEngine.Transform,System.String)
 extern void BoneRigidbodies_RemoveSkeletonRigidBodies_mEC342E32C3328B73A7538A512F36283602399C4F (void);
-// 0x000007BB System.Void Neuron.BoneRigidbodies::.cctor()
+// 0x000007E9 System.Void Neuron.BoneRigidbodies::.cctor()
 extern void BoneRigidbodies__cctor_mF259A5F87F05E04EEA02D8AD3FEEAED938010CCA (void);
-// 0x000007BC System.Single Neuron.FPSCounter::get_FPS()
+// 0x000007EA System.Single Neuron.FPSCounter::get_FPS()
 extern void FPSCounter_get_FPS_m9403379F03E76EC6323B6254B405BB7829D03E6E (void);
-// 0x000007BD System.Void Neuron.FPSCounter::set_FPS(System.Single)
+// 0x000007EB System.Void Neuron.FPSCounter::set_FPS(System.Single)
 extern void FPSCounter_set_FPS_m4441F9E3A90D52B7CB62A372FE8B39F8FEA1A362 (void);
-// 0x000007BE System.Void Neuron.FPSCounter::Start()
+// 0x000007EC System.Void Neuron.FPSCounter::Start()
 extern void FPSCounter_Start_m5CDCB8FBE71BC28749A2C46195409C4513FDEF5A (void);
-// 0x000007BF System.Void Neuron.FPSCounter::Update()
+// 0x000007ED System.Void Neuron.FPSCounter::Update()
 extern void FPSCounter_Update_m1BBD0E6F2B36D538AA533907EF27989F013DC38A (void);
-// 0x000007C0 System.Void Neuron.FPSCounter::toggleMode()
+// 0x000007EE System.Void Neuron.FPSCounter::toggleMode()
 extern void FPSCounter_toggleMode_m2E9583126EDF0F79EE32368693FE5DA6B88999A0 (void);
-// 0x000007C1 System.Void Neuron.FPSCounter::.ctor()
+// 0x000007EF System.Void Neuron.FPSCounter::.ctor()
 extern void FPSCounter__ctor_mA23B0F2C1E1224741D7C06EA2F20D312A9BBF3C7 (void);
-// 0x000007C2 System.Void MocapApi.InterfaceNotFountException::.ctor(System.String)
+// 0x000007F0 System.Void MocapApi.InterfaceNotFountException::.ctor(System.String)
 extern void InterfaceNotFountException__ctor_m7F7767C436D41A5F717AD01AC41EEC50DE97DD46 (void);
-// 0x000007C3 MocapApi.IMCPRigidBody MocapApi.IMCPRigidBody::get_RigidBody()
+// 0x000007F1 MocapApi.IMCPRigidBody MocapApi.IMCPRigidBody::get_RigidBody()
 extern void IMCPRigidBody_get_RigidBody_mDA6A2F5687E1FB943DA5A083A9D6AF12904001DD (void);
-// 0x000007C4 MocapApi.EMCPError MocapApi.IMCPRigidBody::GetRigidBodyRotation(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x000007F2 MocapApi.EMCPError MocapApi.IMCPRigidBody::GetRigidBodyRotation(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void IMCPRigidBody_GetRigidBodyRotation_m1750019C68D08426E500FF0304ADF82F779583EB (void);
-// 0x000007C5 MocapApi.EMCPError MocapApi.IMCPRigidBody::GetRigidBodyPosition(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x000007F3 MocapApi.EMCPError MocapApi.IMCPRigidBody::GetRigidBodyPosition(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void IMCPRigidBody_GetRigidBodyPosition_m5DD6A0DF4E00D7B4F2976324A02DE358912EC6F6 (void);
-// 0x000007C6 MocapApi.EMCPError MocapApi.IMCPRigidBody::GetRigidBodyStatus(System.Int32&,System.UInt64)
+// 0x000007F4 MocapApi.EMCPError MocapApi.IMCPRigidBody::GetRigidBodyStatus(System.Int32&,System.UInt64)
 extern void IMCPRigidBody_GetRigidBodyStatus_m32CED968DEDEDFA466D95D47B3673D51C6489340 (void);
-// 0x000007C7 MocapApi.EMCPError MocapApi.IMCPRigidBody::GetRigidBodyId(System.Int32&,System.UInt64)
+// 0x000007F5 MocapApi.EMCPError MocapApi.IMCPRigidBody::GetRigidBodyId(System.Int32&,System.UInt64)
 extern void IMCPRigidBody_GetRigidBodyId_m52297DA43FAA125A6CF9EC1FCA743647F6B8BB94 (void);
-// 0x000007C8 MocapApi.EMCPError MocapApi.IMCPRigidBody::GetRigidBodyJointTag(MocapApi.EMCPJointTag&,System.UInt64)
+// 0x000007F6 MocapApi.EMCPError MocapApi.IMCPRigidBody::GetRigidBodyJointTag(MocapApi.EMCPJointTag&,System.UInt64)
 extern void IMCPRigidBody_GetRigidBodyJointTag_m96E40220BE366E8561B5671A1219F459BEF81B14 (void);
-// 0x000007C9 System.Void MocapApi.IMCPRigidBody::.ctor()
+// 0x000007F7 System.Void MocapApi.IMCPRigidBody::.ctor()
 extern void IMCPRigidBody__ctor_m81117C636BFD0CF6D1B49B6228B4D5C89FC242DA (void);
-// 0x000007CA System.Void MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyRotation::.ctor(System.Object,System.IntPtr)
+// 0x000007F8 System.Void MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyRotation::.ctor(System.Object,System.IntPtr)
 extern void _GetRigidBodyRotation__ctor_m9945397E55BBD57839B5C597FB1E558248EF1C8A (void);
-// 0x000007CB MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyRotation::Invoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x000007F9 MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyRotation::Invoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void _GetRigidBodyRotation_Invoke_mB2ABD8CFC69FF96B8119FABC7F36D1E2F97E78CE (void);
-// 0x000007CC System.IAsyncResult MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyRotation::BeginInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000007FA System.IAsyncResult MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyRotation::BeginInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetRigidBodyRotation_BeginInvoke_m7DA682AFAB1887BE4DF9829DD11647AC6F93F32B (void);
-// 0x000007CD MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyRotation::EndInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x000007FB MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyRotation::EndInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetRigidBodyRotation_EndInvoke_m3157D0F2ED6AF2FA827F3FD28D14EE5F24EF6E07 (void);
-// 0x000007CE System.Void MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyPosition::.ctor(System.Object,System.IntPtr)
+// 0x000007FC System.Void MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyPosition::.ctor(System.Object,System.IntPtr)
 extern void _GetRigidBodyPosition__ctor_m8A9D4E8907B7E48FCECF6651E332C574AAB3394D (void);
-// 0x000007CF MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyPosition::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x000007FD MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyPosition::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void _GetRigidBodyPosition_Invoke_mE6B4B0616BE34E8FF5F966259FD6B6C55A2A4965 (void);
-// 0x000007D0 System.IAsyncResult MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyPosition::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000007FE System.IAsyncResult MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyPosition::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetRigidBodyPosition_BeginInvoke_m4B4FCCA09A154490031BDD13535F3E5DF6C5A9C2 (void);
-// 0x000007D1 MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyPosition::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x000007FF MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyPosition::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetRigidBodyPosition_EndInvoke_m3DF67B12A60DA4B11B3A37B053BB6AA4E422DDFA (void);
-// 0x000007D2 System.Void MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyStatus::.ctor(System.Object,System.IntPtr)
+// 0x00000800 System.Void MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyStatus::.ctor(System.Object,System.IntPtr)
 extern void _GetRigidBodyStatus__ctor_mB6829A2F9FC947AEAE26532B14F5608DB0290C88 (void);
-// 0x000007D3 MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyStatus::Invoke(System.Int32&,System.UInt64)
+// 0x00000801 MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyStatus::Invoke(System.Int32&,System.UInt64)
 extern void _GetRigidBodyStatus_Invoke_m37C67D3D855634E2CA93E21F8701979728D75DC2 (void);
-// 0x000007D4 System.IAsyncResult MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyStatus::BeginInvoke(System.Int32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000802 System.IAsyncResult MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyStatus::BeginInvoke(System.Int32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetRigidBodyStatus_BeginInvoke_m13C15A2AFC6F2E90A6F7A6A8EC70E162ABB51851 (void);
-// 0x000007D5 MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyStatus::EndInvoke(System.Int32&,System.IAsyncResult)
+// 0x00000803 MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyStatus::EndInvoke(System.Int32&,System.IAsyncResult)
 extern void _GetRigidBodyStatus_EndInvoke_mFD1578E339E041E6D98DB8F5FC5F344854794EE7 (void);
-// 0x000007D6 System.Void MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyId::.ctor(System.Object,System.IntPtr)
+// 0x00000804 System.Void MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyId::.ctor(System.Object,System.IntPtr)
 extern void _GetRigidBodyId__ctor_m32BABE1E9CAEE2CA1370EFDDD159260F7EA8834F (void);
-// 0x000007D7 MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyId::Invoke(System.Int32&,System.UInt64)
+// 0x00000805 MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyId::Invoke(System.Int32&,System.UInt64)
 extern void _GetRigidBodyId_Invoke_mBD2357745FF851548D4DDCB70D6566B5B9581997 (void);
-// 0x000007D8 System.IAsyncResult MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyId::BeginInvoke(System.Int32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000806 System.IAsyncResult MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyId::BeginInvoke(System.Int32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetRigidBodyId_BeginInvoke_m8DBCCB4FE2F247BC96FA6A06A9DD593EBCDF3C28 (void);
-// 0x000007D9 MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyId::EndInvoke(System.Int32&,System.IAsyncResult)
+// 0x00000807 MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyId::EndInvoke(System.Int32&,System.IAsyncResult)
 extern void _GetRigidBodyId_EndInvoke_m1D9230130491B2977BE0AB3A9DC32C9ACF5AF5EB (void);
-// 0x000007DA System.Void MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyJointTag::.ctor(System.Object,System.IntPtr)
+// 0x00000808 System.Void MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyJointTag::.ctor(System.Object,System.IntPtr)
 extern void _GetRigidBodyJointTag__ctor_mBD2B8CA6312832BFF9A26B09D7D7E83BDF9C5FC2 (void);
-// 0x000007DB MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyJointTag::Invoke(MocapApi.EMCPJointTag&,System.UInt64)
+// 0x00000809 MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyJointTag::Invoke(MocapApi.EMCPJointTag&,System.UInt64)
 extern void _GetRigidBodyJointTag_Invoke_mE79ADEB264A76A2B7CB2FA9E217A43A48CC55C75 (void);
-// 0x000007DC System.IAsyncResult MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyJointTag::BeginInvoke(MocapApi.EMCPJointTag&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000080A System.IAsyncResult MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyJointTag::BeginInvoke(MocapApi.EMCPJointTag&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetRigidBodyJointTag_BeginInvoke_m947E0D29E7F5F1F63E5BC7D9861D8DB02C5D2573 (void);
-// 0x000007DD MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyJointTag::EndInvoke(MocapApi.EMCPJointTag&,System.IAsyncResult)
+// 0x0000080B MocapApi.EMCPError MocapApi.IMCPRigidBody/MCPRigidBody_ProcTable/_GetRigidBodyJointTag::EndInvoke(MocapApi.EMCPJointTag&,System.IAsyncResult)
 extern void _GetRigidBodyJointTag_EndInvoke_mD24AAD155580C2FA5D3E69827170174209D59FE1 (void);
-// 0x000007DE MocapApi.IMCPTracker MocapApi.IMCPTracker::get_Tracker()
+// 0x0000080C MocapApi.IMCPTracker MocapApi.IMCPTracker::get_Tracker()
 extern void IMCPTracker_get_Tracker_m0FA585F939B0144C4207CB17DC54DB592676D940 (void);
-// 0x000007DF MocapApi.EMCPError MocapApi.IMCPTracker::SendMessageData(System.String,System.Int32,System.UInt64)
+// 0x0000080D MocapApi.EMCPError MocapApi.IMCPTracker::SendMessageData(System.String,System.Int32,System.UInt64)
 extern void IMCPTracker_SendMessageData_mEBE0E0FD50CEC8E328773B145BC6402D9F8AB32C (void);
-// 0x000007E0 MocapApi.EMCPError MocapApi.IMCPTracker::GetTrackerRotation(System.Single&,System.Single&,System.Single&,System.Single&,System.String,System.UInt64)
+// 0x0000080E MocapApi.EMCPError MocapApi.IMCPTracker::GetTrackerRotation(System.Single&,System.Single&,System.Single&,System.Single&,System.String,System.UInt64)
 extern void IMCPTracker_GetTrackerRotation_m56B1C0F7D9C51084DBDE5074C7FF962EE196A51D (void);
-// 0x000007E1 MocapApi.EMCPError MocapApi.IMCPTracker::GetTrackerPosition(System.Single&,System.Single&,System.Single&,System.String,System.UInt64)
+// 0x0000080F MocapApi.EMCPError MocapApi.IMCPTracker::GetTrackerPosition(System.Single&,System.Single&,System.Single&,System.String,System.UInt64)
 extern void IMCPTracker_GetTrackerPosition_m4980ADC9F148FAA22227C48B82CEDAC3972C2FEC (void);
-// 0x000007E2 MocapApi.EMCPError MocapApi.IMCPTracker::GetTrackerEulerAng(System.Single&,System.Single&,System.Single&,System.String,System.UInt64)
+// 0x00000810 MocapApi.EMCPError MocapApi.IMCPTracker::GetTrackerEulerAng(System.Single&,System.Single&,System.Single&,System.String,System.UInt64)
 extern void IMCPTracker_GetTrackerEulerAng_m91D8A1AE29A2021CDABDCCFB7C0938FB251A8A6F (void);
-// 0x000007E3 MocapApi.EMCPError MocapApi.IMCPTracker::GetDeviceCount(System.Int32&,System.UInt64)
+// 0x00000811 MocapApi.EMCPError MocapApi.IMCPTracker::GetDeviceCount(System.Int32&,System.UInt64)
 extern void IMCPTracker_GetDeviceCount_mD215E14AAFD479633089AC076D9F18B6D2458C40 (void);
-// 0x000007E4 MocapApi.EMCPError MocapApi.IMCPTracker::GetDeviceName(System.Int32,System.String&,System.UInt64)
+// 0x00000812 MocapApi.EMCPError MocapApi.IMCPTracker::GetDeviceName(System.Int32,System.String&,System.UInt64)
 extern void IMCPTracker_GetDeviceName_m078B6A028D38633413A2CB3B12CEE679C49EAF5C (void);
-// 0x000007E5 MocapApi.EMCPError MocapApi.IMCPTracker::GetDeviceName(System.Int32,System.IntPtr&,System.UInt64)
+// 0x00000813 MocapApi.EMCPError MocapApi.IMCPTracker::GetDeviceName(System.Int32,System.IntPtr&,System.UInt64)
 extern void IMCPTracker_GetDeviceName_mF245C98D7C94A12F5C804253FB8250AD79A3E0D9 (void);
-// 0x000007E6 System.Void MocapApi.IMCPTracker::.ctor()
+// 0x00000814 System.Void MocapApi.IMCPTracker::.ctor()
 extern void IMCPTracker__ctor_m6A2904D237A571BBB91034991C2E8454B1ABDEE3 (void);
-// 0x000007E7 System.Void MocapApi.IMCPTracker/MCPTracker_ProcTable/_SendMessageData::.ctor(System.Object,System.IntPtr)
+// 0x00000815 System.Void MocapApi.IMCPTracker/MCPTracker_ProcTable/_SendMessageData::.ctor(System.Object,System.IntPtr)
 extern void _SendMessageData__ctor_m1D5FDBA2CC70CACB801234A57FA29C2144B488E4 (void);
-// 0x000007E8 MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_SendMessageData::Invoke(System.String,System.Int32,System.UInt64)
+// 0x00000816 MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_SendMessageData::Invoke(System.String,System.Int32,System.UInt64)
 extern void _SendMessageData_Invoke_m48A92DC974181EBA36B0E8047F7CE351B77505C4 (void);
-// 0x000007E9 System.IAsyncResult MocapApi.IMCPTracker/MCPTracker_ProcTable/_SendMessageData::BeginInvoke(System.String,System.Int32,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000817 System.IAsyncResult MocapApi.IMCPTracker/MCPTracker_ProcTable/_SendMessageData::BeginInvoke(System.String,System.Int32,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SendMessageData_BeginInvoke_m1996F338BFA4A011CD56F178A72E7A2D28127510 (void);
-// 0x000007EA MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_SendMessageData::EndInvoke(System.IAsyncResult)
+// 0x00000818 MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_SendMessageData::EndInvoke(System.IAsyncResult)
 extern void _SendMessageData_EndInvoke_m43525BD3D0CE98483C1591E421FC6300EB9D64E2 (void);
-// 0x000007EB System.Void MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerRotation::.ctor(System.Object,System.IntPtr)
+// 0x00000819 System.Void MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerRotation::.ctor(System.Object,System.IntPtr)
 extern void _GetTrackerRotation__ctor_m4A5CE0AD1E9DC0CCBD1E2C0E8E0AE3B1018FFE37 (void);
-// 0x000007EC MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerRotation::Invoke(System.Single&,System.Single&,System.Single&,System.Single&,System.String,System.UInt64)
+// 0x0000081A MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerRotation::Invoke(System.Single&,System.Single&,System.Single&,System.Single&,System.String,System.UInt64)
 extern void _GetTrackerRotation_Invoke_m7B771AEA38A26A402ADC5DE0959B385B3852D807 (void);
-// 0x000007ED System.IAsyncResult MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerRotation::BeginInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.String,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000081B System.IAsyncResult MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerRotation::BeginInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.String,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetTrackerRotation_BeginInvoke_m873154E5496BF4007F1AB6BA1C6B1127F0F62CC0 (void);
-// 0x000007EE MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerRotation::EndInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x0000081C MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerRotation::EndInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetTrackerRotation_EndInvoke_mC6023A179225EF760CB0D36E5F110698F3AB76D1 (void);
-// 0x000007EF System.Void MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerPosition::.ctor(System.Object,System.IntPtr)
+// 0x0000081D System.Void MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerPosition::.ctor(System.Object,System.IntPtr)
 extern void _GetTrackerPosition__ctor_mCD6C7E6729B0F4AE3983FABA4B360500149EC02D (void);
-// 0x000007F0 MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerPosition::Invoke(System.Single&,System.Single&,System.Single&,System.String,System.UInt64)
+// 0x0000081E MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerPosition::Invoke(System.Single&,System.Single&,System.Single&,System.String,System.UInt64)
 extern void _GetTrackerPosition_Invoke_m6D75BE94D77F5A763DDAEFB5AD7B2CEE804E5DD5 (void);
-// 0x000007F1 System.IAsyncResult MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerPosition::BeginInvoke(System.Single&,System.Single&,System.Single&,System.String,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000081F System.IAsyncResult MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerPosition::BeginInvoke(System.Single&,System.Single&,System.Single&,System.String,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetTrackerPosition_BeginInvoke_m7E422BF08FF4138FCA100F971400ECB9E2F36DCE (void);
-// 0x000007F2 MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerPosition::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x00000820 MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerPosition::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetTrackerPosition_EndInvoke_m6BBF4413124D65FF5D298C62D15A0D012BEBFDB2 (void);
-// 0x000007F3 System.Void MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerEulerAng::.ctor(System.Object,System.IntPtr)
+// 0x00000821 System.Void MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerEulerAng::.ctor(System.Object,System.IntPtr)
 extern void _GetTrackerEulerAng__ctor_m7A8622D71F652C338811C1D780ACD4DA3D8173B7 (void);
-// 0x000007F4 MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerEulerAng::Invoke(System.Single&,System.Single&,System.Single&,System.String,System.UInt64)
+// 0x00000822 MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerEulerAng::Invoke(System.Single&,System.Single&,System.Single&,System.String,System.UInt64)
 extern void _GetTrackerEulerAng_Invoke_m4BF5EDD0D73D40B0B8210F7EB13B5A4D1289D8EE (void);
-// 0x000007F5 System.IAsyncResult MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerEulerAng::BeginInvoke(System.Single&,System.Single&,System.Single&,System.String,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000823 System.IAsyncResult MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerEulerAng::BeginInvoke(System.Single&,System.Single&,System.Single&,System.String,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetTrackerEulerAng_BeginInvoke_m41BC983F90EC3CEAED534B4A24729DA2DE133B98 (void);
-// 0x000007F6 MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerEulerAng::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x00000824 MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetTrackerEulerAng::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetTrackerEulerAng_EndInvoke_mD098F2AF62FDA75FBB74AFD6F525F4ABFF5AAF65 (void);
-// 0x000007F7 System.Void MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceCount::.ctor(System.Object,System.IntPtr)
+// 0x00000825 System.Void MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceCount::.ctor(System.Object,System.IntPtr)
 extern void _GetDeviceCount__ctor_mE19A4381B2A6BC38A2F6831A720F360B42BB8F08 (void);
-// 0x000007F8 MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceCount::Invoke(System.Int32&,System.UInt64)
+// 0x00000826 MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceCount::Invoke(System.Int32&,System.UInt64)
 extern void _GetDeviceCount_Invoke_m9907D7DDFFE24110FDFDF32DC88775CB7F9715B8 (void);
-// 0x000007F9 System.IAsyncResult MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceCount::BeginInvoke(System.Int32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000827 System.IAsyncResult MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceCount::BeginInvoke(System.Int32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetDeviceCount_BeginInvoke_m7B30B77A74EAF493BF1E77471EFC638F643C66F3 (void);
-// 0x000007FA MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceCount::EndInvoke(System.Int32&,System.IAsyncResult)
+// 0x00000828 MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceCount::EndInvoke(System.Int32&,System.IAsyncResult)
 extern void _GetDeviceCount_EndInvoke_m8017723A48D0BEC97F364939EC8DCDE2E2D62193 (void);
-// 0x000007FB System.Void MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceName::.ctor(System.Object,System.IntPtr)
+// 0x00000829 System.Void MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceName::.ctor(System.Object,System.IntPtr)
 extern void _GetDeviceName__ctor_m41FE814BDBB0254144FBE167C2B50890DA6F6C01 (void);
-// 0x000007FC MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceName::Invoke(System.Int32,System.IntPtr&,System.UInt64)
+// 0x0000082A MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceName::Invoke(System.Int32,System.IntPtr&,System.UInt64)
 extern void _GetDeviceName_Invoke_m3299136575FEAC907AA97FB9DBDBCD2767482ED3 (void);
-// 0x000007FD System.IAsyncResult MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceName::BeginInvoke(System.Int32,System.IntPtr&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000082B System.IAsyncResult MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceName::BeginInvoke(System.Int32,System.IntPtr&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetDeviceName_BeginInvoke_mA6E68FA1A02732C011CA861BD00FB3E91D78761A (void);
-// 0x000007FE MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceName::EndInvoke(System.IntPtr&,System.IAsyncResult)
+// 0x0000082C MocapApi.EMCPError MocapApi.IMCPTracker/MCPTracker_ProcTable/_GetDeviceName::EndInvoke(System.IntPtr&,System.IAsyncResult)
 extern void _GetDeviceName_EndInvoke_mC7E5848C0215E6F72755337680BBC3C16B438319 (void);
-// 0x000007FF MocapApi.IMCPSensorModule MocapApi.IMCPSensorModule::get_SensorModule()
+// 0x0000082D MocapApi.IMCPSensorModule MocapApi.IMCPSensorModule::get_SensorModule()
 extern void IMCPSensorModule_get_SensorModule_m742024EB1C97191E0E6256EADF13C97FC74227BC (void);
-// 0x00000800 MocapApi.EMCPError MocapApi.IMCPSensorModule::GetSensorModulePosture(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x0000082E MocapApi.EMCPError MocapApi.IMCPSensorModule::GetSensorModulePosture(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void IMCPSensorModule_GetSensorModulePosture_mC2A1F60B6AFAB290674BBA1B357483CE8E7E9194 (void);
-// 0x00000801 MocapApi.EMCPError MocapApi.IMCPSensorModule::GetSensorModuleAngularVelocity(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x0000082F MocapApi.EMCPError MocapApi.IMCPSensorModule::GetSensorModuleAngularVelocity(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void IMCPSensorModule_GetSensorModuleAngularVelocity_mBDE9A9EB3BE160227C89C5C23B5B36CF13FE51AC (void);
-// 0x00000802 MocapApi.EMCPError MocapApi.IMCPSensorModule::GetSensorModuleAcceleratedVelocity(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x00000830 MocapApi.EMCPError MocapApi.IMCPSensorModule::GetSensorModuleAcceleratedVelocity(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void IMCPSensorModule_GetSensorModuleAcceleratedVelocity_mE2F5D81CBBC57D1066500506295290F8806F127D (void);
-// 0x00000803 MocapApi.EMCPError MocapApi.IMCPSensorModule::GetSensorModuleId(System.UInt32&,System.UInt64)
+// 0x00000831 MocapApi.EMCPError MocapApi.IMCPSensorModule::GetSensorModuleId(System.UInt32&,System.UInt64)
 extern void IMCPSensorModule_GetSensorModuleId_m7CCC066DA3C43F3CAC8E220C62F562817BBCAE46 (void);
-// 0x00000804 MocapApi.EMCPError MocapApi.IMCPSensorModule::GetSensorModuleCompassValue(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x00000832 MocapApi.EMCPError MocapApi.IMCPSensorModule::GetSensorModuleCompassValue(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void IMCPSensorModule_GetSensorModuleCompassValue_mA8D4FD8B72826B28C72BB7A2982AAE7D012662D3 (void);
-// 0x00000805 MocapApi.EMCPError MocapApi.IMCPSensorModule::GetSensorModuleTemperature(System.Single&,System.UInt64)
+// 0x00000833 MocapApi.EMCPError MocapApi.IMCPSensorModule::GetSensorModuleTemperature(System.Single&,System.UInt64)
 extern void IMCPSensorModule_GetSensorModuleTemperature_mFC17E3C934BCBA8BF8772FADEA62D33920766A80 (void);
-// 0x00000806 System.Void MocapApi.IMCPSensorModule::.ctor()
+// 0x00000834 System.Void MocapApi.IMCPSensorModule::.ctor()
 extern void IMCPSensorModule__ctor_mB503813CFE8DA2DC2736A5CA44846AD465715E87 (void);
-// 0x00000807 System.Void MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModulePosture::.ctor(System.Object,System.IntPtr)
+// 0x00000835 System.Void MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModulePosture::.ctor(System.Object,System.IntPtr)
 extern void _GetSensorModulePosture__ctor_mE319F15A8344DB32BA667D84BB906DD879A73099 (void);
-// 0x00000808 MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModulePosture::Invoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x00000836 MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModulePosture::Invoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void _GetSensorModulePosture_Invoke_m0DF3B82EF84647E9FA68CD7D8F296B2C36F8CAB7 (void);
-// 0x00000809 System.IAsyncResult MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModulePosture::BeginInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000837 System.IAsyncResult MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModulePosture::BeginInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetSensorModulePosture_BeginInvoke_m55B39728475B8BA4F13D51BE62CFFBA79AB0C43D (void);
-// 0x0000080A MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModulePosture::EndInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x00000838 MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModulePosture::EndInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetSensorModulePosture_EndInvoke_m249F647BAA3B56FEC15FE00DD4CED3629FCF9112 (void);
-// 0x0000080B System.Void MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAngularVelocity::.ctor(System.Object,System.IntPtr)
+// 0x00000839 System.Void MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAngularVelocity::.ctor(System.Object,System.IntPtr)
 extern void _GetSensorModuleAngularVelocity__ctor_mE3BC6AC39D0430035CE4F3974683C26580F78A2A (void);
-// 0x0000080C MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAngularVelocity::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x0000083A MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAngularVelocity::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void _GetSensorModuleAngularVelocity_Invoke_mD930D6F51FACEC5BF33B55580B24C0FA3A1263E7 (void);
-// 0x0000080D System.IAsyncResult MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAngularVelocity::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000083B System.IAsyncResult MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAngularVelocity::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetSensorModuleAngularVelocity_BeginInvoke_mAC5A01C4E7FC27305051109BAC60CCF21CED8550 (void);
-// 0x0000080E MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAngularVelocity::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x0000083C MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAngularVelocity::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetSensorModuleAngularVelocity_EndInvoke_mD76D5D4FD73247468DC075032A5850E234A91406 (void);
-// 0x0000080F System.Void MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAcceleratedVelocity::.ctor(System.Object,System.IntPtr)
+// 0x0000083D System.Void MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAcceleratedVelocity::.ctor(System.Object,System.IntPtr)
 extern void _GetSensorModuleAcceleratedVelocity__ctor_m579945021D9310AFEEEDA6D23F7D6614A33E81CE (void);
-// 0x00000810 MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAcceleratedVelocity::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x0000083E MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAcceleratedVelocity::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void _GetSensorModuleAcceleratedVelocity_Invoke_mE362DC42E75F2CEBD6FB8AAF49F417EF3A40D478 (void);
-// 0x00000811 System.IAsyncResult MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAcceleratedVelocity::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000083F System.IAsyncResult MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAcceleratedVelocity::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetSensorModuleAcceleratedVelocity_BeginInvoke_m99392239AC993B008AB27F912CFE6A007B088A38 (void);
-// 0x00000812 MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAcceleratedVelocity::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x00000840 MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleAcceleratedVelocity::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetSensorModuleAcceleratedVelocity_EndInvoke_m54A3EF47D2B5A8915AB73F99DF1C558C7BDEE8D2 (void);
-// 0x00000813 System.Void MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleId::.ctor(System.Object,System.IntPtr)
+// 0x00000841 System.Void MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleId::.ctor(System.Object,System.IntPtr)
 extern void _GetSensorModuleId__ctor_mE92E091D9F84801CCD3A868906B5198D805FA667 (void);
-// 0x00000814 MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleId::Invoke(System.UInt32&,System.UInt64)
+// 0x00000842 MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleId::Invoke(System.UInt32&,System.UInt64)
 extern void _GetSensorModuleId_Invoke_m4FCF1E6954CFC48F9F28A88E4B123BCF4774D2B0 (void);
-// 0x00000815 System.IAsyncResult MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleId::BeginInvoke(System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000843 System.IAsyncResult MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleId::BeginInvoke(System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetSensorModuleId_BeginInvoke_m5662343FB26B78B8692E1EF9F32E1C9278EFF9AF (void);
-// 0x00000816 MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleId::EndInvoke(System.UInt32&,System.IAsyncResult)
+// 0x00000844 MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleId::EndInvoke(System.UInt32&,System.IAsyncResult)
 extern void _GetSensorModuleId_EndInvoke_mAB05F9B3114D6997B22D9F720B8D0E4C331C2FF4 (void);
-// 0x00000817 System.Void MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleCompassValue::.ctor(System.Object,System.IntPtr)
+// 0x00000845 System.Void MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleCompassValue::.ctor(System.Object,System.IntPtr)
 extern void _GetSensorModuleCompassValue__ctor_mA955E972789D286B34FCB45C4E00B15929B3D7C4 (void);
-// 0x00000818 MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleCompassValue::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x00000846 MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleCompassValue::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void _GetSensorModuleCompassValue_Invoke_m6ED694288B3147C079D646A6E469D23AF8AE421C (void);
-// 0x00000819 System.IAsyncResult MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleCompassValue::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000847 System.IAsyncResult MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleCompassValue::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetSensorModuleCompassValue_BeginInvoke_m8697E1D4357EC5EB43D670902E9C91141F82A9FF (void);
-// 0x0000081A MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleCompassValue::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x00000848 MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleCompassValue::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetSensorModuleCompassValue_EndInvoke_m69C5C3FC0E41501D4FA85FF4C8AD5E0335BD9586 (void);
-// 0x0000081B System.Void MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleTemperature::.ctor(System.Object,System.IntPtr)
+// 0x00000849 System.Void MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleTemperature::.ctor(System.Object,System.IntPtr)
 extern void _GetSensorModuleTemperature__ctor_m80A54E6870F2DC63EF4F30954F8257B24DDBEB46 (void);
-// 0x0000081C MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleTemperature::Invoke(System.Single&,System.UInt64)
+// 0x0000084A MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleTemperature::Invoke(System.Single&,System.UInt64)
 extern void _GetSensorModuleTemperature_Invoke_m76D86E2327FFA514EB81FF31B29F45A3C8A9A94A (void);
-// 0x0000081D System.IAsyncResult MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleTemperature::BeginInvoke(System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000084B System.IAsyncResult MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleTemperature::BeginInvoke(System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetSensorModuleTemperature_BeginInvoke_m9359899180C5FCCD9051EED5D28760F5634281CB (void);
-// 0x0000081E MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleTemperature::EndInvoke(System.Single&,System.IAsyncResult)
+// 0x0000084C MocapApi.EMCPError MocapApi.IMCPSensorModule/MCPSensorModule_ProcTable/_GetSensorModuleTemperature::EndInvoke(System.Single&,System.IAsyncResult)
 extern void _GetSensorModuleTemperature_EndInvoke_mE63BE1A04B7B9AEEF736BF169E846E89311AC5A7 (void);
-// 0x0000081F MocapApi.IMCPBodyPart MocapApi.IMCPBodyPart::get_BodyPart()
+// 0x0000084D MocapApi.IMCPBodyPart MocapApi.IMCPBodyPart::get_BodyPart()
 extern void IMCPBodyPart_get_BodyPart_mEEE0CD029E8139AEC185632454562BFDC5C4CB95 (void);
-// 0x00000820 MocapApi.EMCPError MocapApi.IMCPBodyPart::GetJointPosition(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x0000084E MocapApi.EMCPError MocapApi.IMCPBodyPart::GetJointPosition(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void IMCPBodyPart_GetJointPosition_mD1D1422AD686618865A7B5006A9D6D0B2905C229 (void);
-// 0x00000821 MocapApi.EMCPError MocapApi.IMCPBodyPart::GetJointDisplacementSpeed(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x0000084F MocapApi.EMCPError MocapApi.IMCPBodyPart::GetJointDisplacementSpeed(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void IMCPBodyPart_GetJointDisplacementSpeed_m425B659917C97441C80A0FFAAC2C2B16697F25BD (void);
-// 0x00000822 MocapApi.EMCPError MocapApi.IMCPBodyPart::GetBodyPartPosture(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x00000850 MocapApi.EMCPError MocapApi.IMCPBodyPart::GetBodyPartPosture(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void IMCPBodyPart_GetBodyPartPosture_mBCD96F19C7123B4B60D57DD15439490EE8E5FA6D (void);
-// 0x00000823 System.Void MocapApi.IMCPBodyPart::.ctor()
+// 0x00000851 System.Void MocapApi.IMCPBodyPart::.ctor()
 extern void IMCPBodyPart__ctor_mB12A5C6E03F4AC646FB755790B1C127C441B54B0 (void);
-// 0x00000824 System.Void MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointPosition::.ctor(System.Object,System.IntPtr)
+// 0x00000852 System.Void MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointPosition::.ctor(System.Object,System.IntPtr)
 extern void _GetJointPosition__ctor_m0F038A7A10CF7FCC95645395AE76180609A28EE8 (void);
-// 0x00000825 MocapApi.EMCPError MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointPosition::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x00000853 MocapApi.EMCPError MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointPosition::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void _GetJointPosition_Invoke_m2A267B3A322418E748A55487D9F7FA3DA714D2C7 (void);
-// 0x00000826 System.IAsyncResult MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointPosition::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000854 System.IAsyncResult MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointPosition::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetJointPosition_BeginInvoke_mFBFE36B51D9E02D00B332B0990D2D1A92437723E (void);
-// 0x00000827 MocapApi.EMCPError MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointPosition::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x00000855 MocapApi.EMCPError MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointPosition::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetJointPosition_EndInvoke_m87984AB2046C228A5411B2A83C1B73327FD05ACD (void);
-// 0x00000828 System.Void MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointDisplacementSpeed::.ctor(System.Object,System.IntPtr)
+// 0x00000856 System.Void MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointDisplacementSpeed::.ctor(System.Object,System.IntPtr)
 extern void _GetJointDisplacementSpeed__ctor_m34A7E845DDF574A4F234596B927229293497202A (void);
-// 0x00000829 MocapApi.EMCPError MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointDisplacementSpeed::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x00000857 MocapApi.EMCPError MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointDisplacementSpeed::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void _GetJointDisplacementSpeed_Invoke_mFE658123FDF28358091B2D4BA2BC491119BDEEC2 (void);
-// 0x0000082A System.IAsyncResult MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointDisplacementSpeed::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000858 System.IAsyncResult MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointDisplacementSpeed::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetJointDisplacementSpeed_BeginInvoke_mCBEBFD9710B0C77637CFE9C5E83CB59950C3C16A (void);
-// 0x0000082B MocapApi.EMCPError MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointDisplacementSpeed::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x00000859 MocapApi.EMCPError MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetJointDisplacementSpeed::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetJointDisplacementSpeed_EndInvoke_mB9FC43B9E67BA9079BC00D7B767945EDA07F3DA0 (void);
-// 0x0000082C System.Void MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetBodyPartPosture::.ctor(System.Object,System.IntPtr)
+// 0x0000085A System.Void MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetBodyPartPosture::.ctor(System.Object,System.IntPtr)
 extern void _GetBodyPartPosture__ctor_m0D04505EE21C4BC660B02E23BD89AC34F5FFAA76 (void);
-// 0x0000082D MocapApi.EMCPError MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetBodyPartPosture::Invoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x0000085B MocapApi.EMCPError MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetBodyPartPosture::Invoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void _GetBodyPartPosture_Invoke_m59C08EE5EADA706EFC461FBEA71D5F51C5EF7901 (void);
-// 0x0000082E System.IAsyncResult MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetBodyPartPosture::BeginInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000085C System.IAsyncResult MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetBodyPartPosture::BeginInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetBodyPartPosture_BeginInvoke_mE2568AEF355B374C848873AE6AA1E77625E9B591 (void);
-// 0x0000082F MocapApi.EMCPError MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetBodyPartPosture::EndInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x0000085D MocapApi.EMCPError MocapApi.IMCPBodyPart/MCPBodyPart_ProcTable/_GetBodyPartPosture::EndInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetBodyPartPosture_EndInvoke_m3BD98BBBFF220855ED15138365DBD7D7E3240E3E (void);
-// 0x00000830 MocapApi.IMCPJoint MocapApi.IMCPJoint::get_Joint()
+// 0x0000085E MocapApi.IMCPJoint MocapApi.IMCPJoint::get_Joint()
 extern void IMCPJoint_get_Joint_mD65BB8DCFF40BD6D935360312BFF5FB4FC716B8F (void);
-// 0x00000831 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointName(System.String&,System.UInt64)
+// 0x0000085F MocapApi.EMCPError MocapApi.IMCPJoint::GetJointName(System.String&,System.UInt64)
 extern void IMCPJoint_GetJointName_m7F2F8E12CFB68C075B80511B988BB9B813279890 (void);
-// 0x00000832 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointName(System.IntPtr&,System.UInt64)
+// 0x00000860 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointName(System.IntPtr&,System.UInt64)
 extern void IMCPJoint_GetJointName_m7B07017BC80B0754D47B905AF5800A981B6596C2 (void);
-// 0x00000833 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointLocalRotation(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x00000861 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointLocalRotation(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void IMCPJoint_GetJointLocalRotation_m9FBDFBDB31848EB9460FD54A469DFADC0059DE56 (void);
-// 0x00000834 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointLocalRotationByEuler(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x00000862 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointLocalRotationByEuler(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void IMCPJoint_GetJointLocalRotationByEuler_m6D9D59DF3A2897CB7C53EC08AF0AB17C77C3D2C5 (void);
-// 0x00000835 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointLocalPosition(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x00000863 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointLocalPosition(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void IMCPJoint_GetJointLocalPosition_mE9B183E83EBD71F83B83189878239359821EA45B (void);
-// 0x00000836 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointDefaultLocalPosition(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x00000864 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointDefaultLocalPosition(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void IMCPJoint_GetJointDefaultLocalPosition_mC3B554560D4129A1E0892CEC2E0458BDE3687398 (void);
-// 0x00000837 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointChild(System.UInt64[],System.UInt32&,System.UInt64)
+// 0x00000865 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointChild(System.UInt64[],System.UInt32&,System.UInt64)
 extern void IMCPJoint_GetJointChild_m15D71B562733A2588093FD29C0F8270BF27C90A0 (void);
-// 0x00000838 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointBodyPart(System.UInt64&,System.UInt64)
+// 0x00000866 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointBodyPart(System.UInt64&,System.UInt64)
 extern void IMCPJoint_GetJointBodyPart_m28E6C0F5F9D1EEFEC424348E787A17B1378ED398 (void);
-// 0x00000839 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointSensorModule(System.UInt64&,System.UInt64)
+// 0x00000867 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointSensorModule(System.UInt64&,System.UInt64)
 extern void IMCPJoint_GetJointSensorModule_m982A675E915B5987BB62B6B603CDE6C9ACDDCCB5 (void);
-// 0x0000083A MocapApi.EMCPError MocapApi.IMCPJoint::GetJointTag(MocapApi.EMCPJointTag&,System.UInt64)
+// 0x00000868 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointTag(MocapApi.EMCPJointTag&,System.UInt64)
 extern void IMCPJoint_GetJointTag_m4F34D45EC16CC0D7292BC7540E5666A26E304032 (void);
-// 0x0000083B MocapApi.EMCPError MocapApi.IMCPJoint::GetJointNameByTag(System.String&,MocapApi.EMCPJointTag)
+// 0x00000869 MocapApi.EMCPError MocapApi.IMCPJoint::GetJointNameByTag(System.String&,MocapApi.EMCPJointTag)
 extern void IMCPJoint_GetJointNameByTag_m0FB92C0A6FFF91145ECA7755BBAEF510D7D59D9A (void);
-// 0x0000083C MocapApi.EMCPError MocapApi.IMCPJoint::GetJointNameByTag(System.IntPtr&,MocapApi.EMCPJointTag)
+// 0x0000086A MocapApi.EMCPError MocapApi.IMCPJoint::GetJointNameByTag(System.IntPtr&,MocapApi.EMCPJointTag)
 extern void IMCPJoint_GetJointNameByTag_m9904D4BB89837F48E743FA4C3B3DF73536641115 (void);
-// 0x0000083D MocapApi.EMCPError MocapApi.IMCPJoint::GetJointChildJointTag(MocapApi.EMCPJointTag[],System.UInt32&,MocapApi.EMCPJointTag)
+// 0x0000086B MocapApi.EMCPError MocapApi.IMCPJoint::GetJointChildJointTag(MocapApi.EMCPJointTag[],System.UInt32&,MocapApi.EMCPJointTag)
 extern void IMCPJoint_GetJointChildJointTag_m0CA125A374F3C7CDA4A2CDF55462B01AF60EDFE5 (void);
-// 0x0000083E MocapApi.EMCPError MocapApi.IMCPJoint::GetJointParentJointTag(MocapApi.EMCPJointTag&,MocapApi.EMCPJointTag)
+// 0x0000086C MocapApi.EMCPError MocapApi.IMCPJoint::GetJointParentJointTag(MocapApi.EMCPJointTag&,MocapApi.EMCPJointTag)
 extern void IMCPJoint_GetJointParentJointTag_m6B1BE3133B9A6C6C1564CA70AE1D344760F24B46 (void);
-// 0x0000083F System.Void MocapApi.IMCPJoint::.ctor()
+// 0x0000086D System.Void MocapApi.IMCPJoint::.ctor()
 extern void IMCPJoint__ctor_m452D35F91C0B58D64C9BB8D7E334A219937628BA (void);
-// 0x00000840 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointName::.ctor(System.Object,System.IntPtr)
+// 0x0000086E System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointName::.ctor(System.Object,System.IntPtr)
 extern void _GetJointName__ctor_mF6882026CAF46098120E5D1E7399C6DD55671F94 (void);
-// 0x00000841 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointName::Invoke(System.IntPtr&,System.UInt64)
+// 0x0000086F MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointName::Invoke(System.IntPtr&,System.UInt64)
 extern void _GetJointName_Invoke_m343EE1997391D7D6F4B34E6A1E4D09EE39AFFB46 (void);
-// 0x00000842 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointName::BeginInvoke(System.IntPtr&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000870 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointName::BeginInvoke(System.IntPtr&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetJointName_BeginInvoke_m4D926761195CF197C96CAF3F10C2DDB216167D1F (void);
-// 0x00000843 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointName::EndInvoke(System.IntPtr&,System.IAsyncResult)
+// 0x00000871 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointName::EndInvoke(System.IntPtr&,System.IAsyncResult)
 extern void _GetJointName_EndInvoke_m62781FF04A552FF038414D8FAEF1714AA3BA8D88 (void);
-// 0x00000844 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotation::.ctor(System.Object,System.IntPtr)
+// 0x00000872 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotation::.ctor(System.Object,System.IntPtr)
 extern void _GetJointLocalRotation__ctor_mB04512F369B699C2DFEA2D4D24A8219339E07A2C (void);
-// 0x00000845 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotation::Invoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x00000873 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotation::Invoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void _GetJointLocalRotation_Invoke_m9E2A62DF37502FDEC8CB9311095AE4AE2BF99177 (void);
-// 0x00000846 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotation::BeginInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000874 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotation::BeginInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetJointLocalRotation_BeginInvoke_m10B813ABCE3E158220ECEACBD390C9A93B91E673 (void);
-// 0x00000847 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotation::EndInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x00000875 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotation::EndInvoke(System.Single&,System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetJointLocalRotation_EndInvoke_m08AC43204755F7DF5FEDF97F7F0A1607BD46D4E1 (void);
-// 0x00000848 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotationByEuler::.ctor(System.Object,System.IntPtr)
+// 0x00000876 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotationByEuler::.ctor(System.Object,System.IntPtr)
 extern void _GetJointLocalRotationByEuler__ctor_m1AA43AF24B72A5BDB83EF74DBFF98BC1A8EEB893 (void);
-// 0x00000849 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotationByEuler::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x00000877 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotationByEuler::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void _GetJointLocalRotationByEuler_Invoke_m8616E00E695940CD2CAA1C1294942AD641CC5BE0 (void);
-// 0x0000084A System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotationByEuler::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000878 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotationByEuler::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetJointLocalRotationByEuler_BeginInvoke_m249DFB581A496EC871B14114A9A5E4C42CF868BE (void);
-// 0x0000084B MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotationByEuler::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x00000879 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalRotationByEuler::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetJointLocalRotationByEuler_EndInvoke_mDCC60A655C49A844DCD7958E7955FA64DE26CE3A (void);
-// 0x0000084C System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalPosition::.ctor(System.Object,System.IntPtr)
+// 0x0000087A System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalPosition::.ctor(System.Object,System.IntPtr)
 extern void _GetJointLocalPosition__ctor_m3D666F023D0DEDE086DE79BB86A808DD42C1E193 (void);
-// 0x0000084D MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalPosition::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x0000087B MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalPosition::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void _GetJointLocalPosition_Invoke_m28A94030F96BBA57A75EB135BB3873F0DD40FB8B (void);
-// 0x0000084E System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalPosition::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000087C System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalPosition::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetJointLocalPosition_BeginInvoke_m961E49C4968A49469ED15635136613AAF2B76F63 (void);
-// 0x0000084F MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalPosition::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x0000087D MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointLocalPosition::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetJointLocalPosition_EndInvoke_m7F16D75BB983D74239255A7692BE489C2CB42996 (void);
-// 0x00000850 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointDefaultLocalPosition::.ctor(System.Object,System.IntPtr)
+// 0x0000087E System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointDefaultLocalPosition::.ctor(System.Object,System.IntPtr)
 extern void _GetJointDefaultLocalPosition__ctor_mCC09D0D1849E5B3B723982C9858370D9C010B26B (void);
-// 0x00000851 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointDefaultLocalPosition::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
+// 0x0000087F MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointDefaultLocalPosition::Invoke(System.Single&,System.Single&,System.Single&,System.UInt64)
 extern void _GetJointDefaultLocalPosition_Invoke_mF9264C8AE8559999B7DBDF8D19C34D6214428F89 (void);
-// 0x00000852 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointDefaultLocalPosition::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000880 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointDefaultLocalPosition::BeginInvoke(System.Single&,System.Single&,System.Single&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetJointDefaultLocalPosition_BeginInvoke_m3B3635E3389D066AC6ABAE753434858E60B7E98D (void);
-// 0x00000853 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointDefaultLocalPosition::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
+// 0x00000881 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointDefaultLocalPosition::EndInvoke(System.Single&,System.Single&,System.Single&,System.IAsyncResult)
 extern void _GetJointDefaultLocalPosition_EndInvoke_m2E10D9F48F12F9E94A50DA9E47C69317388F8E09 (void);
-// 0x00000854 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChild::.ctor(System.Object,System.IntPtr)
+// 0x00000882 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChild::.ctor(System.Object,System.IntPtr)
 extern void _GetJointChild__ctor_mF8FA2E97549C56037D4A0E10141747453734D669 (void);
-// 0x00000855 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChild::Invoke(System.UInt64[],System.UInt32&,System.UInt64)
+// 0x00000883 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChild::Invoke(System.UInt64[],System.UInt32&,System.UInt64)
 extern void _GetJointChild_Invoke_mAA873EED92F2E4542301C18BC038CE4BA9DD1476 (void);
-// 0x00000856 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChild::BeginInvoke(System.UInt64[],System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000884 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChild::BeginInvoke(System.UInt64[],System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetJointChild_BeginInvoke_m35B90157D123555A5E03A145D31F77E6F0D3E69D (void);
-// 0x00000857 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChild::EndInvoke(System.UInt32&,System.IAsyncResult)
+// 0x00000885 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChild::EndInvoke(System.UInt32&,System.IAsyncResult)
 extern void _GetJointChild_EndInvoke_mCAD3E54A2C74411655D815DE98F0EE584E77421C (void);
-// 0x00000858 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointBodyPart::.ctor(System.Object,System.IntPtr)
+// 0x00000886 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointBodyPart::.ctor(System.Object,System.IntPtr)
 extern void _GetJointBodyPart__ctor_m3DE1B466F50857AFB306C7BE07D8207EDA8E8A42 (void);
-// 0x00000859 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointBodyPart::Invoke(System.UInt64&,System.UInt64)
+// 0x00000887 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointBodyPart::Invoke(System.UInt64&,System.UInt64)
 extern void _GetJointBodyPart_Invoke_m92B83BDE56047519097C7145746CECACD19004B3 (void);
-// 0x0000085A System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointBodyPart::BeginInvoke(System.UInt64&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000888 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointBodyPart::BeginInvoke(System.UInt64&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetJointBodyPart_BeginInvoke_mFD5D20E4ABA176D7DF4A16BC0155DE87AE37CC4D (void);
-// 0x0000085B MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointBodyPart::EndInvoke(System.UInt64&,System.IAsyncResult)
+// 0x00000889 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointBodyPart::EndInvoke(System.UInt64&,System.IAsyncResult)
 extern void _GetJointBodyPart_EndInvoke_mA78A8805A5DBF3838134517E3DDB3560BD840C9B (void);
-// 0x0000085C System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointSensorModule::.ctor(System.Object,System.IntPtr)
+// 0x0000088A System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointSensorModule::.ctor(System.Object,System.IntPtr)
 extern void _GetJointSensorModule__ctor_m1544FE449368D7DAF0CC2383109C028D13D9C325 (void);
-// 0x0000085D MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointSensorModule::Invoke(System.UInt64&,System.UInt64)
+// 0x0000088B MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointSensorModule::Invoke(System.UInt64&,System.UInt64)
 extern void _GetJointSensorModule_Invoke_mA028E6D1C2BC075EEE1E9676B3FF55007B7B07E3 (void);
-// 0x0000085E System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointSensorModule::BeginInvoke(System.UInt64&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000088C System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointSensorModule::BeginInvoke(System.UInt64&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetJointSensorModule_BeginInvoke_mF71A9A70D7139191D6298BECD4A7B1DFA899F677 (void);
-// 0x0000085F MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointSensorModule::EndInvoke(System.UInt64&,System.IAsyncResult)
+// 0x0000088D MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointSensorModule::EndInvoke(System.UInt64&,System.IAsyncResult)
 extern void _GetJointSensorModule_EndInvoke_mE3C58E450B054555075CCC93E4B6CEB3CCF6EEE6 (void);
-// 0x00000860 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointTag::.ctor(System.Object,System.IntPtr)
+// 0x0000088E System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointTag::.ctor(System.Object,System.IntPtr)
 extern void _GetJointTag__ctor_mED3E3643DBF58355F540B4DDD37F6421D56CEC47 (void);
-// 0x00000861 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointTag::Invoke(MocapApi.EMCPJointTag&,System.UInt64)
+// 0x0000088F MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointTag::Invoke(MocapApi.EMCPJointTag&,System.UInt64)
 extern void _GetJointTag_Invoke_m145C103A07B144D011A4E0BD51FFB2CC38F707A4 (void);
-// 0x00000862 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointTag::BeginInvoke(MocapApi.EMCPJointTag&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000890 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointTag::BeginInvoke(MocapApi.EMCPJointTag&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetJointTag_BeginInvoke_m5D68D7CE627E4A4CD188430F911B8984C5D18931 (void);
-// 0x00000863 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointTag::EndInvoke(MocapApi.EMCPJointTag&,System.IAsyncResult)
+// 0x00000891 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointTag::EndInvoke(MocapApi.EMCPJointTag&,System.IAsyncResult)
 extern void _GetJointTag_EndInvoke_m241CB7E7461AFCE1FE38BCF4F3784B7CEC857F45 (void);
-// 0x00000864 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointNameByTag::.ctor(System.Object,System.IntPtr)
+// 0x00000892 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointNameByTag::.ctor(System.Object,System.IntPtr)
 extern void _GetJointNameByTag__ctor_m5F33FFAA81BDF06B10A211F4750BC8ADE789AC39 (void);
-// 0x00000865 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointNameByTag::Invoke(System.IntPtr&,MocapApi.EMCPJointTag)
+// 0x00000893 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointNameByTag::Invoke(System.IntPtr&,MocapApi.EMCPJointTag)
 extern void _GetJointNameByTag_Invoke_m8BB95F9DE66BC9F728DEC357F2CC304A260E2B87 (void);
-// 0x00000866 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointNameByTag::BeginInvoke(System.IntPtr&,MocapApi.EMCPJointTag,System.AsyncCallback,System.Object)
+// 0x00000894 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointNameByTag::BeginInvoke(System.IntPtr&,MocapApi.EMCPJointTag,System.AsyncCallback,System.Object)
 extern void _GetJointNameByTag_BeginInvoke_mAD08C02C53D83724DEC5F37108EB2EC672E6E769 (void);
-// 0x00000867 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointNameByTag::EndInvoke(System.IntPtr&,System.IAsyncResult)
+// 0x00000895 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointNameByTag::EndInvoke(System.IntPtr&,System.IAsyncResult)
 extern void _GetJointNameByTag_EndInvoke_m330CF96197B135A961313A52CCF85B3CF49B9B3E (void);
-// 0x00000868 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChildJointTag::.ctor(System.Object,System.IntPtr)
+// 0x00000896 System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChildJointTag::.ctor(System.Object,System.IntPtr)
 extern void _GetJointChildJointTag__ctor_m8183B02A7CC74E7C64D3159AAE2B48670006AD34 (void);
-// 0x00000869 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChildJointTag::Invoke(MocapApi.EMCPJointTag[],System.UInt32&,MocapApi.EMCPJointTag)
+// 0x00000897 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChildJointTag::Invoke(MocapApi.EMCPJointTag[],System.UInt32&,MocapApi.EMCPJointTag)
 extern void _GetJointChildJointTag_Invoke_mF03ADA6E05AE131108DB5F276F1679CB75C7408D (void);
-// 0x0000086A System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChildJointTag::BeginInvoke(MocapApi.EMCPJointTag[],System.UInt32&,MocapApi.EMCPJointTag,System.AsyncCallback,System.Object)
+// 0x00000898 System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChildJointTag::BeginInvoke(MocapApi.EMCPJointTag[],System.UInt32&,MocapApi.EMCPJointTag,System.AsyncCallback,System.Object)
 extern void _GetJointChildJointTag_BeginInvoke_m4A4EE4E5472DC21CD265DB4B9721F4D36ACF1201 (void);
-// 0x0000086B MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChildJointTag::EndInvoke(System.UInt32&,System.IAsyncResult)
+// 0x00000899 MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointChildJointTag::EndInvoke(System.UInt32&,System.IAsyncResult)
 extern void _GetJointChildJointTag_EndInvoke_mEAF4EDA6A25A05FEC77FF0206D76489EE96CB34E (void);
-// 0x0000086C System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointParentJointTag::.ctor(System.Object,System.IntPtr)
+// 0x0000089A System.Void MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointParentJointTag::.ctor(System.Object,System.IntPtr)
 extern void _GetJointParentJointTag__ctor_m0D32C5EAF9E1131CBC5B9F5708B05B674572F9ED (void);
-// 0x0000086D MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointParentJointTag::Invoke(MocapApi.EMCPJointTag&,MocapApi.EMCPJointTag)
+// 0x0000089B MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointParentJointTag::Invoke(MocapApi.EMCPJointTag&,MocapApi.EMCPJointTag)
 extern void _GetJointParentJointTag_Invoke_m6AD17D8E9175819445E9314F0C778165894E57AF (void);
-// 0x0000086E System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointParentJointTag::BeginInvoke(MocapApi.EMCPJointTag&,MocapApi.EMCPJointTag,System.AsyncCallback,System.Object)
+// 0x0000089C System.IAsyncResult MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointParentJointTag::BeginInvoke(MocapApi.EMCPJointTag&,MocapApi.EMCPJointTag,System.AsyncCallback,System.Object)
 extern void _GetJointParentJointTag_BeginInvoke_m574978E88057EF205EEDA7ABB3B72436B132F1AE (void);
-// 0x0000086F MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointParentJointTag::EndInvoke(MocapApi.EMCPJointTag&,System.IAsyncResult)
+// 0x0000089D MocapApi.EMCPError MocapApi.IMCPJoint/MCPJoint_ProcTable/_GetJointParentJointTag::EndInvoke(MocapApi.EMCPJointTag&,System.IAsyncResult)
 extern void _GetJointParentJointTag_EndInvoke_mD91D74BE1D49707ABFBFA20D2CDD740F52C6B2AF (void);
-// 0x00000870 MocapApi.IMCPAvatar MocapApi.IMCPAvatar::get_Avatar()
+// 0x0000089E MocapApi.IMCPAvatar MocapApi.IMCPAvatar::get_Avatar()
 extern void IMCPAvatar_get_Avatar_mBE8CA699B3EA0E0202BDE201434AF72D1111B79E (void);
-// 0x00000871 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarIndex(System.UInt32&,System.UInt64)
+// 0x0000089F MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarIndex(System.UInt32&,System.UInt64)
 extern void IMCPAvatar_GetAvatarIndex_m3D6247762A823C346B701D13A24132DC496AB9E8 (void);
-// 0x00000872 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarRootJoint(System.UInt64&,System.UInt64)
+// 0x000008A0 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarRootJoint(System.UInt64&,System.UInt64)
 extern void IMCPAvatar_GetAvatarRootJoint_m6B5B46A28F46AAE2A2772DED88A8E27880AC52E7 (void);
-// 0x00000873 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarJoints(System.UInt64[],System.UInt32&,System.UInt64)
+// 0x000008A1 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarJoints(System.UInt64[],System.UInt32&,System.UInt64)
 extern void IMCPAvatar_GetAvatarJoints_m396E3BBBEAFF7452EEDA6737B032069C4AC72698 (void);
-// 0x00000874 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarJointByName(System.String,System.UInt64&,System.UInt64)
+// 0x000008A2 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarJointByName(System.String,System.UInt64&,System.UInt64)
 extern void IMCPAvatar_GetAvatarJointByName_m99C71E6A43434D152702E48CED0CD90F821C9F3D (void);
-// 0x00000875 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarName(System.String&,System.UInt64)
+// 0x000008A3 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarName(System.String&,System.UInt64)
 extern void IMCPAvatar_GetAvatarName_m8AADAD90D3CE17C4C93737810A1579EC67C2CDBC (void);
-// 0x00000876 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarName(System.IntPtr&,System.UInt64)
+// 0x000008A4 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarName(System.IntPtr&,System.UInt64)
 extern void IMCPAvatar_GetAvatarName_m0B19AFDC26542925C3A57B668F1FE9C8D88C095B (void);
-// 0x00000877 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarRigidBodies(System.UInt64[],System.UInt32&,System.UInt64)
+// 0x000008A5 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarRigidBodies(System.UInt64[],System.UInt32&,System.UInt64)
 extern void IMCPAvatar_GetAvatarRigidBodies_m9A8256EE0649EFD24178A56389569E4856A9094F (void);
-// 0x00000878 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarJointHierarchy(System.String&)
+// 0x000008A6 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarJointHierarchy(System.String&)
 extern void IMCPAvatar_GetAvatarJointHierarchy_mC959F28217F5F56D752F7FFE77C011FC2AB5DFA2 (void);
-// 0x00000879 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarJointHierarchy(System.IntPtr&)
+// 0x000008A7 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarJointHierarchy(System.IntPtr&)
 extern void IMCPAvatar_GetAvatarJointHierarchy_mFD72597211019FC73069B51570BD96237D3E94AF (void);
-// 0x0000087A MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarPostureIndex(System.UInt32&,System.UInt64)
+// 0x000008A8 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarPostureIndex(System.UInt32&,System.UInt64)
 extern void IMCPAvatar_GetAvatarPostureIndex_mD62A1D953F10472ACE818AF57829981C2E1DAF86 (void);
-// 0x0000087B MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarPostureTimeCode(System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt64)
+// 0x000008A9 MocapApi.EMCPError MocapApi.IMCPAvatar::GetAvatarPostureTimeCode(System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt64)
 extern void IMCPAvatar_GetAvatarPostureTimeCode_mCABA4B230AE376E427D0EB36D199378E207ED03A (void);
-// 0x0000087C System.Void MocapApi.IMCPAvatar::.ctor()
+// 0x000008AA System.Void MocapApi.IMCPAvatar::.ctor()
 extern void IMCPAvatar__ctor_m021256557CE7606F3226E94497785EE921A425D5 (void);
-// 0x0000087D System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarIndex::.ctor(System.Object,System.IntPtr)
+// 0x000008AB System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarIndex::.ctor(System.Object,System.IntPtr)
 extern void _GetAvatarIndex__ctor_mE7EE26D5E21301DBCA5FDD8846875153F4C1F984 (void);
-// 0x0000087E MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarIndex::Invoke(System.UInt32&,System.UInt64)
+// 0x000008AC MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarIndex::Invoke(System.UInt32&,System.UInt64)
 extern void _GetAvatarIndex_Invoke_mF17DF351403DD534F79BBA06393422230010D856 (void);
-// 0x0000087F System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarIndex::BeginInvoke(System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008AD System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarIndex::BeginInvoke(System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetAvatarIndex_BeginInvoke_m61A284B30F5F72B0C9C53264FC468B569442CD4E (void);
-// 0x00000880 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarIndex::EndInvoke(System.UInt32&,System.IAsyncResult)
+// 0x000008AE MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarIndex::EndInvoke(System.UInt32&,System.IAsyncResult)
 extern void _GetAvatarIndex_EndInvoke_m380BD295FB1E86F5B3E4B1D48ED063CE183C654F (void);
-// 0x00000881 System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRootJoint::.ctor(System.Object,System.IntPtr)
+// 0x000008AF System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRootJoint::.ctor(System.Object,System.IntPtr)
 extern void _GetAvatarRootJoint__ctor_m623B8EC6306F3BE9BFECBDE6DA669F0CDA0F7D02 (void);
-// 0x00000882 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRootJoint::Invoke(System.UInt64&,System.UInt64)
+// 0x000008B0 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRootJoint::Invoke(System.UInt64&,System.UInt64)
 extern void _GetAvatarRootJoint_Invoke_mFE0BC16D363E16A132ECFAD44EA81110427A9488 (void);
-// 0x00000883 System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRootJoint::BeginInvoke(System.UInt64&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008B1 System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRootJoint::BeginInvoke(System.UInt64&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetAvatarRootJoint_BeginInvoke_m1D7B0492C48902110A7A13CD3C8D15A02716CBD0 (void);
-// 0x00000884 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRootJoint::EndInvoke(System.UInt64&,System.IAsyncResult)
+// 0x000008B2 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRootJoint::EndInvoke(System.UInt64&,System.IAsyncResult)
 extern void _GetAvatarRootJoint_EndInvoke_m9C8E2E7C0D142997980B8BC72C6D5F080D7BA2A9 (void);
-// 0x00000885 System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJoints::.ctor(System.Object,System.IntPtr)
+// 0x000008B3 System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJoints::.ctor(System.Object,System.IntPtr)
 extern void _GetAvatarJoints__ctor_m5C0854D817C76DAD02B9E8CE743D13D9C0454C53 (void);
-// 0x00000886 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJoints::Invoke(System.UInt64[],System.UInt32&,System.UInt64)
+// 0x000008B4 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJoints::Invoke(System.UInt64[],System.UInt32&,System.UInt64)
 extern void _GetAvatarJoints_Invoke_mEA61276478CB8EA250D9978C4B829BF222A3FF91 (void);
-// 0x00000887 System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJoints::BeginInvoke(System.UInt64[],System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008B5 System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJoints::BeginInvoke(System.UInt64[],System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetAvatarJoints_BeginInvoke_m9751F994568E3BF84302EA9993A86EE981EB17E9 (void);
-// 0x00000888 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJoints::EndInvoke(System.UInt32&,System.IAsyncResult)
+// 0x000008B6 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJoints::EndInvoke(System.UInt32&,System.IAsyncResult)
 extern void _GetAvatarJoints_EndInvoke_m0A5C817D82BDC494B41FA6BF84137F0F2073C418 (void);
-// 0x00000889 System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointByName::.ctor(System.Object,System.IntPtr)
+// 0x000008B7 System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointByName::.ctor(System.Object,System.IntPtr)
 extern void _GetAvatarJointByName__ctor_m7C767ACA0D4BD89B8834DF074D5C56CB42022FA9 (void);
-// 0x0000088A MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointByName::Invoke(System.String,System.UInt64&,System.UInt64)
+// 0x000008B8 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointByName::Invoke(System.String,System.UInt64&,System.UInt64)
 extern void _GetAvatarJointByName_Invoke_mF0C81C61F34751FAEEB71AD9C72C23F84C539AB8 (void);
-// 0x0000088B System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointByName::BeginInvoke(System.String,System.UInt64&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008B9 System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointByName::BeginInvoke(System.String,System.UInt64&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetAvatarJointByName_BeginInvoke_m6E55401F22827DD134E484F3AB5BE3730ACCD186 (void);
-// 0x0000088C MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointByName::EndInvoke(System.UInt64&,System.IAsyncResult)
+// 0x000008BA MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointByName::EndInvoke(System.UInt64&,System.IAsyncResult)
 extern void _GetAvatarJointByName_EndInvoke_m4DFA6D856238AE88C51E930832EE80693378A341 (void);
-// 0x0000088D System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarName::.ctor(System.Object,System.IntPtr)
+// 0x000008BB System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarName::.ctor(System.Object,System.IntPtr)
 extern void _GetAvatarName__ctor_m4F646BD348AFF1369559E6AB77BED6FDC9DD17BD (void);
-// 0x0000088E MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarName::Invoke(System.IntPtr&,System.UInt64)
+// 0x000008BC MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarName::Invoke(System.IntPtr&,System.UInt64)
 extern void _GetAvatarName_Invoke_m07375372D9FA2B72D93BA659E1E974F2F54C2129 (void);
-// 0x0000088F System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarName::BeginInvoke(System.IntPtr&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008BD System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarName::BeginInvoke(System.IntPtr&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetAvatarName_BeginInvoke_m0AC86233A99EFC2B87CFAA23BB0D723F2E8A3E16 (void);
-// 0x00000890 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarName::EndInvoke(System.IntPtr&,System.IAsyncResult)
+// 0x000008BE MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarName::EndInvoke(System.IntPtr&,System.IAsyncResult)
 extern void _GetAvatarName_EndInvoke_m53A11700B0C70C14101CD50C742706577CF258DE (void);
-// 0x00000891 System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRigidBodies::.ctor(System.Object,System.IntPtr)
+// 0x000008BF System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRigidBodies::.ctor(System.Object,System.IntPtr)
 extern void _GetAvatarRigidBodies__ctor_m196D7DA53162FA40DD789909EDEE99529DCBFD88 (void);
-// 0x00000892 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRigidBodies::Invoke(System.UInt64[],System.UInt32&,System.UInt64)
+// 0x000008C0 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRigidBodies::Invoke(System.UInt64[],System.UInt32&,System.UInt64)
 extern void _GetAvatarRigidBodies_Invoke_mA5BE08F4B37DD2CFA0FA1322346825DCB4843E07 (void);
-// 0x00000893 System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRigidBodies::BeginInvoke(System.UInt64[],System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008C1 System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRigidBodies::BeginInvoke(System.UInt64[],System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetAvatarRigidBodies_BeginInvoke_m356B47AAB489A2B15D7F819A35D186294AF786A3 (void);
-// 0x00000894 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRigidBodies::EndInvoke(System.UInt32&,System.IAsyncResult)
+// 0x000008C2 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarRigidBodies::EndInvoke(System.UInt32&,System.IAsyncResult)
 extern void _GetAvatarRigidBodies_EndInvoke_m19C469718B214C82D5E74CBB46CB6AE727EE07CE (void);
-// 0x00000895 System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointHierarchy::.ctor(System.Object,System.IntPtr)
+// 0x000008C3 System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointHierarchy::.ctor(System.Object,System.IntPtr)
 extern void _GetAvatarJointHierarchy__ctor_m60024386018482663AA6453A8F4D24EE27B4BF58 (void);
-// 0x00000896 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointHierarchy::Invoke(System.IntPtr&)
+// 0x000008C4 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointHierarchy::Invoke(System.IntPtr&)
 extern void _GetAvatarJointHierarchy_Invoke_m483C8B62F233636B922E4E31DBA14ADC4E66E1B0 (void);
-// 0x00000897 System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointHierarchy::BeginInvoke(System.IntPtr&,System.AsyncCallback,System.Object)
+// 0x000008C5 System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointHierarchy::BeginInvoke(System.IntPtr&,System.AsyncCallback,System.Object)
 extern void _GetAvatarJointHierarchy_BeginInvoke_mFDC6ED5E2BA3CBAA25DF6C0607ED504F619D4EF9 (void);
-// 0x00000898 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointHierarchy::EndInvoke(System.IntPtr&,System.IAsyncResult)
+// 0x000008C6 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarJointHierarchy::EndInvoke(System.IntPtr&,System.IAsyncResult)
 extern void _GetAvatarJointHierarchy_EndInvoke_mDFBCBA52656222CDB201A6C852F7F30FA37D0418 (void);
-// 0x00000899 System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureIndex::.ctor(System.Object,System.IntPtr)
+// 0x000008C7 System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureIndex::.ctor(System.Object,System.IntPtr)
 extern void _GetAvatarPostureIndex__ctor_m0E86A17F2A852EDF3D4AD6FFE2F4D642901A3958 (void);
-// 0x0000089A MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureIndex::Invoke(System.UInt32&,System.UInt64)
+// 0x000008C8 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureIndex::Invoke(System.UInt32&,System.UInt64)
 extern void _GetAvatarPostureIndex_Invoke_mCA226AFEC7B2DAAC67B0D20138B34E11F4CFDB19 (void);
-// 0x0000089B System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureIndex::BeginInvoke(System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008C9 System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureIndex::BeginInvoke(System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetAvatarPostureIndex_BeginInvoke_mCE33655A430064F57041CD3F528ECF786C31934E (void);
-// 0x0000089C MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureIndex::EndInvoke(System.UInt32&,System.IAsyncResult)
+// 0x000008CA MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureIndex::EndInvoke(System.UInt32&,System.IAsyncResult)
 extern void _GetAvatarPostureIndex_EndInvoke_m55A4027444070C76EF3A7BFE48E9B24565AE00AC (void);
-// 0x0000089D System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureTimeCode::.ctor(System.Object,System.IntPtr)
+// 0x000008CB System.Void MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureTimeCode::.ctor(System.Object,System.IntPtr)
 extern void _GetAvatarPostureTimeCode__ctor_mE977037966C8D8F5B5AEFA404A696C958CD6612D (void);
-// 0x0000089E MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureTimeCode::Invoke(System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt64)
+// 0x000008CC MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureTimeCode::Invoke(System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt64)
 extern void _GetAvatarPostureTimeCode_Invoke_m81CDD7AD90DB46F8EF104ECD6EC1BEBD8F8EE737 (void);
-// 0x0000089F System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureTimeCode::BeginInvoke(System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008CD System.IAsyncResult MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureTimeCode::BeginInvoke(System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetAvatarPostureTimeCode_BeginInvoke_mE29DD0D4F3878DC91E6F7E5C937311EA680A92F9 (void);
-// 0x000008A0 MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureTimeCode::EndInvoke(System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.IAsyncResult)
+// 0x000008CE MocapApi.EMCPError MocapApi.IMCPAvatar/MCPAvatar_ProcTable/_GetAvatarPostureTimeCode::EndInvoke(System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.UInt32&,System.IAsyncResult)
 extern void _GetAvatarPostureTimeCode_EndInvoke_m50F9C7802237786A967A37EBB359265E95BDA912 (void);
-// 0x000008A1 MocapApi.IMCPCommand MocapApi.IMCPCommand::get_Command()
+// 0x000008CF MocapApi.IMCPCommand MocapApi.IMCPCommand::get_Command()
 extern void IMCPCommand_get_Command_m0DAF51A2A384265DD29F5D30C83BB35DC2DD7D84 (void);
-// 0x000008A2 MocapApi.EMCPError MocapApi.IMCPCommand::CreateCommand(System.UInt32,System.UInt64&)
+// 0x000008D0 MocapApi.EMCPError MocapApi.IMCPCommand::CreateCommand(System.UInt32,System.UInt64&)
 extern void IMCPCommand_CreateCommand_mD3FFD92076A346596336694B0991CFF9749CC1D5 (void);
-// 0x000008A3 MocapApi.EMCPError MocapApi.IMCPCommand::SetCommandExtraFlags(System.UInt32,System.UInt64)
+// 0x000008D1 MocapApi.EMCPError MocapApi.IMCPCommand::SetCommandExtraFlags(System.UInt32,System.UInt64)
 extern void IMCPCommand_SetCommandExtraFlags_m3D2087C6ECF53BFFE2E5F93959323B5DC47BA9B0 (void);
-// 0x000008A4 MocapApi.EMCPError MocapApi.IMCPCommand::SetCommandExtraLong(System.UInt32,System.IntPtr,System.UInt64)
+// 0x000008D2 MocapApi.EMCPError MocapApi.IMCPCommand::SetCommandExtraLong(System.UInt32,System.IntPtr,System.UInt64)
 extern void IMCPCommand_SetCommandExtraLong_m6BB42030F0EE69D81EA9A90CAB48A0CB2C85CE87 (void);
-// 0x000008A5 MocapApi.EMCPError MocapApi.IMCPCommand::GetCommandResultMessage(System.String&,System.UInt64)
+// 0x000008D3 MocapApi.EMCPError MocapApi.IMCPCommand::GetCommandResultMessage(System.String&,System.UInt64)
 extern void IMCPCommand_GetCommandResultMessage_mB257C31201735E219CC0E98502067A833F78F282 (void);
-// 0x000008A6 MocapApi.EMCPError MocapApi.IMCPCommand::GetCommandResultMessage(System.IntPtr&,System.UInt64)
+// 0x000008D4 MocapApi.EMCPError MocapApi.IMCPCommand::GetCommandResultMessage(System.IntPtr&,System.UInt64)
 extern void IMCPCommand_GetCommandResultMessage_mB074687AF51C6B94D7E107FEAB891DF76BC748F0 (void);
-// 0x000008A7 MocapApi.EMCPError MocapApi.IMCPCommand::GetCommandResultCode(System.UInt32&,System.UInt64)
+// 0x000008D5 MocapApi.EMCPError MocapApi.IMCPCommand::GetCommandResultCode(System.UInt32&,System.UInt64)
 extern void IMCPCommand_GetCommandResultCode_mC1A72F85838F0F945F9B6C944FFAF8250E180A9D (void);
-// 0x000008A8 MocapApi.EMCPError MocapApi.IMCPCommand::GetCommandProgress(System.UInt32,System.IntPtr,System.UInt64)
+// 0x000008D6 MocapApi.EMCPError MocapApi.IMCPCommand::GetCommandProgress(System.UInt32,System.IntPtr,System.UInt64)
 extern void IMCPCommand_GetCommandProgress_m1C7CC647C5FD05EE3451AF5BD7BFA46E83EF501B (void);
-// 0x000008A9 MocapApi.EMCPError MocapApi.IMCPCommand::DestroyCommand(System.UInt64)
+// 0x000008D7 MocapApi.EMCPError MocapApi.IMCPCommand::DestroyCommand(System.UInt64)
 extern void IMCPCommand_DestroyCommand_m33F10D461BC86BD6132DBC137CF8E334171B34B3 (void);
-// 0x000008AA System.Void MocapApi.IMCPCommand::.ctor()
+// 0x000008D8 System.Void MocapApi.IMCPCommand::.ctor()
 extern void IMCPCommand__ctor_mDB74D9330501AF91F4DB9A13723146AADE938114 (void);
-// 0x000008AB System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand::.ctor(System.Object,System.IntPtr)
+// 0x000008D9 System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand::.ctor(System.Object,System.IntPtr)
 extern void _CreateCommand__ctor_m09A23E4A98DE63129A566FB3B064D0B060CA14D6 (void);
-// 0x000008AC MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand::Invoke(System.UInt32,System.UInt64&)
+// 0x000008DA MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand::Invoke(System.UInt32,System.UInt64&)
 extern void _CreateCommand_Invoke_m1ED2F70B0ABC1B0CB5E78459B00BF11A4A49ED83 (void);
-// 0x000008AD System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand::BeginInvoke(System.UInt32,System.UInt64&,System.AsyncCallback,System.Object)
+// 0x000008DB System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand::BeginInvoke(System.UInt32,System.UInt64&,System.AsyncCallback,System.Object)
 extern void _CreateCommand_BeginInvoke_m9DACC8CF90A513AFC9F4C364E1E2F3F51BD06D34 (void);
-// 0x000008AE MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand::EndInvoke(System.UInt64&,System.IAsyncResult)
+// 0x000008DC MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_CreateCommand::EndInvoke(System.UInt64&,System.IAsyncResult)
 extern void _CreateCommand_EndInvoke_m67A178234A25A1D43A29637EAB07EC928E77D7BD (void);
-// 0x000008AF System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags::.ctor(System.Object,System.IntPtr)
+// 0x000008DD System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags::.ctor(System.Object,System.IntPtr)
 extern void _SetCommandExtraFlags__ctor_mBD08641245BE14E25425B289A011597B29B1770F (void);
-// 0x000008B0 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags::Invoke(System.UInt32,System.UInt64)
+// 0x000008DE MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags::Invoke(System.UInt32,System.UInt64)
 extern void _SetCommandExtraFlags_Invoke_m5E10C8DA7D555C2BE8C1D084CC9E29F5DA18CBCE (void);
-// 0x000008B1 System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags::BeginInvoke(System.UInt32,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008DF System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags::BeginInvoke(System.UInt32,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetCommandExtraFlags_BeginInvoke_mAA06CE3598EF4318F0E03F8B9F108F943B847EC8 (void);
-// 0x000008B2 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags::EndInvoke(System.IAsyncResult)
+// 0x000008E0 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraFlags::EndInvoke(System.IAsyncResult)
 extern void _SetCommandExtraFlags_EndInvoke_mDABE7E680A8DB15C384824546920CE053D15650F (void);
-// 0x000008B3 System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong::.ctor(System.Object,System.IntPtr)
+// 0x000008E1 System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong::.ctor(System.Object,System.IntPtr)
 extern void _SetCommandExtraLong__ctor_m5F8B2BA699044B990ABF69D16EB43007270EEC24 (void);
-// 0x000008B4 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong::Invoke(System.UInt32,System.IntPtr,System.UInt64)
+// 0x000008E2 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong::Invoke(System.UInt32,System.IntPtr,System.UInt64)
 extern void _SetCommandExtraLong_Invoke_m1C7D9A4675813BE96332EF54BE24D8CCFD15AAE2 (void);
-// 0x000008B5 System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong::BeginInvoke(System.UInt32,System.IntPtr,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008E3 System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong::BeginInvoke(System.UInt32,System.IntPtr,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetCommandExtraLong_BeginInvoke_m9E084028DA87015FCC9B41CC9DEB4E7BAC59C019 (void);
-// 0x000008B6 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong::EndInvoke(System.IAsyncResult)
+// 0x000008E4 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_SetCommandExtraLong::EndInvoke(System.IAsyncResult)
 extern void _SetCommandExtraLong_EndInvoke_m1823BE87AF160E677665A5585730E06C8199BE37 (void);
-// 0x000008B7 System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage::.ctor(System.Object,System.IntPtr)
+// 0x000008E5 System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage::.ctor(System.Object,System.IntPtr)
 extern void _GetCommandResultMessage__ctor_m31EAD1EFF6BC996F78A239B02865D1428A469E2F (void);
-// 0x000008B8 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage::Invoke(System.IntPtr&,System.UInt64)
+// 0x000008E6 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage::Invoke(System.IntPtr&,System.UInt64)
 extern void _GetCommandResultMessage_Invoke_m7B3CDCE0E4AC7F675FAB78C7064501D46DA14E57 (void);
-// 0x000008B9 System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage::BeginInvoke(System.IntPtr&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008E7 System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage::BeginInvoke(System.IntPtr&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetCommandResultMessage_BeginInvoke_m1FA598211A190BDDBF9D9D9BF4EB6BAC9C60907C (void);
-// 0x000008BA MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage::EndInvoke(System.IntPtr&,System.IAsyncResult)
+// 0x000008E8 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultMessage::EndInvoke(System.IntPtr&,System.IAsyncResult)
 extern void _GetCommandResultMessage_EndInvoke_mD2BDCC16145A9D6F815D0E4531D4DB4AC76F16A4 (void);
-// 0x000008BB System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode::.ctor(System.Object,System.IntPtr)
+// 0x000008E9 System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode::.ctor(System.Object,System.IntPtr)
 extern void _GetCommandResultCode__ctor_mD5EADF3F8158C6A3DF1DFE0E84AEC56492EF710F (void);
-// 0x000008BC MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode::Invoke(System.UInt32&,System.UInt64)
+// 0x000008EA MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode::Invoke(System.UInt32&,System.UInt64)
 extern void _GetCommandResultCode_Invoke_m885920CA57961BBB4446FD823F42E8D63DC719F4 (void);
-// 0x000008BD System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode::BeginInvoke(System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008EB System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode::BeginInvoke(System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetCommandResultCode_BeginInvoke_m1DCED8E2246D4D40D299C7B06F9535BED114EF26 (void);
-// 0x000008BE MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode::EndInvoke(System.UInt32&,System.IAsyncResult)
+// 0x000008EC MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandResultCode::EndInvoke(System.UInt32&,System.IAsyncResult)
 extern void _GetCommandResultCode_EndInvoke_m207748D820D1F4F0BBB4BB1A2E6F31974561B829 (void);
-// 0x000008BF System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandProgress::.ctor(System.Object,System.IntPtr)
+// 0x000008ED System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandProgress::.ctor(System.Object,System.IntPtr)
 extern void _GetCommandProgress__ctor_m9E05E8CD88BC044A037EDE077AFDE1963C502309 (void);
-// 0x000008C0 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandProgress::Invoke(System.UInt32,System.IntPtr,System.UInt64)
+// 0x000008EE MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandProgress::Invoke(System.UInt32,System.IntPtr,System.UInt64)
 extern void _GetCommandProgress_Invoke_m9B2273F6DB28292AC27A78E1D3BDD8F09334926B (void);
-// 0x000008C1 System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandProgress::BeginInvoke(System.UInt32,System.IntPtr,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008EF System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandProgress::BeginInvoke(System.UInt32,System.IntPtr,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetCommandProgress_BeginInvoke_mF6048DEBA847922C7F5E94ADB746CD165A4BDA4D (void);
-// 0x000008C2 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandProgress::EndInvoke(System.IAsyncResult)
+// 0x000008F0 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_GetCommandProgress::EndInvoke(System.IAsyncResult)
 extern void _GetCommandProgress_EndInvoke_m4E0E735B4C1DEBEA67FD87FA32ED1057CFD938AB (void);
-// 0x000008C3 System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_DestroyCommand::.ctor(System.Object,System.IntPtr)
+// 0x000008F1 System.Void MocapApi.IMCPCommand/MCPCommand_ProcTable/_DestroyCommand::.ctor(System.Object,System.IntPtr)
 extern void _DestroyCommand__ctor_m7461253219FFC0D3A1E65855DA3C7E7CB66B8E93 (void);
-// 0x000008C4 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_DestroyCommand::Invoke(System.UInt64)
+// 0x000008F2 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_DestroyCommand::Invoke(System.UInt64)
 extern void _DestroyCommand_Invoke_m7E7952675D2FFC00613E2E3E59A30699C8178642 (void);
-// 0x000008C5 System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_DestroyCommand::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
+// 0x000008F3 System.IAsyncResult MocapApi.IMCPCommand/MCPCommand_ProcTable/_DestroyCommand::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
 extern void _DestroyCommand_BeginInvoke_m7571FEDF14583DE32DB427FC4F7B895855436EB4 (void);
-// 0x000008C6 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_DestroyCommand::EndInvoke(System.IAsyncResult)
+// 0x000008F4 MocapApi.EMCPError MocapApi.IMCPCommand/MCPCommand_ProcTable/_DestroyCommand::EndInvoke(System.IAsyncResult)
 extern void _DestroyCommand_EndInvoke_m35946F4F540FFDB51DBDE4360E10078EB6961934 (void);
-// 0x000008C7 MocapApi.IMCPCalibrateMotionProgress MocapApi.IMCPCalibrateMotionProgress::get_CalibrateMotionProgress()
+// 0x000008F5 MocapApi.IMCPCalibrateMotionProgress MocapApi.IMCPCalibrateMotionProgress::get_CalibrateMotionProgress()
 extern void IMCPCalibrateMotionProgress_get_CalibrateMotionProgress_m38BDB3A18FD8E8234DF4D16CF1E9D3C320932F1A (void);
-// 0x000008C8 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressCountOfSupportPoses(System.UInt32&,System.UInt64)
+// 0x000008F6 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressCountOfSupportPoses(System.UInt32&,System.UInt64)
 extern void IMCPCalibrateMotionProgress_GetCalibrateMotionProgressCountOfSupportPoses_m3F0F748D336BDDE7518D9BF6641B1657B32567E8 (void);
-// 0x000008C9 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressNameOfSupportPose(System.Char&,System.UInt32&,System.UInt32,System.UInt64)
+// 0x000008F7 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressNameOfSupportPose(System.Char&,System.UInt32&,System.UInt32,System.UInt64)
 extern void IMCPCalibrateMotionProgress_GetCalibrateMotionProgressNameOfSupportPose_m0623ECAA45B6164B59A2159F8C5F68A8C974FCF7 (void);
-// 0x000008CA MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressStepOfPose(System.UInt32&,System.String,System.UInt64)
+// 0x000008F8 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressStepOfPose(System.UInt32&,System.String,System.UInt64)
 extern void IMCPCalibrateMotionProgress_GetCalibrateMotionProgressStepOfPose_mFD42AD732A8B41143450FE826AF73305F19719F2 (void);
-// 0x000008CB MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressCountdownOfPose(System.UInt32&,System.String,System.UInt64)
+// 0x000008F9 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressCountdownOfPose(System.UInt32&,System.String,System.UInt64)
 extern void IMCPCalibrateMotionProgress_GetCalibrateMotionProgressCountdownOfPose_mF3904F7C4AD0F83E4039EA87B820BC6D576E9F4B (void);
-// 0x000008CC MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressProgressOfPose(System.UInt32&,System.String,System.UInt64)
+// 0x000008FA MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressProgressOfPose(System.UInt32&,System.String,System.UInt64)
 extern void IMCPCalibrateMotionProgress_GetCalibrateMotionProgressProgressOfPose_m155007925D9B657A363289A6E0DE48B76D9BD9F8 (void);
-// 0x000008CD MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressStepOfCurrentPose(System.UInt32&,System.Char&,System.UInt32&,System.UInt64)
+// 0x000008FB MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressStepOfCurrentPose(System.UInt32&,System.Char&,System.UInt32&,System.UInt64)
 extern void IMCPCalibrateMotionProgress_GetCalibrateMotionProgressStepOfCurrentPose_m6992D8E88AC07CDD0ACCDC365653A310E633F5BE (void);
-// 0x000008CE MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressCountdownOfCurrentPose(System.UInt32&,System.Char&,System.UInt32&,System.UInt64)
+// 0x000008FC MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressCountdownOfCurrentPose(System.UInt32&,System.Char&,System.UInt32&,System.UInt64)
 extern void IMCPCalibrateMotionProgress_GetCalibrateMotionProgressCountdownOfCurrentPose_m790DEBE06598A8ED034AE176F866262EEA31EBA1 (void);
-// 0x000008CF MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressProgressOfCurrentPose(System.UInt32&,System.Char&,System.UInt32&,System.UInt64)
+// 0x000008FD MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress::GetCalibrateMotionProgressProgressOfCurrentPose(System.UInt32&,System.Char&,System.UInt32&,System.UInt64)
 extern void IMCPCalibrateMotionProgress_GetCalibrateMotionProgressProgressOfCurrentPose_m713722B9CB34F7849DD6A6F77BD08A26A67B67CD (void);
-// 0x000008D0 System.Void MocapApi.IMCPCalibrateMotionProgress::.ctor()
+// 0x000008FE System.Void MocapApi.IMCPCalibrateMotionProgress::.ctor()
 extern void IMCPCalibrateMotionProgress__ctor_mF0A4E42C021C4936A83965633A62FD10E012C2A2 (void);
-// 0x000008D1 System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountOfSupportPoses::.ctor(System.Object,System.IntPtr)
+// 0x000008FF System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountOfSupportPoses::.ctor(System.Object,System.IntPtr)
 extern void _GetCalibrateMotionProgressCountOfSupportPoses__ctor_m627B5461E27A070FBC006946F6DCFC1FE9205C05 (void);
-// 0x000008D2 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountOfSupportPoses::Invoke(System.UInt32&,System.UInt64)
+// 0x00000900 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountOfSupportPoses::Invoke(System.UInt32&,System.UInt64)
 extern void _GetCalibrateMotionProgressCountOfSupportPoses_Invoke_m2DE493055D20C3883B9D96F2243115F8347C6041 (void);
-// 0x000008D3 System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountOfSupportPoses::BeginInvoke(System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000901 System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountOfSupportPoses::BeginInvoke(System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetCalibrateMotionProgressCountOfSupportPoses_BeginInvoke_m0A7FEFB64BE6D6ACFA600F675B8A6799BEFA3B67 (void);
-// 0x000008D4 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountOfSupportPoses::EndInvoke(System.UInt32&,System.IAsyncResult)
+// 0x00000902 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountOfSupportPoses::EndInvoke(System.UInt32&,System.IAsyncResult)
 extern void _GetCalibrateMotionProgressCountOfSupportPoses_EndInvoke_m0B2EB59F93AABDE98A04B58C3AC86A4D26F56796 (void);
-// 0x000008D5 System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressNameOfSupportPose::.ctor(System.Object,System.IntPtr)
+// 0x00000903 System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressNameOfSupportPose::.ctor(System.Object,System.IntPtr)
 extern void _GetCalibrateMotionProgressNameOfSupportPose__ctor_mD8317B71321BECE8FBA7CEB3E62D3F0E521616BE (void);
-// 0x000008D6 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressNameOfSupportPose::Invoke(System.Char&,System.UInt32&,System.UInt32,System.UInt64)
+// 0x00000904 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressNameOfSupportPose::Invoke(System.Char&,System.UInt32&,System.UInt32,System.UInt64)
 extern void _GetCalibrateMotionProgressNameOfSupportPose_Invoke_m6604144B211A658BD35B00BECA5F3CC419E41C6C (void);
-// 0x000008D7 System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressNameOfSupportPose::BeginInvoke(System.Char&,System.UInt32&,System.UInt32,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000905 System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressNameOfSupportPose::BeginInvoke(System.Char&,System.UInt32&,System.UInt32,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetCalibrateMotionProgressNameOfSupportPose_BeginInvoke_mFEB4076B3B4F4803AE39E56251D374C0AFD26BC3 (void);
-// 0x000008D8 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressNameOfSupportPose::EndInvoke(System.Char&,System.UInt32&,System.IAsyncResult)
+// 0x00000906 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressNameOfSupportPose::EndInvoke(System.Char&,System.UInt32&,System.IAsyncResult)
 extern void _GetCalibrateMotionProgressNameOfSupportPose_EndInvoke_m6D617CBC873BDEB680004F7A1C5B22487E9A0A4E (void);
-// 0x000008D9 System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfPose::.ctor(System.Object,System.IntPtr)
+// 0x00000907 System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfPose::.ctor(System.Object,System.IntPtr)
 extern void _GetCalibrateMotionProgressStepOfPose__ctor_m11BB2164AED56F175BB559E0B1018B00D0ADB753 (void);
-// 0x000008DA MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfPose::Invoke(System.UInt32&,System.String,System.UInt64)
+// 0x00000908 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfPose::Invoke(System.UInt32&,System.String,System.UInt64)
 extern void _GetCalibrateMotionProgressStepOfPose_Invoke_m92F3C53723F144ACF385A13CE9F0085F7547FAF9 (void);
-// 0x000008DB System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfPose::BeginInvoke(System.UInt32&,System.String,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000909 System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfPose::BeginInvoke(System.UInt32&,System.String,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetCalibrateMotionProgressStepOfPose_BeginInvoke_m03C8F5718C683980517CAD06CEA5928B6EF185E8 (void);
-// 0x000008DC MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfPose::EndInvoke(System.UInt32&,System.IAsyncResult)
+// 0x0000090A MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfPose::EndInvoke(System.UInt32&,System.IAsyncResult)
 extern void _GetCalibrateMotionProgressStepOfPose_EndInvoke_m1AFA2444E4CFA5C723E7DFD3E6F5D8B2D9CE892E (void);
-// 0x000008DD System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfPose::.ctor(System.Object,System.IntPtr)
+// 0x0000090B System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfPose::.ctor(System.Object,System.IntPtr)
 extern void _GetCalibrateMotionProgressCountdownOfPose__ctor_mE766424D5F345DFEE6B47F2FA337ACA86613DCD4 (void);
-// 0x000008DE MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfPose::Invoke(System.UInt32&,System.String,System.UInt64)
+// 0x0000090C MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfPose::Invoke(System.UInt32&,System.String,System.UInt64)
 extern void _GetCalibrateMotionProgressCountdownOfPose_Invoke_m699F111C4C8A83F06F89F798964525B28E620EFE (void);
-// 0x000008DF System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfPose::BeginInvoke(System.UInt32&,System.String,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000090D System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfPose::BeginInvoke(System.UInt32&,System.String,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetCalibrateMotionProgressCountdownOfPose_BeginInvoke_m0EB1843539AE673B8CDCBE4440DFC0A7ACA9A7A1 (void);
-// 0x000008E0 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfPose::EndInvoke(System.UInt32&,System.IAsyncResult)
+// 0x0000090E MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfPose::EndInvoke(System.UInt32&,System.IAsyncResult)
 extern void _GetCalibrateMotionProgressCountdownOfPose_EndInvoke_m5919FFC7A355D6B33DFBC6D3217CD72C1E8F40BD (void);
-// 0x000008E1 System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfPose::.ctor(System.Object,System.IntPtr)
+// 0x0000090F System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfPose::.ctor(System.Object,System.IntPtr)
 extern void _GetCalibrateMotionProgressProgressOfPose__ctor_mE0C7B9FD198BB6FB306FC9F894398E26AC1A7A22 (void);
-// 0x000008E2 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfPose::Invoke(System.UInt32&,System.String,System.UInt64)
+// 0x00000910 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfPose::Invoke(System.UInt32&,System.String,System.UInt64)
 extern void _GetCalibrateMotionProgressProgressOfPose_Invoke_m003BA3C029652DE100D6AAEE3E862A4E9F92D8A4 (void);
-// 0x000008E3 System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfPose::BeginInvoke(System.UInt32&,System.String,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000911 System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfPose::BeginInvoke(System.UInt32&,System.String,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetCalibrateMotionProgressProgressOfPose_BeginInvoke_m8A2B412063364BD70EDCF5E2C76E7DABA11DA55A (void);
-// 0x000008E4 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfPose::EndInvoke(System.UInt32&,System.IAsyncResult)
+// 0x00000912 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfPose::EndInvoke(System.UInt32&,System.IAsyncResult)
 extern void _GetCalibrateMotionProgressProgressOfPose_EndInvoke_mF86A68575FAEE2EA27977CC067154E3B3BF7D792 (void);
-// 0x000008E5 System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfCurrentPose::.ctor(System.Object,System.IntPtr)
+// 0x00000913 System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfCurrentPose::.ctor(System.Object,System.IntPtr)
 extern void _GetCalibrateMotionProgressStepOfCurrentPose__ctor_mE1BAA03893F139B5E537DBC28DD5252AEDDE91CE (void);
-// 0x000008E6 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfCurrentPose::Invoke(System.UInt32&,System.Char&,System.UInt32&,System.UInt64)
+// 0x00000914 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfCurrentPose::Invoke(System.UInt32&,System.Char&,System.UInt32&,System.UInt64)
 extern void _GetCalibrateMotionProgressStepOfCurrentPose_Invoke_m50FD743BCC4F67CC475F6C73DA2C192131EC08AF (void);
-// 0x000008E7 System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfCurrentPose::BeginInvoke(System.UInt32&,System.Char&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000915 System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfCurrentPose::BeginInvoke(System.UInt32&,System.Char&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetCalibrateMotionProgressStepOfCurrentPose_BeginInvoke_m6BF7E04A8F63B3C64469525346D3481CAE40D5A7 (void);
-// 0x000008E8 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfCurrentPose::EndInvoke(System.UInt32&,System.Char&,System.UInt32&,System.IAsyncResult)
+// 0x00000916 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressStepOfCurrentPose::EndInvoke(System.UInt32&,System.Char&,System.UInt32&,System.IAsyncResult)
 extern void _GetCalibrateMotionProgressStepOfCurrentPose_EndInvoke_m37AB93B27C1BD03A405A1C3794BEE2D44CF7FA69 (void);
-// 0x000008E9 System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfCurrentPose::.ctor(System.Object,System.IntPtr)
+// 0x00000917 System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfCurrentPose::.ctor(System.Object,System.IntPtr)
 extern void _GetCalibrateMotionProgressCountdownOfCurrentPose__ctor_m7607F2ACE359A3BA79A27E4DD591FDF5631AD67B (void);
-// 0x000008EA MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfCurrentPose::Invoke(System.UInt32&,System.Char&,System.UInt32&,System.UInt64)
+// 0x00000918 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfCurrentPose::Invoke(System.UInt32&,System.Char&,System.UInt32&,System.UInt64)
 extern void _GetCalibrateMotionProgressCountdownOfCurrentPose_Invoke_m7796E862E6A57AA7E84202374462F4FCE135C868 (void);
-// 0x000008EB System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfCurrentPose::BeginInvoke(System.UInt32&,System.Char&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000919 System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfCurrentPose::BeginInvoke(System.UInt32&,System.Char&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetCalibrateMotionProgressCountdownOfCurrentPose_BeginInvoke_mA6FE3F296EA7DEC2193DD198F0ADA7CCA5A2CA08 (void);
-// 0x000008EC MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfCurrentPose::EndInvoke(System.UInt32&,System.Char&,System.UInt32&,System.IAsyncResult)
+// 0x0000091A MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressCountdownOfCurrentPose::EndInvoke(System.UInt32&,System.Char&,System.UInt32&,System.IAsyncResult)
 extern void _GetCalibrateMotionProgressCountdownOfCurrentPose_EndInvoke_m0565FA2C4C9F8168E293A24164732CA00778C460 (void);
-// 0x000008ED System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfCurrentPose::.ctor(System.Object,System.IntPtr)
+// 0x0000091B System.Void MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfCurrentPose::.ctor(System.Object,System.IntPtr)
 extern void _GetCalibrateMotionProgressProgressOfCurrentPose__ctor_mDDB645B7FE7188EC848D9B8E55DF3216ED69F0BF (void);
-// 0x000008EE MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfCurrentPose::Invoke(System.UInt32&,System.Char&,System.UInt32&,System.UInt64)
+// 0x0000091C MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfCurrentPose::Invoke(System.UInt32&,System.Char&,System.UInt32&,System.UInt64)
 extern void _GetCalibrateMotionProgressProgressOfCurrentPose_Invoke_mCD40F2660B31426D82DA81AC44528488FFB3D4D6 (void);
-// 0x000008EF System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfCurrentPose::BeginInvoke(System.UInt32&,System.Char&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000091D System.IAsyncResult MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfCurrentPose::BeginInvoke(System.UInt32&,System.Char&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetCalibrateMotionProgressProgressOfCurrentPose_BeginInvoke_m65B49959A5D324C8F9B79BEFEC568160296A485E (void);
-// 0x000008F0 MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfCurrentPose::EndInvoke(System.UInt32&,System.Char&,System.UInt32&,System.IAsyncResult)
+// 0x0000091E MocapApi.EMCPError MocapApi.IMCPCalibrateMotionProgress/MCPCalibrateMotionProgress_ProcTable/_GetCalibrateMotionProgressProgressOfCurrentPose::EndInvoke(System.UInt32&,System.Char&,System.UInt32&,System.IAsyncResult)
 extern void _GetCalibrateMotionProgressProgressOfCurrentPose_EndInvoke_mD3BCB58CC6BDECEABE3DAB565B54398E063EA762 (void);
-// 0x000008F1 MocapApi.IMCPSettings MocapApi.IMCPSettings::get_Settings()
+// 0x0000091F MocapApi.IMCPSettings MocapApi.IMCPSettings::get_Settings()
 extern void IMCPSettings_get_Settings_mB68CEF901D9883878FF90246CB6618678F7FD829 (void);
-// 0x000008F2 MocapApi.EMCPError MocapApi.IMCPSettings::CreateSettings(System.UInt64&)
+// 0x00000920 MocapApi.EMCPError MocapApi.IMCPSettings::CreateSettings(System.UInt64&)
 extern void IMCPSettings_CreateSettings_mC7CB06741EE101577F9DFD36B875C89662023B8F (void);
-// 0x000008F3 MocapApi.EMCPError MocapApi.IMCPSettings::DestroySettings(System.UInt64)
+// 0x00000921 MocapApi.EMCPError MocapApi.IMCPSettings::DestroySettings(System.UInt64)
 extern void IMCPSettings_DestroySettings_m05EA4B82BE59A817A71F01FBD033641C598640BD (void);
-// 0x000008F4 MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsUDP(System.UInt16,System.UInt64)
+// 0x00000922 MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsUDP(System.UInt16,System.UInt64)
 extern void IMCPSettings_SetSettingsUDP_mE5602084B7DD348CC464CE7341D9E8259D656BC3 (void);
-// 0x000008F5 MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsTCP(System.String,System.UInt16,System.UInt64)
+// 0x00000923 MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsTCP(System.String,System.UInt16,System.UInt64)
 extern void IMCPSettings_SetSettingsTCP_m1FAFCFA50D52598B4631B5CF3EBEF0E43CE264B5 (void);
-// 0x000008F6 MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsBvhRotation(MocapApi.EMCPBvhRotation,System.UInt64)
+// 0x00000924 MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsBvhRotation(MocapApi.EMCPBvhRotation,System.UInt64)
 extern void IMCPSettings_SetSettingsBvhRotation_m4BA8A720D1DFDB1C674B025BB78DC2E9EC68F231 (void);
-// 0x000008F7 MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsBvhTransformation(MocapApi.EMCPBvhTransformation,System.UInt64)
+// 0x00000925 MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsBvhTransformation(MocapApi.EMCPBvhTransformation,System.UInt64)
 extern void IMCPSettings_SetSettingsBvhTransformation_m37375E09D71CDA9D7F85A9B7D8B224AE3A57115C (void);
-// 0x000008F8 MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsBvhData(MocapApi.EMCPBvhData,System.UInt64)
+// 0x00000926 MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsBvhData(MocapApi.EMCPBvhData,System.UInt64)
 extern void IMCPSettings_SetSettingsBvhData_m9E8429711EE796BD839014CA828595C83B2EE9CC (void);
-// 0x000008F9 MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsCalcData(System.UInt64)
+// 0x00000927 MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsCalcData(System.UInt64)
 extern void IMCPSettings_SetSettingsCalcData_mC9627CD97EBE80471CABCEBB238323279E05684C (void);
-// 0x000008FA MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsUDPServer(System.String,System.UInt16,System.UInt64)
+// 0x00000928 MocapApi.EMCPError MocapApi.IMCPSettings::SetSettingsUDPServer(System.String,System.UInt16,System.UInt64)
 extern void IMCPSettings_SetSettingsUDPServer_mD1C516DE14E3FEE92612081DBE259FA20E22A492 (void);
-// 0x000008FB System.Void MocapApi.IMCPSettings::.ctor()
+// 0x00000929 System.Void MocapApi.IMCPSettings::.ctor()
 extern void IMCPSettings__ctor_m273E60100E1569D0EEAD135EECF144CFA0955B48 (void);
-// 0x000008FC System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_CreateSettings::.ctor(System.Object,System.IntPtr)
+// 0x0000092A System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_CreateSettings::.ctor(System.Object,System.IntPtr)
 extern void _CreateSettings__ctor_mE22F462B5EF03F6AFFC2F0C694A26E536C30067D (void);
-// 0x000008FD MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_CreateSettings::Invoke(System.UInt64&)
+// 0x0000092B MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_CreateSettings::Invoke(System.UInt64&)
 extern void _CreateSettings_Invoke_m8EC29DAC58AB40962E317F41BEECC21BA0A2539D (void);
-// 0x000008FE System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_CreateSettings::BeginInvoke(System.UInt64&,System.AsyncCallback,System.Object)
+// 0x0000092C System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_CreateSettings::BeginInvoke(System.UInt64&,System.AsyncCallback,System.Object)
 extern void _CreateSettings_BeginInvoke_m5EDC66AEB89C52EF5C59DF63F9CB474A77E5BF9E (void);
-// 0x000008FF MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_CreateSettings::EndInvoke(System.UInt64&,System.IAsyncResult)
+// 0x0000092D MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_CreateSettings::EndInvoke(System.UInt64&,System.IAsyncResult)
 extern void _CreateSettings_EndInvoke_m228F22E4AE0FB6055559DC446FCDBC439BD12C85 (void);
-// 0x00000900 System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_DestroySettings::.ctor(System.Object,System.IntPtr)
+// 0x0000092E System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_DestroySettings::.ctor(System.Object,System.IntPtr)
 extern void _DestroySettings__ctor_m339490A5ADCC2E47BF51D4354320D99C13054E3C (void);
-// 0x00000901 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_DestroySettings::Invoke(System.UInt64)
+// 0x0000092F MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_DestroySettings::Invoke(System.UInt64)
 extern void _DestroySettings_Invoke_m587EBAFC6B4D41B6C52EC3DA6F91B42C18979582 (void);
-// 0x00000902 System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_DestroySettings::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000930 System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_DestroySettings::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
 extern void _DestroySettings_BeginInvoke_mA844CF615B02677BAACE6ADDFD9D2A5F6B4B2A5D (void);
-// 0x00000903 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_DestroySettings::EndInvoke(System.IAsyncResult)
+// 0x00000931 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_DestroySettings::EndInvoke(System.IAsyncResult)
 extern void _DestroySettings_EndInvoke_m3FF8242ED8867DC910CDAD5C87B03734B3254695 (void);
-// 0x00000904 System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDP::.ctor(System.Object,System.IntPtr)
+// 0x00000932 System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDP::.ctor(System.Object,System.IntPtr)
 extern void _SetSettingsUDP__ctor_m0B5AED32DDE66763DC4067510C2071AF7714025F (void);
-// 0x00000905 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDP::Invoke(System.UInt16,System.UInt64)
+// 0x00000933 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDP::Invoke(System.UInt16,System.UInt64)
 extern void _SetSettingsUDP_Invoke_m3B3AB1B4CC4E5378F891ACC73916B7F03A4263C6 (void);
-// 0x00000906 System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDP::BeginInvoke(System.UInt16,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000934 System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDP::BeginInvoke(System.UInt16,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetSettingsUDP_BeginInvoke_m3A1D5BEC253F69C33ED3E91572913F5A4B2C3435 (void);
-// 0x00000907 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDP::EndInvoke(System.IAsyncResult)
+// 0x00000935 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDP::EndInvoke(System.IAsyncResult)
 extern void _SetSettingsUDP_EndInvoke_m43CF7C8BCE2DC5B32F283E867E50103C7F608286 (void);
-// 0x00000908 System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsTCP::.ctor(System.Object,System.IntPtr)
+// 0x00000936 System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsTCP::.ctor(System.Object,System.IntPtr)
 extern void _SetSettingsTCP__ctor_m8C25580730EF812D2ACD172A39F1734E68977AC0 (void);
-// 0x00000909 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsTCP::Invoke(System.String,System.UInt16,System.UInt64)
+// 0x00000937 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsTCP::Invoke(System.String,System.UInt16,System.UInt64)
 extern void _SetSettingsTCP_Invoke_m7785755C89561F4272CD18C85DDFC2F8D21A696E (void);
-// 0x0000090A System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsTCP::BeginInvoke(System.String,System.UInt16,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000938 System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsTCP::BeginInvoke(System.String,System.UInt16,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetSettingsTCP_BeginInvoke_m9EED0C873863EC6B601028F622396FDFF325ABB8 (void);
-// 0x0000090B MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsTCP::EndInvoke(System.IAsyncResult)
+// 0x00000939 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsTCP::EndInvoke(System.IAsyncResult)
 extern void _SetSettingsTCP_EndInvoke_m9B768192D2B5073907A3B0339A0A5E6B88A58720 (void);
-// 0x0000090C System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhRotation::.ctor(System.Object,System.IntPtr)
+// 0x0000093A System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhRotation::.ctor(System.Object,System.IntPtr)
 extern void _SetSettingsBvhRotation__ctor_m3502CF0E331E807C7E9B16D025F82048C50186DB (void);
-// 0x0000090D MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhRotation::Invoke(MocapApi.EMCPBvhRotation,System.UInt64)
+// 0x0000093B MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhRotation::Invoke(MocapApi.EMCPBvhRotation,System.UInt64)
 extern void _SetSettingsBvhRotation_Invoke_mF432988E80DFB00C12E98E3074258DCC4AE66CEC (void);
-// 0x0000090E System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhRotation::BeginInvoke(MocapApi.EMCPBvhRotation,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000093C System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhRotation::BeginInvoke(MocapApi.EMCPBvhRotation,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetSettingsBvhRotation_BeginInvoke_m76F6B2CC3E01780D8618E1467A8344AF06C34BAB (void);
-// 0x0000090F MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhRotation::EndInvoke(System.IAsyncResult)
+// 0x0000093D MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhRotation::EndInvoke(System.IAsyncResult)
 extern void _SetSettingsBvhRotation_EndInvoke_m22131E5A312D29DA68E68254C162551F3F85C239 (void);
-// 0x00000910 System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhTransformation::.ctor(System.Object,System.IntPtr)
+// 0x0000093E System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhTransformation::.ctor(System.Object,System.IntPtr)
 extern void _SetSettingsBvhTransformation__ctor_m25AE2AD7096B8FF1135EA6CAF1DE652B5FBEB514 (void);
-// 0x00000911 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhTransformation::Invoke(MocapApi.EMCPBvhTransformation,System.UInt64)
+// 0x0000093F MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhTransformation::Invoke(MocapApi.EMCPBvhTransformation,System.UInt64)
 extern void _SetSettingsBvhTransformation_Invoke_m9AA58EEB751A1E4ED4C3DF65BD13149788B941A7 (void);
-// 0x00000912 System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhTransformation::BeginInvoke(MocapApi.EMCPBvhTransformation,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000940 System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhTransformation::BeginInvoke(MocapApi.EMCPBvhTransformation,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetSettingsBvhTransformation_BeginInvoke_mF2BE511C5BFFF81CB696C657036B38A61C21B7BB (void);
-// 0x00000913 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhTransformation::EndInvoke(System.IAsyncResult)
+// 0x00000941 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhTransformation::EndInvoke(System.IAsyncResult)
 extern void _SetSettingsBvhTransformation_EndInvoke_m547244DBE699BC3AFDE7C42049D10758ACA54B7C (void);
-// 0x00000914 System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhData::.ctor(System.Object,System.IntPtr)
+// 0x00000942 System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhData::.ctor(System.Object,System.IntPtr)
 extern void _SetSettingsBvhData__ctor_m88D44FFEA04A18F297DFF5FB2C76024CE5242EB2 (void);
-// 0x00000915 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhData::Invoke(MocapApi.EMCPBvhData,System.UInt64)
+// 0x00000943 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhData::Invoke(MocapApi.EMCPBvhData,System.UInt64)
 extern void _SetSettingsBvhData_Invoke_mAC1ED3F3C4C3E4E99C57203AD9893554128F6DF5 (void);
-// 0x00000916 System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhData::BeginInvoke(MocapApi.EMCPBvhData,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000944 System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhData::BeginInvoke(MocapApi.EMCPBvhData,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetSettingsBvhData_BeginInvoke_mA0DB92A7783C8151FA9EC77A5E3D10A63382ADCF (void);
-// 0x00000917 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhData::EndInvoke(System.IAsyncResult)
+// 0x00000945 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsBvhData::EndInvoke(System.IAsyncResult)
 extern void _SetSettingsBvhData_EndInvoke_m41BC58A62BFA9CC2DA453C00208077A06A4EDA53 (void);
-// 0x00000918 System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsCalcData::.ctor(System.Object,System.IntPtr)
+// 0x00000946 System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsCalcData::.ctor(System.Object,System.IntPtr)
 extern void _SetSettingsCalcData__ctor_mDFD7105467FE63035388F3BA955D59CD4B9F04E1 (void);
-// 0x00000919 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsCalcData::Invoke(System.UInt64)
+// 0x00000947 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsCalcData::Invoke(System.UInt64)
 extern void _SetSettingsCalcData_Invoke_mCE7888CC357943098A0AEAA75CCE505463EE47B5 (void);
-// 0x0000091A System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsCalcData::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000948 System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsCalcData::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetSettingsCalcData_BeginInvoke_mEC4A97F25195492AE9EBACDCF57B67D164881739 (void);
-// 0x0000091B MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsCalcData::EndInvoke(System.IAsyncResult)
+// 0x00000949 MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsCalcData::EndInvoke(System.IAsyncResult)
 extern void _SetSettingsCalcData_EndInvoke_m7F49251B8BEBA5F892B56ED0822D49AECAE62CAF (void);
-// 0x0000091C System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDPServer::.ctor(System.Object,System.IntPtr)
+// 0x0000094A System.Void MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDPServer::.ctor(System.Object,System.IntPtr)
 extern void _SetSettingsUDPServer__ctor_mB4FC8ADCA81519CFE10F98C5E37B6B6196931108 (void);
-// 0x0000091D MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDPServer::Invoke(System.String,System.UInt16,System.UInt64)
+// 0x0000094B MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDPServer::Invoke(System.String,System.UInt16,System.UInt64)
 extern void _SetSettingsUDPServer_Invoke_m2463430B59C842E0F6D49D4AFD3895C95C00DA96 (void);
-// 0x0000091E System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDPServer::BeginInvoke(System.String,System.UInt16,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000094C System.IAsyncResult MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDPServer::BeginInvoke(System.String,System.UInt16,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetSettingsUDPServer_BeginInvoke_mBE899FCFEDA6040498B21278144CF6E52C5777B0 (void);
-// 0x0000091F MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDPServer::EndInvoke(System.IAsyncResult)
+// 0x0000094D MocapApi.EMCPError MocapApi.IMCPSettings/MCPSettings_ProcTable/_SetSettingsUDPServer::EndInvoke(System.IAsyncResult)
 extern void _SetSettingsUDPServer_EndInvoke_m8F9102AF0F63F511CD2FB5712027D2FB1E4E21BD (void);
-// 0x00000920 MocapApi.IMCPRenderSettings MocapApi.IMCPRenderSettings::get_RenderSettings()
+// 0x0000094E MocapApi.IMCPRenderSettings MocapApi.IMCPRenderSettings::get_RenderSettings()
 extern void IMCPRenderSettings_get_RenderSettings_mC1ED5B7D9F794A9DDEEB5EEA0164299E57365311 (void);
-// 0x00000921 MocapApi.EMCPError MocapApi.IMCPRenderSettings::CreateRenderSettings(System.UInt64&)
+// 0x0000094F MocapApi.EMCPError MocapApi.IMCPRenderSettings::CreateRenderSettings(System.UInt64&)
 extern void IMCPRenderSettings_CreateRenderSettings_m335D553441B7102B4DA6836168CD34796A02366F (void);
-// 0x00000922 MocapApi.EMCPError MocapApi.IMCPRenderSettings::GetPreDefRenderSettings(MocapApi.EMCPPreDefinedRenderSettings,System.UInt64&)
+// 0x00000950 MocapApi.EMCPError MocapApi.IMCPRenderSettings::GetPreDefRenderSettings(MocapApi.EMCPPreDefinedRenderSettings,System.UInt64&)
 extern void IMCPRenderSettings_GetPreDefRenderSettings_m67D6CD68A561C531A95A5B91032F73EEA81D41C0 (void);
-// 0x00000923 MocapApi.EMCPError MocapApi.IMCPRenderSettings::SetUpVector(MocapApi.EMCPUpVector,System.Int32,System.UInt64)
+// 0x00000951 MocapApi.EMCPError MocapApi.IMCPRenderSettings::SetUpVector(MocapApi.EMCPUpVector,System.Int32,System.UInt64)
 extern void IMCPRenderSettings_SetUpVector_mF3A4E172B37CA4EC7ED2EC59F0FCD085D778FBDA (void);
-// 0x00000924 MocapApi.EMCPError MocapApi.IMCPRenderSettings::GetUpVector(MocapApi.EMCPUpVector&,System.Int32&,System.UInt64)
+// 0x00000952 MocapApi.EMCPError MocapApi.IMCPRenderSettings::GetUpVector(MocapApi.EMCPUpVector&,System.Int32&,System.UInt64)
 extern void IMCPRenderSettings_GetUpVector_m9C02790653D11F984C8CC889B8764140A527FF3E (void);
-// 0x00000925 MocapApi.EMCPError MocapApi.IMCPRenderSettings::SetFrontVector(MocapApi.EMCPFrontVector,System.Int32,System.UInt64)
+// 0x00000953 MocapApi.EMCPError MocapApi.IMCPRenderSettings::SetFrontVector(MocapApi.EMCPFrontVector,System.Int32,System.UInt64)
 extern void IMCPRenderSettings_SetFrontVector_mF7FBE58595DDD303DE09088BF8087231AD13B4AE (void);
-// 0x00000926 MocapApi.EMCPError MocapApi.IMCPRenderSettings::GetFrontVector(MocapApi.EMCPFrontVector&,System.Int32&,System.UInt64)
+// 0x00000954 MocapApi.EMCPError MocapApi.IMCPRenderSettings::GetFrontVector(MocapApi.EMCPFrontVector&,System.Int32&,System.UInt64)
 extern void IMCPRenderSettings_GetFrontVector_m76C793C553473CA38965DF4B877F0582488245EC (void);
-// 0x00000927 MocapApi.EMCPError MocapApi.IMCPRenderSettings::SetCoordSystem(MocapApi.EMCPCoordSystem,System.UInt64)
+// 0x00000955 MocapApi.EMCPError MocapApi.IMCPRenderSettings::SetCoordSystem(MocapApi.EMCPCoordSystem,System.UInt64)
 extern void IMCPRenderSettings_SetCoordSystem_mE3DE01AEC2EBBAD45011692A8A4A2FBDFE9D62DE (void);
-// 0x00000928 MocapApi.EMCPError MocapApi.IMCPRenderSettings::GetCoordSystem(MocapApi.EMCPCoordSystem&,System.UInt64)
+// 0x00000956 MocapApi.EMCPError MocapApi.IMCPRenderSettings::GetCoordSystem(MocapApi.EMCPCoordSystem&,System.UInt64)
 extern void IMCPRenderSettings_GetCoordSystem_m92B57E2A43547A7C3D82F5FAB138656C75CF6BA4 (void);
-// 0x00000929 MocapApi.EMCPError MocapApi.IMCPRenderSettings::SetRotatingDirection(MocapApi.EMCPRotatingDirection,System.UInt64)
+// 0x00000957 MocapApi.EMCPError MocapApi.IMCPRenderSettings::SetRotatingDirection(MocapApi.EMCPRotatingDirection,System.UInt64)
 extern void IMCPRenderSettings_SetRotatingDirection_mAC5DD8754E5C157F87464E3B3B472DE11514A43A (void);
-// 0x0000092A MocapApi.EMCPError MocapApi.IMCPRenderSettings::GetRotatingDirection(MocapApi.EMCPRotatingDirection&,System.UInt64)
+// 0x00000958 MocapApi.EMCPError MocapApi.IMCPRenderSettings::GetRotatingDirection(MocapApi.EMCPRotatingDirection&,System.UInt64)
 extern void IMCPRenderSettings_GetRotatingDirection_m0EE783E04237DE0EA7E930BD9AD56789C184B3DB (void);
-// 0x0000092B MocapApi.EMCPError MocapApi.IMCPRenderSettings::SetUnit(MocapApi.EMCPUnit,System.UInt64)
+// 0x00000959 MocapApi.EMCPError MocapApi.IMCPRenderSettings::SetUnit(MocapApi.EMCPUnit,System.UInt64)
 extern void IMCPRenderSettings_SetUnit_mCCB4E23F679AEDA01D049F62E4A6C17B48F47708 (void);
-// 0x0000092C MocapApi.EMCPError MocapApi.IMCPRenderSettings::GetUnit(MocapApi.EMCPUnit&,System.UInt64)
+// 0x0000095A MocapApi.EMCPError MocapApi.IMCPRenderSettings::GetUnit(MocapApi.EMCPUnit&,System.UInt64)
 extern void IMCPRenderSettings_GetUnit_m5B1664A8413B1822269CFA4CDC2A5B367071CCD0 (void);
-// 0x0000092D MocapApi.EMCPError MocapApi.IMCPRenderSettings::DestroyRenderSettings(System.UInt64)
+// 0x0000095B MocapApi.EMCPError MocapApi.IMCPRenderSettings::DestroyRenderSettings(System.UInt64)
 extern void IMCPRenderSettings_DestroyRenderSettings_mC2D023A2EBBABD952E13B7E894FB011BE2C30145 (void);
-// 0x0000092E System.Void MocapApi.IMCPRenderSettings::.ctor()
+// 0x0000095C System.Void MocapApi.IMCPRenderSettings::.ctor()
 extern void IMCPRenderSettings__ctor_mEFF29EDC40ACE39DB6FFED443405A6AA8C22B056 (void);
-// 0x0000092F System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_CreateRenderSettings::.ctor(System.Object,System.IntPtr)
+// 0x0000095D System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_CreateRenderSettings::.ctor(System.Object,System.IntPtr)
 extern void _CreateRenderSettings__ctor_m4EE0038DC538C26F27C50CC33093E5670412172A (void);
-// 0x00000930 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_CreateRenderSettings::Invoke(System.UInt64&)
+// 0x0000095E MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_CreateRenderSettings::Invoke(System.UInt64&)
 extern void _CreateRenderSettings_Invoke_m796BC007E1C39C91F93DD9C3E50F4E5CD8DCB0A3 (void);
-// 0x00000931 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_CreateRenderSettings::BeginInvoke(System.UInt64&,System.AsyncCallback,System.Object)
+// 0x0000095F System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_CreateRenderSettings::BeginInvoke(System.UInt64&,System.AsyncCallback,System.Object)
 extern void _CreateRenderSettings_BeginInvoke_mA8EFCB6E79FE323C94FA9F31354FEB8E8092D3CB (void);
-// 0x00000932 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_CreateRenderSettings::EndInvoke(System.UInt64&,System.IAsyncResult)
+// 0x00000960 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_CreateRenderSettings::EndInvoke(System.UInt64&,System.IAsyncResult)
 extern void _CreateRenderSettings_EndInvoke_mDCC833141C06E3A79BA37D650C2405E9BDEC8BF6 (void);
-// 0x00000933 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetPreDefRenderSettings::.ctor(System.Object,System.IntPtr)
+// 0x00000961 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetPreDefRenderSettings::.ctor(System.Object,System.IntPtr)
 extern void _GetPreDefRenderSettings__ctor_m8EDB8BD86937DD575A0C3625D5ACB7F49D816721 (void);
-// 0x00000934 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetPreDefRenderSettings::Invoke(MocapApi.EMCPPreDefinedRenderSettings,System.UInt64&)
+// 0x00000962 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetPreDefRenderSettings::Invoke(MocapApi.EMCPPreDefinedRenderSettings,System.UInt64&)
 extern void _GetPreDefRenderSettings_Invoke_mCBCA3594281EF56A08CB99B3D669BC901786FCF1 (void);
-// 0x00000935 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetPreDefRenderSettings::BeginInvoke(MocapApi.EMCPPreDefinedRenderSettings,System.UInt64&,System.AsyncCallback,System.Object)
+// 0x00000963 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetPreDefRenderSettings::BeginInvoke(MocapApi.EMCPPreDefinedRenderSettings,System.UInt64&,System.AsyncCallback,System.Object)
 extern void _GetPreDefRenderSettings_BeginInvoke_m0EF9AC789EB3999C291D0809D82E7A1A320C0BAB (void);
-// 0x00000936 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetPreDefRenderSettings::EndInvoke(System.UInt64&,System.IAsyncResult)
+// 0x00000964 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetPreDefRenderSettings::EndInvoke(System.UInt64&,System.IAsyncResult)
 extern void _GetPreDefRenderSettings_EndInvoke_mC2C1BE154B6E162083B25AEB441C47C9E4CE3288 (void);
-// 0x00000937 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUpVector::.ctor(System.Object,System.IntPtr)
+// 0x00000965 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUpVector::.ctor(System.Object,System.IntPtr)
 extern void _SetUpVector__ctor_m67B9C58F28F8423C9E867AD2F2011082A334296F (void);
-// 0x00000938 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUpVector::Invoke(MocapApi.EMCPUpVector,System.Int32,System.UInt64)
+// 0x00000966 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUpVector::Invoke(MocapApi.EMCPUpVector,System.Int32,System.UInt64)
 extern void _SetUpVector_Invoke_m0D92849CD5DDF3DF2E69C54E2D72115961B430E7 (void);
-// 0x00000939 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUpVector::BeginInvoke(MocapApi.EMCPUpVector,System.Int32,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000967 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUpVector::BeginInvoke(MocapApi.EMCPUpVector,System.Int32,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetUpVector_BeginInvoke_mBFC7F60DF761046A4AE677B741D2E24AEF3CBA67 (void);
-// 0x0000093A MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUpVector::EndInvoke(System.IAsyncResult)
+// 0x00000968 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUpVector::EndInvoke(System.IAsyncResult)
 extern void _SetUpVector_EndInvoke_mE11A1EBA43BE522AD4834E31B405F3F80C2836E1 (void);
-// 0x0000093B System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUpVector::.ctor(System.Object,System.IntPtr)
+// 0x00000969 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUpVector::.ctor(System.Object,System.IntPtr)
 extern void _GetUpVector__ctor_m9B76A60E80A48C60222FF563687048E7282D0252 (void);
-// 0x0000093C MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUpVector::Invoke(MocapApi.EMCPUpVector&,System.Int32&,System.UInt64)
+// 0x0000096A MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUpVector::Invoke(MocapApi.EMCPUpVector&,System.Int32&,System.UInt64)
 extern void _GetUpVector_Invoke_m7B89A3EC45A10567EC6AF70DD943EDF8EBCE6FB6 (void);
-// 0x0000093D System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUpVector::BeginInvoke(MocapApi.EMCPUpVector&,System.Int32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000096B System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUpVector::BeginInvoke(MocapApi.EMCPUpVector&,System.Int32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetUpVector_BeginInvoke_m152B6FE00DBC0916C30B097A5BE8D33FFD8E18B6 (void);
-// 0x0000093E MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUpVector::EndInvoke(MocapApi.EMCPUpVector&,System.Int32&,System.IAsyncResult)
+// 0x0000096C MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUpVector::EndInvoke(MocapApi.EMCPUpVector&,System.Int32&,System.IAsyncResult)
 extern void _GetUpVector_EndInvoke_mFCF9BAFFCEF6D0E9CACA1173B45034F913C9CBCB (void);
-// 0x0000093F System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetFrontVector::.ctor(System.Object,System.IntPtr)
+// 0x0000096D System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetFrontVector::.ctor(System.Object,System.IntPtr)
 extern void _SetFrontVector__ctor_m9BE4D03D36E4533185CA5CB9A4FAF44E9EE04469 (void);
-// 0x00000940 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetFrontVector::Invoke(MocapApi.EMCPFrontVector,System.Int32,System.UInt64)
+// 0x0000096E MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetFrontVector::Invoke(MocapApi.EMCPFrontVector,System.Int32,System.UInt64)
 extern void _SetFrontVector_Invoke_mCFD39C0A4311A90FD7A255D94545E2E4C9A92FBD (void);
-// 0x00000941 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetFrontVector::BeginInvoke(MocapApi.EMCPFrontVector,System.Int32,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000096F System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetFrontVector::BeginInvoke(MocapApi.EMCPFrontVector,System.Int32,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetFrontVector_BeginInvoke_mDBB9E75B57BCC47BF769C60AE59F184DD19FAA7D (void);
-// 0x00000942 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetFrontVector::EndInvoke(System.IAsyncResult)
+// 0x00000970 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetFrontVector::EndInvoke(System.IAsyncResult)
 extern void _SetFrontVector_EndInvoke_mCBA6FD3C61D8A5145B5ABD193DC17F6A52B7EE9E (void);
-// 0x00000943 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetFrontVector::.ctor(System.Object,System.IntPtr)
+// 0x00000971 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetFrontVector::.ctor(System.Object,System.IntPtr)
 extern void _GetFrontVector__ctor_mCEC47DAAF72D6DEB20EEAF8E138CCCC223B403C2 (void);
-// 0x00000944 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetFrontVector::Invoke(MocapApi.EMCPFrontVector&,System.Int32&,System.UInt64)
+// 0x00000972 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetFrontVector::Invoke(MocapApi.EMCPFrontVector&,System.Int32&,System.UInt64)
 extern void _GetFrontVector_Invoke_m3147FD89607F28C66FAB286299015BE09C97216B (void);
-// 0x00000945 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetFrontVector::BeginInvoke(MocapApi.EMCPFrontVector&,System.Int32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000973 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetFrontVector::BeginInvoke(MocapApi.EMCPFrontVector&,System.Int32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetFrontVector_BeginInvoke_m0476436575FF038245A55E9F3797644C8E05C16E (void);
-// 0x00000946 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetFrontVector::EndInvoke(MocapApi.EMCPFrontVector&,System.Int32&,System.IAsyncResult)
+// 0x00000974 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetFrontVector::EndInvoke(MocapApi.EMCPFrontVector&,System.Int32&,System.IAsyncResult)
 extern void _GetFrontVector_EndInvoke_m9F5080358E36A8C9FA5BDA8B71D2AD69C80F867F (void);
-// 0x00000947 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetCoordSystem::.ctor(System.Object,System.IntPtr)
+// 0x00000975 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetCoordSystem::.ctor(System.Object,System.IntPtr)
 extern void _SetCoordSystem__ctor_m7776C0162ED6622492AD05E9F76A5D9946F841BE (void);
-// 0x00000948 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetCoordSystem::Invoke(MocapApi.EMCPCoordSystem,System.UInt64)
+// 0x00000976 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetCoordSystem::Invoke(MocapApi.EMCPCoordSystem,System.UInt64)
 extern void _SetCoordSystem_Invoke_m31FF38D33368ACCDB6B248FB9C9092230980E777 (void);
-// 0x00000949 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetCoordSystem::BeginInvoke(MocapApi.EMCPCoordSystem,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000977 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetCoordSystem::BeginInvoke(MocapApi.EMCPCoordSystem,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetCoordSystem_BeginInvoke_mE0F2E10DD94A93A0107014064FC9E04A67FAD59A (void);
-// 0x0000094A MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetCoordSystem::EndInvoke(System.IAsyncResult)
+// 0x00000978 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetCoordSystem::EndInvoke(System.IAsyncResult)
 extern void _SetCoordSystem_EndInvoke_m7A04088DBE2A414228F3866E2AEA6E2FBD11AB4A (void);
-// 0x0000094B System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetCoordSystem::.ctor(System.Object,System.IntPtr)
+// 0x00000979 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetCoordSystem::.ctor(System.Object,System.IntPtr)
 extern void _GetCoordSystem__ctor_m3FE6781E575D612F2F41C88B37DA3314EA636181 (void);
-// 0x0000094C MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetCoordSystem::Invoke(MocapApi.EMCPCoordSystem&,System.UInt64)
+// 0x0000097A MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetCoordSystem::Invoke(MocapApi.EMCPCoordSystem&,System.UInt64)
 extern void _GetCoordSystem_Invoke_mB84CC39751BCCB60D577354B71D99C792523781A (void);
-// 0x0000094D System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetCoordSystem::BeginInvoke(MocapApi.EMCPCoordSystem&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000097B System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetCoordSystem::BeginInvoke(MocapApi.EMCPCoordSystem&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetCoordSystem_BeginInvoke_m75530994486AFC9DE53CE4D13F74F7CAB59CAC13 (void);
-// 0x0000094E MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetCoordSystem::EndInvoke(MocapApi.EMCPCoordSystem&,System.IAsyncResult)
+// 0x0000097C MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetCoordSystem::EndInvoke(MocapApi.EMCPCoordSystem&,System.IAsyncResult)
 extern void _GetCoordSystem_EndInvoke_m9E2B07D832E1D675AFC48174820118836575B803 (void);
-// 0x0000094F System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetRotatingDirection::.ctor(System.Object,System.IntPtr)
+// 0x0000097D System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetRotatingDirection::.ctor(System.Object,System.IntPtr)
 extern void _SetRotatingDirection__ctor_m8C184A2DAB8F3071CB37F13AD12495B80F22E6BB (void);
-// 0x00000950 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetRotatingDirection::Invoke(MocapApi.EMCPRotatingDirection,System.UInt64)
+// 0x0000097E MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetRotatingDirection::Invoke(MocapApi.EMCPRotatingDirection,System.UInt64)
 extern void _SetRotatingDirection_Invoke_mC9ED990B258F062BF7420E8137BE8FE5E5A3BFE5 (void);
-// 0x00000951 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetRotatingDirection::BeginInvoke(MocapApi.EMCPRotatingDirection,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000097F System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetRotatingDirection::BeginInvoke(MocapApi.EMCPRotatingDirection,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetRotatingDirection_BeginInvoke_m6A55FB6696500A43FBBD2ABF326A250963F92A7C (void);
-// 0x00000952 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetRotatingDirection::EndInvoke(System.IAsyncResult)
+// 0x00000980 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetRotatingDirection::EndInvoke(System.IAsyncResult)
 extern void _SetRotatingDirection_EndInvoke_m5BE3F071FB9A0D04EC1445B3628CA8B94440AD16 (void);
-// 0x00000953 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetRotatingDirection::.ctor(System.Object,System.IntPtr)
+// 0x00000981 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetRotatingDirection::.ctor(System.Object,System.IntPtr)
 extern void _GetRotatingDirection__ctor_m141F46E7EC5CB6576B6C84AC5C10FE260B5702A4 (void);
-// 0x00000954 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetRotatingDirection::Invoke(MocapApi.EMCPRotatingDirection&,System.UInt64)
+// 0x00000982 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetRotatingDirection::Invoke(MocapApi.EMCPRotatingDirection&,System.UInt64)
 extern void _GetRotatingDirection_Invoke_m2B5AAAD63451F9C0E5E0AB6246A7DA47D51607B9 (void);
-// 0x00000955 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetRotatingDirection::BeginInvoke(MocapApi.EMCPRotatingDirection&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000983 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetRotatingDirection::BeginInvoke(MocapApi.EMCPRotatingDirection&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetRotatingDirection_BeginInvoke_m4A6708A7BDC55EF2DCE0C1838B19D46A640EFCCD (void);
-// 0x00000956 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetRotatingDirection::EndInvoke(MocapApi.EMCPRotatingDirection&,System.IAsyncResult)
+// 0x00000984 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetRotatingDirection::EndInvoke(MocapApi.EMCPRotatingDirection&,System.IAsyncResult)
 extern void _GetRotatingDirection_EndInvoke_m2E1245A33B51B004C5817CCB21B150803E64E8C7 (void);
-// 0x00000957 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUnit::.ctor(System.Object,System.IntPtr)
+// 0x00000985 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUnit::.ctor(System.Object,System.IntPtr)
 extern void _SetUnit__ctor_m4CA266E676184F02122A1AE638701528DDA62954 (void);
-// 0x00000958 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUnit::Invoke(MocapApi.EMCPUnit,System.UInt64)
+// 0x00000986 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUnit::Invoke(MocapApi.EMCPUnit,System.UInt64)
 extern void _SetUnit_Invoke_m8F2E1318C63B4CAD1E8DC4E6D8BA0CFD6AB5248F (void);
-// 0x00000959 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUnit::BeginInvoke(MocapApi.EMCPUnit,System.UInt64,System.AsyncCallback,System.Object)
+// 0x00000987 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUnit::BeginInvoke(MocapApi.EMCPUnit,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetUnit_BeginInvoke_mC46F2C913305E635B7D6F736D7A53B17849ECE8B (void);
-// 0x0000095A MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUnit::EndInvoke(System.IAsyncResult)
+// 0x00000988 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_SetUnit::EndInvoke(System.IAsyncResult)
 extern void _SetUnit_EndInvoke_m80F7AA3EA4BA07909E43A59A9E62AD884209548D (void);
-// 0x0000095B System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUnit::.ctor(System.Object,System.IntPtr)
+// 0x00000989 System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUnit::.ctor(System.Object,System.IntPtr)
 extern void _GetUnit__ctor_m8CD2F3E0F58408761E98DD733436FE1DFE3B8729 (void);
-// 0x0000095C MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUnit::Invoke(MocapApi.EMCPUnit&,System.UInt64)
+// 0x0000098A MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUnit::Invoke(MocapApi.EMCPUnit&,System.UInt64)
 extern void _GetUnit_Invoke_m9FAFED7CF9C750E06FCCFFB88405BD15C0BEBE29 (void);
-// 0x0000095D System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUnit::BeginInvoke(MocapApi.EMCPUnit&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000098B System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUnit::BeginInvoke(MocapApi.EMCPUnit&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetUnit_BeginInvoke_m22E23F93789545BCE158DFD67D5AA1ED459548CC (void);
-// 0x0000095E MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUnit::EndInvoke(MocapApi.EMCPUnit&,System.IAsyncResult)
+// 0x0000098C MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_GetUnit::EndInvoke(MocapApi.EMCPUnit&,System.IAsyncResult)
 extern void _GetUnit_EndInvoke_mBF33149380F5E09C4EEC766191800D37B23ADD2A (void);
-// 0x0000095F System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_DestroyRenderSettings::.ctor(System.Object,System.IntPtr)
+// 0x0000098D System.Void MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_DestroyRenderSettings::.ctor(System.Object,System.IntPtr)
 extern void _DestroyRenderSettings__ctor_mBBE3CF4F684555E03101E976BCDD42ABD3CAF0C8 (void);
-// 0x00000960 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_DestroyRenderSettings::Invoke(System.UInt64)
+// 0x0000098E MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_DestroyRenderSettings::Invoke(System.UInt64)
 extern void _DestroyRenderSettings_Invoke_mE75361A09810B8BF7781861CE235BC4775BA9504 (void);
-// 0x00000961 System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_DestroyRenderSettings::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
+// 0x0000098F System.IAsyncResult MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_DestroyRenderSettings::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
 extern void _DestroyRenderSettings_BeginInvoke_m5BE68186D9B963AB31054A5DB22603DDBAF39FCE (void);
-// 0x00000962 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_DestroyRenderSettings::EndInvoke(System.IAsyncResult)
+// 0x00000990 MocapApi.EMCPError MocapApi.IMCPRenderSettings/MCPRenderSettings_ProcTable/_DestroyRenderSettings::EndInvoke(System.IAsyncResult)
 extern void _DestroyRenderSettings_EndInvoke_m1D3EC1DA260AB886140D764CE7D3CE1F819A6818 (void);
-// 0x00000963 MocapApi.IMCPApplication MocapApi.IMCPApplication::get_Application()
+// 0x00000991 MocapApi.IMCPApplication MocapApi.IMCPApplication::get_Application()
 extern void IMCPApplication_get_Application_mC8B88E251F59079A1EACF31F0FF4ED5FB34779EC (void);
-// 0x00000964 MocapApi.EMCPError MocapApi.IMCPApplication::CreateApplication(System.UInt64&)
+// 0x00000992 MocapApi.EMCPError MocapApi.IMCPApplication::CreateApplication(System.UInt64&)
 extern void IMCPApplication_CreateApplication_m5C04FBEF07F647CADC6CB773251079F088A5524C (void);
-// 0x00000965 MocapApi.EMCPError MocapApi.IMCPApplication::DestroyApplication(System.UInt64)
+// 0x00000993 MocapApi.EMCPError MocapApi.IMCPApplication::DestroyApplication(System.UInt64)
 extern void IMCPApplication_DestroyApplication_m1E51C118048740E22A328820F6261CB69839FC8C (void);
-// 0x00000966 MocapApi.EMCPError MocapApi.IMCPApplication::SetApplicationSettings(System.UInt64,System.UInt64)
+// 0x00000994 MocapApi.EMCPError MocapApi.IMCPApplication::SetApplicationSettings(System.UInt64,System.UInt64)
 extern void IMCPApplication_SetApplicationSettings_m7F6E19DA645BF2DF7FE7145BA9DF2BE063DD5C14 (void);
-// 0x00000967 MocapApi.EMCPError MocapApi.IMCPApplication::SetApplicationRenderSettings(System.UInt64,System.UInt64)
+// 0x00000995 MocapApi.EMCPError MocapApi.IMCPApplication::SetApplicationRenderSettings(System.UInt64,System.UInt64)
 extern void IMCPApplication_SetApplicationRenderSettings_mB0555C13F14BC84B1F3CB2114AD4949282A5828A (void);
-// 0x00000968 MocapApi.EMCPError MocapApi.IMCPApplication::OpenApplication(System.UInt64)
+// 0x00000996 MocapApi.EMCPError MocapApi.IMCPApplication::OpenApplication(System.UInt64)
 extern void IMCPApplication_OpenApplication_mE0ABDC9296F40DB0F5882ADADC1B3298B5120261 (void);
-// 0x00000969 MocapApi.EMCPError MocapApi.IMCPApplication::EnableApplicationCacheEvents(System.UInt64)
+// 0x00000997 MocapApi.EMCPError MocapApi.IMCPApplication::EnableApplicationCacheEvents(System.UInt64)
 extern void IMCPApplication_EnableApplicationCacheEvents_m999F63F2742464A61419FD7F62FBE34F57B70301 (void);
-// 0x0000096A MocapApi.EMCPError MocapApi.IMCPApplication::DisableApplicationCacheEvents(System.UInt64)
+// 0x00000998 MocapApi.EMCPError MocapApi.IMCPApplication::DisableApplicationCacheEvents(System.UInt64)
 extern void IMCPApplication_DisableApplicationCacheEvents_m084B6F7BFDB3E21AD4607C80F31073C2C1AE91E0 (void);
-// 0x0000096B MocapApi.EMCPError MocapApi.IMCPApplication::ApplicationCacheEventsIsEnabled(System.Boolean&,System.UInt64)
+// 0x00000999 MocapApi.EMCPError MocapApi.IMCPApplication::ApplicationCacheEventsIsEnabled(System.Boolean&,System.UInt64)
 extern void IMCPApplication_ApplicationCacheEventsIsEnabled_m9E1624DB1FC947555CA39CBC46CD92D010156CD2 (void);
-// 0x0000096C MocapApi.EMCPError MocapApi.IMCPApplication::CloseApplication(System.UInt64)
+// 0x0000099A MocapApi.EMCPError MocapApi.IMCPApplication::CloseApplication(System.UInt64)
 extern void IMCPApplication_CloseApplication_m1D3B3B535017BEEF6A8281B4612C7ABCAB59E096 (void);
-// 0x0000096D MocapApi.EMCPError MocapApi.IMCPApplication::GetApplicationRigidBodies(System.UInt64&,System.UInt32&,System.UInt64)
+// 0x0000099B MocapApi.EMCPError MocapApi.IMCPApplication::GetApplicationRigidBodies(System.UInt64&,System.UInt32&,System.UInt64)
 extern void IMCPApplication_GetApplicationRigidBodies_m72964E95AC46CB532A7A99D4C732EFDFAB7FF10B (void);
-// 0x0000096E MocapApi.EMCPError MocapApi.IMCPApplication::GetApplicationAvatars(System.UInt64&,System.UInt32&,System.UInt64)
+// 0x0000099C MocapApi.EMCPError MocapApi.IMCPApplication::GetApplicationAvatars(System.UInt64&,System.UInt32&,System.UInt64)
 extern void IMCPApplication_GetApplicationAvatars_m2CB638DB02AC36AB1AE074FDAA6FCCDFF7A5F7B1 (void);
-// 0x0000096F MocapApi.EMCPError MocapApi.IMCPApplication::PollApplicationNextEvent(MocapApi.MCPEvent_t[],System.UInt32&,System.UInt64)
+// 0x0000099D MocapApi.EMCPError MocapApi.IMCPApplication::PollApplicationNextEvent(MocapApi.MCPEvent_t[],System.UInt32&,System.UInt64)
 extern void IMCPApplication_PollApplicationNextEvent_m055E43BFEA55D8DAFD2851183517FBA818CCC44B (void);
-// 0x00000970 MocapApi.EMCPError MocapApi.IMCPApplication::GetApplicationSensorModules(System.UInt64&,System.UInt32&,System.UInt64)
+// 0x0000099E MocapApi.EMCPError MocapApi.IMCPApplication::GetApplicationSensorModules(System.UInt64&,System.UInt32&,System.UInt64)
 extern void IMCPApplication_GetApplicationSensorModules_m1ACC9FD0FD8A30E533EA7E3B357603902445A7D2 (void);
-// 0x00000971 MocapApi.EMCPError MocapApi.IMCPApplication::GetApplicationTrackers(System.UInt64&,System.UInt32&,System.UInt64)
+// 0x0000099F MocapApi.EMCPError MocapApi.IMCPApplication::GetApplicationTrackers(System.UInt64&,System.UInt32&,System.UInt64)
 extern void IMCPApplication_GetApplicationTrackers_m6A087BB03F78BD862D1B0B32B5BD612AE80D1A6D (void);
-// 0x00000972 MocapApi.EMCPError MocapApi.IMCPApplication::QueuedServerCommand(System.UInt64,System.UInt64)
+// 0x000009A0 MocapApi.EMCPError MocapApi.IMCPApplication::QueuedServerCommand(System.UInt64,System.UInt64)
 extern void IMCPApplication_QueuedServerCommand_mDF505017A6441C546508FDEC95DE40EC717E69E3 (void);
-// 0x00000973 System.Void MocapApi.IMCPApplication::.ctor()
+// 0x000009A1 System.Void MocapApi.IMCPApplication::.ctor()
 extern void IMCPApplication__ctor_mBDEE50A59AD30C0F98050B54D41A8B786B1243B3 (void);
-// 0x00000974 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_CreateApplication::.ctor(System.Object,System.IntPtr)
+// 0x000009A2 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_CreateApplication::.ctor(System.Object,System.IntPtr)
 extern void _CreateApplication__ctor_mE43398462E1AD70146F1C74E345FDCACA3DD4113 (void);
-// 0x00000975 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_CreateApplication::Invoke(System.UInt64&)
+// 0x000009A3 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_CreateApplication::Invoke(System.UInt64&)
 extern void _CreateApplication_Invoke_mE71F95B6875B75E4D4E55E06250E3EB36CE862CB (void);
-// 0x00000976 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_CreateApplication::BeginInvoke(System.UInt64&,System.AsyncCallback,System.Object)
+// 0x000009A4 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_CreateApplication::BeginInvoke(System.UInt64&,System.AsyncCallback,System.Object)
 extern void _CreateApplication_BeginInvoke_mD3FD26A46B51052A34A90553C63AFB8533FEBE20 (void);
-// 0x00000977 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_CreateApplication::EndInvoke(System.UInt64&,System.IAsyncResult)
+// 0x000009A5 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_CreateApplication::EndInvoke(System.UInt64&,System.IAsyncResult)
 extern void _CreateApplication_EndInvoke_m2562B20FE0A55C6BC3EF27FCC9698306482788BE (void);
-// 0x00000978 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_DestroyApplication::.ctor(System.Object,System.IntPtr)
+// 0x000009A6 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_DestroyApplication::.ctor(System.Object,System.IntPtr)
 extern void _DestroyApplication__ctor_mB8DBB91B1328D065ABBD5C4E800FDF33C3D3DE45 (void);
-// 0x00000979 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_DestroyApplication::Invoke(System.UInt64)
+// 0x000009A7 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_DestroyApplication::Invoke(System.UInt64)
 extern void _DestroyApplication_Invoke_m0380B989D482033DCC185DE0A9E8612F17FB6726 (void);
-// 0x0000097A System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_DestroyApplication::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009A8 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_DestroyApplication::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
 extern void _DestroyApplication_BeginInvoke_m4FE26B8543C14A12C0299F8079EC235FF5415854 (void);
-// 0x0000097B MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_DestroyApplication::EndInvoke(System.IAsyncResult)
+// 0x000009A9 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_DestroyApplication::EndInvoke(System.IAsyncResult)
 extern void _DestroyApplication_EndInvoke_mBCE1D47D134B3C3304036A3C6D215D1F52013828 (void);
-// 0x0000097C System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationSettings::.ctor(System.Object,System.IntPtr)
+// 0x000009AA System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationSettings::.ctor(System.Object,System.IntPtr)
 extern void _SetApplicationSettings__ctor_m4023AC8B7D516258E87F33494EFFA514413558CE (void);
-// 0x0000097D MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationSettings::Invoke(System.UInt64,System.UInt64)
+// 0x000009AB MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationSettings::Invoke(System.UInt64,System.UInt64)
 extern void _SetApplicationSettings_Invoke_m7CC7EC95E4DDBB77BFA1C3586F514E39BA0836E0 (void);
-// 0x0000097E System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationSettings::BeginInvoke(System.UInt64,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009AC System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationSettings::BeginInvoke(System.UInt64,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetApplicationSettings_BeginInvoke_m96A1043ADF22A7D4E60D7A1C502E9795B162DE71 (void);
-// 0x0000097F MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationSettings::EndInvoke(System.IAsyncResult)
+// 0x000009AD MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationSettings::EndInvoke(System.IAsyncResult)
 extern void _SetApplicationSettings_EndInvoke_mB60063567B7A123FE5C76FB8CD7FB2A4A88DA24B (void);
-// 0x00000980 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationRenderSettings::.ctor(System.Object,System.IntPtr)
+// 0x000009AE System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationRenderSettings::.ctor(System.Object,System.IntPtr)
 extern void _SetApplicationRenderSettings__ctor_m5CD78B1A8924198EA81708957BAD06902209FC02 (void);
-// 0x00000981 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationRenderSettings::Invoke(System.UInt64,System.UInt64)
+// 0x000009AF MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationRenderSettings::Invoke(System.UInt64,System.UInt64)
 extern void _SetApplicationRenderSettings_Invoke_m7CB671878D4B7CEF66A1E31CB978A888886B37B5 (void);
-// 0x00000982 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationRenderSettings::BeginInvoke(System.UInt64,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009B0 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationRenderSettings::BeginInvoke(System.UInt64,System.UInt64,System.AsyncCallback,System.Object)
 extern void _SetApplicationRenderSettings_BeginInvoke_m59F2669235C5AA98790AB379F50683D563D3ED0C (void);
-// 0x00000983 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationRenderSettings::EndInvoke(System.IAsyncResult)
+// 0x000009B1 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_SetApplicationRenderSettings::EndInvoke(System.IAsyncResult)
 extern void _SetApplicationRenderSettings_EndInvoke_m17B6AE713ACBEE6B638F107366A2A8D237341DB6 (void);
-// 0x00000984 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_OpenApplication::.ctor(System.Object,System.IntPtr)
+// 0x000009B2 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_OpenApplication::.ctor(System.Object,System.IntPtr)
 extern void _OpenApplication__ctor_m3E2026FBA6FC496059CFE1A6E5A13E2A134EA1E7 (void);
-// 0x00000985 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_OpenApplication::Invoke(System.UInt64)
+// 0x000009B3 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_OpenApplication::Invoke(System.UInt64)
 extern void _OpenApplication_Invoke_mE66FC6B77148D93C9EFE14A6F44132FDA4A57604 (void);
-// 0x00000986 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_OpenApplication::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009B4 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_OpenApplication::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
 extern void _OpenApplication_BeginInvoke_m3DCAB4B1F5D162AEFBC37415BCC93C2059957200 (void);
-// 0x00000987 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_OpenApplication::EndInvoke(System.IAsyncResult)
+// 0x000009B5 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_OpenApplication::EndInvoke(System.IAsyncResult)
 extern void _OpenApplication_EndInvoke_m42EE6E3E6EFC31153FC78D391E58C0AAF08AD757 (void);
-// 0x00000988 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_EnableApplicationCacheEvents::.ctor(System.Object,System.IntPtr)
+// 0x000009B6 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_EnableApplicationCacheEvents::.ctor(System.Object,System.IntPtr)
 extern void _EnableApplicationCacheEvents__ctor_mC0207F98E56BE98EF1BC71199DEB09579620D111 (void);
-// 0x00000989 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_EnableApplicationCacheEvents::Invoke(System.UInt64)
+// 0x000009B7 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_EnableApplicationCacheEvents::Invoke(System.UInt64)
 extern void _EnableApplicationCacheEvents_Invoke_mD2D912004FB26FD24A92635AB34C27DCDDDBDE6C (void);
-// 0x0000098A System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_EnableApplicationCacheEvents::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009B8 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_EnableApplicationCacheEvents::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
 extern void _EnableApplicationCacheEvents_BeginInvoke_m5B8AD864103AC24F49AD817FB7117B1CFC3BAA73 (void);
-// 0x0000098B MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_EnableApplicationCacheEvents::EndInvoke(System.IAsyncResult)
+// 0x000009B9 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_EnableApplicationCacheEvents::EndInvoke(System.IAsyncResult)
 extern void _EnableApplicationCacheEvents_EndInvoke_mF04EDA1A56CDB7F18281B27E1753F5390C5E4CDD (void);
-// 0x0000098C System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_DisableApplicationCacheEvents::.ctor(System.Object,System.IntPtr)
+// 0x000009BA System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_DisableApplicationCacheEvents::.ctor(System.Object,System.IntPtr)
 extern void _DisableApplicationCacheEvents__ctor_m833B926BB553C643AAE935ADD1B90776D3A4E920 (void);
-// 0x0000098D MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_DisableApplicationCacheEvents::Invoke(System.UInt64)
+// 0x000009BB MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_DisableApplicationCacheEvents::Invoke(System.UInt64)
 extern void _DisableApplicationCacheEvents_Invoke_m411FFA5F474D4AD4113B4ACDD2CD34F441673AF1 (void);
-// 0x0000098E System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_DisableApplicationCacheEvents::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009BC System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_DisableApplicationCacheEvents::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
 extern void _DisableApplicationCacheEvents_BeginInvoke_m88D8ADFD67450686EB6E90C359531501DCAE5C39 (void);
-// 0x0000098F MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_DisableApplicationCacheEvents::EndInvoke(System.IAsyncResult)
+// 0x000009BD MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_DisableApplicationCacheEvents::EndInvoke(System.IAsyncResult)
 extern void _DisableApplicationCacheEvents_EndInvoke_m4362C317DFF06DE91BD773F516B8D018D69AE202 (void);
-// 0x00000990 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_ApplicationCacheEventsIsEnabled::.ctor(System.Object,System.IntPtr)
+// 0x000009BE System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_ApplicationCacheEventsIsEnabled::.ctor(System.Object,System.IntPtr)
 extern void _ApplicationCacheEventsIsEnabled__ctor_m57B5B027261617788836B89CAFC923D9FB03B00E (void);
-// 0x00000991 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_ApplicationCacheEventsIsEnabled::Invoke(System.Boolean&,System.UInt64)
+// 0x000009BF MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_ApplicationCacheEventsIsEnabled::Invoke(System.Boolean&,System.UInt64)
 extern void _ApplicationCacheEventsIsEnabled_Invoke_m587B24396E8B90E1B28C11F36DE9C72297023272 (void);
-// 0x00000992 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_ApplicationCacheEventsIsEnabled::BeginInvoke(System.Boolean&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009C0 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_ApplicationCacheEventsIsEnabled::BeginInvoke(System.Boolean&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _ApplicationCacheEventsIsEnabled_BeginInvoke_m4F5D81A141E233A5417A18CE27244DC47CB566C9 (void);
-// 0x00000993 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_ApplicationCacheEventsIsEnabled::EndInvoke(System.Boolean&,System.IAsyncResult)
+// 0x000009C1 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_ApplicationCacheEventsIsEnabled::EndInvoke(System.Boolean&,System.IAsyncResult)
 extern void _ApplicationCacheEventsIsEnabled_EndInvoke_mC433C17BC5D1561EB408DC5C501CEDC4D0B88E39 (void);
-// 0x00000994 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_CloseApplication::.ctor(System.Object,System.IntPtr)
+// 0x000009C2 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_CloseApplication::.ctor(System.Object,System.IntPtr)
 extern void _CloseApplication__ctor_m3F4798B126F53BDA83CFCFDC7A3F1435A34ADA88 (void);
-// 0x00000995 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_CloseApplication::Invoke(System.UInt64)
+// 0x000009C3 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_CloseApplication::Invoke(System.UInt64)
 extern void _CloseApplication_Invoke_m91A4BFC8030A5F0744AE67F2867F92C64E03C78B (void);
-// 0x00000996 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_CloseApplication::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009C4 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_CloseApplication::BeginInvoke(System.UInt64,System.AsyncCallback,System.Object)
 extern void _CloseApplication_BeginInvoke_m1EEDA344C5DF55CD2C1360BECB65B16EE91C9960 (void);
-// 0x00000997 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_CloseApplication::EndInvoke(System.IAsyncResult)
+// 0x000009C5 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_CloseApplication::EndInvoke(System.IAsyncResult)
 extern void _CloseApplication_EndInvoke_m688EE2D9451101B535434576249FE90995BCE798 (void);
-// 0x00000998 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationRigidBodies::.ctor(System.Object,System.IntPtr)
+// 0x000009C6 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationRigidBodies::.ctor(System.Object,System.IntPtr)
 extern void _GetApplicationRigidBodies__ctor_mEF85D3A254C36682590F585D7DDE2D96392B726C (void);
-// 0x00000999 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationRigidBodies::Invoke(System.UInt64&,System.UInt32&,System.UInt64)
+// 0x000009C7 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationRigidBodies::Invoke(System.UInt64&,System.UInt32&,System.UInt64)
 extern void _GetApplicationRigidBodies_Invoke_mE63CD8AFFE9FAC13F9DC47ED63058FFE9FD391D3 (void);
-// 0x0000099A System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationRigidBodies::BeginInvoke(System.UInt64&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009C8 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationRigidBodies::BeginInvoke(System.UInt64&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetApplicationRigidBodies_BeginInvoke_m281223D13CE933DE8E4DB2A95375FC4ADDFFEFF5 (void);
-// 0x0000099B MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationRigidBodies::EndInvoke(System.UInt64&,System.UInt32&,System.IAsyncResult)
+// 0x000009C9 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationRigidBodies::EndInvoke(System.UInt64&,System.UInt32&,System.IAsyncResult)
 extern void _GetApplicationRigidBodies_EndInvoke_mF9C540DCD3C6024727A8A92D44D653F29954DD7D (void);
-// 0x0000099C System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationAvatars::.ctor(System.Object,System.IntPtr)
+// 0x000009CA System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationAvatars::.ctor(System.Object,System.IntPtr)
 extern void _GetApplicationAvatars__ctor_mBC7524CAD594FE4DB8B406B7C1BF1CC273A907B9 (void);
-// 0x0000099D MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationAvatars::Invoke(System.UInt64&,System.UInt32&,System.UInt64)
+// 0x000009CB MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationAvatars::Invoke(System.UInt64&,System.UInt32&,System.UInt64)
 extern void _GetApplicationAvatars_Invoke_m5DC12F186144AA1D4269F3BD9B4981608CE08933 (void);
-// 0x0000099E System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationAvatars::BeginInvoke(System.UInt64&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009CC System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationAvatars::BeginInvoke(System.UInt64&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetApplicationAvatars_BeginInvoke_mE8FF3C387B664695A16DB45D2BBAE8C49EEA73A3 (void);
-// 0x0000099F MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationAvatars::EndInvoke(System.UInt64&,System.UInt32&,System.IAsyncResult)
+// 0x000009CD MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationAvatars::EndInvoke(System.UInt64&,System.UInt32&,System.IAsyncResult)
 extern void _GetApplicationAvatars_EndInvoke_m1C1BB09AF9E0DF903064AE129CD6C8EA36F00050 (void);
-// 0x000009A0 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_PollApplicationNextEvent::.ctor(System.Object,System.IntPtr)
+// 0x000009CE System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_PollApplicationNextEvent::.ctor(System.Object,System.IntPtr)
 extern void _PollApplicationNextEvent__ctor_m4A30DBE55F9F9220DF1B47999901A083DFD9DBEE (void);
-// 0x000009A1 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_PollApplicationNextEvent::Invoke(MocapApi.MCPEvent_t[],System.UInt32&,System.UInt64)
+// 0x000009CF MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_PollApplicationNextEvent::Invoke(MocapApi.MCPEvent_t[],System.UInt32&,System.UInt64)
 extern void _PollApplicationNextEvent_Invoke_mE5560F3CA45EDA01D3C7E98C741157CCE932D2FA (void);
-// 0x000009A2 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_PollApplicationNextEvent::BeginInvoke(MocapApi.MCPEvent_t[],System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009D0 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_PollApplicationNextEvent::BeginInvoke(MocapApi.MCPEvent_t[],System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _PollApplicationNextEvent_BeginInvoke_m826BB1D52D4645560706E09A484172F32D1EE211 (void);
-// 0x000009A3 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_PollApplicationNextEvent::EndInvoke(System.UInt32&,System.IAsyncResult)
+// 0x000009D1 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_PollApplicationNextEvent::EndInvoke(System.UInt32&,System.IAsyncResult)
 extern void _PollApplicationNextEvent_EndInvoke_m5FACB33F6DB921B15D90E585A8907E70DA8FD7CF (void);
-// 0x000009A4 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationSensorModules::.ctor(System.Object,System.IntPtr)
+// 0x000009D2 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationSensorModules::.ctor(System.Object,System.IntPtr)
 extern void _GetApplicationSensorModules__ctor_m531285B3EAFAE21B04FEE2848CB14C71A417E839 (void);
-// 0x000009A5 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationSensorModules::Invoke(System.UInt64&,System.UInt32&,System.UInt64)
+// 0x000009D3 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationSensorModules::Invoke(System.UInt64&,System.UInt32&,System.UInt64)
 extern void _GetApplicationSensorModules_Invoke_m6C33FB55D91BD428FB53E69CDC40FC811E7A470D (void);
-// 0x000009A6 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationSensorModules::BeginInvoke(System.UInt64&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009D4 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationSensorModules::BeginInvoke(System.UInt64&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetApplicationSensorModules_BeginInvoke_m9B75B95E9211BC5DEE6FAA820174776A0C70AAA7 (void);
-// 0x000009A7 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationSensorModules::EndInvoke(System.UInt64&,System.UInt32&,System.IAsyncResult)
+// 0x000009D5 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationSensorModules::EndInvoke(System.UInt64&,System.UInt32&,System.IAsyncResult)
 extern void _GetApplicationSensorModules_EndInvoke_m718CE03422A4B683AA3B5B37A18B96FBD76D0F75 (void);
-// 0x000009A8 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationTrackers::.ctor(System.Object,System.IntPtr)
+// 0x000009D6 System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationTrackers::.ctor(System.Object,System.IntPtr)
 extern void _GetApplicationTrackers__ctor_m19DA7E2563174F5251738216D4A2BF56B3E24499 (void);
-// 0x000009A9 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationTrackers::Invoke(System.UInt64&,System.UInt32&,System.UInt64)
+// 0x000009D7 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationTrackers::Invoke(System.UInt64&,System.UInt32&,System.UInt64)
 extern void _GetApplicationTrackers_Invoke_mAAE15C2A16193634172CB460BD35E815348BA277 (void);
-// 0x000009AA System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationTrackers::BeginInvoke(System.UInt64&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009D8 System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationTrackers::BeginInvoke(System.UInt64&,System.UInt32&,System.UInt64,System.AsyncCallback,System.Object)
 extern void _GetApplicationTrackers_BeginInvoke_m0805F420C3E88F690E49E5443ED7C55060080430 (void);
-// 0x000009AB MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationTrackers::EndInvoke(System.UInt64&,System.UInt32&,System.IAsyncResult)
+// 0x000009D9 MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_GetApplicationTrackers::EndInvoke(System.UInt64&,System.UInt32&,System.IAsyncResult)
 extern void _GetApplicationTrackers_EndInvoke_m83C1E89FD36FC92B70BE163F0D55C319E31DC8A7 (void);
-// 0x000009AC System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_QueuedServerCommand::.ctor(System.Object,System.IntPtr)
+// 0x000009DA System.Void MocapApi.IMCPApplication/MCPApplication_ProcTable/_QueuedServerCommand::.ctor(System.Object,System.IntPtr)
 extern void _QueuedServerCommand__ctor_m3DADC72B23505460CF5B5B4FEB7AF80C1BADA6F6 (void);
-// 0x000009AD MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_QueuedServerCommand::Invoke(System.UInt64,System.UInt64)
+// 0x000009DB MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_QueuedServerCommand::Invoke(System.UInt64,System.UInt64)
 extern void _QueuedServerCommand_Invoke_m6CCEAE93DF541D62C93FC33F307D404A622160DF (void);
-// 0x000009AE System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_QueuedServerCommand::BeginInvoke(System.UInt64,System.UInt64,System.AsyncCallback,System.Object)
+// 0x000009DC System.IAsyncResult MocapApi.IMCPApplication/MCPApplication_ProcTable/_QueuedServerCommand::BeginInvoke(System.UInt64,System.UInt64,System.AsyncCallback,System.Object)
 extern void _QueuedServerCommand_BeginInvoke_m74C4BE103DC9ABA055EDDBFC1467FBD9307016B2 (void);
-// 0x000009AF MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_QueuedServerCommand::EndInvoke(System.IAsyncResult)
+// 0x000009DD MocapApi.EMCPError MocapApi.IMCPApplication/MCPApplication_ProcTable/_QueuedServerCommand::EndInvoke(System.IAsyncResult)
 extern void _QueuedServerCommand_EndInvoke_m83899D845582A87D696EEF94015C7EDFFA9438D5 (void);
-// 0x000009B0 System.IntPtr MocapApi.Utils::ToUtf8(System.String)
+// 0x000009DE System.IntPtr MocapApi.Utils::ToUtf8(System.String)
 extern void Utils_ToUtf8_m85359BF5348F3D3D35E27C200D6EC50041916EF6 (void);
-// 0x000009B1 System.Void MocapApi.Utils::.ctor()
+// 0x000009DF System.Void MocapApi.Utils::.ctor()
 extern void Utils__ctor_m5DB6C984782389F84D6DAFB98A2A4604108CB9B7 (void);
-// 0x000009B2 System.Void MocapApi.Utils::.cctor()
+// 0x000009E0 System.Void MocapApi.Utils::.cctor()
 extern void Utils__cctor_mE4B915B91F2E5CE04EBE662DA408C2486D4B0902 (void);
-// 0x000009B3 MocapApi.EMCPError MocapApi.Interop::MCPGetGenericInterface(System.String,System.IntPtr&)
+// 0x000009E1 MocapApi.EMCPError MocapApi.Interop::MCPGetGenericInterface(System.String,System.IntPtr&)
 extern void Interop_MCPGetGenericInterface_mD483614C34204B8C1D785819FA1CB30E2F4BB3C5 (void);
-// 0x000009B4 System.Void MocapApi.Interop::.ctor()
+// 0x000009E2 System.Void MocapApi.Interop::.ctor()
 extern void Interop__ctor_m375B45D7F86A238D9183FEAF75B47D49AE9ED2CF (void);
-// 0x000009B5 System.UInt32 <PrivateImplementationDetails>::ComputeStringHash(System.String)
+// 0x000009E3 System.UInt32 <PrivateImplementationDetails>::ComputeStringHash(System.String)
 extern void U3CPrivateImplementationDetailsU3E_ComputeStringHash_m9E43873DE0DF480D27EC1C2AA3C09E74EA77F75D (void);
-static Il2CppMethodPointer s_methodPointers[2485] = 
+static Il2CppMethodPointer s_methodPointers[2531] = 
 {
 	MocapApiManager_get_IsConnectFailed_mD6EE1E883F918DB1A67D8E8FE194EDBDACBDF1DD,
 	MocapApiManager_RequareConnection_m9BE4270F11C05C642B471B4B344EF5C3F4CB9851,
@@ -5721,7 +5813,7 @@ static Il2CppMethodPointer s_methodPointers[2485] =
 	CoachManager_coachToInitialPositionWhenSceneStart_m937E61D3277AD97B7D1E3EF2A0F3BA2E714BA796,
 	CoachManager_moveToInitialPosition_mD21F0BC3579053E19C1375E2D0CC11FA2EB9983E,
 	CoachManager_invokeTargetMoveToInitial_m733D5B42642D9BF0AEBBEAF2F641EBC17041AF71,
-	CoachManager_randomMovement_m9D9D8652E7AF3A8C92A27617FC52107C6BFD7810,
+	CoachManager_movement_mF3FD7451257E430CCEC5E6834FFDF1465CB022F8,
 	CoachManager_startMoving_m32986CB52DF8AE8FE9691FEDB4A9236EBC4DD017,
 	CoachManager_stopMoving_mA9FB963D7641BB63F86B276BCF8FC39777E0E041,
 	CoachManager_moveToFurthest_m94A95067F6F5EB6FCBFA27E34CB8AD047FEA563E,
@@ -5730,6 +5822,8 @@ static Il2CppMethodPointer s_methodPointers[2485] =
 	CoachRenderManager_Update_m123208D4EFC93C5D4398B53720460774F32F3E92,
 	CoachRenderManager_clearCoachColor_m7A92B886CDC5B45353C7A46E94E092B8C557D711,
 	CoachRenderManager__ctor_m058FEEFFE190372024AD5558B870058B618FAA4F,
+	CutoutMaskUI_get_materialForRendering_m018A9FAB498A5055F3C95F89547B2409E83324BA,
+	CutoutMaskUI__ctor_mF4C26F02B53AB98565098737BD23D27646870C44,
 	ball_Start_m1CD24200BCAB6E776C7B49D8A61BD558396C2D09,
 	ball_Update_m63087F3133C02AD7502C1F52B6BC8A38E3C95516,
 	ball_setRadius_m3811E39BC926804D54DEB721D67141FF6D291B3A,
@@ -5738,6 +5832,12 @@ static Il2CppMethodPointer s_methodPointers[2485] =
 	ball_ChangeColor_m338C1FFB758646F8549EF649203592A3DFCF68D9,
 	ball_destroy_m453F1E3B909E64E6D4337A01C2EFD15722B30705,
 	ball__ctor_m596394A37522CF45E95FC7561A8D3BED786A7E09,
+	BarUpdating_Start_m2878230C4E30FC133EC99C9D625C08F38C674AF5,
+	BarUpdating_Update_mC073A2812B84EB54112DFDF59E994BDF1116EECF,
+	BarUpdating_calculateHorizatonalDistance_mF0B997E02D95B5B195697A6855F13AC16395983A,
+	BarUpdating_setDistance_mA24980922246D96364CD4FCB8DB7876947092680,
+	BarUpdating_setBarLength_mBBE85CDBF388D4D7F5D6AC3401C159A00217A5B2,
+	BarUpdating__ctor_m7B16AE9EE45C0EF69677C500F882DC0640E0942F,
 	CoachAnimationDeveloping_Start_m16D9F9142932801A7A8CE2E4FCA2219F9980585F,
 	CoachAnimationDeveloping_Update_m6639ED4E826AEE37F5E1B4666994860E8F531F2D,
 	CoachAnimationDeveloping_moveForward_m2A298D96903E23397302203FDF1F70F931A7CB92,
@@ -5745,11 +5845,23 @@ static Il2CppMethodPointer s_methodPointers[2485] =
 	CoachAnimationDeveloping_stopMoving_mCC33B01583076FE1E022309A791872A8B00C374B,
 	CoachAnimationDeveloping_animationIdle_mBAAD147CC989984303BDEF90387911519C78EFC2,
 	CoachAnimationDeveloping__ctor_mC004753E5F600FF9670145CA796C2CC2F2D2DA61,
+	ColliderInteractionTesting_Start_m556295ABBD1C7AE2B0AADFA07A9871E950E08728,
+	ColliderInteractionTesting_Update_mC6BBA1568A37AF457F56BB941B50508838AFCEF2,
+	ColliderInteractionTesting_OnTriggerEnter_m6379D07F4DA61038099B5AEC10788B008EC555C2,
+	ColliderInteractionTesting_OnTriggerExit_m2EB70417C1803FD90826534250B9BE8C235CA4E7,
+	ColliderInteractionTesting_OnTriggerStay_m4BB647CD85F178926C3390E272BE9A4FA7A719FC,
+	ColliderInteractionTesting__ctor_mA5CCD0DFE4EDEF2856B02A87E4BF2E8CC9549F12,
 	ColorSetting_Start_m0C2C845C524C6639889A7D322B27DD1D0ACF13C5,
 	ColorSetting_Update_m96D3D9FA880E525E0BF06F16CB816CD4DA612265,
 	ColorSetting_setColors_mA488034192D1857B9658340C36A375F21E21795D,
 	ColorSetting_ChangeColor_m12DEBC3803FE237BE4FBCB2D7B4FFF5BFF35BED7,
 	ColorSetting__ctor_m469228B4EE7D080F6DF30FC126A447AF8F922555,
+	CutoutUpdating_Start_m07CD69A0C14EBBEAFA058EDEADCA3FBFC5705D35,
+	CutoutUpdating_Update_m8AE2BB508B477D11CB4DEB0A2C3C1B198557FBDB,
+	CutoutUpdating_calculateHorizatonalDistance_mEFAAC3E0CDC191C0356BE3B7AD3BF75B8C3A286E,
+	CutoutUpdating_setDistance_mF60B0736697848B6DAAE1695B18DB7B2699DE087,
+	CutoutUpdating_setCutoutSize_mAFAF8B889474F1819EA2F5DCF0C848BBB6BC0AEC,
+	CutoutUpdating__ctor_m2B38CE3AC91CA4D0B558D9E4095E340E3195FFC6,
 	LineDrawer_setEndpoints_mE84CA529FF06AEC8ECE1FAEC86B884981C9BF008,
 	LineDrawer_setColor_mF53CFB5E06CE59A14A4A4A4DAABBA5576CAB9DE6,
 	LineDrawer_Start_m5F870315D258E986AEC87DDCCBE4AB029C719007,
@@ -5816,6 +5928,21 @@ static Il2CppMethodPointer s_methodPointers[2485] =
 	BallCueOnTarget_ChangeColor_mF3A9F875BEACD0F988F501E275091F42C30B9DCF,
 	BallCueOnTarget_destroy_m026FF9DFB912FAB519A6A7399E85E5A60018D908,
 	BallCueOnTarget__ctor_m6AD9E56B442C3BEA3452889EFC221F7BF181396F,
+	BarCue_Start_m08950E2F227E50B377EAAB409E3F6989647A6B6E,
+	BarCue_Update_m891C26C40A82BF5427FCB569522E2AE5B13C5296,
+	BarCue_calculateHorizatonalDistance_m571E856B68972F9AC2CAA1306A3A2AAA84047A69,
+	BarCue_setDistance_m4EDE9ACA7689E5D0E3DEDB78406A3AF9A0C09633,
+	BarCue_barAidUpdate_mB98B27631D426489974790BBC8A0647B300435A3,
+	BarCue_closeBarAid_m448703B6E6AE3F3EB7EBDE7F4F63E094CCDE6F2F,
+	BarCue__ctor_mBEDC07BE11673304E2F58536FC9E89B82906ABE4,
+	CutoutCue_Start_m01691A1334CCA67E40C5F80859448C4FA4B8DB09,
+	CutoutCue_Update_mFF3DFDB5359B3E820DFA66C2FFB60B268DD55672,
+	CutoutCue_recenterUICanvas_m65B9275A644A6F545D6FF873F305B83262F6EE99,
+	CutoutCue_calculateHorizatonalDistance_m671C185F30DD6C308151D20739BABC41CDC6DB8E,
+	CutoutCue_setDistance_mD49D2C34A6CECF7268CC899CDEA8F4B6EDBB09B5,
+	CutoutCue_cutoutAidUpdate_mFA2CD725D703902EE572C081CCECC9AEBA0DDB32,
+	CutoutCue_closeCutoutAid_m324015D3F4D8D3E1CFA2DFDD760592F0D47E5D9E,
+	CutoutCue__ctor_m2067ECEC7713CFF4B81E76E5DBCB4DD1A8FFCA14,
 	LineCue_Start_m60691208D3DE8E8896F72308F0DB86204E3553C1,
 	LineCue_Update_mDB2BE6BED597A9CC36C99FFD1D3AB2B4556B4138,
 	LineCue_renderLineCue_mC13BF128990459DB73D6061D972DFA76FA4761D4,
@@ -5829,11 +5956,12 @@ static Il2CppMethodPointer s_methodPointers[2485] =
 	EvaluationManager_Update_m96D466F69FAB42044007FC5D9EE8085E79B95D4B,
 	EvaluationManager_evaluationStatusInitialize_m833D6F9C43085D78015E5020A292B295BD91660D,
 	EvaluationManager_setStartingPoint_m460BF1983FB131D6B706896005612A9AE324D960,
+	EvaluationManager_startingPointSizeChange_mB68C2F5425C79959EC1E52386EDB3863F8EC0245,
+	EvaluationManager_userIsNotPunching_mF00C0B5A9E8DC1ED3E89B9F1D4320C10462EE57A,
 	EvaluationManager_userIsPunching_m0472A45DB9728EE919920AC8A22BAA026C637256,
 	EvaluationManager_userIsMoving_m7C0B7EA305CEAB253BD0B09F041FF2BA2AB683AC,
 	EvaluationManager_userIsHitCoach_m4F872DBF71E8E08CF8505AA4540E02352B4C1023,
 	EvaluationManager_instantiateBallWhenHit_mB0ED8DFEE084365EB3B187003DE3E368E6531F24,
-	EvaluationManager_instatiateArmAfterimage_m08B345E601972FA5749C977396C4072C07C8F82B,
 	EvaluationManager_getScoreComment_m5F9A3D0D6D5A1E4B1B1A19875BDE65F0034A3A1C,
 	EvaluationManager__ctor_mDAAA2EE902189B6ED0D74FF4406FF0816DCBA373,
 	DirectionModule_Start_mBBAE84CD1B9AE34F827EE7587A09EF1C09A0EFC6,
@@ -5847,8 +5975,9 @@ static Il2CppMethodPointer s_methodPointers[2485] =
 	MovingModule_OnTriggerStay_mFC18D590AD97C2C08780CF0BB2FA4561074C63D3,
 	MovingModule__ctor_m7030C7DBCC65D8C7E69450F4C1686DA763C8F4DB,
 	PunchModule_Start_mDD52230C0B466B6279F0FBF92AF6D3B9D0240107,
-	PunchModule_Update_mD22C0CAEC4CF93F1A54F6EF22CAE164CA4C93EC8,
+	PunchModule_FixedUpdate_mD76906089E2DB85E1204E8D84F22868D381D84A9,
 	PunchModule_OnTriggerExit_m53FA0EFD7CC5C59C299B13B9ED39422A5A3DEEC5,
+	PunchModule_OnTriggerStay_m9AB0B0D8569A7033605B5FD1BB6595BAB0468D78,
 	PunchModule__ctor_m790242F2B70DDAD73475CE3BBF9ADD30BED6969C,
 	ReachModule_Start_mABDA356481036CE1CE475CFB995BAC6CABC53F29,
 	ReachModule_Update_m31CFA6B8D35FD4FDA93D7393842CC8579BB3A005,
@@ -5901,6 +6030,9 @@ static Il2CppMethodPointer s_methodPointers[2485] =
 	PlayingModeManager_depthCueRender_m45AEA9C89EC77A2DD9D4AF8350875658D66CD3B2,
 	PlayingModeManager_skipToFinalButton_m3FEF1DB457029AD3306D6BA88DF4F07241F68F7B,
 	PlayingModeManager__ctor_mABDC3C746AD399E22D0EF8B14B082831BCC69122,
+	U3CU3Ec__cctor_m60B328721C033495170C5AAEF872ED41496B075A,
+	U3CU3Ec__ctor_m222D14CF21EF097397EBE2671C865CDAF9196771,
+	U3CU3Ec_U3CtestingSceneInitializedU3Eb__20_0_mA3D74A19571B07A992647F8BC25A107FFD303B7B,
 	PlayingUIManager_Awake_mEE448E534078B94E4295220666F3881C9E5DC123,
 	PlayingUIManager_Start_m827153C584ED071AE61C8979C5C16F9ADDBF581B,
 	PlayingUIManager_Update_m1DE54C31E00AEC98A44C71B5CB327F1C894A65A7,
@@ -5911,20 +6043,20 @@ static Il2CppMethodPointer s_methodPointers[2485] =
 	PlayingUIManager_closeResultCanvas_m28A7EED18FD5265B64906A6358F1A9EF3A3F5584,
 	PlayingUIManager_showMoveToCenter_mBAF7FDC98761F211B55871505B84EE849DAA4367,
 	PlayingUIManager_unitResultView_mCC016CC2BC3FC86ABF6E5DD7531A7D15A9C801E0,
-	PlayingUIManager_finalResultView_m4D32FAB472689517D5D0928DBB62B796749164C8,
+	PlayingUIManager_finalResultView_m60EB13FEAA4B845068A9841EB765FFBDD1A6B9BD,
 	PlayingUIManager_readyTitleView_mCB1E82B4AFCE62C0C457F07C981714BD3C415D7A,
 	PlayingUIManager_readyCountdownView_m670C546111DECDE3339FE98B0F6C7918A7640AB7,
 	PlayingUIManager_readyStartView_mCCDF71D45344A0EA53492C597D0E27863B3B8B55,
-	PlayingUIManager_userIsMoving_mDA26012C3A9B01D42065A27EE7CEAA2DB72424DE,
+	PlayingUIManager_userIsMovingScore_m5D1D1422F4C103B311B4F56BB7FEA45DDF0BCDC2,
 	PlayingUIManager_userNotMoving_m78D5BFC924FF3DB2890EC4B0CD5049DDEE1C2A1B,
-	PlayingUIManager_userIsPunching_m9E4D30F2ACCA65E1EA598765956B764432490286,
-	PlayingUIManager_userNotPunching_m1BA0182935EB655065D4799EE27DE5DB7800E3A2,
-	PlayingUIManager_userReachNotStraight_mC272E9134479C996ECE662D0331B1A243E40D509,
-	PlayingUIManager_userStraightNotReach_mA806983D9B204C283E6206B3EE612790B3644BAA,
-	PlayingUIManager_reactionScore_m75F94D8B4235A9DA53AED4C4222E0D15E8897FB3,
-	PlayingUIManager_movingWrong_mE2E5DABB1EF4973970D8612F089FEC14A59207C4,
+	PlayingUIManager_movingWrongDirection_m212EBB754FD1D3D7C9B47384E3E54F2B6705CDE5,
 	PlayingUIManager_movingCorretlyScore_m9F5489C84CEBB2BBE991A4A39DFE8F7A8D9EB2D4,
+	PlayingUIManager_userIsPunchingScore_m2FBBBBDB99EC6EE2506421A51911545FD987CD94,
+	PlayingUIManager_userNotPunching_m1BA0182935EB655065D4799EE27DE5DB7800E3A2,
+	PlayingUIManager_userReachScore_mACF91C696879B0DF888B4C2761DF85D0C41E74AF,
+	PlayingUIManager_userNotReach_m3489A13509C0313A7EE4AB81A0FDEC199110D7DB,
 	PlayingUIManager_reachAndStraightScore_m0DE72BB7914F49F86E96A38F22D605F469A6CACD,
+	PlayingUIManager_reachButNotStraight_m138EA4BA3BA41C4025B07E19FE0776DE465574C0,
 	PlayingUIManager_btnChangeScene_mC43D380AE933A8E4C6A5D397901F8060EB909AAF,
 	PlayingUIManager_btnExit_mFE6E203A032F6EAAEC3012912040CCDA01B705FC,
 	PlayingUIManager__ctor_m970985973A454513D37C0757C7E2CF40A209CD79,
@@ -5933,20 +6065,20 @@ static Il2CppMethodPointer s_methodPointers[2485] =
 	VRBoxBuildingManager_Update_m99626265F1D48D1847B01A87D12F4F6ADB4E6764,
 	VRBoxBuildingManager_vrBoxBuildingInitialize_m9ACFBB4B441DDE306BF7E0E3AB6268D763CDF107,
 	VRBoxBuildingManager__ctor_mAE7D2C1B65D3FD1318EA297DE3B0254FCCCCF7D6,
-	PunchCollectingManager_Awake_mC156A430B7F1C23AF71458523CAE1DE2C2377974,
-	PunchCollectingManager_Start_m863BEFFE16554F4F1772C723327CCD39BADA925D,
-	PunchCollectingManager_Update_mEB0325D1C3157CDD84B23C4550B52E4A76C2C365,
-	PunchCollectingManager_sceneInitialized_mD2057C06989398727605A2C10E8589F008E5E799,
-	PunchCollectingManager_saveToJSON_punchResult_mCEF22F846BC2A0B141AD10C810F852958AD78AE1,
-	PunchCollectingManager_displayPunchUnitResult_mBEF0348329253B1929A3B1485208718D50D39CD1,
-	PunchCollectingManager_displayPunchResult_m20E7671D241C8F2CA3EDD6C0BED0D436DE165DF7,
-	PunchCollectingManager_savePunchUnitResult_m5C83BEB859146527687BBF1A7710FA2D4E33A50E,
-	PunchCollectingManager_punchUnitTestInitial_m21A42C8EBCD907D158A317DF714750596008B32D,
-	PunchCollectingManager_modifyCoachJudegement_m92CACB13B0FA56B65DB329D181261A71EDD8F8CE,
-	PunchCollectingManager_btnSelectionSceneClick_m88B80210F9D4E54B424A5E973080CD61241D9029,
-	PunchCollectingManager_reloadPunchCollectingScene_m8A984285E4144E6B850050B94B3EC93DE54D3A22,
-	PunchCollectingManager_calculateNewStraightStandardAngle_m18652125CB6517007F7E853AFF1206CE3C673846,
-	PunchCollectingManager__ctor_m46D819CDAC281812C86FFEC1550E78F711CCE7A8,
+	PunchSettingManager_Awake_m6A3820B562EE56EFB2AD4E4AB8E80DBF518B4FDE,
+	PunchSettingManager_Start_mEB307FCF84CAFB30FD886BA6C4774E333CB93751,
+	PunchSettingManager_Update_mF8603E873FF0B349164C5D9EFA92574A5C022D0D,
+	PunchSettingManager_sceneInitialized_m1758F4DF9D5C87233CAC6369BE85C5619160C915,
+	PunchSettingManager_saveToJSON_punchResult_m428E1C97E49131FFAA6A8C16D22E835F21FA7CB1,
+	PunchSettingManager_displayPunchUnitResult_m464EC59C1AD8A6E9B151B092EC5C665D25C04B4A,
+	PunchSettingManager_displayPunchResult_mAC853C68A7D0BFE0DAB32C176A5880A7B8C122FF,
+	PunchSettingManager_savePunchUnitResult_m37705B0A13D07C07CC696D6B7B235BD5FDDAED4A,
+	PunchSettingManager_punchUnitTestInitial_m7A8EC4D9D1F517F377E0C60499AC108ED7E76BDA,
+	PunchSettingManager_modifyCoachJudegement_mBB26C6725BC5244CD49ACCFD0C0BA861C592C49D,
+	PunchSettingManager_btnSelectionSceneClick_mD59AC8BABF6C8CF9DB551050F33BD74EC2535B1E,
+	PunchSettingManager_reloadPunchSettingScene_m335C83519EF83804769E7DFEAC45751F4AF62474,
+	PunchSettingManager_calculateNewStraightStandardAngle_m7BB1824CDFB6E3B3BAA27ACD2A5165E9CA7F839A,
+	PunchSettingManager__ctor_m9265C51901B2AA0D6D1BA26D567F2FD3500AC963,
 	HolderBagInteraction_Awake_mFC2F6FE8A6872F6DE7BCF9996C60850616F0B5E4,
 	HolderBagInteraction_Start_m7BC48DCC4EBA2E3328E90E6883E7ADD1DC2EF73A,
 	HolderBagInteraction_Update_m57DD84C1CE61E9822D62E51EA9E70DCEAC53DF6D,
@@ -5957,19 +6089,25 @@ static Il2CppMethodPointer s_methodPointers[2485] =
 	SelectionModeManager_Start_mFC4E4C6BA5AA1229FC8865C1C3766F12BFE5123D,
 	SelectionModeManager_Update_m61423B5B918B7C6BAB35D0F10967219C4C0DEAFB,
 	SelectionModeManager_selectionSceneInitialized_mEFCCBE82AC708FE00A5D0EB2425CADCC074D8A22,
+	SelectionModeManager_btnCalibrationScene_m0042069253DFDD24A91B46D8FCF0CE80C311AB8B,
+	SelectionModeManager_btnSelectionScene_mF7B787A7113805274FBCE9F9AF809A91D7CFBA71,
 	SelectionModeManager_toggleSelect_m29C82ED87B37169C4CDC12922281B7BDE7C4A23F,
-	SelectionModeManager_moveToLevelSelect_mFAA0B636E4DB16C50BBD462B9AC683D99F78CA68,
-	SelectionModeManager_levelSelect_m1270EF34529FEE005712D1813E253D77021D7A47,
-	SelectionModeManager_moveToTrainSelect_m6DB8BBC405CC28FE3F98F25DA7DA1D774C4C3C4B,
+	SelectionModeManager_moveToHandednessSelect_m62FA7385281BA462B833901E016169763D0C7BAB,
+	SelectionModeManager_moveToSpeedSelect_mB2698E929D4BDE09D26DFA51D1F92A8AE96C1BD8,
+	SelectionModeManager_moveToDirectionSelect_m0B466436A5B5C7F0D956D6B8DF295EFBEDC00B63,
+	SelectionModeManager_moveToModeSelect_mC190CCF2F904F0125C03C0CA2385CA6201249C34,
+	SelectionModeManager_moveToTrainMethodSelect_mF90738A7608705AFF9B9F3BB0160F337534070F6,
 	SelectionModeManager_modeSelect_mAE0782E7FFFC3CB7E5DE8557FB4F9F76C8FA0857,
 	SelectionModeManager_placeChoicesAway_m71B536CBBAEA140A336E50D847C636923FB1D33A,
+	SelectionModeManager_handednessChoicesToWall_m6EE38B7EF03442C4DC263C065781735C3EA442E5,
 	SelectionModeManager_handednessChoicesAway_m92D5715E7E3D7FF06CCC61A2BA64C6FF78FF3F0B,
-	SelectionModeManager_handednessChoiceToWall_mEE1EF70EC7D573F8147C1F570900F6EAB090DADA,
-	SelectionModeManager_sceneChoicesAway_m17CE651B6C5CCBF1D42C331A7EDD4EBD9126369E,
-	SelectionModeManager_sceneChoicesToWall_mAC4E4D4B5D70493AAD417885034DCF01E6DE0834,
-	SelectionModeManager_trainLevelToWall_mACC1A95FECBB995753A54A61593BC392FAD052D3,
-	SelectionModeManager_levelChoicesAway_mDB9484879EC52AF0F42DFC5A9D79FBE4183968E6,
-	SelectionModeManager_trainModeToWall_mA232116D9ACF14EB7396010E53699EE8ED5626DD,
+	SelectionModeManager_speedChoicesToWall_mA3435D91DF3C36B6988CEB13F77948FD753E78C5,
+	SelectionModeManager_speedChoicesAway_m95FC728E918ADD8C8541A7AE5C3CC6E5DFA593F1,
+	SelectionModeManager_directionChoicesToWall_m68B0CE64B9962F9CC787DB52C28BFC869CFD1EB8,
+	SelectionModeManager_directionChoicesAway_mBB6DAA43C991F84E73FAE680B35F69C38C04BB0A,
+	SelectionModeManager_modeChoicesToWall_mCCA17D81189A68B007009680E17E7340518E8AB8,
+	SelectionModeManager_modeChoicesAway_m05172EA149F0EEA9F2FFA64A4F4A2D1DFEF14CB9,
+	SelectionModeManager_trainMethodChoicesToWall_mF7ADCEE7886F1863BE6B7F4AAE7B3FB5A7E53C6F,
 	SelectionModeManager__ctor_mC8F9F20EED67247E65D02EE15114CE596156FD87,
 	SelectionUIManager_Start_mE56D5085AF3E7DFA39638DA5AACEECD76B7EF8FA,
 	SelectionUIManager_Update_m7F4ED50AC8EB6A3EF08B8F62953165F1EC0945EC,
@@ -7415,7 +7553,7 @@ static Il2CppMethodPointer s_methodPointers[2485] =
 	Interop__ctor_m375B45D7F86A238D9183FEAF75B47D49AE9ED2CF,
 	U3CPrivateImplementationDetailsU3E_ComputeStringHash_m9E43873DE0DF480D27EC1C2AA3C09E74EA77F75D,
 };
-static const int32_t s_InvokerIndices[2485] = 
+static const int32_t s_InvokerIndices[2531] = 
 {
 	9971,
 	7342,
@@ -7461,7 +7599,7 @@ static const int32_t s_InvokerIndices[2485] =
 	3318,
 	634,
 	2673,
-	330,
+	331,
 	4931,
 	1698,
 	1156,
@@ -8099,7 +8237,7 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	2032,
 	2676,
-	209,
+	210,
 	6676,
 	6676,
 	6676,
@@ -8209,7 +8347,7 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	6676,
 	5516,
-	5441,
+	3064,
 	1920,
 	6676,
 	3117,
@@ -8217,6 +8355,8 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	6676,
 	6676,
+	6676,
+	6549,
 	6676,
 	6676,
 	6676,
@@ -8228,15 +8368,33 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	6676,
 	6676,
+	2749,
+	6594,
 	6676,
 	6676,
 	6676,
 	6676,
+	6676,
+	6676,
+	6676,
+	6676,
+	6676,
+	6676,
+	6676,
+	5474,
+	5474,
+	5474,
 	6676,
 	6676,
 	6676,
 	6676,
 	5378,
+	6676,
+	6676,
+	6676,
+	2749,
+	6594,
+	6676,
 	6676,
 	6676,
 	6676,
@@ -8306,6 +8464,21 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	6676,
 	6676,
+	2749,
+	6594,
+	6676,
+	6676,
+	6676,
+	6676,
+	6676,
+	6676,
+	2749,
+	6594,
+	6676,
+	6676,
+	6676,
+	6676,
+	6676,
 	5441,
 	6676,
 	5441,
@@ -8317,11 +8490,12 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	6676,
 	3407,
+	5375,
+	6676,
 	5441,
 	6676,
 	3023,
 	1893,
-	5441,
 	4920,
 	6676,
 	6676,
@@ -8336,6 +8510,7 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	6676,
 	6676,
+	5474,
 	5474,
 	6676,
 	6676,
@@ -8360,7 +8535,7 @@ static const int32_t s_InvokerIndices[2485] =
 	6549,
 	6455,
 	6455,
-	175,
+	176,
 	6676,
 	6676,
 	6676,
@@ -8389,6 +8564,9 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	6676,
 	6676,
+	10026,
+	6676,
+	5016,
 	6676,
 	6676,
 	6676,
@@ -8398,21 +8576,21 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	6676,
 	6676,
-	370,
-	375,
+	371,
+	140,
 	5441,
 	3369,
 	5441,
+	4920,
 	6549,
 	6549,
-	6549,
-	6549,
-	6549,
+	4920,
+	4920,
 	6549,
 	4920,
 	6549,
 	4920,
-	4920,
+	6549,
 	5474,
 	6676,
 	6676,
@@ -8445,11 +8623,17 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	6676,
 	6676,
+	6676,
+	6676,
 	5375,
-	6676,
+	5375,
+	5375,
+	5441,
 	5441,
 	6676,
 	5441,
+	6676,
+	6676,
 	6676,
 	6676,
 	6676,
@@ -8832,7 +9016,7 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	1911,
 	1952,
-	178,
+	179,
 	6676,
 	2195,
 	2195,
@@ -9355,7 +9539,7 @@ static const int32_t s_InvokerIndices[2485] =
 	9407,
 	7978,
 	8551,
-	147,
+	148,
 	3323,
 	1997,
 	2183,
@@ -9412,11 +9596,11 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	3320,
 	462,
-	185,
+	186,
 	461,
 	3320,
 	834,
-	300,
+	301,
 	833,
 	3320,
 	2369,
@@ -9432,7 +9616,7 @@ static const int32_t s_InvokerIndices[2485] =
 	2368,
 	9994,
 	1599,
-	286,
+	287,
 	463,
 	463,
 	2369,
@@ -9444,16 +9628,16 @@ static const int32_t s_InvokerIndices[2485] =
 	629,
 	4657,
 	3320,
-	286,
+	287,
 	115,
 	461,
 	3320,
 	463,
-	186,
+	187,
 	833,
 	3320,
 	463,
-	186,
+	187,
 	833,
 	3320,
 	2369,
@@ -9473,15 +9657,15 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	3320,
 	462,
-	185,
+	186,
 	461,
 	3320,
 	834,
-	300,
+	301,
 	833,
 	3320,
 	834,
-	300,
+	301,
 	833,
 	3320,
 	2369,
@@ -9489,7 +9673,7 @@ static const int32_t s_InvokerIndices[2485] =
 	2368,
 	3320,
 	834,
-	300,
+	301,
 	833,
 	3320,
 	2369,
@@ -9502,15 +9686,15 @@ static const int32_t s_InvokerIndices[2485] =
 	6676,
 	3320,
 	834,
-	300,
+	301,
 	833,
 	3320,
 	834,
-	300,
+	301,
 	833,
 	3320,
 	462,
-	185,
+	186,
 	461,
 	9994,
 	2369,
@@ -9534,19 +9718,19 @@ static const int32_t s_InvokerIndices[2485] =
 	2368,
 	3320,
 	462,
-	185,
+	186,
 	461,
 	3320,
 	834,
-	300,
+	301,
 	833,
 	3320,
 	834,
-	300,
+	301,
 	833,
 	3320,
 	834,
-	300,
+	301,
 	833,
 	3320,
 	1591,
@@ -9587,7 +9771,7 @@ static const int32_t s_InvokerIndices[2485] =
 	4582,
 	4582,
 	2369,
-	285,
+	286,
 	6676,
 	3320,
 	2369,
@@ -9622,9 +9806,9 @@ static const int32_t s_InvokerIndices[2485] =
 	1125,
 	2368,
 	3320,
-	285,
+	286,
 	114,
-	284,
+	285,
 	9994,
 	2499,
 	2504,
@@ -9679,7 +9863,7 @@ static const int32_t s_InvokerIndices[2485] =
 	2368,
 	3320,
 	836,
-	301,
+	302,
 	1562,
 	3320,
 	1569,
@@ -9695,15 +9879,15 @@ static const int32_t s_InvokerIndices[2485] =
 	2368,
 	3320,
 	834,
-	300,
+	301,
 	833,
 	3320,
 	834,
-	300,
+	301,
 	833,
 	3320,
 	834,
-	300,
+	301,
 	833,
 	9994,
 	4582,
@@ -9913,10 +10097,10 @@ static const Il2CppTokenRangePair s_rgctxIndices[12] =
 	{ 0x060001D4, { 13, 1 } },
 	{ 0x060001D5, { 14, 1 } },
 	{ 0x060001D6, { 15, 1 } },
-	{ 0x06000737, { 16, 5 } },
-	{ 0x06000738, { 21, 5 } },
-	{ 0x06000739, { 26, 4 } },
-	{ 0x0600073A, { 30, 4 } },
+	{ 0x06000765, { 16, 5 } },
+	{ 0x06000766, { 21, 5 } },
+	{ 0x06000767, { 26, 4 } },
+	{ 0x06000768, { 30, 4 } },
 };
 extern const uint32_t g_rgctx_GameObject_GetComponents_TisTCategory_t5300F1B77E4F9ACC436567BEF3DD15F399AC523F_m4702DAB4DF24B62CF2C8C2453AA76A816759A716;
 extern const uint32_t g_rgctx_TActivate_tEF71CABCB0EEA8D5BEF9D386AA46C23792D40B3A;
@@ -9993,7 +10177,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	2485,
+	2531,
 	s_methodPointers,
 	0,
 	NULL,

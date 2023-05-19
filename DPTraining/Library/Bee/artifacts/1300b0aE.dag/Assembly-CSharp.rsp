@@ -572,7 +572,7 @@
 "Assets/Scripts/PlayingScene/PlayingModeManager.cs"
 "Assets/Scripts/PlayingScene/PlayingUIManager.cs"
 "Assets/Scripts/PlayingScene/VRBoxBuildingManager.cs"
-"Assets/Scripts/PunchCollectingScene/PunchCollectingManager.cs"
+"Assets/Scripts/PunchSettingScene/PunchSettingManager.cs"
 "Assets/Scripts/SelectionScene/HolderBagInteraction.cs"
 "Assets/Scripts/SelectionScene/SelectionModeManager.cs"
 "Assets/Scripts/SelectionScene/SelectionUIManager.cs"

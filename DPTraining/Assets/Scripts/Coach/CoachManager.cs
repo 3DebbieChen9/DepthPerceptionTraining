@@ -27,10 +27,7 @@ public class CoachManager : MonoBehaviour
 
     void Awake()
     {
-        // if (this.mainManager == null)
-        // {
-        //     this.mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
-        // }
+
     }
 
     // Start is called before the first frame update
@@ -61,7 +58,6 @@ public class CoachManager : MonoBehaviour
                                     originForward * this.userArmLength * this.distanceToUserMultiple +
                                     originForward * this.avtarCenterToEdgeLength;
         float y_shift = 0.005f;
-        // float y_shift = 1.0f * Convert.ToInt32(this.playingModeManager.mainManager.mySelectionInfo.isOnRing) + 0.005f - 1.0f * Convert.ToInt32(this.playingModeManager.mainManager.mySelectionInfo.isOnRing) + 0.01f;
         this.coachInitialPosition.y += y_shift;
         float coachScale = this.playingModeManager.mainManager.myUserInfo.userBodySize.height / this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.avtarDefaultHeight + this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.heightDifferenceWithUser;
         if (this.playingModeManager.mainManager.myUserInfo.userBodySize.height > 2.0f)
@@ -69,7 +65,7 @@ public class CoachManager : MonoBehaviour
             coachScale = 2.0f / this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.avtarDefaultHeight + this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.heightDifferenceWithUser;
         }
         this.coachAvatar.transform.localScale = new Vector3(coachScale, coachScale, coachScale);
-        // this.moveToInitialPosition(false);
+
         this.moveDistanceForwardMin = this.userArmLength * this.distanceToUserMultiple + this.avtarCenterToEdgeLength;
         this.moveDistanceForwardMax = Mathf.Max(this.playingModeManager.mainManager.myUserInfo.movableRange.length / 2.0f - this.userArmLength * 2.0f +
                                                         this.userArmLength * this.distanceToUserMultiple + this.avtarCenterToEdgeLength,
@@ -123,7 +119,7 @@ public class CoachManager : MonoBehaviour
         Invoke("moveToInitialPosition", delayTime);
     }
 
-    public void randomMovement(TrainingLevel level = TrainingLevel.hard)
+    public void movement(MovingSpeed speed = MovingSpeed.Random, MovingDirection movingDirection = MovingDirection.Random)
     {
         float distanceMin = 0.0f;
         float distanceMax = 0.0f;
@@ -131,34 +127,38 @@ public class CoachManager : MonoBehaviour
         float speedMax = 0.0f;
         float coachMoveSpeed = 0.0f;
 
-        float randomValue = UnityEngine.Random.Range(0.0f, 1.0f);
-        MovingDirection movingDirection = MovingDirection.Forward;
-        if (randomValue < 0.5f)
+        if (movingDirection == MovingDirection.Random)
         {
-            movingDirection = MovingDirection.Forward;
-            distanceMin = this.moveDistanceForwardMin;
-            distanceMax = this.moveDistanceForwardMax;
-            speedMin = this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.forwardMin;
-            speedMax = this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.forwardMax;
-        }
-        else
-        {
-            movingDirection = MovingDirection.Backward;
-            distanceMin = this.moveDistanceBackwardMin;
-            distanceMax = this.moveDistanceBackwardMax;
-            speedMin = this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.backwardMin;
-            speedMax = this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.backwardMax;
+            movingDirection = (MovingDirection)UnityEngine.Random.Range(0, 2);
         }
 
-        switch (level)
+        switch (movingDirection)
         {
-            case TrainingLevel.easy:
+            case MovingDirection.Forward:
+                distanceMin = this.moveDistanceForwardMin;
+                distanceMax = this.moveDistanceForwardMax;
+                speedMin = this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.forwardMin;
+                speedMax = this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.forwardMax;
+                break;
+            case MovingDirection.Backward:
+                distanceMin = this.moveDistanceBackwardMin;
+                distanceMax = this.moveDistanceBackwardMax;
+                speedMin = this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.backwardMin;
+                speedMax = this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.movingSpeed.backwardMax;
+                break;
+            default:
+                break;
+        }
+
+        switch (speed)
+        {
+            case MovingSpeed.Slowest:
                 coachMoveSpeed = speedMin;
                 break;
-            case TrainingLevel.medium:
+            case MovingSpeed.Fastest:
                 coachMoveSpeed = speedMax;
                 break;
-            case TrainingLevel.hard:
+            case MovingSpeed.Random:
                 coachMoveSpeed = UnityEngine.Random.Range(speedMin, speedMax);
                 break;
         }

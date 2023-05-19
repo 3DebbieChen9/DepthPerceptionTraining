@@ -17,11 +17,13 @@ public class SelectionModeManager : MonoBehaviour
     [SerializeField]
     private GameObject handednessChoices;
     [SerializeField]
-    private GameObject sceneChoices;
+    private GameObject speedChoices;
     [SerializeField]
-    private GameObject levelChoices;
+    private GameObject directionChoices;
     [SerializeField]
-    private GameObject trainChoices;
+    private GameObject modeChoices;
+    [SerializeField]
+    private GameObject trainMethodChoices;
     [SerializeField]
     private GameObject changeSceneButton;
     [SerializeField]
@@ -69,10 +71,23 @@ public class SelectionModeManager : MonoBehaviour
         this.curState = SelectionState.Place;
         this.placeChoices.SetActive(true);
         this.handednessChoices.SetActive(false);
-        this.sceneChoices.SetActive(false);
-        this.trainChoices.SetActive(false);
-        this.levelChoices.SetActive(false);
+        this.speedChoices.SetActive(false);
+        this.directionChoices.SetActive(false);
+        this.modeChoices.SetActive(false);
+        this.trainMethodChoices.SetActive(false);
         this.changeSceneButton.SetActive(false);
+    }
+
+    public void btnCalibrationScene()
+    {
+        this.mainManager.changeScene("CalibrationScene");
+        this.mainManager.curSystemMode = SystemMode.CalibrationMode;
+    }
+
+    public void btnSelectionScene()
+    {
+        this.mainManager.changeScene("SelectionScene");
+        this.mainManager.curSystemMode = SystemMode.SelectionMode;
     }
 
     public void toggleSelect(bool selection)
@@ -80,40 +95,48 @@ public class SelectionModeManager : MonoBehaviour
         switch (this.curState)
         {
             case SelectionState.Place:
-                this.mainManager.mySelectionInfo.isOnRing = selection;
-                Invoke("placeChoicesAway", 0.2f);
-                Invoke("handednessChoiceToWall", 0.5f);
-                this.curState = SelectionState.Handedness;
+                this.moveToHandednessSelect(selection);
                 break;
             case SelectionState.Handedness:
-                this.mainManager.mySelectionInfo.coachIsLeftHanded = !selection;
-                Invoke("handednessChoicesAway", 0.2f);
-                Invoke("sceneChoicesToWall", 0.5f);
-                this.curState = SelectionState.SelectMode;
+                this.moveToSpeedSelect(selection);
                 break;
             default:
                 break;
         }
     }
-
-    public void moveToLevelSelect()
+    public void moveToHandednessSelect(bool selection)
     {
-        Invoke("sceneChoicesAway", 0.2f);
-        Invoke("trainLevelToWall", 0.5f);
-        this.curState = SelectionState.SelectLevel;
+        this.mainManager.mySelectionInfo.isOnRing = selection;
+        Invoke("placeChoicesAway", 0.2f);
+        Invoke("handednessChoicesToWall", 0.5f);
+        this.curState = SelectionState.Handedness;
     }
-
-    public void levelSelect(TrainingLevel level)
+    public void moveToSpeedSelect(bool selection)
     {
-        this.mainManager.mySelectionInfo.selectedLevel = level;
-        this.moveToTrainSelect();
+        this.mainManager.mySelectionInfo.coachIsLeftHanded = !selection;
+        Invoke("handednessChoicesAway", 0.2f);
+        Invoke("speedChoicesToWall", 0.5f);
+        this.curState = SelectionState.SelectSpeed;
     }
-
-    public void moveToTrainSelect()
+    public void moveToDirectionSelect(MovingSpeed speed)
     {
-        Invoke("levelChoicesAway", 0.2f);
-        Invoke("trainModeToWall", 0.5f);
-        this.curState = SelectionState.SelectTrain;
+        this.mainManager.mySelectionInfo.selectedSpeed = speed;
+        Invoke("speedChoicesAway", 0.2f);
+        Invoke("directionChoicesToWall", 0.5f);
+        this.curState = SelectionState.SelectDirection;
+    }
+    public void moveToModeSelect(MovingDirection direction)
+    {
+        this.mainManager.mySelectionInfo.selectedCoachDirection = direction;
+        Invoke("directionChoicesAway", 0.2f);
+        Invoke("modeChoicesToWall", 0.5f);
+        this.curState = SelectionState.SelectMode;
+    }
+    public void moveToTrainMethodSelect()
+    {
+        Invoke("modeChoicesAway", 0.2f);
+        Invoke("trainMethodChoicesToWall", 0.5f);
+        this.curState = SelectionState.SelectTrainMethod;
     }
 
     public void modeSelect(SystemMode mode)
@@ -124,72 +147,68 @@ public class SelectionModeManager : MonoBehaviour
         switch (mode)
         {
             case SystemMode.TestingMode:
-                this.mainManager.mySelectionInfo.selectedLevel = TrainingLevel.hard;
                 this.mainManager.changeScene("TestingScene");
                 break;
-            case SystemMode.TrainingMode:
-            case SystemMode.TrainingMode_LineCue:
-            case SystemMode.TrainingMode_BallCue_onPlayer:
-            case SystemMode.TrainingMode_BallCue_onTarget:
-            case SystemMode.TrainingMode_BallCue_onBoth:
-            case SystemMode.TrainingMode_LineCuePlusBallCue:
-            case SystemMode.TrainingMode_BarCue:
-            case SystemMode.TrainingMode_CutoutCue:
-                this.mainManager.changeScene("TrainingScene");
-                break;
             default:
+                this.mainManager.changeScene("TrainingScene");
                 break;
         }
     }
 
-    void placeChoicesAway()
+    private void placeChoicesAway()
     {
         this.placeChoices.transform.DOLocalMoveZ(-2.0f, 1.0f);
     }
-
-    void handednessChoicesAway()
-    {
-        this.handednessChoices.transform.DOLocalMoveZ(-2.0f, 1.0f);
-    }
-
-    void handednessChoiceToWall()
+    private void handednessChoicesToWall()
     {
         this.placeChoices.SetActive(false);
         DOTween.Kill(this.placeChoices.transform);
         this.handednessChoices.SetActive(true);
         this.handednessChoices.transform.DOLocalMoveY(0.0f, 0.3f);
     }
-
-    void sceneChoicesAway()
+    private void handednessChoicesAway()
     {
-        this.sceneChoices.transform.DOLocalMoveZ(-2.0f, 1.0f);
+        this.handednessChoices.transform.DOLocalMoveZ(-2.0f, 1.0f);
     }
-    void sceneChoicesToWall()
+    private void speedChoicesToWall()
     {
         this.handednessChoices.SetActive(false);
         DOTween.Kill(this.handednessChoices.transform);
-        this.sceneChoices.SetActive(true);
-        this.sceneChoices.transform.DOLocalMoveY(0.0f, 0.3f);
+        this.speedChoices.SetActive(true);
+        this.speedChoices.transform.DOLocalMoveY(0.0f, 0.3f);
     }
-
-    public void trainLevelToWall()
+    private void speedChoicesAway()
     {
-        this.sceneChoices.SetActive(false);
-        DOTween.Kill(this.sceneChoices.transform);
-        this.levelChoices.SetActive(true);
-        this.levelChoices.transform.DOLocalMoveY(0.0f, 0.3f);
+        this.speedChoices.transform.DOLocalMoveZ(-2.0f, 1.0f);
     }
-
-    public void levelChoicesAway()
+    private void directionChoicesToWall()
     {
-        this.levelChoices.transform.DOLocalMoveZ(-2.0f, 1.0f);
+        this.speedChoices.SetActive(false);
+        DOTween.Kill(this.speedChoices.transform);
+        this.directionChoices.SetActive(true);
+        this.directionChoices.transform.DOLocalMoveY(0.0f, 0.3f);
     }
-    public void trainModeToWall()
+    private void directionChoicesAway()
     {
-        this.levelChoices.SetActive(false);
-        DOTween.Kill(this.levelChoices.transform);
-        this.trainChoices.SetActive(true);
-        this.trainChoices.transform.DOLocalMoveY(0.0f, 0.3f);
+        this.directionChoices.transform.DOLocalMoveZ(-2.0f, 1.0f);
+    }
+    private void modeChoicesToWall()
+    {
+        this.directionChoices.SetActive(false);
+        DOTween.Kill(this.directionChoices.transform);
+        this.modeChoices.SetActive(true);
+        this.modeChoices.transform.DOLocalMoveY(0.0f, 0.3f);
+    }
+    private void modeChoicesAway()
+    {
+        this.modeChoices.transform.DOLocalMoveZ(-2.0f, 1.0f);
+    }
+    private void trainMethodChoicesToWall()
+    {
+        this.modeChoices.SetActive(false);
+        DOTween.Kill(this.modeChoices.transform);
+        this.trainMethodChoices.SetActive(true);
+        this.trainMethodChoices.transform.DOLocalMoveY(0.0f, 0.3f);
     }
 
 }

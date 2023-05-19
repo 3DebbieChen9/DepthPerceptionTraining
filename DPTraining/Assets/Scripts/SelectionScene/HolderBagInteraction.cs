@@ -40,47 +40,53 @@ public class HolderBagInteraction : MonoBehaviour
                 case "Choice_R":
                     this.selectionModeManager.toggleSelect(true);
                     break;
-                case "Choice_Testing":
+                case "Speed_Slowest":
+                    this.selectionModeManager.moveToDirectionSelect(MovingSpeed.Slowest);
+                    break;
+                case "Speed_Fastest":
+                    this.selectionModeManager.moveToDirectionSelect(MovingSpeed.Fastest);
+                    break;
+                case "Speed_Random":
+                    this.selectionModeManager.moveToDirectionSelect(MovingSpeed.Random);
+                    break;
+                case "Direction_Forward":
+                    this.selectionModeManager.moveToModeSelect(MovingDirection.Forward);
+                    break;
+                case "Direction_Backward":
+                    this.selectionModeManager.moveToModeSelect(MovingDirection.Backward);
+                    break;
+                case "Direction_Random":
+                    this.selectionModeManager.moveToModeSelect(MovingDirection.Random);
+                    break;
+                case "Mode_Testing":
                     this.selectionModeManager.modeSelect(SystemMode.TestingMode);
                     break;
-                case "Choice_TrainMethod":
-                    this.selectionModeManager.moveToLevelSelect();
+                case "Mode_Training":
+                    this.selectionModeManager.moveToTrainMethodSelect();
                     break;
-                case "Choice_Training":
+                case "Training_Tradition":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode);
                     break;
-                case "Level_Easy":
-                    this.selectionModeManager.levelSelect(TrainingLevel.easy);
-                    break;
-                case "Level_Medium":
-                    this.selectionModeManager.levelSelect(TrainingLevel.medium);
-                    break;
-                case "Level_Hard":
-                    this.selectionModeManager.levelSelect(TrainingLevel.hard);
-                    break;
-                case "Choice_Line":
+                case "Training_Line":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_LineCue);
                     break;
-                case "Choice_BallOnTarget":
+                case "Training_BallOnTarget":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onTarget);
                     break;
-                case "Choice_BallOnPlayer":
+                case "Training_BallOnPlayer":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onPlayer);
                     break;
-                case "Choice_BallOnBoth":
+                case "Training_BallOnBoth":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onBoth);
                     break;
-                case "Choice_LinePlusBall":
+                case "Training_LinePlusBall":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_LineCuePlusBallCue);
                     break;
-                case "Choice_Bar":
+                case "Training_Bar":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BarCue);
                     break;
-                case "Choice_CutoutCue":
+                case "Training_CutoutCue":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_CutoutCue);
-                    break;
-                case "Choice_PunchCollecting":
-                    this.selectionModeManager.mainManager.changeScene("PunchCollectingScene");
                     break;
                 default:
                     break;

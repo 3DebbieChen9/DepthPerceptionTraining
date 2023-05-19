@@ -33,7 +33,7 @@ public class DirectionModule : MonoBehaviour
             this.evaluationManager.userMovingDirection = MovingDirection.Backward;
             if (this.evaluationManager.coachMovingDirection == MovingDirection.Forward)
             {
-                Debug.Log($"[Moving Direction] Angle: {angle}, User Backward, Coach Forward");
+                // Debug.Log($"[Moving Direction] Angle: {angle}, User Backward, Coach Forward");
                 return true;
             }
             else
@@ -46,7 +46,7 @@ public class DirectionModule : MonoBehaviour
             this.evaluationManager.userMovingDirection = MovingDirection.Forward;
             if (this.evaluationManager.coachMovingDirection == MovingDirection.Backward)
             {
-                Debug.Log($"[Moving Direction] Angle: {angle}, User Forward, Coach Backward");
+                // Debug.Log($"[Moving Direction] Angle: {angle}, User Forward, Coach Backward");
                 return true;
             }
             else

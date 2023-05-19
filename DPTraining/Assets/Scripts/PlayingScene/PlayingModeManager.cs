@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,8 +27,6 @@ public class PlayingModeManager : MonoBehaviour
     public TotalUnitResult myTestResult;
     public UnitResult curUnitResult;
     private bool unitIsOver = false;
-    // [SerializeField]
-    // private bool reactionOverTime = false;
 
     public GameObject depthCueManager;
 
@@ -36,6 +35,10 @@ public class PlayingModeManager : MonoBehaviour
 
     [SerializeField]
     private List<string> voiceCommentList;
+
+    [SerializeField]
+    // private List<MovingDirection> controlledDirectionList;
+    private MovingDirection[] controlledDirectionArray;
     void Awake()
     {
         if (this.mainManager == null)
@@ -58,28 +61,9 @@ public class PlayingModeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float readyTime;
-        switch (this.mainManager.curSystemMode)
-        {
-            case SystemMode.TestingMode:
-                readyTime = this.mainManager.mySettingInfo.playingModeSetting.testingReadyTime;
-                break;
-            case SystemMode.TrainingMode:
-            case SystemMode.TrainingMode_LineCue:
-            case SystemMode.TrainingMode_BallCue_onPlayer:
-            case SystemMode.TrainingMode_BallCue_onTarget:
-            case SystemMode.TrainingMode_BallCue_onBoth:
-            case SystemMode.TrainingMode_LineCuePlusBallCue:
-                readyTime = this.mainManager.mySettingInfo.playingModeSetting.trainingReadyTime;
-                break;
-            default:
-                readyTime = 0.0f;
-                break;
-        }
-        this.reactionTimer = new Timer(false, false, this.mainManager.mySettingInfo.playingModeSetting.unitTimeLimit, 0.0f);
-        this.readyTimer = new Timer(false, true, readyTime, readyTime);
-        float firstTentativeTime = UnityEngine.Random.Range(this.mainManager.mySettingInfo.playingModeSetting.tentativeTimeMin, this.mainManager.mySettingInfo.playingModeSetting.tentativeTimeMax);
-        this.tentativeTimer = new Timer(false, true, firstTentativeTime, firstTentativeTime);
+        this.reactionTimer = new Timer(false, false, 0.0f, 0.0f);
+        this.readyTimer = new Timer(false, true, 0.0f, 0.0f);
+        this.tentativeTimer = new Timer(false, true, 0.0f, 0.0f);
         this.myTestResult = new TotalUnitResult();
         this.curUnitResult = new UnitResult();
         this.testingSceneInitialized();
@@ -97,15 +81,8 @@ public class PlayingModeManager : MonoBehaviour
                 case SystemMode.TestingMode:
                     this.mainManager.changeScene("TestingScene");
                     break;
-                case SystemMode.TrainingMode:
-                case SystemMode.TrainingMode_LineCue:
-                case SystemMode.TrainingMode_BallCue_onPlayer:
-                case SystemMode.TrainingMode_BallCue_onTarget:
-                case SystemMode.TrainingMode_BallCue_onBoth:
-                case SystemMode.TrainingMode_LineCuePlusBallCue:
-                    this.mainManager.changeScene("TrainingScene");
-                    break;
                 default:
+                    this.mainManager.changeScene("TrainingScene");
                     break;
             }
         }
@@ -225,7 +202,8 @@ public class PlayingModeManager : MonoBehaviour
                 this.coachManager.coachAnimator.SetBool("isTentative", false);
                 this.coachManager.coachAnimator.SetBool("isDuringTheUnit", true);
                 this.unitIsOver = false;
-                this.coachManager.randomMovement(this.mainManager.mySelectionInfo.selectedLevel);
+
+                this.coachManager.movement(this.mainManager.mySelectionInfo.selectedSpeed, this.controlledDirectionArray[this.curUnitNum - 1]);
 
                 this.curUnitResult.reset();
                 this.evaluationManager.evaluationStatusInitialize();
@@ -254,19 +232,72 @@ public class PlayingModeManager : MonoBehaviour
         this.curState = PlayingState.idle;
 
         this.targetNumberOfTasks = this.mainManager.mySettingInfo.playingModeSetting.targetNumberOfTasks;
-        this.readyTimer.timeLeft = this.mainManager.mySettingInfo.playingModeSetting.testingReadyTime;
-        this.readyTimer.timeTarget = this.mainManager.mySettingInfo.playingModeSetting.testingReadyTime;
+
+        float readyTime;
+        float timeLimit;
+        switch (this.mainManager.curSystemMode)
+        {
+            case SystemMode.TestingMode:
+                readyTime = this.mainManager.mySettingInfo.playingModeSetting.testingReadyTime;
+                timeLimit = this.mainManager.mySettingInfo.playingModeSetting.testingUnitTimeLimit;
+                break;
+            default:
+                readyTime = this.mainManager.mySettingInfo.playingModeSetting.trainingReadyTime;
+                timeLimit = this.mainManager.mySettingInfo.playingModeSetting.trainingUnitTimeLimit;
+                break;
+        }
+
+        float firstTentativeTime = UnityEngine.Random.Range(this.mainManager.mySettingInfo.playingModeSetting.tentativeTimeMin, this.mainManager.mySettingInfo.playingModeSetting.tentativeTimeMax);
+        this.tentativeTimer.timeLeft = firstTentativeTime;
+        this.tentativeTimer.timeTarget = firstTentativeTime;
+        this.tentativeTimer.ResetTimer();
+        this.readyTimer.timeLeft = readyTime;
+        this.readyTimer.timeTarget = readyTime;
+        this.readyTimer.ResetTimer();
         this.reactionTimer.timeLeft = 0.0f;
-        this.reactionTimer.timeTarget = this.mainManager.mySettingInfo.playingModeSetting.unitTimeLimit;
+        this.reactionTimer.timeTarget = timeLimit;
+        this.reactionTimer.ResetTimer();
+
+        this.controlledDirectionArray = new MovingDirection[this.targetNumberOfTasks];
+        int half = this.targetNumberOfTasks / 2;
+        for (int i = 0; i < half; i++)
+        {
+            this.controlledDirectionArray[i] = MovingDirection.Forward;
+        }
+        for (int i = half; i < half + half; i++)
+        {
+            this.controlledDirectionArray[i] = MovingDirection.Backward;
+        }
+        if (half + half < this.targetNumberOfTasks)
+        {
+            if (this.mainManager.mySelectionInfo.selectedCoachDirection == MovingDirection.Random)
+            {
+                this.controlledDirectionArray[half + half] = (MovingDirection)UnityEngine.Random.Range(0, 2);
+            }
+            else
+            {
+                this.controlledDirectionArray[half + half] = this.mainManager.mySelectionInfo.selectedCoachDirection;
+            }
+        }
+        string beforeShuffle = "";
+        string afterShuffle = "";
+        foreach (MovingDirection md in this.controlledDirectionArray)
+        {
+            beforeShuffle += md.ToString() + " | ";
+        }
+        Debug.Log($"Controlled Direction [Before]: {beforeShuffle}");
+        this.controlledDirectionArray = this.controlledDirectionArray.OrderBy(x => UnityEngine.Random.value).ToArray();
+        foreach (MovingDirection md in this.controlledDirectionArray)
+        {
+            afterShuffle += md.ToString() + " | ";
+        }
+        Debug.Log($"Controlled Direction [after]: {afterShuffle}");
+
         this.curUnitNum = 1;
 
         this.myTestResult.reset();
         this.myTestResult.numberOfTasks = this.targetNumberOfTasks;
         this.curUnitResult.reset();
-
-        this.reactionTimer.ResetTimer();
-        this.readyTimer.ResetTimer();
-
         this.evaluationManager.evaluationStatusInitialize();
 
         this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(false);
@@ -435,7 +466,14 @@ public class PlayingModeManager : MonoBehaviour
             }
             Invoke("callCloseCoachAvatar", 2.0f);
             Invoke("callClearPunchMarker", 1.9f);
-            this.UIManager.finalResultView(this.myTestResult.totalScore, this.myTestResult.averageReactionTime, this.myTestResult.numberOfMovingCorrectly, this.myTestResult.numberOfReacting, this.myTestResult.numberOfSuccess, this.myTestResult.numberOfOverTime);
+            this.UIManager.finalResultView(this.myTestResult.totalScore,
+                                            this.myTestResult.averageReactionTime,
+                                            this.myTestResult.numberOfMoving,
+                                            this.myTestResult.numberOfPunching,
+                                            this.myTestResult.numberOfMovingCorrectly,
+                                            this.myTestResult.numberOfReach,
+                                            this.myTestResult.numberOfSuccess,
+                                            this.myTestResult.numberOfOverTime);
             this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(true);
             this.mainManager.OVRControllerRayRight.RayInteractorSwitch(true);
             this.mainManager.saveToJSON_testResult(this.myTestResult);

@@ -20,14 +20,6 @@ public class EvaluationManager : MonoBehaviour
     public Hand punchHand;
     [SerializeField]
     private GameObject ballWhenHitPrefab;
-    [SerializeField]
-    private GameObject leftUpperArmPrefab;
-    [SerializeField]
-    private GameObject rightUpperArmPrefab;
-    [SerializeField]
-    private GameObject leftLowerArmPrefab;
-    [SerializeField]
-    private GameObject rightLowerArmPrefab;
 
     public bool isHitTrigger;
 
@@ -169,14 +161,10 @@ public class EvaluationManager : MonoBehaviour
             case PlayingState.comment:
                 switch (this.playingModeManager.mainManager.curSystemMode)
                 {
-                    case SystemMode.TrainingMode:
-                    case SystemMode.TrainingMode_LineCue:
-                    case SystemMode.TrainingMode_BallCue_onPlayer:
-                    case SystemMode.TrainingMode_BallCue_onTarget:
-                    case SystemMode.TrainingMode_BallCue_onBoth:
-                    case SystemMode.TrainingMode_LineCuePlusBallCue:
-                    case SystemMode.TrainingMode_BarCue:
-                    case SystemMode.TrainingMode_CutoutCue:
+                    case SystemMode.TestingMode:
+                        AudioManager.instance.PlaySFX("HitObject");
+                        break;
+                    default:
                         if (this.playingModeManager.curUnitResult.isReach)
                         {
                             if (this.playingModeManager.curUnitResult.isStraight)
@@ -246,26 +234,24 @@ public class EvaluationManager : MonoBehaviour
         }
     }
 
-    void instatiateArmAfterimage(Hand hand)
-    {
-
-    }
-
     public UnitResultComment getScoreComment(bool isOverTime)
     {
         UnitResultComment comment = new UnitResultComment();
         if (this.playingModeManager.curUnitResult.isMoving)
         {
             this.playingModeManager.myTestResult.numberOfMoving += 1;
+            comment.score += 1;
+            comment.comments.Add(this.playingModeManager.UIManager.userIsMovingScore(isOverTime));
+
             if (this.playingModeManager.curUnitResult.isMovingCorrectly)
             {
-                comment.score += 1;
                 this.playingModeManager.myTestResult.numberOfMovingCorrectly += 1;
+                comment.score += 1;
                 comment.comments.Add(this.playingModeManager.UIManager.movingCorretlyScore(isOverTime));
             }
             else
             {
-                comment.comments.Add(this.playingModeManager.UIManager.movingWrong());
+                comment.comments.Add(this.playingModeManager.UIManager.movingWrongDirection());
             }
         }
         else
@@ -276,38 +262,34 @@ public class EvaluationManager : MonoBehaviour
         if (this.playingModeManager.curUnitResult.isPunching)
         {
             this.playingModeManager.myTestResult.numberOfPunching += 1;
-            comment.comments.Add(this.playingModeManager.UIManager.userIsPunching());
+            comment.score += 1;
+            comment.comments.Add(this.playingModeManager.UIManager.userIsPunchingScore(isOverTime));
         }
         else
         {
             comment.comments.Add(this.playingModeManager.UIManager.userNotPunching());
         }
 
-        if (this.playingModeManager.curUnitResult.isReach && !this.playingModeManager.curUnitResult.isStraight)
+        if (this.playingModeManager.curUnitResult.isReach)
         {
-            this.playingModeManager.myTestResult.numberOfReachNotStraight += 1;
-            comment.comments.Add(this.playingModeManager.UIManager.userReachNotStraight());
-        }
-
-        if (!this.playingModeManager.curUnitResult.isReach && this.playingModeManager.curUnitResult.isStraight)
-        {
-            this.playingModeManager.myTestResult.numberOfStraightNotReach += 1;
-            comment.comments.Add(this.playingModeManager.UIManager.userStraightNotReach());
-        }
-
-        if (this.playingModeManager.curUnitResult.isReacting)
-        {
+            this.playingModeManager.myTestResult.numberOfReach += 1;
             comment.score += 1;
-            this.playingModeManager.myTestResult.numberOfReacting += 1;
-            comment.comments.Add(this.playingModeManager.UIManager.reactionScore(isOverTime));
-        }
+            comment.comments.Add(this.playingModeManager.UIManager.userReachScore(isOverTime));
 
-        if (this.playingModeManager.curUnitResult.isReach && this.playingModeManager.curUnitResult.isStraight)
+            if (this.playingModeManager.curUnitResult.isStraight)
+            {
+                this.playingModeManager.myTestResult.numberOfSuccess += 1;
+                comment.score += 1;
+                comment.comments.Add(this.playingModeManager.UIManager.reachAndStraightScore(isOverTime));
+            }
+            else
+            {
+                comment.comments.Add(this.playingModeManager.UIManager.reachButNotStraight());
+            }
+        }
+        else
         {
-            comment.score += 1;
-            this.playingModeManager.curUnitResult.isSuccess = true;
-            this.playingModeManager.myTestResult.numberOfSuccess += 1;
-            comment.comments.Add(this.playingModeManager.UIManager.reachAndStraightScore(isOverTime));
+            comment.comments.Add(this.playingModeManager.UIManager.userNotReach());
         }
 
         return comment;

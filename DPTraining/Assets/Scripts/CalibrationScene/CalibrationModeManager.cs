@@ -140,8 +140,8 @@ public class CalibrationModeManager : MonoBehaviour
         this.mainManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
         // [----] Save User Info to JSON
         this.mainManager.saveToJSON_user(this.mainManager.myUserInfo);
-        this.mainManager.curSystemMode = SystemMode.SelectionMode;
-        this.mainManager.changeScene("SelectionScene");
+        this.mainManager.curSystemMode = SystemMode.PunchSettingMode;
+        this.mainManager.changeScene("PunchSettingScene");
     }
 
     void putRangeMarker()

@@ -9,7 +9,7 @@ namespace DepthPerceptionSystem
         StartMode,
         CalibrationMode,
         SelectionMode,
-        SettingMode,
+        PunchSettingMode,
         TestingMode,
         TrainingMode,
         TrainingMode_LineCue,
@@ -26,6 +26,7 @@ namespace DepthPerceptionSystem
     {
         Forward,
         Backward,
+        Random,
     }
 
     public enum Hand
@@ -51,9 +52,10 @@ namespace DepthPerceptionSystem
         // Noitom,
         Place,
         Handedness,
+        SelectSpeed,
+        SelectDirection,
         SelectMode,
-        SelectLevel,
-        SelectTrain,
+        SelectTrainMethod,
     }
 
     public enum PlayingState
@@ -67,11 +69,11 @@ namespace DepthPerceptionSystem
         result // 每個 unit 結束後的最終結果
     }
 
-    public enum TrainingLevel
+    public enum MovingSpeed
     {
-        easy, // Coach move with the slowest speed
-        medium, // Coach move with the highest speed
-        hard, // Coach move with random speed
+        Slowest, // Coach move with the slowest speed
+        Fastest, // Coach move with the fastest speed
+        Random, // Coach move with random speed
     }
 
     public enum SettingState
@@ -177,7 +179,9 @@ namespace DepthPerceptionSystem
         public bool isOnRing;
         public bool coachIsLeftHanded;
         public SystemMode selectedMode;
-        public TrainingLevel selectedLevel;
+        public MovingSpeed selectedSpeed;
+        public MovingDirection selectedCoachDirection; // For the 7th trail
+
 
         public SelectionInfo()
         {
@@ -185,7 +189,8 @@ namespace DepthPerceptionSystem
             this.isOnRing = false;
             this.coachIsLeftHanded = true;
             this.selectedMode = SystemMode.CalibrationMode;
-            this.selectedLevel = TrainingLevel.hard;
+            this.selectedSpeed = MovingSpeed.Random;
+            this.selectedCoachDirection = MovingDirection.Random;
         }
     }
 
@@ -228,16 +233,18 @@ namespace DepthPerceptionSystem
         public float trainingReadyTime;
         public float tentativeTimeMin;
         public float tentativeTimeMax;
-        public float unitTimeLimit; // Over the time limit, means the task is fail
+        public float testingUnitTimeLimit; // Over the time limit, means the task is fail
+        public float trainingUnitTimeLimit; // Over the time limit, means the task is fail
         public int targetNumberOfTasks; // User should do 'targetNumberOTasks' to complete the test 7
 
         public PlayingModeSetting()
         {
             this.testingReadyTime = 4.0f;
-            this.trainingReadyTime = 6.0f;
+            this.trainingReadyTime = 5.0f;
             this.tentativeTimeMin = 1.0f;
             this.tentativeTimeMax = 2.0f;
-            this.unitTimeLimit = 2.0f;
+            this.testingUnitTimeLimit = 2.0f;
+            this.trainingUnitTimeLimit = 4.0f;
             this.targetNumberOfTasks = 7;
         }
     }
@@ -288,11 +295,8 @@ namespace DepthPerceptionSystem
 
         public int numberOfMoving;
         public int numberOfPunching;
-        public int numberOfReachNotStraight;
-        public int numberOfStraightNotReach;
-
-        public int numberOfReacting;
         public int numberOfMovingCorrectly;
+        public int numberOfReach;
         public int numberOfSuccess; // Reach + Arm Straight
 
         public int numberOfOverTime;
@@ -308,11 +312,8 @@ namespace DepthPerceptionSystem
 
             this.numberOfMoving = 0;
             this.numberOfPunching = 0;
-            this.numberOfReachNotStraight = 0;
-            this.numberOfStraightNotReach = 0;
-
-            this.numberOfReacting = 0;
             this.numberOfMovingCorrectly = 0;
+            this.numberOfReach = 0;
             this.numberOfSuccess = 0;
 
             this.numberOfOverTime = 0;
@@ -334,11 +335,8 @@ namespace DepthPerceptionSystem
 
             this.numberOfMoving = 0;
             this.numberOfPunching = 0;
-            this.numberOfReachNotStraight = 0;
-            this.numberOfStraightNotReach = 0;
-
-            this.numberOfReacting = 0;
             this.numberOfMovingCorrectly = 0;
+            this.numberOfReach = 0;
             this.numberOfSuccess = 0;
 
             this.numberOfOverTime = 0;

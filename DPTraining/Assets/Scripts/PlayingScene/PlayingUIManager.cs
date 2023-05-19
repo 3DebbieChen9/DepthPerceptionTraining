@@ -137,8 +137,8 @@ public class PlayingUIManager : MonoBehaviour
     public void unitResultView(int unitNumber, int unitScore, float reactionTime, List<string> comment, bool isOverTime, bool training)
     {
         this.unitResultCanvas.SetActive(true);
-        // this.unitResultTitle.text = "Unit " + unitNumber.ToString() + ": " + unitScore.ToString() + "/3";
-        this.unitResultTitle.text = $"第 {unitNumber.ToString()} 回合: {unitScore.ToString()}/3";
+        // this.unitResultTitle.text = "Unit " + unitNumber.ToString() + ": " + unitScore.ToString() + "/5";
+        this.unitResultTitle.text = $"第 {unitNumber.ToString()} 回合: {unitScore.ToString()}/5";
         if (isOverTime)
         {
             // this.unitResultText.text = "It's over time.";
@@ -161,23 +161,27 @@ public class PlayingUIManager : MonoBehaviour
         }
     }
 
-    public void finalResultView(int totalScore, float averageReactionTime, int numberOfMovingCorrectly, int numberOfReacting, int numberOfSuccess, int numberOfOverTime)
+    public void finalResultView(int totalScore, float averageReactionTime, int numberOfMoving, int numberOfPunching, int numberOfMovingCorrectly, int numberOfReach, int numberOfSuccess, int numberOfOverTime)
     {
         this.finalResultCanvas.SetActive(true);
         // this.finalResultTitle.text = "Test Finished";
         // this.finalResultText.text = "Total Score: " + totalScore.ToString() + "\n" +
         //                             "Average Reaction Time: " + averageReactionTime.ToString("F3") + "s" + "\n" + 
         //                             "=============================" + "\n" +
+        //                             "Number of Moving: " + numberOfMoving.ToString() + "\n" +
+        //                             "Number of Punching: " + numberOfPunching.ToString() + "\n" +
         //                             "Number of Moving Correctly: " + numberOfMovingCorrectly.ToString() + "\n" + 
-        //                             "Number of Reacting: " + numberOfReacting.ToString() + "\n" +
+        //                             "Number of Reaching: " + numberOfReach.ToString() + "\n" +
         //                             "Number of Success: " + numberOfSuccess.ToString() + "\n" +
         //                             "Number of Over Time: " + numberOfOverTime.ToString();
         this.finalResultTitle.text = "測試結束";
         this.finalResultText.text = "總分: " + totalScore.ToString() + "\n" +
                                     "平均反應時間: " + averageReactionTime.ToString("F3") + "s" + "\n" +
                                     "=============================" + "\n" +
+                                    "移動次數: " + numberOfMoving.ToString() + "\n" +
+                                    "出拳次數: " + numberOfPunching.ToString() + "\n" +
                                     "移動方向正確次數: " + numberOfMovingCorrectly.ToString() + "\n" +
-                                    "做出反應次數: " + numberOfReacting.ToString() + "\n" +
+                                    "碰到目標次數: " + numberOfReach.ToString() + "\n" +
                                     "成功次數: " + numberOfSuccess.ToString() + "\n" +
                                     "超時次數: " + numberOfOverTime.ToString();
         this.finalButtonsCanvas.SetActive(true);
@@ -202,69 +206,79 @@ public class PlayingUIManager : MonoBehaviour
         this.readyUnitTitle.text = $"第 {curUnitNum.ToString()} 回合開始";
     }
 
-    public string userIsMoving()
+    public string userIsMovingScore(bool isOverTime)
     {
-        // return "User is moving";
-        return "有移動";
+        if (isOverTime)
+        {
+            // return "User is moving";
+            return "有移動";
+        }
+        else
+        {
+            // return "User is moving Score + 1";
+            return "有移動, 得分 + 1";
+        }
     }
     public string userNotMoving()
     {
         // return "User is not moving";
         return "沒有移動";
     }
-    public string userIsPunching()
-    {
-        // return "User is punching";
-        return "出拳了";
-    }
-
-    public string userNotPunching()
-    {
-        // return "User is not punching";
-        return "沒有出拳";
-    }
-
-    public string userReachNotStraight()
-    {
-        // return "Reach target but arm isn't straight";
-        return "有打到肩膀, 但手臂不是直的";
-    }
-
-    public string userStraightNotReach()
-    {
-        // return "Arm is straight but not reach target";
-        return "手臂伸直, 但沒有打到肩膀";
-    }
-
-    public string reactionScore(bool isOverTime)
-    {
-        // return "Reaction Score + 1";
-        if (isOverTime)
-        {
-            return "有反應";
-        }
-        else
-        {
-            return "有反應, 得分 + 1";
-        }
-    }
-
-    public string movingWrong()
+    public string movingWrongDirection()
     {
         // return "Moving Wrong Direction";
         return "移動方向錯誤";
     }
     public string movingCorretlyScore(bool isOverTime)
     {
-        // return "Moving Correctly Score + 1";
         if (isOverTime)
         {
+            // return "Moving Correctly";
             return "移動方向正確";
         }
         else
         {
+            // return "Moving Correctly Score + 1";
             return "移動方向正確, 得分 + 1";
         }
+    }
+
+    public string userIsPunchingScore(bool isOverTime)
+    {
+        if (isOverTime)
+        {
+            // return "User is punching";
+            return "有出拳";
+        }
+        else
+        {
+            // return "User Punching Score + 1";
+            return "有出拳, 得分 + 1";
+        }
+    }
+    public string userNotPunching()
+    {
+        // return "User is not punching";
+        return "沒有出拳";
+    }
+
+    public string userReachScore(bool isOverTime)
+    {
+        if (isOverTime)
+        {
+            // return "User reach target";
+            return "有打到肩膀";
+        }
+        else
+        {
+            // return "User Reach Target Score + 1";
+            return "有打到肩膀, 得分 + 1";
+        }
+    }
+    public string userNotReach()
+    {
+        // return "User is not reach target";
+        return "沒有打到肩膀";
     }
 
     public string reachAndStraightScore(bool isOverTime)
@@ -278,6 +292,11 @@ public class PlayingUIManager : MonoBehaviour
         {
             return "伸直打到肩膀, 得分 + 1";
         }
+    }
+    public string reachButNotStraight()
+    {
+        // return "Hand is not straight";
+        return "手臂沒有伸直";
     }
 
     public void btnChangeScene(string sceneName)
