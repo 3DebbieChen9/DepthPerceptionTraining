@@ -278,6 +278,7 @@ public class EvaluationManager : MonoBehaviour
 
             if (this.playingModeManager.curUnitResult.isStraight)
             {
+                this.playingModeManager.curUnitResult.isSuccess = true;
                 this.playingModeManager.myTestResult.numberOfSuccess += 1;
                 comment.score += 1;
                 comment.comments.Add(this.playingModeManager.UIManager.reachAndStraightScore(isOverTime));

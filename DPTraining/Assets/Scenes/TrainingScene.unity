@@ -1180,7 +1180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6833591273438295056, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_text
-      value: "\u518D\u6E2C\u8A66\u4E00\u6B21"
+      value: "\u518D\u8A13\u7DF4\u4E00\u6B21"
       objectReference: {fileID: 0}
     - target: {fileID: 6833591273438295056, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_fontAsset
@@ -1500,6 +1500,7 @@ MonoBehaviour:
   depthCueManager: {fileID: 548798609}
   ballWhenHitPrefab: {fileID: 5935655627934291961, guid: d11ac4982d5bda0489cd00839dc30560, type: 3}
   voiceCommentList: []
+  controlledDirectionArray: 
 --- !u!114 &599999391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2224,10 +2225,6 @@ MonoBehaviour:
   reachModule: {fileID: 1196041876}
   punchHand: 0
   ballWhenHitPrefab: {fileID: 5935655627934291961, guid: d11ac4982d5bda0489cd00839dc30560, type: 3}
-  leftUpperArmPrefab: {fileID: 2741373080399051220, guid: de574a9b9b60bba4c98df6c141ecea40, type: 3}
-  rightUpperArmPrefab: {fileID: 1830166613252009574, guid: 99e81673a016906428be8a205a0ba1a5, type: 3}
-  leftLowerArmPrefab: {fileID: 4502259707068207756, guid: b425a8aa7e8231c43bedd836ba428c1a, type: 3}
-  rightLowerArmPrefab: {fileID: 3348453718829318151, guid: 60f0006ebfcb658449537cf7021233fd, type: 3}
   isHitTrigger: 0
 --- !u!4 &1196041880
 Transform:

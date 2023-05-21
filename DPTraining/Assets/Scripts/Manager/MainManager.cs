@@ -231,10 +231,11 @@ public class MainManager : MonoBehaviour
     {
         string jsonString = JsonConvert.SerializeObject(testResult);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-        string filePath = $"{Application.persistentDataPath}/{dateTime}_TestTotalResult.json";
+        string mode = this.mySelectionInfo.selectedMode == SystemMode.TestingMode ? "Test" : "Training";
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_{mode}TotalResult.json";
         File.WriteAllText(filePath, jsonString);
 
-        Debug.Log($"TestResult saved to {filePath}");
+        Debug.Log($"{mode}Result saved to {filePath}");
     }
     public void saveToJSON_unitResult(UnitResult unitResult, int unitNum)
     {

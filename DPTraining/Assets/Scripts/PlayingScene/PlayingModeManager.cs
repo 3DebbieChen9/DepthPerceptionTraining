@@ -311,7 +311,8 @@ public class PlayingModeManager : MonoBehaviour
 
         this.clearPunchMarker();
 
-        this.UIManager.welcomToTestingMode(this.targetNumberOfTasks);
+        bool isTestingMode = this.mainManager.curSystemMode == SystemMode.TestingMode ? true : false;
+        this.UIManager.welcomToTestingMode(this.targetNumberOfTasks, isTestingMode);
     }
 
     public void unitOver()
@@ -383,6 +384,11 @@ public class PlayingModeManager : MonoBehaviour
         }
         else
         {
+            if (this.curUnitResult.reactionTime > this.mainManager.mySettingInfo.playingModeSetting.idealUnitTimeLimit)
+            {
+                this.voiceCommentList.Add("ReactionSuggestFaster");
+            }
+
             if (this.curUnitResult.isMovingCorrectly && this.curUnitResult.isReach && this.curUnitResult.isStraight)
             {
                 this.voiceCommentList.Add("Perfect");

@@ -233,6 +233,7 @@ namespace DepthPerceptionSystem
         public float trainingReadyTime;
         public float tentativeTimeMin;
         public float tentativeTimeMax;
+        public float idealUnitTimeLimit; // The coach required time limit is 2 seconds
         public float testingUnitTimeLimit; // Over the time limit, means the task is fail
         public float trainingUnitTimeLimit; // Over the time limit, means the task is fail
         public int targetNumberOfTasks; // User should do 'targetNumberOTasks' to complete the test 7
@@ -243,7 +244,8 @@ namespace DepthPerceptionSystem
             this.trainingReadyTime = 5.0f;
             this.tentativeTimeMin = 1.0f;
             this.tentativeTimeMax = 2.0f;
-            this.testingUnitTimeLimit = 2.0f;
+            this.idealUnitTimeLimit = 2.0f; // The coach required time limit is 2 seconds
+            this.testingUnitTimeLimit = 4.0f;
             this.trainingUnitTimeLimit = 4.0f;
             this.targetNumberOfTasks = 7;
         }
