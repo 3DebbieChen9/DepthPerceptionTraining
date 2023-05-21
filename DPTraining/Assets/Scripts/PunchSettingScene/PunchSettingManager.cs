@@ -250,6 +250,16 @@ public class PunchSettingManager : MonoBehaviour
     public void btnSelectionSceneClick()
     {
         this.mainManager.changeScene("SelectionScene");
+        this.rightStraightCollider = this.mainManager.rightUpperArm_IK.transform.Find("StraightCollider(Clone)");
+        if (this.rightStraightCollider)
+        {
+            this.rightStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        }
+        this.leftStraightCollider = this.mainManager.leftUpperArm_IK.transform.Find("StraightCollider(Clone)");
+        if (this.leftStraightCollider)
+        {
+            this.leftStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        }
     }
 
     public void reloadPunchSettingScene()

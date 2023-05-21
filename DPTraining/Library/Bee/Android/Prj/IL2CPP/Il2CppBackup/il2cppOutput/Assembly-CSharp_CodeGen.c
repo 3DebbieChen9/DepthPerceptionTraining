@@ -2027,8 +2027,8 @@ extern void PlayingUIManager_Awake_mEE448E534078B94E4295220666F3881C9E5DC123 (vo
 extern void PlayingUIManager_Start_m827153C584ED071AE61C8979C5C16F9ADDBF581B (void);
 // 0x000003F7 System.Void PlayingUIManager::Update()
 extern void PlayingUIManager_Update_m1DE54C31E00AEC98A44C71B5CB327F1C894A65A7 (void);
-// 0x000003F8 System.Void PlayingUIManager::welcomToTestingMode(System.Int32)
-extern void PlayingUIManager_welcomToTestingMode_m75D5A1D4C9D7C3E8E9271CC278A02DDF070B5552 (void);
+// 0x000003F8 System.Void PlayingUIManager::welcomToTestingMode(System.Int32,System.Boolean)
+extern void PlayingUIManager_welcomToTestingMode_m64F31C6CFC0B4B9B08FBA4E5C28CC1D216AA04B1 (void);
 // 0x000003F9 System.Void PlayingUIManager::closeStartCanvas()
 extern void PlayingUIManager_closeStartCanvas_m0B0B5B97FC7A7E5548E063712CC9FC9221597038 (void);
 // 0x000003FA System.Void PlayingUIManager::openReadyCanvas()
@@ -6036,7 +6036,7 @@ static Il2CppMethodPointer s_methodPointers[2531] =
 	PlayingUIManager_Awake_mEE448E534078B94E4295220666F3881C9E5DC123,
 	PlayingUIManager_Start_m827153C584ED071AE61C8979C5C16F9ADDBF581B,
 	PlayingUIManager_Update_m1DE54C31E00AEC98A44C71B5CB327F1C894A65A7,
-	PlayingUIManager_welcomToTestingMode_m75D5A1D4C9D7C3E8E9271CC278A02DDF070B5552,
+	PlayingUIManager_welcomToTestingMode_m64F31C6CFC0B4B9B08FBA4E5C28CC1D216AA04B1,
 	PlayingUIManager_closeStartCanvas_m0B0B5B97FC7A7E5548E063712CC9FC9221597038,
 	PlayingUIManager_openReadyCanvas_mBC51F57D90D23E863C823B7F79046353DA141DCA,
 	PlayingUIManager_closeReadyCanvas_m171AA02C282F65CE750A6779D4F728A560818715,
@@ -8570,7 +8570,7 @@ static const int32_t s_InvokerIndices[2531] =
 	6676,
 	6676,
 	6676,
-	5441,
+	3023,
 	6676,
 	6676,
 	6676,

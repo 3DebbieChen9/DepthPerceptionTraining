@@ -75,14 +75,16 @@ public class PlayingUIManager : MonoBehaviour
 
     }
 
-    public void welcomToTestingMode(int targetUnit)
+    public void welcomToTestingMode(int targetUnit, bool isTestingMode)
     {
         this.startCanvas.SetActive(true);
         // this.startTitle.text = "Welcome to Testing Mode";
         // this.startText.text = "There will be " + targetUnit.ToString() + " units in this test." + 
         //                         "\nPlease move to center and press the button 'A' to start.";
-        this.startTitle.text = "歡迎來到測試階段";
-        this.startText.text = $"本測驗一共會有 {targetUnit.ToString()} 個回合\n請移動到中心並按下按鈕 'A' 以開始";
+        string mode = isTestingMode ? "測試" : "訓練";
+
+        this.startTitle.text = $"歡迎來到{mode}階段";
+        this.startText.text = $"本{mode}一共會有 {targetUnit.ToString()} 個回合\n請移動到中心並按下按鈕 'A' 以開始";
 
         this.readyCanvas.SetActive(false);
         this.readyCoundownImage.fillAmount = 0;
@@ -142,13 +144,13 @@ public class PlayingUIManager : MonoBehaviour
         if (isOverTime)
         {
             // this.unitResultText.text = "It's over time.";
-            this.unitResultText.text = "超時了!";
+            string limitTime = training ? "4.0" : "4.0";
+            this.unitResultText.text = $"超過 {limitTime} 秒了!";
         }
         else
         {
             // this.unitResultText.text = "Reaction Time: " + reactionTime.ToString("F3") + "s";
-            this.unitResultText.text = "反應時間" + reactionTime.ToString("F3") + "s";
-
+            this.unitResultText.text = "反應時間 " + reactionTime.ToString("F3") + " 秒";
         }
 
         if (training)

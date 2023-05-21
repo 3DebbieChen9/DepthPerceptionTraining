@@ -4566,12 +4566,14 @@ struct PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635  : public Ru
 	float ___tentativeTimeMin_2;
 	// System.Single DepthPerceptionSystem.PlayingModeSetting::tentativeTimeMax
 	float ___tentativeTimeMax_3;
+	// System.Single DepthPerceptionSystem.PlayingModeSetting::idealUnitTimeLimit
+	float ___idealUnitTimeLimit_4;
 	// System.Single DepthPerceptionSystem.PlayingModeSetting::testingUnitTimeLimit
-	float ___testingUnitTimeLimit_4;
+	float ___testingUnitTimeLimit_5;
 	// System.Single DepthPerceptionSystem.PlayingModeSetting::trainingUnitTimeLimit
-	float ___trainingUnitTimeLimit_5;
+	float ___trainingUnitTimeLimit_6;
 	// System.Int32 DepthPerceptionSystem.PlayingModeSetting::targetNumberOfTasks
-	int32_t ___targetNumberOfTasks_6;
+	int32_t ___targetNumberOfTasks_7;
 };
 
 // Oculus.Platform.Models.Product
@@ -32959,9 +32961,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6787[4] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6788[5] = 
 {
 	static_cast<int32_t>(offsetof(CoachDefaultValue_t5AB018E92F3F5F283F37DD34CEBADF8667A0E807, ___avtarCenterToEdgeLength_0)),static_cast<int32_t>(offsetof(CoachDefaultValue_t5AB018E92F3F5F283F37DD34CEBADF8667A0E807, ___avtarDefaultHeight_1)),static_cast<int32_t>(offsetof(CoachDefaultValue_t5AB018E92F3F5F283F37DD34CEBADF8667A0E807, ___heightDifferenceWithUser_2)),static_cast<int32_t>(offsetof(CoachDefaultValue_t5AB018E92F3F5F283F37DD34CEBADF8667A0E807, ___distanceToUserMultiple_3)),static_cast<int32_t>(offsetof(CoachDefaultValue_t5AB018E92F3F5F283F37DD34CEBADF8667A0E807, ___movingSpeed_4)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6789[7] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6789[8] = 
 {
-	static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___testingReadyTime_0)),static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___trainingReadyTime_1)),static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___tentativeTimeMin_2)),static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___tentativeTimeMax_3)),static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___testingUnitTimeLimit_4)),static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___trainingUnitTimeLimit_5)),static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___targetNumberOfTasks_6)),};
+	static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___testingReadyTime_0)),static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___trainingReadyTime_1)),static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___tentativeTimeMin_2)),static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___tentativeTimeMax_3)),static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___idealUnitTimeLimit_4)),static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___testingUnitTimeLimit_5)),static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___trainingUnitTimeLimit_6)),static_cast<int32_t>(offsetof(PlayingModeSetting_tCA9D3A4A5AC1F9D9A0796113F690A55B1C3C7635, ___targetNumberOfTasks_7)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6790[2] = 
 {
 	static_cast<int32_t>(offsetof(EvaluationThreshold_t83F4504E99326E48FAD1C824B6B1F2E6AF9B3D71, ___radiusBetweenOriginAndUser_0)),static_cast<int32_t>(offsetof(EvaluationThreshold_t83F4504E99326E48FAD1C824B6B1F2E6AF9B3D71, ___handStraightAngle_1)),};
