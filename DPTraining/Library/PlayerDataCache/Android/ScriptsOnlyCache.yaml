@@ -102,6 +102,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     Unity.XR.Management.Editor.dll:
     - UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget
@@ -114,10 +115,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -333,6 +332,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5688}
     - Class: 114
+      Script: {instanceID: 6012}
+    - Class: 114
       Script: {instanceID: 7036}
     - Class: 114
       Script: {instanceID: 7150}
@@ -422,6 +423,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5548}
     - Class: 114
+      Script: {instanceID: 6012}
+    - Class: 114
       Script: {instanceID: 7150}
     - Class: 114
       Script: {instanceID: 7270}
@@ -438,7 +441,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10232}
     - Class: 114
-      Script: {instanceID: 35866}
+      Script: {instanceID: 38900}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -501,6 +504,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5548}
     - Class: 114
+      Script: {instanceID: 6012}
+    - Class: 114
       Script: {instanceID: 6558}
     - Class: 114
       Script: {instanceID: 7270}
@@ -517,6 +522,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10538}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -645,6 +652,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5738}
     - Class: 114
       Script: {instanceID: 5970}
+    - Class: 114
+      Script: {instanceID: 6012}
     - Class: 114
       Script: {instanceID: 6098}
     - Class: 114
@@ -817,6 +826,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5548}
     - Class: 114
+      Script: {instanceID: 6012}
+    - Class: 114
       Script: {instanceID: 6922}
     - Class: 114
       Script: {instanceID: 7202}
@@ -945,6 +956,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5548}
     - Class: 114
       Script: {instanceID: 5640}
+    - Class: 114
+      Script: {instanceID: 6012}
     - Class: 114
       Script: {instanceID: 6922}
     - Class: 114
@@ -2786,7 +2799,7 @@ ScriptsOnlyBuild:
     className: FKOffset
   - hash:
       serializedVersion: 2
-      Hash: 7d5bad1f93e56bace47d0e95f7ed15f8
+      Hash: 9109db1486bd3a8960825e785c3359f9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StraightCollider
