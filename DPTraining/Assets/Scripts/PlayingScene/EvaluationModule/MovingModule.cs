@@ -28,7 +28,7 @@ public class MovingModule : MonoBehaviour
                 this.evaluationManager.userIsMoving();
                 this.evaluationManager.userStartMoving = true;
             }
-
+            this.evaluationManager.playingModeManager.mainManager.sceneOriginColorChange(false);
             this.evaluationManager.userIsAtOrigin = false;
         }
 
@@ -39,6 +39,7 @@ public class MovingModule : MonoBehaviour
         if (other.gameObject.name == "UserCenter")
         {
             this.evaluationManager.userIsAtOrigin = true;
+            this.evaluationManager.playingModeManager.mainManager.sceneOriginColorChange(true);
         }
     }
     void OnTriggerStay(Collider other)
@@ -46,6 +47,7 @@ public class MovingModule : MonoBehaviour
         if (other.gameObject.name == "UserCenter")
         {
             this.evaluationManager.userIsAtOrigin = true;
+            this.evaluationManager.playingModeManager.mainManager.sceneOriginColorChange(true);
         }
     }
 }

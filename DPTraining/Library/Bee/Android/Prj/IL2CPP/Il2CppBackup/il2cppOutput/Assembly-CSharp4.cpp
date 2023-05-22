@@ -1275,6 +1275,10 @@ struct UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4  : public RuntimeObj
 	float ___reactionTime_9;
 	// System.Int32 DepthPerceptionSystem.UnitResult::score
 	int32_t ___score_10;
+	// DepthPerceptionSystem.Hand DepthPerceptionSystem.UnitResult::hand
+	int32_t ___hand_11;
+	// DepthPerceptionSystem.ArmRotationAngle DepthPerceptionSystem.UnitResult::armRotationAngle
+	ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* ___armRotationAngle_12;
 };
 
 // DepthPerceptionSystem.UnitResultComment
@@ -6620,8 +6624,8 @@ inline void List_1__ctor_m6CDFF407DCED6D464F46C32F555EFB089E1F5ED1 (List_1_tF215
 {
 	((  void (*) (List_1_tF2159F200DAEB03C3E2FBE1836E3AA6B072DAE33*, const RuntimeMethod*))List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared)(__this, method);
 }
-// System.Void DepthPerceptionSystem.UnitResult::.ctor(System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Single,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult__ctor_mB51921C155404D5CF278B1E469EA6067A1814C75 (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* __this, int32_t ____unitNum0, bool ____isMoving1, bool ____isPunching2, bool ____isReach3, bool ____isStraight4, bool ____isReacting5, bool ____isMovingCorrectly6, bool ____isSuccess7, bool ____isOverTime8, float ____reactionTime9, int32_t ____score10, const RuntimeMethod* method) ;
+// System.Void DepthPerceptionSystem.UnitResult::.ctor(System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Single,System.Int32,DepthPerceptionSystem.Hand,DepthPerceptionSystem.ArmRotationAngle)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult__ctor_m4685B290FA15A290618D18E1B311AB8A3F775608 (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* __this, int32_t ____unitNum0, bool ____isMoving1, bool ____isPunching2, bool ____isReach3, bool ____isStraight4, bool ____isReacting5, bool ____isMovingCorrectly6, bool ____isSuccess7, bool ____isOverTime8, float ____reactionTime9, int32_t ____score10, int32_t ____hand11, ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* ____armRotationAngle12, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<DepthPerceptionSystem.UnitResult>::Add(T)
 inline void List_1_Add_m5BB9384DF17903FFF9DB1D9232B01A613C550AA1_inline (List_1_tF2159F200DAEB03C3E2FBE1836E3AA6B072DAE33* __this, UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* ___item0, const RuntimeMethod* method)
 {
@@ -19101,14 +19105,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SelectionInfo__ctor_m73BEDCC74FE5E203B7B
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		// this.isUsingNoitom = false;
 		__this->___isUsingNoitom_0 = (bool)0;
-		// this.isOnRing = false;
-		__this->___isOnRing_1 = (bool)0;
-		// this.coachIsLeftHanded = true;
-		__this->___coachIsLeftHanded_2 = (bool)1;
+		// this.isOnRing = true;
+		__this->___isOnRing_1 = (bool)1;
+		// this.coachIsLeftHanded = false;
+		__this->___coachIsLeftHanded_2 = (bool)0;
 		// this.selectedMode = SystemMode.CalibrationMode;
 		__this->___selectedMode_3 = 1;
-		// this.selectedSpeed = MovingSpeed.Random;
-		__this->___selectedSpeed_4 = 2;
+		// this.selectedSpeed = MovingSpeed.Slowest;
+		__this->___selectedSpeed_4 = 0;
 		// this.selectedCoachDirection = MovingDirection.Random;
 		__this->___selectedCoachDirection_5 = 2;
 		// }
@@ -19373,7 +19377,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TotalUnitResult_addUnitResult_mB74A11BCA
 	}
 	UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* V_0 = NULL;
 	{
-		// UnitResult tmp = new UnitResult(unitResult.unitNum, unitResult.isMoving, unitResult.isPunching, unitResult.isReach, unitResult.isStraight, unitResult.isReacting, unitResult.isMovingCorrectly, unitResult.isSuccess, unitResult.isOverTime, unitResult.reactionTime, unitResult.score);
+		// UnitResult tmp = new UnitResult(unitResult.unitNum, unitResult.isMoving, unitResult.isPunching, unitResult.isReach, unitResult.isStraight, unitResult.isReacting, unitResult.isMovingCorrectly, unitResult.isSuccess, unitResult.isOverTime, unitResult.reactionTime, unitResult.score, unitResult.hand, unitResult.armRotationAngle);
 		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_0 = ___unitResult0;
 		NullCheck(L_0);
 		int32_t L_1 = L_0->___unitNum_0;
@@ -19407,15 +19411,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TotalUnitResult_addUnitResult_mB74A11BCA
 		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_20 = ___unitResult0;
 		NullCheck(L_20);
 		int32_t L_21 = L_20->___score_10;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_22 = (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4*)il2cpp_codegen_object_new(UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4_il2cpp_TypeInfo_var);
+		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_22 = ___unitResult0;
 		NullCheck(L_22);
-		UnitResult__ctor_mB51921C155404D5CF278B1E469EA6067A1814C75(L_22, L_1, L_3, L_5, L_7, L_9, L_11, L_13, L_15, L_17, L_19, L_21, NULL);
-		V_0 = L_22;
+		int32_t L_23 = L_22->___hand_11;
+		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_24 = ___unitResult0;
+		NullCheck(L_24);
+		ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* L_25 = L_24->___armRotationAngle_12;
+		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_26 = (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4*)il2cpp_codegen_object_new(UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4_il2cpp_TypeInfo_var);
+		NullCheck(L_26);
+		UnitResult__ctor_m4685B290FA15A290618D18E1B311AB8A3F775608(L_26, L_1, L_3, L_5, L_7, L_9, L_11, L_13, L_15, L_17, L_19, L_21, L_23, L_25, NULL);
+		V_0 = L_26;
 		// this.unitResultList.Add(tmp);
-		List_1_tF2159F200DAEB03C3E2FBE1836E3AA6B072DAE33* L_23 = __this->___unitResultList_10;
-		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_24 = V_0;
-		NullCheck(L_23);
-		List_1_Add_m5BB9384DF17903FFF9DB1D9232B01A613C550AA1_inline(L_23, L_24, List_1_Add_m5BB9384DF17903FFF9DB1D9232B01A613C550AA1_RuntimeMethod_var);
+		List_1_tF2159F200DAEB03C3E2FBE1836E3AA6B072DAE33* L_27 = __this->___unitResultList_10;
+		UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* L_28 = V_0;
+		NullCheck(L_27);
+		List_1_Add_m5BB9384DF17903FFF9DB1D9232B01A613C550AA1_inline(L_27, L_28, List_1_Add_m5BB9384DF17903FFF9DB1D9232B01A613C550AA1_RuntimeMethod_var);
 		// }
 		return;
 	}
@@ -19469,6 +19479,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TotalUnitResult_reset_m730EB9C1311389149
 // System.Void DepthPerceptionSystem.UnitResult::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult__ctor_mAA8215332B6CE9174141FBDE757AD033343B8CEE (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* __this, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
 	{
 		// public UnitResult()
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
@@ -19494,15 +19510,25 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult__ctor_mAA8215332B6CE9174141FB
 		__this->___reactionTime_9 = (0.0f);
 		// this.score = 0;
 		__this->___score_10 = 0;
+		// this.hand = new Hand();
+		__this->___hand_11 = 0;
+		// this.armRotationAngle = new ArmRotationAngle(0.0f, 0.0f, 0.0f);
+		ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* L_0 = (ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699*)il2cpp_codegen_object_new(ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699_il2cpp_TypeInfo_var);
+		NullCheck(L_0);
+		ArmRotationAngle__ctor_mC993FE62104AC191530CD60E32C1D31477109068(L_0, (0.0f), (0.0f), (0.0f), NULL);
+		__this->___armRotationAngle_12 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___armRotationAngle_12), (void*)L_0);
 		// }
 		return;
 	}
 }
-// System.Void DepthPerceptionSystem.UnitResult::.ctor(System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Single,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult__ctor_mB51921C155404D5CF278B1E469EA6067A1814C75 (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* __this, int32_t ____unitNum0, bool ____isMoving1, bool ____isPunching2, bool ____isReach3, bool ____isStraight4, bool ____isReacting5, bool ____isMovingCorrectly6, bool ____isSuccess7, bool ____isOverTime8, float ____reactionTime9, int32_t ____score10, const RuntimeMethod* method) 
+// System.Void DepthPerceptionSystem.UnitResult::.ctor(System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Single,System.Int32,DepthPerceptionSystem.Hand,DepthPerceptionSystem.ArmRotationAngle)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult__ctor_m4685B290FA15A290618D18E1B311AB8A3F775608 (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* __this, int32_t ____unitNum0, bool ____isMoving1, bool ____isPunching2, bool ____isReach3, bool ____isStraight4, bool ____isReacting5, bool ____isMovingCorrectly6, bool ____isSuccess7, bool ____isOverTime8, float ____reactionTime9, int32_t ____score10, int32_t ____hand11, ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* ____armRotationAngle12, const RuntimeMethod* method) 
 {
 	{
-		// public UnitResult(int _unitNum, bool _isMoving, bool _isPunching, bool _isReach, bool _isStraight, bool _isReacting, bool _isMovingCorrectly, bool _isSuccess, bool _isOverTime, float _reactionTime, int _score)
+		// public UnitResult(int _unitNum, bool _isMoving, bool _isPunching, bool _isReach,
+		//                     bool _isStraight, bool _isReacting, bool _isMovingCorrectly, bool _isSuccess,
+		//                     bool _isOverTime, float _reactionTime, int _score, Hand _hand, ArmRotationAngle _armRotationAngle)
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		// this.unitNum = _unitNum;
 		int32_t L_0 = ____unitNum0;
@@ -19537,6 +19563,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult__ctor_mB51921C155404D5CF278B1
 		// this.score = _score;
 		int32_t L_10 = ____score10;
 		__this->___score_10 = L_10;
+		// this.hand = _hand;
+		int32_t L_11 = ____hand11;
+		__this->___hand_11 = L_11;
+		// this.armRotationAngle = _armRotationAngle;
+		ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* L_12 = ____armRotationAngle12;
+		__this->___armRotationAngle_12 = L_12;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___armRotationAngle_12), (void*)L_12);
 		// }
 		return;
 	}
@@ -19544,6 +19577,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult__ctor_mB51921C155404D5CF278B1
 // System.Void DepthPerceptionSystem.UnitResult::reset()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult_reset_m9D0E07417A6D4742492742DFB7ED9FD162DB2463 (UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4* __this, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
 	{
 		// this.unitNum = 0;
 		__this->___unitNum_0 = 0;
@@ -19567,6 +19606,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitResult_reset_m9D0E07417A6D4742492742
 		__this->___reactionTime_9 = (0.0f);
 		// this.score = 0;
 		__this->___score_10 = 0;
+		// this.hand = Hand.None;
+		__this->___hand_11 = 3;
+		// this.armRotationAngle = new ArmRotationAngle(0.0f, 0.0f, 0.0f);
+		ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699* L_0 = (ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699*)il2cpp_codegen_object_new(ArmRotationAngle_t249EF8B913ADC076FD2EB6884D9F07E4D2F54699_il2cpp_TypeInfo_var);
+		NullCheck(L_0);
+		ArmRotationAngle__ctor_mC993FE62104AC191530CD60E32C1D31477109068(L_0, (0.0f), (0.0f), (0.0f), NULL);
+		__this->___armRotationAngle_12 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___armRotationAngle_12), (void*)L_0);
 		// }
 		return;
 	}

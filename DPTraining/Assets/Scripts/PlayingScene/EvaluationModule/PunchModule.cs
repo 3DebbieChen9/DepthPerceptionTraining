@@ -24,6 +24,19 @@ public class PunchModule : MonoBehaviour
         {
             this.evaluationManager.userIsNotPunching();
         }
+
+        if (this.evaluationManager.playingModeManager.curState == PlayingState.reaction || this.evaluationManager.playingModeManager.curState == PlayingState.comment)
+        {
+            if (!this.rightStayInTrigger)
+            {
+                this.evaluationManager.userIsPunching(Hand.Right);
+            }
+
+            if (!this.leftStayInTrigger)
+            {
+                this.evaluationManager.userIsPunching(Hand.Left);
+            }
+        }
     }
 
     void OnTriggerExit(Collider other)

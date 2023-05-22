@@ -4,7 +4,7 @@
 4    package="com.unity3d.player"
 5    android:installLocation="auto"
 6    android:versionCode="1"
-7    android:versionName="5.2.0" >
+7    android:versionName="5.3.0" >
 8
 9    <uses-sdk
 10        android:minSdkVersion="29"

@@ -68,9 +68,10 @@ public class SelectionModeManager : MonoBehaviour
         this.ROOM.transform.rotation = this.mainManager.sceneOriginRotation;
 
         this.selectionRoom.transform.localPosition = new Vector3(0.0f, 0.0f, this.mainManager.myUserInfo.userBodySize.armLength * 1.1f - (5.0f - 1.0f));
-        this.curState = SelectionState.Place;
-        this.placeChoices.SetActive(true);
-        this.handednessChoices.SetActive(false);
+        // this.curState = SelectionState.Place;
+        this.curState = SelectionState.Handedness;
+        this.placeChoices.SetActive(false);
+        this.handednessChoices.SetActive(true);
         this.speedChoices.SetActive(false);
         this.directionChoices.SetActive(false);
         this.modeChoices.SetActive(false);

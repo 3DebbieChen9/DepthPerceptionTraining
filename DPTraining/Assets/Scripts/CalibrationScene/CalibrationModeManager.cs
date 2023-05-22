@@ -233,10 +233,11 @@ public class CalibrationModeManager : MonoBehaviour
                 Transform rightHand = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().rightControllerAnchor;
                 // 在 Controller 的位置生成 Collider，並將 Parent 設為上臂
                 GameObject rightdest = Instantiate(judgeStraightArmCollider,
-                                                    rightHand.position - rightHand.forward * 0.052f + rightHand.right * 0.054f,
+                                                    rightHand.position,
+                                                    // rightHand.position - rightHand.forward * 0.052f + rightHand.right * 0.054f,
                                                     new Quaternion(0.0f, 0.0f, 0.0f, 0.0f),
                                                     this.mainManager.rightUpperArm_IK.transform);
-                rightdest.transform.localPosition = new Vector3(0.9f, 0.0f, 0.0f);
+                // rightdest.transform.localPosition = new Vector3(0.9f, 0.0f, 0.0f);
 
                 // [----] Call Calibration UI Function
                 // Arm Straight Result - Right (Length)
@@ -252,10 +253,11 @@ public class CalibrationModeManager : MonoBehaviour
                 Transform leftHand = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().leftControllerAnchor;
                 // 在 Controller 的位置生成 Collider，並將 Parent 設為上臂
                 GameObject leftdest = Instantiate(judgeStraightArmCollider,
-                                                    leftHand.position - leftHand.forward * 0.052f + leftHand.right * 0.054f,
+                                                    leftHand.position,
+                                                    // leftHand.position - leftHand.forward * 0.052f + leftHand.right * 0.054f,
                                                     new Quaternion(0.0f, 0.0f, 0.0f, 0.0f),
                                                     this.mainManager.leftUpperArm_IK.transform);
-                leftdest.transform.localPosition = new Vector3(-0.9f, 0.0f, 0.0f);
+                // leftdest.transform.localPosition = new Vector3(-0.9f, 0.0f, 0.0f);
 
 
                 this.mainManager.myUserInfo.userBodySize.armLength = this.armLength / 2.0f;
