@@ -146,6 +146,8 @@ public class EvaluationManager : MonoBehaviour
     {
         this.playingModeManager.curUnitResult.isReach = isHitShoulder ? true : false;
         this.playingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
+        this.playingModeManager.curUnitResult.hand = hand;
+        this.playingModeManager.curUnitResult.armRotationAngle = this.straightModule.getArmAngle(hand);
         this.isDuringTheUnit = false;
         this.playingModeManager.unitOver();
 

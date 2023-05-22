@@ -186,10 +186,10 @@ namespace DepthPerceptionSystem
         public SelectionInfo()
         {
             this.isUsingNoitom = false;
-            this.isOnRing = false;
-            this.coachIsLeftHanded = true;
+            this.isOnRing = true;
+            this.coachIsLeftHanded = false;
             this.selectedMode = SystemMode.CalibrationMode;
-            this.selectedSpeed = MovingSpeed.Random;
+            this.selectedSpeed = MovingSpeed.Slowest;
             this.selectedCoachDirection = MovingDirection.Random;
         }
     }
@@ -327,7 +327,7 @@ namespace DepthPerceptionSystem
 
         public void addUnitResult(UnitResult unitResult)
         {
-            UnitResult tmp = new UnitResult(unitResult.unitNum, unitResult.isMoving, unitResult.isPunching, unitResult.isReach, unitResult.isStraight, unitResult.isReacting, unitResult.isMovingCorrectly, unitResult.isSuccess, unitResult.isOverTime, unitResult.reactionTime, unitResult.score);
+            UnitResult tmp = new UnitResult(unitResult.unitNum, unitResult.isMoving, unitResult.isPunching, unitResult.isReach, unitResult.isStraight, unitResult.isReacting, unitResult.isMovingCorrectly, unitResult.isSuccess, unitResult.isOverTime, unitResult.reactionTime, unitResult.score, unitResult.hand, unitResult.armRotationAngle);
             this.unitResultList.Add(tmp);
         }
 
@@ -365,6 +365,10 @@ namespace DepthPerceptionSystem
         public float reactionTime;
         public int score;
 
+        public Hand hand;
+        public ArmRotationAngle armRotationAngle;
+
+
         public UnitResult()
         {
             this.unitNum = 0;
@@ -380,9 +384,14 @@ namespace DepthPerceptionSystem
             this.isOverTime = false;
             this.reactionTime = 0.0f;
             this.score = 0;
+
+            this.hand = new Hand();
+            this.armRotationAngle = new ArmRotationAngle(0.0f, 0.0f, 0.0f);
         }
 
-        public UnitResult(int _unitNum, bool _isMoving, bool _isPunching, bool _isReach, bool _isStraight, bool _isReacting, bool _isMovingCorrectly, bool _isSuccess, bool _isOverTime, float _reactionTime, int _score)
+        public UnitResult(int _unitNum, bool _isMoving, bool _isPunching, bool _isReach,
+                            bool _isStraight, bool _isReacting, bool _isMovingCorrectly, bool _isSuccess,
+                            bool _isOverTime, float _reactionTime, int _score, Hand _hand, ArmRotationAngle _armRotationAngle)
         {
             this.unitNum = _unitNum;
             this.isMoving = _isMoving;
@@ -397,6 +406,9 @@ namespace DepthPerceptionSystem
             this.isOverTime = _isOverTime;
             this.reactionTime = _reactionTime;
             this.score = _score;
+
+            this.hand = _hand;
+            this.armRotationAngle = _armRotationAngle;
         }
 
         public void reset()
@@ -414,6 +426,9 @@ namespace DepthPerceptionSystem
             this.isOverTime = false;
             this.reactionTime = 0.0f;
             this.score = 0;
+
+            this.hand = Hand.None;
+            this.armRotationAngle = new ArmRotationAngle(0.0f, 0.0f, 0.0f);
         }
     }
 

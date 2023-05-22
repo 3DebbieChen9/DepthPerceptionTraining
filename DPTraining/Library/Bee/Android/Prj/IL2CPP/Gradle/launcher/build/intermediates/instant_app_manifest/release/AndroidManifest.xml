@@ -4,7 +4,7 @@
     android:installLocation="auto"
     android:targetSandboxVersion="2"
     android:versionCode="1"
-    android:versionName="5.2.0" >
+    android:versionName="5.3.0" >
 
     <uses-sdk
         android:minSdkVersion="29"

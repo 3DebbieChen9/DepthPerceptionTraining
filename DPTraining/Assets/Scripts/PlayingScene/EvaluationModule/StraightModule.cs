@@ -141,8 +141,13 @@ public class StraightModule : MonoBehaviour
         float lowArmToUpArm_up_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.rightNoitom.up;
         float lowArmToUpArm_right_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.rightNoitom.right;
 
+        float standardForward = 90.0f;
+        float standardUp = 90.0f;
+        float standardRight = 180.0f;
+
         return this.straightAngleJudger(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right,
-                                        tolerateAngleThreshold, lowArmToUpArm_forward_straightAngle, lowArmToUpArm_up_straightAngle, lowArmToUpArm_right_straightAngle);
+                                        tolerateAngleThreshold, lowArmToUpArm_forward_straightAngle, lowArmToUpArm_up_straightAngle, lowArmToUpArm_right_straightAngle,
+                                        standardForward, standardUp, standardRight);
     }
 
     public bool leftStraightJudgerNoitom()
@@ -162,8 +167,13 @@ public class StraightModule : MonoBehaviour
         float lowArmToUpArm_up_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.leftNoitom.up;
         float lowArmToUpArm_right_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.leftNoitom.right;
 
+        float standardForward = 90.0f;
+        float standardUp = 90.0f;
+        float standardRight = 180.0f;
+
         return this.straightAngleJudger(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right,
-                                        tolerateAngleThreshold, lowArmToUpArm_forward_straightAngle, lowArmToUpArm_up_straightAngle, lowArmToUpArm_right_straightAngle);
+                                        tolerateAngleThreshold, lowArmToUpArm_forward_straightAngle, lowArmToUpArm_up_straightAngle, lowArmToUpArm_right_straightAngle,
+                                        standardForward, standardUp, standardRight);
     }
 
     public ArmRotationAngle getRightAnglesIK()
@@ -211,8 +221,13 @@ public class StraightModule : MonoBehaviour
         float lowArmToUpArm_up_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.rightIK.up;
         float lowArmToUpArm_right_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.rightIK.right;
 
+        float standardForward = 90.0f;
+        float standardUp = 90.0f;
+        float standardRight = 180.0f;
+
         return this.straightAngleJudger(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right,
-                                        tolerateAngleThreshold, lowArmToUpArm_forward_straightAngle, lowArmToUpArm_up_straightAngle, lowArmToUpArm_right_straightAngle);
+                                        tolerateAngleThreshold, lowArmToUpArm_forward_straightAngle, lowArmToUpArm_up_straightAngle, lowArmToUpArm_right_straightAngle,
+                                        standardForward, standardUp, standardRight);
     }
 
     public bool leftStraightJudgerIK()
@@ -232,11 +247,15 @@ public class StraightModule : MonoBehaviour
         float lowArmToUpArm_up_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.leftIK.up;
         float lowArmToUpArm_right_straightAngle = this.mainManager.myUserInfo.userArmStraightAngle.leftIK.right;
 
+        float standardForward = 90.0f;
+        float standardUp = 90.0f;
+        float standardRight = 0.0f;
         return this.straightAngleJudger(lowArmToUpArmAngle_forward, lowArmToUpArmAngle_up, lowArmToUpArmAngle_right,
-                                        tolerateAngleThreshold, lowArmToUpArm_forward_straightAngle, lowArmToUpArm_up_straightAngle, lowArmToUpArm_right_straightAngle);
+                                        tolerateAngleThreshold, lowArmToUpArm_forward_straightAngle, lowArmToUpArm_up_straightAngle, lowArmToUpArm_right_straightAngle,
+                                        standardForward, standardUp, standardRight);
     }
 
-    public bool straightAngleJudger(float forward, float up, float right, float threshold, float straightForward, float straightUp, float straightRight)
+    public bool straightAngleJudger(float forward, float up, float right, float threshold, float straightForward, float straightUp, float straightRight, float standardForward, float standardUp, float standardRight)
     {
         if (forward <= straightForward + threshold && forward >= straightForward - threshold)
         {
@@ -246,19 +265,20 @@ public class StraightModule : MonoBehaviour
                 {
                     return true;
                 }
-                else
+            }
+        }
+
+        if (forward <= standardForward + (threshold * 0.75f) && forward >= standardForward - (threshold * 0.75f))
+        {
+            if (up <= standardUp + (threshold * 0.75f) && up >= standardUp - (threshold * 0.75f))
+            {
+                if (right <= standardRight + (threshold * 0.75f) && right >= standardRight - (threshold * 0.75f))
                 {
-                    return false;
+                    return true;
                 }
             }
-            else
-            {
-                return false;
-            }
         }
-        else
-        {
-            return false;
-        }
+
+        return false;
     }
 }

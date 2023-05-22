@@ -73,6 +73,20 @@ public class PunchSettingManager : MonoBehaviour
         {
             this.reloadPunchSettingScene();
         }
+
+        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
+        {
+            bool isPunchStraight = this.straightModule.judgeArmStraight(Hand.Right);
+            ArmRotationAngle armRotationAngle = this.straightModule.getArmAngle(Hand.Right);
+            this.displayPunchUnitResult(Hand.Right, isPunchStraight, armRotationAngle);
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch))
+        {
+            bool isPunchStraight = this.straightModule.judgeArmStraight(Hand.Left);
+            ArmRotationAngle armRotationAngle = this.straightModule.getArmAngle(Hand.Left);
+            this.displayPunchUnitResult(Hand.Left, isPunchStraight, armRotationAngle);
+        }
     }
 
     private void sceneInitialized()
@@ -95,16 +109,16 @@ public class PunchSettingManager : MonoBehaviour
         this.straightResultPanel.SetActive(false);
         this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(true);
         this.mainManager.OVRControllerRayRight.RayInteractorSwitch(true);
-        this.rightStraightCollider = this.mainManager.rightUpperArm_IK.transform.Find("StraightCollider(Clone)");
-        if (this.rightStraightCollider)
-        {
-            this.rightStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = true;
-        }
-        this.leftStraightCollider = this.mainManager.leftUpperArm_IK.transform.Find("StraightCollider(Clone)");
-        if (this.leftStraightCollider)
-        {
-            this.leftStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = true;
-        }
+        // this.rightStraightCollider = this.mainManager.rightUpperArm_IK.transform.Find("StraightCollider(Clone)");
+        // if (this.rightStraightCollider)
+        // {
+        //     this.rightStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = true;
+        // }
+        // this.leftStraightCollider = this.mainManager.leftUpperArm_IK.transform.Find("StraightCollider(Clone)");
+        // if (this.leftStraightCollider)
+        // {
+        //     this.leftStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = true;
+        // }
     }
 
     private void saveToJSON_punchResult()
@@ -250,16 +264,16 @@ public class PunchSettingManager : MonoBehaviour
     public void btnSelectionSceneClick()
     {
         this.mainManager.changeScene("SelectionScene");
-        this.rightStraightCollider = this.mainManager.rightUpperArm_IK.transform.Find("StraightCollider(Clone)");
-        if (this.rightStraightCollider)
-        {
-            this.rightStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = false;
-        }
-        this.leftStraightCollider = this.mainManager.leftUpperArm_IK.transform.Find("StraightCollider(Clone)");
-        if (this.leftStraightCollider)
-        {
-            this.leftStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = false;
-        }
+        // this.rightStraightCollider = this.mainManager.rightUpperArm_IK.transform.Find("StraightCollider(Clone)");
+        // if (this.rightStraightCollider)
+        // {
+        //     this.rightStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        // }
+        // this.leftStraightCollider = this.mainManager.leftUpperArm_IK.transform.Find("StraightCollider(Clone)");
+        // if (this.leftStraightCollider)
+        // {
+        //     this.leftStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        // }
     }
 
     public void reloadPunchSettingScene()
