@@ -1478,8 +1478,6 @@ struct Poser_tDF8B767BC6593233BEED1C025429B0FD41B97B50;
 struct PropertyChangedEventHandler_tF1250C146BE6FB43477D29C5D18A10B6329419DA;
 // System.Reflection.PropertyInfo
 struct PropertyInfo_t;
-// PunchSettingManager
-struct PunchSettingManager_t4522331CAE41B853E81D7BDEA7CE94EA0B3C5655;
 // DepthPerceptionSystem.PunchStraightUnit
 struct PunchStraightUnit_t45075DA5834121BA8F6495C95A0EC024481FE838;
 // DepthPerceptionSystem.PunchStraightUnitTest
@@ -26306,8 +26304,6 @@ struct StraightCollider_tB9F4057E1CAF424669E28599FF33B79CFB3D44DB  : public Mono
 	MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* ___mainManager_4;
 	// EvaluationManager StraightCollider::evaluationManager
 	EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39* ___evaluationManager_5;
-	// PunchSettingManager StraightCollider::punchSettingManager
-	PunchSettingManager_t4522331CAE41B853E81D7BDEA7CE94EA0B3C5655* ___punchSettingManager_6;
 };
 
 // StraightModule
@@ -32701,9 +32697,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6691[3] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6692[1] = 
 {
 	static_cast<int32_t>(offsetof(ReachModule_t6ACBB40F261F3DC1BB2FFE68DF07332F5818DFFA, ___evaluationManager_4)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6693[3] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6693[2] = 
 {
-	static_cast<int32_t>(offsetof(StraightCollider_tB9F4057E1CAF424669E28599FF33B79CFB3D44DB, ___mainManager_4)),static_cast<int32_t>(offsetof(StraightCollider_tB9F4057E1CAF424669E28599FF33B79CFB3D44DB, ___evaluationManager_5)),static_cast<int32_t>(offsetof(StraightCollider_tB9F4057E1CAF424669E28599FF33B79CFB3D44DB, ___punchSettingManager_6)),};
+	static_cast<int32_t>(offsetof(StraightCollider_tB9F4057E1CAF424669E28599FF33B79CFB3D44DB, ___mainManager_4)),static_cast<int32_t>(offsetof(StraightCollider_tB9F4057E1CAF424669E28599FF33B79CFB3D44DB, ___evaluationManager_5)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6694[1] = 
 {
 	static_cast<int32_t>(offsetof(StraightModule_t36D738A39F82D80245D8FFD25BF3A5F52B58148E, ___mainManager_4)),};
