@@ -96,33 +96,12 @@ public class EvaluationManager : MonoBehaviour
         this.punchHand = hand;
         switch (this.playingModeManager.mainManager.curSystemMode)
         {
-            case SystemMode.TrainingMode_BallCue_onPlayer: // On Player Only
-                this.playingModeManager.depthCueManager.GetComponent<BallCueOnPlayerManager>().destroyBallCueOnPlayer(punchHand);
-                break;
             case SystemMode.TrainingMode_BallCue_onTarget: // On Target Only
-                this.playingModeManager.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(punchHand);
-                break;
-            case SystemMode.TrainingMode_BallCue_onBoth: // On Player and Target
-            case SystemMode.TrainingMode_LineCuePlusBallCue: // Line Cue Plus Ball Cue
-                this.playingModeManager.depthCueManager.GetComponent<BallCueOnPlayerManager>().destroyBallCueOnPlayer(punchHand);
                 this.playingModeManager.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(punchHand);
                 break;
             default:
                 break;
         }
-
-        // if (this.isDuringTheUnit) {
-        //     this.playingModeManager.curUnitResult.isPunching = true;
-        //     this.playingModeManager.curUnitResult.isReacting = true;
-        //     // this.playingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand); // 改成在 Reach 的時候判斷是否伸直
-        //     // this.isDuringTheUnit = false;
-        //     // this.playingModeManager.unitOver();
-        // }
-        // else {
-        //     this.playingModeManager.curUnitResult.isPunching = false;
-        //     this.playingModeManager.curUnitResult.isReacting = false;
-        //     this.playingModeManager.curUnitResult.isStraight = false;
-        // }
     }
 
     public void userIsMoving()
@@ -188,52 +167,72 @@ public class EvaluationManager : MonoBehaviour
         }
     }
 
-    void instantiateBallWhenHit(Hand hand, bool isHitShoulder, bool isStraight)
+    public void instantiateBallWhenHit(Hand hand, Vector3 position, Quaternion rotation, GameObject parent, bool isReach)
     {
-        foreach (Transform child in this.playingModeManager.coachManager.coachAvatar.transform)
+        if (this.playingModeManager.mainManager.curSystemMode == SystemMode.TestingMode ||
+            this.playingModeManager.mainManager.curSystemMode == SystemMode.TrainingMode)
         {
-            if (child.gameObject.tag == "BallWhenHit")
-            {
-                // Destroy(child.gameObject);
-                return;
-            }
+            return;
+        }
+
+        // foreach (Transform child in this.playingModeManager.coachManager.coachAvatar.transform)
+        // {
+        //     if (child.gameObject.tag == "BallWhenHit")
+        //     {
+        //         // Destroy(child.gameObject);
+        //         return;
+        //     }
+        // }
+
+        GameObject[] hitMarker = GameObject.FindGameObjectsWithTag("BallWhenHit");
+        if (hitMarker.Length > 0)
+        {
+            return;
         }
 
         GameObject ball = null;
-        switch (hand)
-        {
-            case Hand.Right:
-                ball = Instantiate(this.ballWhenHitPrefab,
-                                    this.playingModeManager.mainManager.BoxingGloveEdgeRight.position,
-                                    this.playingModeManager.mainManager.BoxingGloveEdgeRight.rotation,
-                                    this.playingModeManager.coachManager.coachAvatar.transform);
-                ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-                break;
-            case Hand.Left:
-                ball = Instantiate(this.ballWhenHitPrefab,
-                                    this.playingModeManager.mainManager.BoxingGloveEdgeLeft.position,
-                                    this.playingModeManager.mainManager.BoxingGloveEdgeLeft.rotation,
-                                    this.playingModeManager.coachManager.coachAvatar.transform);
-                ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-                break;
-        }
-
-        if (isStraight && isHitShoulder)
+        ball = Instantiate(this.ballWhenHitPrefab,
+                            position,
+                            rotation,
+                            parent.transform);
+        if (isReach)
         {
             ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.green);
         }
-        else if (isStraight && !isHitShoulder)
-        {
-            ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.yellow);
-        }
-        else if (!isStraight && isHitShoulder)
-        {
-            ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.magenta);
-        }
-        else if (!isStraight && !isHitShoulder)
-        {
-            ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.red);
-        }
+        // switch (hand)
+        // {
+        //     case Hand.Right:
+        //         ball = Instantiate(this.ballWhenHitPrefab,
+        //                             this.playingModeManager.mainManager.BoxingGloveEdgeRight.position,
+        //                             this.playingModeManager.mainManager.BoxingGloveEdgeRight.rotation,
+        //                             this.playingModeManager.coachManager.coachAvatar.transform);
+        //         ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        //         break;
+        //     case Hand.Left:
+        //         ball = Instantiate(this.ballWhenHitPrefab,
+        //                             this.playingModeManager.mainManager.BoxingGloveEdgeLeft.position,
+        //                             this.playingModeManager.mainManager.BoxingGloveEdgeLeft.rotation,
+        //                             this.playingModeManager.coachManager.coachAvatar.transform);
+        //         ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        //         break;
+        // }
+
+        // if (isStraight && isHitShoulder)
+        // {
+        //     ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.green);
+        // }
+        // else if (isStraight && !isHitShoulder)
+        // {
+        //     ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.yellow);
+        // }
+        // else if (!isStraight && isHitShoulder)
+        // {
+        //     ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.magenta);
+        // }
+        // else if (!isStraight && !isHitShoulder)
+        // {
+        //     ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.red);
+        // }
     }
 
     public UnitResultComment getScoreComment(bool isOverTime)

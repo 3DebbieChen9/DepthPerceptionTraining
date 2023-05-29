@@ -6041,10 +6041,10 @@ MonoBehaviour:
   resultPanel: {fileID: 1213332128}
   imageSources:
   - {fileID: 21300000, guid: 5f25712c2d474584a9e7e0713462a1c3, type: 3}
-  - {fileID: 21300000, guid: d482431a7189c234a89f64ecf75f8661, type: 3}
   - {fileID: 21300000, guid: e5724d547f0dffc45babc9246a570f4b, type: 3}
-  - {fileID: 21300000, guid: 35c98fa2e86c24d43882440a0600c7f7, type: 3}
+  - {fileID: 21300000, guid: d482431a7189c234a89f64ecf75f8661, type: 3}
   - {fileID: 21300000, guid: a5ee1b4649780c04798830a3cb643cf8, type: 3}
+  - {fileID: 21300000, guid: 35c98fa2e86c24d43882440a0600c7f7, type: 3}
   - {fileID: 21300000, guid: 04e426917c1ee5940ba6a72d003a0304, type: 3}
   image: {fileID: 876129722}
 --- !u!1 &1781906956

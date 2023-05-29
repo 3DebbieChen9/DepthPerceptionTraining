@@ -1,0 +1,40 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="CalibrationModeManager">
+			<method name="modifyHeightBtnClick"/>
+			<method name="saveHeightBtnClick"/>
+		</type>
+		<type fullname="KeypadInput">
+			<method name="backspaceInput"/>
+			<method name="clearInput"/>
+			<method name="inputNumber"/>
+			<method name="inputNumber"/>
+			<method name="inputNumber"/>
+			<method name="inputNumber"/>
+			<method name="inputNumber"/>
+			<method name="inputNumber"/>
+			<method name="inputNumber"/>
+			<method name="inputNumber"/>
+			<method name="inputNumber"/>
+			<method name="inputNumber"/>
+			<method name="inputNumber"/>
+		</type>
+		<type fullname="PlayingUIManager">
+			<method name="btnChangeScene"/>
+			<method name="btnChangeScene"/>
+			<method name="btnChangeScene"/>
+			<method name="btnChangeScene"/>
+			<method name="btnChangeScene"/>
+			<method name="btnChangeScene"/>
+			<method name="btnExit"/>
+			<method name="btnExit"/>
+		</type>
+		<type fullname="PunchSettingManager">
+			<method name="btnSelectionSceneClick"/>
+			<method name="btnSelectionSceneClick"/>
+			<method name="modifyCoachJudegement"/>
+			<method name="reloadPunchSettingScene"/>
+			<method name="savePunchUnitResult"/>
+		</type>
+	</assembly>
+</linker>

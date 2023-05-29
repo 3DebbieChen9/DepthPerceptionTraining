@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14744711}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1836, y: 0.0465, z: -0.0396}
+  m_LocalPosition: {x: 0.188, y: -0, z: -0.0396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -168,7 +168,7 @@ CapsuleCollider:
   m_Radius: 0.06772195
   m_Height: 0.14990468
   m_Direction: 0
-  m_Center: {x: -0.058122423, y: -0.045734107, z: 0.015139758}
+  m_Center: {x: -0.06252242, y: 0, z: 0.015139758}
 --- !u!1 &19513071
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48120937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1754, y: 0.0454, z: 0.0357}
+  m_LocalPosition: {x: 0.1873, y: -0, z: 0.0357}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -278,7 +278,7 @@ CapsuleCollider:
   m_Radius: 0.07032896
   m_Height: 0.15197049
   m_Direction: 0
-  m_Center: {x: -0.050436, y: -0.04573404, z: -0.009541668}
+  m_Center: {x: -0.062336, y: 0, z: -0.009541668}
 --- !u!1 &53239204
 GameObject:
   m_ObjectHideFlags: 0
@@ -6182,11 +6182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7063633499470030033, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 31
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 7063633501703650123, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 31
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 7079690332722261423, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
       propertyPath: m_IsActive
@@ -7506,7 +7506,6 @@ MonoBehaviour:
   OVRCameraRig: {fileID: 1190238386}
   canvasHeight: 0
   moveTime: 0
-  tmpCylinder: {fileID: 0}
 --- !u!1 &1468175324
 GameObject:
   m_ObjectHideFlags: 0

@@ -182,16 +182,12 @@ public class MainManager : MonoBehaviour
         if (isCenter)
         {
             Color newColor = new Color(0.12f, 0.53f, 0.14f, 0.56f);
-            // this.sceneOrigin.GetComponent<MeshRenderer>().material.color = newColor;
             this.sceneOrigin.GetComponent<Renderer>().material.SetColor("_Color", newColor);
-            Debug.Log("Scene Origin change color to GREEN");
         }
         else
         {
             Color newColor = new Color(1.0f, 0.0f, 0.0f, 0.56f);
-            // this.sceneOrigin.GetComponent<MeshRenderer>().material.color = newColor;
             this.sceneOrigin.GetComponent<Renderer>().material.SetColor("_Color", newColor);
-            Debug.Log("Scene Origin change color to RED");
         }
     }
 

@@ -13,13 +13,14 @@ namespace DepthPerceptionSystem
         TestingMode,
         TrainingMode,
         TrainingMode_LineCue,
-        TrainingMode_BallCue_onPlayer,
         TrainingMode_BallCue_onTarget,
-        TrainingMode_BallCue_onBoth,
-        TrainingMode_LineCuePlusBallCue,
         TrainingMode_BarCue,
         TrainingMode_CutoutCue,
-
+        TrainingMode_PowerBarCue,
+        TrainingMode_AimCue,
+        TrainingMode_BarCue_withAim,
+        TrainingMode_CutoutCue_withAim,
+        TrainingMode_PowerBarCue_withAim,
     }
 
     public enum MovingDirection

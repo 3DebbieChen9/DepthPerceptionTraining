@@ -37,7 +37,6 @@ public class PlayingModeManager : MonoBehaviour
     private List<string> voiceCommentList;
 
     [SerializeField]
-    // private List<MovingDirection> controlledDirectionList;
     private MovingDirection[] controlledDirectionArray;
     void Awake()
     {
@@ -175,13 +174,6 @@ public class PlayingModeManager : MonoBehaviour
                 Vector3 tmp = this.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position;
                 tmp.y = this.mainManager.sceneOriginPosition.y;
                 this.evaluationManager.setStartingPoint(tmp, this.mainManager.sceneOriginRotation);
-
-                if (this.mainManager.curSystemMode == SystemMode.TrainingMode_BallCue_onPlayer ||
-                    this.mainManager.curSystemMode == SystemMode.TrainingMode_BallCue_onBoth ||
-                    this.mainManager.curSystemMode == SystemMode.TrainingMode_LineCuePlusBallCue)
-                {
-                    this.depthCueManager.GetComponent<BallCueOnPlayerManager>().instantiateBallCueOnPlayer(Hand.Both);
-                }
 
                 this.UIManager.closeReadyCanvas();
                 this.UIManager.closeResultCanvas();
@@ -516,24 +508,10 @@ public class PlayingModeManager : MonoBehaviour
 
     public void clearPunchMarker()
     {
-        foreach (Transform child in this.evaluationManager.gameObject.transform)
+        GameObject[] hitMarker = GameObject.FindGameObjectsWithTag("BallWhenHit");
+        foreach (GameObject marker in hitMarker)
         {
-            if (child.gameObject.tag == "BallWhenHit")
-            {
-                Destroy(child.gameObject);
-            }
-        }
-
-        foreach (Transform child in this.coachManager.coachAvatar.transform)
-        {
-            if (child.gameObject.tag == "BallWhenHit")
-            {
-                Destroy(child.gameObject);
-            }
-        }
-        if (this.mainManager.curSystemMode != SystemMode.TestingMode)
-        {
-            this.depthCueManager.GetComponent<BallCueOnPlayerManager>().destroyBallCueOnPlayer();
+            GameObject.Destroy(marker);
         }
     }
 
@@ -562,24 +540,13 @@ public class PlayingModeManager : MonoBehaviour
             case (Hand.Right):
                 GameObject ball = Instantiate(this.ballWhenHitPrefab, this.mainManager.BoxingGloveEdgeRight.position, this.mainManager.BoxingGloveEdgeRight.rotation, this.evaluationManager.gameObject.transform);
                 ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-                ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.red);
+                // ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.red);
                 break;
             case (Hand.Left):
                 ball = Instantiate(this.ballWhenHitPrefab, this.mainManager.BoxingGloveEdgeLeft.position, this.mainManager.BoxingGloveEdgeLeft.rotation, this.evaluationManager.gameObject.transform);
                 ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-                ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.red);
+                // ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.red);
                 break;
-        }
-
-        Transform rightLightBall = this.mainManager.OVRBoxingRight.transform.Find("LightBallOnPlayer(Clone)");
-        if (rightLightBall)
-        {
-            rightLightBall.gameObject.GetComponent<BallCueOnPlayer>().destroy();
-        }
-        Transform leftLightBall = this.mainManager.OVRBoxingLeft.transform.Find("LightBallOnPlayer(Clone)");
-        if (leftLightBall)
-        {
-            leftLightBall.gameObject.GetComponent<BallCueOnPlayer>().destroy();
         }
     }
 
@@ -598,26 +565,6 @@ public class PlayingModeManager : MonoBehaviour
                 }
                 break;
             case SystemMode.TrainingMode_BallCue_onTarget:
-            case SystemMode.TrainingMode_BallCue_onBoth:
-                if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction)
-                {
-                    this.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(this.evaluationManager.punchHand);
-                }
-                else
-                {
-                    this.depthCueManager.GetComponent<BallCueOnTarget>().eraseBallCueOnTarget();
-                }
-                break;
-            case SystemMode.TrainingMode_LineCuePlusBallCue:
-                if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction)
-                {
-                    this.depthCueManager.GetComponent<LineCue>().renderLineCue(this.evaluationManager.punchHand);
-                }
-                else
-                {
-                    this.depthCueManager.GetComponent<LineCue>().eraseLineCue();
-                }
-
                 if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction)
                 {
                     this.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(this.evaluationManager.punchHand);
@@ -628,6 +575,7 @@ public class PlayingModeManager : MonoBehaviour
                 }
                 break;
             case SystemMode.TrainingMode_BarCue:
+            case SystemMode.TrainingMode_BarCue_withAim:
                 if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
                 {
                     this.depthCueManager.GetComponent<BarCue>().barAidUpdate();
@@ -638,18 +586,55 @@ public class PlayingModeManager : MonoBehaviour
                 }
                 break;
             case SystemMode.TrainingMode_CutoutCue:
+            case SystemMode.TrainingMode_CutoutCue_withAim:
                 if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
                 {
                     this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate();
                 }
                 else
                 {
-                    this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate();
-                    // this.depthCueManager.GetComponent<CutoutCue>().closeCutoutAid();
+                    // this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate();
+                    this.depthCueManager.GetComponent<CutoutCue>().closeCutoutAid();
                 }
                 break;
+            case SystemMode.TrainingMode_PowerBarCue:
+            case SystemMode.TrainingMode_PowerBarCue_withAim:
+                if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
+                {
+                    this.depthCueManager.GetComponent<PowerBarCue>().powerBarUpdate();
+                }
+                else
+                {
+                    this.depthCueManager.GetComponent<PowerBarCue>().closePowerBar();
+                }
+                break;
+            // case SystemMode.TrainingMode_AimCue:
+            //     if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
+            //     {
+            //         this.depthCueManager.GetComponent<AimCueOnTarget>().aimCueUpdate();
+            //     }
+            //     else
+            //     {
+            //         this.depthCueManager.GetComponent<AimCueOnTarget>().closeAimCueOnTarget();
+            //     }
+            //     break;
             default:
                 break;
+        }
+
+        if (this.mainManager.curSystemMode == SystemMode.TrainingMode_BarCue_withAim ||
+            this.mainManager.curSystemMode == SystemMode.TrainingMode_CutoutCue_withAim ||
+            this.mainManager.curSystemMode == SystemMode.TrainingMode_PowerBarCue_withAim ||
+            this.mainManager.curSystemMode == SystemMode.TrainingMode_AimCue)
+        {
+            if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
+            {
+                this.depthCueManager.GetComponent<AimCueOnTarget>().aimCueUpdate();
+            }
+            else
+            {
+                this.depthCueManager.GetComponent<AimCueOnTarget>().closeAimCueOnTarget();
+            }
         }
     }
 
