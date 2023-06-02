@@ -17,32 +17,32 @@ public class UserSimulate : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Q))
         {
-            this.mainCamera.transform.position += new Vector3(0.0f, 0.0f, 0.01f);
+            this.mainCamera.transform.position += new Vector3(0.0f, 0.0f, 0.001f);
         }
 
         if (Input.GetKey(KeyCode.E))
         {
-            this.mainCamera.transform.position += new Vector3(0.0f, 0.0f, -0.01f);
+            this.mainCamera.transform.position += new Vector3(0.0f, 0.0f, -0.001f);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            this.mainCamera.transform.position += new Vector3(0.01f, 0.0f, 0.0f);
+            this.mainCamera.transform.position += new Vector3(0.001f, 0.0f, 0.0f);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            this.mainCamera.transform.position += new Vector3(-0.01f, 0.0f, 0.0f);
+            this.mainCamera.transform.position += new Vector3(-0.001f, 0.0f, 0.0f);
         }
 
         if (Input.GetKey(KeyCode.W))
         {
-            this.mainCamera.transform.position += new Vector3(0.0f, 0.01f, 0.0f);
+            this.mainCamera.transform.position += new Vector3(0.0f, 0.001f, 0.0f);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            this.mainCamera.transform.position += new Vector3(0.0f, -0.01f, 0.0f);
+            this.mainCamera.transform.position += new Vector3(0.0f, -0.001f, 0.0f);
         }
     }
 

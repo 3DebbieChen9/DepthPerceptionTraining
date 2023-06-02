@@ -6,8 +6,8 @@ using DepthPerceptionSystem;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    public Sound[] musicSounds, sfxSounds, voiceSounds;
-    public AudioSource musicSource, sfxSource, voiceSource;
+    public Sound[] musicSounds, sfxSounds, voiceSounds, aidSounds;
+    public AudioSource musicSource, sfxSource, voiceSource, aidSource;
 
     private void Awake()
     {
@@ -65,5 +65,29 @@ public class AudioManager : MonoBehaviour
         // voiceSource.pitch = s.pitch;
         // voiceSource.loop = s.loop;
         voiceSource.Play();
+    }
+
+    public void PlayAid(string name)
+    {
+        Sound s = System.Array.Find(aidSounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+        aidSource.clip = s.clip;
+        // aidSource.loop = true;
+        aidSource.Play();
+    }
+
+    public void StopAid()
+    {
+        aidSource.Stop();
+    }
+
+    public void ModifyAid(float pitch, float volume = 1.0f)
+    {
+        aidSource.pitch = pitch;
+        aidSource.volume = volume;
     }
 }

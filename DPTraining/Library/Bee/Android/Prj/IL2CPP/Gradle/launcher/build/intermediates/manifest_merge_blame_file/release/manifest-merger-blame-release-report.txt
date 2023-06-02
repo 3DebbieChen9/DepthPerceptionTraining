@@ -3,7 +3,7 @@
 3    package="com.Debbie.DepthPerceptionTC"
 4    android:installLocation="auto"
 5    android:versionCode="1"
-6    android:versionName="6.0.0" >
+6    android:versionName="6.1.0" >
 7
 8    <uses-sdk
 9        android:minSdkVersion="29"

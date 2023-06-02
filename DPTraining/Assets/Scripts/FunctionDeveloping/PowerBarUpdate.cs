@@ -86,7 +86,12 @@ public class PowerBarUpdate : MonoBehaviour
         Color lightWhite = Color.HSVToRGB(0, 0, 1.0f);
         float value = powerBar.value * 0.6f + 0.4f;
         // fillColor.color = Color.Lerp(darkRed, lightWhite, powerBar.value);
-        fillColor.color = Color.HSVToRGB(0, 0, value);
+        fillColor.color = Color.Lerp(Color.white, Color.green, powerBar.value * 0.5f);
+        if (powerBar.value > 0.9f)
+        {
+            fillColor.color = Color.Lerp(Color.white, Color.green, powerBar.value);
+        }
+        // fillColor.color = Color.HSVToRGB(0, 0, value);
         // bar.GetComponent<Slider>().maxValue = 1.0f;
         // float minValue = bar.GetComponent<Slider>().maxValue * 0.01f;
         // if (distance > armLength * 2)

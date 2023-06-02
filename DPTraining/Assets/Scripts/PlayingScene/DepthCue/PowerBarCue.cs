@@ -20,7 +20,11 @@ public class PowerBarCue : MonoBehaviour
     [SerializeField]
     private Image fillColor;
     [SerializeField]
+    private Image targetIcon;
+    [SerializeField]
     private GameObject powerBarCanvas;
+    [SerializeField]
+    private Transform barCanvasRect;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +34,8 @@ public class PowerBarCue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        this.powerBarCanvas.transform.position = this.barCanvasRect.position;
+        this.powerBarCanvas.transform.rotation = this.barCanvasRect.rotation;
     }
 
     void FixedUpdate()
@@ -62,9 +67,14 @@ public class PowerBarCue : MonoBehaviour
         }
     }
 
-    public void powerBarUpdate()
+    public void powerBarUpdate(bool isUpdating)
     {
         this.powerBarCanvas.SetActive(true);
+        if (!isUpdating)
+        {
+            return;
+        }
+
         float furthestMultiplier = 2.5f;
         float furthestDistance = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength * furthestMultiplier;
         float idealDistance = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength;
@@ -99,7 +109,17 @@ public class PowerBarCue : MonoBehaviour
         if (powerBar.value < 0.1f) { powerBar.value = 0.1f; }
 
         float value = powerBar.value * 0.6f + 0.4f;
-        fillColor.color = Color.HSVToRGB(0, 0, value);
+        Color white = Color.HSVToRGB(0, 0, value);
+        fillColor.color = Color.Lerp(Color.white, Color.green, powerBar.value * 0.2f);
+        if (powerBar.value > 0.9f)
+        {
+            fillColor.color = Color.Lerp(Color.white, Color.green, powerBar.value);
+            targetIcon.color = Color.Lerp(Color.white, Color.green, powerBar.value);
+        }
+        else
+        {
+            targetIcon.color = Color.white;
+        }
     }
 
     public void closePowerBar()

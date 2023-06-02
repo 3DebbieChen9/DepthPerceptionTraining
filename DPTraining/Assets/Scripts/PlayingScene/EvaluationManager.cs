@@ -128,6 +128,7 @@ public class EvaluationManager : MonoBehaviour
         this.playingModeManager.curUnitResult.hand = hand;
         this.playingModeManager.curUnitResult.armRotationAngle = this.straightModule.getArmAngle(hand);
         this.isDuringTheUnit = false;
+        this.playingModeManager.visualAidIsUpdating = false;
         this.playingModeManager.unitOver();
 
         if (this.playingModeManager.curUnitResult.isStraight)
@@ -169,21 +170,6 @@ public class EvaluationManager : MonoBehaviour
 
     public void instantiateBallWhenHit(Hand hand, Vector3 position, Quaternion rotation, GameObject parent, bool isReach)
     {
-        if (this.playingModeManager.mainManager.curSystemMode == SystemMode.TestingMode ||
-            this.playingModeManager.mainManager.curSystemMode == SystemMode.TrainingMode)
-        {
-            return;
-        }
-
-        // foreach (Transform child in this.playingModeManager.coachManager.coachAvatar.transform)
-        // {
-        //     if (child.gameObject.tag == "BallWhenHit")
-        //     {
-        //         // Destroy(child.gameObject);
-        //         return;
-        //     }
-        // }
-
         GameObject[] hitMarker = GameObject.FindGameObjectsWithTag("BallWhenHit");
         if (hitMarker.Length > 0)
         {
@@ -195,44 +181,10 @@ public class EvaluationManager : MonoBehaviour
                             position,
                             rotation,
                             parent.transform);
-        if (isReach)
+        if (isReach && this.playingModeManager.mainManager.curSystemMode != SystemMode.TestingMode)
         {
             ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.green);
         }
-        // switch (hand)
-        // {
-        //     case Hand.Right:
-        //         ball = Instantiate(this.ballWhenHitPrefab,
-        //                             this.playingModeManager.mainManager.BoxingGloveEdgeRight.position,
-        //                             this.playingModeManager.mainManager.BoxingGloveEdgeRight.rotation,
-        //                             this.playingModeManager.coachManager.coachAvatar.transform);
-        //         ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        //         break;
-        //     case Hand.Left:
-        //         ball = Instantiate(this.ballWhenHitPrefab,
-        //                             this.playingModeManager.mainManager.BoxingGloveEdgeLeft.position,
-        //                             this.playingModeManager.mainManager.BoxingGloveEdgeLeft.rotation,
-        //                             this.playingModeManager.coachManager.coachAvatar.transform);
-        //         ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        //         break;
-        // }
-
-        // if (isStraight && isHitShoulder)
-        // {
-        //     ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.green);
-        // }
-        // else if (isStraight && !isHitShoulder)
-        // {
-        //     ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.yellow);
-        // }
-        // else if (!isStraight && isHitShoulder)
-        // {
-        //     ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.magenta);
-        // }
-        // else if (!isStraight && !isHitShoulder)
-        // {
-        //     ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.red);
-        // }
     }
 
     public UnitResultComment getScoreComment(bool isOverTime)

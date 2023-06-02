@@ -38,6 +38,10 @@ public class PlayingModeManager : MonoBehaviour
 
     [SerializeField]
     private MovingDirection[] controlledDirectionArray;
+    public bool visualAidIsUpdating = false;
+
+    [SerializeField] public float reactionTimeStandard = 1.0f;
+
     void Awake()
     {
         if (this.mainManager == null)
@@ -182,6 +186,7 @@ public class PlayingModeManager : MonoBehaviour
 
         if (this.tentativeTimer.timerOn)
         {
+            this.visualAidIsUpdating = true;
             this.tentativeTimer.timeLeft -= Time.deltaTime;
             if (this.tentativeTimer.timeLeft <= 0.0f)
             {
@@ -215,6 +220,20 @@ public class PlayingModeManager : MonoBehaviour
                 this.coachManager.coachAnimator.SetBool("isDuringTheUnit", false);
                 // this.setPunchMarker();
                 this.unitOver();
+            }
+
+            if (this.reactionTimer.timeLeft >= this.reactionTimeStandard)
+            {
+                if (!AudioManager.instance.aidSource.isPlaying)
+                {
+                    Debug.Log("[Audio] Playing Ticking");
+                    AudioManager.instance.PlayAid("Ticking");
+                    AudioManager.instance.ModifyAid(2.0f);
+                }
+                // else
+                // {
+                //     AudioManager.instance.ModifyAid(1.5f);
+                // }
             }
         }
     }
@@ -314,6 +333,7 @@ public class PlayingModeManager : MonoBehaviour
             return;
         }
         unitIsOver = true;
+        AudioManager.instance.StopAid();
         this.coachManager.coachAnimator.SetBool("isDuringTheUnit", false);
 
         this.reactionTimer.timerOn = false;
@@ -578,7 +598,7 @@ public class PlayingModeManager : MonoBehaviour
             case SystemMode.TrainingMode_BarCue_withAim:
                 if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
                 {
-                    this.depthCueManager.GetComponent<BarCue>().barAidUpdate();
+                    this.depthCueManager.GetComponent<BarCue>().barAidUpdate(this.visualAidIsUpdating);
                 }
                 else
                 {
@@ -589,7 +609,7 @@ public class PlayingModeManager : MonoBehaviour
             case SystemMode.TrainingMode_CutoutCue_withAim:
                 if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
                 {
-                    this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate();
+                    this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(this.visualAidIsUpdating);
                 }
                 else
                 {
@@ -601,23 +621,13 @@ public class PlayingModeManager : MonoBehaviour
             case SystemMode.TrainingMode_PowerBarCue_withAim:
                 if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
                 {
-                    this.depthCueManager.GetComponent<PowerBarCue>().powerBarUpdate();
+                    this.depthCueManager.GetComponent<PowerBarCue>().powerBarUpdate(this.visualAidIsUpdating);
                 }
                 else
                 {
                     this.depthCueManager.GetComponent<PowerBarCue>().closePowerBar();
                 }
                 break;
-            // case SystemMode.TrainingMode_AimCue:
-            //     if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
-            //     {
-            //         this.depthCueManager.GetComponent<AimCueOnTarget>().aimCueUpdate();
-            //     }
-            //     else
-            //     {
-            //         this.depthCueManager.GetComponent<AimCueOnTarget>().closeAimCueOnTarget();
-            //     }
-            //     break;
             default:
                 break;
         }

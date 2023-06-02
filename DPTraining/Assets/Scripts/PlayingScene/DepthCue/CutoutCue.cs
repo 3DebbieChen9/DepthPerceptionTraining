@@ -64,9 +64,14 @@ public class CutoutCue : MonoBehaviour
         }
     }
 
-    public void cutoutAidUpdate()
+    public void cutoutAidUpdate(bool isUpdating)
     {
         this.cutoutCanvas.SetActive(true);
+        if (!isUpdating)
+        {
+            return;
+        }
+
         float furthestMultiplier = 2.5f;
         float furthestDistance = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength * furthestMultiplier;
         float idealDistance = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength;
