@@ -58,27 +58,46 @@ public class CutoutUpdating : MonoBehaviour
         float distance = setDistance();
         // this.bar.maxValue = furthestDistance;
 
-        if (distance < idealDistanceMin)
+        // if (distance < idealDistanceMin)
+        // {
+        //     Color newColor = Color.HSVToRGB(0f, 0.5f, 1.0f);
+        //     newColor.a = 0.6f;
+        //     this.image.color = newColor;
+        // }
+        // else if (distance > idealDistanceMax)
+        // {
+        //     Color newColor = Color.HSVToRGB(0f, 1.0f, 0.6f);
+        //     newColor.a = 0.8f;
+        //     this.image.color = newColor;
+        // }
+        float canvasWorstScale = 0.3f;
+        float canvasIdealScale = 0.72f;
+        float canvasScale = 0.0f;
+
+        if (distance < idealDistanceMax && distance > idealDistanceMin)
         {
-            Color newColor = Color.HSVToRGB(0f, 0.5f, 1.0f);
-            newColor.a = 0.6f;
-            this.image.color = newColor;
+            Debug.Log($"Inside Ideal Range: distance = {distance}");
+            canvasScale = canvasIdealScale;
+        }
+        else if (distance < idealDistanceMin)
+        {
+            Debug.Log($"Too Close: distance = {distance}");
+            if (distance < 0) { canvasScale = canvasWorstScale; }
+            else
+            {
+                canvasScale = canvasIdealScale - Mathf.Abs(distance - idealDistanceMin) / (idealDistanceMin) * Mathf.Abs(canvasIdealScale - canvasWorstScale);
+            }
         }
         else if (distance > idealDistanceMax)
         {
-            Color newColor = Color.HSVToRGB(0f, 1.0f, 0.6f);
-            newColor.a = 0.8f;
-            this.image.color = newColor;
+            Debug.Log($"Too Far: distance = {distance}");
+            if (distance > furthestDistance) { canvasScale = canvasWorstScale; }
+            else
+            {
+                canvasScale = canvasIdealScale - Mathf.Abs(distance - idealDistanceMax) / (idealDistanceMin) * Mathf.Abs(canvasIdealScale - canvasWorstScale);
+            }
         }
-        float scale = 2.0f - Mathf.Abs(distance - idealDistance) / (idealDistanceMin);
-        if (scale < 0.8f)
-        {
-            scale = 0.8f;
-        }
-        else if (scale > 2.0f)
-        {
-            scale = 2.0f;
-        }
-        this.mask.localScale = new Vector3(scale, scale, scale);
+
+        this.mask.localScale = new Vector3(canvasScale, canvasScale, canvasScale);
     }
 }

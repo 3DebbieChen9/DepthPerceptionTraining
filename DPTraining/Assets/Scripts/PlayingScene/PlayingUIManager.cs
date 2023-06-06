@@ -43,6 +43,12 @@ public class PlayingUIManager : MonoBehaviour
     private TMP_Text finalResultText;
     [SerializeField]
     public GameObject finalButtonsCanvas;
+    [SerializeField]
+    public TMP_Text finalButtonsTitle;
+
+    [SerializeField]
+    public GameObject buttonsCanvas;
+
 
     void Awake()
     {
@@ -100,6 +106,7 @@ public class PlayingUIManager : MonoBehaviour
         this.finalResultText.text = "";
 
         this.finalButtonsCanvas.SetActive(false);
+        this.buttonsCanvas.SetActive(false);
     }
 
     public void closeStartCanvas()
@@ -136,25 +143,40 @@ public class PlayingUIManager : MonoBehaviour
         this.readyCoundownImage.fillAmount = 0;
         this.readyCountdownText.text = "!";
     }
-    public void unitResultView(int unitNumber, int unitScore, float reactionTime, List<string> comment, bool isOverTime, bool training)
+    public void unitResultView(int unitNumber, int unitScore, float reactionTime, List<string> comment, bool isOverTime, bool isTraining, float standardReactionTime)
     {
         this.unitResultCanvas.SetActive(true);
         // this.unitResultTitle.text = "Unit " + unitNumber.ToString() + ": " + unitScore.ToString() + "/5";
-        this.unitResultTitle.text = $"第 {unitNumber.ToString()} 回合: {unitScore.ToString()}/5";
-        if (isOverTime)
-        {
-            // this.unitResultText.text = "It's over time.";
-            string limitTime = training ? "4.0" : "4.0";
-            this.unitResultText.text = $"超過 {limitTime} 秒了!";
-        }
-        else
-        {
-            // this.unitResultText.text = "Reaction Time: " + reactionTime.ToString("F3") + "s";
-            this.unitResultText.text = "反應時間 " + reactionTime.ToString("F3") + " 秒";
-        }
+        // this.unitResultTitle.text = $"第 {unitNumber.ToString()} 回合: {unitScore.ToString()}/5";
+        this.unitResultTitle.text = $"第 {unitNumber.ToString()} 回合結束";
 
-        if (training)
+        if (isTraining)
         {
+            if (isOverTime)
+            {
+                // this.unitResultText.text = "It's over time.";
+                string limitTime = isTraining ? "4.0" : "4.0";
+                this.unitResultText.text = $"<color=#4EFEB3>超過 {limitTime} 秒了!</color>";
+            }
+            else
+            {
+                string textColorHex = "#FFFFFF";
+                string timeDeltaSign = "+";
+                if (reactionTime - standardReactionTime <= 0)
+                {
+                    textColorHex = "#4EFEB3";
+                    timeDeltaSign = "";
+                }
+                else if (reactionTime - standardReactionTime > 0)
+                {
+                    textColorHex = "#FFC1E0";
+                    timeDeltaSign = "+";
+                }
+                // this.unitResultText.text = "Reaction Time: " + reactionTime.ToString("F3") + "s";
+                // this.unitResultText.text = "反應時間 " + reactionTime.ToString("F3") + " 秒";
+                this.unitResultText.text = $"反應時間: {reactionTime:F3} s <color={textColorHex}>({timeDeltaSign}{reactionTime - standardReactionTime:F3})</color>";
+            }
+
             foreach (string c in comment)
             {
                 this.unitResultText.text += "\n" + c;
@@ -163,7 +185,7 @@ public class PlayingUIManager : MonoBehaviour
         }
     }
 
-    public void finalResultView(int totalScore, float averageReactionTime, int numberOfMoving, int numberOfPunching, int numberOfMovingCorrectly, int numberOfReach, int numberOfSuccess, int numberOfOverTime)
+    public void finalResultView(bool isTesting, int totalScore, float standardReactionTime, float averageReactionTime, int numberOfMoving, int numberOfPunching, int numberOfMovingCorrectly, int numberOfReach, int numberOfSuccess, int numberOfOverTime, int numberOfUnit)
     {
         this.finalResultCanvas.SetActive(true);
         // this.finalResultTitle.text = "Test Finished";
@@ -176,16 +198,49 @@ public class PlayingUIManager : MonoBehaviour
         //                             "Number of Reaching: " + numberOfReach.ToString() + "\n" +
         //                             "Number of Success: " + numberOfSuccess.ToString() + "\n" +
         //                             "Number of Over Time: " + numberOfOverTime.ToString();
-        this.finalResultTitle.text = "測試結束";
-        this.finalResultText.text = "總分: " + totalScore.ToString() + "\n" +
-                                    "平均反應時間: " + averageReactionTime.ToString("F3") + "s" + "\n" +
-                                    "=============================" + "\n" +
-                                    "移動次數: " + numberOfMoving.ToString() + "\n" +
-                                    "出拳次數: " + numberOfPunching.ToString() + "\n" +
-                                    "移動方向正確次數: " + numberOfMovingCorrectly.ToString() + "\n" +
-                                    "碰到目標次數: " + numberOfReach.ToString() + "\n" +
-                                    "成功次數: " + numberOfSuccess.ToString() + "\n" +
-                                    "超時次數: " + numberOfOverTime.ToString();
+
+        float movingRate = (float)numberOfMoving / (float)numberOfUnit * 100.0f;
+        float movingCorrectlyRate = (float)numberOfMovingCorrectly / (float)numberOfUnit * 100.0f;
+        float punchingRate = (float)numberOfPunching / (float)numberOfUnit * 100.0f;
+        float reachRate = (float)numberOfReach / (float)numberOfUnit * 100.0f;
+        float successRate = (float)numberOfSuccess / (float)numberOfUnit * 100.0f;
+
+        if (isTesting)
+        {
+            this.finalResultTitle.text = "測試結束";
+            this.finalResultText.text = $"平均反應時間: {averageReactionTime:F3}s\n" +
+                                        $"=============================\n" +
+                                        $"移動比率: {movingRate:F2}%\n" +
+                                        $"移動方向正確率: {movingCorrectlyRate:F2}%\n" +
+                                        $"出拳比率: {punchingRate:F2}%\n" +
+                                        $"碰到目標率: {reachRate:F2}%\n" +
+                                        $"成功率: {successRate:F2}%";
+        }
+        else
+        {
+            this.finalResultTitle.text = "訓練結束";
+            string textColorHex = "#FFFFFF";
+            string timeDeltaSign = "+";
+            if (averageReactionTime - standardReactionTime <= 0)
+            {
+                textColorHex = "#4EFEB3";
+                timeDeltaSign = "";
+            }
+            else if (averageReactionTime - standardReactionTime > 0)
+            {
+                textColorHex = "#FFC1E0";
+                timeDeltaSign = "+";
+            }
+            this.finalResultText.text = $"平均反應時間: {averageReactionTime:F3}s\n" +
+                                        $"與前測成績相比較: <color={textColorHex}>{timeDeltaSign}{averageReactionTime - standardReactionTime:F3}</color>s\n" +
+                                        $"=============================\n" +
+                                        $"移動比率: {movingRate:F2}%\n" +
+                                        $"移動方向正確率: {movingCorrectlyRate:F2}%\n" +
+                                        $"出拳比率: {punchingRate:F2}%\n" +
+                                        $"碰到目標率: {reachRate:F2}%\n" +
+                                        $"成功率: {successRate:F2}%";
+        }
+
         this.finalButtonsCanvas.SetActive(true);
     }
 
@@ -210,95 +265,104 @@ public class PlayingUIManager : MonoBehaviour
 
     public string userIsMovingScore(bool isOverTime)
     {
-        if (isOverTime)
-        {
-            // return "User is moving";
-            return "有移動";
-        }
-        else
-        {
-            // return "User is moving Score + 1";
-            return "有移動, 得分 + 1";
-        }
+        // if (isOverTime)
+        // {
+        //     // return "User is moving";
+        //     return "有移動";
+        // }
+        // else
+        // {
+        //     // return "User is moving Score + 1";
+        //     return "有移動, 得分 + 1";
+        // }
+        return "v 有移動";
     }
     public string userNotMoving()
     {
         // return "User is not moving";
-        return "沒有移動";
+        return "<color=#FF7FCA>x 沒有移動</color>";
     }
     public string movingWrongDirection()
     {
         // return "Moving Wrong Direction";
-        return "移動方向錯誤";
+        return "<color=#FF7FCA>x 移動方向錯誤</color>";
     }
     public string movingCorretlyScore(bool isOverTime)
     {
-        if (isOverTime)
-        {
-            // return "Moving Correctly";
-            return "移動方向正確";
-        }
-        else
-        {
-            // return "Moving Correctly Score + 1";
-            return "移動方向正確, 得分 + 1";
-        }
+        return "v 移動方向正確";
+        // if (isOverTime)
+        // {
+        //     // return "Moving Correctly";
+        //     return "移動方向正確";
+        // }
+        // else
+        // {
+        //     // return "Moving Correctly Score + 1";
+        //     return "移動方向正確, 得分 + 1";
+        // }
     }
 
     public string userIsPunchingScore(bool isOverTime)
     {
-        if (isOverTime)
-        {
-            // return "User is punching";
-            return "有出拳";
-        }
-        else
-        {
-            // return "User Punching Score + 1";
-            return "有出拳, 得分 + 1";
-        }
+        return "v 有出拳";
+        // if (isOverTime)
+        // {
+        //     // return "User is punching";
+        //     return "有出拳";
+        // }
+        // else
+        // {
+        //     // return "User Punching Score + 1";
+        //     return "有出拳, 得分 + 1";
+        // }
     }
     public string userNotPunching()
     {
         // return "User is not punching";
-        return "沒有出拳";
+        return "<color=#FF7FCA>x 沒有出拳</color>";
     }
 
     public string userReachScore(bool isOverTime)
     {
-        if (isOverTime)
-        {
-            // return "User reach target";
-            return "有打到肩膀";
-        }
-        else
-        {
-            // return "User Reach Target Score + 1";
-            return "有打到肩膀, 得分 + 1";
-        }
+        return "v 打到目標";
+        // if (isOverTime)
+        // {
+        //     // return "User reach target";
+        //     return "有打到肩膀";
+        // }
+        // else
+        // {
+        //     // return "User Reach Target Score + 1";
+        //     return "有打到肩膀, 得分 + 1";
+        // }
     }
     public string userNotReach()
     {
         // return "User is not reach target";
-        return "沒有打到肩膀";
+        return "<color=#FF7FCA>x 沒有打到目標</color>";
     }
 
     public string reachAndStraightScore(bool isOverTime)
     {
+        return "v 伸直打到目標 (成功)";
         // return "Reach and Straight Score + 1";
-        if (isOverTime)
-        {
-            return "伸直打到肩膀";
-        }
-        else
-        {
-            return "伸直打到肩膀, 得分 + 1";
-        }
+        // if (isOverTime)
+        // {
+        //     return "伸直打到肩膀";
+        // }
+        // else
+        // {
+        //     return "伸直打到肩膀, 得分 + 1";
+        // }
     }
-    public string reachButNotStraight()
+    public string armIsStraight()
+    {
+        return "v 手臂伸直";
+    }
+    public string armNotStraight()
     {
         // return "Hand is not straight";
-        return "手臂沒有伸直";
+        return "<color=#FF7FCA>x 手臂沒有伸直</color>";
     }
 
     public void btnChangeScene(string sceneName)

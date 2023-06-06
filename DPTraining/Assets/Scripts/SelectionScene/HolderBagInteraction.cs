@@ -73,20 +73,26 @@ public class HolderBagInteraction : MonoBehaviour
                 case "Training_BallOnTarget":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onTarget);
                     break;
-                case "Training_BallOnPlayer":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onPlayer);
-                    break;
-                case "Training_BallOnBoth":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onBoth);
-                    break;
-                case "Training_LinePlusBall":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_LineCuePlusBallCue);
-                    break;
                 case "Training_Bar":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BarCue);
                     break;
                 case "Training_CutoutCue":
                     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_CutoutCue);
+                    break;
+                case "Training_PowerBar":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_PowerBarCue);
+                    break;
+                case "Training_Aim":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_AimCue);
+                    break;
+                case "Training_PowerBar_withAIm":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_PowerBarCue_withAim);
+                    break;
+                case "Training_Cutout_withAim":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_CutoutCue_withAim);
+                    break;
+                case "Training_Bar_withAim":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BarCue_withAim);
                     break;
                 default:
                     break;

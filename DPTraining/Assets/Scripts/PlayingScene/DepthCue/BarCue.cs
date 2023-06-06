@@ -55,9 +55,14 @@ public class BarCue : MonoBehaviour
         }
     }
 
-    public void barAidUpdate()
+    public void barAidUpdate(bool isUpdating)
     {
         this.barCanvas.SetActive(true);
+        if (!isUpdating)
+        {
+            return;
+        }
+
 
         float distance = setDistance();
         float furthestMultiplier = 2.4f;

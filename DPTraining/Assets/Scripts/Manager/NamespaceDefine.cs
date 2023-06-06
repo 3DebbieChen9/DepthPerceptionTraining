@@ -7,19 +7,25 @@ namespace DepthPerceptionSystem
     public enum SystemMode
     {
         StartMode,
+        ExperimentSettingMode,
         CalibrationMode,
         SelectionMode,
         PunchSettingMode,
         TestingMode,
+        TrainingMode_Baseline,
+        TrainingMode_GroupA,
+        TrainingMode_GroupB,
+        TrainingMode_GroupC,
         TrainingMode,
         TrainingMode_LineCue,
-        TrainingMode_BallCue_onPlayer,
         TrainingMode_BallCue_onTarget,
-        TrainingMode_BallCue_onBoth,
-        TrainingMode_LineCuePlusBallCue,
         TrainingMode_BarCue,
         TrainingMode_CutoutCue,
-
+        TrainingMode_PowerBarCue,
+        TrainingMode_AimCue,
+        TrainingMode_BarCue_withAim,
+        TrainingMode_CutoutCue_withAim,
+        TrainingMode_PowerBarCue_withAim,
     }
 
     public enum MovingDirection
@@ -67,6 +73,13 @@ namespace DepthPerceptionSystem
         reaction, // unit中，等待反應結束
         comment, // Training 中，播放評語的階段 (評語播完才回到 ready or result)
         result // 每個 unit 結束後的最終結果
+    }
+
+    public enum ReactionTimeWarning
+    {
+        none,
+        first,
+        second,
     }
 
     public enum MovingSpeed
@@ -227,6 +240,134 @@ namespace DepthPerceptionSystem
         }
     }
 
+    public enum ExperimentSection
+    {
+        PreTest,
+        Training_1,
+        Training_2,
+        Training_3,
+        Training_4,
+        PostTest,
+    }
+    public class CoachMovement
+    {
+        public MovingDirection direction;
+        public Hand target;
+
+        public CoachMovement(MovingDirection _direction, Hand _target)
+        {
+            this.direction = _direction;
+            this.target = _target;
+        }
+    }
+
+    public class CoachMovementType
+    {
+        public CoachMovement[] movements;
+        public CoachMovementType(int group)
+        {
+            this.movements = new CoachMovement[7];
+            switch (group)
+            {
+                case 0:
+                    this.movements[0] = new CoachMovement(MovingDirection.Forward, Hand.Right);
+                    this.movements[1] = new CoachMovement(MovingDirection.Forward, Hand.Right);
+                    this.movements[2] = new CoachMovement(MovingDirection.Forward, Hand.Left);
+                    this.movements[3] = new CoachMovement(MovingDirection.Forward, Hand.Left);
+                    this.movements[4] = new CoachMovement(MovingDirection.Backward, Hand.Right);
+                    this.movements[5] = new CoachMovement(MovingDirection.Backward, Hand.Right);
+                    this.movements[6] = new CoachMovement(MovingDirection.Backward, Hand.Left);
+                    break;
+                case 1:
+                    this.movements[0] = new CoachMovement(MovingDirection.Forward, Hand.Right);
+                    this.movements[1] = new CoachMovement(MovingDirection.Forward, Hand.Right);
+                    this.movements[2] = new CoachMovement(MovingDirection.Forward, Hand.Left);
+                    this.movements[3] = new CoachMovement(MovingDirection.Backward, Hand.Right);
+                    this.movements[4] = new CoachMovement(MovingDirection.Backward, Hand.Right);
+                    this.movements[5] = new CoachMovement(MovingDirection.Backward, Hand.Left);
+                    this.movements[6] = new CoachMovement(MovingDirection.Backward, Hand.Left);
+                    break;
+                case 2:
+                    this.movements[0] = new CoachMovement(MovingDirection.Forward, Hand.Right);
+                    this.movements[1] = new CoachMovement(MovingDirection.Forward, Hand.Right);
+                    this.movements[2] = new CoachMovement(MovingDirection.Forward, Hand.Left);
+                    this.movements[3] = new CoachMovement(MovingDirection.Forward, Hand.Left);
+                    this.movements[4] = new CoachMovement(MovingDirection.Backward, Hand.Right);
+                    this.movements[5] = new CoachMovement(MovingDirection.Backward, Hand.Left);
+                    this.movements[6] = new CoachMovement(MovingDirection.Backward, Hand.Left);
+                    break;
+                default:
+                    this.movements[0] = new CoachMovement(MovingDirection.Forward, Hand.Right);
+                    this.movements[1] = new CoachMovement(MovingDirection.Forward, Hand.Left);
+                    this.movements[2] = new CoachMovement(MovingDirection.Forward, Hand.Left);
+                    this.movements[3] = new CoachMovement(MovingDirection.Backward, Hand.Right);
+                    this.movements[4] = new CoachMovement(MovingDirection.Backward, Hand.Right);
+                    this.movements[5] = new CoachMovement(MovingDirection.Backward, Hand.Left);
+                    this.movements[6] = new CoachMovement(MovingDirection.Backward, Hand.Left);
+                    break;
+            }
+
+        }
+    }
+
+    public class CoachType
+    {
+        public Hand handedness;
+        public CoachMovement[] coachMovements;
+
+        public CoachType()
+        {
+            this.handedness = Hand.Left;
+            this.coachMovements = new CoachMovement[7];
+        }
+    }
+
+    public class ExperimentSetting
+    {
+        public int subjectID;
+        public ExperimentSection experimentSection;
+        public SystemMode experimentMode;
+        public int experimentTrial;
+        public CoachType[] coachTypes;
+        public int[] selectedCoachTypes;
+        public float reactionTimeStandard;
+
+        public ExperimentSetting()
+        {
+            this.subjectID = 0;
+            this.experimentSection = ExperimentSection.PreTest;
+            this.experimentMode = SystemMode.TestingMode;
+            this.experimentTrial = 0;
+            this.selectedCoachTypes = new int[4];
+            for (int i = 0; i < 4; i++)
+            {
+                this.selectedCoachTypes[i] = 0;
+            }
+
+            this.coachTypes = new CoachType[8];
+            for (int i = 0; i < 8; i++)
+            {
+                this.coachTypes[i] = new CoachType();
+            }
+            this.coachTypes[0].handedness = Hand.Left;
+            this.coachTypes[0].coachMovements = new CoachMovementType(0).movements;
+            this.coachTypes[1].handedness = Hand.Left;
+            this.coachTypes[1].coachMovements = new CoachMovementType(1).movements;
+            this.coachTypes[2].handedness = Hand.Left;
+            this.coachTypes[2].coachMovements = new CoachMovementType(2).movements;
+            this.coachTypes[3].handedness = Hand.Left;
+            this.coachTypes[3].coachMovements = new CoachMovementType(3).movements;
+            this.coachTypes[4].handedness = Hand.Right;
+            this.coachTypes[4].coachMovements = new CoachMovementType(0).movements;
+            this.coachTypes[5].handedness = Hand.Right;
+            this.coachTypes[5].coachMovements = new CoachMovementType(1).movements;
+            this.coachTypes[6].handedness = Hand.Right;
+            this.coachTypes[6].coachMovements = new CoachMovementType(2).movements;
+            this.coachTypes[7].handedness = Hand.Right;
+            this.coachTypes[7].coachMovements = new CoachMovementType(3).movements;
+
+        }
+    }
     public class PlayingModeSetting
     {
         public float testingReadyTime;
@@ -280,6 +421,7 @@ namespace DepthPerceptionSystem
         public CoachDefaultValue coachDefaultValue;
         public EvaluationThreshold evaluationThreshold;
         public PlayingModeSetting playingModeSetting;
+        public float auditoryReactionTime;
 
         public SettingInfo(int a = 0)
         {
@@ -288,6 +430,7 @@ namespace DepthPerceptionSystem
             this.coachDefaultValue = new CoachDefaultValue();
             this.evaluationThreshold = new EvaluationThreshold();
             this.playingModeSetting = new PlayingModeSetting();
+            this.auditoryReactionTime = 0.284f;
         }
     }
 
@@ -327,7 +470,12 @@ namespace DepthPerceptionSystem
 
         public void addUnitResult(UnitResult unitResult)
         {
-            UnitResult tmp = new UnitResult(unitResult.unitNum, unitResult.isMoving, unitResult.isPunching, unitResult.isReach, unitResult.isStraight, unitResult.isReacting, unitResult.isMovingCorrectly, unitResult.isSuccess, unitResult.isOverTime, unitResult.reactionTime, unitResult.score, unitResult.hand, unitResult.armRotationAngle);
+            UnitResult tmp = new UnitResult(unitResult.unitNum,
+                                            unitResult.isMoving, unitResult.isPunching, unitResult.isReach, unitResult.isStraight, unitResult.isReacting, unitResult.isMovingCorrectly, unitResult.isSuccess, unitResult.isOverTime,
+                                            unitResult.reactionTime, unitResult.score,
+                                            unitResult.coachHandedness, unitResult.coachTargetShoulder, unitResult.coachMovingDirection,
+                                            unitResult.punchHand, unitResult.armRotationAngle, unitResult.userMovingDirection,
+                                            unitResult.distanceToLeftShoulder, unitResult.distanceToRightShoulder);
             this.unitResultList.Add(tmp);
         }
 
@@ -365,8 +513,15 @@ namespace DepthPerceptionSystem
         public float reactionTime;
         public int score;
 
-        public Hand hand;
+        public Hand coachHandedness;
+        public Hand coachTargetShoulder;
+        public MovingDirection coachMovingDirection;
+
+        public Hand punchHand;
         public ArmRotationAngle armRotationAngle;
+        public MovingDirection userMovingDirection;
+        public float distanceToLeftShoulder;
+        public float distanceToRightShoulder;
 
 
         public UnitResult()
@@ -385,13 +540,23 @@ namespace DepthPerceptionSystem
             this.reactionTime = 0.0f;
             this.score = 0;
 
-            this.hand = new Hand();
+            this.coachHandedness = Hand.None;
+            this.coachTargetShoulder = Hand.None;
+            this.coachMovingDirection = MovingDirection.Random;
+
+            this.punchHand = Hand.None;
             this.armRotationAngle = new ArmRotationAngle(0.0f, 0.0f, 0.0f);
+            this.userMovingDirection = MovingDirection.Random;
+            this.distanceToLeftShoulder = 0.0f;
+            this.distanceToRightShoulder = 0.0f;
         }
 
         public UnitResult(int _unitNum, bool _isMoving, bool _isPunching, bool _isReach,
                             bool _isStraight, bool _isReacting, bool _isMovingCorrectly, bool _isSuccess,
-                            bool _isOverTime, float _reactionTime, int _score, Hand _hand, ArmRotationAngle _armRotationAngle)
+                            bool _isOverTime, float _reactionTime, int _score,
+                            Hand _coachHandedness, Hand _coachTargetShoulder, MovingDirection _coachMovingDirection,
+                            Hand _punchHand, ArmRotationAngle _armRotationAngle, MovingDirection _userMovingDirection,
+                            float _distanceToLeftShoulder, float _directionToRightShoulder)
         {
             this.unitNum = _unitNum;
             this.isMoving = _isMoving;
@@ -407,8 +572,15 @@ namespace DepthPerceptionSystem
             this.reactionTime = _reactionTime;
             this.score = _score;
 
-            this.hand = _hand;
+            this.coachHandedness = _coachHandedness;
+            this.coachTargetShoulder = _coachTargetShoulder;
+            this.coachMovingDirection = _coachMovingDirection;
+
+            this.punchHand = _punchHand;
             this.armRotationAngle = _armRotationAngle;
+            this.userMovingDirection = _userMovingDirection;
+            this.distanceToLeftShoulder = _distanceToLeftShoulder;
+            this.distanceToRightShoulder = _directionToRightShoulder;
         }
 
         public void reset()
@@ -427,8 +599,15 @@ namespace DepthPerceptionSystem
             this.reactionTime = 0.0f;
             this.score = 0;
 
-            this.hand = Hand.None;
+            this.coachHandedness = Hand.None;
+            this.coachTargetShoulder = Hand.None;
+            this.coachMovingDirection = MovingDirection.Random;
+
+            this.punchHand = Hand.None;
             this.armRotationAngle = new ArmRotationAngle(0.0f, 0.0f, 0.0f);
+            this.userMovingDirection = MovingDirection.Random;
+            this.distanceToLeftShoulder = 0.0f;
+            this.distanceToRightShoulder = 0.0f;
         }
     }
 

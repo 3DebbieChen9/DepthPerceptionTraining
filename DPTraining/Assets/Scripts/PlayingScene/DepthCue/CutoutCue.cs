@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using DepthPerceptionSystem;
 
 public class CutoutCue : MonoBehaviour
 {
@@ -35,10 +36,13 @@ public class CutoutCue : MonoBehaviour
 
     }
 
-    void recenterUICanvas()
+    void FixedUpdate()
     {
-        this.cutoutCanvas.transform.DORotateQuaternion(Quaternion.Euler(this.playingModeManager.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.x, this.playingModeManager.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, this.playingModeManager.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.z), 0.0f);
-        this.cutoutCanvas.transform.DOMove(new Vector3(this.playingModeManager.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, 0.0f, this.playingModeManager.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z), 0.0f);
+        if (this.cutoutCanvas.activeSelf)
+        {
+            this.cutoutCanvas.transform.DORotateQuaternion(this.playingModeManager.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation, 0.0f);
+            this.cutoutCanvas.transform.DOMove(this.playingModeManager.mainManager.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position, 0.0f);
+        }
     }
 
     float calculateHorizatonalDistance(Vector3 p1, Vector3 p2)
@@ -51,54 +55,70 @@ public class CutoutCue : MonoBehaviour
         float distanceToRightShoulder = calculateHorizatonalDistance(userCenter.position, rightShoulder.position);
         float distanceToLeftShoulder = calculateHorizatonalDistance(userCenter.position, leftShoulder.position);
 
-        if (distanceToLeftShoulder <= distanceToRightShoulder)
-        {
-            return distanceToLeftShoulder;
-        }
-        else
+        // if (distanceToLeftShoulder <= distanceToRightShoulder)
+        // {
+        //     return distanceToLeftShoulder;
+        // }
+        // else
+        // {
+        //     return distanceToRightShoulder;
+        // }
+
+        if (this.playingModeManager.coachManager.coachShoudlerTarget == Hand.Right)
         {
             return distanceToRightShoulder;
         }
+        else
+        {
+            return distanceToLeftShoulder;
+        }
     }
 
-    public void cutoutAidUpdate()
+    public void cutoutAidUpdate(bool isUpdating)
     {
         this.cutoutCanvas.SetActive(true);
-        this.recenterUICanvas();
+        if (!isUpdating)
+        {
+            return;
+        }
 
-        float furthestMultiplier = 2.4f;
+        float furthestMultiplier = 2.5f;
         float furthestDistance = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength * furthestMultiplier;
-        float idealDistance = furthestDistance * 0.5f;
-        float idealDistanceMin = idealDistance - idealDistance * (3.0f / 8.0f);
+        float idealDistance = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength;
+        float idealDistanceMin = idealDistance - idealDistance * (1.0f / 20.0f);
         float idealDistanceMax = idealDistance + idealDistance * (3.0f / 8.0f);
 
         float distance = setDistance();
 
-        if (distance < idealDistanceMin)
+        float canvasWorstScale = 0.18f;
+        float canvasIdealScale = 0.72f;
+        float canvasScale = 0.5f;
+        if (distance <= idealDistanceMax && distance >= idealDistanceMin)
         {
-            Color newColor = Color.HSVToRGB(0f, 0.5f, 1.0f);
-            newColor.a = 0.6f;
-            this.image.color = newColor;
+            canvasScale = canvasIdealScale;
+        }
+        else if (distance < idealDistanceMin)
+        {
+            if (distance < 0.1f) { canvasScale = canvasWorstScale; }
+            else
+            {
+                float canvasAlmostIdealScale = 0.4f;
+                canvasScale = canvasAlmostIdealScale - (Mathf.Abs(distance - idealDistanceMin) / (idealDistanceMin) * Mathf.Abs(canvasAlmostIdealScale - canvasWorstScale));
+            }
         }
         else if (distance > idealDistanceMax)
         {
-            Color newColor = Color.HSVToRGB(0f, 1.0f, 0.6f);
-            newColor.a = 0.8f;
-            this.image.color = newColor;
+            if (distance > furthestDistance) { canvasScale = canvasWorstScale; }
+            else
+            {
+                canvasScale = canvasIdealScale - Mathf.Abs(distance - idealDistanceMax) / (idealDistanceMin) * Mathf.Abs(canvasIdealScale - canvasWorstScale);
+            }
         }
 
-        float canvasClosest = 600.0f;
-        float canvasFurthest = 850.0f;
-        float canvasLocalPositionZ = canvasClosest + (Mathf.Abs(distance - idealDistance) / (idealDistanceMin)) * (canvasFurthest - canvasClosest);
-        if (canvasLocalPositionZ < canvasClosest)
-        {
-            canvasLocalPositionZ = canvasClosest;
-        }
-        else if (canvasLocalPositionZ > canvasFurthest)
-        {
-            canvasLocalPositionZ = canvasFurthest;
-        }
-        // this.mask.localPosition = new Vector3(0.0f, -220.0f, canvasLocalPositionZ);
+        if (canvasScale < canvasWorstScale) { canvasScale = canvasWorstScale; }
+        else if (canvasScale > canvasIdealScale) { canvasScale = canvasIdealScale; }
+
+        this.mask.localScale = new Vector3(canvasScale, canvasScale, canvasScale);
     }
 
     public void closeCutoutAid()

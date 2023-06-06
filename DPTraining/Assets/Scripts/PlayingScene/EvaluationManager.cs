@@ -9,6 +9,7 @@ public class EvaluationManager : MonoBehaviour
     public GameObject startingPoint;
     public MovingDirection userMovingDirection = MovingDirection.Forward;
     public MovingDirection coachMovingDirection = MovingDirection.Forward;
+    public Hand coachTargetShoudler = Hand.None;
     public bool isDuringTheUnit = false;
     public bool userStartMoving = false;
     public bool userIsAtOrigin = false;
@@ -20,6 +21,13 @@ public class EvaluationManager : MonoBehaviour
     public Hand punchHand;
     [SerializeField]
     private GameObject ballWhenHitPrefab;
+
+    [SerializeField]
+    public Transform rightShoulder;
+    [SerializeField]
+    public Transform leftShoulder;
+    [SerializeField]
+    public Transform userCenter;
 
     public bool isHitTrigger;
 
@@ -52,6 +60,7 @@ public class EvaluationManager : MonoBehaviour
     {
         this.userMovingDirection = MovingDirection.Forward;
         this.coachMovingDirection = MovingDirection.Forward;
+        this.coachTargetShoudler = Hand.None;
         this.isDuringTheUnit = false;
         this.userStartMoving = false;
         this.punchHand = Hand.None;
@@ -96,33 +105,12 @@ public class EvaluationManager : MonoBehaviour
         this.punchHand = hand;
         switch (this.playingModeManager.mainManager.curSystemMode)
         {
-            case SystemMode.TrainingMode_BallCue_onPlayer: // On Player Only
-                this.playingModeManager.depthCueManager.GetComponent<BallCueOnPlayerManager>().destroyBallCueOnPlayer(punchHand);
-                break;
             case SystemMode.TrainingMode_BallCue_onTarget: // On Target Only
-                this.playingModeManager.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(punchHand);
-                break;
-            case SystemMode.TrainingMode_BallCue_onBoth: // On Player and Target
-            case SystemMode.TrainingMode_LineCuePlusBallCue: // Line Cue Plus Ball Cue
-                this.playingModeManager.depthCueManager.GetComponent<BallCueOnPlayerManager>().destroyBallCueOnPlayer(punchHand);
                 this.playingModeManager.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(punchHand);
                 break;
             default:
                 break;
         }
-
-        // if (this.isDuringTheUnit) {
-        //     this.playingModeManager.curUnitResult.isPunching = true;
-        //     this.playingModeManager.curUnitResult.isReacting = true;
-        //     // this.playingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand); // 改成在 Reach 的時候判斷是否伸直
-        //     // this.isDuringTheUnit = false;
-        //     // this.playingModeManager.unitOver();
-        // }
-        // else {
-        //     this.playingModeManager.curUnitResult.isPunching = false;
-        //     this.playingModeManager.curUnitResult.isReacting = false;
-        //     this.playingModeManager.curUnitResult.isStraight = false;
-        // }
     }
 
     public void userIsMoving()
@@ -130,6 +118,7 @@ public class EvaluationManager : MonoBehaviour
         this.playingModeManager.curUnitResult.isMoving = true;
         this.playingModeManager.curUnitResult.isReacting = true;
         this.playingModeManager.curUnitResult.isMovingCorrectly = this.directionModule.judgeMovingDirection();
+        this.playingModeManager.curUnitResult.userMovingDirection = this.userMovingDirection;
         // if (this.isDuringTheUnit) {
         //     this.playingModeManager.curUnitResult.isMoving = true;
         //     this.playingModeManager.curUnitResult.isReacting = true;
@@ -144,11 +133,33 @@ public class EvaluationManager : MonoBehaviour
 
     public void userIsHitCoach(Hand hand, bool isHitShoulder)
     {
-        this.playingModeManager.curUnitResult.isReach = isHitShoulder ? true : false;
+        if (isHitShoulder)
+        {
+            if (hand == Hand.Left && this.coachTargetShoudler == Hand.Right)
+            {
+                this.playingModeManager.curUnitResult.isReach = true;
+            }
+            else if (hand == Hand.Right && this.coachTargetShoudler == Hand.Left)
+            {
+                this.playingModeManager.curUnitResult.isReach = true;
+            }
+            else
+            {
+                this.playingModeManager.curUnitResult.isReach = false;
+            }
+        }
+        else
+        {
+            this.playingModeManager.curUnitResult.isReach = false;
+        }
+        // this.playingModeManager.curUnitResult.isReach = isHitShoulder ? true : false;
         this.playingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
-        this.playingModeManager.curUnitResult.hand = hand;
+        this.playingModeManager.curUnitResult.punchHand = hand;
         this.playingModeManager.curUnitResult.armRotationAngle = this.straightModule.getArmAngle(hand);
+        this.playingModeManager.curUnitResult.distanceToLeftShoulder = calculateHorizatonalDistance(userCenter.position, leftShoulder.position);
+        this.playingModeManager.curUnitResult.distanceToRightShoulder = calculateHorizatonalDistance(userCenter.position, rightShoulder.position);
         this.isDuringTheUnit = false;
+        this.playingModeManager.visualAidIsUpdating = false;
         this.playingModeManager.unitOver();
 
         if (this.playingModeManager.curUnitResult.isStraight)
@@ -188,51 +199,22 @@ public class EvaluationManager : MonoBehaviour
         }
     }
 
-    void instantiateBallWhenHit(Hand hand, bool isHitShoulder, bool isStraight)
+    public void instantiateBallWhenHit(Hand hand, Vector3 position, Quaternion rotation, GameObject parent, bool isReach)
     {
-        foreach (Transform child in this.playingModeManager.coachManager.coachAvatar.transform)
+        GameObject[] hitMarker = GameObject.FindGameObjectsWithTag("BallWhenHit");
+        if (hitMarker.Length > 0)
         {
-            if (child.gameObject.tag == "BallWhenHit")
-            {
-                // Destroy(child.gameObject);
-                return;
-            }
+            return;
         }
 
         GameObject ball = null;
-        switch (hand)
-        {
-            case Hand.Right:
-                ball = Instantiate(this.ballWhenHitPrefab,
-                                    this.playingModeManager.mainManager.BoxingGloveEdgeRight.position,
-                                    this.playingModeManager.mainManager.BoxingGloveEdgeRight.rotation,
-                                    this.playingModeManager.coachManager.coachAvatar.transform);
-                ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-                break;
-            case Hand.Left:
-                ball = Instantiate(this.ballWhenHitPrefab,
-                                    this.playingModeManager.mainManager.BoxingGloveEdgeLeft.position,
-                                    this.playingModeManager.mainManager.BoxingGloveEdgeLeft.rotation,
-                                    this.playingModeManager.coachManager.coachAvatar.transform);
-                ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-                break;
-        }
-
-        if (isStraight && isHitShoulder)
+        ball = Instantiate(this.ballWhenHitPrefab,
+                            position,
+                            rotation,
+                            parent.transform);
+        if (isReach && this.playingModeManager.mainManager.curSystemMode != SystemMode.TestingMode)
         {
             ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.green);
-        }
-        else if (isStraight && !isHitShoulder)
-        {
-            ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.yellow);
-        }
-        else if (!isStraight && isHitShoulder)
-        {
-            ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.magenta);
-        }
-        else if (!isStraight && !isHitShoulder)
-        {
-            ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.red);
         }
     }
 
@@ -259,6 +241,7 @@ public class EvaluationManager : MonoBehaviour
         else
         {
             comment.comments.Add(this.playingModeManager.UIManager.userNotMoving());
+            comment.comments.Add(this.playingModeManager.UIManager.movingWrongDirection());
         }
 
         if (this.playingModeManager.curUnitResult.isPunching)
@@ -287,14 +270,29 @@ public class EvaluationManager : MonoBehaviour
             }
             else
             {
-                comment.comments.Add(this.playingModeManager.UIManager.reachButNotStraight());
+                comment.comments.Add(this.playingModeManager.UIManager.armNotStraight());
             }
         }
         else
         {
             comment.comments.Add(this.playingModeManager.UIManager.userNotReach());
+            if (this.playingModeManager.curUnitResult.isStraight)
+            {
+                comment.comments.Add(this.playingModeManager.UIManager.armIsStraight());
+            }
+            else
+            {
+                comment.comments.Add(this.playingModeManager.UIManager.armNotStraight());
+            }
         }
 
+
+
         return comment;
+    }
+
+    public float calculateHorizatonalDistance(Vector3 p1, Vector3 p2)
+    {
+        return Mathf.Sqrt(Mathf.Pow(p1.x - p2.x, 2) + Mathf.Pow(p1.z - p2.z, 2));
     }
 }

@@ -21,6 +21,8 @@ public class MainManager : MonoBehaviour
     public SelectionInfo mySelectionInfo;
     [SerializeField]
     public SettingInfo mySettingInfo;
+    [SerializeField]
+    public ExperimentSetting myExperimentSetting;
 
     [SerializeField]
     public SystemMode curSystemMode = SystemMode.StartMode;
@@ -107,6 +109,7 @@ public class MainManager : MonoBehaviour
         this.myUserInfo = new UserInfo();
         this.mySelectionInfo = new SelectionInfo();
         this.mySettingInfo = new SettingInfo();
+        this.myExperimentSetting = new ExperimentSetting();
         this.curSystemMode = SystemMode.StartMode;
 
         this.sceneOriginPosition = new Vector3(0.0f, 0.0f, 0.0f);
@@ -182,16 +185,12 @@ public class MainManager : MonoBehaviour
         if (isCenter)
         {
             Color newColor = new Color(0.12f, 0.53f, 0.14f, 0.56f);
-            // this.sceneOrigin.GetComponent<MeshRenderer>().material.color = newColor;
             this.sceneOrigin.GetComponent<Renderer>().material.SetColor("_Color", newColor);
-            Debug.Log("Scene Origin change color to GREEN");
         }
         else
         {
             Color newColor = new Color(1.0f, 0.0f, 0.0f, 0.56f);
-            // this.sceneOrigin.GetComponent<MeshRenderer>().material.color = newColor;
             this.sceneOrigin.GetComponent<Renderer>().material.SetColor("_Color", newColor);
-            Debug.Log("Scene Origin change color to RED");
         }
     }
 
@@ -217,11 +216,21 @@ public class MainManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void saveToJSON_experiment(ExperimentSetting experimentSetting)
+    {
+        string jsonString = JsonConvert.SerializeObject(experimentSetting);
+        string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_{experimentSetting.subjectID}_ExperimentSetting.json";
+        File.WriteAllText(filePath, jsonString);
+
+        Debug.Log($"ExperimentSetting saved to {filePath}");
+    }
+
     public void saveToJSON_user(UserInfo userInfo)
     {
         string jsonString = JsonConvert.SerializeObject(userInfo);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-        string filePath = $"{Application.persistentDataPath}/{dateTime}_UserInfo.json";
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_{this.myExperimentSetting.subjectID}_{this.myExperimentSetting.experimentSection}_UserInfo.json";
         File.WriteAllText(filePath, jsonString);
 
         Debug.Log($"UserInfo saved to {filePath}");
@@ -248,17 +257,18 @@ public class MainManager : MonoBehaviour
     {
         string jsonString = JsonConvert.SerializeObject(testResult);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-        string mode = this.mySelectionInfo.selectedMode == SystemMode.TestingMode ? "Test" : "Training";
-        string filePath = $"{Application.persistentDataPath}/{dateTime}_{mode}TotalResult.json";
+        string mode = this.myExperimentSetting.experimentMode == SystemMode.TestingMode ? "Test" : "Training";
+        // string mode = this.mySelectionInfo.selectedMode == SystemMode.TestingMode ? "Test" : "Training";
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_{this.myExperimentSetting.subjectID}_{this.myExperimentSetting.experimentSection}-{this.myExperimentSetting.experimentTrial}_{mode}_TotalResult.json";
         File.WriteAllText(filePath, jsonString);
 
-        Debug.Log($"{mode}Result saved to {filePath}");
+        Debug.Log($"{mode} Result saved to {filePath}");
     }
     public void saveToJSON_unitResult(UnitResult unitResult, int unitNum)
     {
         string jsonString = JsonConvert.SerializeObject(unitResult);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-        string filePath = $"{Application.persistentDataPath}/{dateTime}_UniResult_{unitNum}.json";
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_{this.myExperimentSetting.subjectID}_{this.myExperimentSetting.experimentSection}-{this.myExperimentSetting.experimentTrial}_UniResult_{unitNum}.json";
         File.WriteAllText(filePath, jsonString);
 
         Debug.Log($"UnitResult_{unitNum} saved to {filePath}");

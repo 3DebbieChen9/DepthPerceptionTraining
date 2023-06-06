@@ -9,14 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: 398ebb6abad0cba4a91b4aa028676680
   - enabled: 1
+    path: Assets/Scenes/ExperimentSettingScene.unity
+    guid: 074eebba0b2ff1d4cbf67a6b286ab273
+  - enabled: 1
     path: Assets/Scenes/CalibrationScene.unity
     guid: 601ae1020bf6d954a98afb0d62125ecc
   - enabled: 1
     path: Assets/Scenes/PunchSettingScene.unity
     guid: 8adf96f6d949b1e4fab619d07b600a9e
-  - enabled: 1
-    path: Assets/Scenes/SelectionScene.unity
-    guid: 9aba0e80153c02e48ab7f69febca175c
   - enabled: 1
     path: Assets/Scenes/TestingScene.unity
     guid: 0e0c4ac07ddd13a458d21d6bac34454a

@@ -29,7 +29,8 @@ public class HitCoachInteraction : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (this.evaluationManager.isHitTrigger) {
+        if (this.evaluationManager.isHitTrigger)
+        {
             return;
         }
 
@@ -47,12 +48,20 @@ public class HitCoachInteraction : MonoBehaviour
             if (other.gameObject.tag == "Glove_L")
             {
                 this.evaluationManager.userIsHitCoach(Hand.Left, false);
+                this.evaluationManager.instantiateBallWhenHit(Hand.Left,
+                                                              other.gameObject.transform.position,
+                                                              other.gameObject.transform.rotation,
+                                                              this.gameObject, false);
                 OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.LTouch);
                 Invoke("stopControllerVibration", 0.3f);
             }
             else if (other.gameObject.tag == "Glove_R")
             {
                 this.evaluationManager.userIsHitCoach(Hand.Right, false);
+                this.evaluationManager.instantiateBallWhenHit(Hand.Right,
+                                                              other.gameObject.transform.position,
+                                                              other.gameObject.transform.rotation,
+                                                              this.gameObject, false);
                 OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.RTouch);
                 Invoke("stopControllerVibration", 0.3f);
             }

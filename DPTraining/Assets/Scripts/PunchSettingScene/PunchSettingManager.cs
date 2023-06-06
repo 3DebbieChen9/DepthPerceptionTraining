@@ -41,6 +41,8 @@ public class PunchSettingManager : MonoBehaviour
     private TMP_Text coachResultText;
     [SerializeField]
     private TMP_Text coachResultButtonText;
+    [SerializeField]
+    private TMP_Text instructionText;
 
     [SerializeField]
     private GameObject straightPanel;
@@ -74,14 +76,14 @@ public class PunchSettingManager : MonoBehaviour
             this.reloadPunchSettingScene();
         }
 
-        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
+        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch) && this.curDataNum <= 5)
         {
             bool isPunchStraight = this.straightModule.judgeArmStraight(Hand.Right);
             ArmRotationAngle armRotationAngle = this.straightModule.getArmAngle(Hand.Right);
             this.displayPunchUnitResult(Hand.Right, isPunchStraight, armRotationAngle);
         }
 
-        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch))
+        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch) && this.curDataNum > 5)
         {
             bool isPunchStraight = this.straightModule.judgeArmStraight(Hand.Left);
             ArmRotationAngle armRotationAngle = this.straightModule.getArmAngle(Hand.Left);
@@ -187,6 +189,11 @@ public class PunchSettingManager : MonoBehaviour
 
     public void savePunchUnitResult()
     {
+        if (this.handText.text == "")
+        {
+            return;
+        }
+
         this.punchUnitTestResult.addUnitResult(this.punchStraightUnit);
         this.curDataNum++;
         if (this.curDataNum > 10)
@@ -204,6 +211,10 @@ public class PunchSettingManager : MonoBehaviour
         }
         else
         {
+            if (curDataNum == 6)
+            {
+                this.instructionText.text = "準備好請用<color=#FFA6FF>左手</color>向前出拳，伸直時按下'X'\n下方顯示數據後請按「儲存」";
+            }
             this.curDataNumText.text = $"{curDataNum}/10";
             this.handText.text = "";
             this.systemResultText.text = "";
@@ -228,6 +239,7 @@ public class PunchSettingManager : MonoBehaviour
         this.punchUnitTestResult.reset();
         this.curDataNum = 1;
         this.curDataNumText.text = "1/10";
+        this.instructionText.text = "準備好請用<color=#FFA6FF>右手</color>向前出拳，伸直時按下'A'\n下方顯示數據後請按「儲存」";
         this.handText.text = "";
         this.systemResultText.text = "";
         this.curStraightAngleText.text = "";
@@ -263,7 +275,17 @@ public class PunchSettingManager : MonoBehaviour
 
     public void btnSelectionSceneClick()
     {
-        this.mainManager.changeScene("SelectionScene");
+        // this.mainManager.changeScene("SelectionScene");
+        this.mainManager.curSystemMode = this.mainManager.myExperimentSetting.experimentMode;
+        switch (this.mainManager.myExperimentSetting.experimentMode)
+        {
+            case SystemMode.TestingMode:
+                this.mainManager.changeScene("TestingScene");
+                break;
+            default:
+                this.mainManager.changeScene("TrainingScene");
+                break;
+        }
         // this.rightStraightCollider = this.mainManager.rightUpperArm_IK.transform.Find("StraightCollider(Clone)");
         // if (this.rightStraightCollider)
         // {
