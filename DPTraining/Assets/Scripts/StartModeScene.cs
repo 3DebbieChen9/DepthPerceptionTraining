@@ -27,7 +27,8 @@ public class StartModeScene : MonoBehaviour
     {
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
         {
-            string sceneName = "CalibrationScene";
+            // string sceneName = "CalibrationScene";
+            string sceneName = "ExperimentSettingScene";
             Debug.Log($"Change Scene to {sceneName}");
             SceneManager.LoadScene(sceneName);
         }

@@ -47,10 +47,11 @@ public class HitTargetInteraction : MonoBehaviour
             this.evaluationManager.playingModeManager.coachManager.stopMoving();
             this.evaluationManager.isHitTrigger = true;
             this.evaluationManager.reachModule.reachTarget(Hand.Left);
+            bool reachCorrectTarget = this.evaluationManager.coachTargetShoudler == Hand.Right ? true : false;
             this.evaluationManager.instantiateBallWhenHit(Hand.Left,
                                                           other.gameObject.transform.position,
                                                           other.gameObject.transform.rotation,
-                                                          this.gameObject, true);
+                                                          this.gameObject, reachCorrectTarget);
             OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.LTouch);
             Invoke("stopControllerVibration", 0.3f);
         }
@@ -59,10 +60,11 @@ public class HitTargetInteraction : MonoBehaviour
             this.evaluationManager.playingModeManager.coachManager.stopMoving();
             this.evaluationManager.isHitTrigger = true;
             this.evaluationManager.reachModule.reachTarget(Hand.Right);
+            bool reachCorrectTarget = this.evaluationManager.coachTargetShoudler == Hand.Left ? true : false;
             this.evaluationManager.instantiateBallWhenHit(Hand.Right,
                                                           other.gameObject.transform.position,
                                                           other.gameObject.transform.rotation,
-                                                          this.gameObject, true);
+                                                          this.gameObject, reachCorrectTarget);
             OVRInput.SetControllerVibration(vibrationFrequency, vibrationAmplitude, OVRInput.Controller.RTouch);
             Invoke("stopControllerVibration", 0.3f);
         }

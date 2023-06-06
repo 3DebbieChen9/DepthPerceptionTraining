@@ -76,7 +76,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
         aidSource.clip = s.clip;
-        // aidSource.loop = true;
         aidSource.Play();
     }
 

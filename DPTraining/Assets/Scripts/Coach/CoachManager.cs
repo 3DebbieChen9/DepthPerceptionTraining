@@ -14,6 +14,15 @@ public class CoachManager : MonoBehaviour
     public GameObject coachAvatar;
     public Animator coachAnimator;
     public MovingDirection coachMovingDirection;
+    public Hand coachShoudlerTarget;
+    [SerializeField]
+    private GameObject rightShoudlerTarget;
+    [SerializeField]
+    private GameObject leftShoudlerTarget;
+    [SerializeField]
+    public Transform rightShoulder;
+    [SerializeField]
+    public Transform leftShoulder;
     [SerializeField]
     private Vector3 coachInitialPosition = new Vector3(0.0f, 0.0f, 0.0f);
     private float userArmLength;
@@ -48,7 +57,15 @@ public class CoachManager : MonoBehaviour
 
     public void coachSettingInitial()
     {
-        this.coachAnimator.SetBool("LeftHanded", this.playingModeManager.mainManager.mySelectionInfo.coachIsLeftHanded);
+        // this.coachAnimator.SetBool("LeftHanded", this.playingModeManager.mainManager.mySelectionInfo.coachIsLeftHanded);
+        if (this.playingModeManager.mainManager.myExperimentSetting.coachTypes[this.playingModeManager.mainManager.myExperimentSetting.selectedCoachTypes[this.playingModeManager.mainManager.myExperimentSetting.experimentTrial]].handedness == Hand.Right)
+        {
+            this.coachAnimator.SetBool("LeftHanded", false);
+        }
+        else
+        {
+            this.coachAnimator.SetBool("LeftHanded", true);
+        }
         this.userArmLength = this.playingModeManager.mainManager.myUserInfo.userBodySize.armLength;
         this.avtarCenterToEdgeLength = this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.avtarCenterToEdgeLength;
         this.distanceToUserMultiple = this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.distanceToUserMultiple;
@@ -119,7 +136,7 @@ public class CoachManager : MonoBehaviour
         Invoke("moveToInitialPosition", delayTime);
     }
 
-    public void movement(MovingSpeed speed = MovingSpeed.Random, MovingDirection movingDirection = MovingDirection.Random)
+    public void movement(Hand targetShouder, MovingSpeed speed = MovingSpeed.Random, MovingDirection movingDirection = MovingDirection.Random)
     {
         float distanceMin = 0.0f;
         float distanceMax = 0.0f;
@@ -163,12 +180,31 @@ public class CoachManager : MonoBehaviour
                 break;
         }
         float distance = UnityEngine.Random.Range(distanceMin, distanceMax);
-        this.startMoving(movingDirection, coachMoveSpeed, distance);
+        this.startMoving(movingDirection, coachMoveSpeed, distance, targetShouder);
     }
 
-    public void startMoving(MovingDirection movingDirection, float speed, float distance)
+    public void eraseCoachShoudlerTarget()
+    {
+        this.rightShoudlerTarget.SetActive(false);
+        this.leftShoudlerTarget.SetActive(false);
+    }
+    public void startMoving(MovingDirection movingDirection, float speed, float distance, Hand targetShoudler)
     {
         this.coachMovingDirection = movingDirection;
+        this.coachShoudlerTarget = targetShoudler;
+        switch (this.coachShoudlerTarget)
+        {
+            case Hand.Right:
+                this.rightShoudlerTarget.SetActive(true);
+                this.leftShoudlerTarget.SetActive(false);
+                break;
+            case Hand.Left:
+                this.rightShoudlerTarget.SetActive(false);
+                this.leftShoudlerTarget.SetActive(true);
+                break;
+            default:
+                break;
+        }
         Vector3 movingDirectionVector = new Vector3(0.0f, 0.0f, 0.0f);
         if (movingDirection == MovingDirection.Forward)
         {
@@ -208,11 +244,11 @@ public class CoachManager : MonoBehaviour
     {
         if (movingDirection == MovingDirection.Forward)
         {
-            this.startMoving(movingDirection, speed, this.moveDistanceForwardMax);
+            this.startMoving(movingDirection, speed, this.moveDistanceForwardMax, Hand.None);
         }
         else
         {
-            this.startMoving(movingDirection, speed, this.moveDistanceBackwardMax);
+            this.startMoving(movingDirection, speed, this.moveDistanceBackwardMax, Hand.None);
         }
     }
 }

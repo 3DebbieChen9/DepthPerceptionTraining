@@ -9,6 +9,7 @@ public class EvaluationManager : MonoBehaviour
     public GameObject startingPoint;
     public MovingDirection userMovingDirection = MovingDirection.Forward;
     public MovingDirection coachMovingDirection = MovingDirection.Forward;
+    public Hand coachTargetShoudler = Hand.None;
     public bool isDuringTheUnit = false;
     public bool userStartMoving = false;
     public bool userIsAtOrigin = false;
@@ -20,6 +21,13 @@ public class EvaluationManager : MonoBehaviour
     public Hand punchHand;
     [SerializeField]
     private GameObject ballWhenHitPrefab;
+
+    [SerializeField]
+    public Transform rightShoulder;
+    [SerializeField]
+    public Transform leftShoulder;
+    [SerializeField]
+    public Transform userCenter;
 
     public bool isHitTrigger;
 
@@ -52,6 +60,7 @@ public class EvaluationManager : MonoBehaviour
     {
         this.userMovingDirection = MovingDirection.Forward;
         this.coachMovingDirection = MovingDirection.Forward;
+        this.coachTargetShoudler = Hand.None;
         this.isDuringTheUnit = false;
         this.userStartMoving = false;
         this.punchHand = Hand.None;
@@ -109,6 +118,7 @@ public class EvaluationManager : MonoBehaviour
         this.playingModeManager.curUnitResult.isMoving = true;
         this.playingModeManager.curUnitResult.isReacting = true;
         this.playingModeManager.curUnitResult.isMovingCorrectly = this.directionModule.judgeMovingDirection();
+        this.playingModeManager.curUnitResult.userMovingDirection = this.userMovingDirection;
         // if (this.isDuringTheUnit) {
         //     this.playingModeManager.curUnitResult.isMoving = true;
         //     this.playingModeManager.curUnitResult.isReacting = true;
@@ -123,10 +133,31 @@ public class EvaluationManager : MonoBehaviour
 
     public void userIsHitCoach(Hand hand, bool isHitShoulder)
     {
-        this.playingModeManager.curUnitResult.isReach = isHitShoulder ? true : false;
+        if (isHitShoulder)
+        {
+            if (hand == Hand.Left && this.coachTargetShoudler == Hand.Right)
+            {
+                this.playingModeManager.curUnitResult.isReach = true;
+            }
+            else if (hand == Hand.Right && this.coachTargetShoudler == Hand.Left)
+            {
+                this.playingModeManager.curUnitResult.isReach = true;
+            }
+            else
+            {
+                this.playingModeManager.curUnitResult.isReach = false;
+            }
+        }
+        else
+        {
+            this.playingModeManager.curUnitResult.isReach = false;
+        }
+        // this.playingModeManager.curUnitResult.isReach = isHitShoulder ? true : false;
         this.playingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
-        this.playingModeManager.curUnitResult.hand = hand;
+        this.playingModeManager.curUnitResult.punchHand = hand;
         this.playingModeManager.curUnitResult.armRotationAngle = this.straightModule.getArmAngle(hand);
+        this.playingModeManager.curUnitResult.distanceToLeftShoulder = calculateHorizatonalDistance(userCenter.position, leftShoulder.position);
+        this.playingModeManager.curUnitResult.distanceToRightShoulder = calculateHorizatonalDistance(userCenter.position, rightShoulder.position);
         this.isDuringTheUnit = false;
         this.playingModeManager.visualAidIsUpdating = false;
         this.playingModeManager.unitOver();
@@ -210,6 +241,7 @@ public class EvaluationManager : MonoBehaviour
         else
         {
             comment.comments.Add(this.playingModeManager.UIManager.userNotMoving());
+            comment.comments.Add(this.playingModeManager.UIManager.movingWrongDirection());
         }
 
         if (this.playingModeManager.curUnitResult.isPunching)
@@ -238,14 +270,29 @@ public class EvaluationManager : MonoBehaviour
             }
             else
             {
-                comment.comments.Add(this.playingModeManager.UIManager.reachButNotStraight());
+                comment.comments.Add(this.playingModeManager.UIManager.armNotStraight());
             }
         }
         else
         {
             comment.comments.Add(this.playingModeManager.UIManager.userNotReach());
+            if (this.playingModeManager.curUnitResult.isStraight)
+            {
+                comment.comments.Add(this.playingModeManager.UIManager.armIsStraight());
+            }
+            else
+            {
+                comment.comments.Add(this.playingModeManager.UIManager.armNotStraight());
+            }
         }
 
+
+
         return comment;
+    }
+
+    public float calculateHorizatonalDistance(Vector3 p1, Vector3 p2)
+    {
+        return Mathf.Sqrt(Mathf.Pow(p1.x - p2.x, 2) + Mathf.Pow(p1.z - p2.z, 2));
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using DepthPerceptionSystem;
 
 public class PowerBarCue : MonoBehaviour
 {
@@ -57,13 +58,21 @@ public class PowerBarCue : MonoBehaviour
         float distanceToRightShoulder = calculateHorizatonalDistance(userCenter.position, rightShoulder.position);
         float distanceToLeftShoulder = calculateHorizatonalDistance(userCenter.position, leftShoulder.position);
 
-        if (distanceToLeftShoulder <= distanceToRightShoulder)
+        // if (distanceToLeftShoulder <= distanceToRightShoulder)
+        // {
+        //     return distanceToLeftShoulder;
+        // }
+        // else
+        // {
+        //     return distanceToRightShoulder;
+        // }
+        if (this.playingModeManager.coachManager.coachShoudlerTarget == Hand.Right)
         {
-            return distanceToLeftShoulder;
+            return distanceToRightShoulder;
         }
         else
         {
-            return distanceToRightShoulder;
+            return distanceToLeftShoulder;
         }
     }
 

@@ -554,6 +554,7 @@
 "Assets/Scripts/FunctionDeveloping/UserSimulate.cs"
 "Assets/Scripts/KeypadInput.cs"
 "Assets/Scripts/Manager/AudioManager.cs"
+"Assets/Scripts/Manager/ExperimentSettingManager.cs"
 "Assets/Scripts/Manager/InstructionsText.cs"
 "Assets/Scripts/Manager/MainManager.cs"
 "Assets/Scripts/Manager/NamespaceDefine.cs"

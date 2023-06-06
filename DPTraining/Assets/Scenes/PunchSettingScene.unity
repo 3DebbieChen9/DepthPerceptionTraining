@@ -4661,7 +4661,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6E96\u5099\u597D\u5373\u53EF\u5411\u524D\u51FA\u62F3\n(\u524D\u4E94\u6B21\u8ACB\u7528\u53F3\u624B\uFF0C\u5F8C\u4E94\u6B21\u8ACB\u7528\u5DE6\u624B)\n"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
   m_sharedMaterial: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
@@ -5985,6 +5985,7 @@ MonoBehaviour:
   systemResultText: {fileID: 2123179305}
   coachResultText: {fileID: 2113555304}
   coachResultButtonText: {fileID: 681521104}
+  instructionText: {fileID: 1551279218}
   straightPanel: {fileID: 606981426}
   straightResultPanel: {fileID: 1485373981}
   straightResultText: {fileID: 1127224096}

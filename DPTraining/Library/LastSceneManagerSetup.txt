@@ -3,6 +3,10 @@ sceneSetups:
   isLoaded: 1
   isActive: 1
   isSubScene: 0
+- path: Assets/Scenes/ExperimentSettingScene.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
 - path: Assets/Scenes/CalibrationScene.unity
   isLoaded: 0
   isActive: 0
@@ -20,14 +24,6 @@ sceneSetups:
   isActive: 0
   isSubScene: 0
 - path: Assets/Scenes/TrainingScene.unity
-  isLoaded: 0
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Scenes/FunctionDeveloping/CoachMovement.unity
-  isLoaded: 0
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Scenes/FunctionDeveloping/ScreenOverlay.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
