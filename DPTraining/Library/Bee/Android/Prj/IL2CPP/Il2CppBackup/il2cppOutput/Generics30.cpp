@@ -332,10 +332,16 @@ struct LinkedPoolItem_1_tD677E54AEDFCA19642ADA7F09E665AC2A79625DF;
 struct LinkedPool_1_t27505BB5E276B4361ACE769F2922D5FDC6742877;
 // UnityEngine.UIElements.UQueryState`1/ListQueryMatcher`1<System.Object,System.Object>
 struct ListQueryMatcher_1_t4D10BEF648526B008BEB75C8576A7D1EBFD73A83;
+// UnityEngine.UI.TableUI.ListWrapper`1<System.Boolean>
+struct ListWrapper_1_t44E9FAD1EDC428666E19523DEC8E73394EC34A88;
+// UnityEngine.UI.TableUI.ListWrapper`1<System.Object>
+struct ListWrapper_1_t6D238F37C94D518CD4F93A9B9A9A6A6A16E3C8B2;
 // System.Collections.Generic.List`1<System.ArraySegment`1<System.Byte>>
 struct List_1_tA624903E1259A700E57AC71565033F4E3C8470F9;
 // System.Collections.Generic.List`1<System.Collections.Generic.KeyValuePair`2<UnityEngine.PropertyName,System.Object>>
 struct List_1_t60F39D768DAD2345527AD3EE73FAB2667DF4F260;
+// System.Collections.Generic.List`1<System.Boolean>
+struct List_1_t01207CE5982A7640E56B1F9F672A06F96B09367A;
 // System.Collections.Generic.List`1<UnityEngine.UIElements.IEventHandler>
 struct List_1_t6FBD33EFCD307A54E0E8F62AAA0677E2ADAE58D3;
 // System.Collections.Generic.List`1<UnityEngine.UIElements.Experimental.IValueAnimationUpdate>
@@ -1841,6 +1847,20 @@ struct LinkedPool_1_t27505BB5E276B4361ACE769F2922D5FDC6742877  : public RuntimeO
 	RuntimeObject* ___m_PoolFirst_3;
 	// System.Int32 UnityEngine.UIElements.UIR.LinkedPool`1::<Count>k__BackingField
 	int32_t ___U3CCountU3Ek__BackingField_4;
+};
+
+// UnityEngine.UI.TableUI.ListWrapper`1<System.Boolean>
+struct ListWrapper_1_t44E9FAD1EDC428666E19523DEC8E73394EC34A88  : public RuntimeObject
+{
+	// System.Collections.Generic.List`1<T> UnityEngine.UI.TableUI.ListWrapper`1::list
+	List_1_t01207CE5982A7640E56B1F9F672A06F96B09367A* ___list_0;
+};
+
+// UnityEngine.UI.TableUI.ListWrapper`1<System.Object>
+struct ListWrapper_1_t6D238F37C94D518CD4F93A9B9A9A6A6A16E3C8B2  : public RuntimeObject
+{
+	// System.Collections.Generic.List`1<T> UnityEngine.UI.TableUI.ListWrapper`1::list
+	List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* ___list_0;
 };
 
 // System.Collections.Generic.List`1<System.ArraySegment`1<System.Byte>>
@@ -32379,6 +32399,38 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ListQueryMatcher_1__ctor_m1F8D3B17CEBD63
 {
 	{
 		UQueryMatcher__ctor_m669C00EE8CF4DA08ED95F9A511E6627FAEA0343E((UQueryMatcher_tF8783F54BA397641240DA7025126F6301EF53FF8*)__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void UnityEngine.UI.TableUI.ListWrapper`1<System.Boolean>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ListWrapper_1__ctor_mD5B3C4C4C0BD7267C044AB7A6734004320D984BD_gshared (ListWrapper_1_t44E9FAD1EDC428666E19523DEC8E73394EC34A88* __this, const RuntimeMethod* method) 
+{
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2((RuntimeObject*)__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void UnityEngine.UI.TableUI.ListWrapper`1<System.Object>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ListWrapper_1__ctor_mDED09F55C95E45CCA87CB87AD7A46E95969F84C2_gshared (ListWrapper_1_t6D238F37C94D518CD4F93A9B9A9A6A6A16E3C8B2* __this, const RuntimeMethod* method) 
+{
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2((RuntimeObject*)__this, NULL);
 		return;
 	}
 }

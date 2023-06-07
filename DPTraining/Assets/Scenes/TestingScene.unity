@@ -661,6 +661,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
+    - target: {fileID: 1518550626, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1569963939, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -761,6 +765,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -668
       objectReference: {fileID: 0}
+    - target: {fileID: 281988850333150745, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 281988850333150745, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 281988850333150745, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 281988850333150745, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 451114632477251029, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_text
       value: "\u9032\u884C\u4E0B\u4E00\u6B21\u6E2C\u8A66"
@@ -773,6 +793,30 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
+    - target: {fileID: 584019480244495215, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584019480244495215, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584019480244495215, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584019480244495215, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584019480244495215, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584019480244495215, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 727500344360360631, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -965,6 +1009,22 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
+    - target: {fileID: 3014081349788409524, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014081349788409524, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014081349788409524, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014081349788409524, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3272868543788353210, guid: c379a1f0af7ba594b82666bc25683d51, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1594,6 +1654,8 @@ MonoBehaviour:
   finalResultCanvas: {fileID: 1518550625}
   finalResultTitle: {fileID: 1462037440}
   finalResultText: {fileID: 1375575481}
+  finalResultTableSubTitle: {fileID: 0}
+  finalResultTableText: {fileID: 0}
   finalButtonsCanvas: {fileID: 1301199049}
   finalButtonsTitle: {fileID: 436195934}
   buttonsCanvas: {fileID: 436195933}

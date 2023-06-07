@@ -207,10 +207,6 @@ public class CalibrationModeManager : MonoBehaviour
                 this.mainManager.OVRControllerRayRight.RayInteractorSwitch(true);
 
                 this.mainManager.enableUserArmMeshRenderers(true);
-                this.mainManager.OVRControllerLeft.SetActive(false);
-                this.mainManager.OVRControllerRight.SetActive(false);
-                this.mainManager.OVRBoxingLeft.SetActive(true);
-                this.mainManager.OVRBoxingRight.SetActive(true);
                 break;
             default:
                 Debug.LogError("Error: Something Wrong while getting T-Pose Data");

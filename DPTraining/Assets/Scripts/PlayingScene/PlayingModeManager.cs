@@ -255,6 +255,11 @@ public class PlayingModeManager : MonoBehaviour
 
     void testingSceneInitialized()
     {
+        this.mainManager.OVRControllerLeft.SetActive(false);
+        this.mainManager.OVRControllerRight.SetActive(false);
+        this.mainManager.OVRBoxingLeft.SetActive(true);
+        this.mainManager.OVRBoxingRight.SetActive(true);
+
         this.reactionTimeStandard = this.mainManager.myExperimentSetting.reactionTimeStandard;
         this.curState = PlayingState.idle;
 
@@ -306,7 +311,7 @@ public class PlayingModeManager : MonoBehaviour
         this.clearPunchMarker();
 
         bool isTestingMode = this.mainManager.curSystemMode == SystemMode.TestingMode ? true : false;
-        this.UIManager.welcomToTestingMode(this.targetNumberOfTasks, isTestingMode);
+        this.UIManager.welcomToTestingMode(this.targetNumberOfTasks, isTestingMode, this.mainManager.myExperimentSetting.experimentTrial);
     }
 
     public void unitOver()
@@ -477,8 +482,13 @@ public class PlayingModeManager : MonoBehaviour
             // }
             Invoke("callCloseCoachAvatar", 2.0f);
             Invoke("callClearPunchMarker", 1.9f);
-            bool isTesting = this.mainManager.curSystemMode == SystemMode.TestingMode ? true : false;
-            this.UIManager.finalResultView(isTesting,
+            bool notShowResultPanel = false;
+            if (this.mainManager.curSystemMode == SystemMode.TestingMode || this.mainManager.curSystemMode == SystemMode.TrainingMode_Baseline)
+            {
+                notShowResultPanel = true;
+            }
+            this.UIManager.finalResultView(notShowResultPanel,
+                                            this.myTestResult,
                                             this.myTestResult.totalScore,
                                             this.reactionTimeStandard,
                                             this.myTestResult.averageReactionTime,
@@ -720,7 +730,7 @@ public class PlayingModeManager : MonoBehaviour
         }
         else
         {
-            if (this.mainManager.myExperimentSetting.experimentTrial > 3)
+            if (this.mainManager.myExperimentSetting.experimentTrial > 2)
             {
                 return "結束訓練";
             }

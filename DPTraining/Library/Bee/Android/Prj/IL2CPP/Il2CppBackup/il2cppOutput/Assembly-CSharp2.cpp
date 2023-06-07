@@ -876,6 +876,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralC0C15604644412C391766884F1D0D914B3FC724E
 IL2CPP_EXTERN_C String_t* _stringLiteralC26CDE57796D5DBB2BEB80CB4D5896E9233B86AA;
 IL2CPP_EXTERN_C String_t* _stringLiteralC2C0C81F597A2D625B6CF54CF549BC75026D91B7;
 IL2CPP_EXTERN_C String_t* _stringLiteralC910681D011E49B7A56F26F33978FA5095A335C7;
+IL2CPP_EXTERN_C String_t* _stringLiteralCA8CE4BB9C18B3A85CC588E99CE33C9D6EE72DB2;
 IL2CPP_EXTERN_C String_t* _stringLiteralCBB95C44D88946443D67E10755376D7C5B55EDBB;
 IL2CPP_EXTERN_C String_t* _stringLiteralCE7761C473EC3454B2B0D8087F5EF2F5FBD67A67;
 IL2CPP_EXTERN_C String_t* _stringLiteralCF3FFD4375F6C5F0E609161DF0898C4806530B86;
@@ -1442,18 +1443,18 @@ struct UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4  : public RuntimeObj
 	int32_t ___unitNum_0;
 	// System.Boolean DepthPerceptionSystem.UnitResult::isMoving
 	bool ___isMoving_1;
-	// System.Boolean DepthPerceptionSystem.UnitResult::isPunching
-	bool ___isPunching_2;
-	// System.Boolean DepthPerceptionSystem.UnitResult::isReach
-	bool ___isReach_3;
-	// System.Boolean DepthPerceptionSystem.UnitResult::isStraight
-	bool ___isStraight_4;
-	// System.Boolean DepthPerceptionSystem.UnitResult::isReacting
-	bool ___isReacting_5;
 	// System.Boolean DepthPerceptionSystem.UnitResult::isMovingCorrectly
-	bool ___isMovingCorrectly_6;
+	bool ___isMovingCorrectly_2;
+	// System.Boolean DepthPerceptionSystem.UnitResult::isPunching
+	bool ___isPunching_3;
+	// System.Boolean DepthPerceptionSystem.UnitResult::isReach
+	bool ___isReach_4;
+	// System.Boolean DepthPerceptionSystem.UnitResult::isStraight
+	bool ___isStraight_5;
 	// System.Boolean DepthPerceptionSystem.UnitResult::isSuccess
-	bool ___isSuccess_7;
+	bool ___isSuccess_6;
+	// System.Boolean DepthPerceptionSystem.UnitResult::isReacting
+	bool ___isReacting_7;
 	// System.Boolean DepthPerceptionSystem.UnitResult::isOverTime
 	bool ___isOverTime_8;
 	// System.Single DepthPerceptionSystem.UnitResult::reactionTime
@@ -1476,6 +1477,26 @@ struct UnitResult_tCC3BCD130E3AAF0A9D4F94D8AC1714982ECFBEC4  : public RuntimeObj
 	float ___distanceToLeftShoulder_17;
 	// System.Single DepthPerceptionSystem.UnitResult::distanceToRightShoulder
 	float ___distanceToRightShoulder_18;
+	// System.Single DepthPerceptionSystem.UnitResult::startingPosition_x
+	float ___startingPosition_x_19;
+	// System.Single DepthPerceptionSystem.UnitResult::startingPosition_y
+	float ___startingPosition_y_20;
+	// System.Single DepthPerceptionSystem.UnitResult::startingPosition_z
+	float ___startingPosition_z_21;
+	// System.Single DepthPerceptionSystem.UnitResult::punchingPosition_x
+	float ___punchingPosition_x_22;
+	// System.Single DepthPerceptionSystem.UnitResult::punchingPosition_y
+	float ___punchingPosition_y_23;
+	// System.Single DepthPerceptionSystem.UnitResult::punchingPosition_z
+	float ___punchingPosition_z_24;
+	// System.Single DepthPerceptionSystem.UnitResult::startForwardVector_x
+	float ___startForwardVector_x_25;
+	// System.Single DepthPerceptionSystem.UnitResult::startForwardVector_y
+	float ___startForwardVector_y_26;
+	// System.Single DepthPerceptionSystem.UnitResult::startForwardVector_z
+	float ___startForwardVector_z_27;
+	// System.Single DepthPerceptionSystem.UnitResult::movingAngle
+	float ___movingAngle_28;
 };
 
 // DepthPerceptionSystem.UserArmStraightAngle
@@ -15093,7 +15114,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CalibrationModeManager_getTPoseData_m643
 		}
 	}
 	{
-		goto IL_021b;
+		goto IL_01d7;
 	}
 
 IL_0065:
@@ -15215,35 +15236,11 @@ IL_00c3:
 		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_67 = __this->___mainManager_4;
 		NullCheck(L_67);
 		MainManager_enableUserArmMeshRenderers_mB4F474D7015D15F7D9EC67302712C4268C943FDC(L_67, (bool)1, NULL);
-		// this.mainManager.OVRControllerLeft.SetActive(false);
-		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_68 = __this->___mainManager_4;
-		NullCheck(L_68);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_69 = L_68->___OVRControllerLeft_15;
-		NullCheck(L_69);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_69, (bool)0, NULL);
-		// this.mainManager.OVRControllerRight.SetActive(false);
-		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_70 = __this->___mainManager_4;
-		NullCheck(L_70);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_71 = L_70->___OVRControllerRight_16;
-		NullCheck(L_71);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_71, (bool)0, NULL);
-		// this.mainManager.OVRBoxingLeft.SetActive(true);
-		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_72 = __this->___mainManager_4;
-		NullCheck(L_72);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_73 = L_72->___OVRBoxingLeft_17;
-		NullCheck(L_73);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_73, (bool)1, NULL);
-		// this.mainManager.OVRBoxingRight.SetActive(true);
-		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_74 = __this->___mainManager_4;
-		NullCheck(L_74);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_75 = L_74->___OVRBoxingRight_18;
-		NullCheck(L_75);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_75, (bool)1, NULL);
 		// break;
 		return;
 	}
 
-IL_021b:
+IL_01d7:
 	{
 		// Debug.LogError("Error: Something Wrong while getting T-Pose Data");
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
@@ -22125,13 +22122,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExperimentSettingManager_btnSettingDoneC
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Array_IndexOf_TisString_t_m9107AABCE77608D1D21B9ECB6DA42D0D4334AF32_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral08DBF18D3021FA9E1DF337A5094334CFEE35503B);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral15E9581662DD3B368AF6E8B7B2913CA9D46E146E);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral1E7B53E329C0E241336F1CC48D3F2E3644AB7AD4);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral29FC89EEBFEE54F59BF899F0D5BED558E4568ED6);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral697B5937AA4DFE78AD3665C400734EE07A59720F);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB035F94E5F66FDDC76F2914560C45E4A6DDF2458);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBC753577BB7D18AC2145832EB2884645BB3E9227);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralCA8CE4BB9C18B3A85CC588E99CE33C9D6EE72DB2);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralEC4D441BE87266E7FD484364819B0BE60C583D0B);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF5E74BF671171C249BCC5DE85C30288E8351C045);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralF69F395AB17B0A4BA680233D3C1DA6F9DBE10B15);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralFB1F5C1F6E13D02022BA01C2303E293FCB13BA68);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralFCC759C4CA4CE7799113143A76E9C5CA9722DB2B);
 		s_Il2CppMethodInitialized = true;
 	}
 	bool V_0 = false;
@@ -22203,218 +22206,358 @@ CATCH_0024:
 
 IL_004b:
 	{
-		// this.mainManager.myExperimentSetting.experimentSection = (ExperimentSection)System.Array.IndexOf(this.experimentSectionNames, this.experimentSectionText.text);
-		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_12 = __this->___mainManager_4;
+		// switch (this.experimentSectionText.text)
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_12 = __this->___experimentSectionText_9;
 		NullCheck(L_12);
-		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_13 = L_12->___myExperimentSetting_9;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_14 = __this->___experimentSectionNames_6;
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_15 = __this->___experimentSectionText_9;
-		NullCheck(L_15);
-		String_t* L_16;
-		L_16 = VirtualFuncInvoker0< String_t* >::Invoke(65 /* System.String TMPro.TMP_Text::get_text() */, L_15);
-		int32_t L_17;
-		L_17 = Array_IndexOf_TisString_t_m9107AABCE77608D1D21B9ECB6DA42D0D4334AF32(L_14, L_16, Array_IndexOf_TisString_t_m9107AABCE77608D1D21B9ECB6DA42D0D4334AF32_RuntimeMethod_var);
-		NullCheck(L_13);
-		L_13->___experimentSection_1 = L_17;
-		// switch (this.experimentModeText.text)
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_18 = __this->___experimentModeText_10;
-		NullCheck(L_18);
-		String_t* L_19;
-		L_19 = VirtualFuncInvoker0< String_t* >::Invoke(65 /* System.String TMPro.TMP_Text::get_text() */, L_18);
-		V_2 = L_19;
+		String_t* L_13;
+		L_13 = VirtualFuncInvoker0< String_t* >::Invoke(65 /* System.String TMPro.TMP_Text::get_text() */, L_12);
+		V_2 = L_13;
+		String_t* L_14 = V_2;
+		bool L_15;
+		L_15 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_14, _stringLiteralB035F94E5F66FDDC76F2914560C45E4A6DDF2458, NULL);
+		if (L_15)
+		{
+			goto IL_00a7;
+		}
+	}
+	{
+		String_t* L_16 = V_2;
+		bool L_17;
+		L_17 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_16, _stringLiteralFCC759C4CA4CE7799113143A76E9C5CA9722DB2B, NULL);
+		if (L_17)
+		{
+			goto IL_00ba;
+		}
+	}
+	{
+		String_t* L_18 = V_2;
+		bool L_19;
+		L_19 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_18, _stringLiteralEC4D441BE87266E7FD484364819B0BE60C583D0B, NULL);
+		if (L_19)
+		{
+			goto IL_00cd;
+		}
+	}
+	{
 		String_t* L_20 = V_2;
 		bool L_21;
-		L_21 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_20, _stringLiteral1E7B53E329C0E241336F1CC48D3F2E3644AB7AD4, NULL);
+		L_21 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_20, _stringLiteralF69F395AB17B0A4BA680233D3C1DA6F9DBE10B15, NULL);
 		if (L_21)
 		{
-			goto IL_00c0;
+			goto IL_00e0;
 		}
 	}
 	{
 		String_t* L_22 = V_2;
 		bool L_23;
-		L_23 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_22, _stringLiteral29FC89EEBFEE54F59BF899F0D5BED558E4568ED6, NULL);
+		L_23 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_22, _stringLiteralF5E74BF671171C249BCC5DE85C30288E8351C045, NULL);
 		if (L_23)
 		{
-			goto IL_00d3;
+			goto IL_00f3;
 		}
 	}
 	{
 		String_t* L_24 = V_2;
 		bool L_25;
-		L_25 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_24, _stringLiteral15E9581662DD3B368AF6E8B7B2913CA9D46E146E, NULL);
+		L_25 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_24, _stringLiteral697B5937AA4DFE78AD3665C400734EE07A59720F, NULL);
 		if (L_25)
 		{
-			goto IL_00e6;
+			goto IL_0106;
 		}
 	}
 	{
-		String_t* L_26 = V_2;
-		bool L_27;
-		L_27 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_26, _stringLiteral08DBF18D3021FA9E1DF337A5094334CFEE35503B, NULL);
-		if (L_27)
-		{
-			goto IL_00f9;
-		}
-	}
-	{
-		String_t* L_28 = V_2;
-		bool L_29;
-		L_29 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_28, _stringLiteralBC753577BB7D18AC2145832EB2884645BB3E9227, NULL);
-		if (L_29)
-		{
-			goto IL_010c;
-		}
-	}
-	{
-		goto IL_011e;
+		goto IL_0119;
 	}
 
-IL_00c0:
+IL_00a7:
 	{
-		// this.mainManager.myExperimentSetting.experimentMode = SystemMode.TestingMode;
+		// this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.PreTest;
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_26 = __this->___mainManager_4;
+		NullCheck(L_26);
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_27 = L_26->___myExperimentSetting_9;
+		NullCheck(L_27);
+		L_27->___experimentSection_1 = 0;
+		// break;
+		goto IL_0136;
+	}
+
+IL_00ba:
+	{
+		// this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.Training_1;
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_28 = __this->___mainManager_4;
+		NullCheck(L_28);
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_29 = L_28->___myExperimentSetting_9;
+		NullCheck(L_29);
+		L_29->___experimentSection_1 = 1;
+		// break;
+		goto IL_0136;
+	}
+
+IL_00cd:
+	{
+		// this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.Training_2;
 		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_30 = __this->___mainManager_4;
 		NullCheck(L_30);
 		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_31 = L_30->___myExperimentSetting_9;
 		NullCheck(L_31);
-		L_31->___experimentMode_2 = 5;
+		L_31->___experimentSection_1 = 2;
 		// break;
-		goto IL_011e;
+		goto IL_0136;
 	}
 
-IL_00d3:
+IL_00e0:
 	{
-		// this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_Baseline;
+		// this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.Training_3;
 		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_32 = __this->___mainManager_4;
 		NullCheck(L_32);
 		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_33 = L_32->___myExperimentSetting_9;
 		NullCheck(L_33);
-		L_33->___experimentMode_2 = 6;
+		L_33->___experimentSection_1 = 3;
 		// break;
-		goto IL_011e;
+		goto IL_0136;
 	}
 
-IL_00e6:
+IL_00f3:
 	{
-		// this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_GroupA;
+		// this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.Training_4;
 		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_34 = __this->___mainManager_4;
 		NullCheck(L_34);
 		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_35 = L_34->___myExperimentSetting_9;
 		NullCheck(L_35);
-		L_35->___experimentMode_2 = 7;
+		L_35->___experimentSection_1 = 4;
 		// break;
-		goto IL_011e;
+		goto IL_0136;
 	}
 
-IL_00f9:
+IL_0106:
 	{
-		// this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_GroupB;
+		// this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.PostTest;
 		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_36 = __this->___mainManager_4;
 		NullCheck(L_36);
 		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_37 = L_36->___myExperimentSetting_9;
 		NullCheck(L_37);
-		L_37->___experimentMode_2 = 8;
+		L_37->___experimentSection_1 = 5;
 		// break;
-		goto IL_011e;
+		goto IL_0136;
 	}
 
-IL_010c:
+IL_0119:
+	{
+		// error = true;
+		V_0 = (bool)1;
+		// this.errorText.text += "Experiment Section Error\n";
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_38 = __this->___errorText_13;
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_39 = L_38;
+		NullCheck(L_39);
+		String_t* L_40;
+		L_40 = VirtualFuncInvoker0< String_t* >::Invoke(65 /* System.String TMPro.TMP_Text::get_text() */, L_39);
+		String_t* L_41;
+		L_41 = String_Concat_mAF2CE02CC0CB7460753D0A1A91CCF2B1E9804C5D(L_40, _stringLiteralCA8CE4BB9C18B3A85CC588E99CE33C9D6EE72DB2, NULL);
+		NullCheck(L_39);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_39, L_41);
+	}
+
+IL_0136:
+	{
+		// switch (this.experimentModeText.text)
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_42 = __this->___experimentModeText_10;
+		NullCheck(L_42);
+		String_t* L_43;
+		L_43 = VirtualFuncInvoker0< String_t* >::Invoke(65 /* System.String TMPro.TMP_Text::get_text() */, L_42);
+		V_2 = L_43;
+		String_t* L_44 = V_2;
+		bool L_45;
+		L_45 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_44, _stringLiteral1E7B53E329C0E241336F1CC48D3F2E3644AB7AD4, NULL);
+		if (L_45)
+		{
+			goto IL_0185;
+		}
+	}
+	{
+		String_t* L_46 = V_2;
+		bool L_47;
+		L_47 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_46, _stringLiteral29FC89EEBFEE54F59BF899F0D5BED558E4568ED6, NULL);
+		if (L_47)
+		{
+			goto IL_0198;
+		}
+	}
+	{
+		String_t* L_48 = V_2;
+		bool L_49;
+		L_49 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_48, _stringLiteral15E9581662DD3B368AF6E8B7B2913CA9D46E146E, NULL);
+		if (L_49)
+		{
+			goto IL_01ab;
+		}
+	}
+	{
+		String_t* L_50 = V_2;
+		bool L_51;
+		L_51 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_50, _stringLiteral08DBF18D3021FA9E1DF337A5094334CFEE35503B, NULL);
+		if (L_51)
+		{
+			goto IL_01be;
+		}
+	}
+	{
+		String_t* L_52 = V_2;
+		bool L_53;
+		L_53 = String_op_Equality_m0D685A924E5CD78078F248ED1726DA5A9D7D6AC0(L_52, _stringLiteralBC753577BB7D18AC2145832EB2884645BB3E9227, NULL);
+		if (L_53)
+		{
+			goto IL_01d1;
+		}
+	}
+	{
+		goto IL_01e3;
+	}
+
+IL_0185:
+	{
+		// this.mainManager.myExperimentSetting.experimentMode = SystemMode.TestingMode;
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_54 = __this->___mainManager_4;
+		NullCheck(L_54);
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_55 = L_54->___myExperimentSetting_9;
+		NullCheck(L_55);
+		L_55->___experimentMode_2 = 5;
+		// break;
+		goto IL_01e3;
+	}
+
+IL_0198:
+	{
+		// this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_Baseline;
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_56 = __this->___mainManager_4;
+		NullCheck(L_56);
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_57 = L_56->___myExperimentSetting_9;
+		NullCheck(L_57);
+		L_57->___experimentMode_2 = 6;
+		// break;
+		goto IL_01e3;
+	}
+
+IL_01ab:
+	{
+		// this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_GroupA;
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_58 = __this->___mainManager_4;
+		NullCheck(L_58);
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_59 = L_58->___myExperimentSetting_9;
+		NullCheck(L_59);
+		L_59->___experimentMode_2 = 7;
+		// break;
+		goto IL_01e3;
+	}
+
+IL_01be:
+	{
+		// this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_GroupB;
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_60 = __this->___mainManager_4;
+		NullCheck(L_60);
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_61 = L_60->___myExperimentSetting_9;
+		NullCheck(L_61);
+		L_61->___experimentMode_2 = 8;
+		// break;
+		goto IL_01e3;
+	}
+
+IL_01d1:
 	{
 		// this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_GroupC;
-		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_38 = __this->___mainManager_4;
-		NullCheck(L_38);
-		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_39 = L_38->___myExperimentSetting_9;
-		NullCheck(L_39);
-		L_39->___experimentMode_2 = ((int32_t)9);
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_62 = __this->___mainManager_4;
+		NullCheck(L_62);
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_63 = L_62->___myExperimentSetting_9;
+		NullCheck(L_63);
+		L_63->___experimentMode_2 = ((int32_t)9);
 	}
 
-IL_011e:
+IL_01e3:
 	{
 		// for (int i = 0; i < 4; i++)
 		V_3 = 0;
-		goto IL_0177;
+		goto IL_023c;
 	}
 
-IL_0122:
+IL_01e7:
 	{
 	}
 	try
 	{// begin try (depth: 1)
 		// this.mainManager.myExperimentSetting.selectedCoachTypes[i] = int.Parse(this.coachTypeOrderTexts[i].text);
-		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_40 = __this->___mainManager_4;
-		NullCheck(L_40);
-		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_41 = L_40->___myExperimentSetting_9;
-		NullCheck(L_41);
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_42 = L_41->___selectedCoachTypes_5;
-		int32_t L_43 = V_3;
-		TMP_TextU5BU5D_t12384CBAF397196B9A7886087BDC8C19D800C24F* L_44 = __this->___coachTypeOrderTexts_11;
-		int32_t L_45 = V_3;
-		NullCheck(L_44);
-		int32_t L_46 = L_45;
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_47 = (L_44)->GetAt(static_cast<il2cpp_array_size_t>(L_46));
-		NullCheck(L_47);
-		String_t* L_48;
-		L_48 = VirtualFuncInvoker0< String_t* >::Invoke(65 /* System.String TMPro.TMP_Text::get_text() */, L_47);
-		int32_t L_49;
-		L_49 = Int32_Parse_m59B9CC9D5E5B6C99C14251E57FB43BE6AB658767(L_48, NULL);
-		NullCheck(L_42);
-		(L_42)->SetAt(static_cast<il2cpp_array_size_t>(L_43), (int32_t)L_49);
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_64 = __this->___mainManager_4;
+		NullCheck(L_64);
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_65 = L_64->___myExperimentSetting_9;
+		NullCheck(L_65);
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_66 = L_65->___selectedCoachTypes_5;
+		int32_t L_67 = V_3;
+		TMP_TextU5BU5D_t12384CBAF397196B9A7886087BDC8C19D800C24F* L_68 = __this->___coachTypeOrderTexts_11;
+		int32_t L_69 = V_3;
+		NullCheck(L_68);
+		int32_t L_70 = L_69;
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_71 = (L_68)->GetAt(static_cast<il2cpp_array_size_t>(L_70));
+		NullCheck(L_71);
+		String_t* L_72;
+		L_72 = VirtualFuncInvoker0< String_t* >::Invoke(65 /* System.String TMPro.TMP_Text::get_text() */, L_71);
+		int32_t L_73;
+		L_73 = Int32_Parse_m59B9CC9D5E5B6C99C14251E57FB43BE6AB658767(L_72, NULL);
+		NullCheck(L_66);
+		(L_66)->SetAt(static_cast<il2cpp_array_size_t>(L_67), (int32_t)L_73);
 		// }
-		goto IL_0173;
+		goto IL_0238;
 	}// end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
 		{
 			IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
-			goto CATCH_0149;
+			goto CATCH_020e;
 		}
 		throw e;
 	}
 
-CATCH_0149:
+CATCH_020e:
 	{// begin catch(System.Exception)
 		// catch (System.Exception e)
 		V_4 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));
 		// error = true;
 		V_0 = (bool)1;
 		// this.errorText.text += e.ToString();
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_50 = __this->___errorText_13;
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_51 = L_50;
-		NullCheck(L_51);
-		String_t* L_52;
-		L_52 = VirtualFuncInvoker0< String_t* >::Invoke(65 /* System.String TMPro.TMP_Text::get_text() */, L_51);
-		Exception_t* L_53 = V_4;
-		NullCheck(L_53);
-		String_t* L_54;
-		L_54 = VirtualFuncInvoker0< String_t* >::Invoke(3 /* System.String System.Object::ToString() */, L_53);
-		String_t* L_55;
-		L_55 = String_Concat_mAF2CE02CC0CB7460753D0A1A91CCF2B1E9804C5D(L_52, L_54, NULL);
-		NullCheck(L_51);
-		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_51, L_55);
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_74 = __this->___errorText_13;
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_75 = L_74;
+		NullCheck(L_75);
+		String_t* L_76;
+		L_76 = VirtualFuncInvoker0< String_t* >::Invoke(65 /* System.String TMPro.TMP_Text::get_text() */, L_75);
+		Exception_t* L_77 = V_4;
+		NullCheck(L_77);
+		String_t* L_78;
+		L_78 = VirtualFuncInvoker0< String_t* >::Invoke(3 /* System.String System.Object::ToString() */, L_77);
+		String_t* L_79;
+		L_79 = String_Concat_mAF2CE02CC0CB7460753D0A1A91CCF2B1E9804C5D(L_76, L_78, NULL);
+		NullCheck(L_75);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_75, L_79);
 		// Debug.Log(e);
-		Exception_t* L_56 = V_4;
+		Exception_t* L_80 = V_4;
 		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var)));
-		Debug_Log_m86567BCF22BBE7809747817453CACA0E41E68219(L_56, NULL);
+		Debug_Log_m86567BCF22BBE7809747817453CACA0E41E68219(L_80, NULL);
 		// }
 		IL2CPP_POP_ACTIVE_EXCEPTION();
-		goto IL_0173;
+		goto IL_0238;
 	}// end catch (depth: 1)
 
-IL_0173:
+IL_0238:
 	{
 		// for (int i = 0; i < 4; i++)
-		int32_t L_57 = V_3;
-		V_3 = ((int32_t)il2cpp_codegen_add(L_57, 1));
+		int32_t L_81 = V_3;
+		V_3 = ((int32_t)il2cpp_codegen_add(L_81, 1));
 	}
 
-IL_0177:
+IL_023c:
 	{
 		// for (int i = 0; i < 4; i++)
-		int32_t L_58 = V_3;
-		if ((((int32_t)L_58) < ((int32_t)4)))
+		int32_t L_82 = V_3;
+		if ((((int32_t)L_82) < ((int32_t)4)))
 		{
-			goto IL_0122;
+			goto IL_01e7;
 		}
 	}
 	{
@@ -22422,83 +22565,89 @@ IL_0177:
 	try
 	{// begin try (depth: 1)
 		// this.mainManager.myExperimentSetting.reactionTimeStandard = float.Parse(this.reactionTimeStandardText.text);
-		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_59 = __this->___mainManager_4;
-		NullCheck(L_59);
-		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_60 = L_59->___myExperimentSetting_9;
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_61 = __this->___reactionTimeStandardText_12;
-		NullCheck(L_61);
-		String_t* L_62;
-		L_62 = VirtualFuncInvoker0< String_t* >::Invoke(65 /* System.String TMPro.TMP_Text::get_text() */, L_61);
-		float L_63;
-		L_63 = Single_Parse_m349A7F699C77834259812ABE86909825C1F93CF4(L_62, NULL);
-		NullCheck(L_60);
-		L_60->___reactionTimeStandard_6 = L_63;
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_83 = __this->___mainManager_4;
+		NullCheck(L_83);
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_84 = L_83->___myExperimentSetting_9;
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_85 = __this->___reactionTimeStandardText_12;
+		NullCheck(L_85);
+		String_t* L_86;
+		L_86 = VirtualFuncInvoker0< String_t* >::Invoke(65 /* System.String TMPro.TMP_Text::get_text() */, L_85);
+		float L_87;
+		L_87 = Single_Parse_m349A7F699C77834259812ABE86909825C1F93CF4(L_86, NULL);
+		NullCheck(L_84);
+		L_84->___reactionTimeStandard_6 = L_87;
 		// }
-		goto IL_01c8;
+		goto IL_028d;
 	}// end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
 		{
 			IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
-			goto CATCH_019e;
+			goto CATCH_0263;
 		}
 		throw e;
 	}
 
-CATCH_019e:
+CATCH_0263:
 	{// begin catch(System.Exception)
 		// catch (System.Exception e)
 		V_5 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));
 		// error = true;
 		V_0 = (bool)1;
 		// this.errorText.text += e.ToString();
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_64 = __this->___errorText_13;
-		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_65 = L_64;
-		NullCheck(L_65);
-		String_t* L_66;
-		L_66 = VirtualFuncInvoker0< String_t* >::Invoke(65 /* System.String TMPro.TMP_Text::get_text() */, L_65);
-		Exception_t* L_67 = V_5;
-		NullCheck(L_67);
-		String_t* L_68;
-		L_68 = VirtualFuncInvoker0< String_t* >::Invoke(3 /* System.String System.Object::ToString() */, L_67);
-		String_t* L_69;
-		L_69 = String_Concat_mAF2CE02CC0CB7460753D0A1A91CCF2B1E9804C5D(L_66, L_68, NULL);
-		NullCheck(L_65);
-		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_65, L_69);
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_88 = __this->___errorText_13;
+		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_89 = L_88;
+		NullCheck(L_89);
+		String_t* L_90;
+		L_90 = VirtualFuncInvoker0< String_t* >::Invoke(65 /* System.String TMPro.TMP_Text::get_text() */, L_89);
+		Exception_t* L_91 = V_5;
+		NullCheck(L_91);
+		String_t* L_92;
+		L_92 = VirtualFuncInvoker0< String_t* >::Invoke(3 /* System.String System.Object::ToString() */, L_91);
+		String_t* L_93;
+		L_93 = String_Concat_mAF2CE02CC0CB7460753D0A1A91CCF2B1E9804C5D(L_90, L_92, NULL);
+		NullCheck(L_89);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_89, L_93);
 		// Debug.Log(e);
-		Exception_t* L_70 = V_5;
+		Exception_t* L_94 = V_5;
 		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var)));
-		Debug_Log_m86567BCF22BBE7809747817453CACA0E41E68219(L_70, NULL);
+		Debug_Log_m86567BCF22BBE7809747817453CACA0E41E68219(L_94, NULL);
 		// }
 		IL2CPP_POP_ACTIVE_EXCEPTION();
-		goto IL_01c8;
+		goto IL_028d;
 	}// end catch (depth: 1)
 
-IL_01c8:
+IL_028d:
 	{
 		// if (!error)
-		bool L_71 = V_0;
-		if (L_71)
+		bool L_95 = V_0;
+		if (L_95)
 		{
-			goto IL_01f1;
+			goto IL_02c7;
 		}
 	}
 	{
+		// this.mainManager.myExperimentSetting.experimentTrial = 0;
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_96 = __this->___mainManager_4;
+		NullCheck(L_96);
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_97 = L_96->___myExperimentSetting_9;
+		NullCheck(L_97);
+		L_97->___experimentTrial_3 = 0;
 		// this.mainManager.saveToJSON_experiment(this.mainManager.myExperimentSetting);
-		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_72 = __this->___mainManager_4;
-		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_73 = __this->___mainManager_4;
-		NullCheck(L_73);
-		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_74 = L_73->___myExperimentSetting_9;
-		NullCheck(L_72);
-		MainManager_saveToJSON_experiment_m7EEF7A8B8BBC7AA7EB54B1B1E42AC879FBDEFD88(L_72, L_74, NULL);
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_98 = __this->___mainManager_4;
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_99 = __this->___mainManager_4;
+		NullCheck(L_99);
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_100 = L_99->___myExperimentSetting_9;
+		NullCheck(L_98);
+		MainManager_saveToJSON_experiment_m7EEF7A8B8BBC7AA7EB54B1B1E42AC879FBDEFD88(L_98, L_100, NULL);
 		// this.mainManager.changeScene("CalibrationScene");
-		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_75 = __this->___mainManager_4;
-		NullCheck(L_75);
-		MainManager_changeScene_m3A6417B11ED0F462976987DB11EBA27C70A0826E(L_75, _stringLiteralFB1F5C1F6E13D02022BA01C2303E293FCB13BA68, NULL);
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_101 = __this->___mainManager_4;
+		NullCheck(L_101);
+		MainManager_changeScene_m3A6417B11ED0F462976987DB11EBA27C70A0826E(L_101, _stringLiteralFB1F5C1F6E13D02022BA01C2303E293FCB13BA68, NULL);
 	}
 
-IL_01f1:
+IL_02c7:
 	{
 		// }
 		return;

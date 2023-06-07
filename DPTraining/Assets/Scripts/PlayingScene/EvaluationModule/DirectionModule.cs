@@ -28,6 +28,19 @@ public class DirectionModule : MonoBehaviour
         // Vector3 startForward = this.evaluationManager.startingPoint.transform.forward;
         Vector3 startForward = this.evaluationManager.playingModeManager.mainManager.sceneOrigin.transform.forward;
         float angle = Vector3.Angle(userMovingDirection, startForward);
+
+        this.evaluationManager.playingModeManager.curUnitResult.startingPosition_x = this.evaluationManager.startingPoint.transform.position.x;
+        this.evaluationManager.playingModeManager.curUnitResult.startingPosition_y = this.evaluationManager.startingPoint.transform.position.y;
+        this.evaluationManager.playingModeManager.curUnitResult.startingPosition_z = this.evaluationManager.startingPoint.transform.position.z;
+        this.evaluationManager.playingModeManager.curUnitResult.punchingPosition_x = this.userCenter.position.x;
+        this.evaluationManager.playingModeManager.curUnitResult.punchingPosition_y = this.userCenter.position.y;
+        this.evaluationManager.playingModeManager.curUnitResult.punchingPosition_z = this.userCenter.position.z;
+        this.evaluationManager.playingModeManager.curUnitResult.startForwardVector_x = startForward.x;
+        this.evaluationManager.playingModeManager.curUnitResult.startForwardVector_y = startForward.y;
+        this.evaluationManager.playingModeManager.curUnitResult.startForwardVector_z = startForward.z;
+
+        this.evaluationManager.playingModeManager.curUnitResult.movingAngle = angle;
+
         if (angle > 90.0f && angle < 270.0f)
         {
             this.evaluationManager.userMovingDirection = MovingDirection.Backward;

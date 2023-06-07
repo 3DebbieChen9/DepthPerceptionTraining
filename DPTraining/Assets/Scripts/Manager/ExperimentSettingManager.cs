@@ -113,7 +113,33 @@ public class ExperimentSettingManager : MonoBehaviour
             this.errorText.text += e.ToString();
             Debug.Log(e);
         }
-        this.mainManager.myExperimentSetting.experimentSection = (ExperimentSection)System.Array.IndexOf(this.experimentSectionNames, this.experimentSectionText.text);
+
+        switch (this.experimentSectionText.text)
+        {
+            case "Pre-Test":
+                this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.PreTest;
+                break;
+            case "Training_1":
+                this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.Training_1;
+                break;
+            case "Training_2":
+                this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.Training_2;
+                break;
+            case "Training_3":
+                this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.Training_3;
+                break;
+            case "Training_4":
+                this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.Training_4;
+                break;
+            case "Post-Test":
+                this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.PostTest;
+                break;
+            default:
+                error = true;
+                this.errorText.text += "Experiment Section Error\n";
+                break;
+        }
+
         switch (this.experimentModeText.text)
         {
             case "Testing":
@@ -160,6 +186,7 @@ public class ExperimentSettingManager : MonoBehaviour
 
         if (!error)
         {
+            this.mainManager.myExperimentSetting.experimentTrial = 0;
             this.mainManager.saveToJSON_experiment(this.mainManager.myExperimentSetting);
             this.mainManager.changeScene("CalibrationScene");
         }
