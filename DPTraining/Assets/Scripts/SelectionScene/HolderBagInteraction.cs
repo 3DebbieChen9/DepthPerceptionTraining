@@ -64,36 +64,48 @@ public class HolderBagInteraction : MonoBehaviour
                 case "Mode_Training":
                     this.selectionModeManager.moveToTrainMethodSelect();
                     break;
-                case "Training_Tradition":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode);
+                case "Training_Baseline":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_Baseline_A);
                     break;
-                case "Training_Line":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_LineCue);
+                case "Training_Ring":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_Ring_B);
                     break;
-                case "Training_BallOnTarget":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onTarget);
+                case "Training_BarRing":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_Bar_C);
                     break;
-                case "Training_Bar":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BarCue);
+                case "Training_CutoutRing":
+                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_Cutout_D);
                     break;
-                case "Training_CutoutCue":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_CutoutCue);
-                    break;
-                case "Training_PowerBar":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_PowerBarCue);
-                    break;
-                case "Training_Aim":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_AimCue);
-                    break;
-                case "Training_PowerBar_withAIm":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_PowerBarCue_withAim);
-                    break;
-                case "Training_Cutout_withAim":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_CutoutCue_withAim);
-                    break;
-                case "Training_Bar_withAim":
-                    this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BarCue_withAim);
-                    break;
+                // case "Training_Tradition":
+                //     this.selectionModeManager.modeSelect(SystemMode.TrainingMode);
+                //     break;
+                // case "Training_Line":
+                //     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_LineCue);
+                //     break;
+                // case "Training_BallOnTarget":
+                //     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BallCue_onTarget);
+                //     break;
+                // case "Training_Bar":
+                //     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BarCue);
+                //     break;
+                // case "Training_CutoutCue":
+                //     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_CutoutCue);
+                //     break;
+                // case "Training_PowerBar":
+                //     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_PowerBarCue);
+                //     break;
+                // case "Training_Aim":
+                //     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_AimCue);
+                //     break;
+                // case "Training_PowerBar_withAIm":
+                //     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_PowerBarCue_withAim);
+                //     break;
+                // case "Training_Cutout_withAim":
+                //     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_CutoutCue_withAim);
+                //     break;
+                // case "Training_Bar_withAim":
+                //     this.selectionModeManager.modeSelect(SystemMode.TrainingMode_BarCue_withAim);
+                //     break;
                 default:
                     break;
             }

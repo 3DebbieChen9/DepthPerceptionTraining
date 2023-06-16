@@ -42,13 +42,29 @@ public class PlayingUIManager : MonoBehaviour
     [SerializeField]
     private TMP_Text finalResultText;
     [SerializeField]
-    private TMP_Text finalResultTableSubTitle;
-    [SerializeField]
-    private TMP_Text finalResultTableText;
-    [SerializeField]
     public GameObject finalButtonsCanvas;
     [SerializeField]
     public TMP_Text finalButtonsTitle;
+    [SerializeField]
+    private TMP_Text[] tableSubTitles;
+    [SerializeField]
+    private TMP_Text[] tableUnitText;
+    [SerializeField]
+    private TMP_Text[] tableDirectionText;
+    [SerializeField]
+    private TMP_Text[] tableTargetText;
+    [SerializeField]
+    private TMP_Text[] tableIsMovingText;
+    [SerializeField]
+    private TMP_Text[] tableIsMovingCorrectlyText;
+    [SerializeField]
+    private TMP_Text[] tableIsPunchingText;
+    [SerializeField]
+    private TMP_Text[] tableIsReachingText;
+    [SerializeField]
+    private TMP_Text[] tableIsSuccessText;
+    [SerializeField]
+    private TMP_Text[] tableReactionTimeText;
 
     [SerializeField]
     public GameObject buttonsCanvas;
@@ -237,41 +253,48 @@ public class PlayingUIManager : MonoBehaviour
                 textColorHex = "#FFC1E0";
                 timeDeltaSign = "+";
             }
-            this.finalResultText.text = $"平均反應時間: {averageReactionTime:F3}s\n" +
-                                            $"與前測成績相比較: <color={textColorHex}>{timeDeltaSign}{averageReactionTime - standardReactionTime:F3}</color>s\n";
+            this.finalResultText.text = $"平均反應時間: {averageReactionTime:F3}s (<color={textColorHex}>{timeDeltaSign}{averageReactionTime - standardReactionTime:F3}</color>)";
             //                                 $"=============================\n" +
             //                                 $"有移動的比率: {movingRate:F2}%\n" +
             //                                 $"移動方向正確率: {movingCorrectlyRate:F2}%\n" +
             //                                 $"有出拳的比率: {punchingRate:F2}%\n" +
             //                                 $"打到目標率: {reachRate:F2}%\n" +
             //                                 $"成功率: {successRate:F2}%";
-            this.finalResultTableSubTitle.text = $"情況\n有移動\n移動正確\n有出拳\n打到目標\n成功\n反應時間";
-            string type = "";
-            string movingComment = "";
-            string movingCorrectlyComment = "";
-            string punchingComment = "";
-            string reachComment = "";
-            string successComment = "";
-            string reactionTimeComment = "";
+            // this.finalResultTableSubTitle.text = $"情況\n有移動\n移動正確\n有出拳\n打到目標\n成功\n反應時間";
+
+
+            this.tableSubTitles[0].text = "回合";
+            this.tableSubTitles[1].text = "目標拳頭";
+            this.tableSubTitles[2].text = "目標方向";
+            this.tableSubTitles[3].text = "有移動";
+            this.tableSubTitles[4].text = "移動正確";
+            this.tableSubTitles[5].text = "有出拳";
+            this.tableSubTitles[6].text = "打到目標";
+            this.tableSubTitles[7].text = "成功";
+            this.tableSubTitles[8].text = "反應時間";
+
+            int index = 0;
             foreach (UnitResult unitResult in totalResult.unitResultList)
             {
-                string coachDirection = unitResult.coachMovingDirection == MovingDirection.Forward ? "F" : "B";
-                string targetShoulder = unitResult.coachTargetShoulder == Hand.Right ? "R" : "L";
-                string tmpType = $"{coachDirection} / {targetShoulder}";
-                type += $"{tmpType,5} | ";
+                string userIdealDirection = unitResult.coachMovingDirection == MovingDirection.Forward ? "後退" : "前進";
+                string userIdealHand = unitResult.coachTargetShoulder == Hand.Right ? "左拳" : "右拳";
                 string moving = unitResult.isMoving ? "O" : "X";
-                movingComment += $"{moving,5} | ";
                 string movingCorrectly = unitResult.isMovingCorrectly ? "O" : "X";
-                movingCorrectlyComment += $"{movingCorrectly,5} | ";
                 string punching = unitResult.isPunching ? "O" : "X";
-                punchingComment += $"{punching,5} | ";
                 string reach = unitResult.isReach ? "O" : "X";
-                reachComment += $"{reach,5} | ";
                 string success = unitResult.isSuccess ? "O" : "X";
-                successComment += $"{success,5} | ";
-                reactionTimeComment += $"{unitResult.reactionTime:F3} | ";
+                this.tableUnitText[index].text = $"{unitResult.unitNum}";
+                this.tableTargetText[index].text = $"{userIdealHand}";
+                this.tableDirectionText[index].text = $"{userIdealDirection}";
+                this.tableIsMovingText[index].text = $"{moving}";
+                this.tableIsMovingCorrectlyText[index].text = $"{movingCorrectly}";
+                this.tableIsPunchingText[index].text = $"{punching}";
+                this.tableIsReachingText[index].text = $"{reach}";
+                this.tableIsSuccessText[index].text = $"{success}";
+                this.tableReactionTimeText[index].text = $"{unitResult.reactionTime:F2}";
+                index++;
             }
-            this.finalResultTableText.text += $"{type}\n{movingComment}\n{movingCorrectlyComment}\n{punchingComment}\n{reachComment}\n{successComment}\n{reactionTimeComment}\n";
+            // this.finalResultTableText.text += $"{type}\n{movingComment}\n{movingCorrectlyComment}\n{punchingComment}\n{reachComment}\n{successComment}\n{reactionTimeComment}\n";
         }
 
         this.finalButtonsCanvas.SetActive(true);

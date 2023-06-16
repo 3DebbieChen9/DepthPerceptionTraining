@@ -41,7 +41,8 @@ public class PlayingModeManager : MonoBehaviour
     public bool visualAidIsUpdating = false;
 
     [SerializeField] public float reactionTimeStandard = 2.0f;
-    [SerializeField] private ReactionTimeWarning reactionTimeWarning = ReactionTimeWarning.none;
+    // [SerializeField] private ReactionTimeWarning reactionTimeWarning = ReactionTimeWarning.none;
+    [SerializeField] private bool reactionTimeWarning = false;
 
 
     void Awake()
@@ -230,25 +231,25 @@ public class PlayingModeManager : MonoBehaviour
                 this.unitOver();
             }
 
-            if (this.mainManager.curSystemMode != SystemMode.TestingMode && this.mainManager.curSystemMode != SystemMode.TrainingMode_Baseline)
+            if (this.mainManager.curSystemMode != SystemMode.TestingMode && this.mainManager.curSystemMode != SystemMode.TrainingMode_Baseline_A)
             {
-                if (this.reactionTimer.timeLeft >= this.reactionTimeStandard - this.mainManager.mySettingInfo.auditoryReactionTime && this.reactionTimeWarning == ReactionTimeWarning.none)
+                if (this.reactionTimer.timeLeft >= (this.reactionTimeStandard - this.mainManager.mySettingInfo.auditoryReactionTime))
                 {
-                    if (!AudioManager.instance.aidSource.isPlaying)
+                    if (!AudioManager.instance.aidSource.isPlaying && !this.reactionTimeWarning)
                     {
-                        this.reactionTimeWarning = ReactionTimeWarning.first;
                         AudioManager.instance.PlayAid("Ding-Ding");
+                        this.reactionTimeWarning = true;
                     }
                 }
 
-                if (this.reactionTimer.timeLeft >= this.reactionTimeStandard * 1.5f - this.mainManager.mySettingInfo.auditoryReactionTime && this.reactionTimeWarning == ReactionTimeWarning.first)
-                {
-                    if (!AudioManager.instance.aidSource.isPlaying)
-                    {
-                        this.reactionTimeWarning = ReactionTimeWarning.second;
-                        AudioManager.instance.PlayAid("Ding-Ding-Ding");
-                    }
-                }
+                // if (this.reactionTimer.timeLeft >= 2.0f && this.reactionTimeWarning == ReactionTimeWarning.first)
+                // {
+                //     if (!AudioManager.instance.aidSource.isPlaying)
+                //     {
+                //         this.reactionTimeWarning = ReactionTimeWarning.second;
+                //         AudioManager.instance.PlayAid("Ding-Ding-Ding");
+                //     }
+                // }
             }
         }
     }
@@ -296,17 +297,17 @@ public class PlayingModeManager : MonoBehaviour
         this.myTestResult.reset();
         this.myTestResult.numberOfTasks = this.targetNumberOfTasks;
         this.curUnitResult.reset();
-        this.reactionTimeWarning = ReactionTimeWarning.none;
+        this.reactionTimeWarning = false;
         this.evaluationManager.evaluationStatusInitialize();
 
         this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(false);
         this.mainManager.OVRControllerRayRight.RayInteractorSwitch(false);
 
-        if (this.mainManager.curSystemMode != SystemMode.TestingMode)
-        {
-            this.depthCueManager.GetComponent<LineCue>().eraseLineCue();
-            this.depthCueManager.GetComponent<BallCueOnTarget>().eraseBallCueOnTarget();
-        }
+        // if (this.mainManager.curSystemMode != SystemMode.TestingMode)
+        // {
+        //     this.depthCueManager.GetComponent<LineCue>().eraseLineCue();
+        //     this.depthCueManager.GetComponent<BallCueOnTarget>().eraseBallCueOnTarget();
+        // }
 
         this.clearPunchMarker();
 
@@ -322,11 +323,11 @@ public class PlayingModeManager : MonoBehaviour
         }
         unitIsOver = true;
         AudioManager.instance.StopAid();
-        reactionTimeWarning = ReactionTimeWarning.none;
         this.coachManager.coachAnimator.SetBool("isDuringTheUnit", false);
         this.coachManager.eraseCoachShoudlerTarget();
 
         this.reactionTimer.timerOn = false;
+        this.reactionTimeWarning = false;
         bool reactionOverTime = this.reactionTimer.timeLeft >= this.reactionTimer.timeTarget ? true : false;
         UnitResultComment unitResultComment = this.evaluationManager.getScoreComment(reactionOverTime);
         this.curUnitResult.score = unitResultComment.score;
@@ -483,7 +484,7 @@ public class PlayingModeManager : MonoBehaviour
             Invoke("callCloseCoachAvatar", 2.0f);
             Invoke("callClearPunchMarker", 1.9f);
             bool notShowResultPanel = false;
-            if (this.mainManager.curSystemMode == SystemMode.TestingMode || this.mainManager.curSystemMode == SystemMode.TrainingMode_Baseline)
+            if (this.mainManager.curSystemMode == SystemMode.TestingMode)
             {
                 notShowResultPanel = true;
             }
@@ -582,25 +583,28 @@ public class PlayingModeManager : MonoBehaviour
     {
         switch (this.mainManager.curSystemMode)
         {
-            case SystemMode.TrainingMode_GroupB:
+            case SystemMode.TrainingMode_Bar_C:
                 if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
                 {
                     this.depthCueManager.GetComponent<PowerBarCue>().powerBarUpdate(this.visualAidIsUpdating);
+                    // this.depthCueManager.GetComponent<PowerBarCue>().powerBarUpdate(true);
                 }
                 else
                 {
                     this.depthCueManager.GetComponent<PowerBarCue>().closePowerBar();
+                    // this.depthCueManager.GetComponent<PowerBarCue>().powerBarUpdate(true);
                 }
                 break;
-            case SystemMode.TrainingMode_GroupC:
+            case SystemMode.TrainingMode_Cutout_D:
                 if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
                 {
-                    this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(this.visualAidIsUpdating);
+                    // this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(this.visualAidIsUpdating);
+                    this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(true);
                 }
                 else
                 {
-                    // this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate();
-                    this.depthCueManager.GetComponent<CutoutCue>().closeCutoutAid();
+                    // this.depthCueManager.GetComponent<CutoutCue>().closeCutoutAid();
+                    this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(true);
                 }
                 break;
             // case SystemMode.TrainingMode_LineCue:
@@ -661,20 +665,20 @@ public class PlayingModeManager : MonoBehaviour
                 break;
         }
 
-        if (this.mainManager.curSystemMode == SystemMode.TrainingMode_BarCue_withAim ||
-            this.mainManager.curSystemMode == SystemMode.TrainingMode_CutoutCue_withAim ||
-            this.mainManager.curSystemMode == SystemMode.TrainingMode_PowerBarCue_withAim ||
-            this.mainManager.curSystemMode == SystemMode.TrainingMode_AimCue)
-        {
-            if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
-            {
-                this.depthCueManager.GetComponent<AimCueOnTarget>().aimCueUpdate();
-            }
-            else
-            {
-                this.depthCueManager.GetComponent<AimCueOnTarget>().closeAimCueOnTarget();
-            }
-        }
+        // if (this.mainManager.curSystemMode == SystemMode.TrainingMode_BarCue_withAim ||
+        //     this.mainManager.curSystemMode == SystemMode.TrainingMode_CutoutCue_withAim ||
+        //     this.mainManager.curSystemMode == SystemMode.TrainingMode_PowerBarCue_withAim ||
+        //     this.mainManager.curSystemMode == SystemMode.TrainingMode_AimCue)
+        // {
+        //     if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
+        //     {
+        //         this.depthCueManager.GetComponent<AimCueOnTarget>().aimCueUpdate();
+        //     }
+        //     else
+        //     {
+        //         this.depthCueManager.GetComponent<AimCueOnTarget>().closeAimCueOnTarget();
+        //     }
+        // }
     }
 
     void skipToFinalButton()
@@ -689,54 +693,69 @@ public class PlayingModeManager : MonoBehaviour
 
     public void experimentNextTrial()
     {
-        if (this.mainManager.myExperimentSetting.experimentSection == ExperimentSection.PreTest || this.mainManager.myExperimentSetting.experimentSection == ExperimentSection.PostTest)
+        if (this.mainManager.myExperimentSetting.experimentSection == ExperimentSection.Experience)
         {
-            if (this.mainManager.myExperimentSetting.experimentTrial > 0)
-            {
-                this.UIManager.btnExit();
-            }
-            else
-            {
-                this.mainManager.myExperimentSetting.experimentTrial++;
-                this.UIManager.btnChangeScene("TestingScene");
-            }
+            this.mainManager.myExperimentSetting.experimentTrial = 0;
+            this.UIManager.btnChangeScene("SelectionScene");
         }
         else
         {
-            if (this.mainManager.myExperimentSetting.experimentTrial > 2)
+            if (this.mainManager.myExperimentSetting.experimentMode == SystemMode.TestingMode)
             {
-                this.UIManager.btnExit();
+                if (this.mainManager.myExperimentSetting.experimentTrial == 1)
+                {
+                    this.UIManager.btnExit();
+                }
+                else
+                {
+                    this.mainManager.myExperimentSetting.experimentTrial++;
+                    this.UIManager.btnChangeScene("TestingScene");
+                }
             }
             else
             {
-                this.mainManager.myExperimentSetting.experimentTrial++;
-                this.UIManager.btnChangeScene("TrainingScene");
+                if (this.mainManager.myExperimentSetting.experimentTrial == 3)
+                {
+                    this.UIManager.btnExit();
+                }
+                else
+                {
+                    this.mainManager.myExperimentSetting.experimentTrial++;
+                    this.UIManager.btnChangeScene("TrainingScene");
+                }
             }
         }
     }
 
     string nextTrialButtonText()
     {
-        if (this.mainManager.myExperimentSetting.experimentSection == ExperimentSection.PreTest || this.mainManager.myExperimentSetting.experimentSection == ExperimentSection.PostTest)
+        if (this.mainManager.myExperimentSetting.experimentSection == ExperimentSection.Experience)
         {
-            if (this.mainManager.myExperimentSetting.experimentTrial > 0)
-            {
-                return "結束測驗";
-            }
-            else
-            {
-                return "進行下一次測驗";
-            }
+            return "重新選擇體驗模式";
         }
         else
         {
-            if (this.mainManager.myExperimentSetting.experimentTrial > 2)
+            if (this.mainManager.myExperimentSetting.experimentMode == SystemMode.TestingMode)
             {
-                return "結束訓練";
+                if (this.mainManager.myExperimentSetting.experimentTrial == 1)
+                {
+                    return "結束測驗";
+                }
+                else
+                {
+                    return "進行下一次測驗";
+                }
             }
             else
             {
-                return "進行下一次訓練";
+                if (this.mainManager.myExperimentSetting.experimentTrial == 3)
+                {
+                    return "結束訓練";
+                }
+                else
+                {
+                    return "進行下一次訓練";
+                }
             }
         }
     }

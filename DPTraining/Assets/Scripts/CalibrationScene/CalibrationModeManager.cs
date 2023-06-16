@@ -77,9 +77,9 @@ public class CalibrationModeManager : MonoBehaviour
             switch (this.curState)
             {
                 case CalibrationState.MovableRange:
+                case CalibrationState.TPose_RHand:
                     this.calibrationSceneInitialized();
                     break;
-                case CalibrationState.TPose_RHand:
                 case CalibrationState.TPose_LHand:
                 case CalibrationState.ArmStraight_RHand:
                 case CalibrationState.ArmStraight_LHand:
@@ -100,6 +100,8 @@ public class CalibrationModeManager : MonoBehaviour
         this.mainManager.OVRControllerRight.SetActive(true);
         this.mainManager.OVRBoxingLeft.SetActive(false);
         this.mainManager.OVRBoxingRight.SetActive(false);
+        this.mainManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
+        this.mainManager.myExperimentSetting.experimentTrial = 0;
 
         this.curState = CalibrationState.MovableRange;
         this.markerPutCount = 0;
@@ -352,6 +354,8 @@ public class CalibrationModeManager : MonoBehaviour
         this.mainManager.sceneOrigin.transform.LookAt(lookAtPoint);
         this.mainManager.sceneOriginRotation = this.mainManager.sceneOrigin.transform.rotation;
 
+        Color newColor = new Color(1.0f, 0.0f, 0.0f, 0.56f);
+        this.mainManager.sceneOrigin.GetComponent<Renderer>().material.SetColor("_Color", newColor);
         this.mainManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = true;
     }
 

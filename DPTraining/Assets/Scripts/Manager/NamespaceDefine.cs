@@ -12,20 +12,20 @@ namespace DepthPerceptionSystem
         SelectionMode,
         PunchSettingMode,
         TestingMode,
-        TrainingMode_Baseline,
-        TrainingMode_GroupA,
-        TrainingMode_GroupB,
-        TrainingMode_GroupC,
-        TrainingMode,
-        TrainingMode_LineCue,
-        TrainingMode_BallCue_onTarget,
-        TrainingMode_BarCue,
-        TrainingMode_CutoutCue,
-        TrainingMode_PowerBarCue,
-        TrainingMode_AimCue,
-        TrainingMode_BarCue_withAim,
-        TrainingMode_CutoutCue_withAim,
-        TrainingMode_PowerBarCue_withAim,
+        TrainingMode_Baseline_A,
+        TrainingMode_Ring_B,
+        TrainingMode_Bar_C,
+        TrainingMode_Cutout_D,
+        // TrainingMode,
+        // TrainingMode_LineCue,
+        // TrainingMode_BallCue_onTarget,
+        // TrainingMode_BarCue,
+        // TrainingMode_CutoutCue,
+        // TrainingMode_PowerBarCue,
+        // TrainingMode_AimCue,
+        // TrainingMode_BarCue_withAim,
+        // TrainingMode_CutoutCue_withAim,
+        // TrainingMode_PowerBarCue_withAim,
     }
 
     public enum MovingDirection
@@ -248,6 +248,7 @@ namespace DepthPerceptionSystem
         Training_3,
         Training_4,
         PostTest,
+        Experience,
     }
     public class CoachMovement
     {
@@ -327,10 +328,10 @@ namespace DepthPerceptionSystem
         public int subjectID;
         public ExperimentSection experimentSection;
         public SystemMode experimentMode;
-        public int experimentTrial;
-        public CoachType[] coachTypes;
         public int[] selectedCoachTypes;
         public float reactionTimeStandard;
+        public int experimentTrial;
+        public CoachType[] coachTypes;
 
         public ExperimentSetting()
         {

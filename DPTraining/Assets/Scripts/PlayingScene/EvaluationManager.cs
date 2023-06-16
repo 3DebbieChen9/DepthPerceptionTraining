@@ -103,14 +103,14 @@ public class EvaluationManager : MonoBehaviour
         this.playingModeManager.curUnitResult.isPunching = true;
         this.playingModeManager.curUnitResult.isReacting = true;
         this.punchHand = hand;
-        switch (this.playingModeManager.mainManager.curSystemMode)
-        {
-            case SystemMode.TrainingMode_BallCue_onTarget: // On Target Only
-                this.playingModeManager.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(punchHand);
-                break;
-            default:
-                break;
-        }
+        // switch (this.playingModeManager.mainManager.curSystemMode)
+        // {
+        //     case SystemMode.TrainingMode_BallCue_onTarget: // On Target Only
+        //         this.playingModeManager.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(punchHand);
+        //         break;
+        //     default:
+        //         break;
+        // }
     }
 
     public void userIsMoving()

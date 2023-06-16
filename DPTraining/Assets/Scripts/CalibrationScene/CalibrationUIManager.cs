@@ -86,6 +86,8 @@ public class CalibrationUIManager : MonoBehaviour
         this.instructionText.text = "請將左手控制器放在可移動範圍的角落，並按下右手控制器上的 'A' 按鈕。";
         this.image.sprite = this.imageSources[Convert.ToInt32(state)];
         this.resultPanel.enabled = false;
+        this.resultTitle.text = "";
+        this.resultText.text = "";
     }
 
     public void movableRangeResult(bool isTooShort, float length)

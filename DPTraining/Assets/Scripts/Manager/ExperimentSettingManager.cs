@@ -39,11 +39,12 @@ public class ExperimentSettingManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.mainManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = true;
         this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(true);
         this.mainManager.OVRControllerRayRight.RayInteractorSwitch(true);
         this.mainManager.curSystemMode = SystemMode.ExperimentSettingMode;
-        this.experimentSectionNames = new string[] { "Pre-Test", "Training_1", "Training_2", "Training_3", "Training_4", "Post-Test" };
-        this.experimentModeNames = new string[] { "Testing", "Baseline", "GroupA", "GroupB", "GroupC" };
+        this.experimentSectionNames = new string[] { "Pre-Test", "Training_1", "Training_2", "Training_3", "Training_4", "Post-Test", "Experience" };
+        this.experimentModeNames = new string[] { "Testing", "Baseline (A)", "Ring (B)", "Bar + Ring (C)", "Cutout + Ring (D)" };
         this.subjectIDText.text = "0";
         this.experimentSectionText.text = this.experimentSectionNames[0];
         this.experimentModeText.text = this.experimentModeNames[0];
@@ -70,34 +71,36 @@ public class ExperimentSettingManager : MonoBehaviour
     public void btnSectionLeftClick()
     {
         int curIndex = System.Array.IndexOf(this.experimentSectionNames, this.experimentSectionText.text);
-        if (curIndex > 0)
+        if (curIndex == 0)
         {
-            this.experimentSectionText.text = this.experimentSectionNames[curIndex - 1];
+            this.experimentSectionText.text = this.experimentSectionNames[this.experimentSectionNames.Length - 1];
+        }
+        else
+        {
+            this.experimentSectionText.text = this.experimentSectionNames[(curIndex - 1) % this.experimentSectionNames.Length];
         }
     }
     public void btnSectionRightClick()
     {
         int curIndex = System.Array.IndexOf(this.experimentSectionNames, this.experimentSectionText.text);
-        if (curIndex < this.experimentSectionNames.Length - 1)
-        {
-            this.experimentSectionText.text = this.experimentSectionNames[curIndex + 1];
-        }
+        this.experimentSectionText.text = this.experimentSectionNames[(curIndex + 1) % this.experimentSectionNames.Length];
     }
     public void btnModeLeftClick()
     {
         int curIndex = System.Array.IndexOf(this.experimentModeNames, this.experimentModeText.text);
-        if (curIndex > 0)
+        if (curIndex == 0)
         {
-            this.experimentModeText.text = this.experimentModeNames[curIndex - 1];
+            this.experimentModeText.text = this.experimentModeNames[this.experimentModeNames.Length - 1];
+        }
+        else
+        {
+            this.experimentModeText.text = this.experimentModeNames[(curIndex - 1) % this.experimentModeNames.Length];
         }
     }
     public void btnModeRightClick()
     {
         int curIndex = System.Array.IndexOf(this.experimentModeNames, this.experimentModeText.text);
-        if (curIndex < this.experimentModeNames.Length - 1)
-        {
-            this.experimentModeText.text = this.experimentModeNames[curIndex + 1];
-        }
+        this.experimentModeText.text = this.experimentModeNames[(curIndex + 1) % this.experimentModeNames.Length];
     }
 
     public void btnSettingDoneClick()
@@ -134,6 +137,9 @@ public class ExperimentSettingManager : MonoBehaviour
             case "Post-Test":
                 this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.PostTest;
                 break;
+            case "Experience":
+                this.mainManager.myExperimentSetting.experimentSection = ExperimentSection.Experience;
+                break;
             default:
                 error = true;
                 this.errorText.text += "Experiment Section Error\n";
@@ -145,18 +151,23 @@ public class ExperimentSettingManager : MonoBehaviour
             case "Testing":
                 this.mainManager.myExperimentSetting.experimentMode = SystemMode.TestingMode;
                 break;
-            case "Baseline":
-                this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_Baseline;
+            case "Baseline (A)":
+                this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_Baseline_A;
                 break;
-            case "GroupA":
-                this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_GroupA;
+            case "Ring (B)":
+                this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_Ring_B;
                 break;
-            case "GroupB":
-                this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_GroupB;
+            case "Bar + Ring (C)":
+                this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_Bar_C;
                 break;
-            case "GroupC":
-                this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_GroupC;
+            case "Cutout + Ring (D)":
+                this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_Cutout_D;
                 break;
+        }
+
+        if (this.mainManager.myExperimentSetting.experimentSection == ExperimentSection.Experience)
+        {
+            this.mainManager.myExperimentSetting.experimentMode = SystemMode.TrainingMode_Baseline_A;
         }
 
         for (int i = 0; i < 4; i++)

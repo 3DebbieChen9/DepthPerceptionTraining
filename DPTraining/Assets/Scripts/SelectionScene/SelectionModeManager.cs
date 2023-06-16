@@ -27,7 +27,7 @@ public class SelectionModeManager : MonoBehaviour
     [SerializeField]
     private GameObject changeSceneButton;
     [SerializeField]
-    private SelectionState curState = SelectionState.Place;
+    private SelectionState curState = SelectionState.Handedness;
 
     void Awake()
     {
@@ -62,6 +62,11 @@ public class SelectionModeManager : MonoBehaviour
 
     public void selectionSceneInitialized()
     {
+        this.mainManager.OVRControllerLeft.SetActive(false);
+        this.mainManager.OVRControllerRight.SetActive(false);
+        this.mainManager.OVRBoxingLeft.SetActive(true);
+        this.mainManager.OVRBoxingRight.SetActive(true);
+
         this.ROOM.transform.position = new Vector3(this.mainManager.sceneOriginPosition.x,
                                                   this.mainManager.sceneOriginPosition.y,
                                                   this.mainManager.sceneOriginPosition.z);
@@ -69,13 +74,14 @@ public class SelectionModeManager : MonoBehaviour
 
         this.selectionRoom.transform.localPosition = new Vector3(0.0f, 0.0f, this.mainManager.myUserInfo.userBodySize.armLength * 1.1f - (5.0f - 1.0f));
         // this.curState = SelectionState.Place;
-        this.curState = SelectionState.Handedness;
+        // this.curState = SelectionState.Handedness;
+        this.curState = SelectionState.SelectTrainMethod;
         this.placeChoices.SetActive(false);
-        this.handednessChoices.SetActive(true);
+        this.handednessChoices.SetActive(false);
         this.speedChoices.SetActive(false);
         this.directionChoices.SetActive(false);
         this.modeChoices.SetActive(false);
-        this.trainMethodChoices.SetActive(false);
+        this.trainMethodChoices.SetActive(true);
         this.changeSceneButton.SetActive(false);
     }
 
@@ -83,6 +89,12 @@ public class SelectionModeManager : MonoBehaviour
     {
         this.mainManager.changeScene("CalibrationScene");
         this.mainManager.curSystemMode = SystemMode.CalibrationMode;
+    }
+
+    public void btnExperimentScene()
+    {
+        this.mainManager.changeScene("ExperimentSettingScene");
+        this.mainManager.curSystemMode = SystemMode.ExperimentSettingMode;
     }
 
     public void btnSelectionScene()
@@ -144,7 +156,7 @@ public class SelectionModeManager : MonoBehaviour
     {
         this.mainManager.mySelectionInfo.selectedMode = mode;
         this.mainManager.curSystemMode = mode;
-        this.mainManager.saveToJSON_selection(this.mainManager.mySelectionInfo);
+        // this.mainManager.saveToJSON_selection(this.mainManager.mySelectionInfo);
         switch (mode)
         {
             case SystemMode.TestingMode:

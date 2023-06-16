@@ -101,21 +101,21 @@ public class PowerBarCue : MonoBehaviour
         }
         else if (distance < idealDistanceMin)
         {
-            if (distance < 0.1f) { powerBar.value = 0.1f; }
+            if (distance < 0.1f) { powerBar.value = 0.01f; }
             else
             {
-                powerBar.value = distance / idealDistanceMin;
+                powerBar.value = Mathf.Pow((distance / idealDistanceMin), 2.7f);
             }
         }
         else if (distance > idealDistanceMax)
         {
-            if (distance > furthestDistance) { powerBar.value = 0.1f; }
+            if (distance > furthestDistance) { powerBar.value = 0.01f; }
             else
             {
                 powerBar.value = Mathf.Abs(distance - furthestDistance) / Mathf.Abs(furthestDistance - idealDistanceMax);
             }
         }
-        if (powerBar.value < 0.1f) { powerBar.value = 0.1f; }
+        if (powerBar.value < 0.01f) { powerBar.value = 0.01f; }
 
         float value = powerBar.value * 0.6f + 0.4f;
         Color white = Color.HSVToRGB(0, 0, value);

@@ -32,7 +32,8 @@ public class StraightCollider : MonoBehaviour
             && this.mainManager.curSystemMode != SystemMode.StartMode
             && this.mainManager.curSystemMode != SystemMode.CalibrationMode
             && this.mainManager.curSystemMode != SystemMode.PunchSettingMode
-            && this.mainManager.curSystemMode != SystemMode.SelectionMode)
+            && this.mainManager.curSystemMode != SystemMode.SelectionMode
+            && this.mainManager.curSystemMode != SystemMode.ExperimentSettingMode)
         {
             this.evaluationManager = GameObject.Find("EvaluationManager").GetComponent<EvaluationManager>();
         }
