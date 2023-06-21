@@ -383,7 +383,7 @@ namespace DepthPerceptionSystem
         public PlayingModeSetting()
         {
             this.testingReadyTime = 4.0f;
-            this.trainingReadyTime = 5.0f;
+            this.trainingReadyTime = 4.0f;
             this.tentativeTimeMin = 1.0f;
             this.tentativeTimeMax = 2.0f;
             this.idealUnitTimeLimit = 2.0f; // The coach required time limit is 2 seconds

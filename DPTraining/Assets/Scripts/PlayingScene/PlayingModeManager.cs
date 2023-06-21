@@ -598,13 +598,12 @@ public class PlayingModeManager : MonoBehaviour
             case SystemMode.TrainingMode_Cutout_D:
                 if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
                 {
-                    // this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(this.visualAidIsUpdating);
-                    this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(true);
+                    this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(this.visualAidIsUpdating);
                 }
                 else
                 {
-                    // this.depthCueManager.GetComponent<CutoutCue>().closeCutoutAid();
-                    this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(true);
+                    this.depthCueManager.GetComponent<CutoutCue>().closeCutoutAid();
+                    // this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(true);
                 }
                 break;
             // case SystemMode.TrainingMode_LineCue:
