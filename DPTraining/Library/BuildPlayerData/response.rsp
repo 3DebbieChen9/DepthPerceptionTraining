@@ -11,6 +11,7 @@
 -a="C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\PlayerScriptAssemblies\UnityEngine.UI.dll"
 -a="C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\PlayerScriptAssemblies\Unity.Services.Core.Configuration.dll"
 -a="C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\PlayerScriptAssemblies\Facebook.WitAI.dll"
+-a="C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\PlayerScriptAssemblies\SimpleTableUI.dll"
 -a="C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\PlayerScriptAssemblies\Unity.Services.Core.Registration.dll"
 -a="C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\PlayerScriptAssemblies\Oculus.VR.dll"
 -a="C:\Users\cgvlab\Documents\Debbie\DepthPerceptionTraining\DPTraining\Library\PlayerScriptAssemblies\Oculus.Platform.dll"

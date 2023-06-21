@@ -70,7 +70,7 @@ public class CoachManager : MonoBehaviour
         this.avtarCenterToEdgeLength = this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.avtarCenterToEdgeLength;
         this.distanceToUserMultiple = this.playingModeManager.mainManager.mySettingInfo.coachDefaultValue.distanceToUserMultiple;
 
-        Vector3 originForward = this.playingModeManager.mainManager.sceneOriginRotation * Vector3.forward;
+        Vector3 originForward = (this.playingModeManager.mainManager.sceneOriginRotation * Vector3.forward).normalized;
         this.coachInitialPosition = this.playingModeManager.mainManager.sceneOriginPosition +
                                     originForward * this.userArmLength * this.distanceToUserMultiple +
                                     originForward * this.avtarCenterToEdgeLength;

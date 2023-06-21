@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PunchSettingScene.unity
     guid: 8adf96f6d949b1e4fab619d07b600a9e
   - enabled: 1
+    path: Assets/Scenes/SelectionScene.unity
+    guid: 9aba0e80153c02e48ab7f69febca175c
+  - enabled: 1
     path: Assets/Scenes/TestingScene.unity
     guid: 0e0c4ac07ddd13a458d21d6bac34454a
   - enabled: 1

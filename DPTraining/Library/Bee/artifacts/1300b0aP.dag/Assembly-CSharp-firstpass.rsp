@@ -311,6 +311,7 @@
 -r:"Library/Bee/artifacts/1300b0aP.dag/Oculus.Spatializer.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Oculus.Voice.Demo.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Oculus.VR.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aP.dag/SimpleTableUI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.Services.Core.Analytics.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.Services.Core.Environments.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.Services.Core.ref.dll"

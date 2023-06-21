@@ -12,20 +12,10 @@ namespace DepthPerceptionSystem
         SelectionMode,
         PunchSettingMode,
         TestingMode,
-        TrainingMode_Baseline,
-        TrainingMode_GroupA,
-        TrainingMode_GroupB,
-        TrainingMode_GroupC,
-        TrainingMode,
-        TrainingMode_LineCue,
-        TrainingMode_BallCue_onTarget,
-        TrainingMode_BarCue,
-        TrainingMode_CutoutCue,
-        TrainingMode_PowerBarCue,
-        TrainingMode_AimCue,
-        TrainingMode_BarCue_withAim,
-        TrainingMode_CutoutCue_withAim,
-        TrainingMode_PowerBarCue_withAim,
+        TrainingMode_Baseline_A,
+        TrainingMode_Ring_B,
+        TrainingMode_Bar_C,
+        TrainingMode_Cutout_D,
     }
 
     public enum MovingDirection
@@ -248,6 +238,7 @@ namespace DepthPerceptionSystem
         Training_3,
         Training_4,
         PostTest,
+        Experience,
     }
     public class CoachMovement
     {
@@ -327,10 +318,10 @@ namespace DepthPerceptionSystem
         public int subjectID;
         public ExperimentSection experimentSection;
         public SystemMode experimentMode;
-        public int experimentTrial;
-        public CoachType[] coachTypes;
         public int[] selectedCoachTypes;
         public float reactionTimeStandard;
+        public int experimentTrial;
+        public CoachType[] coachTypes;
 
         public ExperimentSetting()
         {
@@ -382,7 +373,7 @@ namespace DepthPerceptionSystem
         public PlayingModeSetting()
         {
             this.testingReadyTime = 4.0f;
-            this.trainingReadyTime = 5.0f;
+            this.trainingReadyTime = 4.0f;
             this.tentativeTimeMin = 1.0f;
             this.tentativeTimeMax = 2.0f;
             this.idealUnitTimeLimit = 2.0f; // The coach required time limit is 2 seconds
@@ -475,7 +466,11 @@ namespace DepthPerceptionSystem
                                             unitResult.reactionTime, unitResult.score,
                                             unitResult.coachHandedness, unitResult.coachTargetShoulder, unitResult.coachMovingDirection,
                                             unitResult.punchHand, unitResult.armRotationAngle, unitResult.userMovingDirection,
-                                            unitResult.distanceToLeftShoulder, unitResult.distanceToRightShoulder);
+                                            unitResult.distanceToLeftShoulder, unitResult.distanceToRightShoulder,
+                                            unitResult.startingPosition_x, unitResult.startingPosition_y, unitResult.startingPosition_z,
+                                            unitResult.punchingPosition_x, unitResult.punchingPosition_y, unitResult.punchingPosition_z,
+                                            unitResult.startForwardVector_x, unitResult.startForwardVector_y, unitResult.startForwardVector_z,
+                                            unitResult.movingAngle);
             this.unitResultList.Add(tmp);
         }
 
@@ -501,15 +496,15 @@ namespace DepthPerceptionSystem
     {
         public int unitNum;
         public bool isMoving;
+        public bool isMovingCorrectly;
         public bool isPunching;
         public bool isReach;
         public bool isStraight;
-
-        public bool isReacting;
-        public bool isMovingCorrectly;
         public bool isSuccess;
 
+        public bool isReacting;
         public bool isOverTime;
+
         public float reactionTime;
         public int score;
 
@@ -522,6 +517,17 @@ namespace DepthPerceptionSystem
         public MovingDirection userMovingDirection;
         public float distanceToLeftShoulder;
         public float distanceToRightShoulder;
+
+        public float startingPosition_x;
+        public float startingPosition_y;
+        public float startingPosition_z;
+        public float punchingPosition_x;
+        public float punchingPosition_y;
+        public float punchingPosition_z;
+        public float startForwardVector_x;
+        public float startForwardVector_y;
+        public float startForwardVector_z;
+        public float movingAngle;
 
 
         public UnitResult()
@@ -549,6 +555,17 @@ namespace DepthPerceptionSystem
             this.userMovingDirection = MovingDirection.Random;
             this.distanceToLeftShoulder = 0.0f;
             this.distanceToRightShoulder = 0.0f;
+
+            this.startingPosition_x = 0.0f;
+            this.startingPosition_y = 0.0f;
+            this.startingPosition_z = 0.0f;
+            this.punchingPosition_x = 0.0f;
+            this.punchingPosition_y = 0.0f;
+            this.punchingPosition_z = 0.0f;
+            this.startForwardVector_x = 0.0f;
+            this.startForwardVector_y = 0.0f;
+            this.startForwardVector_z = 0.0f;
+            this.movingAngle = 0.0f;
         }
 
         public UnitResult(int _unitNum, bool _isMoving, bool _isPunching, bool _isReach,
@@ -556,7 +573,11 @@ namespace DepthPerceptionSystem
                             bool _isOverTime, float _reactionTime, int _score,
                             Hand _coachHandedness, Hand _coachTargetShoulder, MovingDirection _coachMovingDirection,
                             Hand _punchHand, ArmRotationAngle _armRotationAngle, MovingDirection _userMovingDirection,
-                            float _distanceToLeftShoulder, float _directionToRightShoulder)
+                            float _distanceToLeftShoulder, float _directionToRightShoulder,
+                            float _startingPositition_x, float _startingPositition_y, float _startingPositition_z,
+                            float _punchingPositition_x, float _punchingPositition_y, float _punchingPositition_z,
+                            float _startForwardVector_x, float _startForwardVector_y, float _startForwardVector_z,
+                            float _movingAngle)
         {
             this.unitNum = _unitNum;
             this.isMoving = _isMoving;
@@ -581,6 +602,17 @@ namespace DepthPerceptionSystem
             this.userMovingDirection = _userMovingDirection;
             this.distanceToLeftShoulder = _distanceToLeftShoulder;
             this.distanceToRightShoulder = _directionToRightShoulder;
+
+            this.startingPosition_x = _startingPositition_x;
+            this.startingPosition_y = _startingPositition_y;
+            this.startingPosition_z = _startingPositition_z;
+            this.punchingPosition_x = _punchingPositition_x;
+            this.punchingPosition_y = _punchingPositition_y;
+            this.punchingPosition_z = _punchingPositition_z;
+            this.startForwardVector_x = _startForwardVector_x;
+            this.startForwardVector_y = _startForwardVector_y;
+            this.startForwardVector_z = _startForwardVector_z;
+            this.movingAngle = _movingAngle;
         }
 
         public void reset()
@@ -608,6 +640,17 @@ namespace DepthPerceptionSystem
             this.userMovingDirection = MovingDirection.Random;
             this.distanceToLeftShoulder = 0.0f;
             this.distanceToRightShoulder = 0.0f;
+
+            this.startingPosition_x = 0.0f;
+            this.startingPosition_y = 0.0f;
+            this.startingPosition_z = 0.0f;
+            this.punchingPosition_x = 0.0f;
+            this.punchingPosition_y = 0.0f;
+            this.punchingPosition_z = 0.0f;
+            this.startForwardVector_x = 0.0f;
+            this.startForwardVector_y = 0.0f;
+            this.startForwardVector_z = 0.0f;
+            this.movingAngle = 0.0f;
         }
     }
 
@@ -717,19 +760,4 @@ namespace DepthPerceptionSystem
         public string name;
         public AudioClip clip;
     }
-    // public class NamespaceDefine : MonoBehaviour
-    // {
-    //     // Start is called before the first frame update
-    //     void Start()
-    //     {
-
-    //     }
-
-    //     // Update is called once per frame
-    //     void Update()
-    //     {
-
-    //     }
-    // }
-
 }

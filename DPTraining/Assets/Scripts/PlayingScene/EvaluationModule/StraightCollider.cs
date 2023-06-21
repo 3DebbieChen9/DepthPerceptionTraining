@@ -32,7 +32,8 @@ public class StraightCollider : MonoBehaviour
             && this.mainManager.curSystemMode != SystemMode.StartMode
             && this.mainManager.curSystemMode != SystemMode.CalibrationMode
             && this.mainManager.curSystemMode != SystemMode.PunchSettingMode
-            && this.mainManager.curSystemMode != SystemMode.SelectionMode)
+            && this.mainManager.curSystemMode != SystemMode.SelectionMode
+            && this.mainManager.curSystemMode != SystemMode.ExperimentSettingMode)
         {
             this.evaluationManager = GameObject.Find("EvaluationManager").GetComponent<EvaluationManager>();
         }
@@ -44,22 +45,6 @@ public class StraightCollider : MonoBehaviour
         {
             return;
         }
-
-        // if (this.evaluationManager == null && this.punchSettingManager != null)
-        // {
-        //     if (other.gameObject.tag == "Glove_L")
-        //     {
-        //         bool isPunchStraight = this.punchSettingManager.straightModule.judgeArmStraight(Hand.Left);
-        //         ArmRotationAngle armRotationAngle = this.punchSettingManager.straightModule.getArmAngle(Hand.Left);
-        //         this.punchSettingManager.displayPunchUnitResult(Hand.Left, isPunchStraight, armRotationAngle);
-        //     }
-        //     else if (other.gameObject.tag == "Glove_R")
-        //     {
-        //         bool isPunchStraight = this.punchSettingManager.straightModule.judgeArmStraight(Hand.Right);
-        //         ArmRotationAngle armRotationAngle = this.punchSettingManager.straightModule.getArmAngle(Hand.Right);
-        //         this.punchSettingManager.displayPunchUnitResult(Hand.Right, isPunchStraight, armRotationAngle);
-        //     }
-        // }
 
         if (this.evaluationManager != null)
         {

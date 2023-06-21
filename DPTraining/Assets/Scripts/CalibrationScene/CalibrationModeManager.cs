@@ -77,9 +77,9 @@ public class CalibrationModeManager : MonoBehaviour
             switch (this.curState)
             {
                 case CalibrationState.MovableRange:
+                case CalibrationState.TPose_RHand:
                     this.calibrationSceneInitialized();
                     break;
-                case CalibrationState.TPose_RHand:
                 case CalibrationState.TPose_LHand:
                 case CalibrationState.ArmStraight_RHand:
                 case CalibrationState.ArmStraight_LHand:
@@ -100,6 +100,8 @@ public class CalibrationModeManager : MonoBehaviour
         this.mainManager.OVRControllerRight.SetActive(true);
         this.mainManager.OVRBoxingLeft.SetActive(false);
         this.mainManager.OVRBoxingRight.SetActive(false);
+        this.mainManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = false;
+        this.mainManager.myExperimentSetting.experimentTrial = 0;
 
         this.curState = CalibrationState.MovableRange;
         this.markerPutCount = 0;
@@ -110,7 +112,6 @@ public class CalibrationModeManager : MonoBehaviour
         this.mainManager.enableUserArmMeshRenderers(false);
         this.heightModifyKeyPad.SetActive(false);
         this.heightModifyButton.SetActive(false);
-        // [----] Call Calibration UI Function
         // Movable Range Instruction
         this.calibrationUIManager.movableRangeInstruction(this.curState);
     }
@@ -122,7 +123,6 @@ public class CalibrationModeManager : MonoBehaviour
         this.centerEyeToControllerLength = 0.0f;
         this.centerEyeToFloor = 0.0f;
         this.mainManager.enableUserArmMeshRenderers(false);
-        // [----] Call Calibration UI Function
         // Movable Range Result
         this.calibrationUIManager.movableRangeResult(false, this.mainManager.myUserInfo.movableRange.length);
         // T-Pose Instruction - Right
@@ -138,7 +138,6 @@ public class CalibrationModeManager : MonoBehaviour
     {
         this.getIdlePoseData();
         this.mainManager.OVRCameraRig.GetComponent<OVRManager>().isInsightPassthroughEnabled = false;
-        // [----] Save User Info to JSON
         this.mainManager.saveToJSON_user(this.mainManager.myUserInfo);
         this.mainManager.curSystemMode = SystemMode.PunchSettingMode;
         this.mainManager.changeScene("PunchSettingScene");
@@ -162,7 +161,6 @@ public class CalibrationModeManager : MonoBehaviour
                 this.setSceneOrigin();
                 this.getMovableRangeLength();
                 this.curState = CalibrationState.TPose_RHand;
-                // [----] Call Calibration UI Function
                 // T-Pose Instruction - Right
                 this.calibrationUIManager.tPoseInstruction(this.curState);
             }
@@ -180,7 +178,6 @@ public class CalibrationModeManager : MonoBehaviour
                 this.centerEyeToControllerLength += this.calculateHorizatonalDistance(centerEyePos, rightControllerPos);
                 this.centerEyeToFloor += centerEyePos.y;
 
-                // [----] Call Calibration UI Function
                 // T-Pose Result - Right 
                 this.calibrationUIManager.tPoseResult(this.curState, this.centerEyeToControllerLength, this.centerEyeToFloor);
                 this.curState = CalibrationState.TPose_LHand;
@@ -196,7 +193,6 @@ public class CalibrationModeManager : MonoBehaviour
 
                 this.mainManager.resizeUserIK();
 
-                // [----] Call Calibration UI Function
                 // T-Pose Result - Left & Height
                 this.calibrationUIManager.tPoseResult(this.curState, this.mainManager.myUserInfo.userBodySize.centerEyeToControllerLength, this.mainManager.myUserInfo.userBodySize.height);
                 this.curState = CalibrationState.ArmStraight_RHand;
@@ -207,10 +203,6 @@ public class CalibrationModeManager : MonoBehaviour
                 this.mainManager.OVRControllerRayRight.RayInteractorSwitch(true);
 
                 this.mainManager.enableUserArmMeshRenderers(true);
-                this.mainManager.OVRControllerLeft.SetActive(false);
-                this.mainManager.OVRControllerRight.SetActive(false);
-                this.mainManager.OVRBoxingLeft.SetActive(true);
-                this.mainManager.OVRBoxingRight.SetActive(true);
                 break;
             default:
                 Debug.LogError("Error: Something Wrong while getting T-Pose Data");
@@ -239,7 +231,6 @@ public class CalibrationModeManager : MonoBehaviour
                                                     this.mainManager.rightUpperArm_IK.transform);
                 rightdest.transform.localPosition = new Vector3(0.9f, 0.0f, 0.0f);
 
-                // [----] Call Calibration UI Function
                 // Arm Straight Result - Right (Length)
                 this.calibrationUIManager.armLengthResult(this.curState, this.armLength, 0.0f);
                 this.curState = CalibrationState.ArmStraight_LHand;
@@ -266,7 +257,6 @@ public class CalibrationModeManager : MonoBehaviour
                 {
                     this.mainManager.myUserInfo.userBodySize.shoulderWidth = 0.20f;
                 }
-                // [----] Call Calibration UI Function
                 // Arm Straight Result - Left (Length)
                 this.calibrationUIManager.armLengthResult(this.curState, this.mainManager.myUserInfo.userBodySize.armLength, this.mainManager.myUserInfo.userBodySize.shoulderWidth);
                 this.curState = CalibrationState.IdlePose;
@@ -319,14 +309,12 @@ public class CalibrationModeManager : MonoBehaviour
         if (detectedResult < this.mainManager.myUserInfo.movableRange.minRequiredLengthInVR)
         {
             this.mainManager.myUserInfo.movableRange.length = this.mainManager.myUserInfo.movableRange.minRequiredLengthInVR;
-            // [----] Call Calibration UI Function
             // Movable Range Result - Too Short
             this.calibrationUIManager.movableRangeResult(true, this.mainManager.myUserInfo.movableRange.length);
         }
         else
         {
             this.mainManager.myUserInfo.movableRange.length = detectedResult;
-            // [----] Call Calibration UI Function
             // Movable Range Result - Success
             this.calibrationUIManager.movableRangeResult(false, this.mainManager.myUserInfo.movableRange.length);
         }
@@ -356,6 +344,8 @@ public class CalibrationModeManager : MonoBehaviour
         this.mainManager.sceneOrigin.transform.LookAt(lookAtPoint);
         this.mainManager.sceneOriginRotation = this.mainManager.sceneOrigin.transform.rotation;
 
+        Color newColor = new Color(1.0f, 0.0f, 0.0f, 0.56f);
+        this.mainManager.sceneOrigin.GetComponent<Renderer>().material.SetColor("_Color", newColor);
         this.mainManager.sceneOrigin.GetComponent<MeshRenderer>().enabled = true;
     }
 

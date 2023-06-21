@@ -55,15 +55,6 @@ public class CutoutCue : MonoBehaviour
         float distanceToRightShoulder = calculateHorizatonalDistance(userCenter.position, rightShoulder.position);
         float distanceToLeftShoulder = calculateHorizatonalDistance(userCenter.position, leftShoulder.position);
 
-        // if (distanceToLeftShoulder <= distanceToRightShoulder)
-        // {
-        //     return distanceToLeftShoulder;
-        // }
-        // else
-        // {
-        //     return distanceToRightShoulder;
-        // }
-
         if (this.playingModeManager.coachManager.coachShoudlerTarget == Hand.Right)
         {
             return distanceToRightShoulder;
@@ -102,8 +93,11 @@ public class CutoutCue : MonoBehaviour
             if (distance < 0.1f) { canvasScale = canvasWorstScale; }
             else
             {
-                float canvasAlmostIdealScale = 0.4f;
-                canvasScale = canvasAlmostIdealScale - (Mathf.Abs(distance - idealDistanceMin) / (idealDistanceMin) * Mathf.Abs(canvasAlmostIdealScale - canvasWorstScale));
+                float canvasAlmostIdealScale = 0.55f;
+                canvasScale = canvasAlmostIdealScale - Mathf.Pow((Mathf.Abs(distance - idealDistanceMin) / (idealDistanceMin) * Mathf.Abs(canvasAlmostIdealScale - canvasWorstScale)), Mathf.Log(1.8f)) * 1.5f;
+                // canvasScale = Mathf.Pow(distance, 2.7f) + 0.3f;
+                // float canvasAlmostIdealScale = 0.4f;
+                // canvasScale = canvasAlmostIdealScale - (Mathf.Abs(distance - idealDistanceMin) / (idealDistanceMin) * Mathf.Abs(canvasAlmostIdealScale - canvasWorstScale));
             }
         }
         else if (distance > idealDistanceMax)
@@ -111,10 +105,11 @@ public class CutoutCue : MonoBehaviour
             if (distance > furthestDistance) { canvasScale = canvasWorstScale; }
             else
             {
-                canvasScale = canvasIdealScale - Mathf.Abs(distance - idealDistanceMax) / (idealDistanceMin) * Mathf.Abs(canvasIdealScale - canvasWorstScale);
+                canvasScale = canvasIdealScale - Mathf.Abs(distance - idealDistanceMax) / Mathf.Abs(furthestDistance - idealDistanceMax) * Mathf.Abs(canvasIdealScale - canvasWorstScale);
             }
         }
 
+        Debug.Log($"distance: {distance}, canvasScale: {canvasScale}");
         if (canvasScale < canvasWorstScale) { canvasScale = canvasWorstScale; }
         else if (canvasScale > canvasIdealScale) { canvasScale = canvasIdealScale; }
 

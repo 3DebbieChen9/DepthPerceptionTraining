@@ -127,7 +127,7 @@ public class PunchSettingManager : MonoBehaviour
     {
         string jsonString = JsonConvert.SerializeObject(this.punchUnitTestResult);
         string dateTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-        string filePath = $"{Application.persistentDataPath}/{dateTime}_PunchUnitTest.json";
+        string filePath = $"{Application.persistentDataPath}/{dateTime}_{this.mainManager.myExperimentSetting.subjectID}_PunchUnitTest.json";
         File.WriteAllText(filePath, jsonString);
 
         Debug.Log($"PunchUnitTest_{dateTime} saved to {filePath}");
@@ -165,7 +165,7 @@ public class PunchSettingManager : MonoBehaviour
             this.leftStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = false;
         }
 
-        this.straightResultText.text = $"第幾次 | 哪隻手 | 系統判定 | 教練判定 | 角度\n";
+        this.straightResultText.text = $"第幾次 | 哪隻手 | 角度\n";
         this.straightResultText.text += $"設定前左手標準角度: {this.punchUnitTestResult.initialUserArmStraightAngle.leftIK.angleToString()}\n";
         this.straightResultText.text += $"設定前右手標準角度: {this.punchUnitTestResult.initialUserArmStraightAngle.rightIK.angleToString()}\n";
         int i = 1;
@@ -180,7 +180,8 @@ public class PunchSettingManager : MonoBehaviour
             {
                 hand = "左";
             }
-            this.straightResultText.text += $"{i:D2} | {hand} | {item.systemJudgeAsStraight} | {item.coachJudgeAsStraight} | {item.armRotationAngle.angleToString()}\n";
+            // this.straightResultText.text += $"{i:D2} | {hand} | {item.systemJudgeAsStraight} | {item.coachJudgeAsStraight} | {item.armRotationAngle.angleToString()}\n";
+            this.straightResultText.text += $"{i:D2} | {hand} | {item.armRotationAngle.angleToString()}\n";
             i++;
         }
         this.straightResultText.text += $"更新後左手標準角度: {this.punchUnitTestResult.updatedUserArmStraightAngle.leftIK.angleToString()}\n";
@@ -275,27 +276,24 @@ public class PunchSettingManager : MonoBehaviour
 
     public void btnSelectionSceneClick()
     {
-        // this.mainManager.changeScene("SelectionScene");
-        this.mainManager.curSystemMode = this.mainManager.myExperimentSetting.experimentMode;
-        switch (this.mainManager.myExperimentSetting.experimentMode)
+        if (this.mainManager.myExperimentSetting.experimentSection == ExperimentSection.Experience)
         {
-            case SystemMode.TestingMode:
-                this.mainManager.changeScene("TestingScene");
-                break;
-            default:
-                this.mainManager.changeScene("TrainingScene");
-                break;
+            this.mainManager.curSystemMode = SystemMode.SelectionMode;
+            this.mainManager.changeScene("SelectionScene");
         }
-        // this.rightStraightCollider = this.mainManager.rightUpperArm_IK.transform.Find("StraightCollider(Clone)");
-        // if (this.rightStraightCollider)
-        // {
-        //     this.rightStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = false;
-        // }
-        // this.leftStraightCollider = this.mainManager.leftUpperArm_IK.transform.Find("StraightCollider(Clone)");
-        // if (this.leftStraightCollider)
-        // {
-        //     this.leftStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = false;
-        // }
+        else
+        {
+            this.mainManager.curSystemMode = this.mainManager.myExperimentSetting.experimentMode;
+            switch (this.mainManager.myExperimentSetting.experimentMode)
+            {
+                case SystemMode.TestingMode:
+                    this.mainManager.changeScene("TestingScene");
+                    break;
+                default:
+                    this.mainManager.changeScene("TrainingScene");
+                    break;
+            }
+        }
     }
 
     public void reloadPunchSettingScene()
