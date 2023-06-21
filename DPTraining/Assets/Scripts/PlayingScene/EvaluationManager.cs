@@ -103,14 +103,6 @@ public class EvaluationManager : MonoBehaviour
         this.playingModeManager.curUnitResult.isPunching = true;
         this.playingModeManager.curUnitResult.isReacting = true;
         this.punchHand = hand;
-        // switch (this.playingModeManager.mainManager.curSystemMode)
-        // {
-        //     case SystemMode.TrainingMode_BallCue_onTarget: // On Target Only
-        //         this.playingModeManager.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(punchHand);
-        //         break;
-        //     default:
-        //         break;
-        // }
     }
 
     public void userIsMoving()
@@ -119,16 +111,6 @@ public class EvaluationManager : MonoBehaviour
         this.playingModeManager.curUnitResult.isReacting = true;
         this.playingModeManager.curUnitResult.isMovingCorrectly = this.directionModule.judgeMovingDirection();
         this.playingModeManager.curUnitResult.userMovingDirection = this.userMovingDirection;
-        // if (this.isDuringTheUnit) {
-        //     this.playingModeManager.curUnitResult.isMoving = true;
-        //     this.playingModeManager.curUnitResult.isReacting = true;
-        //     this.playingModeManager.curUnitResult.isMovingCorrectly =  this.directionModule.judgeMovingDirection();
-        // }
-        // else {
-        //     this.playingModeManager.curUnitResult.isMoving = false;
-        //     this.playingModeManager.curUnitResult.isReacting = false;
-        //     this.playingModeManager.curUnitResult.isMovingCorrectly = false;
-        // }
     }
 
     public void userIsHitCoach(Hand hand, bool isHitShoulder)
@@ -152,7 +134,6 @@ public class EvaluationManager : MonoBehaviour
         {
             this.playingModeManager.curUnitResult.isReach = false;
         }
-        // this.playingModeManager.curUnitResult.isReach = isHitShoulder ? true : false;
         this.playingModeManager.curUnitResult.isStraight = this.straightModule.judgeArmStraight(hand);
         this.playingModeManager.curUnitResult.punchHand = hand;
         this.playingModeManager.curUnitResult.armRotationAngle = this.straightModule.getArmAngle(hand);

@@ -99,7 +99,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     Unity.XR.Management.Editor.dll:
     - UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget
@@ -506,8 +505,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5714}
     - Class: 114
-      Script: {instanceID: 6040}
-    - Class: 114
       Script: {instanceID: 7080}
     - Class: 114
       Script: {instanceID: 7194}
@@ -594,8 +591,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5574}
     - Class: 114
       Script: {instanceID: 5714}
-    - Class: 114
-      Script: {instanceID: 6040}
     - Class: 114
       Script: {instanceID: 6178}
     - Class: 114
@@ -684,8 +679,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5574}
     - Class: 114
-      Script: {instanceID: 6040}
-    - Class: 114
       Script: {instanceID: 7194}
     - Class: 114
       Script: {instanceID: 7314}
@@ -702,7 +695,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10304}
     - Class: 114
-      Script: {instanceID: 40400}
+      Script: {instanceID: 37418}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -765,8 +758,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5574}
     - Class: 114
-      Script: {instanceID: 6040}
-    - Class: 114
       Script: {instanceID: 6596}
     - Class: 114
       Script: {instanceID: 7314}
@@ -783,8 +774,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10614}
     - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -915,8 +904,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5764}
     - Class: 114
       Script: {instanceID: 5998}
-    - Class: 114
-      Script: {instanceID: 6040}
     - Class: 114
       Script: {instanceID: 6126}
     - Class: 114
@@ -1089,8 +1076,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5574}
     - Class: 114
-      Script: {instanceID: 6040}
-    - Class: 114
       Script: {instanceID: 6964}
     - Class: 114
       Script: {instanceID: 7194}
@@ -1217,8 +1202,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5574}
     - Class: 114
       Script: {instanceID: 5666}
-    - Class: 114
-      Script: {instanceID: 6040}
     - Class: 114
       Script: {instanceID: 6964}
     - Class: 114
@@ -6271,4 +6254,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SelectionScene.unity
   - Assets/Scenes/TestingScene.unity
   - Assets/Scenes/TrainingScene.unity
-  playerPath: C:/Users/cgvlab/Documents/Debbie/DepthPerceptionTraining/BuildAPP/20230616_v8.4.0/DepthPerception_v8.4.0.apk
+  playerPath: C:/Users/cgvlab/Documents/Debbie/DepthPerceptionTraining/BuildAPP/20230621_v8.5.0/DepthPerception_v8.5.0.apk

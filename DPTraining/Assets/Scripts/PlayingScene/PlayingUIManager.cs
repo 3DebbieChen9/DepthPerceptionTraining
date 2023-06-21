@@ -209,16 +209,6 @@ public class PlayingUIManager : MonoBehaviour
     public void finalResultView(bool notShowResultPanel, TotalUnitResult totalResult, int totalScore, float standardReactionTime, float averageReactionTime, int numberOfMoving, int numberOfPunching, int numberOfMovingCorrectly, int numberOfReach, int numberOfSuccess, int numberOfOverTime, int numberOfUnit)
     {
         this.finalResultCanvas.SetActive(true);
-        // this.finalResultTitle.text = "Test Finished";
-        // this.finalResultText.text = "Total Score: " + totalScore.ToString() + "\n" +
-        //                             "Average Reaction Time: " + averageReactionTime.ToString("F3") + "s" + "\n" + 
-        //                             "=============================" + "\n" +
-        //                             "Number of Moving: " + numberOfMoving.ToString() + "\n" +
-        //                             "Number of Punching: " + numberOfPunching.ToString() + "\n" +
-        //                             "Number of Moving Correctly: " + numberOfMovingCorrectly.ToString() + "\n" + 
-        //                             "Number of Reaching: " + numberOfReach.ToString() + "\n" +
-        //                             "Number of Success: " + numberOfSuccess.ToString() + "\n" +
-        //                             "Number of Over Time: " + numberOfOverTime.ToString();
 
         float movingRate = (float)numberOfMoving / (float)numberOfUnit * 100.0f;
         float movingCorrectlyRate = (float)numberOfMovingCorrectly / (float)numberOfUnit * 100.0f;
@@ -230,13 +220,6 @@ public class PlayingUIManager : MonoBehaviour
         {
             this.finalResultTitle.text = "測試結束";
             this.finalResultText.text = "";
-            // this.finalResultText.text = $"平均反應時間: {averageReactionTime:F3}s\n" +
-            //                             $"=============================\n" +
-            //                             $"移動比率: {movingRate:F2}%\n" +
-            //                             $"移動方向正確率: {movingCorrectlyRate:F2}%\n" +
-            //                             $"出拳比率: {punchingRate:F2}%\n" +
-            //                             $"碰到目標率: {reachRate:F2}%\n" +
-            //                             $"成功率: {successRate:F2}%";
         }
         else
         {
@@ -254,14 +237,6 @@ public class PlayingUIManager : MonoBehaviour
                 timeDeltaSign = "+";
             }
             this.finalResultText.text = $"平均反應時間: {averageReactionTime:F3}s (<color={textColorHex}>{timeDeltaSign}{averageReactionTime - standardReactionTime:F3}</color>)";
-            //                                 $"=============================\n" +
-            //                                 $"有移動的比率: {movingRate:F2}%\n" +
-            //                                 $"移動方向正確率: {movingCorrectlyRate:F2}%\n" +
-            //                                 $"有出拳的比率: {punchingRate:F2}%\n" +
-            //                                 $"打到目標率: {reachRate:F2}%\n" +
-            //                                 $"成功率: {successRate:F2}%";
-            // this.finalResultTableSubTitle.text = $"情況\n有移動\n移動正確\n有出拳\n打到目標\n成功\n反應時間";
-
 
             this.tableSubTitles[0].text = "回合";
             this.tableSubTitles[1].text = "目標拳頭";
@@ -294,7 +269,6 @@ public class PlayingUIManager : MonoBehaviour
                 this.tableReactionTimeText[index].text = $"{unitResult.reactionTime:F2}";
                 index++;
             }
-            // this.finalResultTableText.text += $"{type}\n{movingComment}\n{movingCorrectlyComment}\n{punchingComment}\n{reachComment}\n{successComment}\n{reactionTimeComment}\n";
         }
 
         this.finalButtonsCanvas.SetActive(true);
@@ -321,16 +295,6 @@ public class PlayingUIManager : MonoBehaviour
 
     public string userIsMovingScore(bool isOverTime)
     {
-        // if (isOverTime)
-        // {
-        //     // return "User is moving";
-        //     return "有移動";
-        // }
-        // else
-        // {
-        //     // return "User is moving Score + 1";
-        //     return "有移動, 得分 + 1";
-        // }
         return "o 有移動";
     }
     public string userNotMoving()
@@ -346,31 +310,11 @@ public class PlayingUIManager : MonoBehaviour
     public string movingCorretlyScore(bool isOverTime)
     {
         return "o 移動方向正確";
-        // if (isOverTime)
-        // {
-        //     // return "Moving Correctly";
-        //     return "移動方向正確";
-        // }
-        // else
-        // {
-        //     // return "Moving Correctly Score + 1";
-        //     return "移動方向正確, 得分 + 1";
-        // }
     }
 
     public string userIsPunchingScore(bool isOverTime)
     {
         return "o 有出拳";
-        // if (isOverTime)
-        // {
-        //     // return "User is punching";
-        //     return "有出拳";
-        // }
-        // else
-        // {
-        //     // return "User Punching Score + 1";
-        //     return "有出拳, 得分 + 1";
-        // }
     }
     public string userNotPunching()
     {
@@ -381,16 +325,6 @@ public class PlayingUIManager : MonoBehaviour
     public string userReachScore(bool isOverTime)
     {
         return "o 打到目標";
-        // if (isOverTime)
-        // {
-        //     // return "User reach target";
-        //     return "有打到肩膀";
-        // }
-        // else
-        // {
-        //     // return "User Reach Target Score + 1";
-        //     return "有打到肩膀, 得分 + 1";
-        // }
     }
     public string userNotReach()
     {
@@ -401,15 +335,6 @@ public class PlayingUIManager : MonoBehaviour
     public string reachAndStraightScore(bool isOverTime)
     {
         return "o 伸直打到目標 (成功)";
-        // return "Reach and Straight Score + 1";
-        // if (isOverTime)
-        // {
-        //     return "伸直打到肩膀";
-        // }
-        // else
-        // {
-        //     return "伸直打到肩膀, 得分 + 1";
-        // }
     }
     public string armIsStraight()
     {
@@ -432,33 +357,4 @@ public class PlayingUIManager : MonoBehaviour
         Application.Quit();
     }
 
-    // public void btnSetting() {
-    //     // string sceneName = "SettingScene";
-    //     string sceneName = "SettingScene_TC";
-    //     Debug.Log("Change Scene to " + sceneName);
-    //     SceneManager.LoadScene(sceneName);
-    // }
-
-    // public void settingInfoDisplay(SettingInfo settingInfo, UserInfo userInfo) {
-    //     // this.settingText.text = $"Coach Height Difference w/ user: {settingInfo.coachDefaultValue.heightDifferenceWithUser:F2}\n" + 
-    //     //                         $"Coach Distance to user (multiple): {settingInfo.coachDefaultValue.distanceToUserMultiple:F2}\n" +
-    //     //                         $"Coach is pushable (!isKinematic): {!settingInfo.coachDefaultValue.isKinematic}\n" +
-    //     //                         $"Moving Speed Max: {settingInfo.coachDefaultValue.movingSpeedMax:F2} (m/s) | Min: {settingInfo.coachDefaultValue.movingSpeedMin:F2} (m/s)\n" +
-    //     //                         $"Controller Vibration Amplitude: {settingInfo.controllerVibration.amplitude:F1} | Frequency: {settingInfo.controllerVibration.frequency:F1}\n" +
-    //     //                         $"Threshold of Straight: {settingInfo.evaluationThreshold.handStraightAngle:F2} (degree)\n" +
-    //     //                         $"Testing Mode Ready Time: {settingInfo.testingModeSetting.readyTime:F1} (s) | Time Limit: {settingInfo.testingModeSetting.timeLimit:F1} (s)\n" +
-    //     //                         $"Testing Mode Number of Tasks: {settingInfo.testingModeSetting.targetNumberOfTasks} units\n";
-
-    //     // this.userText.text = $"User Height: {userInfo.userBodySize.height:F2} (m) | Arm Length: {userInfo.userBodySize.armLength:F2} (m)\n";
-
-    //     this.settingText.text = $"教練與使用者的身高差: {settingInfo.coachDefaultValue.heightDifferenceWithUser:F2}\n" + 
-    //                             $"教練初始位置與使用者之間的距離(多少倍臂長): {settingInfo.coachDefaultValue.distanceToUserMultiple:F2}\n" +
-    //                             // $"移動速度最大值: {settingInfo.coachDefaultValue.movingSpeedMax:F2} (m/s) | 最小值: {settingInfo.coachDefaultValue.movingSpeedMin:F2} (m/s)\n" +
-    //                             $"遙控器震動振幅: {settingInfo.controllerVibration.amplitude:F1} | 頻率: {settingInfo.controllerVibration.frequency:F1}\n" +
-    //                             $"伸直的角度接受範圍: {settingInfo.evaluationThreshold.handStraightAngle:F2} (度)\n" +
-    //                             $"測試階段的預備時間: {settingInfo.testingModeSetting.readyTime:F1} (s) | 反應時間限制: {settingInfo.testingModeSetting.unitTimeLimit:F1} (s)\n" +
-    //                             $"測試階段要進行的回合數: {settingInfo.testingModeSetting.targetNumberOfTasks} units\n";
-
-    //     this.userText.text = $"使用者身高: {userInfo.userBodySize.height:F2} (m) | 臂長: {userInfo.userBodySize.armLength:F2} (m)\n";
-    // }
 }

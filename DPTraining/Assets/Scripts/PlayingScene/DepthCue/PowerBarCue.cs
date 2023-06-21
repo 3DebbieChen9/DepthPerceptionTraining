@@ -58,14 +58,6 @@ public class PowerBarCue : MonoBehaviour
         float distanceToRightShoulder = calculateHorizatonalDistance(userCenter.position, rightShoulder.position);
         float distanceToLeftShoulder = calculateHorizatonalDistance(userCenter.position, leftShoulder.position);
 
-        // if (distanceToLeftShoulder <= distanceToRightShoulder)
-        // {
-        //     return distanceToLeftShoulder;
-        // }
-        // else
-        // {
-        //     return distanceToRightShoulder;
-        // }
         if (this.playingModeManager.coachManager.coachShoudlerTarget == Hand.Right)
         {
             return distanceToRightShoulder;

@@ -11505,8 +11505,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayingModeSetting__ctor_m48215555B19FCB
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		// this.testingReadyTime = 4.0f;
 		__this->___testingReadyTime_0 = (4.0f);
-		// this.trainingReadyTime = 5.0f;
-		__this->___trainingReadyTime_1 = (5.0f);
+		// this.trainingReadyTime = 4.0f;
+		__this->___trainingReadyTime_1 = (4.0f);
 		// this.tentativeTimeMin = 1.0f;
 		__this->___tentativeTimeMin_2 = (1.0f);
 		// this.tentativeTimeMax = 2.0f;

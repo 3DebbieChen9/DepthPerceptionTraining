@@ -16,16 +16,6 @@ namespace DepthPerceptionSystem
         TrainingMode_Ring_B,
         TrainingMode_Bar_C,
         TrainingMode_Cutout_D,
-        // TrainingMode,
-        // TrainingMode_LineCue,
-        // TrainingMode_BallCue_onTarget,
-        // TrainingMode_BarCue,
-        // TrainingMode_CutoutCue,
-        // TrainingMode_PowerBarCue,
-        // TrainingMode_AimCue,
-        // TrainingMode_BarCue_withAim,
-        // TrainingMode_CutoutCue_withAim,
-        // TrainingMode_PowerBarCue_withAim,
     }
 
     public enum MovingDirection
@@ -770,19 +760,4 @@ namespace DepthPerceptionSystem
         public string name;
         public AudioClip clip;
     }
-    // public class NamespaceDefine : MonoBehaviour
-    // {
-    //     // Start is called before the first frame update
-    //     void Start()
-    //     {
-
-    //     }
-
-    //     // Update is called once per frame
-    //     void Update()
-    //     {
-
-    //     }
-    // }
-
 }

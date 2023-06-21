@@ -5544,6 +5544,8 @@ inline CutoutCue_tE76A6E69BB70F152BE60F2B718A623F2088F4A33* GameObject_GetCompon
 }
 // System.Void CutoutCue::cutoutAidUpdate(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CutoutCue_cutoutAidUpdate_mC902A526AFA2A28AE575F0615794FF413DBF468F (CutoutCue_tE76A6E69BB70F152BE60F2B718A623F2088F4A33* __this, bool ___isUpdating0, const RuntimeMethod* method) ;
+// System.Void CutoutCue::closeCutoutAid()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CutoutCue_closeCutoutAid_m324015D3F4D8D3E1CFA2DFDD760592F0D47E5D9E (CutoutCue_tE76A6E69BB70F152BE60F2B718A623F2088F4A33* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.AudioSource::Stop()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537 (AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* __this, const RuntimeMethod* method) ;
 // System.Void PlayingUIManager::btnChangeScene(System.String)
@@ -15532,31 +15534,32 @@ IL_0059:
 		int32_t L_14 = __this->___curState_11;
 		if ((!(((uint32_t)L_14) == ((uint32_t)5))))
 		{
-			goto IL_0086;
+			goto IL_008b;
 		}
 	}
 
 IL_0074:
 	{
-		// this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(true);
+		// this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(this.visualAidIsUpdating);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_15 = __this->___depthCueManager_17;
 		NullCheck(L_15);
 		CutoutCue_tE76A6E69BB70F152BE60F2B718A623F2088F4A33* L_16;
 		L_16 = GameObject_GetComponent_TisCutoutCue_tE76A6E69BB70F152BE60F2B718A623F2088F4A33_m48C1C7F732B201A6927363C06C642D538E04798B(L_15, GameObject_GetComponent_TisCutoutCue_tE76A6E69BB70F152BE60F2B718A623F2088F4A33_m48C1C7F732B201A6927363C06C642D538E04798B_RuntimeMethod_var);
+		bool L_17 = __this->___visualAidIsUpdating_20;
 		NullCheck(L_16);
-		CutoutCue_cutoutAidUpdate_mC902A526AFA2A28AE575F0615794FF413DBF468F(L_16, (bool)1, NULL);
+		CutoutCue_cutoutAidUpdate_mC902A526AFA2A28AE575F0615794FF413DBF468F(L_16, L_17, NULL);
 		return;
 	}
 
-IL_0086:
+IL_008b:
 	{
-		// this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(true);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_17 = __this->___depthCueManager_17;
-		NullCheck(L_17);
-		CutoutCue_tE76A6E69BB70F152BE60F2B718A623F2088F4A33* L_18;
-		L_18 = GameObject_GetComponent_TisCutoutCue_tE76A6E69BB70F152BE60F2B718A623F2088F4A33_m48C1C7F732B201A6927363C06C642D538E04798B(L_17, GameObject_GetComponent_TisCutoutCue_tE76A6E69BB70F152BE60F2B718A623F2088F4A33_m48C1C7F732B201A6927363C06C642D538E04798B_RuntimeMethod_var);
+		// this.depthCueManager.GetComponent<CutoutCue>().closeCutoutAid();
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_18 = __this->___depthCueManager_17;
 		NullCheck(L_18);
-		CutoutCue_cutoutAidUpdate_mC902A526AFA2A28AE575F0615794FF413DBF468F(L_18, (bool)1, NULL);
+		CutoutCue_tE76A6E69BB70F152BE60F2B718A623F2088F4A33* L_19;
+		L_19 = GameObject_GetComponent_TisCutoutCue_tE76A6E69BB70F152BE60F2B718A623F2088F4A33_m48C1C7F732B201A6927363C06C642D538E04798B(L_18, GameObject_GetComponent_TisCutoutCue_tE76A6E69BB70F152BE60F2B718A623F2088F4A33_m48C1C7F732B201A6927363C06C642D538E04798B_RuntimeMethod_var);
+		NullCheck(L_19);
+		CutoutCue_closeCutoutAid_m324015D3F4D8D3E1CFA2DFDD760592F0D47E5D9E(L_19, NULL);
 		// }
 		return;
 	}

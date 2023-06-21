@@ -11,19 +11,17 @@ public class ReachModule : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void reachTarget(Hand hand) {
+    public void reachTarget(Hand hand)
+    {
         this.evaluationManager.userIsHitCoach(hand, true);
-        // if (this.evaluationManager.isDuringTheUnit) {
-        //     this.evaluationManager.userIsHitCoach(hand, true);
-        // }
     }
 }

@@ -18,9 +18,6 @@ public class VRBoxBuildingManager : MonoBehaviour
 
     void Awake()
     {
-        // if (this.mainManager == null) {
-        //     this.mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
-        // }
         if (this.playingModeManager == null)
         {
             this.playingModeManager = this.gameObject.GetComponent<PlayingModeManager>();

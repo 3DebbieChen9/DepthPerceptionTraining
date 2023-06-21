@@ -40,9 +40,6 @@ public class CalibrationUIManager : MonoBehaviour
     {
         this.instructions = new CalibrationInstruction();
         this.canvasHeight = 1.3f;
-        // this.tolerateAngle = 100.0f;
-        // this.tolerateDistanceMin = 1.0f;
-        // this.tolerateDistanceMax = 3.0f;
         this.moveTime = 1.0f;
         this.OVRCameraRig = this.calibrationModeManager.mainManager.OVRCameraRig;
     }
@@ -59,14 +56,6 @@ public class CalibrationUIManager : MonoBehaviour
     void FixedUpdate()
     {
         this.recenterUICanvas();
-        // if (Mathf.Abs(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y - this.transform.rotation.eulerAngles.y) > this.tolerateAngle) {
-        //     this.UICylinder.transform.DORotateQuaternion(Quaternion.Euler(0.0f, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.rotation.eulerAngles.y, 0.0f), this.moveTime);
-        // }
-
-        // if ((Mathf.Abs(Vector2.Distance(new Vector2(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z), new Vector2(this.transform.position.x, this.transform.position.z))) > this.tolerateDistanceMax) || 
-        //     (Mathf.Abs(Vector2.Distance(new Vector2(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z), new Vector2(this.transform.position.x, this.transform.position.z))) < this.tolerateDistanceMin)) {
-        //     this.UICylinder.transform.DOMove(new Vector3(this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.x, this.canvasHeight, this.OVRCameraRig.GetComponent<OVRCameraRig>().centerEyeAnchor.position.z), this.moveTime);
-        // }
     }
 
     void recenterUICanvas()

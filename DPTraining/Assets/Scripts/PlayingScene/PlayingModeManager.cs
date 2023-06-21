@@ -35,13 +35,9 @@ public class PlayingModeManager : MonoBehaviour
 
     [SerializeField]
     private List<string> voiceCommentList;
-
-    // [SerializeField]
-    // private MovingDirection[] controlledDirectionArray;
     public bool visualAidIsUpdating = false;
 
     [SerializeField] public float reactionTimeStandard = 2.0f;
-    // [SerializeField] private ReactionTimeWarning reactionTimeWarning = ReactionTimeWarning.none;
     [SerializeField] private bool reactionTimeWarning = false;
 
 
@@ -109,7 +105,6 @@ public class PlayingModeManager : MonoBehaviour
                 if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
                 {
                     this.curState = PlayingState.begin;
-                    // [----] UI: Close Welcome View
                     this.UIManager.closeStartCanvas();
                 }
             }
@@ -117,7 +112,6 @@ public class PlayingModeManager : MonoBehaviour
         // 測試進行中，判斷是否在中心點
         if (this.curState == PlayingState.begin)
         {
-            // [----] UI: Make sure the Ready View is active
             this.UIManager.openReadyCanvas();
             if (this.evaluationManager.userIsAtOrigin)
             {
@@ -130,7 +124,6 @@ public class PlayingModeManager : MonoBehaviour
             }
             else
             {
-                // [----] UI: Please move to the center.
                 this.UIManager.showMoveToCenter();
             }
         }
@@ -227,7 +220,6 @@ public class PlayingModeManager : MonoBehaviour
             {
                 this.evaluationManager.isDuringTheUnit = false;
                 this.coachManager.coachAnimator.SetBool("isDuringTheUnit", false);
-                // this.setPunchMarker();
                 this.unitOver();
             }
 
@@ -241,15 +233,6 @@ public class PlayingModeManager : MonoBehaviour
                         this.reactionTimeWarning = true;
                     }
                 }
-
-                // if (this.reactionTimer.timeLeft >= 2.0f && this.reactionTimeWarning == ReactionTimeWarning.first)
-                // {
-                //     if (!AudioManager.instance.aidSource.isPlaying)
-                //     {
-                //         this.reactionTimeWarning = ReactionTimeWarning.second;
-                //         AudioManager.instance.PlayAid("Ding-Ding-Ding");
-                //     }
-                // }
             }
         }
     }
@@ -302,12 +285,6 @@ public class PlayingModeManager : MonoBehaviour
 
         this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(false);
         this.mainManager.OVRControllerRayRight.RayInteractorSwitch(false);
-
-        // if (this.mainManager.curSystemMode != SystemMode.TestingMode)
-        // {
-        //     this.depthCueManager.GetComponent<LineCue>().eraseLineCue();
-        //     this.depthCueManager.GetComponent<BallCueOnTarget>().eraseBallCueOnTarget();
-        // }
 
         this.clearPunchMarker();
 
@@ -394,7 +371,6 @@ public class PlayingModeManager : MonoBehaviour
         }
         else
         {
-            // if (this.curUnitResult.reactionTime > this.mainManager.mySettingInfo.playingModeSetting.idealUnitTimeLimit)
             if (this.curUnitResult.reactionTime > this.reactionTimeStandard * 1.2f)
             {
                 this.voiceCommentList.Add("ReactionSuggestFaster");
@@ -477,10 +453,6 @@ public class PlayingModeManager : MonoBehaviour
         if (this.curUnitNum == this.targetNumberOfTasks)
         {
             this.curState = PlayingState.result;
-            // if (this.coachManager.coachMovingDirection == MovingDirection.Forward)
-            // {
-            //     this.coachManager.invokeTargetMoveToInitial(0.7f);
-            // }
             Invoke("callCloseCoachAvatar", 2.0f);
             Invoke("callClearPunchMarker", 1.9f);
             bool notShowResultPanel = false;
@@ -509,10 +481,6 @@ public class PlayingModeManager : MonoBehaviour
         {
             this.curUnitNum++;
             this.curState = PlayingState.begin;
-            // if (this.coachManager.coachMovingDirection == MovingDirection.Forward)
-            // {
-            //     this.coachManager.invokeTargetMoveToInitial(0.7f);
-            // }
         }
     }
 
@@ -569,12 +537,10 @@ public class PlayingModeManager : MonoBehaviour
             case (Hand.Right):
                 GameObject ball = Instantiate(this.ballWhenHitPrefab, this.mainManager.BoxingGloveEdgeRight.position, this.mainManager.BoxingGloveEdgeRight.rotation, this.evaluationManager.gameObject.transform);
                 ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-                // ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.red);
                 break;
             case (Hand.Left):
                 ball = Instantiate(this.ballWhenHitPrefab, this.mainManager.BoxingGloveEdgeLeft.position, this.mainManager.BoxingGloveEdgeLeft.rotation, this.evaluationManager.gameObject.transform);
                 ball.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-                // ball.GetComponent<Renderer>().material.SetColor("_MainColor", Color.red);
                 break;
         }
     }
@@ -606,78 +572,9 @@ public class PlayingModeManager : MonoBehaviour
                     // this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(true);
                 }
                 break;
-            // case SystemMode.TrainingMode_LineCue:
-            //     if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction)
-            //     {
-            //         this.depthCueManager.GetComponent<LineCue>().renderLineCue(this.evaluationManager.punchHand);
-            //     }
-            //     else
-            //     {
-            //         this.depthCueManager.GetComponent<LineCue>().eraseLineCue();
-            //     }
-            //     break;
-            // case SystemMode.TrainingMode_BallCue_onTarget:
-            //     if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction)
-            //     {
-            //         this.depthCueManager.GetComponent<BallCueOnTarget>().renderBallCueOnTarget(this.evaluationManager.punchHand);
-            //     }
-            //     else
-            //     {
-            //         this.depthCueManager.GetComponent<BallCueOnTarget>().eraseBallCueOnTarget();
-            //     }
-            //     break;
-            // case SystemMode.TrainingMode_BarCue:
-            // case SystemMode.TrainingMode_BarCue_withAim:
-            //     if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
-            //     {
-            //         this.depthCueManager.GetComponent<BarCue>().barAidUpdate(this.visualAidIsUpdating);
-            //     }
-            //     else
-            //     {
-            //         this.depthCueManager.GetComponent<BarCue>().closeBarAid();
-            //     }
-            //     break;
-            // case SystemMode.TrainingMode_CutoutCue:
-            // case SystemMode.TrainingMode_CutoutCue_withAim:
-            //     if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
-            //     {
-            //         this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate(this.visualAidIsUpdating);
-            //     }
-            //     else
-            //     {
-            //         // this.depthCueManager.GetComponent<CutoutCue>().cutoutAidUpdate();
-            //         this.depthCueManager.GetComponent<CutoutCue>().closeCutoutAid();
-            //     }
-            //     break;
-            // case SystemMode.TrainingMode_PowerBarCue:
-            // case SystemMode.TrainingMode_PowerBarCue_withAim:
-            //     if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
-            //     {
-            //         this.depthCueManager.GetComponent<PowerBarCue>().powerBarUpdate(this.visualAidIsUpdating);
-            //     }
-            //     else
-            //     {
-            //         this.depthCueManager.GetComponent<PowerBarCue>().closePowerBar();
-            //     }
-            //     break;
             default:
                 break;
         }
-
-        // if (this.mainManager.curSystemMode == SystemMode.TrainingMode_BarCue_withAim ||
-        //     this.mainManager.curSystemMode == SystemMode.TrainingMode_CutoutCue_withAim ||
-        //     this.mainManager.curSystemMode == SystemMode.TrainingMode_PowerBarCue_withAim ||
-        //     this.mainManager.curSystemMode == SystemMode.TrainingMode_AimCue)
-        // {
-        //     if (this.curState == PlayingState.tentative || this.curState == PlayingState.reaction || this.curState == PlayingState.comment)
-        //     {
-        //         this.depthCueManager.GetComponent<AimCueOnTarget>().aimCueUpdate();
-        //     }
-        //     else
-        //     {
-        //         this.depthCueManager.GetComponent<AimCueOnTarget>().closeAimCueOnTarget();
-        //     }
-        // }
     }
 
     void skipToFinalButton()
