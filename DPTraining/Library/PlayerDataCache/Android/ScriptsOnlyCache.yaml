@@ -695,7 +695,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10304}
     - Class: 114
-      Script: {instanceID: 37418}
+      Script: {instanceID: 40400}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -6254,4 +6254,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SelectionScene.unity
   - Assets/Scenes/TestingScene.unity
   - Assets/Scenes/TrainingScene.unity
-  playerPath: C:/Users/cgvlab/Documents/Debbie/DepthPerceptionTraining/BuildAPP/20230621_v8.5.0/DepthPerception_v8.5.0.apk
+  playerPath: C:/Users/cgvlab/Documents/Debbie/DepthPerceptionTraining/BuildAPP/20230626_v8.6.0/DepthPerception_v8.6.0.apk

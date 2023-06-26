@@ -5333,8 +5333,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool String_op_Equality_m0D685A924E5CD78078F2
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EvaluationManager_userIsMoving_m7C0B7EA305CEAB253BD0B09F041FF2BA2AB683AC (EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39* __this, const RuntimeMethod* method) ;
 // System.Void MainManager::sceneOriginColorChange(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainManager_sceneOriginColorChange_m57E29A4DDD84471414789F4B1232B82A0065A63A (MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* __this, bool ___isCenter0, const RuntimeMethod* method) ;
-// System.Void EvaluationManager::userIsNotPunching()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EvaluationManager_userIsNotPunching_mF00C0B5A9E8DC1ED3E89B9F1D4320C10462EE57A (EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39* __this, const RuntimeMethod* method) ;
 // System.Void EvaluationManager::userIsPunching(DepthPerceptionSystem.Hand)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EvaluationManager_userIsPunching_m0472A45DB9728EE919920AC8A22BAA026C637256 (EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39* __this, int32_t ___hand0, const RuntimeMethod* method) ;
 // System.String UnityEngine.GameObject::get_tag()
@@ -9914,85 +9912,62 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchModule_Start_mDD52230C0B466B6279F0F
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchModule_FixedUpdate_mD76906089E2DB85E1204E8D84F22868D381D84A9 (PunchModule_t39ABC37AF30A5BEBD92B2508EFE2A3E02289B62A* __this, const RuntimeMethod* method) 
 {
 	{
-		// if (this.rightStayInTrigger && this.leftStayInTrigger)
-		bool L_0 = __this->___rightStayInTrigger_5;
-		if (!L_0)
-		{
-			goto IL_001b;
-		}
-	}
-	{
-		bool L_1 = __this->___leftStayInTrigger_6;
-		if (!L_1)
-		{
-			goto IL_001b;
-		}
-	}
-	{
-		// this.evaluationManager.userIsNotPunching();
-		EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39* L_2 = __this->___evaluationManager_4;
-		NullCheck(L_2);
-		EvaluationManager_userIsNotPunching_mF00C0B5A9E8DC1ED3E89B9F1D4320C10462EE57A(L_2, NULL);
-	}
-
-IL_001b:
-	{
 		// if (this.evaluationManager.playingModeManager.curState == PlayingState.reaction || this.evaluationManager.playingModeManager.curState == PlayingState.comment)
+		EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39* L_0 = __this->___evaluationManager_4;
+		NullCheck(L_0);
+		PlayingModeManager_t3C875A989E580C0A4F2FBA099B63F8100CD629D5* L_1 = L_0->___playingModeManager_4;
+		NullCheck(L_1);
+		int32_t L_2 = L_1->___curState_11;
+		if ((((int32_t)L_2) == ((int32_t)4)))
+		{
+			goto IL_0026;
+		}
+	}
+	{
 		EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39* L_3 = __this->___evaluationManager_4;
 		NullCheck(L_3);
 		PlayingModeManager_t3C875A989E580C0A4F2FBA099B63F8100CD629D5* L_4 = L_3->___playingModeManager_4;
 		NullCheck(L_4);
 		int32_t L_5 = L_4->___curState_11;
-		if ((((int32_t)L_5) == ((int32_t)4)))
+		if ((!(((uint32_t)L_5) == ((uint32_t)5))))
 		{
-			goto IL_0041;
-		}
-	}
-	{
-		EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39* L_6 = __this->___evaluationManager_4;
-		NullCheck(L_6);
-		PlayingModeManager_t3C875A989E580C0A4F2FBA099B63F8100CD629D5* L_7 = L_6->___playingModeManager_4;
-		NullCheck(L_7);
-		int32_t L_8 = L_7->___curState_11;
-		if ((!(((uint32_t)L_8) == ((uint32_t)5))))
-		{
-			goto IL_0069;
+			goto IL_004e;
 		}
 	}
 
-IL_0041:
+IL_0026:
 	{
 		// if (!this.rightStayInTrigger)
-		bool L_9 = __this->___rightStayInTrigger_5;
-		if (L_9)
+		bool L_6 = __this->___rightStayInTrigger_5;
+		if (L_6)
 		{
-			goto IL_0055;
+			goto IL_003a;
 		}
 	}
 	{
 		// this.evaluationManager.userIsPunching(Hand.Right);
-		EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39* L_10 = __this->___evaluationManager_4;
-		NullCheck(L_10);
-		EvaluationManager_userIsPunching_m0472A45DB9728EE919920AC8A22BAA026C637256(L_10, 0, NULL);
+		EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39* L_7 = __this->___evaluationManager_4;
+		NullCheck(L_7);
+		EvaluationManager_userIsPunching_m0472A45DB9728EE919920AC8A22BAA026C637256(L_7, 0, NULL);
 	}
 
-IL_0055:
+IL_003a:
 	{
 		// if (!this.leftStayInTrigger)
-		bool L_11 = __this->___leftStayInTrigger_6;
-		if (L_11)
+		bool L_8 = __this->___leftStayInTrigger_6;
+		if (L_8)
 		{
-			goto IL_0069;
+			goto IL_004e;
 		}
 	}
 	{
 		// this.evaluationManager.userIsPunching(Hand.Left);
-		EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39* L_12 = __this->___evaluationManager_4;
-		NullCheck(L_12);
-		EvaluationManager_userIsPunching_m0472A45DB9728EE919920AC8A22BAA026C637256(L_12, 1, NULL);
+		EvaluationManager_t5AB22C75D56FAB4E70482D16375FC60AF296BB39* L_9 = __this->___evaluationManager_4;
+		NullCheck(L_9);
+		EvaluationManager_userIsPunching_m0472A45DB9728EE919920AC8A22BAA026C637256(L_9, 1, NULL);
 	}
 
-IL_0069:
+IL_004e:
 	{
 		// }
 		return;
