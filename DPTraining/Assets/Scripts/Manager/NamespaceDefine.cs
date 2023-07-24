@@ -318,6 +318,7 @@ namespace DepthPerceptionSystem
         public int subjectID;
         public ExperimentSection experimentSection;
         public SystemMode experimentMode;
+        public MovingSpeed selectedSpeed;
         public int[] selectedCoachTypes;
         public float reactionTimeStandard;
         public int experimentTrial;
@@ -329,6 +330,8 @@ namespace DepthPerceptionSystem
             this.experimentSection = ExperimentSection.PreTest;
             this.experimentMode = SystemMode.TestingMode;
             this.experimentTrial = 0;
+            this.selectedSpeed = MovingSpeed.Slowest;
+            
             this.selectedCoachTypes = new int[4];
             for (int i = 0; i < 4; i++)
             {

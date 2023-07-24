@@ -197,7 +197,7 @@ public class PlayingModeManager : MonoBehaviour
                 this.unitIsOver = false;
 
                 this.coachManager.movement(this.mainManager.myExperimentSetting.coachTypes[this.mainManager.myExperimentSetting.selectedCoachTypes[this.mainManager.myExperimentSetting.experimentTrial]].coachMovements[this.curUnitNum - 1].target,
-                                            MovingSpeed.Slowest,
+                                            this.mainManager.myExperimentSetting.selectedSpeed,
                                             this.mainManager.myExperimentSetting.coachTypes[this.mainManager.myExperimentSetting.selectedCoachTypes[this.mainManager.myExperimentSetting.experimentTrial]].coachMovements[this.curUnitNum - 1].direction);
 
                 this.curUnitResult.reset();

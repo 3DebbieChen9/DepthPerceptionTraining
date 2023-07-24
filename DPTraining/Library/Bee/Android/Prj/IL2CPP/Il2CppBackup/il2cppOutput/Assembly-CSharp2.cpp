@@ -1255,14 +1255,16 @@ struct ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720  : public Run
 	int32_t ___experimentSection_1;
 	// DepthPerceptionSystem.SystemMode DepthPerceptionSystem.ExperimentSetting::experimentMode
 	int32_t ___experimentMode_2;
+	// DepthPerceptionSystem.MovingSpeed DepthPerceptionSystem.ExperimentSetting::selectedSpeed
+	int32_t ___selectedSpeed_3;
 	// System.Int32[] DepthPerceptionSystem.ExperimentSetting::selectedCoachTypes
-	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ___selectedCoachTypes_3;
+	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ___selectedCoachTypes_4;
 	// System.Single DepthPerceptionSystem.ExperimentSetting::reactionTimeStandard
-	float ___reactionTimeStandard_4;
+	float ___reactionTimeStandard_5;
 	// System.Int32 DepthPerceptionSystem.ExperimentSetting::experimentTrial
-	int32_t ___experimentTrial_5;
+	int32_t ___experimentTrial_6;
 	// DepthPerceptionSystem.CoachType[] DepthPerceptionSystem.ExperimentSetting::coachTypes
-	CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* ___coachTypes_6;
+	CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* ___coachTypes_7;
 };
 
 // DepthPerceptionSystem.MovableRange
@@ -14810,7 +14812,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CalibrationModeManager_calibrationSceneI
 		NullCheck(L_15);
 		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_16 = L_15->___myExperimentSetting_9;
 		NullCheck(L_16);
-		L_16->___experimentTrial_5 = 0;
+		L_16->___experimentTrial_6 = 0;
 		// this.curState = CalibrationState.MovableRange;
 		__this->___curState_6 = 0;
 		// this.markerPutCount = 0;
@@ -17061,21 +17063,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CoachManager_coachSettingInitial_m71F352
 		NullCheck(L_1);
 		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_2 = L_1->___myExperimentSetting_9;
 		NullCheck(L_2);
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_3 = L_2->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_3 = L_2->___coachTypes_7;
 		PlayingModeManager_t3C875A989E580C0A4F2FBA099B63F8100CD629D5* L_4 = __this->___playingModeManager_4;
 		NullCheck(L_4);
 		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_5 = L_4->___mainManager_4;
 		NullCheck(L_5);
 		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_6 = L_5->___myExperimentSetting_9;
 		NullCheck(L_6);
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_7 = L_6->___selectedCoachTypes_3;
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_7 = L_6->___selectedCoachTypes_4;
 		PlayingModeManager_t3C875A989E580C0A4F2FBA099B63F8100CD629D5* L_8 = __this->___playingModeManager_4;
 		NullCheck(L_8);
 		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_9 = L_8->___mainManager_4;
 		NullCheck(L_9);
 		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_10 = L_9->___myExperimentSetting_9;
 		NullCheck(L_10);
-		int32_t L_11 = L_10->___experimentTrial_5;
+		int32_t L_11 = L_10->___experimentTrial_6;
 		NullCheck(L_7);
 		int32_t L_12 = L_11;
 		int32_t L_13 = (L_7)->GetAt(static_cast<il2cpp_array_size_t>(L_12));
@@ -22716,7 +22718,7 @@ IL_02af:
 		NullCheck(L_84);
 		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_85 = L_84->___myExperimentSetting_9;
 		NullCheck(L_85);
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_86 = L_85->___selectedCoachTypes_3;
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_86 = L_85->___selectedCoachTypes_4;
 		int32_t L_87 = V_4;
 		TMP_TextU5BU5D_t12384CBAF397196B9A7886087BDC8C19D800C24F* L_88 = __this->___coachTypeOrderTexts_11;
 		int32_t L_89 = V_4;
@@ -22803,7 +22805,7 @@ IL_0308:
 		float L_107;
 		L_107 = Single_Parse_m349A7F699C77834259812ABE86909825C1F93CF4(L_106, NULL);
 		NullCheck(L_104);
-		L_104->___reactionTimeStandard_4 = L_107;
+		L_104->___reactionTimeStandard_5 = L_107;
 		// }
 		goto IL_035a;
 	}// end try (depth: 1)
@@ -22848,34 +22850,40 @@ CATCH_0330:
 
 IL_035a:
 	{
+		// this.mainManager.myExperimentSetting.selectedSpeed = MovingSpeed.Slowest;
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_115 = __this->___mainManager_4;
+		NullCheck(L_115);
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_116 = L_115->___myExperimentSetting_9;
+		NullCheck(L_116);
+		L_116->___selectedSpeed_3 = 0;
 		// if (!error)
-		bool L_115 = V_0;
-		if (L_115)
+		bool L_117 = V_0;
+		if (L_117)
 		{
-			goto IL_0394;
+			goto IL_03a5;
 		}
 	}
 	{
 		// this.mainManager.myExperimentSetting.experimentTrial = 0;
-		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_116 = __this->___mainManager_4;
-		NullCheck(L_116);
-		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_117 = L_116->___myExperimentSetting_9;
-		NullCheck(L_117);
-		L_117->___experimentTrial_5 = 0;
-		// this.mainManager.saveToJSON_experiment(this.mainManager.myExperimentSetting);
 		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_118 = __this->___mainManager_4;
-		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_119 = __this->___mainManager_4;
-		NullCheck(L_119);
-		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_120 = L_119->___myExperimentSetting_9;
 		NullCheck(L_118);
-		MainManager_saveToJSON_experiment_m7EEF7A8B8BBC7AA7EB54B1B1E42AC879FBDEFD88(L_118, L_120, NULL);
-		// this.mainManager.changeScene("CalibrationScene");
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_119 = L_118->___myExperimentSetting_9;
+		NullCheck(L_119);
+		L_119->___experimentTrial_6 = 0;
+		// this.mainManager.saveToJSON_experiment(this.mainManager.myExperimentSetting);
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_120 = __this->___mainManager_4;
 		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_121 = __this->___mainManager_4;
 		NullCheck(L_121);
-		MainManager_changeScene_m3A6417B11ED0F462976987DB11EBA27C70A0826E(L_121, _stringLiteralFB1F5C1F6E13D02022BA01C2303E293FCB13BA68, NULL);
+		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_122 = L_121->___myExperimentSetting_9;
+		NullCheck(L_120);
+		MainManager_saveToJSON_experiment_m7EEF7A8B8BBC7AA7EB54B1B1E42AC879FBDEFD88(L_120, L_122, NULL);
+		// this.mainManager.changeScene("CalibrationScene");
+		MainManager_t0B8DD06F7A8E8AB7A59D8CAB25A70378CAD1C734* L_123 = __this->___mainManager_4;
+		NullCheck(L_123);
+		MainManager_changeScene_m3A6417B11ED0F462976987DB11EBA27C70A0826E(L_123, _stringLiteralFB1F5C1F6E13D02022BA01C2303E293FCB13BA68, NULL);
 	}
 
-IL_0394:
+IL_03a5:
 	{
 		// }
 		return;
@@ -24083,7 +24091,7 @@ IL_0035:
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_21 = L_16;
 		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_22 = __this->___myExperimentSetting_9;
 		NullCheck(L_22);
-		int32_t L_23 = L_22->___experimentTrial_5;
+		int32_t L_23 = L_22->___experimentTrial_6;
 		int32_t L_24 = L_23;
 		RuntimeObject* L_25 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_24);
 		NullCheck(L_21);
@@ -24183,7 +24191,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainManager_saveToJSON_unitResult_mE3DF3
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_19 = L_14;
 		ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720* L_20 = __this->___myExperimentSetting_9;
 		NullCheck(L_20);
-		int32_t L_21 = L_20->___experimentTrial_5;
+		int32_t L_21 = L_20->___experimentTrial_6;
 		int32_t L_22 = L_21;
 		RuntimeObject* L_23 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_22);
 		NullCheck(L_19);

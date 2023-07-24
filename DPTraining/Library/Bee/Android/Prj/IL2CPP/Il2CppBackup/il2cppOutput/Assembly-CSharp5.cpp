@@ -1641,14 +1641,16 @@ struct ExperimentSetting_tA78C389AF3BDD84505EA9CCB08CF0764F479A720  : public Run
 	int32_t ___experimentSection_1;
 	// DepthPerceptionSystem.SystemMode DepthPerceptionSystem.ExperimentSetting::experimentMode
 	int32_t ___experimentMode_2;
+	// DepthPerceptionSystem.MovingSpeed DepthPerceptionSystem.ExperimentSetting::selectedSpeed
+	int32_t ___selectedSpeed_3;
 	// System.Int32[] DepthPerceptionSystem.ExperimentSetting::selectedCoachTypes
-	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ___selectedCoachTypes_3;
+	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ___selectedCoachTypes_4;
 	// System.Single DepthPerceptionSystem.ExperimentSetting::reactionTimeStandard
-	float ___reactionTimeStandard_4;
+	float ___reactionTimeStandard_5;
 	// System.Int32 DepthPerceptionSystem.ExperimentSetting::experimentTrial
-	int32_t ___experimentTrial_5;
+	int32_t ___experimentTrial_6;
 	// DepthPerceptionSystem.CoachType[] DepthPerceptionSystem.ExperimentSetting::coachTypes
-	CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* ___coachTypes_6;
+	CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* ___coachTypes_7;
 };
 
 // OculusSampleFramework.InteractableCollisionInfo
@@ -11258,20 +11260,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExperimentSetting__ctor_m01AEFEE8BBF4FEA
 		// this.experimentMode = SystemMode.TestingMode;
 		__this->___experimentMode_2 = 5;
 		// this.experimentTrial = 0;
-		__this->___experimentTrial_5 = 0;
+		__this->___experimentTrial_6 = 0;
+		// this.selectedSpeed = MovingSpeed.Slowest;
+		__this->___selectedSpeed_3 = 0;
 		// this.selectedCoachTypes = new int[4];
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_0 = (Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C*)SZArrayNew(Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C_il2cpp_TypeInfo_var, (uint32_t)4);
-		__this->___selectedCoachTypes_3 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___selectedCoachTypes_3), (void*)L_0);
+		__this->___selectedCoachTypes_4 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___selectedCoachTypes_4), (void*)L_0);
 		// for (int i = 0; i < 4; i++)
 		V_0 = 0;
-		goto IL_003f;
+		goto IL_0046;
 	}
 
-IL_0032:
+IL_0039:
 	{
 		// this.selectedCoachTypes[i] = 0;
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_1 = __this->___selectedCoachTypes_3;
+		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_1 = __this->___selectedCoachTypes_4;
 		int32_t L_2 = V_0;
 		NullCheck(L_1);
 		(L_1)->SetAt(static_cast<il2cpp_array_size_t>(L_2), (int32_t)0);
@@ -11280,29 +11284,29 @@ IL_0032:
 		V_0 = ((int32_t)il2cpp_codegen_add(L_3, 1));
 	}
 
-IL_003f:
+IL_0046:
 	{
 		// for (int i = 0; i < 4; i++)
 		int32_t L_4 = V_0;
 		if ((((int32_t)L_4) < ((int32_t)4)))
 		{
-			goto IL_0032;
+			goto IL_0039;
 		}
 	}
 	{
 		// this.coachTypes = new CoachType[8];
 		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_5 = (CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D*)(CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D*)SZArrayNew(CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D_il2cpp_TypeInfo_var, (uint32_t)8);
-		__this->___coachTypes_6 = L_5;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___coachTypes_6), (void*)L_5);
+		__this->___coachTypes_7 = L_5;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___coachTypes_7), (void*)L_5);
 		// for (int i = 0; i < 8; i++)
 		V_1 = 0;
-		goto IL_0064;
+		goto IL_006b;
 	}
 
-IL_0053:
+IL_005a:
 	{
 		// this.coachTypes[i] = new CoachType();
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_6 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_6 = __this->___coachTypes_7;
 		int32_t L_7 = V_1;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_8 = (CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1*)il2cpp_codegen_object_new(CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1_il2cpp_TypeInfo_var);
 		NullCheck(L_8);
@@ -11315,25 +11319,25 @@ IL_0053:
 		V_1 = ((int32_t)il2cpp_codegen_add(L_9, 1));
 	}
 
-IL_0064:
+IL_006b:
 	{
 		// for (int i = 0; i < 8; i++)
 		int32_t L_10 = V_1;
 		if ((((int32_t)L_10) < ((int32_t)8)))
 		{
-			goto IL_0053;
+			goto IL_005a;
 		}
 	}
 	{
 		// this.coachTypes[0].handedness = Hand.Left;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_11 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_11 = __this->___coachTypes_7;
 		NullCheck(L_11);
 		int32_t L_12 = 0;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_13 = (L_11)->GetAt(static_cast<il2cpp_array_size_t>(L_12));
 		NullCheck(L_13);
 		L_13->___handedness_0 = 1;
 		// this.coachTypes[0].coachMovements = new CoachMovementType(0).movements;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_14 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_14 = __this->___coachTypes_7;
 		NullCheck(L_14);
 		int32_t L_15 = 0;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_16 = (L_14)->GetAt(static_cast<il2cpp_array_size_t>(L_15));
@@ -11346,14 +11350,14 @@ IL_0064:
 		L_16->___coachMovements_1 = L_18;
 		Il2CppCodeGenWriteBarrier((void**)(&L_16->___coachMovements_1), (void*)L_18);
 		// this.coachTypes[1].handedness = Hand.Left;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_19 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_19 = __this->___coachTypes_7;
 		NullCheck(L_19);
 		int32_t L_20 = 1;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_21 = (L_19)->GetAt(static_cast<il2cpp_array_size_t>(L_20));
 		NullCheck(L_21);
 		L_21->___handedness_0 = 1;
 		// this.coachTypes[1].coachMovements = new CoachMovementType(1).movements;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_22 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_22 = __this->___coachTypes_7;
 		NullCheck(L_22);
 		int32_t L_23 = 1;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_24 = (L_22)->GetAt(static_cast<il2cpp_array_size_t>(L_23));
@@ -11366,14 +11370,14 @@ IL_0064:
 		L_24->___coachMovements_1 = L_26;
 		Il2CppCodeGenWriteBarrier((void**)(&L_24->___coachMovements_1), (void*)L_26);
 		// this.coachTypes[2].handedness = Hand.Left;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_27 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_27 = __this->___coachTypes_7;
 		NullCheck(L_27);
 		int32_t L_28 = 2;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_29 = (L_27)->GetAt(static_cast<il2cpp_array_size_t>(L_28));
 		NullCheck(L_29);
 		L_29->___handedness_0 = 1;
 		// this.coachTypes[2].coachMovements = new CoachMovementType(2).movements;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_30 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_30 = __this->___coachTypes_7;
 		NullCheck(L_30);
 		int32_t L_31 = 2;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_32 = (L_30)->GetAt(static_cast<il2cpp_array_size_t>(L_31));
@@ -11386,14 +11390,14 @@ IL_0064:
 		L_32->___coachMovements_1 = L_34;
 		Il2CppCodeGenWriteBarrier((void**)(&L_32->___coachMovements_1), (void*)L_34);
 		// this.coachTypes[3].handedness = Hand.Left;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_35 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_35 = __this->___coachTypes_7;
 		NullCheck(L_35);
 		int32_t L_36 = 3;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_37 = (L_35)->GetAt(static_cast<il2cpp_array_size_t>(L_36));
 		NullCheck(L_37);
 		L_37->___handedness_0 = 1;
 		// this.coachTypes[3].coachMovements = new CoachMovementType(3).movements;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_38 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_38 = __this->___coachTypes_7;
 		NullCheck(L_38);
 		int32_t L_39 = 3;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_40 = (L_38)->GetAt(static_cast<il2cpp_array_size_t>(L_39));
@@ -11406,14 +11410,14 @@ IL_0064:
 		L_40->___coachMovements_1 = L_42;
 		Il2CppCodeGenWriteBarrier((void**)(&L_40->___coachMovements_1), (void*)L_42);
 		// this.coachTypes[4].handedness = Hand.Right;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_43 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_43 = __this->___coachTypes_7;
 		NullCheck(L_43);
 		int32_t L_44 = 4;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_45 = (L_43)->GetAt(static_cast<il2cpp_array_size_t>(L_44));
 		NullCheck(L_45);
 		L_45->___handedness_0 = 0;
 		// this.coachTypes[4].coachMovements = new CoachMovementType(0).movements;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_46 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_46 = __this->___coachTypes_7;
 		NullCheck(L_46);
 		int32_t L_47 = 4;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_48 = (L_46)->GetAt(static_cast<il2cpp_array_size_t>(L_47));
@@ -11426,14 +11430,14 @@ IL_0064:
 		L_48->___coachMovements_1 = L_50;
 		Il2CppCodeGenWriteBarrier((void**)(&L_48->___coachMovements_1), (void*)L_50);
 		// this.coachTypes[5].handedness = Hand.Right;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_51 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_51 = __this->___coachTypes_7;
 		NullCheck(L_51);
 		int32_t L_52 = 5;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_53 = (L_51)->GetAt(static_cast<il2cpp_array_size_t>(L_52));
 		NullCheck(L_53);
 		L_53->___handedness_0 = 0;
 		// this.coachTypes[5].coachMovements = new CoachMovementType(1).movements;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_54 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_54 = __this->___coachTypes_7;
 		NullCheck(L_54);
 		int32_t L_55 = 5;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_56 = (L_54)->GetAt(static_cast<il2cpp_array_size_t>(L_55));
@@ -11446,14 +11450,14 @@ IL_0064:
 		L_56->___coachMovements_1 = L_58;
 		Il2CppCodeGenWriteBarrier((void**)(&L_56->___coachMovements_1), (void*)L_58);
 		// this.coachTypes[6].handedness = Hand.Right;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_59 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_59 = __this->___coachTypes_7;
 		NullCheck(L_59);
 		int32_t L_60 = 6;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_61 = (L_59)->GetAt(static_cast<il2cpp_array_size_t>(L_60));
 		NullCheck(L_61);
 		L_61->___handedness_0 = 0;
 		// this.coachTypes[6].coachMovements = new CoachMovementType(2).movements;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_62 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_62 = __this->___coachTypes_7;
 		NullCheck(L_62);
 		int32_t L_63 = 6;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_64 = (L_62)->GetAt(static_cast<il2cpp_array_size_t>(L_63));
@@ -11466,14 +11470,14 @@ IL_0064:
 		L_64->___coachMovements_1 = L_66;
 		Il2CppCodeGenWriteBarrier((void**)(&L_64->___coachMovements_1), (void*)L_66);
 		// this.coachTypes[7].handedness = Hand.Right;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_67 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_67 = __this->___coachTypes_7;
 		NullCheck(L_67);
 		int32_t L_68 = 7;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_69 = (L_67)->GetAt(static_cast<il2cpp_array_size_t>(L_68));
 		NullCheck(L_69);
 		L_69->___handedness_0 = 0;
 		// this.coachTypes[7].coachMovements = new CoachMovementType(3).movements;
-		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_70 = __this->___coachTypes_6;
+		CoachTypeU5BU5D_t1B4ADBCB67C750560E34E666DCF32F0533E7921D* L_70 = __this->___coachTypes_7;
 		NullCheck(L_70);
 		int32_t L_71 = 7;
 		CoachType_t6022D287B1DA0FCBBAC653387F8257496D8F0FE1* L_72 = (L_70)->GetAt(static_cast<il2cpp_array_size_t>(L_71));

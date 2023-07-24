@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\cgvlab\\Documents\\Debbie\\DepthPerceptionTraining\\DPTraining\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\launcher\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\CGVLab(D)\\DepthPerceptionTraining\\DPTraining\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\launcher\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\cgvlab\\Documents\\Debbie\\DepthPerceptionTraining\\DPTraining\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\launcher\\src\\main\\res\\values\\ids.xml",
+                    "source": "D:\\CGVLab(D)\\DepthPerceptionTraining\\DPTraining\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\launcher\\src\\main\\res\\values\\ids.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\cgvlab\\Documents\\Debbie\\DepthPerceptionTraining\\DPTraining\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\packaged_res\\release\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,112,168,217,263",
-                        "endColumns": "56,55,48,45,46",
-                        "endOffsets": "107,163,212,258,305"
-                    },
-                    "to": {
-                        "startLines": "3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "101,158,214,263,309",
-                        "endColumns": "56,55,48,45,46",
-                        "endOffsets": "153,209,258,304,351"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\cgvlab\\Documents\\Debbie\\DepthPerceptionTraining\\DPTraining\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\launcher\\src\\main\\res\\values\\strings.xml",
+                    "source": "D:\\CGVLab(D)\\DepthPerceptionTraining\\DPTraining\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\launcher\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "2,2",
@@ -55,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\cgvlab\\Documents\\Debbie\\DepthPerceptionTraining\\DPTraining\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\launcher\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\CGVLab(D)\\DepthPerceptionTraining\\DPTraining\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\packaged_res\\release\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,112,168,217,263",
+                        "endColumns": "56,55,48,45,46",
+                        "endOffsets": "107,163,212,258,305"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "101,158,214,263,309",
+                        "endColumns": "56,55,48,45,46",
+                        "endOffsets": "153,209,258,304,351"
+                    }
+                },
+                {
+                    "source": "D:\\CGVLab(D)\\DepthPerceptionTraining\\DPTraining\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\launcher\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "5,2,7",
                         "startColumns": "0,0,0",

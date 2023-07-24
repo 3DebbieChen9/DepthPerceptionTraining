@@ -195,6 +195,8 @@ public class ExperimentSettingManager : MonoBehaviour
             Debug.Log(e);
         }
 
+        this.mainManager.myExperimentSetting.selectedSpeed = MovingSpeed.Slowest;
+
         if (!error)
         {
             this.mainManager.myExperimentSetting.experimentTrial = 0;

@@ -29,6 +29,9 @@ public class SelectionModeManager : MonoBehaviour
     [SerializeField]
     private SelectionState curState = SelectionState.Handedness;
 
+    [SerializeField]
+    public SelectionSettingManager selectionSettingManager;
+
     void Awake()
     {
         if (this.mainManager == null)
@@ -66,6 +69,8 @@ public class SelectionModeManager : MonoBehaviour
         this.mainManager.OVRControllerRight.SetActive(false);
         this.mainManager.OVRBoxingLeft.SetActive(true);
         this.mainManager.OVRBoxingRight.SetActive(true);
+        this.mainManager.OVRControllerRayLeft.RayInteractorSwitch(true);
+            this.mainManager.OVRControllerRayRight.RayInteractorSwitch(true);
 
         this.ROOM.transform.position = new Vector3(this.mainManager.sceneOriginPosition.x,
                                                   this.mainManager.sceneOriginPosition.y,
@@ -156,16 +161,23 @@ public class SelectionModeManager : MonoBehaviour
     {
         this.mainManager.mySelectionInfo.selectedMode = mode;
         this.mainManager.curSystemMode = mode;
-        // this.mainManager.saveToJSON_selection(this.mainManager.mySelectionInfo);
-        switch (mode)
-        {
-            case SystemMode.TestingMode:
-                this.mainManager.changeScene("TestingScene");
-                break;
-            default:
-                this.mainManager.changeScene("TrainingScene");
-                break;
+        bool settingError = this.selectionSettingManager.selecitonSettingDone();
+        if (!settingError) {
+            switch (mode)
+            {
+                case SystemMode.TestingMode:
+                    this.mainManager.changeScene("TestingScene");
+                    break;
+                default:
+                    this.mainManager.changeScene("TrainingScene");
+                    break;
+            }
         }
+        else {
+            Debug.Log("Setting Error");
+            this.mainManager.changeScene("SelectionScene");
+        }
+        // this.mainManager.saveToJSON_selection(this.mainManager.mySelectionInfo);
     }
 
     private void placeChoicesAway()
