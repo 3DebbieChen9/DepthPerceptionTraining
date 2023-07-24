@@ -20,11 +20,6 @@ public class PunchModule : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (this.rightStayInTrigger && this.leftStayInTrigger)
-        {
-            this.evaluationManager.userIsNotPunching();
-        }
-
         if (this.evaluationManager.playingModeManager.curState == PlayingState.reaction || this.evaluationManager.playingModeManager.curState == PlayingState.comment)
         {
             if (!this.rightStayInTrigger)
@@ -37,6 +32,13 @@ public class PunchModule : MonoBehaviour
                 this.evaluationManager.userIsPunching(Hand.Left);
             }
         }
+        // else
+        // {
+        //     if (this.rightStayInTrigger && this.leftStayInTrigger)
+        //     {
+        //         this.evaluationManager.userIsNotPunching();
+        //     }
+        // }
     }
 
     void OnTriggerExit(Collider other)
