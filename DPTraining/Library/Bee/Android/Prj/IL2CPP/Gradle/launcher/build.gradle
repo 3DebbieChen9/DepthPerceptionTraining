@@ -16,12 +16,12 @@ android {
     defaultConfig {
         minSdkVersion 29
         targetSdkVersion 30
-        applicationId 'com.Debbie.DepthPerceptionTC'
+        applicationId 'com.Debbie.DepthPerceptionCHI'
         ndk {
             abiFilters 'arm64-v8a'
         }
         versionCode 1
-        versionName '9.0.0'
+        versionName '9.1.0'
     }
 
     aaptOptions {

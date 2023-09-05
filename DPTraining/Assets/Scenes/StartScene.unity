@@ -599,8 +599,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Please press button 'A' on R-controller to start the system.\n\u8ACB\u6309\u53F3\u624B\u9059\u63A7\u5668\u7684
-    \"A\" \u958B\u59CB\u7CFB\u7D71"
+  m_text: Please press button 'A' on R-controller to start the system.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
   m_sharedMaterial: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
@@ -2264,7 +2263,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Welcome to Depth Perception Training System\n\u6B61\u8FCE\u4F86\u5230\u8DDD\u96E2\u611F\u8A13\u7DF4\u7CFB\u7D71"
+  m_text: Welcome to Depth Perception Training System
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
   m_sharedMaterial: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}

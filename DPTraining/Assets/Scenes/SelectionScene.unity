@@ -20819,7 +20819,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u91CD\u65B0\u9078\u64C7"
+  m_text: Reselect
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
   m_sharedMaterial: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
@@ -26259,7 +26259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u56DE\u5230\u5BE6\u9A57\u8A2D\u5B9A"
+  m_text: Back to Exp. Setting
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
   m_sharedMaterial: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
@@ -26286,8 +26286,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -30506,7 +30506,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Type 0~3: \u53CD\u67B6 | Type 4~7: \u6B63\u67B6"
+  m_text: 'Type 0~3: Southpaw | Type 4~7: Orthodox'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
   m_sharedMaterial: {fileID: 8468646767478539237, guid: 7326a7ae1c6dd5c438139d6bdc84afae, type: 2}
@@ -30533,8 +30533,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

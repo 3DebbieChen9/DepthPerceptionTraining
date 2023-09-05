@@ -141,13 +141,13 @@ public class PunchSettingManager : MonoBehaviour
         this.punchStraightUnit.hand = _hand;
         if (_hand == Hand.Right)
         {
-            // this.handText.text = "Right";
-            this.handText.text = "右手";
+            this.handText.text = "Right";
+            // this.handText.text = "右手";
         }
         else
         {
-            // this.handText.text = "Left";
-            this.handText.text = "左手";
+            this.handText.text = "Left";
+            // this.handText.text = "左手";
         }
         this.curStraightAngleText.text = _armRotationAngle.angleToString();
         this.systemResultText.text = _systemResult.ToString();
@@ -165,27 +165,34 @@ public class PunchSettingManager : MonoBehaviour
             this.leftStraightCollider.gameObject.GetComponent<MeshRenderer>().enabled = false;
         }
 
-        this.straightResultText.text = $"第幾次 | 哪隻手 | 角度\n";
-        this.straightResultText.text += $"設定前左手標準角度: {this.punchUnitTestResult.initialUserArmStraightAngle.leftIK.angleToString()}\n";
-        this.straightResultText.text += $"設定前右手標準角度: {this.punchUnitTestResult.initialUserArmStraightAngle.rightIK.angleToString()}\n";
+        // this.straightResultText.text = $"第幾次 | 哪隻手 | 角度\n";
+        this.straightResultText.text = $"Number | Hand | Angle\n";
+        // this.straightResultText.text += $"設定前左手標準角度: {this.punchUnitTestResult.initialUserArmStraightAngle.leftIK.angleToString()}\n";
+        this.straightResultText.text += $"Left Standard Angle (Before): {this.punchUnitTestResult.initialUserArmStraightAngle.leftIK.angleToString()}\n";
+        // this.straightResultText.text += $"設定前右手標準角度: {this.punchUnitTestResult.initialUserArmStraightAngle.rightIK.angleToString()}\n";
+        this.straightResultText.text += $"Right Standard Angle (Before): {this.punchUnitTestResult.initialUserArmStraightAngle.rightIK.angleToString()}\n";
         int i = 1;
         foreach (var item in this.punchUnitTestResult.punchStraightUnitList)
         {
             string hand = "";
             if (item.hand == Hand.Right)
             {
-                hand = "右";
+                // hand = "右";
+                hand = "R";
             }
             else
             {
-                hand = "左";
+                // hand = "左";
+                hand = "L";
             }
             // this.straightResultText.text += $"{i:D2} | {hand} | {item.systemJudgeAsStraight} | {item.coachJudgeAsStraight} | {item.armRotationAngle.angleToString()}\n";
             this.straightResultText.text += $"{i:D2} | {hand} | {item.armRotationAngle.angleToString()}\n";
             i++;
         }
-        this.straightResultText.text += $"更新後左手標準角度: {this.punchUnitTestResult.updatedUserArmStraightAngle.leftIK.angleToString()}\n";
-        this.straightResultText.text += $"更新後右手標準角度: {this.punchUnitTestResult.updatedUserArmStraightAngle.rightIK.angleToString()}\n";
+        // this.straightResultText.text += $"更新後左手標準角度: {this.punchUnitTestResult.updatedUserArmStraightAngle.leftIK.angleToString()}\n";
+        this.straightResultText.text += $"Left Standard Angle (After): {this.punchUnitTestResult.updatedUserArmStraightAngle.leftIK.angleToString()}\n";
+        // this.straightResultText.text += $"更新後右手標準角度: {this.punchUnitTestResult.updatedUserArmStraightAngle.rightIK.angleToString()}\n";
+        this.straightResultText.text += $"Right Standard Angle (After): {this.punchUnitTestResult.updatedUserArmStraightAngle.rightIK.angleToString()}\n";
     }
 
     public void savePunchUnitResult()
@@ -214,7 +221,8 @@ public class PunchSettingManager : MonoBehaviour
         {
             if (curDataNum == 6)
             {
-                this.instructionText.text = "準備好請用<color=#FFA6FF>左手</color>向前出拳，伸直時按下'X'\n下方顯示數據後請按「儲存」";
+                // this.instructionText.text = "準備好請用<color=#FFA6FF>左手</color>向前出拳，伸直時按下'X'\n下方顯示數據後請按「儲存」";
+                this.instructionText.text = "Use<color=#FFA6FF>LEFT hand</color>to punch forward, press 'X' when arm is straight.\nWhen there is value below press 'Save'.";
             }
             this.curDataNumText.text = $"{curDataNum}/10";
             this.handText.text = "";
@@ -224,13 +232,13 @@ public class PunchSettingManager : MonoBehaviour
             this.coachResultText.text = this.punchStraightUnit.coachJudgeAsStraight.ToString();
             if (this.punchStraightUnit.coachJudgeAsStraight)
             {
-                // this.coachResultButtonText.text = "Not Straight";
-                this.coachResultButtonText.text = "沒伸直";
+                this.coachResultButtonText.text = "Not Straight";
+                // this.coachResultButtonText.text = "沒伸直";
             }
             else
             {
-                // this.coachResultButtonText.text = "Straight";
-                this.coachResultButtonText.text = "伸直";
+                this.coachResultButtonText.text = "Straight";
+                // this.coachResultButtonText.text = "伸直";
             }
         }
     }
@@ -240,7 +248,8 @@ public class PunchSettingManager : MonoBehaviour
         this.punchUnitTestResult.reset();
         this.curDataNum = 1;
         this.curDataNumText.text = "1/10";
-        this.instructionText.text = "準備好請用<color=#FFA6FF>右手</color>向前出拳，伸直時按下'A'\n下方顯示數據後請按「儲存」";
+        // this.instructionText.text = "準備好請用<color=#FFA6FF>右手</color>向前出拳，伸直時按下'A'\n下方顯示數據後請按「儲存」";
+        this.instructionText.text = "Use<color=#FFA6FF>RIGHT hand</color>to punch forward, press 'A' when arm is straight.\nWhen there is value below press 'Save'.";
         this.handText.text = "";
         this.systemResultText.text = "";
         this.curStraightAngleText.text = "";
@@ -248,13 +257,13 @@ public class PunchSettingManager : MonoBehaviour
         this.coachResultText.text = this.punchStraightUnit.coachJudgeAsStraight.ToString();
         if (this.punchStraightUnit.coachJudgeAsStraight)
         {
-            // this.coachResultButtonText.text = "Not Straight";
-            this.coachResultButtonText.text = "沒伸直";
+            this.coachResultButtonText.text = "Not Straight";
+            // this.coachResultButtonText.text = "沒伸直";
         }
         else
         {
-            // this.coachResultButtonText.text = "Straight";
-            this.coachResultButtonText.text = "伸直";
+            this.coachResultButtonText.text = "Straight";
+            // this.coachResultButtonText.text = "伸直";
         }
     }
 
@@ -264,13 +273,13 @@ public class PunchSettingManager : MonoBehaviour
         this.coachResultText.text = this.punchStraightUnit.coachJudgeAsStraight.ToString();
         if (this.punchStraightUnit.coachJudgeAsStraight)
         {
-            // this.coachResultButtonText.text = "Not Straight";
-            this.coachResultButtonText.text = "沒伸直";
+            this.coachResultButtonText.text = "Not Straight";
+            // this.coachResultButtonText.text = "沒伸直";
         }
         else
         {
-            // this.coachResultButtonText.text = "Straight";
-            this.coachResultButtonText.text = "伸直";
+            this.coachResultButtonText.text = "Straight";
+            // this.coachResultButtonText.text = "伸直";
         }
     }
 

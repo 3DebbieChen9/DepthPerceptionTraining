@@ -46,7 +46,7 @@ namespace InstructionText
             this.result.Add("可移動範圍邊長 (公尺) = ");
 
             this.resultDefault = new List<string>();
-            this.resultDefault.Add("Too short, use default value (m) = ");
+            this.resultDefault.Add("Too short, use default length (m) = ");
             this.resultDefault.Add("太短了，使用預設長度 (公尺) = ");
         }
     }

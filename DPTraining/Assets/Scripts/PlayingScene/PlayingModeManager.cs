@@ -627,7 +627,8 @@ public class PlayingModeManager : MonoBehaviour
     {
         if (this.mainManager.myExperimentSetting.experimentSection == ExperimentSection.Experience)
         {
-            return "重新選擇體驗模式";
+            // return "重新選擇體驗模式";
+            return "Reselect Mode";
         }
         else
         {
@@ -635,22 +636,26 @@ public class PlayingModeManager : MonoBehaviour
             {
                 if (this.mainManager.myExperimentSetting.experimentTrial == 1)
                 {
-                    return "結束測驗";
+                    // return "結束測驗";
+                    return "Exit";
                 }
                 else
                 {
-                    return "進行下一次測驗";
+                    // return "進行下一次測驗";
+                    return "Next Trial";
                 }
             }
             else
             {
                 if (this.mainManager.myExperimentSetting.experimentTrial == 3)
                 {
-                    return "結束訓練";
+                    // return "結束訓練";
+                    return "Exit";
                 }
                 else
                 {
-                    return "進行下一次訓練";
+                    // return "進行下一次訓練";
+                    return "Next Trial";
                 }
             }
         }
