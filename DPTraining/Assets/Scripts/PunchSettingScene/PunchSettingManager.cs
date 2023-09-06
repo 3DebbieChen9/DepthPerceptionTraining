@@ -222,7 +222,7 @@ public class PunchSettingManager : MonoBehaviour
             if (curDataNum == 6)
             {
                 // this.instructionText.text = "準備好請用<color=#FFA6FF>左手</color>向前出拳，伸直時按下'X'\n下方顯示數據後請按「儲存」";
-                this.instructionText.text = "Use<color=#FFA6FF>LEFT hand</color>to punch forward, press 'X' when arm is straight.\nWhen there is value below press 'Save'.";
+                this.instructionText.text = "Use <color=#FFA6FF>LEFT hand</color> to punch forward, press 'X' when arm is straight.\nWhen there is value below press 'Save'.";
             }
             this.curDataNumText.text = $"{curDataNum}/10";
             this.handText.text = "";
@@ -249,7 +249,7 @@ public class PunchSettingManager : MonoBehaviour
         this.curDataNum = 1;
         this.curDataNumText.text = "1/10";
         // this.instructionText.text = "準備好請用<color=#FFA6FF>右手</color>向前出拳，伸直時按下'A'\n下方顯示數據後請按「儲存」";
-        this.instructionText.text = "Use<color=#FFA6FF>RIGHT hand</color>to punch forward, press 'A' when arm is straight.\nWhen there is value below press 'Save'.";
+        this.instructionText.text = "Use <color=#FFA6FF>RIGHT hand</color> to punch forward, press 'A' when arm is straight.\nWhen there is value below press 'Save'.";
         this.handText.text = "";
         this.systemResultText.text = "";
         this.curStraightAngleText.text = "";

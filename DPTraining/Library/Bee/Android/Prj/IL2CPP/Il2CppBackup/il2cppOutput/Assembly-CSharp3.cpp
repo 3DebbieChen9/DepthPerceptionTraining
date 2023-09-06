@@ -536,6 +536,7 @@ IL2CPP_EXTERN_C RuntimeClass* Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2_
 IL2CPP_EXTERN_C String_t* _stringLiteral00B28FF06B788B9B67C6B259800F404F9F3761FD;
 IL2CPP_EXTERN_C String_t* _stringLiteral00BE8BAEFAD0142AF64AB4354E35955769F510F5;
 IL2CPP_EXTERN_C String_t* _stringLiteral01701207F1BF8B549494C0148E3669A5CA0F4AC5;
+IL2CPP_EXTERN_C String_t* _stringLiteral035E65DD9C2882511D204DC82F3FCBE308D48389;
 IL2CPP_EXTERN_C String_t* _stringLiteral073B45EAAA463A2CE904CBA42EC9EAC6D9FE1B15;
 IL2CPP_EXTERN_C String_t* _stringLiteral079999A975F765EC44D86114D0BA34B4B22C32CA;
 IL2CPP_EXTERN_C String_t* _stringLiteral0A5B75A180F8485D63D34FF1F4EDF6699CD0E2E0;
@@ -581,10 +582,9 @@ IL2CPP_EXTERN_C String_t* _stringLiteral38D243A53F86BE7D74CA63317229F3DC3F7C92B2
 IL2CPP_EXTERN_C String_t* _stringLiteral38F829A027717F03BC7D282367A288CF2065FDCD;
 IL2CPP_EXTERN_C String_t* _stringLiteral47A3FAF17D89549FD0F0ECA7370B81F7C80DFCDE;
 IL2CPP_EXTERN_C String_t* _stringLiteral4AC1C0C90752D13FCE0B49EBF3BCC24E8EF29B21;
+IL2CPP_EXTERN_C String_t* _stringLiteral4C5FB169CECA0AF3108467CEDA3C6C1B93E11FD3;
 IL2CPP_EXTERN_C String_t* _stringLiteral4D334A7BB6F03A21A16EC558A4F09D7748751F01;
-IL2CPP_EXTERN_C String_t* _stringLiteral4DECA5A42D5CB6277681B317408A67B6702FC553;
 IL2CPP_EXTERN_C String_t* _stringLiteral5163972E9B38510E96B15213DE0E0A5621E37DF9;
-IL2CPP_EXTERN_C String_t* _stringLiteral51D5FE77D4BBB8EFEE69D158A32976CEB8EE8518;
 IL2CPP_EXTERN_C String_t* _stringLiteral523F0416DC6FB5E880A5AF0D7E01466581307FA5;
 IL2CPP_EXTERN_C String_t* _stringLiteral52824182238C579550AF7E3702BF2B97B828C114;
 IL2CPP_EXTERN_C String_t* _stringLiteral52D7D94A9DD1B8620CE6E496206074663655694F;
@@ -614,6 +614,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral7500DE30E1D25949D6E6C9AAF919E8DEA749F718
 IL2CPP_EXTERN_C String_t* _stringLiteral78855514A50A270FC9434BAD50646ACBCF8928CB;
 IL2CPP_EXTERN_C String_t* _stringLiteral799B8FA255F3CB4329E1BC4C7FBEB1FBE399D504;
 IL2CPP_EXTERN_C String_t* _stringLiteral7A2AA74030CA7D4661A11A994AB71D126AF0D390;
+IL2CPP_EXTERN_C String_t* _stringLiteral7CC55B10F6DE8F2977D630F76CE065DDFCE3E6DC;
 IL2CPP_EXTERN_C String_t* _stringLiteral7D5461907EAB8A1F28D8272BE94CCABD03411B14;
 IL2CPP_EXTERN_C String_t* _stringLiteral7E70AF961A2F88ADB9DB7B9C3B5F25A532C1570A;
 IL2CPP_EXTERN_C String_t* _stringLiteral7F430FE37882D7F572907825DB3961BDBAF7E3A7;
@@ -662,7 +663,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralCAC5A5333E1AEAFD9E0C3CB4366DFE4431372BD2
 IL2CPP_EXTERN_C String_t* _stringLiteralCC1271FC0BA9CEEE8C8B4C76E27D62BF063311A2;
 IL2CPP_EXTERN_C String_t* _stringLiteralCCC39341AEAD58BDE211D38D471F6D4CB074B935;
 IL2CPP_EXTERN_C String_t* _stringLiteralCE7761C473EC3454B2B0D8087F5EF2F5FBD67A67;
-IL2CPP_EXTERN_C String_t* _stringLiteralD0C18ED454423C3F2D91B856F97D8139ED3BF7C3;
 IL2CPP_EXTERN_C String_t* _stringLiteralD34CE0A1F571AC623E7E730AB22A322899D52486;
 IL2CPP_EXTERN_C String_t* _stringLiteralD34D65C585E75815E39E7C3A613793998C0C9643;
 IL2CPP_EXTERN_C String_t* _stringLiteralD363894072BA19AD5549488611FFC1FFF3912538;
@@ -16217,14 +16217,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayingUIManager_showMoveToCenter_mBAF7F
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral15196F05B117690F3E12E56AA0C43803EA0D2A46);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral51D5FE77D4BBB8EFEE69D158A32976CEB8EE8518);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral4C5FB169CECA0AF3108467CEDA3C6C1B93E11FD3);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// this.readyUnitTitle.text = "Please move to the center";
+		// this.readyUnitTitle.text = "Please move to center";
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_0 = __this->___readyUnitTitle_10;
 		NullCheck(L_0);
-		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_0, _stringLiteral51D5FE77D4BBB8EFEE69D158A32976CEB8EE8518);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_0, _stringLiteral4C5FB169CECA0AF3108467CEDA3C6C1B93E11FD3);
 		// this.readyCoundownImage.fillAmount = 0;
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_1 = __this->___readyCoundownImage_12;
 		NullCheck(L_1);
@@ -18429,8 +18429,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchSettingManager_savePunchUnitResult_
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5EB55F05400C1D2C07E055A7B515E6701785087A);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral66BFBD398D41672CDBEF1E82B6ED0ADB9FC82416);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7CC55B10F6DE8F2977D630F76CE065DDFCE3E6DC);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBE3CD31F3C78BD6E062B6F2AE2A0947835EA7B42);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD0C18ED454423C3F2D91B856F97D8139ED3BF7C3);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -18551,10 +18551,10 @@ IL_0106:
 		}
 	}
 	{
-		// this.instructionText.text = "Use<color=#FFA6FF>LEFT hand</color>to punch forward, press 'X' when arm is straight.\nWhen there is value below press 'Save'.";
+		// this.instructionText.text = "Use <color=#FFA6FF>LEFT hand</color> to punch forward, press 'X' when arm is straight.\nWhen there is value below press 'Save'.";
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_33 = __this->___instructionText_19;
 		NullCheck(L_33);
-		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_33, _stringLiteralD0C18ED454423C3F2D91B856F97D8139ED3BF7C3);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_33, _stringLiteral7CC55B10F6DE8F2977D630F76CE065DDFCE3E6DC);
 	}
 
 IL_011f:
@@ -18626,7 +18626,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchSettingManager_punchUnitTestInitial
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral4DECA5A42D5CB6277681B317408A67B6702FC553);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral035E65DD9C2882511D204DC82F3FCBE308D48389);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral66BFBD398D41672CDBEF1E82B6ED0ADB9FC82416);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBE3CD31F3C78BD6E062B6F2AE2A0947835EA7B42);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
@@ -18644,10 +18644,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PunchSettingManager_punchUnitTestInitial
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_1 = __this->___curDataNumText_14;
 		NullCheck(L_1);
 		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_1, _stringLiteralDFCC45B69807F61FEE895E4DC349DB6B739428E0);
-		// this.instructionText.text = "Use<color=#FFA6FF>RIGHT hand</color>to punch forward, press 'A' when arm is straight.\nWhen there is value below press 'Save'.";
+		// this.instructionText.text = "Use <color=#FFA6FF>RIGHT hand</color> to punch forward, press 'A' when arm is straight.\nWhen there is value below press 'Save'.";
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_2 = __this->___instructionText_19;
 		NullCheck(L_2);
-		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_2, _stringLiteral4DECA5A42D5CB6277681B317408A67B6702FC553);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_2, _stringLiteral035E65DD9C2882511D204DC82F3FCBE308D48389);
 		// this.handText.text = "";
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_3 = __this->___handText_15;
 		NullCheck(L_3);

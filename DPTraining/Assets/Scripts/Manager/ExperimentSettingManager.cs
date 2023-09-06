@@ -46,7 +46,7 @@ public class ExperimentSettingManager : MonoBehaviour
         this.experimentSectionNames = new string[] { "Pre-Test", "Training_1", "Training_2", "Training_3", "Training_4", "Post-Test", "Experience" };
         this.experimentModeNames = new string[] { "Testing", "Baseline (A)", "Ring (B)", "Bar + Ring (C)", "Cutout + Ring (D)" };
         this.subjectIDText.text = "0";
-        this.experimentSectionText.text = this.experimentSectionNames[0];
+        this.experimentSectionText.text = this.experimentSectionNames[6];
         this.experimentModeText.text = this.experimentModeNames[0];
         this.coachTypeOrderTexts[0].text = "0";
         this.coachTypeOrderTexts[1].text = "1";

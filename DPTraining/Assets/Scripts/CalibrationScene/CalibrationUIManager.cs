@@ -131,12 +131,11 @@ public class CalibrationUIManager : MonoBehaviour
         {
             // this.resultText.text = this.instructions.tPoseInstruction.resultLengthR[languageIndex] + length.ToString("F2");
             // this.resultText.text = "頭部到右手的距離 (公尺) = " + length.ToString("F2");
-            this.resultText.text = "Length of Center Eye to Right Hand (m) = " + length.ToString("F2");
+            this.resultText.text = "Length of center eye to right hand (m) = " + length.ToString("F2");
         }
         else
         {
-            this.resultText.text = "Average Length of Center Eye to Hand (m) = " + length.ToString("F2") +
-                                    "\n" + "Height (m) = " + height.ToString("F2");
+            this.resultText.text = $"Average length of center eye to hand (m) = {length.ToString("F2")}, height (m) = {height.ToString("F2")}";
         }
     }
 
@@ -165,15 +164,13 @@ public class CalibrationUIManager : MonoBehaviour
         // this.resultTitle.text = "向前出直拳姿勢\n校正結果";
         if (state == CalibrationState.ArmStraight_RHand)
         {
-            this.resultText.text = "RIGHT arm length (m) = " + length.ToString("F2");
+            this.resultText.text = "Right arm length (m) = " + length.ToString("F2");
             // this.resultText.text = "右手臂長 (公尺) = " + length.ToString("F2");
         }
         else
         {
-            this.resultText.text = "Average arm length (m) =  " + length.ToString("F2") + 
-            // this.resultText.text = "平均臂長 (公尺) =  " + length.ToString("F2") +
-                                    "\n" + "Average shoulder width (m) = " + width.ToString("F2");
-                                    // "\n" + "肩寬 (公尺) = " + width.ToString("F2");
+            // this.resultText.text = $"平均臂長 (公尺) = {length.ToString("F2")}, 肩寬 (公尺) = {width.ToString("F2")}";
+            this.resultText.text = $"Average arm length (m) = {length.ToString("F2")}, shoulder width (m) = {width.ToString("F2")}";
         }
     }
 

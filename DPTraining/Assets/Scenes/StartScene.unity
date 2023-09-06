@@ -2639,21 +2639,21 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 8f2468de4cd652743ae241cc0e2a4bed, type: 3}
   voiceSounds:
   - name: ReactionOverTime
-    clip: {fileID: 8300000, guid: 590b136d845368742b7af98e00b3044b, type: 3}
+    clip: {fileID: 8300000, guid: 85d3a5786ef40d743ae56e403e4d8e0e, type: 3}
   - name: Perfect
-    clip: {fileID: 8300000, guid: 342d3ba1b501aed40adbe8bf7c5eaa52, type: 3}
+    clip: {fileID: 8300000, guid: 891bed55d16301f4380f00bd939b2d6b, type: 3}
   - name: HandNotStraight
-    clip: {fileID: 8300000, guid: b4742e6b77fce9e42a2324d6091af882, type: 3}
+    clip: {fileID: 8300000, guid: 1bcfb5216a5ba1240977aa1146d274c2, type: 3}
   - name: TargetNotReach
-    clip: {fileID: 8300000, guid: 44197ff7d6c56854f986b2a5bb1f25cc, type: 3}
+    clip: {fileID: 8300000, guid: f3b8a832b4a40f9498bcd55eae254ae5, type: 3}
   - name: MoveForward
-    clip: {fileID: 8300000, guid: f723cdc7bec92bb40b428ad3870934ab, type: 3}
+    clip: {fileID: 8300000, guid: 23908669e8803974ca5bddc13f52cb7a, type: 3}
   - name: MoveBackward
-    clip: {fileID: 8300000, guid: ad23dda3289a0e04686e0b792f12e595, type: 3}
+    clip: {fileID: 8300000, guid: c6a7b21ad29e1ba4d9fe90743c7b04bc, type: 3}
   - name: BackToCenter
-    clip: {fileID: 8300000, guid: 5f25cb9120a7ac84590cb814b6fd960c, type: 3}
+    clip: {fileID: 8300000, guid: c80a8e9f1464ab5488fd38bda4e2e444, type: 3}
   - name: ReactionSuggestFaster
-    clip: {fileID: 8300000, guid: 15209ea2851d6b7429b3aca0992ba693, type: 3}
+    clip: {fileID: 8300000, guid: 2283c8f586889bc42872a98871cc31ef, type: 3}
   aidSounds:
   - name: Ticking
     clip: {fileID: 8300000, guid: ad897f540932ce44cb9ceac5c5264383, type: 3}

@@ -160,7 +160,7 @@ public class PlayingUIManager : MonoBehaviour
 
     public void showMoveToCenter()
     {
-        this.readyUnitTitle.text = "Please move to the center";
+        this.readyUnitTitle.text = "Please move to center";
         // this.readyUnitTitle.text = "請移動到紅色中心點";
         this.readyCoundownImage.fillAmount = 0;
         this.readyCountdownText.text = "!";
